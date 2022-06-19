@@ -1,5 +1,56 @@
 @extends('layouts.master_front')
+@section('custom-css')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" />
+<script src="https://kit.fontawesome.com/b31e06099e.js" crossorigin="anonymous"></script>
 
+<style>
+    .author-text {
+        background: url(https://annedece.sirv.com/Images/commo.png) no-repeat right bottom;
+    }
+
+    .owl-prev,
+    .owl-next {
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        top: 41%;
+        display: block !important;
+    }
+
+    .owl-prev {
+        left: -16px;
+    }
+
+    .owl-next {
+        right: 20px;
+    }
+
+    .owl-prev i,
+    .owl-next i {
+        color: #14395B;
+        background-color: #3901f8;
+        padding: 20px;
+    }
+
+    button {
+        border: none !important;
+        border-radius: none !important;
+        outline: none !important;
+    }
+
+    @media (max-width: 800px) {
+        .author-text {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .lead {
+            font-size: 16px;
+        }
+    }
+</style>
+@endsection
 @section('content')
 <div class="beranda">
     <div class="container">
@@ -191,23 +242,27 @@
             <hr />
         </div>
 
-        <div class="slider">
-            <div class="slides">
+        <div class="py-5">
+            <div class="container">
                 <div class="row">
-                    <div class="col-12 col-md-4 col-xl-5">
-                        <h2>Ani Sunjani</h2>
-                        <h2>SMKN 1 CIMAHI</h2>
-                        <p>TGP-Membuat Model 3D dengan CAD</p>
-                    </div>
-                    <div class="col-12 col-md-8 col-xl-7 img-content">
-                        <iframe width="600" height="300" src="https://www.youtube.com/embed/PHFbvLp8UAw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
+                    <div class="col-lg-10 mx-auto testimonials owl-theme owl-carousel">
+                        @foreach($testimoni as $ts)
+                        <div>
+                            <div class="p-lg-5 d-flex align-items-center bg-white shadow-lg">
+                                <div class="author-img"> <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="img-fluid"> </div>
+                                <div class="author-text p-lg-5">
+                                    <div class="px-5">
+                                        <p class="lead pb-lg-5" style="color:#14395B;">"{{substr($ts->testimoni, 0, 300);}} ...."</p>
+                                        <h4 class="font-weight-bold" style="color:#14395B;">{{$ts->nama}}</h4>
+                                        <p class="text-muted mb-0">{{$ts->asal_sekolah}}</p>
+                                        <p class="text-muted mb-0">{{$ts->nama_diklat}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                <div class="row">
-                </div>
-
-                <div class="row">
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>
@@ -216,7 +271,13 @@
 @endsection
 
 @section('script')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script>
-    $('.carousel').carousel();
+    $(".testimonials").owlCarousel({
+        items: 1,
+        margin: 20,
+        nav: true,
+        navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"]
+    });
 </script>
 @endsection

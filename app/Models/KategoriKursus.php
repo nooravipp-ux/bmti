@@ -11,6 +11,7 @@ class KategoriKursus extends Model
     protected $primaryKey = 'id';
     protected $connection = 'mysql';
     protected $guarded =[];
+    
     public function kursus(){
         return $this->hasMany('App\Models\Kursus');
     }

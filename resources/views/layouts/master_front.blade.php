@@ -173,6 +173,20 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="{{asset('guest/assets/bootstrap/js/bootstrap.min.js')}}"></script>
     @yield('script')
+
+    <script>
+        $(function() {
+            var current = location.pathname;
+            console.log(current)
+            $('.nav li a').each(function() {
+                var $this = $(this);
+                // if the current path is like this link, make it active
+                if ($this.attr('href').indexOf(current) !== -1) {
+                    $this.addClass('active');
+                }
+            })
+        })
+    </script>
 </body>
 
 </html>

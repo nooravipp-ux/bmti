@@ -96,6 +96,10 @@ ul li a:hover {
     color: #FFF008;
 }
 
+.active {
+    color: #FFF008;
+}
+
 .akun-button {
     margin-left: -40px;
     margin-top: 25px;
