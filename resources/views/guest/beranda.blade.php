@@ -176,6 +176,7 @@
                     <div class="row">
                         <div class="col-6">
                             <p>Jumlah Sertifikat</p>
+                            <br>
                             <h1>77</h1>
                         </div>
                         <div class="sertifikat-image col-5 col-xl-6">
@@ -190,6 +191,7 @@
                     <div class="row">
                         <div class="col-6">
                             <p>Jumlah Pengunjung</p>
+                            <br>
                             <h1>0</h1>
                         </div>
                         <div class="pengunjung-image col-5 col-xl-6">
@@ -249,7 +251,7 @@
                         @foreach($testimoni as $ts)
                         <div>
                             <div class="p-lg-5 d-flex align-items-center bg-white shadow-lg">
-                                <div class="author-img"> <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="img-fluid"> </div>
+                                <div class="author-img"> <img src="" class="img-fluid"> </div>
                                 <div class="author-text p-lg-5">
                                     <div class="px-5">
                                         <p class="lead pb-lg-5" style="color:#14395B;">"{{substr($ts->testimoni, 0, 300);}} ...."</p>

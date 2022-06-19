@@ -39,7 +39,7 @@ class KompetensiController extends Controller
             $file->move(public_path('images/galeria'), $fileName);
         }
 
-        return redirect('kompetensi');
+        return redirect('/admin/kompetensi');
     }
 
     public function edit($id){
@@ -66,7 +66,7 @@ class KompetensiController extends Controller
             'gambar_banner' => $fileName,
         ]);
 
-        return redirect('/kompetensi');
+        return redirect('/admin/kompetensi');
     }
 
     public function delete($id){
@@ -75,6 +75,6 @@ class KompetensiController extends Controller
 
         File::delete('images/galeria/'.$data->gambar_banner);
 
-        return redirect('/kompetensi');
+        return redirect('/admin/kompetensi');
     }
 }

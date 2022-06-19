@@ -19,6 +19,7 @@ use App\Http\Controllers\JenisPMandiriController;
 use App\Http\Controllers\KategoriKursusController;
 use App\Http\Controllers\PerusahaanMitraController;
 use App\Http\Controllers\Guest\BerandaController;
+use App\Http\Controllers\Guest\GaleriaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,15 +37,17 @@ Route::get('/', function () {
 });
 
 Route::get('/', [BerandaController::class, 'getData']);
-Route::get('/galeria', function () {
-    return view('guest.galeria');
-});
+Route::get('/galeria', [GaleriaController::class, 'getKategoriKompetensi']);
+Route::get('/galeria/{kategori_id}', [GaleriaController::class, 'getAllKeahlianByKategori']);
+
 Route::get('/pelatihan-mandiri', function () {
     return view('guest.pelatihan');
 });
+
 Route::get('/alur-pembelajaran', function () {
     return view('guest.alur_pembelajaran');
 });
+
 Route::get('login', function () {
     return view('auth.login');
 });

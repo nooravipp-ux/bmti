@@ -62,7 +62,7 @@ class KeahlianController extends Controller
             'author' => $request->author,
         ]);
 
-        return redirect('keahlian');
+        return redirect('/admin/keahlian');
     }
 
     public function edit($id)
@@ -113,13 +113,13 @@ class KeahlianController extends Controller
             'author' => $request->author,
         ]);
         
-        return redirect('keahlian');
+        return redirect('/admin/keahlian');
     }
 
     public function delete($id){
         $data = Keahlian::find($id);
         $data->delete();
 
-        return redirect('/keahlian');
+        return redirect('/admin/keahlian');
     }
 }

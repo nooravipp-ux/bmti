@@ -66,7 +66,11 @@
 
                 <div class="col-3 col-md-2 col-xl-1 order-2 order-xl-3">
                     <div class="akun-button text-center">
+                        @if(auth()->user())
+                        <a href="{{url('dashboard')}}" class="btn-lg" role="button" aria-pressed="true">Dashboard</a>
+                        @else
                         <a href="{{url('login')}}" class="btn-lg" role="button" aria-pressed="true">LOGIN</a>
+                        @endif
                     </div>
                 </div>
 
@@ -181,7 +185,7 @@
             $('.nav li a').each(function() {
                 var $this = $(this);
                 // if the current path is like this link, make it active
-                if ($this.attr('href').indexOf(current) !== -1) {
+                if ($this.attr('href').indexOf(current) != -1) {
                     $this.addClass('active');
                 }
             })
