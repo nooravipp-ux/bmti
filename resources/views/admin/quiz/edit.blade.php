@@ -1,0 +1,45 @@
+@extends('layouts.master')
+@section('title', 'BMTI | DATA QUIZ')
+@section('content')
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-lg-12 grid-margin">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">{{ __('Data Quiz') }}</h4>
+                    <!-- <p class="card-description">
+                    </p> -->
+                    <form action="{{route('quiz.update', ['id'=>$data->id])}}" method="POST"
+                        enctype="multipart/form-data">
+                        @method('put')
+                        @csrf
+                        <div class="mb-3">
+                            <label for="inputjudul" class="form-label">Judul</label>
+                            <input type="text" name="judul" class="form-control" id="inputjudul"
+                                aria-describedby="emailHelp" value="{{$data->judul}}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputdeskripsi" class="form-label">Deskripsi</label>
+                            <input type="text" name="deskripsi" class="form-control" id="inputdeskripsi"
+                                aria-describedby="emailHelp" value="{{$data->deskripsi}}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputdurasi" class="form-label">Durasi</label>
+                            <input type="number" name="durasi" class="form-control" id="inputdurasi"
+                                aria-describedby="emailHelp" value="{{$data->durasi}}">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-sm btn-rounded">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+$(document).ready(function() {
+    $('#dataTable').DataTable();
+
+});
+</script>
+@endsection
