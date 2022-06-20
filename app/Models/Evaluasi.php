@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Evaluasi extends Model
 {
-    use HasFactory;
+    protected $table = 't_evaluasi';
+    protected $primaryKey = 'id';
+    protected $connection = 'mysql';
+    protected $guarded =[];
 }

@@ -362,9 +362,9 @@
                     </li>
                     @if(auth()->user()->role_id == 4)
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{route('masterListData')}}">
                             <i class="menu-icon mdi mdi-file-import"></i>
-                            <span class="menu-title">Import Data</span>
+                            <span class="menu-title">Master List Data</span>
                         </a>
                     </li>
                     @endif
