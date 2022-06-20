@@ -1327,6 +1327,8 @@
   /* End Dashboard */
   /* End Responsive */
 </style>
+<script src="{{asset('admin/vendors/highchart/code/highcharts.js')}}"></script>
+<script src="{{asset('admin/vendors/highchart/code/highcharts-3d.js')}}"></script>
 @endsection
 @section('content')
 <div class="content-wrapper">
@@ -1403,22 +1405,18 @@
     <div class="col-12 col-xl-6">
       <div class="marginCard">
         <div class="shadow p-3 bg-white rounded text-center h-100">
-          <div class="cardPerbandinganKelas">
-            <h6>Perbandingan Kelas Tersedia dan Kelas Terselengara</h6>
-            <div class="chartPerbandinganKelas">
-              <BarChart3 />
-            </div>
-          </div>
+          <figure class="highcharts-figure">
+            <div id="column-chart"></div>
+          </figure>
         </div>
       </div>
     </div>
     <div class="col-12 col-xl-6">
       <div class="shadow p-3 bg-white rounded text-center h-100">
         <div class="cardPesertaPelatihan">
-          <h6>Peserta Pelatihan dan Kelulusan</h6>
-          <div class="chartPesertaPelatihan">
-            <BarChart4 />
-          </div>
+          <figure class="highcharts-figure">
+            <div id="column-chart2"></div>
+          </figure>
         </div>
       </div>
     </div>
@@ -1427,12 +1425,9 @@
     <div class="col-12 col-xl-6">
       <div class="marginCard">
         <div class="shadow p-3 bg-white rounded text-center h-100">
-          <div class="cardPerbandinganPeserta">
-            <h6>Perbandingan Peserta Terdaftar/Diundang dan Tuntas/Hadir</h6>
-            <div class="chartPerbandinganPeserta">
-              <BarChart5 />
-            </div>
-          </div>
+          <figure class="highcharts-figure">
+            <div id="container"></div>
+          </figure>
         </div>
       </div>
     </div>
@@ -1449,4 +1444,171 @@
   </div>
 </div>
 
+@endsection
+
+@section('script')
+<script type="text/javascript">
+  Highcharts.chart('container', {
+    chart: {
+      type: 'bar'
+    },
+    title: {
+      text: 'Perbandingan Peserta Terdaftar/Diundang dan Tuntas/Hadir'
+    },
+    subtitle: {
+      text: ''
+    },
+    xAxis: {
+      categories: ['Pelatihan Mandiri', 'Pelatihan Terbimbing'],
+      title: {
+        text: null
+      }
+    },
+    yAxis: {
+      min: 0,
+      title: {
+        text: 'Orang',
+        align: 'high'
+      },
+      labels: {
+        overflow: 'justify'
+      }
+    },
+    tooltip: {
+      valueSuffix: 'Orang'
+    },
+    plotOptions: {
+      bar: {
+        dataLabels: {
+          enabled: true
+        }
+      }
+    },
+    legend: {
+      layout: 'vertical',
+      align: 'right',
+      verticalAlign: 'top',
+      x: 10,
+      y: 70,
+      floating: true,
+      borderWidth: 1,
+      backgroundColor: Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
+      shadow: true
+    },
+    credits: {
+      enabled: false
+    },
+    series: [{
+      name: 'Tuntas / Hadir',
+      data: [1206, 823]
+    }, {
+      name: 'Terdaftar / Diundang',
+      data: [1212, 825]
+    }]
+  });
+</script>
+
+<script type="text/javascript">
+  Highcharts.chart('column-chart', {
+    chart: {
+      type: 'column'
+    },
+    title: {
+      text: 'Perbandingan Kelas Tersedia dan Kelas Terselenggara'
+    },
+    subtitle: {
+      text: ''
+    },
+    xAxis: {
+      categories: [
+        'Pelatihan Mandiri',
+        'Pelatihan Terbimbing',
+      ],
+      crosshair: true
+    },
+    yAxis: {
+      min: 0,
+      title: {
+        text: 'Jumlah Tersedia'
+      }
+    },
+    tooltip: {
+      headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+      pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+        '<td style="padding:0"><b>{point.y:.1f} Kelas</b></td></tr>',
+      footerFormat: '</table>',
+      shared: true,
+      useHTML: true
+    },
+    plotOptions: {
+      column: {
+        pointPadding: 0.2,
+        borderWidth: 0
+      }
+    },
+    series: [{
+      name: 'Kelas Tersedia',
+      data: [45, 36]
+
+    }, {
+      name: 'Kelas Terselenggara',
+      data: [35, 30]
+
+    }]
+  });
+</script>
+
+<script type="text/javascript">
+  Highcharts.chart('column-chart2', {
+    chart: {
+      type: 'column'
+    },
+    title: {
+      text: 'Peserta Pelatihan dan Kelulusan'
+    },
+    subtitle: {
+      text: ''
+    },
+    xAxis: {
+      categories: [
+        'Pelatihan Mandiri',
+        'Pelatihan Terbimbing',
+      ],
+      crosshair: true
+    },
+    yAxis: {
+      min: 0,
+      title: {
+        text: 'Jumlah Tersedia'
+      }
+    },
+    tooltip: {
+      headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+      pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+        '<td style="padding:0"><b>{point.y:.1f} Kelas</b></td></tr>',
+      footerFormat: '</table>',
+      shared: true,
+      useHTML: true
+    },
+    plotOptions: {
+      column: {
+        pointPadding: 0.2,
+        borderWidth: 0
+      }
+    },
+    series: [{
+      name: 'Peserta',
+      data: [825, 1212]
+
+    }, {
+      name: 'Lulus',
+      data: [815, 1198]
+
+    }, {
+      name: 'Gagal',
+      data: [10, 14]
+
+    }]
+  });
+</script>
 @endsection
