@@ -2,49 +2,49 @@
 @section('title', 'BMTI | Dashboard Evaluator')
 @section('custom-css')
 <style>
-  /* Dashboard */
-  .bgDashboard {
+/* Dashboard */
+.bgDashboard {
     position: relative;
     right: 12px;
     background-color: #14395B;
     width: 58px;
     height: 100%;
     overflow: hidden;
-  }
+}
 
-  .bgDashboard:hover {
+.bgDashboard:hover {
     width: 130px;
-  }
+}
 
-  .logoDashboard {
+.logoDashboard {
     width: 120px;
     cursor: pointer;
-  }
+}
 
-  .logoDashboard hr {
+.logoDashboard hr {
     position: relative;
     right: 8px;
     opacity: 1;
     width: 130px;
     color: #525252;
-  }
+}
 
-  .iconDashboard {
+.iconDashboard {
     cursor: pointer;
-  }
+}
 
-  .iconDashboard i {
+.iconDashboard i {
     display: flex;
     font-size: 30px;
     color: white;
     margin-left: 5px;
-  }
+}
 
-  .iconDashboard i:hover {
+.iconDashboard i:hover {
     color: #FFF008;
-  }
+}
 
-  .iconDashboard span {
+.iconDashboard span {
     position: relative;
     left: 50px;
     bottom: 28px;
@@ -52,25 +52,25 @@
     font-size: 14px;
     font-family: "glory";
     font-weight: 600;
-  }
+}
 
-  .iconDashboard span:hover {
+.iconDashboard span:hover {
     color: #FFF008;
-  }
+}
 
-  .textDashboard {
+.textDashboard {
     font-family: "glory";
-  }
+}
 
-  .textDashboard h4 {
+.textDashboard h4 {
     font-weight: 600;
-  }
+}
 
-  .textDashboard p {
+.textDashboard p {
     font-weight: 600;
-  }
+}
 
-  .akunButtonDashboard a {
+.akunButtonDashboard a {
     background: #FFF008;
     border-radius: 15px;
     padding: 11px;
@@ -78,16 +78,16 @@
     font-size: 13px;
     font-weight: bold;
     text-decoration: none;
-  }
+}
 
-  .akunButtonDashboard a:hover {
+.akunButtonDashboard a:hover {
     background: #C6C62F;
-  }
+}
 
-  /* End Dashboard */
+/* End Dashboard */
 
-  /* Menu Dashboard */
-  .menuDashboard {
+/* Menu Dashboard */
+.menuDashboard {
     margin-left: -10px;
     margin-top: 12px;
     background-image: url("../public/images/icon-menu.png");
@@ -95,13 +95,13 @@
     width: 30px;
     height: 30px;
     cursor: pointer;
-  }
+}
 
-  .menuDashboard:hover {
+.menuDashboard:hover {
     background-image: url("../public/images/icon-menu-hover.png");
-  }
+}
 
-  .menuDashboard2 {
+.menuDashboard2 {
     margin-right: 4px;
     margin-top: 12px;
     background-image: url("../public/images/icon-close.png");
@@ -109,13 +109,13 @@
     width: 25px;
     height: 25px;
     cursor: pointer;
-  }
+}
 
-  .menuDashboard2:hover {
+.menuDashboard2:hover {
     background-image: url("../public/images/icon-close-hover.png");
-  }
+}
 
-  .bgMenuDashboard {
+.bgMenuDashboard {
     position: fixed;
     top: 0;
     left: 0;
@@ -123,23 +123,23 @@
     width: 100%;
     height: 100%;
     background-color: #14395B;
-  }
+}
 
-  .iconDashboard2 {
+.iconDashboard2 {
     margin-top: 40px;
-  }
+}
 
-  .iconDashboard2 i {
+.iconDashboard2 i {
     font-size: 30px;
     color: white;
     cursor: pointer;
-  }
+}
 
-  .iconDashboard2 i:hover {
+.iconDashboard2 i:hover {
     color: #FFF008;
-  }
+}
 
-  .iconDashboard2 span {
+.iconDashboard2 span {
     position: relative;
     bottom: 7px;
     left: 10px;
@@ -147,34 +147,34 @@
     font-size: 24px;
     font-family: "glory";
     font-weight: 600;
-  }
+}
 
-  .iconDashboard2 span:hover {
+.iconDashboard2 span:hover {
     color: #FFF008;
-  }
+}
 
-  /* End Menu Dashboard */
+/* End Menu Dashboard */
 
-  /* Dashboard User */
+/* Dashboard User */
 
-  .cardPelatihan {
+.cardPelatihan {
     width: 100%;
     height: 100%;
     font-family: "glory";
     overflow: hidden;
-  }
+}
 
-  .cardPelatihan h5 {
+.cardPelatihan h5 {
     font-size: 16px;
     font-weight: 600;
-  }
+}
 
-  .chartPelatihan {
+.chartPelatihan {
     margin-left: auto;
     margin-right: auto;
-  }
+}
 
-  .buttonPelatihan {
+.buttonPelatihan {
     height: 40px;
     width: 120px;
     font-weight: 600;
@@ -183,158 +183,158 @@
     border: 1px solid #00BF78;
     background-color: #53C7FF;
     border-radius: 10px;
-  }
+}
 
-  .cardSertifikat {
+.cardSertifikat {
     font-family: "glory";
     height: 100%;
     width: 100%;
     overflow: hidden;
-  }
+}
 
-  .cardSertifikat h5 {
+.cardSertifikat h5 {
     font-weight: 600;
     font-size: 16px;
-  }
+}
 
-  .textCardSertifikat {
+.textCardSertifikat {
     font-family: "glory";
     font-weight: 600;
     font-size: 12px;
     height: 240px;
     overflow: scroll;
     padding-right: 5px;
-  }
+}
 
-  .textCardSertifikat::-webkit-scrollbar {
+.textCardSertifikat::-webkit-scrollbar {
     width: 10px;
     height: 10px;
-  }
+}
 
-  .textCardSertifikat::-webkit-scrollbar-thumb {
+.textCardSertifikat::-webkit-scrollbar-thumb {
     border: 1px solid #9c9c9c;
     background: #c2c2c2;
     border-radius: 10px;
-  }
+}
 
-  .textCardSertifikat::-webkit-scrollbar-thumb:hover {
+.textCardSertifikat::-webkit-scrollbar-thumb:hover {
     background: #9c9c9c;
-  }
+}
 
-  .textCardSertifikat::-webkit-scrollbar-track {
+.textCardSertifikat::-webkit-scrollbar-track {
     background: transparent;
-  }
+}
 
-  .textCardSertifikat b {
+.textCardSertifikat b {
     cursor: pointer;
     color: #53C7FF;
-  }
+}
 
-  .cardKursus {
+.cardKursus {
     font-family: "glory";
     height: 100%;
     width: 100%;
     overflow: hidden;
-  }
+}
 
-  .cardKursus h5 {
+.cardKursus h5 {
     font-weight: 600;
     font-size: 16px;
-  }
+}
 
-  .textCardKursus {
+.textCardKursus {
     font-weight: 600;
     font-size: 12px;
     height: 280px;
     overflow: scroll;
     padding-right: 5px;
-  }
+}
 
-  .textCardKursus::-webkit-scrollbar {
+.textCardKursus::-webkit-scrollbar {
     width: 10px;
     height: 10px;
-  }
+}
 
-  .textCardKursus::-webkit-scrollbar-thumb {
+.textCardKursus::-webkit-scrollbar-thumb {
     border: 1px solid #9c9c9c;
     background: #c2c2c2;
     border-radius: 10px;
-  }
+}
 
-  .textCardKursus::-webkit-scrollbar-thumb:hover {
+.textCardKursus::-webkit-scrollbar-thumb:hover {
     background: #9c9c9c;
-  }
+}
 
-  .textCardKursus::-webkit-scrollbar-track {
+.textCardKursus::-webkit-scrollbar-track {
     background: transparent;
-  }
+}
 
-  .textCardKursus span {
+.textCardKursus span {
     margin-bottom: -10px;
-  }
+}
 
-  .cardAktifitas {
+.cardAktifitas {
     font-family: "glory";
     height: 100%;
     width: 100%;
     overflow: hidden;
-  }
+}
 
-  .cardAktifitas span {
+.cardAktifitas span {
     font-weight: 600;
     font-size: 12px;
-  }
+}
 
-  .cardAktifitas h5 {
+.cardAktifitas h5 {
     font-weight: 600;
     font-size: 16px;
-  }
+}
 
-  .cardAktifitas i {
+.cardAktifitas i {
     color: #8F8F8F;
     padding: 4px;
-  }
+}
 
-  .scrollCardAktifitas {
+.scrollCardAktifitas {
     overflow: scroll;
     height: 280px;
     padding-right: 5px;
-  }
+}
 
-  .scrollCardAktifitas::-webkit-scrollbar {
+.scrollCardAktifitas::-webkit-scrollbar {
     width: 10px;
     height: 10px;
-  }
+}
 
-  .scrollCardAktifitas::-webkit-scrollbar-thumb {
+.scrollCardAktifitas::-webkit-scrollbar-thumb {
     border: 1px solid #9c9c9c;
     background: #c2c2c2;
     border-radius: 10px;
-  }
+}
 
-  .scrollCardAktifitas::-webkit-scrollbar-thumb:hover {
+.scrollCardAktifitas::-webkit-scrollbar-thumb:hover {
     background: #9c9c9c;
-  }
+}
 
-  .scrollCardAktifitas::-webkit-scrollbar-track {
+.scrollCardAktifitas::-webkit-scrollbar-track {
     background: transparent;
-  }
+}
 
-  .cardDiklat {
+.cardDiklat {
     font-family: "glory";
     font-size: 12px;
     font-weight: 600;
     height: 260px;
     width: 100%;
     overflow: hidden;
-  }
+}
 
-  .cardDiklat h5 {
+.cardDiklat h5 {
     font-weight: 600;
     font-size: 16px;
-  }
+}
 
-  .cardDiklat i {
+.cardDiklat i {
     padding-top: 5px;
     height: 20px;
     width: 20px;
@@ -343,67 +343,67 @@
     font-size: 10px;
     color: white;
     cursor: pointer;
-  }
+}
 
-  .tablePeserta {
+.tablePeserta {
     overflow: scroll;
     height: 230px;
     padding-right: 5px;
-  }
+}
 
-  .tablePeserta::-webkit-scrollbar {
+.tablePeserta::-webkit-scrollbar {
     margin: 10px;
     width: 10px;
     height: 10px;
-  }
+}
 
-  .tablePeserta::-webkit-scrollbar-thumb {
+.tablePeserta::-webkit-scrollbar-thumb {
     border: 1px solid #9c9c9c;
     background: #c2c2c2;
     border-radius: 10px;
-  }
+}
 
-  .tablePeserta::-webkit-scrollbar-thumb:hover {
+.tablePeserta::-webkit-scrollbar-thumb:hover {
     background: #9c9c9c;
-  }
+}
 
-  .tablePeserta::-webkit-scrollbar-track {
+.tablePeserta::-webkit-scrollbar-track {
     background: transparent;
-  }
+}
 
-  .cardStatistikKehadiran {
+.cardStatistikKehadiran {
     font-size: 12px;
     font-weight: 600;
     font-family: "glory";
     height: 260px;
     width: 100%;
     overflow: hidden;
-  }
+}
 
-  .cardStatistikKehadiran h5 {
+.cardStatistikKehadiran h5 {
     font-size: 16px;
     font-weight: 600;
-  }
+}
 
-  .cardStatistikKehadiran i {
+.cardStatistikKehadiran i {
     margin-right: 10px;
-  }
+}
 
-  .chartStatistikKehadiran {
+.chartStatistikKehadiran {
     margin-left: auto;
     margin-right: auto;
-  }
+}
 
-  .filter button {
+.filter button {
     margin-left: 10px;
-  }
+}
 
-  /* End Dashboard User */
+/* End Dashboard User */
 
 
-  /* Dashboard Eksekutif */
+/* Dashboard Eksekutif */
 
-  .cardSiswa {
+.cardSiswa {
     border-radius: 5px;
     font-family: "glory";
     background-color: #F71F1F;
@@ -411,28 +411,28 @@
     height: 165px;
     width: 100%;
     overflow: hidden;
-  }
+}
 
-  .cardSiswa h6 {
+.cardSiswa h6 {
     font-size: 15px;
     font-weight: 600;
-  }
+}
 
-  .cardSiswa h1 {
+.cardSiswa h1 {
     font-weight: 600;
     margin: 0;
-  }
+}
 
-  .cardSiswa span {
+.cardSiswa span {
     font-size: 15px;
     font-weight: 600;
-  }
+}
 
-  .marginCardSiswa {
+.marginCardSiswa {
     margin-top: 18px;
-  }
+}
 
-  .cardGuru {
+.cardGuru {
     border-radius: 5px;
     font-family: "glory";
     background-color: #0E26FF;
@@ -440,24 +440,24 @@
     height: 165px;
     width: 100%;
     overflow: hidden;
-  }
+}
 
-  .cardGuru h6 {
+.cardGuru h6 {
     font-size: 15px;
     font-weight: 600;
-  }
+}
 
-  .cardGuru h1 {
+.cardGuru h1 {
     font-weight: 600;
     margin: 0;
-  }
+}
 
-  .cardGuru span {
+.cardGuru span {
     font-size: 15px;
     font-weight: 600;
-  }
+}
 
-  .cardPerusahaan {
+.cardPerusahaan {
     border-radius: 5px;
     font-family: "glory";
     background-color: #FF7600;
@@ -465,134 +465,134 @@
     height: 165px;
     width: 100%;
     overflow: hidden;
-  }
+}
 
-  .cardPerusahaan h6 {
+.cardPerusahaan h6 {
     font-size: 15px;
     font-weight: 600;
-  }
+}
 
-  .cardPerusahaan h1 {
+.cardPerusahaan h1 {
     font-weight: 600;
     margin: 0;
-  }
+}
 
-  .cardPerusahaan span {
+.cardPerusahaan span {
     font-size: 15px;
     font-weight: 600;
-  }
+}
 
-  .cardRasioSiswa {
+.cardRasioSiswa {
     font-family: "glory";
     height: 280px;
     width: 100%;
     overflow: hidden;
-  }
+}
 
-  .cardRasioSiswa h6 {
+.cardRasioSiswa h6 {
     font-size: 16px;
     font-weight: 600;
-  }
+}
 
-  .chartRasioSiswa {
+.chartRasioSiswa {
     margin-left: auto;
     margin-right: auto;
-  }
+}
 
-  .cardRasioGuru {
+.cardRasioGuru {
     font-family: "glory";
     height: 280px;
     width: 100%;
     overflow: hidden;
-  }
+}
 
-  .cardRasioGuru h6 {
+.cardRasioGuru h6 {
     font-size: 16px;
     font-weight: 600;
-  }
+}
 
-  .chartRasioGuru {
+.chartRasioGuru {
     margin-left: auto;
     margin-right: auto;
-  }
+}
 
-  .cardJenisPelatihan {
+.cardJenisPelatihan {
     font-family: "glory";
     height: 280px;
     width: 100%;
     overflow: hidden;
-  }
+}
 
-  .cardJenisPelatihan h6 {
+.cardJenisPelatihan h6 {
     font-size: 16px;
     font-weight: 600;
-  }
+}
 
-  .cardJenisPelatihan i {
+.cardJenisPelatihan i {
     margin-right: 10px;
-  }
+}
 
-  .chartJenisPelatihan {
+.chartJenisPelatihan {
     margin-left: auto;
     margin-right: auto;
-  }
+}
 
-  .cardKunjunganAplikasi {
+.cardKunjunganAplikasi {
     font-size: 12px;
     font-weight: 600;
     font-family: "glory";
     height: 100%;
     width: 100%;
     overflow: hidden;
-  }
+}
 
-  .cardKunjunganAplikasi h5 {
+.cardKunjunganAplikasi h5 {
     font-size: 16px;
     font-weight: 600;
-  }
+}
 
-  .cardKunjunganAplikasi {
+.cardKunjunganAplikasi {
     margin-left: auto;
     margin-right: auto;
-  }
+}
 
-  .cardKunjunganAplikasi i {
+.cardKunjunganAplikasi i {
     margin-right: 10px;
-  }
+}
 
-  .chartKunjunganAplikasi {
+.chartKunjunganAplikasi {
     margin-left: auto;
     margin-right: auto;
-  }
+}
 
-  .cardKelulusanPeserta {
+.cardKelulusanPeserta {
     font-family: "glory";
     height: 100%;
     width: 100%;
     overflow: hidden;
-  }
+}
 
-  .cardKelulusanPeserta h6 {
+.cardKelulusanPeserta h6 {
     font-size: 16px;
     font-weight: 600;
-  }
+}
 
-  .cardKelulusanPeserta i {
+.cardKelulusanPeserta i {
     margin-right: 10px;
-  }
+}
 
-  .chartKelulusanPeserta {
+.chartKelulusanPeserta {
     margin-left: auto;
     margin-right: auto;
-  }
+}
 
 
-  /* End Dashboard Eksekutif */
+/* End Dashboard Eksekutif */
 
 
-  /* Dashboard Penyelenggara */
+/* Dashboard Penyelenggara */
 
-  .cardKelasPelatihan {
+.cardKelasPelatihan {
     border-radius: 5px;
     font-family: "glory";
     background-color: #C34414;
@@ -600,25 +600,25 @@
     height: 100%;
     width: 100%;
     overflow: hidden;
-  }
+}
 
-  .cardKelasPelatihan h6 {
+.cardKelasPelatihan h6 {
     font-size: 15px;
     font-weight: 600;
     margin: 0;
-  }
+}
 
-  .cardKelasPelatihan h1 {
+.cardKelasPelatihan h1 {
     font-weight: 600;
     margin: 0;
-  }
+}
 
-  .cardKelasPelatihan span {
+.cardKelasPelatihan span {
     font-size: 14px;
     font-weight: 600;
-  }
+}
 
-  .cardPelatiahanTerselenggara {
+.cardPelatiahanTerselenggara {
     border-radius: 5px;
     font-family: "glory";
     background-color: #5534A5;
@@ -626,25 +626,25 @@
     height: 100%;
     width: 100%;
     overflow: hidden;
-  }
+}
 
-  .cardPelatiahanTerselenggara h6 {
+.cardPelatiahanTerselenggara h6 {
     font-size: 15px;
     font-weight: 600;
     margin: 0;
-  }
+}
 
-  .cardPelatiahanTerselenggara h1 {
+.cardPelatiahanTerselenggara h1 {
     font-weight: 600;
     margin: 0;
-  }
+}
 
-  .cardPelatiahanTerselenggara span {
+.cardPelatiahanTerselenggara span {
     font-size: 14px;
     font-weight: 600;
-  }
+}
 
-  .cardPelatihanBerjalan {
+.cardPelatihanBerjalan {
     border-radius: 5px;
     font-family: "glory";
     background-color: #205375;
@@ -652,78 +652,78 @@
     height: 100%;
     width: 100%;
     overflow: hidden;
-  }
+}
 
-  .cardPelatihanBerjalan h6 {
+.cardPelatihanBerjalan h6 {
     font-size: 15px;
     font-weight: 600;
     margin: 0;
-  }
+}
 
-  .cardPelatihanBerjalan h1 {
+.cardPelatihanBerjalan h1 {
     font-weight: 600;
     margin: 0;
-  }
+}
 
-  .cardPelatihanBerjalan span {
+.cardPelatihanBerjalan span {
     font-size: 14px;
     font-weight: 600;
-  }
+}
 
-  .cardPerbandinganKelas {
+.cardPerbandinganKelas {
     font-family: "glory";
     height: 100%;
     width: 100%;
     overflow: hidden;
-  }
+}
 
-  .cardPerbandinganKelas h6 {
+.cardPerbandinganKelas h6 {
     font-size: 16px;
     font-weight: 600;
-  }
+}
 
-  .chartPerbandinganKelas {
+.chartPerbandinganKelas {
     width: 350px;
     margin-left: auto;
     margin-right: auto;
-  }
+}
 
-  .cardPesertaPelatihan {
+.cardPesertaPelatihan {
     font-family: "glory";
     height: 100%;
     width: 100%;
     overflow: hidden;
-  }
+}
 
-  .cardPesertaPelatihan h6 {
+.cardPesertaPelatihan h6 {
     font-size: 16px;
     font-weight: 600;
-  }
+}
 
-  .chartPesertaPelatihan {
+.chartPesertaPelatihan {
     width: 350px;
     margin-left: auto;
     margin-right: auto;
-  }
+}
 
-  .cardPerbandinganPeserta {
+.cardPerbandinganPeserta {
     font-family: "glory";
     height: 100%;
     width: 100%;
     overflow: hidden;
-  }
+}
 
-  .cardPerbandinganPeserta h6 {
+.cardPerbandinganPeserta h6 {
     font-size: 16px;
     font-weight: 600;
-  }
+}
 
-  .chartPerbandinganPeserta {
+.chartPerbandinganPeserta {
     margin-left: auto;
     margin-right: auto;
-  }
+}
 
-  .cardPelatihanSelesai {
+.cardPelatihanSelesai {
     margin-top: 100px;
     margin-left: 100px;
     border-radius: 5px;
@@ -733,31 +733,31 @@
     height: auto;
     width: 100%;
     overflow: hidden;
-  }
+}
 
-  .cardPelatihanSelesai h6 {
+.cardPelatihanSelesai h6 {
     font-size: 15px;
     font-weight: 600;
     margin: 0;
-  }
+}
 
-  .cardPelatihanSelesai h1 {
+.cardPelatihanSelesai h1 {
     font-weight: 600;
     margin: 0;
-  }
+}
 
-  .cardPelatihanSelesai span {
+.cardPelatihanSelesai span {
     font-size: 14px;
     font-weight: 600;
-  }
+}
 
 
-  /* End Dashboard Penyelenggara */
+/* End Dashboard Penyelenggara */
 
 
-  /* Dashboard Evaluasi Diklat */
+/* Dashboard Evaluasi Diklat */
 
-  .cardPelatihanTerevaluasi {
+.cardPelatihanTerevaluasi {
     border-radius: 5px;
     font-family: "glory";
     background-color: #7070FF;
@@ -765,23 +765,23 @@
     height: 100%;
     width: 100%;
     overflow: hidden;
-  }
+}
 
-  .cardPelatihanTerevaluasi h6 {
+.cardPelatihanTerevaluasi h6 {
     font-size: 15px;
     font-weight: 600;
-  }
+}
 
-  .cardPelatihanTerevaluasi h1 {
+.cardPelatihanTerevaluasi h1 {
     font-weight: 600;
-  }
+}
 
-  .cardPelatihanTerevaluasi span {
+.cardPelatihanTerevaluasi span {
     font-size: 15px;
     font-weight: 600;
-  }
+}
 
-  .cardBelumTerevaluasi {
+.cardBelumTerevaluasi {
     border-radius: 5px;
     font-family: "glory";
     background-color: #FF5757;
@@ -789,23 +789,23 @@
     height: 100%;
     width: 100%;
     overflow: hidden;
-  }
+}
 
-  .cardBelumTerevaluasi h6 {
+.cardBelumTerevaluasi h6 {
     font-size: 15px;
     font-weight: 600;
-  }
+}
 
-  .cardBelumTerevaluasi h1 {
+.cardBelumTerevaluasi h1 {
     font-weight: 600;
-  }
+}
 
-  .cardBelumTerevaluasi span {
+.cardBelumTerevaluasi span {
     font-size: 15px;
     font-weight: 600;
-  }
+}
 
-  .cardPelatihanSTTPL {
+.cardPelatihanSTTPL {
     border-radius: 5px;
     font-family: "glory";
     background-color: #7070FF;
@@ -813,53 +813,53 @@
     height: 100%;
     width: 100%;
     overflow: hidden;
-  }
+}
 
-  .cardPelatihanSTTPL h6 {
+.cardPelatihanSTTPL h6 {
     font-size: 15px;
     font-weight: 600;
-  }
+}
 
-  .cardPelatihanSTTPL h1 {
+.cardPelatihanSTTPL h1 {
     font-weight: 600;
-  }
+}
 
-  .cardPelatihanSTTPL span {
+.cardPelatihanSTTPL span {
     font-size: 15px;
     font-weight: 600;
-  }
+}
 
-  .cardDimensiLayanan {
+.cardDimensiLayanan {
     padding: 10px;
     border-radius: 10px;
     background-color: white;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     height: auto;
     width: 100%;
-  }
+}
 
-  .cardDimensiLayanan h6 {
+.cardDimensiLayanan h6 {
     margin-top: 40px;
     font-family: "glory";
     font-size: 15px;
     font-weight: 600;
-  }
+}
 
-  .cardEvaluasiPengajar {
+.cardEvaluasiPengajar {
     font-family: "glory";
     font-size: 12px;
     font-weight: 600;
     height: 220px;
     width: 100%;
     overflow: hidden;
-  }
+}
 
-  .cardEvaluasiPengajar h5 {
+.cardEvaluasiPengajar h5 {
     font-weight: 600;
     font-size: 16px;
-  }
+}
 
-  .cardEvaluasiPengajar i {
+.cardEvaluasiPengajar i {
     padding-top: 5px;
     height: 20px;
     width: 20px;
@@ -868,29 +868,29 @@
     font-size: 10px;
     color: white;
     cursor: pointer;
-  }
+}
 
-  .tableEvaluasiPengajar {
+.tableEvaluasiPengajar {
     overflow: scroll;
     height: 200px;
     padding-right: 5px;
-  }
+}
 
-  .cardEvaluasiPenyelenggara {
+.cardEvaluasiPenyelenggara {
     font-family: "glory";
     font-size: 12px;
     font-weight: 600;
     height: 220px;
     width: 100%;
     overflow: hidden;
-  }
+}
 
-  .cardEvaluasiPenyelenggara h5 {
+.cardEvaluasiPenyelenggara h5 {
     font-weight: 600;
     font-size: 16px;
-  }
+}
 
-  .cardEvaluasiPenyelenggara i {
+.cardEvaluasiPenyelenggara i {
     padding-top: 5px;
     height: 20px;
     width: 20px;
@@ -899,15 +899,15 @@
     font-size: 10px;
     color: white;
     cursor: pointer;
-  }
+}
 
-  .tableEvaluasiPenyelenggara {
+.tableEvaluasiPenyelenggara {
     overflow: scroll;
     height: 200px;
     padding-right: 5px;
-  }
+}
 
-  .cardStandarPelayanan {
+.cardStandarPelayanan {
     margin-top: -110px;
     padding: 10px;
     border-radius: 10px;
@@ -915,30 +915,30 @@
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     height: auto;
     width: 100%;
-  }
+}
 
-  .cardStandarPelayanan h6 {
+.cardStandarPelayanan h6 {
     margin-top: 40px;
     font-family: "glory";
     font-size: 15px;
     font-weight: 600;
-  }
+}
 
-  .cardSaran {
+.cardSaran {
     font-family: "glory";
     font-size: 12px;
     font-weight: 600;
     height: 220px;
     width: 100%;
     overflow: hidden;
-  }
+}
 
-  .cardSaran h5 {
+.cardSaran h5 {
     font-weight: 600;
     font-size: 16px;
-  }
+}
 
-  .cardSaran i {
+.cardSaran i {
     padding-top: 5px;
     height: 20px;
     width: 20px;
@@ -947,29 +947,29 @@
     font-size: 10px;
     color: white;
     cursor: pointer;
-  }
+}
 
-  .tableSaran {
+.tableSaran {
     overflow: scroll;
     height: 200px;
     padding-right: 5px;
-  }
+}
 
-  .cardSertifikatTerbit {
+.cardSertifikatTerbit {
     font-family: "glory";
     font-size: 12px;
     font-weight: 600;
     height: 220px;
     width: 100%;
     overflow: hidden;
-  }
+}
 
-  .cardSertifikatTerbit h5 {
+.cardSertifikatTerbit h5 {
     font-weight: 600;
     font-size: 16px;
-  }
+}
 
-  .cardSertifikatTerbit i {
+.cardSertifikatTerbit i {
     padding-top: 5px;
     height: 20px;
     width: 20px;
@@ -978,15 +978,15 @@
     font-size: 10px;
     color: white;
     cursor: pointer;
-  }
+}
 
-  .tableSertifikatTerbit {
+.tableSertifikatTerbit {
     overflow: scroll;
     height: 200px;
     padding-right: 5px;
-  }
+}
 
-  .cardPredikatKelulusan {
+.cardPredikatKelulusan {
     margin-top: -220px;
     padding: 10px;
     border-radius: 10px;
@@ -994,754 +994,728 @@
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     height: auto;
     width: 100%;
-  }
+}
 
-  .cardPredikatKelulusan h6 {
+.cardPredikatKelulusan h6 {
     margin-top: 60px;
     font-family: "glory";
     font-size: 15px;
     font-weight: 600;
-  }
+}
 
-  .tablePredikatKelulusan {
+.tablePredikatKelulusan {
     overflow: scroll;
     height: 130px;
     padding-right: 5px;
     font-family: "glory";
     font-size: 12px;
     font-weight: 600;
-  }
+}
 
-  .textPredikatKelulusan {
+.textPredikatKelulusan {
     text-align: start;
     font-size: 12px;
     font-weight: 600;
-  }
+}
 
 
-  /* End Dashboard Evaluasi Diklat */
+/* End Dashboard Evaluasi Diklat */
 
-  /* Responsive */
-  /* Dashboard*/
-  @media only screen and (min-width: 400px) and (max-width: 499px) {
+/* Responsive */
+/* Dashboard*/
+@media only screen and (min-width: 400px) and (max-width: 499px) {
     .bgDashboard {
-      background: none;
-      width: 100%;
-      height: 100%;
+        background: none;
+        width: 100%;
+        height: 100%;
     }
 
     .bgDashboard:hover {
-      width: 100%;
+        width: 100%;
     }
 
     .logoDashboard hr {
-      display: none;
+        display: none;
     }
 
     .logoDashboard {
-      margin-left: 10px;
+        margin-left: 10px;
     }
 
     .iconDashboard {
-      display: none;
+        display: none;
     }
 
     .textDashboard {
-      margin-top: -35px;
-      text-align: center;
+        margin-top: -35px;
+        text-align: center;
     }
 
     .textDashboard h4 {
-      font-size: 30px;
+        font-size: 30px;
     }
 
     .akunButtonDashboard {
-      position: absolute;
-      top: 35px;
-      left: 65%;
+        position: absolute;
+        top: 35px;
+        left: 65%;
     }
 
     .menuDashboard {
-      position: absolute;
-      top: 20px;
-      left: 90%;
+        position: absolute;
+        top: 20px;
+        left: 90%;
     }
 
     .marginCard {
-      margin-bottom: 20px;
+        margin-bottom: 20px;
     }
 
     .cardRasioSiswa {
-      height: 320px;
+        height: 320px;
     }
 
     .cardRasioGuru {
-      height: 320px;
+        height: 320px;
     }
 
     .cardPelatihanSelesai {
-      margin: 0;
+        margin: 0;
     }
-  }
+}
 
-  @media only screen and (min-width: 500px) and (max-width: 575px) {
+@media only screen and (min-width: 500px) and (max-width: 575px) {
     .bgDashboard {
-      background: none;
-      width: 100%;
-      height: 100%;
+        background: none;
+        width: 100%;
+        height: 100%;
     }
 
     .bgDashboard:hover {
-      width: 100%;
+        width: 100%;
     }
 
     .logoDashboard hr {
-      display: none;
+        display: none;
     }
 
     .logoDashboard {
-      margin-left: 10px;
+        margin-left: 10px;
     }
 
     .iconDashboard {
-      display: none;
+        display: none;
     }
 
     .textDashboard {
-      margin-top: -35px;
-      text-align: center;
+        margin-top: -35px;
+        text-align: center;
     }
 
     .textDashboard h4 {
-      font-size: 30px;
+        font-size: 30px;
     }
 
     .akunButtonDashboard {
-      position: absolute;
-      top: 35px;
-      left: 72%;
+        position: absolute;
+        top: 35px;
+        left: 72%;
     }
 
     .menuDashboard {
-      position: absolute;
-      top: 20px;
-      left: 93%;
+        position: absolute;
+        top: 20px;
+        left: 93%;
     }
 
     .marginCard {
-      margin-bottom: 20px;
+        margin-bottom: 20px;
     }
 
     .cardRasioSiswa {
-      height: 360px;
+        height: 360px;
     }
 
     .cardRasioGuru {
-      height: 360px;
+        height: 360px;
     }
 
     .cardPelatihanSelesai {
-      margin: 0;
+        margin: 0;
     }
-  }
+}
 
-  @media only screen and (min-width: 576px) and (max-width: 767px) {
+@media only screen and (min-width: 576px) and (max-width: 767px) {
     .bgDashboard {
-      background: none;
-      width: 100%;
-      height: 100%;
+        background: none;
+        width: 100%;
+        height: 100%;
     }
 
     .bgDashboard:hover {
-      width: 100%;
+        width: 100%;
     }
 
     .logoDashboard hr {
-      display: none;
+        display: none;
     }
 
     .logoDashboard {
-      margin-left: 10px;
+        margin-left: 10px;
     }
 
     .iconDashboard {
-      display: none;
+        display: none;
     }
 
     .textDashboard {
-      margin-top: -35px;
-      text-align: center;
+        margin-top: -35px;
+        text-align: center;
     }
 
     .textDashboard h4 {
-      font-size: 30px;
+        font-size: 30px;
     }
 
     .akunButtonDashboard {
-      position: absolute;
-      top: 35px;
-      left: 74%;
+        position: absolute;
+        top: 35px;
+        left: 74%;
     }
 
     .menuDashboard {
-      position: absolute;
-      top: 20px;
-      left: 93%;
+        position: absolute;
+        top: 20px;
+        left: 93%;
     }
 
     .marginCard {
-      margin-bottom: 20px;
+        margin-bottom: 20px;
     }
 
     .cardRasioSiswa {
-      height: 340px;
+        height: 340px;
     }
 
     .cardRasioGuru {
-      height: 340px;
+        height: 340px;
     }
 
     .cardPelatihanSelesai {
-      margin: 0;
+        margin: 0;
     }
-  }
+}
 
-  @media only screen and (min-width: 768px) and (max-width: 991px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
     .bgDashboard {
-      background: none;
-      width: 100%;
-      height: 100%;
+        background: none;
+        width: 100%;
+        height: 100%;
     }
 
     .bgDashboard:hover {
-      width: 100%;
+        width: 100%;
     }
 
     .logoDashboard hr {
-      display: none;
+        display: none;
     }
 
     .logoDashboard {
-      margin-left: 10px;
+        margin-left: 10px;
     }
 
     .iconDashboard {
-      display: none;
+        display: none;
     }
 
     .textDashboard {
-      margin-top: -35px;
-      text-align: center;
+        margin-top: -35px;
+        text-align: center;
     }
 
     .textDashboard h4 {
-      font-size: 30px;
+        font-size: 30px;
     }
 
     .akunButtonDashboard {
-      position: absolute;
-      top: 35px;
-      left: 80%;
+        position: absolute;
+        top: 35px;
+        left: 80%;
     }
 
     .menuDashboard {
-      position: absolute;
-      top: 20px;
-      left: 95%;
+        position: absolute;
+        top: 20px;
+        left: 95%;
     }
 
     .marginCard {
-      margin-bottom: 20px;
+        margin-bottom: 20px;
     }
 
     .textCardSertifikat {
-      height: 285px;
+        height: 285px;
     }
 
     .textCardKursus {
-      height: 280px;
+        height: 280px;
     }
 
     .cardRasioSiswa {
-      height: 250px;
+        height: 250px;
     }
 
     .cardRasioGuru {
-      height: 250px;
+        height: 250px;
     }
-  }
+}
 
-  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
     .bgDashboard {
-      background: none;
-      width: 100%;
-      height: 100%;
+        background: none;
+        width: 100%;
+        height: 100%;
     }
 
     .bgDashboard:hover {
-      width: 100%;
+        width: 100%;
     }
 
     .logoDashboard hr {
-      display: none;
+        display: none;
     }
 
     .logoDashboard {
-      margin-left: 10px;
+        margin-left: 10px;
     }
 
     .iconDashboard {
-      display: none;
+        display: none;
     }
 
     .textDashboard {
-      margin-top: -35px;
-      text-align: center;
+        margin-top: -35px;
+        text-align: center;
     }
 
     .textDashboard h4 {
-      font-size: 30px;
+        font-size: 30px;
     }
 
     .akunButtonDashboard {
-      position: absolute;
-      top: 35px;
-      left: 85%;
+        position: absolute;
+        top: 35px;
+        left: 85%;
     }
 
     .menuDashboard {
-      position: absolute;
-      top: 20px;
-      left: 96%;
+        position: absolute;
+        top: 20px;
+        left: 96%;
     }
 
     .marginCard {
-      margin-bottom: 20px;
+        margin-bottom: 20px;
     }
 
     .marginCardSiswa {
-      margin-top: 0px;
+        margin-top: 0px;
     }
-  }
+}
 
-  /* End Dashboard */
-  /* End Responsive */
+/* End Dashboard */
+/* End Responsive */
 </style>
 @endsection
 @section('content')
 <div class="content-wrapper">
-  <div class="row">
-    <div class="col-md-2 mb-2">
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Import Data
-      </button>
+    <div class="row justify-content-start">
+        <div class="col-12 col-xl-4">
+            <div class="cardPelatihanTerevaluasi">
+                <div class="shadow rounded p-3 h-100">
+                    <div class="row">
+                        <div class="col-12">
+                            <h6>Pelatihan yang telat dievaluasi</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 mt-3 text-center">
+                            <h1>26</h1>
+                            <span>Daring</span>
+                        </div>
+                        <div class="col-4 mt-3 text-center">
+                            <h1>4</h1>
+                            <span>Luring</span>
+                        </div>
+                        <div class="col-4 mt-3 text-center">
+                            <h1>2</h1>
+                            <span>Blended</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-xl-4">
+            <div class="cardBelumTerevaluasi">
+                <div class="shadow rounded p-3 h-100">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <h6>Pelatihan yang belum dievaluasi</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 mt-3 text-center">
+                            <h1>0</h1>
+                            <span>Daring</span>
+                        </div>
+                        <div class="col-4 mt-3 text-center">
+                            <h1>1</h1>
+                            <span>Luring</span>
+                        </div>
+                        <div class="col-4 mt-3 text-center">
+                            <h1>0</h1>
+                            <span>Blended</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-xl-4">
+            <div class="cardPelatihanSTTPL">
+                <div class="shadow rounded p-3 h-100">
+                    <div class="row">
+                        <div class="col-12">
+                            <h6>Pelatihan STTPL yang telah diterbitkan</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 mt-3 text-center">
+                            <h1>477</h1>
+                            <span>Daring</span>
+                        </div>
+                        <div class="col-4 mt-3 text-center">
+                            <h1>50</h1>
+                            <span>Luring</span>
+                        </div>
+                        <div class="col-4 mt-3 text-center">
+                            <h1>31</h1>
+                            <span>Blended</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-12 col-xl-4">
+            <div class="cardDimensiLayanan">
+                <div class="row">
+                    <div class="col-2">
+                        <h6>Dimensi Layanan</h6>
+                    </div>
+                    <div class="col-10">
+                        <Image src="{{asset('guest/assets/images/dimensi-layanan.jpeg')}}" width="310px"
+                            height="120px" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-xl-4">
+            <div class="shadow p-3 bg-white rounded h-100">
+                <div class="cardEvaluasiPengajar">
+                    <h5>Hasil Evaluasi terhadap Pengajar</h5>
+                    <div class="tableEvaluasiPengajar">
+                        <table class="table table-striped table-sm text-center">
+                            <thead>
+                                <tr>
+                                    <th scope="col">No.</th>
+                                    <th scope="col">Nama Pengajar</th>
+                                    <th scope="col">Rata - Rata</th>
+                                    <th scope="col">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td><i class="fa-solid fa-eye"></i></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td><i class="fa-solid fa-eye"></i></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td><i class="fa-solid fa-eye"></i></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td><i class="fa-solid fa-eye"></i></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td><i class="fa-solid fa-eye"></i></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">6</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td><i class="fa-solid fa-eye"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-xl-4">
+            <div class="shadow p-3 bg-white rounded h-100">
+                <div class="cardEvaluasiPenyelenggara">
+                    <h5>Hasil Evaluasi Penyelenggara Pelatihan</h5>
+                    <div class="tableEvaluasiPenyelenggara">
+                        <table class="table table-striped table-sm text-center">
+                            <thead>
+                                <tr>
+                                    <th scope="col">No.</th>
+                                    <th scope="col">Nama Pengajar</th>
+                                    <th scope="col">Rata - Rata</th>
+                                    <th scope="col">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td><i class="fa-solid fa-eye"></i></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td><i class="fa-solid fa-eye"></i></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td><i class="fa-solid fa-eye"></i></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td><i class="fa-solid fa-eye"></i></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td><i class="fa-solid fa-eye"></i></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">6</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td><i class="fa-solid fa-eye"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-12 col-xl-4">
+            <div class="cardStandarPelayanan">
+                <div class="row">
+                    <div class="col-2">
+                        <h6>Standar Pelayanan</h6>
+                    </div>
+
+                    <div class="col-10">
+                        <Image src="{{asset('guest/assets/images/standar-pelayanan.jpeg')}}" width="310px"
+                            height="130px" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-xl-4">
+            <div class="shadow p-3 bg-white rounded h-100">
+                <div class="cardSaran">
+                    <h5>Saran/Masukan/Testimoni Peserta</h5>
+                    <div class="tableSaran">
+                        <table class="table table-striped table-sm text-center">
+                            <thead>
+                                <tr>
+                                    <th scope="col">No.</th>
+                                    <th scope="col">Nama Pengajar</th>
+                                    <th scope="col">Rata - Rata</th>
+                                    <th scope="col">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td><i class="fa-solid fa-eye"></i></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td><i class="fa-solid fa-eye"></i></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td><i class="fa-solid fa-eye"></i></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td><i class="fa-solid fa-eye"></i></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td><i class="fa-solid fa-eye"></i></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">6</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td><i class="fa-solid fa-eye"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-xl-4">
+            <div class="shadow p-3 bg-white rounded h-100">
+                <div class="cardSertifikatTerbit">
+                    <h5>Sertifikat yang sudah diterbitkan</h5>
+                    <div class="tableSertifikatTerbit">
+                        <table class="table table-striped table-sm text-center">
+                            <thead>
+                                <tr>
+                                    <th scope="col">No.</th>
+                                    <th scope="col">Nama Pengajar</th>
+                                    <th scope="col">Rata - Rata</th>
+                                    <th scope="col">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td><i class="fa-solid fa-eye"></i></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td><i class="fa-solid fa-eye"></i></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td><i class="fa-solid fa-eye"></i></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td><i class="fa-solid fa-eye"></i></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td><i class="fa-solid fa-eye"></i></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">6</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td><i class="fa-solid fa-eye"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-  </div>
-  <div class="row justify-content-start">
-    <div class="col-12 col-xl-4">
-      <div class="cardPelatihanTerevaluasi">
-        <div class="shadow rounded p-3 h-100">
-          <div class="row">
-            <div class="col-12">
-              <h6>Pelatihan yang telat dievaluasi</h6>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-4 mt-3 text-center">
-              <h1>26</h1>
-              <span>Daring</span>
-            </div>
-            <div class="col-4 mt-3 text-center">
-              <h1>4</h1>
-              <span>Luring</span>
-            </div>
-            <div class="col-4 mt-3 text-center">
-              <h1>2</h1>
-              <span>Blended</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-xl-4">
-      <div class="cardBelumTerevaluasi">
-        <div class="shadow rounded p-3 h-100">
-          <div class="row">
-            <div class="col-xl-12">
-              <h6>Pelatihan yang belum dievaluasi</h6>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-4 mt-3 text-center">
-              <h1>0</h1>
-              <span>Daring</span>
-            </div>
-            <div class="col-4 mt-3 text-center">
-              <h1>1</h1>
-              <span>Luring</span>
-            </div>
-            <div class="col-4 mt-3 text-center">
-              <h1>0</h1>
-              <span>Blended</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-xl-4">
-      <div class="cardPelatihanSTTPL">
-        <div class="shadow rounded p-3 h-100">
-          <div class="row">
-            <div class="col-12">
-              <h6>Pelatihan STTPL yang telah diterbitkan</h6>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-4 mt-3 text-center">
-              <h1>477</h1>
-              <span>Daring</span>
-            </div>
-            <div class="col-4 mt-3 text-center">
-              <h1>50</h1>
-              <span>Luring</span>
-            </div>
-            <div class="col-4 mt-3 text-center">
-              <h1>31</h1>
-              <span>Blended</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row mt-3">
-    <div class="col-12 col-xl-4">
-      <div class="cardDimensiLayanan">
-        <div class="row">
-          <div class="col-2">
-            <h6>Dimensi Layanan</h6>
-          </div>
-          <div class="col-10">
-            <Image src="{{asset('guest/assets/images/dimensi-layanan.jpeg')}}" width="310px" height="120px" />
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-xl-4">
-      <div class="shadow p-3 bg-white rounded h-100">
-        <div class="cardEvaluasiPengajar">
-          <h5>Hasil Evaluasi terhadap Pengajar</h5>
-          <div class="tableEvaluasiPengajar">
-            <table class="table table-striped table-sm text-center">
-              <thead>
-                <tr>
-                  <th scope="col">No.</th>
-                  <th scope="col">Nama Pengajar</th>
-                  <th scope="col">Rata - Rata</th>
-                  <th scope="col">Aksi</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td></td>
-                  <td></td>
-                  <td><i class="fa-solid fa-eye"></i></td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td></td>
-                  <td></td>
-                  <td><i class="fa-solid fa-eye"></i></td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td></td>
-                  <td></td>
-                  <td><i class="fa-solid fa-eye"></i></td>
-                </tr>
-                <tr>
-                  <th scope="row">4</th>
-                  <td></td>
-                  <td></td>
-                  <td><i class="fa-solid fa-eye"></i></td>
-                </tr>
-                <tr>
-                  <th scope="row">5</th>
-                  <td></td>
-                  <td></td>
-                  <td><i class="fa-solid fa-eye"></i></td>
-                </tr>
-                <tr>
-                  <th scope="row">6</th>
-                  <td></td>
-                  <td></td>
-                  <td><i class="fa-solid fa-eye"></i></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-xl-4">
-      <div class="shadow p-3 bg-white rounded h-100">
-        <div class="cardEvaluasiPenyelenggara">
-          <h5>Hasil Evaluasi Penyelenggara Pelatihan</h5>
-          <div class="tableEvaluasiPenyelenggara">
-            <table class="table table-striped table-sm text-center">
-              <thead>
-                <tr>
-                  <th scope="col">No.</th>
-                  <th scope="col">Nama Pengajar</th>
-                  <th scope="col">Rata - Rata</th>
-                  <th scope="col">Aksi</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td></td>
-                  <td></td>
-                  <td><i class="fa-solid fa-eye"></i></td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td></td>
-                  <td></td>
-                  <td><i class="fa-solid fa-eye"></i></td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td></td>
-                  <td></td>
-                  <td><i class="fa-solid fa-eye"></i></td>
-                </tr>
-                <tr>
-                  <th scope="row">4</th>
-                  <td></td>
-                  <td></td>
-                  <td><i class="fa-solid fa-eye"></i></td>
-                </tr>
-                <tr>
-                  <th scope="row">5</th>
-                  <td></td>
-                  <td></td>
-                  <td><i class="fa-solid fa-eye"></i></td>
-                </tr>
-                <tr>
-                  <th scope="row">6</th>
-                  <td></td>
-                  <td></td>
-                  <td><i class="fa-solid fa-eye"></i></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row mt-3">
-    <div class="col-12 col-xl-4">
-      <div class="cardStandarPelayanan">
-        <div class="row">
-          <div class="col-2">
-            <h6>Standar Pelayanan</h6>
-          </div>
+    <div class="row mt-3">
+        <div class="col-12 col-xl-4">
+            <div class="cardPredikatKelulusan">
+                <div class="row">
+                    <div class="col-3">
+                        <h6>Predikat dan Kriteria Kelulusan</h6>
+                    </div>
 
-          <div class="col-10">
-            <Image src="{{asset('guest/assets/images/standar-pelayanan.jpeg')}}" width="310px" height="130px" />
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-xl-4">
-      <div class="shadow p-3 bg-white rounded h-100">
-        <div class="cardSaran">
-          <h5>Saran/Masukan/Testimoni Peserta</h5>
-          <div class="tableSaran">
-            <table class="table table-striped table-sm text-center">
-              <thead>
-                <tr>
-                  <th scope="col">No.</th>
-                  <th scope="col">Nama Pengajar</th>
-                  <th scope="col">Rata - Rata</th>
-                  <th scope="col">Aksi</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td></td>
-                  <td></td>
-                  <td><i class="fa-solid fa-eye"></i></td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td></td>
-                  <td></td>
-                  <td><i class="fa-solid fa-eye"></i></td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td></td>
-                  <td></td>
-                  <td><i class="fa-solid fa-eye"></i></td>
-                </tr>
-                <tr>
-                  <th scope="row">4</th>
-                  <td></td>
-                  <td></td>
-                  <td><i class="fa-solid fa-eye"></i></td>
-                </tr>
-                <tr>
-                  <th scope="row">5</th>
-                  <td></td>
-                  <td></td>
-                  <td><i class="fa-solid fa-eye"></i></td>
-                </tr>
-                <tr>
-                  <th scope="row">6</th>
-                  <td></td>
-                  <td></td>
-                  <td><i class="fa-solid fa-eye"></i></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-xl-4">
-      <div class="shadow p-3 bg-white rounded h-100">
-        <div class="cardSertifikatTerbit">
-          <h5>Sertifikat yang sudah diterbitkan</h5>
-          <div class="tableSertifikatTerbit">
-            <table class="table table-striped table-sm text-center">
-              <thead>
-                <tr>
-                  <th scope="col">No.</th>
-                  <th scope="col">Nama Pengajar</th>
-                  <th scope="col">Rata - Rata</th>
-                  <th scope="col">Aksi</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td></td>
-                  <td></td>
-                  <td><i class="fa-solid fa-eye"></i></td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td></td>
-                  <td></td>
-                  <td><i class="fa-solid fa-eye"></i></td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td></td>
-                  <td></td>
-                  <td><i class="fa-solid fa-eye"></i></td>
-                </tr>
-                <tr>
-                  <th scope="row">4</th>
-                  <td></td>
-                  <td></td>
-                  <td><i class="fa-solid fa-eye"></i></td>
-                </tr>
-                <tr>
-                  <th scope="row">5</th>
-                  <td></td>
-                  <td></td>
-                  <td><i class="fa-solid fa-eye"></i></td>
-                </tr>
-                <tr>
-                  <th scope="row">6</th>
-                  <td></td>
-                  <td></td>
-                  <td><i class="fa-solid fa-eye"></i></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row mt-3">
-    <div class="col-12 col-xl-4">
-      <div class="cardPredikatKelulusan">
-        <div class="row">
-          <div class="col-3">
-            <h6>Predikat dan Kriteria Kelulusan</h6>
-          </div>
-
-          <div class="col-9">
-            <div class="tablePredikatKelulusan">
-              <table class="table table-striped table-sm text-center">
-                <thead>
-                  <tr>
-                    <th scope="col">No.</th>
-                    <th scope="col">Skala Nilai</th>
-                    <th scope="col">Predikat</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">4</th>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
+                    <div class="col-9">
+                        <div class="tablePredikatKelulusan">
+                            <table class="table table-striped table-sm text-center">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">No.</th>
+                                        <th scope="col">Skala Nilai</th>
+                                        <th scope="col">Predikat</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">4</th>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="textPredikatKelulusan">Peserta yang memperoleh predikat minimal cukup akan diberikan
+                            sertifikat</p>
+                    </div>
+                </div>
             </div>
-            <p class="textPredikatKelulusan">Peserta yang memperoleh predikat minimal cukup akan diberikan sertifikat</p>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
-</div>
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Import Data Evaluasi</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form action="" method="POST" enctype="multipart/form-data">
-          <label for="gambar" class="form-label">Import</label>
-          <input type="file" name="file" class="form-control">
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Import</button>
-      </div>
-    </div>
-  </div>
 </div>
 @endsection
 

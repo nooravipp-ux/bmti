@@ -21,6 +21,7 @@ use App\Http\Controllers\JenisPMandiriController;
 use App\Http\Controllers\KategoriKursusController;
 use App\Http\Controllers\MasterListDataController;
 use App\Http\Controllers\PerusahaanMitraController;
+use App\Http\Controllers\ImportDataEvaluasiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,6 +53,8 @@ Route::get('/alur-pembelajaran', function () {
 Route::get('login', function () {
     return view('auth.login');
 });
+
+Route::post('/import', [ImportDataEvaluasiController::class, 'importExcel'])->name('import');
 
 Route::group(['middleware' => 'auth'], function () {
 
