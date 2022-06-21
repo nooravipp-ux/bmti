@@ -21,7 +21,7 @@ class JenisKursusController extends Controller
         $data = jenisKursus::create([
             'nama' => $request->nama,
         ]);
-        return redirect('jenis-kursus');
+        return redirect('/admin/jenis-kursus');
     }
     public function edit($id)
     {
@@ -35,14 +35,14 @@ class JenisKursusController extends Controller
             'nama' => $request->nama
         ]);
 
-        return redirect('/jenis-kursus');
+        return redirect('/admin/jenis-kursus');
     }
     public function delete($id)
     {
         $data = jenisKursus::find($id);
         $data->delete();
 
-        return redirect('/jenis-kursus');
+        return redirect('/admin/jenis-kursus');
     
     }
 }

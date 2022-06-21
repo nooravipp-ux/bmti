@@ -25,7 +25,7 @@ class QuizController extends Controller
             'durasi' => $request->durasi,
         ]);
 
-        return redirect('/quiz');
+        return redirect('/admin/quiz');
     }
     public function edit($id)
     {
@@ -41,14 +41,14 @@ class QuizController extends Controller
             'durasi' => $request->durasi,
         ]);
 
-        return redirect('/quiz');
+        return redirect('/admin/quiz');
     }
     public function delete($id)
     {
         $data = Quiz::find($id);
         $data->delete();
 
-        return redirect('/quiz');
+        return redirect('/admin/quiz');
     
     }
 }

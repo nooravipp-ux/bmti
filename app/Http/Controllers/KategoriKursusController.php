@@ -24,7 +24,7 @@ class KategoriKursusController extends Controller
             'nama' => $request->nama,
         ]);
 
-        return redirect('/kategori-kursus');
+        return redirect('/admin/kategori-kursus');
     }
     public function edit($id)
     {
@@ -39,14 +39,14 @@ class KategoriKursusController extends Controller
             'nama' => $request->nama,
         ]);
 
-        return redirect('/kategori-kursus');
+        return redirect('/admin/kategori-kursus');
     }
     public function delete($id)
     {
         $data = KategoriKursus::find($id);
         $data->delete();
 
-        return redirect('/kategori-kursus');
+        return redirect('/admin/kategori-kursus');
     
     }
 }
