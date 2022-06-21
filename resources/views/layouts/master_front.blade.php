@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Glory&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" />
-    <link rel="stylesheet" href="{{asset('guest/assets/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
     <link rel="stylesheet" href="{{asset('guest/global.css')}}">
     <link rel="stylesheet" href="{{asset('guest/responsive.css')}}">
     @yield('custom-css')
@@ -67,9 +67,9 @@
                 <div class="col-3 col-md-2 col-xl-1 order-2 order-xl-3">
                     <div class="akun-button text-center">
                         @if(auth()->user())
-                        <a href="{{url('dashboard')}}" class="btn-lg" role="button" aria-pressed="true">Dashboard</a>
+                        <a href="{{url('dashboard')}}" class="btn-lg btn-1" role="button" aria-pressed="true">Dashboard</a>
                         @else
-                        <a href="{{url('login')}}" class="btn-lg" role="button" aria-pressed="true">LOGIN</a>
+                        <a class="btn-lg" role="button" aria-pressed="true" onclick="onClickLogin()">LOGIN</a>
                         @endif
                     </div>
                 </div>
@@ -173,6 +173,173 @@
             </a>
         </div>
     </div>
+
+    <div id="login" class="d-none">
+        <div class="bg-login">
+            <div class="login-container">
+                <div class="d-flex">
+                    <div class="left-box mt-4">
+                        <image class="logo-login" src="{{asset('guest/assets/images/logo-header.png')}}" width="140px" height="100px"/>
+                        <h2 class="login-title">LOGIN</h2>
+                        <!-- Session Status -->
+                        <x-auth-session-status class="mb-4" :status="session('status')" />
+
+                        <!-- Validation Errors -->
+                        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+
+                        <form class="mt-5" method="POST" action="{{ route('login') }}">
+                            @csrf
+
+                            <!-- Email Address -->
+                            <div class="form-login">
+                                <x-input class="email" id="email" class="block mt-1 w-full" placeholder="Masukan Username / E-mail" type="email" name="email" :value="old('email')" required autofocus/>
+                            </div>
+
+                            <!-- Password -->
+                            <div class="form-login mt-5">
+                                <x-input id="password" class="block mt-1 w-full" placeholder="Masukan Password" type="password" name="password" required autocomplete="current-password" />
+                            </div>
+
+                            <!-- Remember Me -->
+                            <div class="row justify-content-between mt-3">
+                                <div class="col-5">
+                                    <label for="remember_me" class="inline-flex items-center">
+                                        <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
+                                        <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                                    </label>
+                                </div>
+                                <div class="col-3">
+                                    @if (Route::has('password.request'))
+                                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
+                                        {{ __('Lupa Password ?') }}
+                                    </a>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="row justify-content-center mt-5">
+                                <x-button class="btn-login rounded-pill text-dark font-weight-bold">
+                                    {{ __('Masuk') }}
+                                </x-button>
+                            </div>
+
+                            <div class="row justify-content-center mt-3">
+                                <p>Atau</p>
+                            </div>
+                        </form>
+
+                        <div class="row justify-content-center mt-2 clik-register">                                <span>Belum Memiliki Akun ?<span>
+                            <button onclick="onClickRegister()">Daftar</button>
+                        </div>
+                    </div>
+                    <div class="right-box">
+                        <div class="row pt-3">
+                            <div class="col-5 d-flex">
+                                <div class="row mt-3">
+                                    <div class="col-sm-12 col-xl-5 logo-login-right-1">
+                                        <image src="{{asset('guest/assets/images/logo-kemdikbud.png')}}" width="70px" height="70px"/>
+                                    </div>
+                                    <div class="col-12 col-xl-7 text-logo-right-1 mt-1">
+                                        <span>Kementrian Pendidikan, Kebudayaan, Riset dan Teknologi</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-5 d-flex">
+                                <div class="row mt-3">
+                                    <div class="col-12 col-xl-5 logo-login-right-2">
+                                        <image src="{{asset('guest/assets/images/logo-bmti.png')}}" width="70px" height="70px"/>
+                                    </div>
+                                    <div class="col-12 col-xl-7 text-logo-right-2 mt-1">
+                                        <span>BBPPMPV BMTI <br/> Bidang Mesin dan Teknik Industri</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2 d-flex">
+                                <button class="btn-closed btn-danger btn-sm btn-circle" onclick="onClickCloseLogin()">X</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="register" class="d-none">
+        <div class="bg-register">
+            <div class="register-container">
+                <div class="d-flex">
+                    <div class="left-box mt-4">
+                        <image class="logo-login" src="{{asset('guest/assets/images/logo-header.png')}}" width="140px" height="100px"/>
+                        <h2 class="login-title">DAFTAR</h2>
+                         <!-- Validation Errors -->
+                        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+
+                        <form method="POST" action="{{ route('register') }}">
+                            @csrf
+
+                            <!-- Name -->
+                            <div class="form-login mt-4">
+                                <x-input id="name" class="block mt-1 w-full" placeholder="Masukan Nama Lengkap" type="text" name="name" :value="old('name')" required autofocus />
+                            </div>
+
+                            <!-- Email Address -->
+                            <div class="form-login mt-4">
+                                <x-input id="email" class="block mt-1 w-full" placeholder="Masukan E-mail" type="email" name="email" :value="old('email')" required />
+                            </div>
+
+                            <!-- Password -->
+                            <div class="form-login mt-4">
+                                <x-input id="password" class="block mt-1 w-full" placeholder="Masukan Password" type="password" name="password" required autocomplete="new-password" />
+                            </div>
+
+                            <!-- Confirm Password -->
+                            <div class="form-login mt-4">
+                                <x-input id="password_confirmation" class="block mt-1 w-full" placeholder="Konfirmasi Password" type="password" name="password_confirmation" required />
+                            </div>
+
+                            <div class="row justify-content-end mt-3 clik-sudah-daftar">
+                                <button onclick="onClickDaftar()">Sudah Terdaftar ?</button>
+                            </div>
+
+                            <div class="row justify-content-center mt-5 clik-daftar">
+                                <x-button class="btn-login rounded-pill text-dark font-weight-bold">
+                                    {{ __('Daftar') }}
+                                </x-button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="right-box">
+                        <div class="row pt-3">
+                            <div class="col-5 d-flex">
+                                <div class="row mt-3">
+                                    <div class="col-sm-12 col-xl-5 logo-login-right-1">
+                                        <image src="{{asset('guest/assets/images/logo-kemdikbud.png')}}" width="70px" height="70px"/>
+                                    </div>
+                                    <div class="col-12 col-xl-7 text-logo-right-1 mt-1">
+                                        <span>Kementrian Pendidikan, Kebudayaan, Riset dan Teknologi</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-5 d-flex">
+                                <div class="row mt-3">
+                                    <div class="col-12 col-xl-5 logo-login-right-2">
+                                        <image src="{{asset('guest/assets/images/logo-bmti.png')}}" width="70px" height="70px"/>
+                                    </div>
+                                    <div class="col-12 col-xl-7 text-logo-right-2 mt-1">
+                                        <span>BBPPMPV BMTI <br/> Bidang Mesin dan Teknik Industri</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2 d-flex">
+                                <button class="btn-closed btn-danger btn-sm btn-circle" onclick="onClickCloseRegister()">X</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="{{asset('guest/assets/bootstrap/js/bootstrap.min.js')}}"></script>
@@ -190,6 +357,23 @@
                 }
             })
         })
+        function onClickLogin() {
+            $('#login').attr('class', '');
+        }
+        function onClickCloseLogin() {
+            $('#login').addClass('d-none');
+        }
+        function onClickRegister() {
+            $('#login').addClass('d-none');
+            $('#register').attr('class', '');
+        }
+        function onClickCloseRegister() {
+            $('#register').addClass('d-none');
+        }
+        function onClickDaftar() {
+            $('#register').addClass('d-none');
+            $('#login').attr('class', '');
+        }
     </script>
 </body>
 

@@ -124,11 +124,24 @@
                         </div>
                     </div>
                     <div class="text-center">
-                        <button class="open-button tablinks myButton1">Lihat Alur Pembelajaran</button>
+                        <button class="open-button tablinks myButton1" onclick="onClickAlur()">Lihat Alur Pembelajaran</button>
                         &nbsp;&nbsp;&nbsp;
                         <button class="tablinks myButton1" onclick="onClickKembaliKeawal()">Kembali</button>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="alur" class="d-none">
+    <div class="d-flex bg-alur">
+        <div class="col-md-12">
+            <div class="img-alur">
+                <image class="rounded" src="{{asset('guest/assets/images/alur.png')}}" alt="" width="1300" height="600" />
+            </div>
+            <div class="btn-close">
+                <button class="btn btn-danger btn-sm btn-circle" onclick="onClickCloseAlur()">X</button>
             </div>
         </div>
     </div>
@@ -181,6 +194,12 @@
     function onClickKembaliKeawal() {
         $('#step1').attr('class', '');
         $('#step8').addClass('d-none');
+    }
+    function onClickAlur() {
+        $('#alur').attr('class', '');
+    }
+    function onClickCloseAlur() {
+        $('#alur').addClass('d-none');
     }
 </script>
 @endsection

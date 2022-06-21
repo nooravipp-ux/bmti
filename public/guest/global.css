@@ -1,13 +1,19 @@
 /* dashboard */
+
 .menu-dashboard {
     display: none;
 }
+
 @media only screen and (min-width: 400px) and (max-width: 1199px) {
-.menu-dashboard {
-    display: block;
+    .menu-dashboard {
+        display: block;
+    }
 }
-}
+
+
 /* end dashboard */
+
+
 /* scroll */
 
 ::-webkit-scrollbar {
@@ -105,7 +111,6 @@ ul li a:hover {
     margin-top: 25px;
     background: #FFF008;
     border-radius: 15px;
-    padding: 0px 15px 0px;
     width: 100px;
 }
 
@@ -296,7 +301,6 @@ input[class="collapse-mandiri-2"] {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.575);
     z-index: 999999;
-    display: none;
 }
 
 .login-container {
@@ -309,52 +313,70 @@ input[class="collapse-mandiri-2"] {
     background-color: #ffffff;
     flex-direction: row;
     z-index: 999999;
-    display: none;
 }
 
-.icon-user-login {
-    position: absolute;
-    left: 39%;
-    margin-top: -30px;
-}
-
-.icon-password-login {
-    position: absolute;
-    left: 39%;
-    margin-top: -30px;
-}
-
-.lupa-password {
-    font-family: "glory";
-    font-weight: 600;
-}
-
-.text-login {
-    font-family: "glory";
-    font-weight: 600;
-}
-
-.login-container .left-box {
+.left-box {
     width: 50%;
 }
 
-.login-container .left-box .login-title {
-    margin-top: 10px;
+.left-box form {
+    width: 80%;
+    margin: auto;
+    font-family: "glory";
+    font-weight: 600;
 }
 
-.left-box .form-login {
-    padding-left: 40px;
-    padding-right: 40px;
+.logo-login {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.left-box .form-login input {
+.login-title {
+    text-align: center;
+}
+
+.form-login input {
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px;
     outline: 0;
     border-width: 0 0 2px;
     border-color: #018ED6;
 }
 
+.btn-login {
+    background: #FFF008;
+}
+
+.btn-login:hover {
+    background: #C6C62F;
+}
+
+.clik-register {
+    padding-bottom: 25px;
+    font-family: "glory";
+    font-weight: 600;
+}
+
+.clik-register button {
+    font-family: "glory";
+    font-weight: 600;
+    color: #0488ca;
+    background: transparent;
+}
+
+.clik-register button:hover {
+    color: #024783;
+    text-decoration: underline;
+}
+
+.right-box {
+    width: 50%;
+}
+
 .login-container .right-box {
-    background-image: url('../public/images/login.png');
+    background-image: url('../guest/assets/images/login.png');
     background-repeat: no-repeat;
     background-size: cover;
     border-top-right-radius: 15px;
@@ -382,10 +404,6 @@ input[class="collapse-mandiri-2"] {
     color: #14395B;
 }
 
-.logo-login {
-    display: inline-block;
-}
-
 .logo-login-right-1 {
     padding-left: 30px;
 }
@@ -400,15 +418,8 @@ input[class="collapse-mandiri-2"] {
     font-size: 14px;
 }
 
-.btn-close {
-    margin-left: 40px;
-    width: 50px;
-    background: none;
-    opacity: 1;
-}
-
-.btn-masuk button {
-    font-weight: 600;
+.btn-closed {
+    margin-left: 35px;
 }
 
 
@@ -416,6 +427,15 @@ input[class="collapse-mandiri-2"] {
 
 
 /* Register */
+
+.bg-register {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.575);
+    z-index: 999999;
+}
 
 .register-container {
     position: fixed;
@@ -427,31 +447,28 @@ input[class="collapse-mandiri-2"] {
     background-color: #ffffff;
     flex-direction: row;
     z-index: 999999;
-    display: none;
 }
 
-.register-container .left-box {
-    width: 50%;
+.clik-sudah-daftar button {
+    font-family: "glory";
+    font-weight: 600;
+    color: #0488ca;
+    background: transparent;
 }
 
-.register-container .left-box .login-title {
-    padding-top: 70px;
+.clik-sudah-daftar button:hover {
+    color: #024783;
+    text-decoration: underline;
 }
 
-.left-box .form-register {
-    padding-top: 30px;
-    padding-left: 40px;
-    padding-right: 40px;
-}
-
-.left-box .form-register input {
-    outline: 0;
-    border-width: 0 0 2px;
-    border-color: #018ED6;
+.clik-daftar {
+    padding-bottom: 42px;
+    font-family: "glory";
+    font-weight: 600;
 }
 
 .register-container .right-box {
-    background-image: url('../public/images/login.png');
+    background-image: url('../guest/assets/images/login.png');
     background-repeat: no-repeat;
     background-size: cover;
     border-top-right-radius: 15px;
@@ -459,24 +476,6 @@ input[class="collapse-mandiri-2"] {
     color: #ffffff;
     font-family: "glory";
     font-weight: 600;
-}
-
-.icon-name-register {
-    position: absolute;
-    left: 39%;
-    margin-top: -30px;
-}
-
-.icon-mail-register {
-    position: absolute;
-    left: 39%;
-    margin-top: -30px;
-}
-
-.icon-password-register {
-    position: absolute;
-    left: 39%;
-    margin-top: -30px;
 }
 
 
@@ -1745,7 +1744,7 @@ input[class="collapse-5"] {
     color: white;
 }
 
-.alur-pembelajaran-img-popup {
+.bg-alur {
     position: fixed;
     top: 0;
     z-index: 999999;
@@ -1754,17 +1753,16 @@ input[class="collapse-5"] {
     height: 100%;
 }
 
-.alur-pembelajaran-img-popup .close {
+.img-alur {
     position: relative;
-    top: 30px;
-    left: 30px;
-    z-index: 999999;
+    top: 25px;
+    left: 25px;
 }
 
-.image-alur {
-    position: relative;
-    left: -10px;
-    top: 5px;
+.btn-close {
+    position: absolute;
+    top: 25px;
+    left: 92%;
 }
 
 
