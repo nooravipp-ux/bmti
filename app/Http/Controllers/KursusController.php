@@ -75,14 +75,14 @@ class KursusController extends Controller
             $image->move(public_path('public/Image'), $imageName);
         }
 
-        return redirect('/kursus');
+        return redirect('/admin/kursus');
     }
     public function delete($id)
     {
         $data = Kursus::find($id);
         $data->delete();
 
-        return redirect('/kursus');
+        return redirect('/admin/kursus');
     
     }
 }

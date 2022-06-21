@@ -33,7 +33,7 @@ class PesertaController extends Controller
             'no_telepon' => $request->no_telepon
         ]);
 
-        return redirect('/peserta');
+        return redirect('/admin/peserta');
     }
     public function edit($id){
         $data = Peserta::find($id);
@@ -57,12 +57,12 @@ class PesertaController extends Controller
             'no_telepon' => $request->no_telepon
         ]);
 
-        return redirect('/peserta');
+        return redirect('/admin/peserta');
     }
     public function delete($id){
         $data = Peserta::find($id);
         $data->delete();
 
-        return redirect('/peserta');
+        return redirect('/admin/peserta');
     }
 }

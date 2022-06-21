@@ -22,7 +22,7 @@ class RoleController extends Controller
             'role_name' => $request->role_name
         ]);
 
-        return redirect('/roles');
+        return redirect('/admin/roles');
     }
     public function edit($id){
         $roles = Role::find($id);
@@ -34,12 +34,12 @@ class RoleController extends Controller
             'role_name' => $request->role_name
         ]);
 
-        return redirect('/roles');
+        return redirect('/admin/roles');
     }
     public function delete($id){
         $roles = Role::find($id);
         $roles->delete();
 
-        return redirect('/roles');
+        return redirect('/admin/roles');
     }
 }

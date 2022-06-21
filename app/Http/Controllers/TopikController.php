@@ -25,7 +25,7 @@ class TopikController extends Controller
             'materi' => $request->materi,
             'status' => $request->status
         ]);
-        return redirect('/topik');
+        return redirect('/admin/topik');
     }
     public function edit($id)
     {
@@ -43,14 +43,14 @@ class TopikController extends Controller
             'status' => $request->status
         ]);
        
-        return redirect('/topik');
+        return redirect('/admin/topik');
     }
     public function delete($id)
     {
         $data = Topik::find($id);
         $data->delete();
 
-        return redirect('/topik');
+        return redirect('/admin/topik');
     
     }
 }

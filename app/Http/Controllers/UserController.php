@@ -53,7 +53,7 @@ class UserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        return redirect('users');
+        return redirect('/admin/users');
     }
 
     /**
@@ -96,7 +96,7 @@ class UserController extends Controller
             'role_id' => $request->role_id
         ]);
 
-        return redirect('/users');
+        return redirect('/admin/users');
     }
 
     /**
@@ -110,7 +110,7 @@ class UserController extends Controller
         $user = User::find($id);
         $user->delete();
 
-        return redirect('/users');
+        return redirect('/admin/users');
     
     }
 }
