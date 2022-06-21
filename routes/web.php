@@ -149,6 +149,11 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/peserta/delete/{id}', [PesertaController::class, 'delete'])->name('peserta.delete');
 
         Route::get('/kursus', [KursusController::class, 'index'])->name('kursus');
+
+        //Kurusu - Topik
+        Route::get('/kursus/{kursusId}', [KursusController::class, 'createTopik'])->name('kursus.topik');
+
+        //
         Route::get('/kursus/create', [KursusController::class, 'create'])->name('kursus.create');
         Route::post('/kursus/store', [KursusController::class, 'store'])->name('kursus.store');
         Route::get('/kursus/edit/{id}', [KursusController::class, 'edit'])->name('kursus.edit');
