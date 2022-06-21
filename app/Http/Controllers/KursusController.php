@@ -17,20 +17,30 @@ class KursusController extends Controller
                 ->get();
         return view('admin.kursus.index', compact('data'));
     }
+    
     public function create()
     {
         $jenis_kursus = JenisKursus::all();
         $kategori_kursus = KategoriKursus::all();
+        dd($kategori_kursus);
         return view('admin.kursus.create', compact(['jenis_kursus', 'kategori_kursus']));
     }
+
+    public function createTopik($kursusId){
+        $kursus = DB::table('t_kursus')->where('id', $kursusId)->first();
+        $topik = DB::table('t_topik')->where('kursus_id', $kursusId)->get();
+        
+        return view('admin.kursus.topik', compact('kursus','topik'));
+    }
+
     public function store(Request $request)
     {
         $image = $request->file('gambar');
         $imageName = $image->getClientOriginalName();
         $data = Kursus::create([
-            'jenis_kursus_id' => $request->jenis_kursus_id,
+            'jenis_kursus_id' => 1,
             'kategori_kursus_id' => $request->kategori_kursus_id,
-            'author_id' => $request->author_id,
+            'author_id' => auth()->user()->name,
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
             'gambar' => $imageName
@@ -39,7 +49,7 @@ class KursusController extends Controller
             $image->move(public_path('public/Image'), $imageName);
         }
 
-        return redirect('/admin/kursus');
+        return $this->createTopik($data->id);
     }
     public function edit($id)
     {
