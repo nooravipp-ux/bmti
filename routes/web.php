@@ -15,11 +15,13 @@ use App\Http\Controllers\TopikQuizController;
 use App\Http\Controllers\KompetensiController;
 use App\Http\Controllers\PertanyaanController;
 use App\Http\Controllers\JenisKursusController;
-use App\Http\Controllers\JenisPMandiriController;
-use App\Http\Controllers\KategoriKursusController;
-use App\Http\Controllers\PerusahaanMitraController;
 use App\Http\Controllers\Guest\BerandaController;
 use App\Http\Controllers\Guest\GaleriaController;
+use App\Http\Controllers\JenisPMandiriController;
+use App\Http\Controllers\KategoriKursusController;
+use App\Http\Controllers\MasterListDataController;
+use App\Http\Controllers\PerusahaanMitraController;
+use App\Http\Controllers\ImportDataEvaluasiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,6 +53,8 @@ Route::get('/alur-pembelajaran', function () {
 Route::get('login', function () {
     return view('auth.login');
 });
+
+Route::post('/import', [ImportDataEvaluasiController::class, 'importExcel'])->name('import');
 
 Route::group(['middleware' => 'auth'], function () {
 
@@ -149,6 +153,11 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/peserta/delete/{id}', [PesertaController::class, 'delete'])->name('peserta.delete');
 
         Route::get('/kursus', [KursusController::class, 'index'])->name('kursus');
+
+        //Kurusu - Topik
+        Route::get('/kursus/{kursusId}', [KursusController::class, 'createTopik'])->name('kursus.topik');
+
+        //
         Route::get('/kursus/create', [KursusController::class, 'create'])->name('kursus.create');
         Route::post('/kursus/store', [KursusController::class, 'store'])->name('kursus.store');
         Route::get('/kursus/edit/{id}', [KursusController::class, 'edit'])->name('kursus.edit');
@@ -168,6 +177,17 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/topik-quiz/edit/{id}', [TopikQuizController::class, 'edit'])->name('topikQuiz.edit');
         Route::put('/topik-quiz/update/{id}', [TopikQuizController::class, 'update'])->name('topikQuiz.update');
         Route::get('/topik-quiz/delete/{id}', [TopikQuizController::class, 'delete'])->name('topikQuiz.delete');
+    
+    });
+
+    Route::group(['prefix' => 'evaluator'], function () {
+
+        Route::get('/master-list-data', [MasterListDataController::class, 'index'])->name('masterListData');
+        Route::get('/master-list-data/create', [MasterListDataController::class, 'create'])->name('masterListData.create');
+        Route::post('/master-list-data/store', [MasterListDataController::class, 'store'])->name('masterListData.store');
+        Route::get('/master-list-data/edit/{id}', [MasterListDataController::class, 'edit'])->name('masterListData.edit');
+        Route::put('/master-list-data/update/{id}', [MasterListDataController::class, 'update'])->name('masterListData.update');
+        Route::get('/master-list-data/delete/{id}', [MasterListDataController::class, 'delete'])->name('masterListData.delete');
     });
 });
 

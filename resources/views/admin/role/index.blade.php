@@ -29,7 +29,7 @@
                                     <th>Role Name</th>
                                     <th>Created At</th>
                                     <th>Edit</th>
-                                    <th>Delete</th>
+                                    <!-- <th>Delete</th> -->
                                 </tr>
                             </thead>
                             <tbody>

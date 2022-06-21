@@ -13,7 +13,7 @@
                     <form action="{{route('kursus.store')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
-                            <label for="judul" class="col-sm-3 col-form-label">Namcsada Pelatihan</label>
+                            <label for="judul" class="col-sm-3 col-form-label">Nama Pelatihan</label>
                             <div class="col-sm-9">
                                 <input type="text" name="judul" class="form-control mt-2">
                             </div>
@@ -28,9 +28,7 @@
                             <label for="kategori_kursus_id" class="col-sm-3 col-form-label">Kategori Kursus</label>
                             <div class="col-sm-9">
                                 <select type="text" name="kategori_kursus_id" class="form-control mt-2">
-                                    @foreach($kategori_kursus as $row)
-                                    <option value="{{$row->id}}">{{$row->nama}}</option>
-                                    @endforeach
+                                    
                                 </select>
                             </div>
                         </div>

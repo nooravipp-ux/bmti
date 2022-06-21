@@ -40,7 +40,7 @@ class PertanyaanController extends Controller
             $image->move(public_path('public/image'), $imageName);
         }
 
-        return redirect('/pertanyaan');
+        return redirect('/admin/pertanyaan');
     }
     public function edit($id)
     {
@@ -71,14 +71,14 @@ class PertanyaanController extends Controller
             $image->move(public_path('public/image'), $imageName);
         }
 
-        return redirect('/pertanyaan');
+        return redirect('/admin/pertanyaan');
     }
     public function delete($id)
     {
         $data = Pertanyaan::find($id);
         $data->delete();
 
-        return redirect('/pertanyaan');
+        return redirect('/admin/pertanyaan');
     
     }
 }

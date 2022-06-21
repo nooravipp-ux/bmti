@@ -20,45 +20,32 @@
                         <table id="dataTable" class="table">
                             <thead>
                                 <tr>
-                                    <a href="{{route('kursus.create')}}"
-                                        class="btn btn-primary btn-sm btn-rounded btn-icon-text">
+                                    <a href="{{route('kursus.create')}}" class="btn btn-primary btn-sm btn-rounded btn-icon-text">
                                         <i class="ti-upload btn-icon-prepend"></i>
                                         Create
                                     </a>
                                 </tr>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Jenis Kursus</th>
-                                    <th>Kategori Kursus</th>
-                                    <th>Author ID</th>
-                                    <th>Judul</th>
-                                    <th>Deskripsi</th>
-                                    <!-- <th>Gambar</th> -->
-                                    <th>Created At</th>
-                                    <th>Updated At</th>
-                                    <th>Manage</th>
-                                    <th>Delete</th>
+                                    <th>Nama Pelatihan</th>
+                                    <th>Kategori</th>
+                                    <th>Status</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($data as $row)
                                 <tr>
                                     <td>{{$row->id}}</td>
-                                    <td>{{$row->jenis_kursus}}</td>
-                                    <td>{{$row->kategori_kursus}}</td>
-                                    <td>{{$row->author_id}}</td>
                                     <td>{{$row->judul}}</td>
-                                    <td>{{$row->deskripsi}}</td>
-                                    <!-- <td>{{$row->gambar}}</td> -->
-                                    <td>{{$row->created_at}}</td>
-                                    <td>{{$row->updated_at}}</td>
-                                    <td><a href="{{ route('kursus.edit', ['id'=>$row->id]) }}"
-                                            class="btn btn-dark btn-sm btn-rounded btn-icon-prepend">Atur
-                                            <i class="ti-reload btn-icon-append"></i></a></td>
-                                    <td><a href="{{ route('kursus.delete', ['id'=>$row->id]) }}"
-                                            onclick="return confirm('Apakah anda yakin ?')"
-                                            class="btn btn-danger btn-sm btn-rounded btn-icon-text">Delete
-                                            <i class="ti-trash btn-icon-append"></i></a></td>
+                                    <td>{{$row->kategori_kursus}}</td>
+                                    <td>{{$row->judul}}</td>
+                                    <td></td>
+                                    <td><a href="{{ route('kursus.edit', ['id'=>$row->id]) }}" class="btn btn-dark btn-sm btn-rounded btn-icon-prepend">Atur
+                                            <i class="ti-reload btn-icon-append"></i></a>
+                                        <a href="{{ route('kursus.delete', ['id'=>$row->id]) }}" onclick="return confirm('Apakah anda yakin ?')" class="btn btn-danger btn-sm btn-rounded btn-icon-text">Delete
+                                            <i class="ti-trash btn-icon-append"></i></a>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -76,9 +63,9 @@
 
 </script>
 <script>
-$(document).ready(function() {
-    $('#dataTable').DataTable();
+    $(document).ready(function() {
+        $('#dataTable').DataTable();
 
-});
+    });
 </script>
 @endsection
