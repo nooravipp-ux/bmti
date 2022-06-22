@@ -34,8 +34,8 @@ class EvaluasiImport implements ToCollection, WithLimit, WithStartRow
                     'peserta_hadir' => $row[11],
                     'peserta_tuntas' => $row[12],
                     'peserta_tidak_tuntas' => $row[13],
-                    'tanggal_evaluasi' => \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($row[14]),
-                    'laporan' => $row[15]
+                    'tanggal_evaluasi' => \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($row[18]),
+                    'laporan' => $row[19]
                 ]);
             }
         }

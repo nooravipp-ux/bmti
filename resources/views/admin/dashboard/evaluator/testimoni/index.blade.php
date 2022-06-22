@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'BMTI | MASTER DATA LIST')
+@section('title', 'BMTI | MASTER DATA TESTIMONI')
 @section('custom-css')
 <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" />
 @endsection
@@ -10,13 +10,13 @@
         <div class="col-lg-12 grid-margin">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">{{ __('Master Data List') }}</h4>
+                    <h4 class="card-title">{{ __('Master Data Testimoni') }}</h4>
                     <!-- <p class="card-description">
                     </p> -->
 
                     <div class="table-responsive">
                         <div>
-                            <a href="{{route('masterListData.create')}}"
+                            <a href="{{route('testimoni.create')}}"
                                 class="btn btn-primary btn-sm btn-rounded btn-icon-text">
                                 Create
                             </a>
@@ -29,22 +29,12 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Program</th>
-                                    <th>Jenis Kegiatan</th>
-                                    <th>Nama Kegiatan</th>
-                                    <th>Periode Awal</th>
-                                    <th>Periode Akhir</th>
-                                    <th>Pola</th>
-                                    <th>Moda</th>
-                                    <th>Pb</th>
-                                    <th>Kelas Group</th>
-                                    <th>Penanggung Jawab Kegiatan</th>
-                                    <th>Peserta Dipanggil</th>
-                                    <th>Peserta Hadir</th>
-                                    <th>Peserta Tuntas</th>
-                                    <th>Peserta Tidak Tuntas</th>
-                                    <th>Tanggal Evaluasi</th>
-                                    <th>Laporan</th>
+                                    <th>Nama</th>
+                                    <th>Asal Sekolah</th>
+                                    <th>Nama Diklat</th>
+                                    <th>Testimoni</th>
+                                    <th>Created By</th>
+                                    <th>Updated By</th>
                                     <!-- <th>Created At</th>
                                     <th>Updated At</th> -->
                                     <th>Edit</th>
@@ -56,28 +46,18 @@
                                 @foreach($data as $row)
                                 <tr>
                                     <td>{{$i++}}</td>
-                                    <td>{{$row->program}}</td>
-                                    <td>{{$row->jenis_kegiatan}}</td>
-                                    <td>{{$row->nama_kegiatan}}</td>
-                                    <td>{{$row->periode_awal}}</td>
-                                    <td>{{$row->periode_akhir}}</td>
-                                    <td>{{$row->pola}}</td>
-                                    <td>{{$row->moda}}</td>
-                                    <td>{{$row->pb}}</td>
-                                    <td>{{$row->kelas_group}}</td>
-                                    <td>{{$row->penanggung_jawab_kegiatan}}</td>
-                                    <td>{{$row->peserta_dipanggil}}</td>
-                                    <td>{{$row->peserta_hadir}}</td>
-                                    <td>{{$row->peserta_tuntas}}</td>
-                                    <td>{{$row->peserta_tidak_tuntas}}</td>
-                                    <td>{{$row->tanggal_evaluasi}}</td>
-                                    <td>{{$row->laporan}}</td>
+                                    <td>{{$row->nama}}</td>
+                                    <td>{{$row->asal_sekolah}}</td>
+                                    <td>{{$row->nama_diklat}}</td>
+                                    <td>{{substr($row->testimoni, 0, 200);}} ....</td>
+                                    <td>{{$row->created_by}}</td>
+                                    <td>{{$row->updated_by}}</td>
                                     <!-- <td>{{$row->created_at}}</td>
                                     <td>{{$row->updated_at}}</td> -->
-                                    <td><a href="{{ route('masterListData.edit', ['id'=>$row->id]) }}"
+                                    <td><a href="{{ route('testimoni.edit', ['id'=>$row->id]) }}"
                                             class="btn btn-dark btn-sm btn-rounded btn-icon-prepend">Edit
                                             <i class="ti-reload btn-icon-append"></i></a></td>
-                                    <td><a href="{{ route('masterListData.delete', ['id'=>$row->id]) }}"
+                                    <td><a href="{{ route('testimoni.delete', ['id'=>$row->id]) }}"
                                             class="btn btn-danger btn-sm btn-rounded btn-icon-text">Delete
                                             <i class="ti-trash btn-icon-append"></i></a></td>
                                 </tr>
@@ -99,7 +79,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('importTestimoni') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div>
                         <label for="gambar" class="form-label">Import</label>
