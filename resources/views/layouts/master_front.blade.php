@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Glory&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="{{asset('guest/assets/bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('guest/global.css')}}">
     <link rel="stylesheet" href="{{asset('guest/responsive.css')}}">
     @yield('custom-css')
@@ -67,7 +67,7 @@
                 <div class="col-3 col-md-2 col-xl-1 order-2 order-xl-3">
                     <div class="akun-button text-center">
                         @if(auth()->user())
-                        <a href="{{url('dashboard')}}" class="btn-lg btn-1" role="button" aria-pressed="true">Dashboard</a>
+                        <a href="{{url('dashboard')}}" class="btn-lg" role="button" aria-pressed="true">Dashboard</a>
                         @else
                         <a class="btn-lg" role="button" aria-pressed="true" onclick="onClickLogin()">LOGIN</a>
                         @endif
@@ -176,16 +176,20 @@
 
     <div id="login" class="d-none">
         <div class="bg-login">
+            <!-- Validation Errors -->
+            <div class="d-flex">
+                <x-auth-validation-errors id="error" class="text-popup mb-4 text-center bg-white rounded" :errors="$errors" />
+            </div>
+
+            <!-- Session Status -->
+            <div class="d-flex">
+            <x-auth-session-status class="text-popup mb-4 text-center bg-white rounded" :status="session('status')" />
+
             <div class="login-container">
                 <div class="d-flex">
                     <div class="left-box mt-4">
                         <image class="logo-login" src="{{asset('guest/assets/images/logo-header.png')}}" width="140px" height="100px"/>
                         <h2 class="login-title">LOGIN</h2>
-                        <!-- Session Status -->
-                        <x-auth-session-status class="mb-4" :status="session('status')" />
-
-                        <!-- Validation Errors -->
-                        <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
                         <form class="mt-5" method="POST" action="{{ route('login') }}">
                             @csrf
@@ -209,26 +213,25 @@
                                     </label>
                                 </div>
                                 <div class="col-3">
-                                    @if (Route::has('password.request'))
-                                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                                        {{ __('Lupa Password ?') }}
-                                    </a>
-                                    @endif
+                                    <div class="clik-LupaPassword" onclick="onClickLupaPassword()">Lupa Password ?</div>
                                 </div>
                             </div>
 
-                            <div class="row justify-content-center mt-5">
-                                <x-button class="btn-login rounded-pill text-dark font-weight-bold">
-                                    {{ __('Masuk') }}
-                                </x-button>
+                            <div class="d-flex justify-content-center mt-5">
+                                <div class="col-2">
+                                    <button class="btn-login rounded-pill text-dark font-weight-bold">
+                                        {{ __('Masuk') }}
+                                    </button>
+                                </div>
                             </div>
 
-                            <div class="row justify-content-center mt-3">
+                            <div class="row text-center mt-3">
                                 <p>Atau</p>
                             </div>
                         </form>
 
-                        <div class="row justify-content-center mt-2 clik-register">                                <span>Belum Memiliki Akun ?<span>
+                        <div class="row text-center mt-2 clik-register">
+                            <span>Belum Memiliki Akun ?<span>
                             <button onclick="onClickRegister()">Daftar</button>
                         </div>
                     </div>
@@ -266,13 +269,16 @@
 
     <div id="register" class="d-none">
         <div class="bg-register">
+            <!-- Validation Errors -->
+            <div class="d-flex">
+                <x-auth-validation-errors id="error" class="text-popup mb-4 text-center bg-white rounded" :errors="$errors" />
+            </div>
+
             <div class="register-container">
                 <div class="d-flex">
                     <div class="left-box mt-4">
                         <image class="logo-login" src="{{asset('guest/assets/images/logo-header.png')}}" width="140px" height="100px"/>
                         <h2 class="login-title">DAFTAR</h2>
-                         <!-- Validation Errors -->
-                        <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
@@ -297,14 +303,16 @@
                                 <x-input id="password_confirmation" class="block mt-1 w-full" placeholder="Konfirmasi Password" type="password" name="password_confirmation" required />
                             </div>
 
-                            <div class="row justify-content-end mt-3 clik-sudah-daftar">
+                            <div class="d-flex justify-content-end mt-3 clik-sudah-daftar">
                                 <button onclick="onClickDaftar()">Sudah Terdaftar ?</button>
                             </div>
 
-                            <div class="row justify-content-center mt-5 clik-daftar">
-                                <x-button class="btn-login rounded-pill text-dark font-weight-bold">
-                                    {{ __('Daftar') }}
-                                </x-button>
+                            <div class="d-flex justify-content-center mt-4 clik-daftar">
+                                <div class="col-2">
+                                    <button class="btn-login rounded-pill text-dark font-weight-bold">
+                                        {{ __('Daftar') }}
+                                    </button>
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -332,6 +340,73 @@
                             </div>
                             <div class="col-2 d-flex">
                                 <button class="btn-closed btn-danger btn-sm btn-circle" onclick="onClickCloseRegister()">X</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="LupaPassword" class="d-none">
+        <div class="bg-LupaPassword">
+            <!-- Validation Errors -->
+            <div class="d-flex">
+                <x-auth-validation-errors id="error" class="text-popup mb-4 text-center bg-white rounded" :errors="$errors" />
+            </div>
+            
+            <!-- Session Status -->
+            <div class="d-flex">
+                <x-auth-session-status class="text-popup mb-4 text-center bg-white rounded" :status="session('status')" />
+            </div>
+
+            <div class="LupaPassword-container">
+                <div class="d-flex">
+                    <div class="left-box mt-4">
+                        <image class="logo-login" src="{{asset('guest/assets/images/logo-header.png')}}" width="140px" height="100px"/>
+                        <div class="text-forget text-center mb-4 mt-5 text-sm text-gray-600">
+                        {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+                        </div>
+
+                        <form method="POST" action="{{ route('password.email') }}">
+                            @csrf
+
+                            <!-- Email Address -->
+                            <div class="form-login mt-5">
+                                <x-input id="email" class="block mt-1 w-full" placeholder="Masukan E-mail" type="email" name="email" :value="old('email')" required autofocus />
+                            </div>
+
+                            <div class="d-flex justify-content-center clik-forget mt-5">
+                                <button class="btn-forget rounded-pill text-dark font-weight-bold">
+                                    {{ __('Email Password Reset Link') }}
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="right-box">
+                        <div class="row pt-3">
+                            <div class="col-5 d-flex">
+                                <div class="row mt-3">
+                                    <div class="col-sm-12 col-xl-5 logo-login-right-1">
+                                        <image src="{{asset('guest/assets/images/logo-kemdikbud.png')}}" width="70px" height="70px"/>
+                                    </div>
+                                    <div class="col-12 col-xl-7 text-logo-right-1 mt-1">
+                                        <span>Kementrian Pendidikan, Kebudayaan, Riset dan Teknologi</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-5 d-flex">
+                                <div class="row mt-3">
+                                    <div class="col-12 col-xl-5 logo-login-right-2">
+                                        <image src="{{asset('guest/assets/images/logo-bmti.png')}}" width="70px" height="70px"/>
+                                    </div>
+                                    <div class="col-12 col-xl-7 text-logo-right-2 mt-1">
+                                        <span>BBPPMPV BMTI <br/> Bidang Mesin dan Teknik Industri</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2 d-flex">
+                                <button class="btn-closed btn-danger btn-sm btn-circle" onclick="onClickCloseLupaPassword()">X</button>
                             </div>
                         </div>
                     </div>
@@ -373,6 +448,13 @@
         function onClickDaftar() {
             $('#register').addClass('d-none');
             $('#login').attr('class', '');
+        }
+        function onClickLupaPassword() {
+            $('#login').addClass('d-none');
+            $('#LupaPassword').attr('class', '');
+        }
+        function onClickCloseLupaPassword() {
+            $('#LupaPassword').addClass('d-none');
         }
     </script>
 </body>
