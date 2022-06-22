@@ -367,6 +367,12 @@
                             <span class="menu-title">Master List Data</span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('testimoni')}}">
+                            <i class="menu-icon mdi mdi-file-import"></i>
+                            <span class="menu-title">Data Testimoni</span>
+                        </a>
+                    </li>
                     @endif
                     @if(auth()->user()->role_id == 1)
                     <li class="nav-item">
@@ -482,7 +488,7 @@
                 @yield('content')
                 <footer class="footer">
                     <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2021. All
+                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2022. All
                             rights reserved.</span>
                     </div>
                 </footer>

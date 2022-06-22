@@ -11000,7 +11000,7 @@ textarea.asColorPicker-input,
 textarea.typeahead,
 textarea.tt-query,
 textarea.tt-hint {
-    min-height: 2rem;
+  min-height: 10rem;
 }
 
 textarea.form-control-sm {

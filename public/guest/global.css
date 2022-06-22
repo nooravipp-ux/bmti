@@ -345,8 +345,23 @@ input[class="collapse-mandiri-2"] {
     border-color: #018ED6;
 }
 
+.clik-LupaPassword {
+    font-size: 15px;
+    font-family: "glory";
+    font-weight: 600;
+    color: #0488ca;
+}
+
+.clik-LupaPassword:hover {
+    color: #024783;
+    text-decoration: underline;
+}
+
 .btn-login {
     background: #FFF008;
+    padding: 8px 25px 8px;
+    font-weight: 600;
+    border: none;
 }
 
 .btn-login:hover {
@@ -354,7 +369,7 @@ input[class="collapse-mandiri-2"] {
 }
 
 .clik-register {
-    padding-bottom: 25px;
+    padding-bottom: 35px;
     font-family: "glory";
     font-weight: 600;
 }
@@ -364,6 +379,7 @@ input[class="collapse-mandiri-2"] {
     font-weight: 600;
     color: #0488ca;
     background: transparent;
+    border: none;
 }
 
 .clik-register button:hover {
@@ -420,6 +436,18 @@ input[class="collapse-mandiri-2"] {
 
 .btn-closed {
     margin-left: 35px;
+    border: none;
+}
+
+.text-popup {
+    position: absolute;
+    top: 0px;
+    left: 40%;
+    padding: 20px;
+    font-weight: bold;
+    font-family: "glory";
+    z-index: 9999999;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 
@@ -454,6 +482,7 @@ input[class="collapse-mandiri-2"] {
     font-weight: 600;
     color: #0488ca;
     background: transparent;
+    border: none;
 }
 
 .clik-sudah-daftar button:hover {
@@ -462,7 +491,7 @@ input[class="collapse-mandiri-2"] {
 }
 
 .clik-daftar {
-    padding-bottom: 42px;
+    padding-bottom: 67px;
     font-family: "glory";
     font-weight: 600;
 }
@@ -480,6 +509,64 @@ input[class="collapse-mandiri-2"] {
 
 
 /* end register */
+
+
+/* lupa password */
+
+.bg-LupaPassword {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.575);
+    z-index: 999999;
+}
+
+.LupaPassword-container {
+    position: fixed;
+    top: 35px;
+    left: 30px;
+    width: 95%;
+    height: 90%;
+    border-radius: 15px;
+    background-color: #ffffff;
+    flex-direction: row;
+    z-index: 999999;
+}
+
+.text-forget {
+    font-weight: 600;
+    font-family: "glory";
+}
+
+.clik-forget {
+    padding-bottom: 195px;
+}
+
+.btn-forget {
+    background: #FFF008;
+    padding: 8px 25px 8px;
+    font-weight: 600;
+    border: none;
+}
+
+.btn-forget:hover {
+    background: #C6C62F;
+}
+
+.LupaPassword-container .right-box {
+    background-image: url('../guest/assets/images/login.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    color: #ffffff;
+    font-family: "glory";
+    font-weight: 600;
+}
+
+
+/* end lupa password */
 
 
 /* beranda */
@@ -907,6 +994,10 @@ input[class="collapse-mandiri-2"] {
     transform: translateY(0px);
 }
 
+.image a {
+    text-decoration: none;
+}
+
 .image-text h4 {
     color: white;
     font-weight: bold;
@@ -980,7 +1071,7 @@ input[class="collapse-mandiri-2"] {
 }
 
 .image-permesinan {
-    margin-top: 150px;
+    margin-top: 100px;
 }
 
 .bg-komptensi-materi {
@@ -1734,16 +1825,6 @@ input[class="collapse-5"] {
     top: 10px;
 }
 
-.tabcontent {
-    z-index: 99999;
-}
-
-.tabcontent h2 {
-    font-size: 25px;
-    font-family: "glory";
-    color: white;
-}
-
 .bg-alur {
     position: fixed;
     top: 0;
@@ -1759,10 +1840,11 @@ input[class="collapse-5"] {
     left: 25px;
 }
 
-.btn-close {
+.btn-closeAlur {
     position: absolute;
-    top: 25px;
-    left: 92%;
+    top: 30px;
+    left: 95%;
+    text-decoration: none;
 }
 
 

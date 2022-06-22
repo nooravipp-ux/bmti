@@ -14,13 +14,13 @@
                 </div>
                 <div id="step2" class="d-none">
                     <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <image class="center rounded" src="{{asset('guest/assets/images/list-galeria.PNG')}}" alt="" width="600" height="350" />
+                        <div class="col-md-6 mb-3 mt-1">
+                            <image class="center rounded" src="{{asset('guest/assets/images/list-galeria.PNG')}}" alt="" width="550" height="330" />
                         </div>
 
                         <div class="col-md-6">
-                            <h2 class="text-light"><b>STEP 1 - GALERIA</b></h2>
-                            <h2 class="text-light">Galeria merupakan kumpulan materi kejuruan dalam bentuk tulisan, video maupun animasi yang memberi informasi singkat tentang konten kejuruan.</h2>
+                            <h3 class="text-light"><b>STEP 1 - GALERIA</b></h3>
+                            <h3 class="text-light">Galeria merupakan kumpulan materi kejuruan dalam bentuk tulisan, video maupun animasi yang memberi informasi singkat tentang konten kejuruan.</h3>
                         </div>
                     </div>
                     <div class="text-center">
@@ -31,12 +31,12 @@
                 <div id="step3" class="d-none">
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <image class="center rounded" src="{{asset('guest/assets/images/kompetensi-kejuruan.PNG')}}" alt="" width="600" height="350" />
+                            <image class="center rounded" src="{{asset('guest/assets/images/kompetensi-kejuruan.PNG')}}" alt="" width="550" height="330" />
                         </div>
 
                         <div class="col-md-6">
-                            <h2 class="text-light"><b>STEP 2 - KOMPETENSI KEJURUAN</b></h2>
-                            <h2 class="text-light">Menyajikan deskripsi materi pembelajaran dengan: H5P, video shooting merekam gambar bergerak, animasi seolah bergerak yang disajikan dengan citra/sudut pandang 2 dimensi maupun 3 dimensi serta dilengkapi materi pendukung berformat pdf.</h2>
+                            <h3 class="text-light"><b>STEP 2 - KOMPETENSI KEJURUAN</b></h3>
+                            <h3 class="text-light">Menyajikan deskripsi materi pembelajaran dengan: H5P, video shooting merekam gambar bergerak, animasi seolah bergerak yang disajikan dengan citra/sudut pandang 2 dimensi maupun 3 dimensi serta dilengkapi materi pendukung berformat pdf.</h3>
                         </div>
                     </div>
                     <div class="text-center">
@@ -47,12 +47,12 @@
                 <div id="step4" class="d-none">
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <image class="center rounded" src="{{asset('guest/assets/images/kk-materi.PNG')}}" alt="" width="600" height="350" />
+                            <image class="center rounded" src="{{asset('guest/assets/images/kk-materi.PNG')}}" alt="" width="550" height="330" />
                         </div>
 
                         <div class="col-md-6">
-                            <h2 class="text-light"><b>STEP 3 - MATERI</b></h2>
-                            <h2 class="text-light">Materi kejuruan berisikan materi - materi yang akan digunakan untuk pembelajaran di galeri kejuruan.</h2>
+                            <h3 class="text-light"><b>STEP 3 - MATERI</b></h3>
+                            <h3 class="text-light">Materi kejuruan berisikan materi - materi yang akan digunakan untuk pembelajaran di galeri kejuruan.</h3>
                         </div>
                     </div>
                     <div class="text-center">
@@ -63,12 +63,12 @@
                 <div id="step5" class="d-none">
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <image class="center rounded" src="{{asset('guest/assets/images/gambar-minat.PNG')}}" alt="" width="600" height="350" />
+                            <image class="center rounded" src="{{asset('guest/assets/images/gambar-minat.PNG')}}" alt="" width="550" height="330" />
                         </div>
 
                         <div class="col-md-6">
-                            <h2 class="text-light"><b>STEP 4 - MINAT</b></h2>
-                            <h2 class="text-light">Pilih minat berdasarkan kebutuhan anda.</h2>
+                            <h3 class="text-light"><b>STEP 4 - MINAT</b></h3>
+                            <h3 class="text-light">Pilih minat berdasarkan kebutuhan anda.</h3>
                         </div>
                     </div>
                     <div class="text-center">
@@ -81,12 +81,12 @@
                 <div id="step6" class="d-none">
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <image class="center rounded" src="{{asset('guest/assets/images/list-pelatihan-mandiri.PNG')}}" alt="" width="600" height="350" />
+                            <image class="center rounded" src="{{asset('guest/assets/images/list-pelatihan-mandiri.PNG')}}" alt="" width="550" height="330" />
                         </div>
 
                         <div class="col-md-6">
-                            <h2 class="text-light"><b>STEP 5 - PELATIHAN MANDIRI</b></h2>
-                            <h2 class="text-light">Pelatihan Mandiri adalah fasilitas yang diberikan kepada guru untuk melakukan latihan kompetensi keahlian sesuai pilihannya, yang dilaksanakan secara mandiri. Pelatihan mandiri merupakan bagian dari galeri kejuruan.</h2>
+                            <h3 class="text-light"><b>STEP 5 - PELATIHAN MANDIRI</b></h3>
+                            <h3 class="text-light">Pelatihan Mandiri adalah fasilitas yang diberikan kepada guru untuk melakukan latihan kompetensi keahlian sesuai pilihannya, yang dilaksanakan secara mandiri. Pelatihan mandiri merupakan bagian dari galeri kejuruan.</h3>
                         </div>
                     </div>
                     <div class="text-center">
@@ -97,12 +97,12 @@
                 <div id="step7" class="d-none">
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <image class="center rounded" src="{{asset('guest/assets/images/gambar-terbimbing.PNG')}}" alt="" width="600" height="350" />
+                            <image class="center rounded" src="{{asset('guest/assets/images/gambar-terbimbing.PNG')}}" alt="" width="550" height="330" />
                         </div>
 
                         <div class="col-md-6">
-                            <h2 class="text-light"><b>STEP 6 - DIKLAT TERBIMBING</b></h2>
-                            <h2 class="text-light">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, PageMaker including versions of Lorem Ipsum.s</h2>
+                            <h3 class="text-light"><b>STEP 6 - DIKLAT TERBIMBING</b></h3>
+                            <h3 class="text-light">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, PageMaker including versions of Lorem Ipsum.s</h3>
                         </div>
                     </div>
                     <div class="text-center">
@@ -113,14 +113,14 @@
                 <div id="step8" class="d-none">
                     <div class="row justify-items-center">
                         <div class="col-md-12">
-                            <h2 class="text-light"><b>STEP 7 - SERTIFIKAT</b></h2>
+                            <h3 class="text-light"><b>STEP 7 - SERTIFIKAT</b></h3>
                             <div class="mb-3">
-                                <image class="center rounded" src="{{asset('guest/assets/images/sertifikat2.PNG')}}" alt="" width="500" height="600" />
+                                <image class="center rounded" src="{{asset('guest/assets/images/sertifikat2.PNG')}}" alt="" width="500" height="550" />
                             </div>
-                            <h2 class="text-light">
+                            <h3 class="text-light">
                                 Setelah peserta menyelesaikan pelatihan terbimbing, maka peserta akan mendapatkan sertifikat
                                 sesuai dengan pelatihan yang sudah diambil.
-                            </h2>
+</h3>
                         </div>
                     </div>
                     <div class="text-center">
@@ -140,7 +140,7 @@
             <div class="img-alur">
                 <image class="rounded" src="{{asset('guest/assets/images/alur.png')}}" alt="" width="1300" height="600" />
             </div>
-            <div class="btn-close">
+            <div class="btn-closeAlur">
                 <button class="btn btn-danger btn-sm btn-circle" onclick="onClickCloseAlur()">X</button>
             </div>
         </div>

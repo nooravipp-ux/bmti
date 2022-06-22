@@ -53,13 +53,13 @@
         @foreach($data as $dt)
         <div class="col-12 col-md-4 col-xl-4">
             <div class="image shadow mt-5">
-                <image src="{{asset('images/galeria/'.$dt->gambar_banner)}}" alt="Bricks" width="360px" height="250px" />
-                <a href="{{url('/galeria/'.$dt->id)}}"></a>
-                <div class="image-text">
-                <a href="{{url('/galeria/'.$dt->id)}}"><h4 class="col-11">{{$dt->nama_kompetensi}}</h4></a>
-                    <p class="col-11">{{$dt->deskripsi}}</p>
-                </div>
-                </link>
+                <image src="{{asset('images/galeria/'.$dt->gambar_banner)}}" alt="Bricks" width="355px" height="245px" />
+                <a href="{{url('/galeria/'.$dt->id)}}">
+                    <div class="image-text">
+                        <h4 class="col-11">{{$dt->nama_kompetensi}}</h4>
+                        <p class="col-11">{{$dt->deskripsi}}</p>
+                    </div>
+                </a>
             </div>
         </div>
         @endforeach

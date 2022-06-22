@@ -147,13 +147,33 @@
         <div class="col-12 col-md-4 col-xl-4">
             <div class="img-teknik-permesinan shadow mt-5">
                 <image src="/images/kompetensi-1.PNG" alt="Bricks" width="360px" height="250px" />
-                <div>
-                    <div class="image-text"></div>
-                </div>
-                <p>Tool Offset Pada Mesin Bubut CNC</p>
-                <h5>Joko Suseno Jul 27, 2021</h5>
+                <a onclick="onClickMateri()">
+                    <div>
+                        <div class="image-text"></div>
+                    </div>
+                    <p>Tool Offset Pada Mesin Bubut CNC</p>
+                    <h5>Joko Suseno Jul 27, 2021</h5>
+                </a>
             </div>
         </div>
     </div>
 </div>
+
+<div id="materi" class="d-none">
+    <div class="bg-login">
+        <div class="login-container">
+            <div class="d-flex">
+                <div class="left-box mt-4"></div>    
+                <div class="right-box"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function onClickMateri() {
+        $('#materi').attr('class', '');
+    }
+</script>
+
 @endsection

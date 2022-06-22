@@ -11,6 +11,7 @@ use App\Http\Controllers\PesertaController;
 use App\Http\Controllers\KeahlianController;
 use App\Http\Controllers\PMandiriController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TestimoniController;
 use App\Http\Controllers\TopikQuizController;
 use App\Http\Controllers\KompetensiController;
 use App\Http\Controllers\PertanyaanController;
@@ -55,6 +56,7 @@ Route::get('login', function () {
 });
 
 Route::post('/import', [ImportDataEvaluasiController::class, 'importExcel'])->name('import');
+Route::post('/import-testimoni', [ImportDataEvaluasiController::class, 'importExcelTestimoni'])->name('importTestimoni');
 
 Route::group(['middleware' => 'auth'], function () {
 
@@ -188,6 +190,13 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/master-list-data/edit/{id}', [MasterListDataController::class, 'edit'])->name('masterListData.edit');
         Route::put('/master-list-data/update/{id}', [MasterListDataController::class, 'update'])->name('masterListData.update');
         Route::get('/master-list-data/delete/{id}', [MasterListDataController::class, 'delete'])->name('masterListData.delete');
+    
+        Route::get('/testimoni', [TestimoniController::class, 'index'])->name('testimoni');
+        Route::get('/testimoni/create', [TestimoniController::class, 'create'])->name('testimoni.create');
+        Route::post('/testimoni/store', [TestimoniController::class, 'store'])->name('testimoni.store');
+        Route::get('/testimoni/edit/{id}', [TestimoniController::class, 'edit'])->name('testimoni.edit');
+        Route::put('/testimoni/update/{id}', [TestimoniController::class, 'update'])->name('testimoni.update');
+        Route::get('/testimoni/delete/{id}', [TestimoniController::class, 'delete'])->name('testimoni.delete');
     });
 });
 
