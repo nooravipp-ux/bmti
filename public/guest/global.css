@@ -213,27 +213,27 @@ input[class="collapse-mandiri"] {
 .icon-menu-2 {
     margin-left: 5px;
     margin-top: 12px;
-    background-image: url("../public/images/icon-menu.png");
+    background-image: url("../guest/assets/images/icon-menu.png");
     background-size: cover;
     width: 30px;
     height: 30px;
 }
 
 .icon-menu-2:hover {
-    background-image: url("../public/images/icon-menu-hover.png");
+    background-image: url("../guest/assets/images/icon-menu-hover.png");
 }
 
 .icon-menu-hover {
     margin-left: 30px;
     margin-top: 40px;
-    background-image: url("../public/images/icon-close.png");
+    background-image: url("../guest/assets/images/icon-close.png");
     background-size: cover;
     width: 25px;
     height: 25px;
 }
 
 .icon-menu-hover:hover {
-    background-image: url("../public/images/icon-close-hover.png");
+    background-image: url("../guest/assets/images/icon-close-hover.png");
 }
 
 .menu-container {
@@ -246,16 +246,11 @@ input[class="collapse-mandiri"] {
     z-index: 99999;
 }
 
-.menu-2 ul {
-    margin-right: 20px;
-    margin-top: 10px;
-}
-
 .menu-2 ul li {
-    position: relative;
-    bottom: 25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 20px;
-    display: inline-block;
 }
 
 .menu-2 label {
@@ -1031,7 +1026,7 @@ input[class="collapse-mandiri-2"] {
 
 .logo-kemdikbud-kompetensi p {
     position: relative;
-    bottom: 70px;
+    bottom: 65px;
     left: 85px;
     font-size: 13px;
     font-family: "glory";
@@ -1045,7 +1040,7 @@ input[class="collapse-mandiri-2"] {
 
 .logo-bmti-kompetensi p {
     position: relative;
-    bottom: 60px;
+    bottom: 65px;
     left: 85px;
     font-size: 13px;
     font-family: "glory";
@@ -1282,12 +1277,12 @@ input[class="collapse-mandiri-2"] {
 .image-contact {
     width: 100px;
     height: 100px;
-    background-image: url("../public/images/callcenterchat.png");
+    background-image: url("../guest/assets/images/callcenterchat.png");
     background-size: cover;
 }
 
 .image-contact:hover {
-    background-image: url("../public/images/ajenghover.png");
+    background-image: url("../guest/assets/images/ajenghover.png");
 }
 
 .card-pel {
@@ -1451,14 +1446,14 @@ input[class="collapse-mandiri-2"] {
     top: 53px;
     left: 270px;
     cursor: pointer;
-    background-image: url("../public/images/collapse-up.png");
+    background-image: url("../guest/assets/images/collapse-up.png");
     background-size: cover;
     width: 25px;
     height: 25px;
 }
 
 #check-course:checked+label {
-    background-image: url("../public/images/collapse-down.png");
+    background-image: url("../guest/assets/images/collapse-down.png");
 }
 
 input[class="check-course"] {
@@ -1481,12 +1476,12 @@ input[class="check-course"] {
 .image-contact-model-3d {
     width: 100px;
     height: 100px;
-    background-image: url("../public/images/callcenterchat.png");
+    background-image: url("../guest/assets/images/callcenterchat.png");
     background-size: cover;
 }
 
 .image-contact-model-3d:hover {
-    background-image: url("../public/images/ajenghover.png");
+    background-image: url("../guest/assets/images/ajenghover.png");
 }
 
 .shared-3d {
@@ -1543,7 +1538,7 @@ input[class="check-course"] {
 
 .bg-box p {
     position: relative;
-    bottom: 20px;
+    bottom: 27px;
     left: 60px;
     font-size: 17px;
     font-family: "glory";
@@ -1552,6 +1547,11 @@ input[class="check-course"] {
 
 .bg-box p:hover {
     color: #018ED6;
+}
+
+.bg-box img {
+    margin-top: 12px;
+    margin-left: 15px;
 }
 
 .check-box {
@@ -1563,14 +1563,14 @@ input[class="check-course"] {
     left: calc(46.5% - 100px);
     margin-top: 5px;
     cursor: pointer;
-    background-image: url("../public/images/collapse-up.png");
+    background-image: url("../guest/assets/images/collapse-up.png");
     background-size: cover;
     width: 25px;
     height: 25px;
 }
 
 #collapse-all:checked+label {
-    background-image: url("../public/images/collapse-down.png");
+    background-image: url("../guest/assets/images/collapse-down.png");
 }
 
 input[class="collapse-all"] {
@@ -1588,14 +1588,14 @@ input[class="collapse-all"] {
 
 .collapse-1 label {
     margin-top: -42px;
-    background-image: url("../public/images/collapse-up.png");
+    background-image: url("../guest/assets/images/collapse-up.png");
     background-size: cover;
     width: 25px;
     height: 25px;
 }
 
 #collapse-1:checked+label {
-    background-image: url("../public/images/collapse-down.png");
+    background-image: url("../guest/assets/images/collapse-down.png");
 }
 
 input[class="collapse-1"] {
@@ -1613,14 +1613,14 @@ input[class="collapse-1"] {
 
 .collapse-2 label {
     margin-top: -42px;
-    background-image: url("../public/images/collapse-up.png");
+    background-image: url("../guest/assets/images/collapse-up.png");
     background-size: cover;
     width: 25px;
     height: 25px;
 }
 
 #collapse-2:checked+label {
-    background-image: url("../public/images/collapse-down.png");
+    background-image: url("../guest/assets/images/collapse-down.png");
 }
 
 input[class="collapse-2"] {
@@ -1642,14 +1642,14 @@ input[class="collapse-2"] {
 
 .collapse-3 label {
     margin-top: -42px;
-    background-image: url("../public/images/collapse-up.png");
+    background-image: url("../guest/assets/images/collapse-up.png");
     background-size: cover;
     width: 25px;
     height: 25px;
 }
 
 #collapse-3:checked+label {
-    background-image: url("../public/images/collapse-down.png");
+    background-image: url("../guest/assets/images/collapse-down.png");
 }
 
 input[class="collapse-3"] {
@@ -1671,14 +1671,14 @@ input[class="collapse-3"] {
 
 .collapse-4 label {
     margin-top: -42px;
-    background-image: url("../public/images/collapse-up.png");
+    background-image: url("../guest/assets/images/collapse-up.png");
     background-size: cover;
     width: 25px;
     height: 25px;
 }
 
 #collapse-4:checked+label {
-    background-image: url("../public/images/collapse-down.png");
+    background-image: url("../guest/assets/images/collapse-down.png");
 }
 
 input[class="collapse-4"] {
@@ -1696,14 +1696,14 @@ input[class="collapse-4"] {
 
 .collapse-5 label {
     margin-top: -42px;
-    background-image: url("../public/images/collapse-up.png");
+    background-image: url("../guest/assets/images/collapse-up.png");
     background-size: cover;
     width: 25px;
     height: 25px;
 }
 
 #collapse-5:checked+label {
-    background-image: url("../public/images/collapse-down.png");
+    background-image: url("../guest/assets/images/collapse-down.png");
 }
 
 input[class="collapse-5"] {

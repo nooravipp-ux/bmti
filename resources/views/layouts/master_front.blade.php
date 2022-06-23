@@ -13,8 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" />
     <link rel="stylesheet" href="{{asset('guest/assets/bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('guest/global.css')}}">
-    <link rel="stylesheet" href="{{asset('guest/responsive.css')}}">
-    @yield('custom-css')
+    <link rel="stylesheet" href="{{asset('guest/responsive.css')}}"> @yield('custom-css')
 
 </head>
 
@@ -67,15 +66,13 @@
                 <div class="col-3 col-md-2 col-xl-1 order-2 order-xl-3">
                     <div class="akun-button text-center">
                         @if(auth()->user())
-                        <a href="{{url('dashboard')}}" class="btn-lg" role="button" aria-pressed="true">Dashboard</a>
-                        @else
-                        <a class="btn-lg" role="button" aria-pressed="true" onclick="onClickLogin()">LOGIN</a>
-                        @endif
+                        <a href="{{url('dashboard')}}" class="btn-lg" role="button" aria-pressed="true">Dashboard</a> @else
+                        <a class="btn-lg" role="button" aria-pressed="true" onclick="onClickLogin()">LOGIN</a> @endif
                     </div>
                 </div>
 
                 <div class="col-2 col-md-1 col-xl-1 order-3 icon-menu mt-4">
-                    <div class="icon-menu-2"></div>
+                    <div class="icon-menu-2" onclick="onClickMenu()"></div>
                 </div>
             </div>
         </div>
@@ -88,30 +85,30 @@
             <div class="row">
                 <div class="col-3">
                     <div class="logo-footer">
-                        <link href="/">
+                        <a href="/">
                         <image src="{{asset('guest/assets/images/logo-header.png')}}" width="170px" height="110px" />
-                        </link>
+                        </a>
                         <h1>Sahabat Cerdas</h1>
                     </div>
                 </div>
 
                 <div class="col-1">
                     <div class="share">
-                        <link href="#">
+                        <a href="#">
                         <image class="icon-share" src="{{asset('guest/assets/images/fb-1.png')}}" height="30px" width="30px" />
-                        </link>
+                        </a>
                         <br />
-                        <link href="#">
+                        <a href="#">
                         <image class="icon-share" src="{{asset('guest/assets/images/twitter-1.png')}}" height="30px" width="30px" />
-                        </link>
+                        </a>
                         <br />
-                        <link href="#">
+                        <a href="#">
                         <image class="icon-share" src="{{asset('guest/assets/images/ig-1.png')}}" height="30px" width="30px" />
-                        </link>
+                        </a>
                         <br />
-                        <link href="#">
+                        <a href="#">
                         <image class="icon-share" src="{{asset('guest/assets/images/telegram.png')}}" height="30px" width="30px" />
-                        </link>
+                        </a>
                     </div>
                 </div>
 
@@ -174,6 +171,73 @@
         </div>
     </div>
 
+    <div id="menu" class="d-none">
+        <div class="menu-container">
+            <div class="menu-2">
+                <div class="d-flex justify-content-end">
+                    <div class="col-2">
+                        <div class="icon-menu-hover" onclick="onClickCloseMenu()"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="nav">
+                            <li>
+                                <a href="{{url('/')}}">Beranda</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <ul class="nav">
+                            <li>
+                                <a href="{{url('/galeria')}}">Galeria</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <ul class="nav">
+                            <li>
+                                <a href="{{url('/pelatihan-mandiri')}}">Pelatihan Mandiri</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <ul class="nav">
+                            <li>
+                                <input class="collapse-mandiri-2" type="checkbox" id="collapse-mandiri-2" />
+                                <label for="collapse-mandiri-2">Pelatihan Terbimbing</label>
+                                <div class="mandiri-hidden-1 font-italic">
+                                    <a href="">- Upskilling dan Reskilling</a>
+                                </div>
+                                <div class="mandiri-hidden-2">
+                                    <a href="">- Peningkatan Kompetensi &nbsp;&nbsp;&nbsp;Berkelanjutan</a>
+                                </div>
+                                <div class="mandiri-hidden-3">
+                                    <a href="">- Suplemen Kompetensi &nbsp;&nbsp;&nbsp;Keahlian</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <ul class="nav">
+                            <li>
+                                <a href="{{url('/alur-pembelajaran')}}">Alur Pembelajaran</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="login" class="d-none">
         <div class="bg-login">
             <!-- Validation Errors -->
@@ -183,55 +247,55 @@
 
             <!-- Session Status -->
             <div class="d-flex">
-            <x-auth-session-status class="text-popup mb-4 text-center bg-white rounded" :status="session('status')" />
+                <x-auth-session-status class="text-popup mb-4 text-center bg-white rounded" :status="session('status')" />
 
-            <div class="login-container">
-                <div class="d-flex">
-                    <div class="left-box mt-4">
-                        <image class="logo-login" src="{{asset('guest/assets/images/logo-header.png')}}" width="140px" height="100px"/>
-                        <h2 class="login-title">LOGIN</h2>
+                <div class="login-container">
+                    <div class="d-flex">
+                        <div class="left-box mt-4">
+                            <image class="logo-login" src="{{asset('guest/assets/images/logo-header.png')}}" width="140px" height="100px" />
+                            <h2 class="login-title">LOGIN</h2>
 
-                        <form class="mt-5" method="POST" action="{{ route('login') }}">
-                            @csrf
+                            <form class="mt-5" method="POST" action="{{ route('login') }}">
+                                @csrf
 
-                            <!-- Email Address -->
-                            <div class="form-login">
-                                <x-input class="email" id="email" class="block mt-1 w-full" placeholder="Masukan Username / E-mail" type="email" name="email" :value="old('email')" required autofocus/>
-                            </div>
+                                <!-- Email Address -->
+                                <div class="form-login">
+                                    <x-input class="email" id="email" class="block mt-1 w-full" placeholder="Masukan Username / E-mail" type="email" name="email" :value="old('email')" required autofocus/>
+                                </div>
 
-                            <!-- Password -->
-                            <div class="form-login mt-5">
-                                <x-input id="password" class="block mt-1 w-full" placeholder="Masukan Password" type="password" name="password" required autocomplete="current-password" />
-                            </div>
+                                <!-- Password -->
+                                <div class="form-login mt-5">
+                                    <x-input id="password" class="block mt-1 w-full" placeholder="Masukan Password" type="password" name="password" required autocomplete="current-password" />
+                                </div>
 
-                            <!-- Remember Me -->
-                            <div class="row justify-content-between mt-3">
-                                <div class="col-5">
-                                    <label for="remember_me" class="inline-flex items-center">
+                                <!-- Remember Me -->
+                                <div class="row justify-content-between mt-3">
+                                    <div class="col-5">
+                                        <label for="remember_me" class="inline-flex items-center">
                                         <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
                                         <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
                                     </label>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="clik-LupaPassword" onclick="onClickLupaPassword()">Lupa Password ?</div>
+                                    </div>
                                 </div>
-                                <div class="col-3">
-                                    <div class="clik-LupaPassword" onclick="onClickLupaPassword()">Lupa Password ?</div>
-                                </div>
-                            </div>
 
-                            <div class="d-flex justify-content-center mt-5">
-                                <div class="col-2">
-                                    <button class="btn-login rounded-pill text-dark font-weight-bold">
+                                <div class="d-flex justify-content-center mt-5">
+                                    <div class="col-2">
+                                        <button class="btn-login rounded-pill text-dark font-weight-bold">
                                         {{ __('Masuk') }}
                                     </button>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="row text-center mt-3">
-                                <p>Atau</p>
-                            </div>
-                        </form>
+                                <div class="row text-center mt-3">
+                                    <p>Atau</p>
+                                </div>
+                            </form>
 
-                        <div class="row text-center mt-2 clik-register">
-                            <span>Belum Memiliki Akun ?<span>
+                            <div class="row text-center mt-2 clik-register">
+                                <span>Belum Memiliki Akun ?<span>
                             <button onclick="onClickRegister()">Daftar</button>
                         </div>
                     </div>
@@ -250,7 +314,7 @@
                             <div class="col-5 d-flex">
                                 <div class="row mt-3">
                                     <div class="col-12 col-xl-5 logo-login-right-2">
-                                        <image src="{{asset('guest/assets/images/logo-bmti.png')}}" width="70px" height="70px"/>
+                                        <image src="{{asset('guest/assets/images/logo-bmti.png')}}" width="70px" height="70px" />
                                     </div>
                                     <div class="col-12 col-xl-7 text-logo-right-2 mt-1">
                                         <span>BBPPMPV BMTI <br/> Bidang Mesin dan Teknik Industri</span>
@@ -277,7 +341,7 @@
             <div class="register-container">
                 <div class="d-flex">
                     <div class="left-box mt-4">
-                        <image class="logo-login" src="{{asset('guest/assets/images/logo-header.png')}}" width="140px" height="100px"/>
+                        <image class="logo-login" src="{{asset('guest/assets/images/logo-header.png')}}" width="140px" height="100px" />
                         <h2 class="login-title">DAFTAR</h2>
 
                         <form method="POST" action="{{ route('register') }}">
@@ -321,7 +385,7 @@
                             <div class="col-5 d-flex">
                                 <div class="row mt-3">
                                     <div class="col-sm-12 col-xl-5 logo-login-right-1">
-                                        <image src="{{asset('guest/assets/images/logo-kemdikbud.png')}}" width="70px" height="70px"/>
+                                        <image src="{{asset('guest/assets/images/logo-kemdikbud.png')}}" width="70px" height="70px" />
                                     </div>
                                     <div class="col-12 col-xl-7 text-logo-right-1 mt-1">
                                         <span>Kementrian Pendidikan, Kebudayaan, Riset dan Teknologi</span>
@@ -331,7 +395,7 @@
                             <div class="col-5 d-flex">
                                 <div class="row mt-3">
                                     <div class="col-12 col-xl-5 logo-login-right-2">
-                                        <image src="{{asset('guest/assets/images/logo-bmti.png')}}" width="70px" height="70px"/>
+                                        <image src="{{asset('guest/assets/images/logo-bmti.png')}}" width="70px" height="70px" />
                                     </div>
                                     <div class="col-12 col-xl-7 text-logo-right-2 mt-1">
                                         <span>BBPPMPV BMTI <br/> Bidang Mesin dan Teknik Industri</span>
@@ -354,7 +418,7 @@
             <div class="d-flex">
                 <x-auth-validation-errors id="error" class="text-popup mb-4 text-center bg-white rounded" :errors="$errors" />
             </div>
-            
+
             <!-- Session Status -->
             <div class="d-flex">
                 <x-auth-session-status class="text-popup mb-4 text-center bg-white rounded" :status="session('status')" />
@@ -363,9 +427,9 @@
             <div class="LupaPassword-container">
                 <div class="d-flex">
                     <div class="left-box mt-4">
-                        <image class="logo-login" src="{{asset('guest/assets/images/logo-header.png')}}" width="140px" height="100px"/>
+                        <image class="logo-login" src="{{asset('guest/assets/images/logo-header.png')}}" width="140px" height="100px" />
                         <div class="text-forget text-center mb-4 mt-5 text-sm text-gray-600">
-                        {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+                            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
                         </div>
 
                         <form method="POST" action="{{ route('password.email') }}">
@@ -388,7 +452,7 @@
                             <div class="col-5 d-flex">
                                 <div class="row mt-3">
                                     <div class="col-sm-12 col-xl-5 logo-login-right-1">
-                                        <image src="{{asset('guest/assets/images/logo-kemdikbud.png')}}" width="70px" height="70px"/>
+                                        <image src="{{asset('guest/assets/images/logo-kemdikbud.png')}}" width="70px" height="70px" />
                                     </div>
                                     <div class="col-12 col-xl-7 text-logo-right-1 mt-1">
                                         <span>Kementrian Pendidikan, Kebudayaan, Riset dan Teknologi</span>
@@ -398,7 +462,7 @@
                             <div class="col-5 d-flex">
                                 <div class="row mt-3">
                                     <div class="col-12 col-xl-5 logo-login-right-2">
-                                        <image src="{{asset('guest/assets/images/logo-bmti.png')}}" width="70px" height="70px"/>
+                                        <image src="{{asset('guest/assets/images/logo-bmti.png')}}" width="70px" height="70px" />
                                     </div>
                                     <div class="col-12 col-xl-7 text-logo-right-2 mt-1">
                                         <span>BBPPMPV BMTI <br/> Bidang Mesin dan Teknik Industri</span>
@@ -414,7 +478,7 @@
             </div>
         </div>
     </div>
-    
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="{{asset('guest/assets/bootstrap/js/bootstrap.min.js')}}"></script>
@@ -432,27 +496,43 @@
                 }
             })
         })
+
+        function onClickMenu() {
+            $('#menu').attr('class', '');
+        }
+
+        function onClickCloseMenu() {
+            $('#menu').attr('class', '');
+            $('#menu').addClass('d-none');
+        }
+
         function onClickLogin() {
             $('#login').attr('class', '');
         }
+
         function onClickCloseLogin() {
             $('#login').addClass('d-none');
         }
+
         function onClickRegister() {
             $('#login').addClass('d-none');
             $('#register').attr('class', '');
         }
+
         function onClickCloseRegister() {
             $('#register').addClass('d-none');
         }
+
         function onClickDaftar() {
             $('#register').addClass('d-none');
             $('#login').attr('class', '');
         }
+
         function onClickLupaPassword() {
             $('#login').addClass('d-none');
             $('#LupaPassword').attr('class', '');
         }
+
         function onClickCloseLupaPassword() {
             $('#LupaPassword').addClass('d-none');
         }
