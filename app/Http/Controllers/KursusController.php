@@ -65,7 +65,7 @@ class KursusController extends Controller
         $data->update([
             'jenis_kursus_id' => $request->jenis_kursus_id,
             'kategori_kursus_id' => $request->kategori_kursus_id,
-            'author_id' => $request->author_id,
+            'author_id' => auth()->user()->id,
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
             'gambar' => $imageName

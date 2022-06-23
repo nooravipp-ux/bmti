@@ -30,10 +30,6 @@
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label for="author_id" class="form-label">Author ID</label>
-                            <input type="number" name="author_id" class="form-control" id="author_id" aria-describedby="emailHelp" value="{{$data->author_id}}">
-                        </div>
-                        <div class="mb-3">
                             <label for="judul" class="form-label">Judul</label>
                             <input type="text" name="judul" class="form-control" id="judul" aria-describedby="emailHelp" value="{{$data->judul}}">
                         </div>
@@ -44,7 +40,7 @@
                         <div class="mb-3">
                             <label for="gambar" class="form-label">Gambar</label>
                             <div>
-                                <img src="{{asset('images/pelatihan/'.$data->gambar_banner)}}" width="300" height="250" />
+                                <img src="{{asset('images/pelatihan/'.$data->gambar)}}" width="300" height="250" />
                             </div>
                             <input type="file" name="gambar" class="form-control" id="gambar" aria-describedby="emailHelp">
                         </div>
