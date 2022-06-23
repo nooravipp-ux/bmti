@@ -433,7 +433,7 @@
                                 <li class="nav-item"> <a class="nav-link" href="{{route('kategoriKursus')}}">Kategori
                                         Kursus
                                     </a></li>
-                                <li class="nav-item"> <a class="nav-link" href="{{route('kursus')}}">Kursus
+                                <li class="nav-item"> <a class="nav-link" href="{{route('pelatihan')}}">Kursus
                                     </a></li>
                                 <li class="nav-item"> <a class="nav-link" href="{{route('topik')}}">Topik
                                     </a></li>

@@ -20,7 +20,7 @@
                         <table id="dataTable" class="table">
                             <thead>
                                 <tr>
-                                    <a href="{{route('kursus.create')}}" class="btn btn-primary btn-sm btn-rounded btn-icon-text">
+                                    <a href="{{route('pelatihan.create')}}" class="btn btn-primary btn-sm btn-rounded btn-icon-text">
                                         <i class="ti-upload btn-icon-prepend"></i>
                                         Create
                                     </a>
@@ -40,10 +40,9 @@
                                     <td>{{$row->judul}}</td>
                                     <td>{{$row->kategori_kursus}}</td>
                                     <td>{{$row->judul}}</td>
-                                    <td></td>
-                                    <td><a href="{{ route('kursus.edit', ['id'=>$row->id]) }}" class="btn btn-dark btn-sm btn-rounded btn-icon-prepend">Atur
+                                    <td><a href="{{ route('pelatihan.edit', ['id'=>$row->id]) }}" class="btn btn-dark btn-sm btn-rounded btn-icon-prepend">Atur
                                             <i class="ti-reload btn-icon-append"></i></a>
-                                        <a href="{{ route('kursus.delete', ['id'=>$row->id]) }}" onclick="return confirm('Apakah anda yakin ?')" class="btn btn-danger btn-sm btn-rounded btn-icon-text">Delete
+                                        <a href="{{ route('pelatihan.delete', ['id'=>$row->id]) }}" onclick="return confirm('Apakah anda yakin ?')" class="btn btn-danger btn-sm btn-rounded btn-icon-text">Delete
                                             <i class="ti-trash btn-icon-append"></i></a>
                                     </td>
                                 </tr>
