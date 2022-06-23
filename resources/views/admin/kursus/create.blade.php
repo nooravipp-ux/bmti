@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'BMTI | DATA KURSUS')
+@section('title', 'BMTI | Pelatihan')
 @section('content')
 
 <div class="content-wrapper">
@@ -10,16 +10,16 @@
                     <h4 class="card-title">{{ __('Buat Pelatihan Mandiri') }}</h4>
                     <!-- <p class="card-description">
                     </p> -->
-                    <form action="{{route('kursus.store')}}" method="POST" enctype="multipart/form-data">
+                    <form action="{{route('pelatihan.store')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
-                            <label for="judul" class="col-sm-3 col-form-label">Namcsada Pelatihan</label>
+                            <label for="judul" class="col-sm-3 col-form-label">Nama Pelatihan</label>
                             <div class="col-sm-9">
                                 <input type="text" name="judul" class="form-control mt-2">
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="deskripsi" class="col-sm-3 col-form-label">Deskripsi Pelatihan</label>
+                            <label for="deskripsi" class="col-sm-3 col-form-label">Dekripsi Pelatihan</label>
                             <div class="col-sm-9">
                                 <textarea type="text" name="deskripsi" class="form-control mt-2" style="height: 100px;"></textarea>
                             </div>
@@ -52,10 +52,4 @@
         </div>
     </div>
 </div>
-<script>
-    $(document).ready(function() {
-        $('#dataTable').DataTable();
-
-    });
-</script>
 @endsection

@@ -22,7 +22,6 @@ class KursusController extends Controller
     {
         $jenis_kursus = JenisKursus::all();
         $kategori_kursus = KategoriKursus::all();
-        dd($kategori_kursus);
         return view('admin.kursus.create', compact(['jenis_kursus', 'kategori_kursus']));
     }
 
@@ -40,16 +39,16 @@ class KursusController extends Controller
         $data = Kursus::create([
             'jenis_kursus_id' => 1,
             'kategori_kursus_id' => $request->kategori_kursus_id,
-            'author_id' => auth()->user()->name,
+            'author_id' => auth()->user()->id,
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
             'gambar' => $imageName
         ]);
         if($request->file('gambar')) {
-            $image->move(public_path('public/Image'), $imageName);
+            $image->move(public_path('images/pelatihan/'), $imageName);
         }
 
-        return $this->createTopik($data->id);
+        return redirect('/admin/pelatihan');
     }
     public function edit($id)
     {
@@ -72,17 +71,17 @@ class KursusController extends Controller
             'gambar' => $imageName
         ]);
         if($request->file('gambar')) {
-            $image->move(public_path('public/Image'), $imageName);
+            $image->move(public_path('images/pelatihan/'), $imageName);
         }
 
-        return redirect('/admin/kursus');
+        return redirect('/admin/pelatihan');
     }
     public function delete($id)
     {
         $data = Kursus::find($id);
         $data->delete();
 
-        return redirect('/admin/kursus');
+        return redirect('/admin/pelatihan');
     
     }
 }

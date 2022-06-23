@@ -24,6 +24,8 @@ use App\Http\Controllers\MasterListDataController;
 use App\Http\Controllers\PerusahaanMitraController;
 use App\Http\Controllers\ImportDataEvaluasiController;
 
+use App\Http\Controllers\Guest\PelatihanController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,13 +41,16 @@ Route::get('/', function () {
     return view('guest.beranda');
 });
 
+//route unutk beranda
 Route::get('/', [BerandaController::class, 'getData']);
+
+//route untuk galeria
 Route::get('/galeria', [GaleriaController::class, 'getKategoriKompetensi']);
 Route::get('/galeria/{kategori_id}', [GaleriaController::class, 'getAllKeahlianByKategori']);
 
-Route::get('/pelatihan-mandiri', function () {
-    return view('guest.pelatihan');
-});
+//route unutk pelatihan
+Route::get('/pelatihan-mandiri', [PelatihanController::class, 'index']);
+Route::get('/pelatihan-mandiri/{id}', [PelatihanController::class, 'getAllPelatihanByKategori'])->name('pelatihan.detail');
 
 Route::get('/alur-pembelajaran', function () {
     return view('guest.alur_pembelajaran');
@@ -154,17 +159,17 @@ Route::group(['middleware' => 'auth'], function () {
         Route::put('/peserta/update/{id}', [PesertaController::class, 'update'])->name('peserta.update');
         Route::get('/peserta/delete/{id}', [PesertaController::class, 'delete'])->name('peserta.delete');
 
-        Route::get('/kursus', [KursusController::class, 'index'])->name('kursus');
+        Route::get('/pelatihan', [KursusController::class, 'index'])->name('pelatihan');
 
         //Kurusu - Topik
-        Route::get('/kursus/{kursusId}', [KursusController::class, 'createTopik'])->name('kursus.topik');
+        // Route::get('/pelatihan/{kursusId}', [KursusController::class, 'createTopik'])->name('pelatihan.topik');
 
         //
-        Route::get('/kursus/create', [KursusController::class, 'create'])->name('kursus.create');
-        Route::post('/kursus/store', [KursusController::class, 'store'])->name('kursus.store');
-        Route::get('/kursus/edit/{id}', [KursusController::class, 'edit'])->name('kursus.edit');
-        Route::put('/kursus/update/{id}', [KursusController::class, 'update'])->name('kursus.update');
-        Route::get('/kursus/delete/{id}', [KursusController::class, 'delete'])->name('kursus.delete');
+        Route::get('/pelatihan/create', [KursusController::class, 'create'])->name('pelatihan.create');
+        Route::post('/pelatihan/store', [KursusController::class, 'store'])->name('pelatihan.store');
+        Route::get('/pelatihan/edit/{id}', [KursusController::class, 'edit'])->name('pelatihan.edit');
+        Route::put('/pelatihan/update/{id}', [KursusController::class, 'update'])->name('pelatihan.update');
+        Route::get('/pelatihan/delete/{id}', [KursusController::class, 'delete'])->name('pelatihan.delete');
 
         Route::get('/topik', [TopikController::class, 'index'])->name('topik');
         Route::get('/topik/create', [TopikController::class, 'create'])->name('topik.create');
