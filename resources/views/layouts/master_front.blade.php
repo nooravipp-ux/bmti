@@ -347,23 +347,38 @@
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
 
-                            <!-- Name -->
-                            <div class="form-login mt-4">
-                                <x-input id="name" class="block mt-1 w-full" placeholder="Masukan Nama Lengkap" type="text" name="name" :value="old('name')" required autofocus />
+                            <!-- FirstName -->
+                            <div class="form-login mt-3">
+                                <x-input id="firstName" class="block mt-1 w-full" placeholder="Masukan Nama Depan" type="text" name="firstName" :value="old('firstName')" required autofocus />
+                            </div>
+
+                            <!-- LasttName -->
+                            <div class="form-login mt-2">
+                                <x-input id="lastName" class="block mt-1 w-full" placeholder="Masukan Nama Belakang" type="text" name="lastName" :value="old('lastName')" required autofocus />
+                            </div>
+
+                            <!-- NIK -->
+                            <div class="form-login mt-2">
+                                <x-input id="nik" class="block mt-1 w-full" placeholder="Masukan NIK" type="text" name="nik" :value="old('nik')" required autofocus />
+                            </div>
+                            
+                            <!-- NUPTK -->
+                            <div class="form-login mt-2">
+                                <x-input id="nuptk" class="block mt-1 w-full" placeholder="Masukan NUPTK" type="text" name="nuptk" :value="old('nuptk')" required autofocus />
                             </div>
 
                             <!-- Email Address -->
-                            <div class="form-login mt-4">
+                            <div class="form-login mt-2">
                                 <x-input id="email" class="block mt-1 w-full" placeholder="Masukan E-mail" type="email" name="email" :value="old('email')" required />
                             </div>
 
                             <!-- Password -->
-                            <div class="form-login mt-4">
+                            <div class="form-login mt-2">
                                 <x-input id="password" class="block mt-1 w-full" placeholder="Masukan Password" type="password" name="password" required autocomplete="new-password" />
                             </div>
 
                             <!-- Confirm Password -->
-                            <div class="form-login mt-4">
+                            <div class="form-login mt-2">
                                 <x-input id="password_confirmation" class="block mt-1 w-full" placeholder="Konfirmasi Password" type="password" name="password_confirmation" required />
                             </div>
 
@@ -371,7 +386,7 @@
                                 <button onclick="onClickDaftar()">Sudah Terdaftar ?</button>
                             </div>
 
-                            <div class="d-flex justify-content-center mt-4 clik-daftar">
+                            <div class="d-flex justify-content-center mb-5 clik-daftar">
                                 <div class="col-2">
                                     <button class="btn-login rounded-pill text-dark font-weight-bold">
                                         {{ __('Daftar') }}

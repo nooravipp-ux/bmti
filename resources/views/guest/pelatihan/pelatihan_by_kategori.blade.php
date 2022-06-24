@@ -83,14 +83,6 @@
                     </div>
                 </div>
             </div>
-
-            <div class="col-sm-12 col-xl-1">
-                <div class="contact-model-3d">
-                    <a href="">
-                    <div class="image-contact-model-3d"></div>
-                    </a>
-                </div>
-            </div>
         </div>
     </div>
 </div>

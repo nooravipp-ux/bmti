@@ -24,6 +24,32 @@ header {
 
 /* end header */
 
+.text-pembelajaran {
+    font-family: "glory";
+}
+
+.text-pembelajaran h1 {
+    font-weight: bold;
+}
+
+.text-pembelajaran button {
+    margin-left: 10px;
+    background: #2289FF;
+    color: white;
+    font-weight: 600;
+}
+
+.text-pembelajaran button:hover {
+    background: #143152;
+    color: white;
+}
+
+
+/* pembelajaran */
+
+
+/* end pembelajaran */
+
 
 /* footer */
 

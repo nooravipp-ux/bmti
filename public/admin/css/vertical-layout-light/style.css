@@ -11000,7 +11000,7 @@ textarea.asColorPicker-input,
 textarea.typeahead,
 textarea.tt-query,
 textarea.tt-hint {
-  min-height: 10rem;
+    min-height: 10rem;
 }
 
 textarea.form-control-sm {
@@ -31083,7 +31083,7 @@ div.tagsinput span.tag a {
     -moz-transition: background 0.25s ease;
     -ms-transition: background 0.25s ease;
     box-shadow: none;
-    background: #F4F5F7;
+    background: #14395B;
     /* Navbar color variations */
 }
 
@@ -31214,11 +31214,13 @@ div.tagsinput span.tag a {
 
 @media (max-width: 991px) {
     .navbar .navbar-menu-wrapper {
+        color: #D0C9C0;
         width: calc(50% - 55px);
         padding-top: 12px;
         padding-left: 15px;
         padding-right: 11px;
         height: auto;
+        background: #14395B;
     }
 }
 
@@ -31272,6 +31274,12 @@ div.tagsinput span.tag a {
         margin-left: 10px;
         margin-right: 0px;
     }
+    .navbar .navbar-menu-wrapper .navbar-nav .nav-item .nav-link i {
+        font-size: 1.25rem;
+        vertical-align: middle;
+        margin-right: 0;
+        color: #D0C9C0;
+    }
 }
 
 .navbar .navbar-menu-wrapper .navbar-nav .nav-item:last-child {
@@ -31288,6 +31296,12 @@ div.tagsinput span.tag a {
     .navbar .navbar-menu-wrapper .navbar-nav .nav-item .nav-link {
         margin-left: 0.5rem;
         margin-right: 0.5rem;
+    }
+    .navbar .navbar-menu-wrapper .navbar-nav .nav-item .nav-link i {
+        font-size: 1.25rem;
+        vertical-align: middle;
+        margin-right: 0;
+        color: #D0C9C0;
     }
 }
 
