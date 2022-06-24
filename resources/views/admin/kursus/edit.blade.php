@@ -10,8 +10,7 @@
                     <h4 class="card-title">{{ __('Data Kursus') }}</h4>
                     <!-- <p class="card-description">
                     </p> -->
-                    <form action="{{route('kursus.update', ['id'=>$data->id])}}" method="POST"
-                        enctype="multipart/form-data">
+                    <form action="{{route('pelatihan.update', ['id'=>$data->id])}}" method="POST" enctype="multipart/form-data">
                         @method('put')
                         @csrf
                         <div class="mb-3">
@@ -31,24 +30,19 @@
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label for="author_id" class="form-label">Author ID</label>
-                            <input type="number" name="author_id" class="form-control" id="author_id"
-                                aria-describedby="emailHelp" value="{{$data->author_id}}">
-                        </div>
-                        <div class="mb-3">
                             <label for="judul" class="form-label">Judul</label>
-                            <input type="text" name="judul" class="form-control" id="judul" aria-describedby="emailHelp"
-                                value="{{$data->judul}}">
+                            <input type="text" name="judul" class="form-control" id="judul" aria-describedby="emailHelp" value="{{$data->judul}}">
                         </div>
                         <div class="mb-3">
                             <label for="deskripsi" class="form-label">Deskripsi</label>
-                            <input type="text" name="deskripsi" class="form-control" id="deskripsi"
-                                aria-describedby="emailHelp" value="{{$data->deskripsi}}">
+                            <textarea type="text" name="deskripsi" class="form-control">{{$data->deskripsi}}</textarea>
                         </div>
                         <div class="mb-3">
                             <label for="gambar" class="form-label">Gambar</label>
-                            <input type="file" name="gambar" class="form-control" id="gambar"
-                                aria-describedby="emailHelp">
+                            <div>
+                                <img src="{{asset('images/pelatihan/'.$data->gambar)}}" width="300" height="250" />
+                            </div>
+                            <input type="file" name="gambar" class="form-control" id="gambar" aria-describedby="emailHelp">
                         </div>
                         <button type="Perbaharui" class="btn btn-primary btn-sm btn-rounded">Submit</button>
                     </form>
@@ -58,9 +52,9 @@
     </div>
 </div>
 <script>
-$(document).ready(function() {
-    $('#dataTable').DataTable();
+    $(document).ready(function() {
+        $('#dataTable').DataTable();
 
-});
+    });
 </script>
 @endsection

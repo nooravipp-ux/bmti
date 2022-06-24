@@ -6,6 +6,7 @@ use App\Models\Kursus;
 use App\Models\JenisKursus;
 use Illuminate\Http\Request;
 use App\Models\KategoriKursus;
+use App\Models\Topik;
 use Illuminate\Support\Facades\DB;
 
 class KursusController extends Controller
@@ -22,7 +23,6 @@ class KursusController extends Controller
     {
         $jenis_kursus = JenisKursus::all();
         $kategori_kursus = KategoriKursus::all();
-        dd($kategori_kursus);
         return view('admin.kursus.create', compact(['jenis_kursus', 'kategori_kursus']));
     }
 
@@ -40,17 +40,34 @@ class KursusController extends Controller
         $data = Kursus::create([
             'jenis_kursus_id' => 1,
             'kategori_kursus_id' => $request->kategori_kursus_id,
-            'author_id' => auth()->user()->name,
+            'author_id' => auth()->user()->id,
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
             'gambar' => $imageName
         ]);
         if($request->file('gambar')) {
-            $image->move(public_path('public/Image'), $imageName);
+            $image->move(public_path('images/pelatihan/'), $imageName);
         }
 
-        return $this->createTopik($data->id);
+        return redirect()->route('pelatihan.topik', [$data->id]);
     }
+
+    public function manageTopik($pelatihanId){
+        $topiks  = Topik::where('kursus_id', $pelatihanId)->get();
+        $pelatihan = Kursus::find($pelatihanId)->first();
+
+        return view('admin.kursus.manage_topik', compact('topiks','pelatihan'));
+    }
+
+    public function simpanTopik(Request $request){
+        $data = Topik::create([
+            'kursus_id' => $request->kursus_id,
+            'judul' => $request->judul,
+            'materi' => $request->deskripsi
+        ]);
+        return redirect()->back();
+    }
+
     public function edit($id)
     {
         $data = Kursus::find($id);
@@ -66,23 +83,23 @@ class KursusController extends Controller
         $data->update([
             'jenis_kursus_id' => $request->jenis_kursus_id,
             'kategori_kursus_id' => $request->kategori_kursus_id,
-            'author_id' => $request->author_id,
+            'author_id' => auth()->user()->id,
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
             'gambar' => $imageName
         ]);
         if($request->file('gambar')) {
-            $image->move(public_path('public/Image'), $imageName);
+            $image->move(public_path('images/pelatihan/'), $imageName);
         }
 
-        return redirect('/admin/kursus');
+        return redirect('/admin/pelatihan');
     }
     public function delete($id)
     {
         $data = Kursus::find($id);
         $data->delete();
 
-        return redirect('/admin/kursus');
+        return redirect('/admin/pelatihan');
     
     }
 }

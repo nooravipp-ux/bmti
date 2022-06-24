@@ -1,0 +1,116 @@
+@extends('layouts.master')
+@section('title', 'BMTI | Pelatihan')
+@section('content')
+
+@section('custom-css')
+<style>
+    .backdrop-modal {
+        padding: 20px;
+        position: absolute;
+        top: 200px;
+        width: 95%;
+        right: 2%;
+        height: auto;
+        background-color: white;
+        border: 1px solid #ddd;
+        box-shadow: 0.2px 0.6px 0.5px 0.5px;
+        z-index: 1;
+    }
+
+    .topik {
+        padding-left: 30px;
+        display: flex;
+        color: #8D8D8D;
+    }
+
+    .pelatihan {
+        display: flex;
+    }
+
+    .pelatihan i {
+        float: inline-end;
+    }
+
+    .button-container {
+        margin-top: 20px;
+    }
+
+    #modal-topik {
+        position: fixed;
+        left: 300px;
+        min-width: 1000px;
+    }
+</style>
+@endsection
+<div class="content-wrapper">
+    <div class="row justify-content-center">
+        <div class="col-lg-10 grid-margin">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12 d-flex">
+                            <h4 class="card-title">{{ $pelatihan->judul }}</h4>
+                            <i class="ms-auto menu-icon mdi mdi-dots-vertical"></i>
+                        </div>
+                    </div>
+                    <hr>
+                    @foreach($topiks as $tp)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="d-flex">
+                                <i class="menu-icon mdi mdi-drag pl-4"></i>
+                                <h4 class="card-title" style="padding-left: 3px;">{{$tp->judul}}</h4>
+                                <i class="ms-auto menu-icon mdi mdi-dots-vertical"></i>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+            <div class="button-container">
+                <button type="submit" class="btn btn-primary btn-sm btn-rounded float-right" data-toggle="modal" data-target="#exampleModalCenter" id="bntModal">+ Topik Pembelajaran</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modal-topik" class="row justify-content-center d-none">
+        <div class="col-lg-6 grid-margin">
+            <div class="card">
+                <div class="card-body">
+                    <form action="{{route('pelatihan.topik.simpan')}}" method="POST">
+                        @csrf
+                        <div class="mb-3">
+                            <label for="judul" class="form-label">Judul</label>
+                            <input type="text" name="judul" class="form-control">
+                            <input type="hidden" name="kursus_id" value="{{$pelatihan->id}}" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="deskripsi" class="form-label">Deskripsi</label>
+                            <textarea type="text" name="deskripsi" class="form-control"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <button id="btn-batal" class="btn btn-danger btn-sm btn-rounded float-right ml-2">Batal</button>
+                            <button type="submit" class="btn btn-primary btn-sm btn-rounded float-right">Simpan</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
+
+@section('script')
+<script>
+    $('#bntModal').click(function() {
+        if ($('#modal-topik').hasClass('d-none')) {
+            $('#modal-topik').removeClass('d-none')
+        } else {
+            $('#modal-topik').addClass('d-none')
+        }
+    });
+
+    $('#bnt-batal').click(function() {
+        $('#modal-topik').addClass('d-none')
+    });
+</script>
+@endsection
