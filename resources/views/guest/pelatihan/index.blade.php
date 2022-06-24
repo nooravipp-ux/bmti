@@ -25,12 +25,6 @@
                     <image src="{{asset('guest/assets/images/logo-bmti.png')}}" width="70px" height="70px" />
                     <p class="col-6">BBPPMPV <br /> Bidang Mesin dan Teknik Industri</p>
                 </div>
-
-                <div class="contact mt-4">
-                    <Link href="">
-                    <div class="image-contact"></div>
-                    </Link>
-                </div>
             </div>
         </div>
     </div>
