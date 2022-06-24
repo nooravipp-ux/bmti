@@ -64,50 +64,6 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <form class="search-form" action="#">
-                            <i class="icon-search"></i>
-                            <input type="search" class="form-control" placeholder="Search Here" title="Search here">
-                        </form>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link count-indicator" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
-                            <i class="icon-mail icon-lg"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="notificationDropdown">
-                            <a class="dropdown-item py-3 border-bottom">
-                                <p class="mb-0 font-weight-medium float-left">You have 4 new notifications </p>
-                                <span class="badge badge-pill badge-primary float-right">View all</span>
-                            </a>
-                            <a class="dropdown-item preview-item py-3">
-                                <div class="preview-thumbnail">
-                                    <i class="mdi mdi-alert m-auto text-primary"></i>
-                                </div>
-                                <div class="preview-item-content">
-                                    <h6 class="preview-subject fw-normal text-dark mb-1">Application Error</h6>
-                                    <p class="fw-light small-text mb-0"> Just now </p>
-                                </div>
-                            </a>
-                            <a class="dropdown-item preview-item py-3">
-                                <div class="preview-thumbnail">
-                                    <i class="mdi mdi-settings m-auto text-primary"></i>
-                                </div>
-                                <div class="preview-item-content">
-                                    <h6 class="preview-subject fw-normal text-dark mb-1">Settings</h6>
-                                    <p class="fw-light small-text mb-0"> Private message </p>
-                                </div>
-                            </a>
-                            <a class="dropdown-item preview-item py-3">
-                                <div class="preview-thumbnail">
-                                    <i class="mdi mdi-airballoon m-auto text-primary"></i>
-                                </div>
-                                <div class="preview-item-content">
-                                    <h6 class="preview-subject fw-normal text-dark mb-1">New user registration</h6>
-                                    <p class="fw-light small-text mb-0"> 2 days ago </p>
-                                </div>
-                            </a>
-                        </div>
-                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link count-indicator" id="countDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="icon-bell"></i>
@@ -415,7 +371,7 @@
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
                             <i class="menu-icon mdi mdi-table"></i>
-                            <span class="menu-title">Pelatihan Mandiri</span>
+                            <span class="menu-title">Pelatihan</span>
                             <i class="menu-arrow"></i>
                         </a>
                         <div class="collapse" id="tables">
@@ -428,12 +384,12 @@
                                         Mandiri</a></li>
                                 <li class="nav-item"> <a class="nav-link" href="{{route('content')}}">Content
                                     </a></li> -->
-                                <li class="nav-item"> <a class="nav-link" href="{{route('jenisKursus')}}">Jenis Kursus
+                                <li class="nav-item"> <a class="nav-link" href="{{route('jenisKursus')}}">Jenis Pelatihan
                                     </a></li>
                                 <li class="nav-item"> <a class="nav-link" href="{{route('kategoriKursus')}}">Kategori
-                                        Kursus
+                                        Pelatihan
                                     </a></li>
-                                <li class="nav-item"> <a class="nav-link" href="{{route('pelatihan')}}">Kursus
+                                <li class="nav-item"> <a class="nav-link" href="{{route('pelatihan')}}">Pelatihan
                                     </a></li>
                                 <li class="nav-item"> <a class="nav-link" href="{{route('topik')}}">Topik
                                     </a></li>
@@ -465,12 +421,13 @@
                         <a class="nav-link" data-bs-toggle="collapse" href="#mitra" aria-expanded="false" aria-controls="icons">
                             <i class="menu-icon mdi mdi-layers-outline"></i>
                             <span class="menu-title">Mitra</span>
+                            <i class="menu-arrow"></i>
                         </a>
                         <i class="menu-arrow"></i>
                         <div class="collapse" id="mitra">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="{{route('perusahaanMitra')}}">Perusahaan
-                                        Mitra</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="{{route('perusahaanMitra')}}">Perusahaan Mitra</a></li>
+                                
                             </ul>
                         </div>
                     </li>
