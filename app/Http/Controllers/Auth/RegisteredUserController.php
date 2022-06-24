@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
 use App\Models\User;
-use App\Providers\RouteServiceProvider;
-use Illuminate\Auth\Events\Registered;
+use App\Models\Peserta;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rules;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules;
+use Illuminate\Auth\Events\Registered;
+use App\Providers\RouteServiceProvider;
 
 class RegisteredUserController extends Controller
 {
@@ -34,14 +35,26 @@ class RegisteredUserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
+            'firstName' => ['required', 'string', 'max:255'],
+            'lastName' => ['required', 'string', 'max:255'],
+            'nik' => ['required', 'string', 'max:255'],
+            'nuptk' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
+        $peserta = Peserta::create([
+            'nama_depan' => $request->firstName,
+            'nama_belakang' => $request->lastName,
+            'nik' => $request->nik,
+            'nuptk' => $request->nuptk,
+            'email' => $request->email
+        ]);
+
         $user = User::create([
-            'name' => $request->name,
+            'name' => $request->firstName.' '.$request->lastName,
             'email' => $request->email,
+            'role_id' => '5',
             'password' => Hash::make($request->password),
         ]);
 
