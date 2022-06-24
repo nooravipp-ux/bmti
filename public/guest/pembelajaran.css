@@ -1,0 +1,122 @@
+/* header */
+
+.active {
+    color: #FFF008;
+}
+
+header {
+    background: #1C3B78;
+    padding-bottom: 10px;
+}
+
+.logo-header {
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.text-header {
+    margin-left: 30px;
+    margin-top: 40px;
+    font-weight: 600;
+    font-family: "glory";
+}
+
+
+/* end header */
+
+
+/* footer */
+
+footer {
+    color: white;
+    background: #1C3B78;
+    padding-top: 35px;
+    font-family: "glory";
+}
+
+.logo-footer h1 {
+    position: relative;
+    left: 50px;
+    bottom: 15px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.logo-footer {
+    position: relative;
+    top: 5px;
+    right: 30px;
+    cursor: pointer;
+}
+
+.share {
+    position: relative;
+    right: 50px;
+}
+
+.icon-share {
+    margin-bottom: 10px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.text-1 span {
+    font-family: "glory";
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.text-1 p {
+    position: relative;
+    top: 15px;
+    line-height: 15px;
+    font-size: 14px;
+    font-family: "glory";
+    font-weight: 600;
+}
+
+.text-2 span {
+    font-size: 16px;
+    font-family: "glory";
+    font-weight: 600;
+}
+
+.text-2 p {
+    position: relative;
+    top: 15px;
+    line-height: 15px;
+    font-size: 14px;
+    font-family: "glory";
+    font-weight: 600;
+}
+
+.address span {
+    font-size: 16px;
+    font-family: "glory";
+    font-weight: 600;
+}
+
+.address p {
+    position: relative;
+    top: 15px;
+    line-height: 15px;
+    font-size: 14px;
+    width: 400px;
+    font-family: "glory";
+    font-weight: 600;
+}
+
+.copyright {
+    color: white;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.copyright span {
+    font-size: 14px;
+    font-family: "glory";
+    font-weight: 600;
+}
+
+
+/* end footer */

@@ -52,6 +52,11 @@ Route::get('/galeria/{kategori_id}', [GaleriaController::class, 'getAllKeahlianB
 Route::get('/pelatihan-mandiri', [PelatihanController::class, 'index']);
 Route::get('/pelatihan-mandiri/{id}', [PelatihanController::class, 'getAllPelatihanByKategori'])->name('pelatihan.detail');
 
+// route pembelajaran
+Route::get('/pembelajaran', function () {
+    return view('pembelajaran.index');
+});
+
 Route::get('/alur-pembelajaran', function () {
     return view('guest.alur_pembelajaran');
 });
