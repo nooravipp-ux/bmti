@@ -6,6 +6,7 @@ use App\Models\Kursus;
 use App\Models\JenisKursus;
 use Illuminate\Http\Request;
 use App\Models\KategoriKursus;
+use App\Models\Topik;
 use Illuminate\Support\Facades\DB;
 
 class KursusController extends Controller
@@ -48,8 +49,25 @@ class KursusController extends Controller
             $image->move(public_path('images/pelatihan/'), $imageName);
         }
 
-        return redirect('/admin/pelatihan');
+        return redirect()->route('pelatihan.topik', [$data->id]);
     }
+
+    public function manageTopik($pelatihanId){
+        $topiks  = Topik::where('kursus_id', $pelatihanId)->get();
+        $pelatihan = Kursus::find($pelatihanId)->first();
+
+        return view('admin.kursus.manage_topik', compact('topiks','pelatihan'));
+    }
+
+    public function simpanTopik(Request $request){
+        $data = Topik::create([
+            'kursus_id' => $request->kursus_id,
+            'judul' => $request->judul,
+            'materi' => $request->deskripsi
+        ]);
+        return redirect()->back();
+    }
+
     public function edit($id)
     {
         $data = Kursus::find($id);
