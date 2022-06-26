@@ -238,99 +238,6 @@
         </div>
     </div>
 
-    <div id="login" class="d-none">
-        <div class="bg-login">
-            <!-- Validation Errors -->
-            <div class="d-flex">
-                <x-auth-validation-errors id="error" class="text-popup mb-4 text-center bg-white rounded" :errors="$errors" />
-            </div>
-
-            <!-- Session Status -->
-            <div class="d-flex">
-                <x-auth-session-status class="text-popup mb-4 text-center bg-white rounded" :status="session('status')" />
-
-                <div class="login-container">
-                    <div class="d-flex">
-                        <div class="left-box mt-4">
-                            <image class="logo-login" src="{{asset('guest/assets/images/logo-header.png')}}" width="140px" height="100px" />
-                            <h2 class="login-title">LOGIN</h2>
-
-                            <form class="mt-5" method="POST" action="{{ route('login') }}">
-                                @csrf
-
-                                <!-- Email Address -->
-                                <div class="form-login">
-                                    <x-input class="email" id="email" class="block mt-1 w-full" placeholder="Masukan Username / E-mail" type="email" name="email" :value="old('email')" required autofocus/>
-                                </div>
-
-                                <!-- Password -->
-                                <div class="form-login mt-5">
-                                    <x-input id="password" class="block mt-1 w-full" placeholder="Masukan Password" type="password" name="password" required autocomplete="current-password" />
-                                </div>
-
-                                <!-- Remember Me -->
-                                <div class="row justify-content-between mt-3">
-                                    <div class="col-5">
-                                        <label for="remember_me" class="inline-flex items-center">
-                                        <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                                        <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                                    </label>
-                                    </div>
-                                    <div class="col-3">
-                                        <div class="clik-LupaPassword" onclick="onClickLupaPassword()">Lupa Password ?</div>
-                                    </div>
-                                </div>
-
-                                <div class="d-flex justify-content-center mt-5">
-                                    <div class="col-2">
-                                        <button class="btn-login rounded-pill text-dark font-weight-bold">
-                                        {{ __('Masuk') }}
-                                    </button>
-                                    </div>
-                                </div>
-
-                                <div class="row text-center mt-3">
-                                    <p>Atau</p>
-                                </div>
-                            </form>
-
-                            <div class="row text-center mt-2 clik-register">
-                                <span>Belum Memiliki Akun ?<span>
-                            <button onclick="onClickRegister()">Daftar</button>
-                        </div>
-                    </div>
-                    <div class="right-box">
-                        <div class="row pt-3">
-                            <div class="col-5 d-flex">
-                                <div class="row mt-3">
-                                    <div class="col-sm-12 col-xl-5 logo-login-right-1">
-                                        <image src="{{asset('guest/assets/images/logo-kemdikbud.png')}}" width="70px" height="70px"/>
-                                    </div>
-                                    <div class="col-12 col-xl-7 text-logo-right-1 mt-1">
-                                        <span>Kementrian Pendidikan, Kebudayaan, Riset dan Teknologi</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-5 d-flex">
-                                <div class="row mt-3">
-                                    <div class="col-12 col-xl-5 logo-login-right-2">
-                                        <image src="{{asset('guest/assets/images/logo-bmti.png')}}" width="70px" height="70px" />
-                                    </div>
-                                    <div class="col-12 col-xl-7 text-logo-right-2 mt-1">
-                                        <span>BBPPMPV BMTI <br/> Bidang Mesin dan Teknik Industri</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-2 d-flex">
-                                <button class="btn-closed btn-danger btn-sm btn-circle" onclick="onClickCloseLogin()">X</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div id="register" class="d-none">
         <div class="bg-register">
             <!-- Validation Errors -->
@@ -340,7 +247,7 @@
 
             <div class="register-container">
                 <div class="d-flex">
-                    <div class="left-box mt-4">
+                    <div class="left-box mt-2">
                         <image class="logo-login" src="{{asset('guest/assets/images/logo-header.png')}}" width="140px" height="100px" />
                         <h2 class="login-title">DAFTAR</h2>
 
@@ -348,7 +255,7 @@
                             @csrf
 
                             <!-- FirstName -->
-                            <div class="form-login mt-3">
+                            <div class="form-login mt-2">
                                 <x-input id="firstName" class="block mt-1 w-full" placeholder="Masukan Nama Depan" type="text" name="firstName" :value="old('firstName')" required autofocus />
                             </div>
 
@@ -382,11 +289,11 @@
                                 <x-input id="password_confirmation" class="block mt-1 w-full" placeholder="Konfirmasi Password" type="password" name="password_confirmation" required />
                             </div>
 
-                            <div class="d-flex justify-content-end mt-3 clik-sudah-daftar">
+                            <div class="d-flex justify-content-end mt-2 clik-sudah-daftar">
                                 <button onclick="onClickDaftar()">Sudah Terdaftar ?</button>
                             </div>
 
-                            <div class="d-flex justify-content-center mb-5 clik-daftar">
+                            <div class="d-flex justify-content-center clik-daftar">
                                 <div class="col-2">
                                     <button class="btn-login rounded-pill text-dark font-weight-bold">
                                         {{ __('Daftar') }}
@@ -486,6 +393,99 @@
                             </div>
                             <div class="col-2 d-flex">
                                 <button class="btn-closed btn-danger btn-sm btn-circle" onclick="onClickCloseLupaPassword()">X</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="login" class="d-none">
+        <div class="bg-login">
+            <!-- Validation Errors -->
+            <div class="d-flex">
+                <x-auth-validation-errors id="error" class="text-popup mb-4 text-center bg-white rounded" :errors="$errors" />
+            </div>
+
+            <!-- Session Status -->
+            <div class="d-flex">
+                <x-auth-session-status class="text-popup mb-4 text-center bg-white rounded" :status="session('status')" />
+
+                <div class="login-container">
+                    <div class="d-flex">
+                        <div class="left-box mt-4">
+                            <image class="logo-login" src="{{asset('guest/assets/images/logo-header.png')}}" width="140px" height="100px" />
+                            <h2 class="login-title">LOGIN</h2>
+
+                            <form class="mt-5" method="POST" action="{{ route('login') }}">
+                                @csrf
+
+                                <!-- Email Address -->
+                                <div class="form-login">
+                                    <x-input class="email" id="email" class="block mt-1 w-full" placeholder="Masukan Username / E-mail" type="email" name="email" :value="old('email')" required autofocus/>
+                                </div>
+
+                                <!-- Password -->
+                                <div class="form-login mt-5">
+                                    <x-input id="password" class="block mt-1 w-full" placeholder="Masukan Password" type="password" name="password" required autocomplete="current-password" />
+                                </div>
+
+                                <!-- Remember Me -->
+                                <div class="row justify-content-between mt-3">
+                                    <div class="col-5">
+                                        <label for="remember_me" class="inline-flex items-center">
+                                        <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
+                                        <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                                    </label>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="clik-LupaPassword" onclick="onClickLupaPassword()">Lupa Password ?</div>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-center mt-5">
+                                    <div class="col-2">
+                                        <button class="btn-login rounded-pill text-dark font-weight-bold">
+                                        {{ __('Masuk') }}
+                                    </button>
+                                    </div>
+                                </div>
+
+                                <div class="row text-center mt-3">
+                                    <p>Atau</p>
+                                </div>
+                            </form>
+
+                            <div class="row text-center mt-2 clik-register">
+                                <span>Belum Memiliki Akun ?<span>
+                            <button onclick="onClickRegister()">Daftar</button>
+                        </div>
+                    </div>
+                    <div class="right-box">
+                        <div class="row pt-3">
+                            <div class="col-5 d-flex">
+                                <div class="row mt-3">
+                                    <div class="col-sm-12 col-xl-5 logo-login-right-1">
+                                        <image src="{{asset('guest/assets/images/logo-kemdikbud.png')}}" width="70px" height="70px"/>
+                                    </div>
+                                    <div class="col-12 col-xl-7 text-logo-right-1 mt-1">
+                                        <span>Kementrian Pendidikan, Kebudayaan, Riset dan Teknologi</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-5 d-flex">
+                                <div class="row mt-3">
+                                    <div class="col-12 col-xl-5 logo-login-right-2">
+                                        <image src="{{asset('guest/assets/images/logo-bmti.png')}}" width="70px" height="70px" />
+                                    </div>
+                                    <div class="col-12 col-xl-7 text-logo-right-2 mt-1">
+                                        <span>BBPPMPV BMTI <br/> Bidang Mesin dan Teknik Industri</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2 d-flex">
+                                <button class="btn-closed btn-danger btn-sm btn-circle" onclick="onClickCloseLogin()">X</button>
                             </div>
                         </div>
                     </div>

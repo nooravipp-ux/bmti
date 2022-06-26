@@ -24,6 +24,9 @@ header {
 
 /* end header */
 
+
+/* pembelajaran */
+
 .text-pembelajaran {
     font-family: "glory";
 }
@@ -44,8 +47,59 @@ header {
     color: white;
 }
 
+.pembelajaran {
+    margin-left: 30px;
+    padding: 10px;
+    width: 300px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 
-/* pembelajaran */
+.pembelajaran span {
+    font-family: "glory";
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.pembelajaran-2 {
+    margin-left: 30px;
+    width: 300px;
+    height: 65px;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.pembelajaran-2 i {
+    margin-top: 15px;
+}
+
+.pembelajaran-2 span {
+    font-family: "glory";
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.pembelajaran-2 p {
+    font-family: "glory";
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.pembelajaran-2 input {
+    margin-top: 15px;
+}
+
+.pembelajaran-3 {
+    margin-left: 30px;
+    width: 300px;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.pembelajaran-3 span {
+    font-family: "glory";
+    font-weight: 600;
+    font-size: 15px;
+}
 
 
 /* end pembelajaran */
