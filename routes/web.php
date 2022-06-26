@@ -177,6 +177,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/pelatihan/delete/{id}', [KursusController::class, 'delete'])->name('pelatihan.delete');
 
         Route::get('/pelatihan/{pelatihanId}/topik', [KursusController::class, 'manageTopik'])->name('pelatihan.topik');
+        Route::get('/pelatihan/{pelatihanId}/topik/{topikId}', [KursusController::class, 'buatKonten'])->name('pelatihan.konten');
         Route::post('/pelatihan/topik/store', [KursusController::class, 'simpanTopik'])->name('pelatihan.topik.simpan');
 
         Route::get('/topik', [TopikController::class, 'index'])->name('topik');

@@ -68,6 +68,10 @@ class KursusController extends Controller
         return redirect()->back();
     }
 
+    public function buatKonten($pelatihanId, $topikId){
+        return view('admin.kursus.konten', compact('pelatihanId', 'topikId'));
+    }
+
     public function edit($id)
     {
         $data = Kursus::find($id);
