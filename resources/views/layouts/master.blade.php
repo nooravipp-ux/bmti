@@ -23,6 +23,7 @@
     <!-- Plugin css for this page -->
     <link rel="stylesheet" href="{{asset('admin/vendors/datatables.net-bs4/dataTables.bootstrap4.css')}}">
     <link rel="stylesheet" href="{{asset('admin/js/select.dataTables.min.css')}}">
+    <link rel="stylesheet" href="{{asset('guest/assets/bootstrap/css/bootstrap.min.css')}}">
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <link rel="stylesheet" href="{{asset('admin/css/vertical-layout-light/style.css')}}">
