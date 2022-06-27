@@ -37,7 +37,7 @@
 
     #modal-topik {
         position: fixed;
-        left: 400px;
+        left: 300px;
         min-width: 1000px;
     }
 
@@ -67,16 +67,24 @@
                     <hr>
                     <div class="row">
                         <div class="col-md-12">
+                            @foreach($konten as $kt)
+                            @if($kt->topik_id == $tp->id)
                             <div class="konten d-flex">
                                 <i class="menu-icon mdi mdi-content-paste pl-4"></i>
-                                <h5 class="card-title" style="padding-left: 3px;">Lesson 1</h5>
+                                <h5 class="card-title" style="padding-left: 3px;">{{$kt->judul}}</h5>
                                 <a class="ms-auto" href=""><i class="menu-icon mdi mdi-dots-vertical"></i></a>
                             </div>
-                            <div class="kuis d-flex">
-                                <i class="menu-icon mdi mdi-lead-pencil pl-4"></i>
-                                <h5 class="card-title" style="padding-left: 3px;">Kuis 1</h5>
-                                <a class="ms-auto" href=""><i class="menu-icon mdi mdi-dots-vertical"></i></a>
-                            </div>
+                            @endif
+                            @endforeach
+                            @foreach($topikQuiz as $tq)
+                                @if($tq->topik_id == $tp->id)
+                                <div class="kuis d-flex">
+                                    <i class="menu-icon mdi mdi-lead-pencil pl-4"></i>
+                                    <h5 class="card-title" style="padding-left: 3px;">{{$tq->judul}}</h5>
+                                    <a class="ms-auto" href=""><i class="menu-icon mdi mdi-dots-vertical"></i></a>
+                                </div>
+                                @endif
+                            @endforeach
                         </div>
                     </div>
                     <div class="btn-tambah-konten d-flex">
@@ -121,31 +129,6 @@
         </div>
     </div>
 </div>
-
-<div id="modal-konten" class="row justify-content-center d-none">
-    <div class="col-lg-6 grid-margin">
-        <div class="card">
-            <div class="card-body">
-                <form action="{{route('pelatihan.topik.simpan')}}" method="POST">
-                    @csrf
-                    <div class="mb-3">
-                        <label for="judul" class="form-label">Judul</label>
-                        <input type="text" name="judul" class="form-control">
-                        <input type="hidden" name="kursus_id" value="{{$pelatihan->id}}" class="form-control">
-                    </div>
-                    <div class="mb-3">
-                        <label for="deskripsi" class="form-label">Deskripsi</label>
-                        <textarea type="text" name="deskripsi" class="form-control"></textarea>
-                    </div>
-                    <div class="mb-3">
-                        <button id="btn-batal" class="btn btn-danger btn-sm btn-rounded float-right ml-2">Batal</button>
-                        <button type="submit" class="btn btn-primary btn-sm btn-rounded float-right">Simpan</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
 @endsection
 
 @section('script')
@@ -155,14 +138,6 @@
             $('#modal-topik').removeClass('d-none')
         } else {
             $('#modal-topik').addClass('d-none')
-        }
-    });
-
-    $('.btn-konten').click(function() {
-        if ($('#modal-konten').hasClass('d-none')) {
-            $('#modal-konten').removeClass('d-none')
-        } else {
-            $('#modal-konten').addClass('d-none')
         }
     });
 

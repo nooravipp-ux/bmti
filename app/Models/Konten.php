@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Konten extends Model
 {
+    protected $fillable = ['judul','materi'];
+
+    protected $table = 't_konten';
     public function topik(){
         return $this->belongsTo('App\Models\Topik');
     }

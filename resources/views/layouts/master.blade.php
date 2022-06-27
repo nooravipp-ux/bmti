@@ -17,7 +17,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </link>
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <link rel="stylesheet" href="{{asset('admin/vendors/datatables.net-bs4/dataTables.bootstrap4.css')}}">
@@ -382,9 +383,7 @@
                                 <li class="nav-item"> <a class="nav-link"
                                         href="{{route('jenisPelatihanMandiri')}}">Jenis
                                         Pelatihan
-                                        Mandiri</a></li>
-                                <li class="nav-item"> <a class="nav-link" href="{{route('content')}}">Content
-                                    </a></li> -->
+                                        Mandiri</a></li> -->
                                 <li class="nav-item"> <a class="nav-link" href="{{route('jenisKursus')}}">Jenis Pelatihan
                                     </a></li>
                                 <li class="nav-item"> <a class="nav-link" href="{{route('kategoriKursus')}}">Kategori
@@ -392,10 +391,12 @@
                                     </a></li>
                                 <li class="nav-item"> <a class="nav-link" href="{{route('pelatihan')}}">Pelatihan
                                     </a></li>
-                                <li class="nav-item"> <a class="nav-link" href="{{route('topik')}}">Topik
+                                <!-- <li class="nav-item"> <a class="nav-link" href="{{route('topik')}}">Topik
+                                    </a></li>
+                                <li class="nav-item"> <a class="nav-link" href="{{route('content')}}">Konten Pembelajaran
                                     </a></li>
                                 <li class="nav-item"> <a class="nav-link" href="{{route('quiz')}}">Quiz
-                                    </a></li>
+                                    </a></li> -->
                                 <li class="nav-item"> <a class="nav-link" href="{{route('pertanyaan')}}">Bank Soal
                                     </a></li>
                                 <!-- <li class="nav-item"> <a class="nav-link" href="{{route('topikQuiz')}}">Topik Quiz
@@ -428,7 +429,7 @@
                         <div class="collapse" id="mitra">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> <a class="nav-link" href="{{route('perusahaanMitra')}}">Perusahaan Mitra</a></li>
-                                
+
                             </ul>
                         </div>
                     </li>
