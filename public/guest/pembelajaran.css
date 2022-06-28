@@ -1,3 +1,28 @@
+/* scroll */
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #666;
+    border: 2px solid #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #8d8d8d;
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+/* end scroll */
+
+
 /* header */
 
 .active {
@@ -23,6 +48,118 @@ header {
 
 
 /* end header */
+
+
+/* pembelajaran */
+
+.text-pembelajaran {
+    font-family: "glory";
+}
+
+.text-pembelajaran h1 {
+    font-weight: bold;
+}
+
+.text-pembelajaran h2 {
+    font-weight: bold;
+}
+
+.text-pembelajaran h1 button {
+    margin-left: 20px;
+    background: #2289FF;
+    font-weight: 600;
+    border: none;
+}
+
+.text-pembelajaran button:hover {
+    background: #143152;
+    color: white;
+}
+
+.pembelajaran {
+    margin-left: 30px;
+    padding: 10px;
+    width: 300px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.pembelajaran span {
+    font-family: "glory";
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.pembelajaran-2 {
+    margin-left: 30px;
+    width: 300px;
+    height: 65px;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.pembelajaran-2 i {
+    margin-top: 15px;
+}
+
+.pembelajaran-2 span {
+    font-family: "glory";
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.pembelajaran-2 p {
+    font-family: "glory";
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.pembelajaran-2 input {
+    margin-top: 15px;
+}
+
+.pembelajaran-3 {
+    margin-left: 30px;
+    width: 300px;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.pembelajaran-3 span {
+    font-family: "glory";
+    font-weight: 600;
+    font-size: 15px;
+}
+
+
+/* end pembelajaran */
+
+
+/* quiz */
+
+.box-proses {
+    background: #DBDFFD;
+    width: 700px;
+    height: 60px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.box-proses p {
+    font-family: "glory";
+    font-weight: 600;
+    line-height: 10px;
+}
+
+.btn-quiz {
+    width: 150px;
+    border-radius: 15px;
+    padding: 5px;
+    background: #2289FF;
+    border: none;
+}
+
+
+/* end-quiz */
 
 
 /* footer */

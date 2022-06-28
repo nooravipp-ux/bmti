@@ -482,7 +482,7 @@ input[class="collapse-mandiri-2"] {
 }
 
 .clik-daftar {
-    padding-bottom: 67px;
+    padding-bottom: 35px;
     font-family: "glory";
     font-weight: 600;
 }
@@ -1262,7 +1262,8 @@ input[class="collapse-mandiri-2"] {
     margin-bottom: 20px;
 }
 
-.contact {
+
+/* .contact {
     position: fixed;
     z-index: 9999;
     top: 78%;
@@ -1279,7 +1280,7 @@ input[class="collapse-mandiri-2"] {
 
 .image-contact:hover {
     background-image: url("../guest/assets/images/ajenghover.png");
-}
+} */
 
 .card-pel {
     position: relative;
@@ -1461,7 +1462,8 @@ input[class="check-course"] {
     display: none;
 }
 
-.contact-model-3d {
+
+/* .contact-model-3d {
     position: fixed;
     z-index: 9999;
     top: 80%;
@@ -1478,7 +1480,7 @@ input[class="check-course"] {
 
 .image-contact-model-3d:hover {
     background-image: url("../guest/assets/images/ajenghover.png");
-}
+} */
 
 .shared-3d {
     margin-left: 10px;

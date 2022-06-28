@@ -59,6 +59,21 @@ Route::get('/pembelajaran', function () {
     return view('pembelajaran.index');
 });
 
+Route::get('/pembelajaran-1', function () {
+    return view('pembelajaran.pembelajaran-1');
+});
+
+Route::get('/pembelajaran-2', function () {
+    return view('pembelajaran.pembelajaran-2');
+});
+Route::get('/start-quiz', function () {
+    return view('pembelajaran.start-quiz');
+});
+Route::get('/quiz', function () {
+    return view('pembelajaran.quiz');
+});
+
+
 Route::get('/alur-pembelajaran', function () {
     return view('guest.alur_pembelajaran');
 });
@@ -178,7 +193,10 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
         Route::get('/pelatihan/delete/{id}', [KursusController::class, 'delete'])->name('pelatihan.delete');
 
         Route::get('/pelatihan/{pelatihanId}/topik', [KursusController::class, 'manageTopik'])->name('pelatihan.topik');
+        Route::get('/pelatihan/{pelatihanId}/topik/{topikId}', [KursusController::class, 'buatKonten'])->name('pelatihan.konten');
         Route::post('/pelatihan/topik/store', [KursusController::class, 'simpanTopik'])->name('pelatihan.topik.simpan');
+        Route::post('/pelatihan/topik/konten-pembelajaran/store', [KursusController::class, 'simpanKontenPembelajaran'])->name('pelatihan.topik.kontenPembelajaran.store');
+        Route::post('/pelatihan/topik/konten-quiz/store', [KursusController::class, 'simpanKontenQuiz'])->name('pelatihan.topik.kontenQuiz.store');
 
         Route::get('/topik', [TopikController::class, 'index'])->name('topik');
         Route::get('/topik/create', [TopikController::class, 'create'])->name('topik.create');
