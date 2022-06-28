@@ -39,9 +39,10 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php $no = 1; ?>
                                 @foreach($data as $row)
                                 <tr>
-                                    <td>{{$row->id}}</td>
+                                    <td><?php echo $no++; ?></td>
                                     <td>{{$row->nama}}</td>
                                     <td>{{$row->pertanyaan}}</td>
                                     <td>{{$row->pilihan_a}}</td>

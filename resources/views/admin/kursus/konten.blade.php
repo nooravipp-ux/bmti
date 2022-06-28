@@ -79,25 +79,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <label for="judul" class="col-sm-3 col-form-label">Nama Konten</label>
-                    <div class="col-sm-9">
-                        <input type="text" name="judul" class="form-control mt-2">
-                    </div>
-                </div>
                 <div class="row mb-3">
-                    <label for="deskripsi" class="col-sm-3 col-form-label">Isi konten</label>
+                    <label for="deskripsi" class="col-sm-2 col-form-label">Isi konten</label>
                     <div class="col-sm-9">
                         <div class="pt-2">
                             <input type="radio" class="form-check-input" name="options" value="materi_pembelajaran" checked> Materi Pembelajaran <br>
                             <input type="radio" class="form-check-input" name="options" value="kuis"> Kuis
                         </div>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label for="deskripsi" class="col-sm-3 col-form-label">Dekripsi Konten</label>
-                    <div class="col-sm-9">
-                        <textarea type="text" name="deskripsi" class="form-control mt-2" style="height: 100px;"></textarea>
                     </div>
                 </div>
             </form>

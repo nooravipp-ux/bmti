@@ -48,6 +48,7 @@
     .kuis {
         padding-left: 30px;
     }
+
     .btn-tambah-konten a {
         text-decoration: none;
     }
@@ -62,7 +63,14 @@
                     <div class="d-flex">
                         <i class="menu-icon mdi mdi-drag pl-4"></i>
                         <h4 class="card-title" style="padding-left: 3px;">{{$tp->judul}}</h4>
-                        <a class="ms-auto" href="#" onclick="window.open('http://localhost:8000/admin/pelatihan/22/topik', 'Preview', 'width=1200,height=650');"><i class="menu-icon mdi mdi-dots-vertical"></i></a>
+                        <!-- <a class="ms-auto" href="#" onclick="window.open('http://localhost:8000/admin/pelatihan/22/topik', 'Preview', 'width=1200,height=650');"><i class="menu-icon mdi mdi-dots-vertical"></i></a> -->
+                        <div class="dropdown ms-auto">
+                            <i class="menu-icon mdi mdi-dots-vertical" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Ubah</a>
+                                <a class="dropdown-item" href="#">Hapus</a>
+                            </div>
+                        </div>
                     </div>
                     <hr>
                     <div class="row">
@@ -72,18 +80,32 @@
                             <div class="konten d-flex">
                                 <i class="menu-icon mdi mdi-content-paste pl-4"></i>
                                 <h5 class="card-title" style="padding-left: 3px;">{{$kt->judul}}</h5>
-                                <a class="ms-auto" href="#" onclick="window.open('http://localhost:8000/admin/pelatihan/22/topik', 'Preview', 'width=1200,height=650');"><i class="menu-icon mdi mdi-dots-vertical"></i></a>
+                                <div class="dropdown ms-auto">
+                                    <i class="menu-icon mdi mdi-dots-vertical" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Pratinjau</a>
+                                        <a class="dropdown-item" href="#">Ubah</a>
+                                        <a class="dropdown-item" href="#">Hapus</a>
+                                    </div>
+                                </div>
                             </div>
                             @endif
                             @endforeach
                             @foreach($topikQuiz as $tq)
-                                @if($tq->topik_id == $tp->id)
-                                <div class="kuis d-flex">
-                                    <i class="menu-icon mdi mdi-lead-pencil pl-4"></i>
-                                    <h5 class="card-title" style="padding-left: 3px;">{{$tq->judul}}</h5>
-                                    <a class="ms-auto" href="#" onclick="window.open('http://localhost:8000/admin/pelatihan/22/topik', 'Preview', 'width=1200,height=650');"><i class="menu-icon mdi mdi-dots-vertical"></i></a>
+                            @if($tq->topik_id == $tp->id)
+                            <div class="kuis d-flex">
+                                <i class="menu-icon mdi mdi-lead-pencil pl-4"></i>
+                                <h5 class="card-title" style="padding-left: 3px;">{{$tq->judul}}</h5>
+                                <div class="dropdown ms-auto">
+                                    <i class="menu-icon mdi mdi-dots-vertical" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Pratinjau</a>
+                                        <a class="dropdown-item" href="#">Ubah</a>
+                                        <a class="dropdown-item" href="#">Hapus</a>
+                                    </div>
                                 </div>
-                                @endif
+                            </div>
+                            @endif
                             @endforeach
                         </div>
                     </div>
@@ -99,13 +121,44 @@
     <div class="row justify-content-center">
         <div class="col-lg-10 grid-margin">
             <div class="button-container">
-                <button type="submit" class="btn btn-primary btn-sm btn-rounded float-right" data-toggle="modal" data-target="#exampleModalCenter" id="bntModal">+ Topik Pembelajaran</button>
+                <button type="button" class="btn btn-primary btn-rounded" data-toggle="modal" data-target="#exampleModalCenter">+ Topik Pembelajaran</button>
             </div>
         </div>
     </div>
-
 </div>
-<div id="modal-topik" class="row justify-content-center d-none">
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Topik Pembelajaran</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="{{route('pelatihan.topik.simpan')}}" method="POST">
+                <div class="modal-body">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="judul" class="form-label">Judul Topik Pembelajaran</label>
+                        <input type="text" name="judul" class="form-control">
+                        <input type="hidden" name="kursus_id" value="{{$pelatihan->id}}" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="deskripsi" class="form-label">Deskripsi Topik</label>
+                        <textarea type="text" name="deskripsi" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger btn-rounded" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary btn-rounded">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- <div id="modal-topik" class="row justify-content-center d-none">
     <div class="col-lg-6 grid-margin">
         <div class="card">
             <div class="card-body">
@@ -128,10 +181,13 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 @endsection
 
 @section('script')
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script>
     $('#bntModal').click(function() {
         if ($('#modal-topik').hasClass('d-none')) {
@@ -144,5 +200,29 @@
     $('#bnt-batal').click(function() {
         $('#modal-topik').addClass('d-none')
     });
+
+    function changeLanguage(language) {
+        var element = document.getElementById("url");
+        element.value = language;
+        element.innerHTML = language;
+    }
+
+    function showDropdown() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+        if (!event.target.matches(".dropbtn")) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains("show")) {
+                    openDropdown.classList.remove("show");
+                }
+            }
+        }
+    };
 </script>
 @endsection
