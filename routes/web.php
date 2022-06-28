@@ -57,6 +57,21 @@ Route::get('/pembelajaran', function () {
     return view('pembelajaran.index');
 });
 
+Route::get('/pembelajaran-1', function () {
+    return view('pembelajaran.pembelajaran-1');
+});
+
+Route::get('/pembelajaran-2', function () {
+    return view('pembelajaran.pembelajaran-2');
+});
+Route::get('/start-quiz', function () {
+    return view('pembelajaran.start-quiz');
+});
+Route::get('/quiz', function () {
+    return view('pembelajaran.quiz');
+});
+
+
 Route::get('/alur-pembelajaran', function () {
     return view('guest.alur_pembelajaran');
 });
