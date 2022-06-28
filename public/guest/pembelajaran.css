@@ -83,6 +83,12 @@ header {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
+.pembelajaran p {
+    font-family: "glory";
+    font-weight: 600;
+    font-size: 18px;
+}
+
 .pembelajaran span {
     font-family: "glory";
     font-weight: 600;
