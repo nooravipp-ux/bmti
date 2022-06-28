@@ -42,7 +42,7 @@
                 <p class="title-free">Free</p>
                 <img class="card-img-top" src="{{asset('/images/pelatihan/'.$dt->gambar)}}" alt="Card image cap" width="360px" height="200px" />
                 <div class="card-body text-center">
-                    <h2 class="card-text">{{$dt->kode}} - {{$dt->judul}}</h2>
+                    <h2 class="card-text">{{$dt->judul}}</h2>
                     <a href="{{route('pelatihan.detail', ['id'=>$dt->id])}}"><button type="button" class="btn-pel btn-primary">Lihat Selengkapnya...</button></a>
                 </div>
             </div>

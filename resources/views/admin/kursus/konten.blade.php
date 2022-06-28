@@ -115,13 +115,14 @@
                     </div>
                 </div>
                 <div class="row">
-                    <label for="judul" class="col-sm-2 col-form-label">Nama Konten</label>
-                    <div class="col-sm-9">
+                    <label for="judul" class="col-sm-2 col-form-label">Judul</label>
+                    <div class="col-sm-10">
                         <input type="text" name="judul" class="form-control mt-2">
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-12">
+                    <label for="judul" class="col-sm-2 col-form-label">Materi</label>
+                    <div class="col-sm-10">
                         <textarea type="text" name="materi" class="ckeditor form-control" height="200"></textarea>
                         <input type="hidden" name="topikId" value="{{$topikId}}">
                         <input type="hidden" name="pelatihanId" value="{{$pelatihanId}}">
