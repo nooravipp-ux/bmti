@@ -387,8 +387,14 @@
                                         Mandiri</a></li> -->
                                 <li class="nav-item"> <a class="nav-link" href="{{route('jenisKursus')}}">Jenis Pelatihan
                                     </a></li>
-                                <li class="nav-item"> <a class="nav-link" href="{{route('kategoriKursus')}}">Kategori
-                                        Pelatihan
+                                <li class="nav-item"> <a class="nav-link" href="{{route('bidangKeahlian')}}">
+                                        Bidang Keahlian
+                                    </a></li>
+                                <li class="nav-item"> <a class="nav-link" href="{{route('programKeahlian')}}">
+                                        Program Keahlian
+                                    </a></li>
+                                <li class="nav-item"> <a class="nav-link" href="{{route('kelompokKeahlian')}}">
+                                        Kelompok Keahlian
                                     </a></li>
                                 <li class="nav-item"> <a class="nav-link" href="{{route('pelatihan')}}">Pelatihan
                                     </a></li>

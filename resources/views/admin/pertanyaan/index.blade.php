@@ -26,17 +26,14 @@
                                     </a>
                                 </tr>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Quiz ID</th>
+                                    <th>No.</th>
+                                    <th>Kelompok Keahlian</th>
                                     <th>Pertanyaan</th>
-                                    <!-- <th>Gambar</th> -->
                                     <th>Pilihan A</th>
                                     <th>Pilihan B</th>
                                     <th>Pilihan C</th>
                                     <th>Pilihan D</th>
                                     <th>Jawaban</th>
-                                    <th>Created At</th>
-                                    <th>Updated At</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
                                 </tr>
@@ -45,16 +42,13 @@
                                 @foreach($data as $row)
                                 <tr>
                                     <td>{{$row->id}}</td>
-                                    <td>{{$row->quiz_id}}</td>
+                                    <td>{{$row->nama}}</td>
                                     <td>{{$row->pertanyaan}}</td>
-                                    <!-- <td><img src="{{asset('public/image/'.$row->gambar)}}"></td> -->
                                     <td>{{$row->pilihan_a}}</td>
                                     <td>{{$row->pilihan_b}}</td>
                                     <td>{{$row->pilihan_c}}</td>
                                     <td>{{$row->pilihan_d}}</td>
                                     <td>{{$row->jawaban}}</td>
-                                    <td>{{$row->created_at}}</td>
-                                    <td>{{$row->updated_at}}</td>
                                     <td><a href="{{ route('pertanyaan.edit', ['id'=>$row->id]) }}"
                                             class="btn btn-dark btn-sm btn-rounded btn-icon-prepend">Edit
                                             <i class="ti-reload btn-icon-append"></i></a></td>

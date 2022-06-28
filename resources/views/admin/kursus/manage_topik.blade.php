@@ -62,7 +62,7 @@
                     <div class="d-flex">
                         <i class="menu-icon mdi mdi-drag pl-4"></i>
                         <h4 class="card-title" style="padding-left: 3px;">{{$tp->judul}}</h4>
-                        <a class="ms-auto" href=""><i class="menu-icon mdi mdi-dots-vertical"></i></a>
+                        <a class="ms-auto" href="#" onclick="window.open('http://localhost:8000/admin/pelatihan/22/topik', 'Preview', 'width=1200,height=650');"><i class="menu-icon mdi mdi-dots-vertical"></i></a>
                     </div>
                     <hr>
                     <div class="row">
@@ -72,7 +72,7 @@
                             <div class="konten d-flex">
                                 <i class="menu-icon mdi mdi-content-paste pl-4"></i>
                                 <h5 class="card-title" style="padding-left: 3px;">{{$kt->judul}}</h5>
-                                <a class="ms-auto" href=""><i class="menu-icon mdi mdi-dots-vertical"></i></a>
+                                <a class="ms-auto" href="#" onclick="window.open('http://localhost:8000/admin/pelatihan/22/topik', 'Preview', 'width=1200,height=650');"><i class="menu-icon mdi mdi-dots-vertical"></i></a>
                             </div>
                             @endif
                             @endforeach
@@ -81,7 +81,7 @@
                                 <div class="kuis d-flex">
                                     <i class="menu-icon mdi mdi-lead-pencil pl-4"></i>
                                     <h5 class="card-title" style="padding-left: 3px;">{{$tq->judul}}</h5>
-                                    <a class="ms-auto" href=""><i class="menu-icon mdi mdi-dots-vertical"></i></a>
+                                    <a class="ms-auto" href="#" onclick="window.open('http://localhost:8000/admin/pelatihan/22/topik', 'Preview', 'width=1200,height=650');"><i class="menu-icon mdi mdi-dots-vertical"></i></a>
                                 </div>
                                 @endif
                             @endforeach

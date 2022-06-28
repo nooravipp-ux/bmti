@@ -21,13 +21,13 @@
                         <div class="row mb-3">
                             <label for="deskripsi" class="col-sm-3 col-form-label">Dekripsi Pelatihan</label>
                             <div class="col-sm-9">
-                                <textarea type="text" name="deskripsi" class="form-control mt-2" style="height: 100px;"></textarea>
+                                <textarea type="text" name="deskripsi" class="ckeditor form-control mt-2" style="height: 100px;"></textarea>
                             </div>
                         </div>
                         <div class="row">
                             <label for="kategori_kursus_id" class="col-sm-3 col-form-label">Kategori Kursus</label>
                             <div class="col-sm-9">
-                                <select type="text" name="kategori_kursus_id" class="form-control mt-2">
+                                <select type="text" name="kelompok_keahlian_id" class="form-control mt-2">
                                     @foreach($kategori_kursus as $row)
                                     <option value="{{$row->id}}">{{$row->nama}}</option>
                                     @endforeach
@@ -52,4 +52,14 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('script')
+
+<script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.ckeditor').ckeditor();
+    });
+</script>
 @endsection

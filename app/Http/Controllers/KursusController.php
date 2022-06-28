@@ -6,19 +6,21 @@ use App\Models\Kursus;
 use App\Models\JenisKursus;
 use Illuminate\Http\Request;
 use App\Models\KategoriKursus;
+use App\Models\KelompokKeahlian;
 use App\Models\Konten;
+use App\Models\Pertanyaan;
 use App\Models\Quiz;
 use App\Models\Topik;
 use App\Models\TopikKonten;
+use App\Models\TopikQuiz;
 use Illuminate\Support\Facades\DB;
 
 class KursusController extends Controller
 {
     public function index()
     {
-        $data = DB::table('t_kursus')->select('t_kursus.*', 'm_jenis_kursus.nama as jenis_kursus', 'm_kategori_kursus.nama as kategori_kursus')
-            ->join('m_jenis_kursus', 'm_jenis_kursus.id', '=', 't_kursus.jenis_kursus_id')
-            ->join('m_kategori_kursus', 'm_kategori_kursus.id', '=', 't_kursus.kategori_kursus_id')
+        $data = DB::table('t_kursus')->select('t_kursus.*','m_kelompok_keahlian.nama as kategori_kursus')
+            ->join('m_kelompok_keahlian', 'm_kelompok_keahlian.id', '=', 't_kursus.kelompok_keahlian_id')
             ->get();
         return view('admin.kursus.index', compact('data'));
     }
@@ -26,7 +28,7 @@ class KursusController extends Controller
     public function create()
     {
         $jenis_kursus = JenisKursus::all();
-        $kategori_kursus = KategoriKursus::all();
+        $kategori_kursus = KelompokKeahlian::all();
         return view('admin.kursus.create', compact(['jenis_kursus', 'kategori_kursus']));
     }
 
@@ -43,9 +45,8 @@ class KursusController extends Controller
         $image = $request->file('gambar');
         $imageName = $image->getClientOriginalName();
         $data = Kursus::create([
-            'jenis_kursus_id' => 1,
-            'kategori_kursus_id' => $request->kategori_kursus_id,
-            'author_id' => auth()->user()->id,
+            'kelompok_keahlian_id' => $request->kelompok_keahlian_id,
+            'author' => auth()->user()->name,
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
             'gambar' => $imageName
@@ -89,10 +90,10 @@ class KursusController extends Controller
 
     public function buatKonten($pelatihanId, $topikId)
     {
-        $quizes = Quiz::all();
-
-        
-        return view('admin.kursus.konten', compact('pelatihanId', 'topikId', 'quizes'));
+        $pelatihan = Kursus::where('id', $pelatihanId)->first();
+        $kelId = $pelatihan->kelompok_keahlian_id;
+        $questions = Pertanyaan::where('kelompok_keahlian_id', $kelId)->get();
+        return view('admin.kursus.konten', compact('pelatihanId', 'topikId', 'questions'));
     }
 
     public function simpanKontenPembelajaran(Request $request){
@@ -111,7 +112,24 @@ class KursusController extends Controller
     }
 
     public function simpanKontenQuiz(Request $request){
-        dd($request->all());
+
+        $quizeOptions = $request->quizOptions;
+        $quiz = Quiz::create([
+            'judul' => $request->nama_kuis,
+            'deskripsi' => $request->deskripsi,
+            'durasi' => $request->waktu,
+            'nilai_minimal' => $request->nilaiMinimal,
+            'mandatori' => 1,
+            'dapat_diulang' => 1,
+        ]);
+
+        foreach($quizeOptions as $questId){
+            TopikQuiz::create([
+                'topik_id' => $request->topik_id,
+                'quiz_id' => $quiz->id,
+                'pertanyaan_id' => $questId,
+            ]);
+        }
 
         return redirect()->route('pelatihan.topik', [$request->pelatihan_id]);
     }

@@ -13,17 +13,16 @@
                     <form action="{{route('pertanyaan.store')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
-                            <label for="inputquiz_id" class="form-label">Quiz ID</label>
-                            <select type="text" name="quiz_id" class="form-control">
-                                @foreach($quiz as $row)
-                                <option value="{{$row->id}}">{{$row->id}}</option>
+                            <label for="inputquiz_id" class="form-label">Kelompok Keahlian</label>
+                            <select type="text" name="kelompok_keahlian_id" class="form-control">
+                                @foreach($kelKeahlian as $row)
+                                <option value="{{$row->id}}">{{$row->nama}}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="mb-3">
                             <label for="inputpertanyaan" class="form-label">Pertanyaan</label>
-                            <input type="text" name="pertanyaan" class="form-control" id="inputpertanyaan"
-                                aria-describedby="emailHelp">
+                            <textarea type="text" name="pertanyaan" class="form-control"></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="inputgambar" class="form-label">Gambar</label>

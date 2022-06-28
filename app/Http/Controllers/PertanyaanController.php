@@ -2,21 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\KategoriKursus;
+use App\Models\KelompokKeahlian;
 use App\Models\Quiz;
 use App\Models\Pertanyaan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PertanyaanController extends Controller
 {
     public function index()
     {
-        $data = Pertanyaan::all();
+        $data = DB::table('m_pertanyaan')->select('m_pertanyaan.*', 'm_kelompok_keahlian.id as kelompok_keahlian_id', 'm_kelompok_keahlian.nama')
+                ->join('m_kelompok_keahlian', 'm_kelompok_keahlian.id', '=', 'm_pertanyaan.kelompok_keahlian_id')
+                ->get();
         return view('admin.pertanyaan.index', compact('data'));
     }
     public function create()
     {
-        $quiz = Quiz::all();
-        return view('admin.pertanyaan.create', compact('quiz'));
+        $kelKeahlian = KelompokKeahlian::all();
+        return view('admin.pertanyaan.create', compact('kelKeahlian'));
     }
     public function store(Request $request)
     {
@@ -27,7 +32,7 @@ class PertanyaanController extends Controller
         }
 
         $data = Pertanyaan::create([
-            'quiz_id' => $request->quiz_id,
+            'kelompok_keahlian_id' => $request->kelompok_keahlian_id,
             'pertanyaan' => $request->pertanyaan,
             'gambar' => $imageName,
             'pilihan_a' => $request->pilihan_a,
@@ -37,7 +42,7 @@ class PertanyaanController extends Controller
             'jawaban' => $request->jawaban
         ]);
         if($request->file('gambar')) {
-            $image->move(public_path('public/image'), $imageName);
+            $image->move(public_path('public/images'), $imageName);
         }
 
         return redirect('/admin/pertanyaan');
@@ -45,8 +50,8 @@ class PertanyaanController extends Controller
     public function edit($id)
     {
         $data = Pertanyaan::find($id);
-        $quiz = Quiz::all();
-        return view('admin.pertanyaan.edit', compact(['data', 'quiz']));
+        $kelKeahlian = KelompokKeahlian::all();
+        return view('admin.pertanyaan.edit', compact(['data', 'kelKeahlian']));
     }
     public function update(Request $request, $id)
     {
@@ -58,7 +63,7 @@ class PertanyaanController extends Controller
 
         $data = Pertanyaan::find($id);
         $data->update([
-            'quiz_id' => $request->quiz_id,
+            'kelompok_keahlian_id' => $request->kelompok_keahlian_id,
             'pertanyaan' => $request->pertanyaan,
             'gambar' => $imageName,
             'pilihan_a' => $request->pilihan_a,
@@ -68,7 +73,7 @@ class PertanyaanController extends Controller
             'jawaban' => $request->jawaban
         ]);
         if($request->file('gambar')) {
-            $image->move(public_path('public/image'), $imageName);
+            $image->move(public_path('public/images'), $imageName);
         }
 
         return redirect('/admin/pertanyaan');
