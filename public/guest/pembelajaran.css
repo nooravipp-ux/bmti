@@ -1,3 +1,28 @@
+/* scroll */
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #666;
+    border: 2px solid #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #8d8d8d;
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+/* end scroll */
+
+
 /* header */
 
 .active {
@@ -35,11 +60,15 @@ header {
     font-weight: bold;
 }
 
-.text-pembelajaran button {
-    margin-left: 10px;
+.text-pembelajaran h2 {
+    font-weight: bold;
+}
+
+.text-pembelajaran h1 button {
+    margin-left: 20px;
     background: #2289FF;
-    color: white;
     font-weight: 600;
+    border: none;
 }
 
 .text-pembelajaran button:hover {
@@ -52,6 +81,12 @@ header {
     padding: 10px;
     width: 300px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.pembelajaran p {
+    font-family: "glory";
+    font-weight: 600;
+    font-size: 18px;
 }
 
 .pembelajaran span {
@@ -103,6 +138,34 @@ header {
 
 
 /* end pembelajaran */
+
+
+/* quiz */
+
+.box-proses {
+    background: #DBDFFD;
+    width: 700px;
+    height: 60px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.box-proses p {
+    font-family: "glory";
+    font-weight: 600;
+    line-height: 10px;
+}
+
+.btn-quiz {
+    width: 150px;
+    border-radius: 15px;
+    padding: 5px;
+    background: #2289FF;
+    border: none;
+}
+
+
+/* end-quiz */
 
 
 /* footer */
