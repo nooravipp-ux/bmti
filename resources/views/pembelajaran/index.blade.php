@@ -11,7 +11,7 @@
             <p>Jawaban kebutuhan pelatihan kejuruan oleh BBPPMPV BMTI dirumuskan dalam platform yang dinamai Galeri Kejuruan. Filosofi "merdeka belajar" bagi BBPPMPV BMTI dapat ditinjau dari beberapa sisi, bagi seorang pendidik atau siswa yang menginginkan peningkatan kompetensi pada platform pembelajaran kejuruan ini, yang dijabarkan dalam garis besar pengembangan Galeri Kejuruan, salah satunya adalah PELATIHAN MANDIRI. Pelatihan Mandiri pada Galeri Kejuruan adalah sarana pembelajaran berbasis web yang dapat dimanfaatkan oleh guru dalam meningkatkan kompetensinya. Sumber belajar ini dibuat secara terbuka, mudah akses, dan diharapkan dapat menjadi alternatif sarana belajar sesuai kompetensi yang diampu. Peserta dapat mengalokasikan waktunya secara mandiri, memilih pelatihan yang sesuai dengan minatnya. Peserta dapat mengakses berbagai media sebagai bahan belajar, dan menempuh tes atau kuis sesuai dengan Pelatihan yang dipilih.
             </p>
         </div>
-        <div class="col-2">
+        <div class="col-12 col-xl-2">
             <div class="pembelajaran text-center bg-white">
                 <span>Konten Pembelajaran</span>
             </div>

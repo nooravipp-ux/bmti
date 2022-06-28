@@ -5,9 +5,10 @@
     <div class="row justify-content-center mt-5 mb-5">
         <div id="pengantar" class="col-12 col-xl-7 text-pembelajaran">
             <h1>Tes Awal<button class="btn rounded-pill text-light">Selesai</button></h1>
-            <p>1. Mengukur dan Menggunakan Alat Ukur</p>
+            <p>Tes Awal ini bertujuan untuk mengukur sejauh mana pengetahuan awal terkait materi membuat model 3D dengan CAD, terdiri dari pernyataan pilihan ganda dan waktu yang diberikan untuk mengerjakan adalah 15 menit.</p>
 
             <div class="row justify-content-center text-center mt-3">
+                <p><b>Selamat Mengerjakan</b></p>
                 <button class="btn-quiz rounded-pill text-light font-weight-bold">Mengulang Quiz</button>
             </div>
         </div>
