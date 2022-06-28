@@ -14101,6 +14101,9 @@ fieldset:disabled .swal2-modal .swal2-buttonswrapper .swal2-styled,
     border: 1px solid #e3e3e3;
     border-radius: 20px;
 }
+.card select{
+    width: 100%;
+}
 
 .card>hr {
     margin-right: 0;

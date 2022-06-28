@@ -192,7 +192,7 @@
                         <div class="col-6">
                             <p>Jumlah Pengunjung</p>
                             <br>
-                            <h1>0</h1>
+                            <h1>{{$jumlahVisitor}}</h1>
                         </div>
                         <div class="pengunjung-image col-5 col-xl-6">
                             <image src="{{asset('guest/assets/images/pengunjung.png')}}" height="80px" width="90px" />
