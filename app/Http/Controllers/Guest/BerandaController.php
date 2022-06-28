@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Guest;
 
-use App\Http\Controllers\Controller;
+use App\Models\Visitor;
+use App\Models\Testimoni;
 use Illuminate\Http\Request;
 use App\Models\PerusahaanMitra;
-use App\Models\Testimoni;
+use App\Http\Controllers\Controller;
 
 class BerandaController extends Controller
 {
@@ -13,7 +14,8 @@ class BerandaController extends Controller
     {
         $dataMitra = PerusahaanMitra::orderBy('urutan', 'DESC')->get();
         $testimoni = Testimoni::all();
-        return view('guest.beranda', compact('dataMitra','testimoni'));
+        $jumlahVisitor = Visitor::count();
+        return view('guest.beranda', compact('dataMitra','testimoni','jumlahVisitor'));
     }
 
     public function getTestimoni()

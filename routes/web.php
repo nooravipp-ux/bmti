@@ -36,13 +36,15 @@ use App\Http\Controllers\Guest\PelatihanController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('guest.beranda');
 });
 
 //route unutk beranda
-Route::get('/', [BerandaController::class, 'getData']);
+Route::name('front.')->middleware('visitor')->group(function() {
+    Route::get('/', [BerandaController::class, 'getData']);   
+});
+
 
 //route untuk galeria
 Route::get('/galeria', [GaleriaController::class, 'getKategoriKompetensi']);
@@ -84,8 +86,7 @@ Route::post('/import', [ImportDataEvaluasiController::class, 'importExcel'])->na
 Route::post('/import-testimoni', [ImportDataEvaluasiController::class, 'importExcelTestimoni'])->name('importTestimoni');
 
 Route::group(['middleware' => 'auth'], function () {
-
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     
     Route::group(['prefix' => 'admin'], function () {
         Route::get('/users', [UserController::class, 'index'])->name('users');
