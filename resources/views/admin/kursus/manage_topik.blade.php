@@ -79,7 +79,7 @@
                             @if($kt->topik_id == $tp->id)
                             <div class="konten d-flex">
                                 <i class="menu-icon mdi mdi-content-paste pl-4"></i>
-                                <h5 class="card-title" style="padding-left: 3px;">{{$kt->judul}}</h5>
+                                <p style="padding-left: 3px;">{{$kt->judul}}</p>
                                 <div class="dropdown ms-auto">
                                     <i class="menu-icon mdi mdi-dots-vertical" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -95,7 +95,7 @@
                             @if($tq->topik_id == $tp->id)
                             <div class="kuis d-flex">
                                 <i class="menu-icon mdi mdi-lead-pencil pl-4"></i>
-                                <h5 class="card-title" style="padding-left: 3px;">{{$tq->judul}}</h5>
+                                <p style="padding-left: 3px;">{{$tq->judul}}</p>
                                 <div class="dropdown ms-auto">
                                     <i class="menu-icon mdi mdi-dots-vertical" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -147,7 +147,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="deskripsi" class="form-label">Deskripsi Topik</label>
-                        <textarea type="text" name="deskripsi" class="form-control"></textarea>
+                        <textarea type="text" name="deskripsi" class="ckeditor form-control"></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -158,33 +158,15 @@
         </div>
     </div>
 </div>
-<!-- <div id="modal-topik" class="row justify-content-center d-none">
-    <div class="col-lg-6 grid-margin">
-        <div class="card">
-            <div class="card-body">
-                <form action="{{route('pelatihan.topik.simpan')}}" method="POST">
-                    @csrf
-                    <div class="mb-3">
-                        <label for="judul" class="form-label">Judul</label>
-                        <input type="text" name="judul" class="form-control">
-                        <input type="hidden" name="kursus_id" value="{{$pelatihan->id}}" class="form-control">
-                    </div>
-                    <div class="mb-3">
-                        <label for="deskripsi" class="form-label">Deskripsi</label>
-                        <textarea type="text" name="deskripsi" class="form-control"></textarea>
-                    </div>
-                    <div class="mb-3">
-                        <button id="btn-batal" class="btn btn-danger btn-sm btn-rounded float-right ml-2">Batal</button>
-                        <button type="submit" class="btn btn-primary btn-sm btn-rounded float-right">Simpan</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div> -->
 @endsection
 
 @section('script')
+<script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.ckeditor').ckeditor();
+    });
+</script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -200,29 +182,5 @@
     $('#bnt-batal').click(function() {
         $('#modal-topik').addClass('d-none')
     });
-
-    function changeLanguage(language) {
-        var element = document.getElementById("url");
-        element.value = language;
-        element.innerHTML = language;
-    }
-
-    function showDropdown() {
-        document.getElementById("myDropdown").classList.toggle("show");
-    }
-
-    // Close the dropdown if the user clicks outside of it
-    window.onclick = function(event) {
-        if (!event.target.matches(".dropbtn")) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains("show")) {
-                    openDropdown.classList.remove("show");
-                }
-            }
-        }
-    };
 </script>
 @endsection

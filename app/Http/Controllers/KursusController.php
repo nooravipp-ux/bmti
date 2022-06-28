@@ -64,10 +64,10 @@ class KursusController extends Controller
         $pelatihan = Kursus::find($pelatihanId)->first();
 
         $topikQuiz = DB::table('t_topik')
-            ->join('t_topik_quiz', 't_topik.id', '=', 't_topik_quiz.topik_id')
-            ->join('t_quiz', 't_quiz.id', '=', 't_topik_quiz.quiz_id')
-            ->where('kursus_id', $pelatihanId)
+            ->join('t_quiz', 't_quiz.topik_id', '=', 't_topik.id')
+            ->where('t_topik.kursus_id', $pelatihanId)
             ->get();
+        // dd($topikQuiz);
 
         $konten = DB::table('t_topik')
             ->join('t_topik_konten', 't_topik.id', '=', 't_topik_konten.topik_id')
@@ -116,6 +116,7 @@ class KursusController extends Controller
         $quizeOptions = $request->quizOptions;
         $quiz = Quiz::create([
             'judul' => $request->nama_kuis,
+            'topik_id' => $request->topik_id,
             'deskripsi' => $request->deskripsi,
             'durasi' => $request->waktu,
             'nilai_minimal' => $request->nilaiMinimal,
@@ -125,7 +126,6 @@ class KursusController extends Controller
 
         foreach($quizeOptions as $questId){
             TopikQuiz::create([
-                'topik_id' => $request->topik_id,
                 'quiz_id' => $quiz->id,
                 'pertanyaan_id' => $questId,
             ]);
