@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\ProgramKeahlian;
 use App\Models\BidangKeahlian;
+use Illuminate\Support\Facades\DB;
 
 class ProgramKeahlianController extends Controller
 {
     public function index(){
-        $programKeahlian = ProgramKeahlian::all();
-
+        $programKeahlian = DB::table('m_program_keahlian')->select('m_program_keahlian.*', 'm_bidang_keahlian.nama as bidang_keahlian')
+                        ->join('m_bidang_keahlian','m_bidang_keahlian.id', '=','m_program_keahlian.bidang_keahlian_id')
+                        ->get();
         return view('admin.ProgramKeahlian.index', compact('programKeahlian'));
     }
 

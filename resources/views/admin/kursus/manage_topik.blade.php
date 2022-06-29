@@ -55,6 +55,11 @@
 </style>
 @endsection
 <div class="content-wrapper">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <h3 class="card-title" style="padding-left: 3px;padding-bottom: 10px;">{{$pelatihan->judul}}</h3>
+        </div>
+    </div>
     @foreach($topiks as $tp)
     <div class="row justify-content-center">
         <div class="col-lg-10 grid-margin">

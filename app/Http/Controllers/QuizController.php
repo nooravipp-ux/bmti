@@ -2,15 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pertanyaan;
+use App\Models\KelompokKeahlian;
 use App\Models\Quiz;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class QuizController extends Controller
 {
     public function index()
     {
-        $data = Quiz::all();
-        return view('admin.quiz.index', compact('data'));
+        $kelKeahlian = KelompokKeahlian::all();
+        $data = DB::table('t_quiz')->select('t_quiz.*','m_kelompok_keahlian.nama as kelompok_keahlian')
+                ->join('m_kelompok_keahlian','m_kelompok_keahlian.id', '=','t_quiz.kelompok_keahlian_id')
+                ->get();
+        return view('admin.quiz.index', compact('data','kelKeahlian'));
        
     }
     public function create()
@@ -21,8 +27,8 @@ class QuizController extends Controller
     {
         $data = Quiz::create([
             'judul' => $request->judul,
-            'deskripsi' => $request->deskripsi,
-            'durasi' => $request->durasi,
+            'kelompok_keahlian_id' => $request->kelompok_keahlian_id,
+            'deskripsi' => $request->deskripsi
         ]);
 
         return redirect('/admin/quiz');
@@ -30,7 +36,8 @@ class QuizController extends Controller
     public function edit($id)
     {
         $data = Quiz::find($id);
-        return view('admin.quiz.edit', compact('data'));
+        $pertanyaan = Pertanyaan::where('quiz_id', $id)->get();
+        return view('admin.quiz.edit', compact('data','pertanyaan'));
     }
     public function update(Request $request, $id)
     {

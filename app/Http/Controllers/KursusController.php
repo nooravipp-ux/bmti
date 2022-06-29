@@ -19,7 +19,7 @@ class KursusController extends Controller
 {
     public function index()
     {
-        $data = DB::table('t_kursus')->select('t_kursus.*','m_kelompok_keahlian.nama as kategori_kursus')
+        $data = DB::table('t_kursus')->select('t_kursus.*', 'm_kelompok_keahlian.nama as kategori_kursus')
             ->join('m_kelompok_keahlian', 'm_kelompok_keahlian.id', '=', 't_kursus.kelompok_keahlian_id')
             ->get();
         return view('admin.kursus.index', compact('data'));
@@ -63,19 +63,18 @@ class KursusController extends Controller
         $topiks  = Topik::where('kursus_id', $pelatihanId)->get();
         $pelatihan = Kursus::find($pelatihanId)->first();
 
-        $topikQuiz = DB::table('t_topik')
-            ->join('t_quiz', 't_quiz.topik_id', '=', 't_topik.id')
+        $topikQuiz = DB::table('t_topik')->select('t_quiz.id as quiz_id', 't_quiz.judul', 't_topik_quiz.topik_id')
+            ->join('t_topik_quiz', 't_topik_quiz.topik_id', '=', 't_topik.id')
+            ->join('t_quiz', 't_quiz.id','=','t_topik_quiz.quiz_id')
             ->where('t_topik.kursus_id', $pelatihanId)
             ->get();
-        // dd($topikQuiz);
-
         $konten = DB::table('t_topik')
             ->join('t_topik_konten', 't_topik.id', '=', 't_topik_konten.topik_id')
             ->join('t_konten', 't_konten.id', '=', 't_topik_konten.konten_id')
             ->where('kursus_id', $pelatihanId)
             ->get();
-        
-        return view('admin.kursus.manage_topik', compact('topiks', 'pelatihan', 'topikQuiz','konten'));
+
+        return view('admin.kursus.manage_topik', compact('topiks', 'pelatihan', 'topikQuiz', 'konten'));
     }
 
     public function simpanTopik(Request $request)
@@ -92,11 +91,12 @@ class KursusController extends Controller
     {
         $pelatihan = Kursus::where('id', $pelatihanId)->first();
         $kelId = $pelatihan->kelompok_keahlian_id;
-        $questions = Pertanyaan::where('kelompok_keahlian_id', $kelId)->get();
-        return view('admin.kursus.konten', compact('pelatihanId', 'topikId', 'questions'));
+        $quizes = Quiz::where('kelompok_keahlian_id', $kelId)->get();
+        return view('admin.kursus.konten', compact('pelatihanId', 'topikId', 'quizes'));
     }
 
-    public function simpanKontenPembelajaran(Request $request){
+    public function simpanKontenPembelajaran(Request $request)
+    {
 
         $konten = Konten::create([
             'judul' => $request->judul,
@@ -106,28 +106,23 @@ class KursusController extends Controller
         TopikKonten::create([
             'topik_id' => $request->topikId,
             'konten_id' => $konten->id
-        ]); 
+        ]);
 
         return redirect()->route('pelatihan.topik', [$request->pelatihanId]);
     }
 
-    public function simpanKontenQuiz(Request $request){
+    public function simpanKontenQuiz(Request $request)
+    {
 
         $quizeOptions = $request->quizOptions;
-        $quiz = Quiz::create([
-            'judul' => $request->nama_kuis,
-            'topik_id' => $request->topik_id,
-            'deskripsi' => $request->deskripsi,
-            'durasi' => $request->waktu,
-            'nilai_minimal' => $request->nilaiMinimal,
-            'mandatori' => 1,
-            'dapat_diulang' => 1,
-        ]);
-
-        foreach($quizeOptions as $questId){
+        foreach ($quizeOptions as $questId) {
             TopikQuiz::create([
-                'quiz_id' => $quiz->id,
-                'pertanyaan_id' => $questId,
+                'quiz_id' => $questId,
+                'topik_id' => $request->topik_id,
+                'durasi' => $request->waktu,
+                'nilai_minimal' => $request->nilaiMinimal,
+                'mandatori' => 1,
+                'dapat_diulang' => 1,
             ]);
         }
 
