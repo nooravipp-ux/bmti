@@ -59,7 +59,7 @@
     <div class="row justify-content-center">
         <div class="col-12 col-md-4 col-xl-4">
             <div class="img-teknik-permesinan shadow mt-5">
-                <image src="{{asset('guest/assets/images/kompetensi-1.png')}}" alt="Bricks" width="357px" height="247px" />
+                <image src="{{asset('images/galeria/'.kompetensi-1.png')}}" alt="Bricks" width="357px" height="247px" />
                 <a onclick="onClickMateri()">
                     <div class="image-text"></div>
                 </a>

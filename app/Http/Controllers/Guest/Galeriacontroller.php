@@ -18,6 +18,7 @@ class GaleriaController extends Controller
 
         $kompetensi = Kompetensi::where('id', $kategori_id)->first();
         $data = Keahlian::where('id', $kategori_id)->get();
+
         return view('guest.galeria.keahlian', compact('data','kompetensi'));
     }
 }
