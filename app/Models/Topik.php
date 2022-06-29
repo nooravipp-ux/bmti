@@ -18,8 +18,5 @@ class Topik extends Model
     public function topikQuiz(){
         return $this->hasMany('App\Models\TopikQuiz');
     }
-    
-    public function kursus(){
-        return $this->belongsTo('App\Models\Kursus');
-    }
+
 }

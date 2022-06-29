@@ -23,6 +23,9 @@ use App\Http\Controllers\KategoriKursusController;
 use App\Http\Controllers\MasterListDataController;
 use App\Http\Controllers\PerusahaanMitraController;
 use App\Http\Controllers\ImportDataEvaluasiController;
+use App\Http\Controllers\BidangKeahlianController;
+use App\Http\Controllers\ProgramKeahlianController;
+use App\Http\Controllers\KelompokKeahlianController;
 
 use App\Http\Controllers\Guest\PelatihanController;
 
@@ -109,6 +112,30 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
         Route::get('/kompetensi/edit/{id}', [KompetensiController::class, 'edit'])->name('kompetensi.edit');
         Route::put('/kompetensi/update/{id}', [KompetensiController::class, 'update'])->name('kompetensi.update');
         Route::get('/kompetensi/delete/{id}', [KompetensiController::class, 'delete'])->name('kompetensi.delete');
+
+        //Route untuk m_bidang_keahlian
+        Route::get('/bidang-keahlian', [BidangKeahlianController::class, 'index'])->name('bidangKeahlian');
+        Route::get('/bidang-keahlian/create', [BidangKeahlianController::class, 'create'])->name('bidangKeahlian.create');
+        Route::post('/bidang-keahlian/store', [BidangKeahlianController::class, 'store'])->name('bidangKeahlian.store');
+        Route::get('/bidang-keahlian/edit/{id}', [BidangKeahlianController::class, 'edit'])->name('bidangKeahlian.edit');
+        Route::put('/bidang-keahlian/update/{id}', [BidangKeahlianController::class, 'update'])->name('bidangKeahlian.update');
+        Route::get('/bidang-keahlian/delete/{id}', [BidangKeahlianController::class, 'delete'])->name('bidangKeahlian.delete');
+
+        //Route untuk m_program_keahlian
+        Route::get('/program-keahlian', [ProgramKeahlianController::class, 'index'])->name('programKeahlian');
+        Route::get('/program-keahlian/create', [ProgramKeahlianController::class, 'create'])->name('programKeahlian.create');
+        Route::post('/program-keahlian/store', [ProgramKeahlianController::class, 'store'])->name('programKeahlian.store');
+        Route::get('/program-keahlian/edit/{id}', [ProgramKeahlianController::class, 'edit'])->name('programKeahlian.edit');
+        Route::put('/program-keahlian/update/{id}', [ProgramKeahlianController::class, 'update'])->name('programKeahlian.update');
+        Route::get('/program-keahlian/delete/{id}', [ProgramKeahlianController::class, 'delete'])->name('programKeahlian.delete');
+
+        //Route untuk m_kelompok_keahlian
+        Route::get('/kelompok-keahlian', [KelompokKeahlianController::class, 'index'])->name('kelompokKeahlian');
+        Route::get('/kelompok-keahlian/create', [KelompokKeahlianController::class, 'create'])->name('kelompokKeahlian.create');
+        Route::post('/kelompok-keahlian/store', [KelompokKeahlianController::class, 'store'])->name('kelompokKeahlian.store');
+        Route::get('/kelompok-keahlian/edit/{id}', [KelompokKeahlianController::class, 'edit'])->name('kelompokKeahlian.edit');
+        Route::put('/kelompok-keahlian/update/{id}', [KelompokKeahlianController::class, 'update'])->name('kelompokKeahlian.update');
+        Route::get('/kelompok-keahlian/delete/{id}', [KelompokKeahlianController::class, 'delete'])->name('kelompokKeahlian.delete');
 
         Route::get('/keahlian', [KeahlianController::class, 'index'])->name('keahlian');
         Route::get('/keahlian/create', [KeahlianController::class, 'create'])->name('keahlian.create');

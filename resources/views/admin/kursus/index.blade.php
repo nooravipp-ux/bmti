@@ -12,7 +12,7 @@
         <div class="col-lg-12 grid-margin">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">{{ __('Data Kursus') }}</h4>
+                    <h4 class="card-title">{{ __('Data Pelatihan') }}</h4>
                     <!-- <p class="card-description">
                     </p> -->
 
@@ -26,21 +26,36 @@
                                     </a>
                                 </tr>
                                 <tr>
-                                    <th>ID</th>
+                                    <th>No</th>
                                     <th>Nama Pelatihan</th>
-                                    <th>Kategori</th>
-                                    <th>Status</th>
-                                    <th>Aksi</th>
+                                    <th>Kelompok Keahlian</th>
+                                    <th class="text-center">Status Aktif</th>
+                                    <th class="text-center">Status Publish</th>
+                                    <th class="text-center">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php $no = 1; ?>
                                 @foreach($data as $row)
                                 <tr>
-                                    <td>{{$row->id}}</td>
+                                    <td><?php echo $no++; ?></td>
                                     <td>{{$row->judul}}</td>
                                     <td>{{$row->kategori_kursus}}</td>
-                                    <td>{{$row->judul}}</td>
-                                    <td><a href="{{ route('pelatihan.topik', [$row->id]) }}" class="btn btn-dark btn-sm btn-rounded btn-icon-prepend">Atur
+                                    <td class="text-center">
+                                        @if($row->status_aktif == 1)
+                                        Aktif
+                                        @else
+                                        Non Aktif
+                                        @endif
+                                    </td>
+                                    <td class="text-center">
+                                        @if($row->status_aktif == 1)
+                                        Publish
+                                        @else
+                                        Unpublish
+                                        @endif
+                                    </td>
+                                    <td class="text-center"><a href="{{ route('pelatihan.topik', [$row->id]) }}" class="btn btn-dark btn-sm btn-rounded btn-icon-prepend">Atur
                                             <i class="ti-reload btn-icon-append"></i></a>
                                         <a href="{{ route('pelatihan.delete', ['id'=>$row->id]) }}" onclick="return confirm('Apakah anda yakin ?')" class="btn btn-danger btn-sm btn-rounded btn-icon-text">Delete
                                             <i class="ti-trash btn-icon-append"></i></a>

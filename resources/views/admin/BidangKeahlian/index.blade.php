@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'BMTI | DATA PERTANYAAN')
+@section('title', 'BMTI | DATA JENIS KURSUS')
 
 @section('custom-css')
 <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" />
@@ -11,7 +11,7 @@
         <div class="col-lg-12 grid-margin">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">{{ __('Data Pertanyaan') }}</h4>
+                    <h4 class="card-title">{{ __('Data Bidang Keahlian') }}</h4>
                     <!-- <p class="card-description">
                     </p> -->
 
@@ -19,43 +19,29 @@
                         <table id="dataTable" class="table">
                             <thead>
                                 <tr>
-                                    <a href="{{route('pertanyaan.create')}}"
-                                        class="btn btn-primary btn-sm btn-rounded btn-icon-text">
+                                    <a href="{{route('bidangKeahlian.create')}}" class="btn btn-primary btn-sm btn-rounded btn-icon-text">
                                         <i class="ti-upload btn-icon-prepend"></i>
                                         Create
                                     </a>
                                 </tr>
                                 <tr>
-                                    <th>No.</th>
-                                    <th>Kelompok Keahlian</th>
-                                    <th>Pertanyaan</th>
-                                    <th>Pilihan A</th>
-                                    <th>Pilihan B</th>
-                                    <th>Pilihan C</th>
-                                    <th>Pilihan D</th>
-                                    <th>Jawaban</th>
+                                    <th>No</th>
+                                    <th>Nama</th>
+                                    <th>Deskripsi</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php $no = 1; ?>
-                                @foreach($data as $row)
+                                @foreach($bidangKeahlian as $row)
                                 <tr>
                                     <td><?php echo $no++; ?></td>
                                     <td>{{$row->nama}}</td>
-                                    <td>{{$row->pertanyaan}}</td>
-                                    <td>{{$row->pilihan_a}}</td>
-                                    <td>{{$row->pilihan_b}}</td>
-                                    <td>{{$row->pilihan_c}}</td>
-                                    <td>{{$row->pilihan_d}}</td>
-                                    <td>{{$row->jawaban}}</td>
-                                    <td><a href="{{ route('pertanyaan.edit', ['id'=>$row->id]) }}"
-                                            class="btn btn-dark btn-sm btn-rounded btn-icon-prepend">Edit
+                                    <td>{{$row->deskripsi}}</td>
+                                    <td><a href="{{ route('bidangKeahlian.edit', ['id'=>$row->id]) }}" class="btn btn-dark btn-sm btn-rounded btn-icon-prepend">Edit
                                             <i class="ti-reload btn-icon-append"></i></a></td>
-                                    <td><a href="{{ route('pertanyaan.delete', ['id'=>$row->id]) }}"
-                                            onclick="return confirm('Apakah anda yakin ?')"
-                                            class="btn btn-danger btn-sm btn-rounded btn-icon-text">Delete
+                                    <td><a href="{{ route('bidangKeahlian.delete', ['id'=>$row->id]) }}" onclick="return confirm('Apakah anda yakin ?')" class="btn btn-danger btn-sm btn-rounded btn-icon-text">Delete
                                             <i class="ti-trash btn-icon-append"></i></a></td>
                                 </tr>
                                 @endforeach
@@ -74,9 +60,9 @@
 
 </script>
 <script>
-$(document).ready(function() {
-    $('#dataTable').DataTable();
+    $(document).ready(function() {
+        $('#dataTable').DataTable();
 
-});
+    });
 </script>
 @endsection

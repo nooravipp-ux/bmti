@@ -79,25 +79,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <label for="judul" class="col-sm-3 col-form-label">Nama Konten</label>
-                    <div class="col-sm-9">
-                        <input type="text" name="judul" class="form-control mt-2">
-                    </div>
-                </div>
                 <div class="row mb-3">
-                    <label for="deskripsi" class="col-sm-3 col-form-label">Isi konten</label>
+                    <label for="deskripsi" class="col-sm-2 col-form-label">Isi konten</label>
                     <div class="col-sm-9">
                         <div class="pt-2">
                             <input type="radio" class="form-check-input" name="options" value="materi_pembelajaran" checked> Materi Pembelajaran <br>
                             <input type="radio" class="form-check-input" name="options" value="kuis"> Kuis
                         </div>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label for="deskripsi" class="col-sm-3 col-form-label">Dekripsi Konten</label>
-                    <div class="col-sm-9">
-                        <textarea type="text" name="deskripsi" class="form-control mt-2" style="height: 100px;"></textarea>
                     </div>
                 </div>
             </form>
@@ -115,13 +103,14 @@
                     </div>
                 </div>
                 <div class="row">
-                    <label for="judul" class="col-sm-3 col-form-label">Nama Konten</label>
-                    <div class="col-sm-9">
+                    <label for="judul" class="col-sm-2 col-form-label">Judul</label>
+                    <div class="col-sm-10">
                         <input type="text" name="judul" class="form-control mt-2">
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-12">
+                    <label for="judul" class="col-sm-2 col-form-label">Materi</label>
+                    <div class="col-sm-10">
                         <textarea type="text" name="materi" class="ckeditor form-control" height="200"></textarea>
                         <input type="hidden" name="topikId" value="{{$topikId}}">
                         <input type="hidden" name="pelatihanId" value="{{$pelatihanId}}">
@@ -141,6 +130,18 @@
                         <div class="pt-2 pl-3">
                             <a id="btn-cancel-from-konfigurasi-kuis" class="btn btn-md btn-rounded btn-danger btn-block" href="#">Batal</a><a id="btn-to-konten-lesson" class="btn btn-md btn-rounded btn-primary btn-block" href="#" onclick="document.getElementById('form-kuis').submit();">Simpan Kuis</a>
                         </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <label for="judul" class="col-sm-2 col-form-label">Nama Kuis</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="nama_kuis" class="form-control mt-2">
+                    </div>
+                </div>
+                <div class="row">
+                    <label for="judul" class="col-sm-2 col-form-label">Deskripsi</label>
+                    <div class="col-sm-10">
+                        <textarea type="text" name="deskripsi" class="ckeditor form-control" height="200"></textarea>
                     </div>
                 </div>
                 <div class="row">
@@ -199,11 +200,11 @@
 
                     </div>
                 </div>
-                @foreach($quizes as $q)
+                @foreach($questions as $q)
                 <div class="row">
                     <label class="form-check-label col-sm-12 d-flex">
                         <input type="checkbox" name="quizOptions[]" value="{{$q->id}}" class="form-check-input" style="margin-right: 10px;">
-                        <p class="">{{$q->judul}}</p>
+                        <p class="">{{$q->pertanyaan}}</p>
                     </label>
                 </div>
                 @endforeach
@@ -251,17 +252,17 @@
     $('#input-nilai').hide()
 
     $('#ckWaktu').change(function() {
-        if($(this).is(":checked")) {
+        if ($(this).is(":checked")) {
             $('#input-waktu').show()
-        }else{
+        } else {
             $('#input-waktu').hide()
         }
     });
 
     $('#ckNilai').change(function() {
-        if($(this).is(":checked")) {
+        if ($(this).is(":checked")) {
             $('#input-nilai').show()
-        }else{
+        } else {
             $('#input-nilai').hide()
         }
     });

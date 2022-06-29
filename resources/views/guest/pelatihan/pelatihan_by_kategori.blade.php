@@ -6,7 +6,7 @@
         <div class="row">
             <div class="text-tpgm">
                 <div class="col-sm-12 col-xl-12">
-                    <p>{{$pelatihan->kode}} - {{$pelatihan->judul}}</p>
+                    <p>{{$pelatihan->judul}}</p>
                 </div>
             </div>
         </div>
