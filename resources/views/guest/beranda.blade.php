@@ -70,7 +70,7 @@
 
             <div class="col-12 col-xl-5 order-2">
                 <div class="img-welcome text-center">
-                    <image src="{{asset('guest/assets/images/salam.png')}}" height="420px" width="380px" />
+                    <img src="{{asset('guest/assets/images/salam.png')}}" height="420px" width="380px" />
                 </div>
             </div>
         </div>
@@ -78,11 +78,11 @@
         <div class="row">
             <div class="col-12">
                 <div class="col-5 col-xl-3 logo-kemdikbud-beranda float-start mt-3">
-                    <image src="{{asset('guest/assets/images/logo-kemdikbud.png')}}" width="70px" height="70px" />
+                    <img src="{{asset('guest/assets/images/logo-kemdikbud.png')}}" width="70px" height="70px" />
                     <p class="col-6">Kementerian Pendidikan, Kebudayaan, Riset dan Teknologi</p>
                 </div>
                 <div class="col-5 col-xl-9 logo-bmti-beranda float-end mt-3">
-                    <image src="{{asset('guest/assets/images/logo-bmti.png')}}" width="70px" height="70px" />
+                    <img src="{{asset('guest/assets/images/logo-bmti.png')}}" width="70px" height="70px" />
                     <p class="col-6">BBPPMPV <br /> Bidang Mesin dan Teknik Industri</p>
                 </div>
             </div>
@@ -105,7 +105,7 @@
         </div>
         <div class="col-12 col-xl-6 order-2">
             <div class="img-mandiri text-center">
-                <image src="{{asset('guest/assets/images/pel-mandiri.png')}}" height="400px" width="400px" />
+                <img src="{{asset('guest/assets/images/pel-mandiri.png')}}" height="400px" width="400px" />
             </div>
         </div>
     </div>
@@ -133,7 +133,7 @@
         </div>
         <div class="col-12 col-xl-6 order-2 order-xl-1">
             <div class="img-terbimbing text-center">
-                <image src="{{asset('guest/assets/images/pel-terbimbing.png')}}" height="500px" width="500px" />
+                <img src="{{asset('guest/assets/images/pel-terbimbing.png')}}" height="500px" width="500px" />
             </div>
         </div>
     </div>
@@ -151,7 +151,7 @@
                             <h1>537</h1>
                         </div>
                         <div class="mandiri-image col-5 col-xl-6">
-                            <image src="{{asset('guest/assets/images/peserta.png')}}" height="80px" width="100px" />
+                            <img src="{{asset('guest/assets/images/peserta.png')}}" height="80px" width="100px" />
                         </div>
                     </div>
                 </div>
@@ -165,7 +165,7 @@
                             <h1>43.359</h1>
                         </div>
                         <div class="terbimbing-image col-5 col-xl-6">
-                            <image src="{{asset('guest/assets/images/peserta.png')}}" height="80px" width="100px" />
+                            <img src="{{asset('guest/assets/images/peserta.png')}}" height="80px" width="100px" />
                         </div>
                     </div>
                 </div>
@@ -180,7 +180,7 @@
                             <h1>77</h1>
                         </div>
                         <div class="sertifikat-image col-5 col-xl-6">
-                            <image src="{{asset('guest/assets/images/sertifikat.png')}}" height="80px" width="90px" />
+                            <img src="{{asset('guest/assets/images/sertifikat.png')}}" height="80px" width="90px" />
                         </div>
                     </div>
                 </div>
@@ -195,7 +195,7 @@
                             <h1>{{$jumlahVisitor}}</h1>
                         </div>
                         <div class="pengunjung-image col-5 col-xl-6">
-                            <image src="{{asset('guest/assets/images/pengunjung.png')}}" height="80px" width="90px" />
+                            <img src="{{asset('guest/assets/images/pengunjung.png')}}" height="80px" width="90px" />
                         </div>
                     </div>
                 </div>
@@ -218,7 +218,7 @@
                 @foreach($dataMitra as $mitra)
                 <div class="col-3">
                     <div class="text-center mt-2">
-                        <image src="{{asset('images/perusahaan-mitra/'.$mitra->gambar_logo)}}" width="130px" height="70px" />
+                        <img src="{{asset('images/perusahaan-mitra/'.$mitra->gambar_logo)}}" width="130px" height="70px" />
                     </div>
                 </div>
                 @endforeach

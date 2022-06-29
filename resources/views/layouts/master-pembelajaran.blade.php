@@ -12,8 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Glory&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" />
     <link rel="stylesheet" href="{{asset('guest/assets/bootstrap/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('guest/pembelajaran.css')}}">
-    @yield('custom-css')
+    <link rel="stylesheet" href="{{asset('guest/pembelajaran.css')}}"> @yield('custom-css')
 
 </head>
 
@@ -54,7 +53,7 @@
                 <div class="col-3">
                     <div class="logo-footer">
                         <a href="/">
-                        <image src="{{asset('guest/assets/images/logo-header.png')}}" width="170px" height="110px" />
+                            <image src="{{asset('guest/assets/images/logo-header.png')}}" width="170px" height="110px" />
                         </a>
                         <h1>Sahabat Cerdas</h1>
                     </div>
@@ -63,19 +62,19 @@
                 <div class="col-1">
                     <div class="share">
                         <a href="#">
-                        <image class="icon-share" src="{{asset('guest/assets/images/fb-1.png')}}" height="30px" width="30px" />
+                            <image class="icon-share" src="{{asset('guest/assets/images/fb-1.png')}}" height="30px" width="30px" />
                         </a>
                         <br />
                         <a href="#">
-                        <image class="icon-share" src="{{asset('guest/assets/images/twitter-1.png')}}" height="30px" width="30px" />
+                            <image class="icon-share" src="{{asset('guest/assets/images/twitter-1.png')}}" height="30px" width="30px" />
                         </a>
                         <br />
                         <a href="#">
-                        <image class="icon-share" src="{{asset('guest/assets/images/ig-1.png')}}" height="30px" width="30px" />
+                            <image class="icon-share" src="{{asset('guest/assets/images/ig-1.png')}}" height="30px" width="30px" />
                         </a>
                         <br />
                         <a href="#">
-                        <image class="icon-share" src="{{asset('guest/assets/images/telegram.png')}}" height="30px" width="30px" />
+                            <image class="icon-share" src="{{asset('guest/assets/images/telegram.png')}}" height="30px" width="30px" />
                         </a>
                     </div>
                 </div>
@@ -276,27 +275,27 @@
                                     </div>
                                     <div class="col-12 col-xl-7 text-logo-right-1 mt-1">
                                         <span>Kementrian Pendidikan, Kebudayaan, Riset dan Teknologi</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-5 d-flex">
-                                <div class="row mt-3">
-                                    <div class="col-12 col-xl-5 logo-login-right-2">
-                                        <image src="{{asset('guest/assets/images/logo-bmti.png')}}" width="70px" height="70px" />
-                                    </div>
-                                    <div class="col-12 col-xl-7 text-logo-right-2 mt-1">
-                                        <span>BBPPMPV BMTI <br/> Bidang Mesin dan Teknik Industri</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-2 d-flex">
-                                <button class="btn-closed btn-danger btn-sm btn-circle" onclick="onClickCloseLogin()">X</button>
                             </div>
                         </div>
+                    </div>
+                    <div class="col-5 d-flex">
+                        <div class="row mt-3">
+                            <div class="col-12 col-xl-5 logo-login-right-2">
+                                <image src="{{asset('guest/assets/images/logo-bmti.png')}}" width="70px" height="70px" />
+                            </div>
+                            <div class="col-12 col-xl-7 text-logo-right-2 mt-1">
+                                <span>BBPPMPV BMTI <br/> Bidang Mesin dan Teknik Industri</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2 d-flex">
+                        <button class="btn-closed btn-danger btn-sm btn-circle" onclick="onClickCloseLogin()">X</button>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    </div>
     </div>
 
     <div id="register" class="d-none">

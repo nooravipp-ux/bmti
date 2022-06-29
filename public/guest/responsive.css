@@ -5,10 +5,6 @@
         width: 150px;
         height: 80px;
     }
-    .check-menu {
-        display: block;
-        margin-top: 20px;
-    }
     .icon-menu {
         display: block;
     }
@@ -148,7 +144,7 @@
 /* end header */
 
 
-/* login */
+/* login,register */
 
 @media only screen and (min-width: 400px) and (max-width: 499px) {
     .login-container {
@@ -157,20 +153,13 @@
         width: 90%;
         height: 70%;
     }
-    .login-container .left-box {
+    .left-box {
         width: 100%;
-    }
-    .btn-close {
-        position: absolute;
-        left: 77%;
-        top: 5px;
-        background: none;
-        opacity: 1;
     }
     .icon-user-login {
         left: 84%;
         font-size: 12px;
-        margin-top: -25px;
+        margin-top: -20px;
     }
     .icon-password-login {
         left: 84%;
@@ -181,11 +170,27 @@
         font-size: 14px;
         width: 100%;
     }
-    .lupa-password {
-        font-size: 10px;
+    .login-container span {
+        position: relative;
+        bottom: 3px;
+        left: 3px;
+        font-size: 12px;
     }
-    .text-login {
-        font-size: 10px;
+    .clik-LupaPassword {
+        font-size: 12px;
+    }
+    .btn-login {
+        margin-left: 5px;
+    }
+    .clik-register button {
+        position: relative;
+        top: 2px;
+        right: 8px;
+    }
+    .btn-closed {
+        position: absolute;
+        top: 5px;
+        left: 300px;
     }
     .logo-login-right-1 {
         display: none;
@@ -199,7 +204,7 @@
     .text-logo-right-2 {
         display: none;
     }
-    .login-container .right-box {
+    .right-box {
         width: 0;
     }
     .register-container {
@@ -496,7 +501,7 @@
 }
 
 
-/* end login */
+/* end login,register */
 
 
 /* beranda */
@@ -506,13 +511,12 @@
         margin-bottom: -100px;
     }
     .img-welcome {
+        margin-bottom: 30px;
         margin-top: 20px;
+    }
+    .img-welcome img {
         width: 300px;
         height: 300px;
-        margin-left: auto;
-        margin-right: auto;
-        display: block;
-        margin-bottom: 50px;
     }
     .text-welcome {
         margin-top: 160px;
@@ -556,7 +560,7 @@
     .pel-terbimbing {
         text-align: center;
     }
-    .img-mandiri {
+    .img-mandiri img {
         width: 200px;
         height: 200px;
     }
@@ -565,11 +569,11 @@
         margin-left: 0px;
     }
     .img-terbimbing {
-        margin-top: 0px;
+        margin-top: 0;
+    }
+    .img-terbimbing img {
         width: 250px;
         height: 250px;
-        margin-left: auto;
-        margin-right: auto;
     }
     /* end pelatihan */
     /* participant */
@@ -587,18 +591,36 @@
         margin-right: auto;
     }
     .mandiri-image {
-        margin-top: 60px;
+        margin-top: 35px;
         margin-left: 10px;
+    }
+    .mandiri-image img {
+        width: 80px;
+        height: 70px;
     }
     .terbimbing-image {
-        margin-top: 60px;
+        margin-top: 35px;
         margin-left: 10px;
     }
+    .terbimbing-image img {
+        width: 80px;
+        height: 70px;
+    }
     .sertifikat-image {
-        margin-top: 55px;
+        margin-top: 35px;
+        margin-left: -5px;
+    }
+    .sertifikat-image img {
+        width: 80px;
+        height: 70px;
     }
     .pengunjung-image {
-        margin-top: 55px;
+        margin-top: 35px;
+        margin-left: -5px;
+    }
+    .pengunjung-image img {
+        width: 80px;
+        height: 70px;
     }
     /* end participant */
     /* afiliasi */
@@ -1024,11 +1046,13 @@
     }
     .img-galeria {
         margin-top: 10px;
-        display: block;
+        margin-bottom: 20px;
+    }
+    .img-galeria img {
         margin-left: auto;
         margin-right: auto;
         width: 300px;
-        margin-bottom: 20px;
+        height: 300px;
     }
     .text-galeria-2 p {
         text-align: center;
@@ -1068,8 +1092,12 @@
         text-align: center;
         width: 100px;
     }
+    .galeria-kompetisi {
+        margin-top: -40px;
+        margin-bottom: -30px;
+    }
     .galeria-kompetisi h1 {
-        font-size: 45px;
+        font-size: 35px;
     }
     .galeria-kompetisi p {
         font-size: 13px;
@@ -1082,6 +1110,10 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
+        width: 300px;
+        height: 208px;
+    }
+    .image img {
         width: 300px;
         height: 208px;
     }
@@ -1101,14 +1133,14 @@
     }
     .text-kompetensi p {
         text-align: center;
-        width: 330px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
     }
     .image-permesinan {
-        margin-top: 20px;
+        margin-top: 15px;
         margin-bottom: 20px;
+    }
+    .image-teknik-permesinan img {
+        width: 185px;
+        height: 120px;
     }
     .logo-bmti-kompetensi {
         margin-top: 50px;
@@ -1130,12 +1162,6 @@
         text-align: center;
         width: 100px;
     }
-    .image-teknik-permesinan {
-        display: block;
-        width: 330px;
-        margin-left: auto;
-        margin-right: auto;
-    }
     .galeria-kompetensi-kategori {
         text-align: center;
         padding-left: 5px;
@@ -1154,6 +1180,10 @@
         margin-left: auto;
         margin-right: auto;
     }
+    .img-teknik-permesinan img {
+        width: 300px;
+        height: 205px;
+    }
     .bg-komptensi-materi {
         top: 40px;
         left: 20px;
@@ -1170,10 +1200,11 @@
         height: 250px;
     }
     .shared {
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-        height: 20px;
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+    .shared img {
+        width: 60px;
     }
     /* end teknik permesinan */
 }
@@ -1681,6 +1712,20 @@
     .text-mandiri h1 {
         font-size: 45px;
     }
+    .title-mandiri {
+        margin-top: -50px;
+        margin-bottom: 10px;
+    }
+    .title-mandiri h1 {
+        font-size: 35px;
+    }
+    .title-mandiri p {
+        font-size: 13px;
+        width: 340px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
     .logo-bmti-mandiri {
         margin-left: 35px;
     }
@@ -1700,7 +1745,6 @@
         width: 100px;
     }
     .card-pel {
-        top: -40px;
         display: block;
         margin-left: auto;
         margin-right: auto;
@@ -1738,15 +1782,17 @@
     .rating {
         right: 0;
     }
-    .image-tpgm {
-        width: 340px;
-        height: 300px;
+    .image-tpgm img {
+        display: block;
         margin-left: auto;
         margin-right: auto;
+        width: 340px;
+        height: 280px;
     }
     .line-left {
         left: 0;
-        margin-left: 35px;
+        margin-top: 70px;
+        margin-left: 30px;
     }
     .course {
         left: 15px;
@@ -1766,12 +1812,16 @@
     .shared-3d {
         display: none;
     }
+    .content {
+        margin-top: -30px;
+    }
     .content h2 {
+        margin-bottom: 50px;
         text-align: center;
     }
     .content a {
-        margin-top: 32px;
-        left: calc(79% - 10px);
+        margin-top: 52px;
+        left: calc(80% - 10px);
     }
     .content p {
         width: 320px;
@@ -1787,7 +1837,7 @@
     }
     .content label {
         left: calc(72% - 10px);
-        margin-top: 30px;
+        margin-top: 50px;
     }
     .collapse-1 a {
         margin-top: -40px;
@@ -1826,13 +1876,12 @@
     }
     .rating-2 {
         right: 0px;
-        top: -10px;
+        top: -5px;
         text-align: center;
     }
     .shared-3d-2 {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
+        margin-top: 20px;
+        text-align: center;
     }
     /* end modal-3d */
 }
@@ -2183,6 +2232,14 @@
     .alur-pembelajaran {
         height: 1050px;
     }
+    .alur-img {
+        width: 350px;
+        height: 300px;
+    }
+    .sertifikat-img {
+        width: 350px;
+        height: 500px;
+    }
     .road-map {
         margin-top: 200px;
     }
@@ -2196,13 +2253,20 @@
         top: 300px;
         left: 15px;
     }
-    .image-alur {
-        top: 300px;
+    .img-alur {
+        top: 220px;
     }
-    .myButton {
-        margin-top: 50px;
-        height: 80px;
-        width: 300px;
+    .img-alur img {
+        width: 360px;
+        height: 300px;
+    }
+    .myButton1 {
+        margin-left: 0px;
+        margin-top: 20px;
+    }
+    .btn-closeAlur {
+        top: 210px;
+        left: 350px;
     }
 }
 
@@ -2256,17 +2320,24 @@
     .logo-footer {
         top: 0;
         right: 0;
-        width: 100px;
+    }
+    .logo-footer img {
+        width: 90px;
+        height: 80px;
     }
     .logo-footer h1 {
         position: relative;
+        top: -10px;
         left: 25px;
         font-size: 10px;
     }
     .share {
         margin-top: 8px;
         right: 0;
+    }
+    .share img {
         width: 20px;
+        height: 20px;
     }
     .text-1 span {
         font-size: 10px;

@@ -207,7 +207,7 @@ input[class="collapse-mandiri"] {
 }
 
 .icon-menu-2 {
-    margin-left: 5px;
+    margin-left: 10px;
     margin-top: 12px;
     background-image: url("../guest/assets/images/icon-menu.png");
     background-size: cover;
@@ -220,7 +220,7 @@ input[class="collapse-mandiri"] {
 }
 
 .icon-menu-hover {
-    margin-left: 30px;
+    margin-left: 25px;
     margin-top: 40px;
     background-image: url("../guest/assets/images/icon-close.png");
     background-size: cover;
@@ -334,6 +334,18 @@ input[class="collapse-mandiri-2"] {
     outline: 0;
     border-width: 0 0 2px;
     border-color: #018ED6;
+}
+
+.icon-user-login {
+    position: absolute;
+    left: 43%;
+    margin-top: -25px;
+}
+
+.icon-password-login {
+    position: absolute;
+    left: 43%;
+    margin-top: -30px;
 }
 
 .clik-LupaPassword {
@@ -941,6 +953,11 @@ input[class="collapse-mandiri-2"] {
     font-weight: 600;
 }
 
+.galeria-kompetisi {
+    margin-top: -30px;
+    margin-bottom: -20px;
+}
+
 .galeria-kompetisi h1 {
     font-size: 55px;
     font-weight: bold;
@@ -1065,26 +1082,24 @@ input[class="collapse-mandiri-2"] {
     margin-top: 100px;
 }
 
+.bg-materi {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.575);
+    z-index: 999999;
+}
+
 .bg-komptensi-materi {
     position: fixed;
     top: 35px;
     left: 30px;
     width: 95%;
     height: 90%;
-    border-radius: 30px;
+    border-radius: 15px;
     background-color: #ffffff;
     flex-direction: row;
-    z-index: 999999;
-    display: none;
-}
-
-.bg-materi {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.575);
     z-index: 999999;
 }
 
@@ -1260,6 +1275,23 @@ input[class="collapse-mandiri-2"] {
     font-size: 50px;
     font-weight: bold;
     margin-bottom: 20px;
+}
+
+.title-mandiri {
+    margin-top: -30px;
+    margin-bottom: 30px;
+}
+
+.title-mandiri h1 {
+    font-size: 55px;
+    font-weight: bold;
+    font-family: "glory";
+}
+
+.title-mandiri p {
+    font-weight: 600;
+    font-size: 19px;
+    font-family: "glory";
 }
 
 
@@ -1795,6 +1827,7 @@ input[class="collapse-5"] {
 }
 
 .myButton1 {
+    margin-left: 20px;
     margin-top: 10px;
     height: 90px;
     padding: 10px 10px 10px 10px;

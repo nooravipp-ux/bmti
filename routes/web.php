@@ -39,25 +39,24 @@ use App\Http\Controllers\Guest\PelatihanController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+//route unutk beranda
 Route::get('/', function () {
     return view('guest.beranda');
 });
-
-//route unutk beranda
 Route::name('front.')->middleware('visitor')->group(function() {
     Route::get('/', [BerandaController::class, 'getData']);   
 });
-
 
 //route untuk galeria
 Route::get('/galeria', [GaleriaController::class, 'getKategoriKompetensi']);
 Route::get('/galeria/{kategori_id}', [GaleriaController::class, 'getAllKeahlianByKategori']);
 
-//route unutk pelatihan
+//route untuk pelatihan
 Route::get('/pelatihan-mandiri', [PelatihanController::class, 'index']);
 Route::get('/pelatihan-mandiri/{id}', [PelatihanController::class, 'getAllPelatihanByKategori'])->name('pelatihan.detail');
 
-// route pembelajaran
+// route untuk pembelajaran
 Route::get('/pembelajaran', function () {
     return view('pembelajaran.index');
 });
@@ -76,7 +75,7 @@ Route::get('/quiz', function () {
     return view('pembelajaran.quiz');
 });
 
-
+// route untuk alur pembelajaran
 Route::get('/alur-pembelajaran', function () {
     return view('guest.alur_pembelajaran');
 });

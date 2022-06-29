@@ -28,13 +28,13 @@
         </div>
 
         <div class="row">
-            <div class="col-sm-12 col-xl-5">
+            <div class="col-12 col-xl-5">
                 <div class="image-tpgm">
                     <image src="{{asset('/images/pelatihan/'.$pelatihan->gambar)}}" width="500px" height="350px" />
                 </div>
             </div>
 
-            <div class="col-sm-12 col-xl-6">
+            <div class="col-12 col-xl-6">
                 <div class="line-left">
                     <div class="course">
                         <p>Course & Topics</p>
@@ -280,7 +280,7 @@
 </div>
 
 <div class="container">
-    <div class="row mt-4 text-center">
+    <div class="row justify-content-center mt-4 text-center">
         <div class="col-sm-6 col-xl-1 img-rating-2">
             <image src="{{asset('guest/assets/images/rating.png')}}" width="40px" height="40px" />
         </div>
@@ -289,43 +289,43 @@
             <span>1.296</span>
         </div>
 
-        <div class="col-xl-1">
+        <div class="col-3 col-xl-1">
             <div class="shared-3d-2">
                 <a href=""><image src="{{asset('guest/assets/images/share-shared.png')}}" width="70px" height="25px"/></a>
             </div>
         </div>
 
-        <div class="col-xl-1">
+        <div class="col-3 col-xl-1">
             <div class="shared-3d-2">
                 <a href=""><image src="{{asset('guest/assets/images/fb-shared.png')}}" width="70px" height="25px"/></a>
             </div>
         </div>
 
-        <div class="col-xl-1">
+        <div class="col-3 col-xl-1">
             <div class="shared-3d-2">
                 <a href=""><image src="{{asset('guest/assets/images/twitter-shared.png')}}" width="70px" height="25px"/></a>
             </div>
         </div>
 
-        <div class="col-xl-1">
+        <div class="col-3 col-xl-1">
             <div class="shared-3d-2">
                 <a href=""><image src="{{asset('guest/assets/images/google.png')}}" width="70px" height="25px"/></a>
             </div>
         </div>
 
-        <div class="col-xl-1">
+        <div class="col-3 col-xl-1">
             <div class="shared-3d-2">
                 <a href=""><image src="{{asset('guest/assets/images/reddit-shared.png')}}" width="70px" height="25px"/></a>
             </div>
         </div>
 
-        <div class="col-xl-1">
+        <div class="col-3 col-xl-1">
             <div class="shared-3d-2">
                 <a href=""><image src="{{asset('guest/assets/images/pinterest-shared.png')}}" width="70px" height="25px"/></a>
             </div>
         </div>
 
-        <div class="col-xl-1">
+        <div class="col-3 col-xl-1">
             <div class="shared-3d-2">
                 <a href=""><image src="{{asset('guest/assets/images/email-shared.png')}}" width="70px" height="25px"/></a>
             </div>
@@ -335,13 +335,13 @@
 
 <div class="container">
     <div class="row mt-5">
-        <div class="col-sm-12 col-xl-4">
+        <div class="col-12 col-xl-4">
             <div class="card-pel shadow">
                 <p class="title-free">Free</p>
-                <image class="card-img-top" src="/images/pelatihan-1.png" alt="Card image cap" width="360px" height="200px" />
+                <image class="card-img-top" src="{{asset('guest/assets/images/pelatihan-1.png')}}" alt="Card image cap" width="360px" height="200px" />
                 <div class="card-body text-center">
                     <h2 class="card-text">TPGM-Membuat Model 3D dengan CAD</h2>
-                    <a href="/pelatihan-mandiri/membuat-model-3d"><button type="button" class="btn-pel btn-primary">Lihat Selengkapnya...</button></a>
+                    <a href=""><button type="button" class="btn-pel btn-primary">Lihat Selengkapnya...</button></a>
                 </div>
             </div>
         </div>
