@@ -52,6 +52,19 @@ header {
 
 /* pembelajaran */
 
+.button-hidden {
+    position: absolute;
+    left: 96%;
+    margin-top: -35px;
+    width: 20px;
+    height: 20px;
+}
+
+.content-pembelajaran {
+    margin-top: -45px;
+    margin-left: 95px;
+}
+
 .text-pembelajaran {
     font-family: "glory";
 }
@@ -144,7 +157,7 @@ header {
 
 .box-proses {
     background: #DBDFFD;
-    width: 700px;
+    width: 750px;
     height: 60px;
     padding: 10px;
     border-radius: 10px;
