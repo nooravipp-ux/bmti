@@ -28,8 +28,7 @@
                                     <th>No</th>
                                     <th>Nama</th>
                                     <th>Deskripsi</th>
-                                    <th>Edit</th>
-                                    <th>Delete</th>
+                                    <th class="text-center">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -39,9 +38,9 @@
                                     <td><?php echo $no++; ?></td>
                                     <td>{{$row->nama}}</td>
                                     <td>{{$row->deskripsi}}</td>
-                                    <td><a href="{{ route('bidangKeahlian.edit', ['id'=>$row->id]) }}" class="btn btn-dark btn-sm btn-rounded btn-icon-prepend">Edit
-                                            <i class="ti-reload btn-icon-append"></i></a></td>
-                                    <td><a href="{{ route('bidangKeahlian.delete', ['id'=>$row->id]) }}" onclick="return confirm('Apakah anda yakin ?')" class="btn btn-danger btn-sm btn-rounded btn-icon-text">Delete
+                                    <td class="text-center"><a href="{{ route('bidangKeahlian.edit', ['id'=>$row->id]) }}" class="btn btn-dark btn-sm btn-rounded btn-icon-prepend">Edit
+                                            <i class="ti-reload btn-icon-append"></i></a>
+                                    <a href="{{ route('bidangKeahlian.delete', ['id'=>$row->id]) }}" onclick="return confirm('Apakah anda yakin ?')" class="btn btn-danger btn-sm btn-rounded btn-icon-text">Delete
                                             <i class="ti-trash btn-icon-append"></i></a></td>
                                 </tr>
                                 @endforeach

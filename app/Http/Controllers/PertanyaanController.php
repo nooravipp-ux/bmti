@@ -13,10 +13,11 @@ class PertanyaanController extends Controller
 {
     public function index()
     {
+        $kelKeahlian = KelompokKeahlian::all();
         $data = DB::table('m_pertanyaan')->select('m_pertanyaan.*', 'm_kelompok_keahlian.id as kelompok_keahlian_id', 'm_kelompok_keahlian.nama')
                 ->join('m_kelompok_keahlian', 'm_kelompok_keahlian.id', '=', 'm_pertanyaan.kelompok_keahlian_id')
                 ->get();
-        return view('admin.pertanyaan.index', compact('data'));
+        return view('admin.pertanyaan.index', compact('data','kelKeahlian'));
     }
     public function create()
     {
@@ -25,6 +26,7 @@ class PertanyaanController extends Controller
     }
     public function store(Request $request)
     {
+
         $image = $request->file('gambar');
         $imageName = "";
         if($image) {
@@ -32,7 +34,7 @@ class PertanyaanController extends Controller
         }
 
         $data = Pertanyaan::create([
-            'kelompok_keahlian_id' => $request->kelompok_keahlian_id,
+            'quiz_id' => $request->quiz_id,
             'pertanyaan' => $request->pertanyaan,
             'gambar' => $imageName,
             'pilihan_a' => $request->pilihan_a,
@@ -45,7 +47,7 @@ class PertanyaanController extends Controller
             $image->move(public_path('public/images'), $imageName);
         }
 
-        return redirect('/admin/pertanyaan');
+        return redirect()->route('quiz.edit', [$request->quiz_id]);
     }
     public function edit($id)
     {

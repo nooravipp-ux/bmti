@@ -404,7 +404,7 @@
                                     </a></li>
                                 <li class="nav-item"> <a class="nav-link" href="{{route('quiz')}}">Quiz
                                     </a></li> -->
-                                <li class="nav-item"> <a class="nav-link" href="{{route('pertanyaan')}}">Bank Soal
+                                <li class="nav-item"> <a class="nav-link" href="{{route('quiz')}}">Bank Soal
                                     </a></li>
                                 <!-- <li class="nav-item"> <a class="nav-link" href="{{route('topikQuiz')}}">Topik Quiz
                                     </a></li> -->

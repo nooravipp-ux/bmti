@@ -200,11 +200,11 @@
 
                     </div>
                 </div>
-                @foreach($questions as $q)
+                @foreach($quizes as $q)
                 <div class="row">
                     <label class="form-check-label col-sm-12 d-flex">
                         <input type="checkbox" name="quizOptions[]" value="{{$q->id}}" class="form-check-input" style="margin-right: 10px;">
-                        <p class="">{{$q->pertanyaan}}</p>
+                        <p class="">{{$q->judul}}</p>
                     </label>
                 </div>
                 @endforeach

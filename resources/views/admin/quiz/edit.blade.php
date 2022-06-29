@@ -1,45 +1,176 @@
 @extends('layouts.master')
 @section('title', 'BMTI | DATA QUIZ')
-@section('content')
+@section('custom-css')
+<style>
+    .backdrop-modal {
+        padding: 20px;
+        position: absolute;
+        top: 200px;
+        width: 95%;
+        right: 2%;
+        height: auto;
+        background-color: white;
+        border: 1px solid #ddd;
+        box-shadow: 0.2px 0.6px 0.5px 0.5px;
+        z-index: 1;
+    }
 
+    .topik {
+        padding-left: 30px;
+        display: flex;
+        color: #8D8D8D;
+    }
+
+    .pelatihan {
+        display: flex;
+    }
+
+    .pelatihan i {
+        float: inline-end;
+    }
+
+    .button-container {
+        margin-top: 20px;
+    }
+
+    #modal-topik {
+        position: fixed;
+        left: 300px;
+        min-width: 1000px;
+    }
+
+    .konten {
+        padding-left: 30px;
+    }
+
+    .kuis {
+        padding-left: 30px;
+    }
+
+    .btn-tambah-konten a {
+        text-decoration: none;
+    }
+</style>
+@endsection
+@section('content')
 <div class="content-wrapper">
-    <div class="row">
-        <div class="col-lg-12 grid-margin">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <h3 class="card-title" style="padding-left: 3px;padding-bottom: 10px;">{{$data->judul}}</h3>
+        </div>
+    </div>
+    @foreach($pertanyaan as $pert)
+    <div class="row justify-content-center">
+        <div class="col-lg-10 grid-margin">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">{{ __('Data Quiz') }}</h4>
-                    <!-- <p class="card-description">
-                    </p> -->
-                    <form action="{{route('quiz.update', ['id'=>$data->id])}}" method="POST"
-                        enctype="multipart/form-data">
-                        @method('put')
-                        @csrf
-                        <div class="mb-3">
-                            <label for="inputjudul" class="form-label">Judul</label>
-                            <input type="text" name="judul" class="form-control" id="inputjudul"
-                                aria-describedby="emailHelp" value="{{$data->judul}}">
+                    <div class="d-flex">
+                        <h4 class="card-title" style="padding-left: 3px;">{{$pert->pertanyaan}}</h4>
+                        <!-- <a class="ms-auto" href="#" onclick="window.open('http://localhost:8000/admin/pelatihan/22/topik', 'Preview', 'width=1200,height=650');"><i class="menu-icon mdi mdi-dots-vertical"></i></a> -->
+                        <div class="dropdown ms-auto">
+                            <i class="menu-icon mdi mdi-dots-vertical" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Ubah</a>
+                                <a class="dropdown-item" href="#">Hapus</a>
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="inputdeskripsi" class="form-label">Deskripsi</label>
-                            <input type="text" name="deskripsi" class="form-control" id="inputdeskripsi"
-                                aria-describedby="emailHelp" value="{{$data->deskripsi}}">
-                        </div>
-                        <div class="mb-3">
-                            <label for="inputdurasi" class="form-label">Durasi</label>
-                            <input type="number" name="durasi" class="form-control" id="inputdurasi"
-                                aria-describedby="emailHelp" value="{{$data->durasi}}">
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-sm btn-rounded">Submit</button>
-                    </form>
+                    </div>
+                    <div class="row">
+                        <ul>
+                            <li>{{$pert->pilihan_a}}</li>
+                            <li>{{$pert->pilihan_b}}</li>
+                            <li>{{$pert->pilihan_c}}</li>
+                            <li>{{$pert->pilihan_d}}</li>
+                        </ul>
+                        <hr>
+                        <p><b>Jawaban :</b> {{$pert->jawaban}}</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    @endforeach
+    <div class="row justify-content-center">
+        <div class="col-lg-10 grid-margin">
+            <div class="button-container">
+                <button type="button" class="btn btn-primary btn-rounded" data-toggle="modal" data-target="#exampleModalCenter">+ Tambah Soal</button>
+            </div>
+        </div>
+    </div>
 </div>
-<script>
-$(document).ready(function() {
-    $('#dataTable').DataTable();
 
-});
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Pertanyaan Quiz</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{{route('pertanyaan.store')}}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="inputpertanyaan" class="form-label">Pertanyaan</label>
+                        <textarea type="text" name="pertanyaan" class="form-control"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputgambar" class="form-label">Gambar</label>
+                        <input type="file" name="gambar" class="form-control">
+                        <input type="hidden" name="quiz_id" value="{{$data->id}}" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputpilihan_a" class="form-label">Pilihan A</label>
+                        <input type="text" name="pilihan_a" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputpilihan_b" class="form-label">Pilihan B</label>
+                        <input type="text" name="pilihan_b" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputpilihan_c" class="form-label">Pilihan C</label>
+                        <input type="text" name="pilihan_c" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputpilihan_d" class="form-label">Pilihan D</label>
+                        <input type="text" name="pilihan_d" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="jawaban" class="form-label">Jawaban</label>
+                        <input type="text" name="jawaban" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-sm btn-rounded">Submit</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+@endsection
+
+@section('script')
+<script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.ckeditor').ckeditor();
+    });
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script>
+    $('#bntModal').click(function() {
+        if ($('#modal-topik').hasClass('d-none')) {
+            $('#modal-topik').removeClass('d-none')
+        } else {
+            $('#modal-topik').addClass('d-none')
+        }
+    });
+
+    $('#bnt-batal').click(function() {
+        $('#modal-topik').addClass('d-none')
+    });
 </script>
 @endsection
