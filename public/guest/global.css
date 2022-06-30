@@ -1553,16 +1553,17 @@ input[class="check-course"] {
     left: 10px;
 }
 
-.bg-box span {
+.bg-box a {
     position: relative;
     top: 13px;
     left: 20px;
     font-size: 17px;
     font-family: "glory";
     font-weight: 600;
+    text-decoration: none;
 }
 
-.bg-box span:hover {
+.bg-box a:hover {
     color: #018ED6;
 }
 

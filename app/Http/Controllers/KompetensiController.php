@@ -36,7 +36,7 @@ class KompetensiController extends Controller
         ]);
 
         if($file) {
-            $file->move(public_path('images/galeria'), $fileName);
+            $file->move(public_path('images/galeria/'), $fileName);
         }
 
         return redirect('/admin/kompetensi');
@@ -54,7 +54,7 @@ class KompetensiController extends Controller
 
         if($file){
             $fileName = time()."_".$file->getClientOriginalName();
-            $file->move(public_path('images/galeria'), $fileName);
+            $file->move(public_path('images/galeria/'), $fileName);
 
             File::delete('images/galeria/'.$request->gambar_banner_old);
         }

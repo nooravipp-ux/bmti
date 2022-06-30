@@ -133,7 +133,7 @@
                 @foreach($topiks as $tp)
                 <div class="bg-box shadow bg-white rounded mt-1">
                     <input type="checkbox" />
-                    <span>{{$tp->judul}}</span>
+                    <a href=""><span>{{$tp->judul}}</span></a>
                 </div>
 
                 <span class="collapse-1">
@@ -144,7 +144,7 @@
                     @if($kt->topik_id == $tp->id)
                     <div class="bg-box shadow bg-white rounded mt-1">
                         <img src="{{asset('guest/assets/images/lesson.png')}}" width="30px" height="30px" />
-                        <p>{{$kt->judul}}</p>
+                        <a href="{{route('pembelajaran.konten',['id' => $pelatihan->id, 'topikId' => $tp->id, 'kontenId' => $kt->id])}}"><span>{{$kt->judul}}</span></a>
                     </div>
                     @endif
                     @endforeach
@@ -153,7 +153,7 @@
                     @if($tq->topik_id == $tp->id)
                     <div class="bg-box shadow bg-white rounded mt-1">
                         <img src="{{asset('guest/assets/images/tes-awal.png')}}" width="30px" height="30px" />
-                        <p>{{$tq->judul}}</p>
+                        <a href="{{route('pembelajaran.quiz',['id' => $pelatihan->id, 'topikId' => $tq->topik_id, 'quizId' => $tq->quiz_id])}}"><span>{{$tq->judul}}</span></a>
                     </div>
                     @endif
                     @endforeach
@@ -238,12 +238,10 @@
         <div class="col-sm-12 col-xl-4">
             <div class="card-pel shadow">
                 <p class="title-free">Free</p>
-                <img class="card-img-top" src="{{asset('/images/pelatihan/'.$data->gambar)}}" alt="Card image cap"
-                    width="360px" height="200px" />
+                <img class="card-img-top" src="{{asset('/images/pelatihan/'.$data->gambar)}}" alt="Card image cap" width="360px" height="200px" />
                 <div class="card-body text-center">
                     <h2 class="card-text">{{$data->judul}}</h2>
-                    <a href="{{route('pelatihan.detail', ['id'=>$data->id])}}"><button type="button"
-                            class="btn-pel btn-primary">Lihat Selengkapnya...</button></a>
+                    <a href="{{route('pelatihan.detail', ['id'=>$data->id])}}"><button type="button" class="btn-pel btn-primary">Lihat Selengkapnya...</button></a>
                 </div>
             </div>
         </div>

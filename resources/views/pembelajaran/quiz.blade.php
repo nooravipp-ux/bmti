@@ -11,29 +11,28 @@
                         aria-valuemax="100">75%</div>
                 </div>
             </div>
+            <?php $no = 1; ?>
+            @foreach($pertanyaan as $prt)
             <div class="quiz mt-4">
-                <p>1. Gambar berikut merupakan koordinat dari penggambaran model 3D, koordinat yang dibedakan warnanya
-                    (ditebalkan) adalah koordinat....</p>
+                <p><?php echo $no++; ?>. {{$prt->pertanyaan}}</p>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault">XY</label>
+                    <input class="form-check-input" type="radio" name="{{$prt->id}}" value="{{$prt->pilihan_a}}" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault">{{$prt->pilihan_a}}</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault">XZ</label>
+                    <input class="form-check-input" type="radio" name="{{$prt->id}}" value="{{$prt->pilihan_b}}" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault">{{$prt->pilihan_b}}</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault">ZY</label>
+                    <input class="form-check-input" type="radio" name="{{$prt->id}}" value="{{$prt->pilihan_c}}" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault">{{$prt->pilihan_c}}</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault">ZX</label>
-                </div>
-                <div class="row justify-content-center text-center mt-3">
-                    <button class="btn-quiz rounded-pill text-light font-weight-bold">Selesai</button>
+                    <input class="form-check-input" type="radio" name="{{$prt->id}}" value="{{$prt->pilihan_d}}" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault">{{$prt->pilihan_d}}</label>
                 </div>
             </div>
+            @endforeach
         </div>
 
         <div class="button-hidden">

@@ -55,6 +55,9 @@ Route::get('/galeria/{kategori_id}', [GaleriaController::class, 'getAllKeahlianB
 //route untuk pelatihan
 Route::get('/pelatihan-mandiri', [PelatihanController::class, 'index']);
 Route::get('/pelatihan-mandiri/{id}', [PelatihanController::class, 'getDetailPelatihan'])->name('pelatihan.detail');
+Route::get('/pelatihan-mandiri/{id}/topik/{topikId}', [PelatihanController::class, 'getTopikPembelajaran'])->name('pembelajaran.topik');
+Route::get('/pelatihan-mandiri/{id}/topik/{topikId}/konten/{kontenId}', [PelatihanController::class, 'getKontenPembelajaran'])->name('pembelajaran.konten');
+Route::get('/pelatihan-mandiri/{id}/topik/{topikId}/quiz/{quizId}', [PelatihanController::class, 'getQuizPembelajaran'])->name('pembelajaran.quiz');
 
 // route untuk pembelajaran
 Route::get('/pembelajaran', function () {

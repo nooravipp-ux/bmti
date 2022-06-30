@@ -22,8 +22,8 @@
             <div class="row">
                 <div class="col-2">
                     <div class="logo-header">
-                        <a href="{{url('/pembelajaran')}}">
-                            <image src="{{asset('guest/assets/images/logo-header.png')}}" width="150px" height="100px" />
+                        <a href="{{url('/')}}">
+                            <img src="{{asset('guest/assets/images/logo-header.png')}}" width="150px" height="100px" />
                         </a>
                     </div>
                 </div>

@@ -35,7 +35,7 @@
                     <p class="col-6">Kementerian Pendidikan, Kebudayaan, Riset dan Teknologi</p>
                 </div>
                 <div class="col-5 col-xl-9 logo-bmti-galeria float-start">
-                    <image src="{{asset('guest/assets/images/logo-bmti.png')}}" width="70px" height="70px" />
+                    <img src="{{asset('guest/assets/images/logo-bmti.png')}}" width="70px" height="70px" />
                     <p class="col-6">BBPPMPV <br /> Bidang Mesin dan Teknik Industri</p>
                 </div>
             </div>
@@ -53,7 +53,7 @@
         @foreach($data as $dt)
         <div class="col-12 col-md-4 col-xl-4">
             <div class="image shadow mt-5">
-                <image src="{{asset('images/galeria/'.$dt->gambar_banner)}}" alt="Bricks" width="355px" height="245px" />
+                <img src="{{asset('images/galeria/'.$dt->gambar_banner)}}" alt="Bricks" width="355px" height="245px" />
                 <a href="{{url('/galeria/'.$dt->id)}}">
                     <div class="image-text">
                         <h4 class="col-11">{{$dt->nama_kompetensi}}</h4>
