@@ -218,12 +218,18 @@
                     </div>
                 </div>
             </div>
-            <div class="pembelajaran text-center bg-white">
+            <div class="pembelajaran-bar text-center bg-white">
                 <p class="mt-4">Proses Pembelajaran</p>
                 <figure class="highcharts-figure">
                     <div id="bar" style="height: 250px; margin:auto;"></div>
                 </figure>
             </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 next-pembelajaran text-center">
+            <p>Topik Selanjutnya : <span>Tes Awal</span></p>
         </div>
     </div>
 </div>

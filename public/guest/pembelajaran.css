@@ -45,24 +45,51 @@ header {
     font-family: "glory";
 }
 
-#text-hover {
+.text-header-2 {
+    margin-top: 40px;
+    font-weight: 600;
+    font-family: "glory";
+}
+
+.img-pembelajaran {
+    margin-top: 35px;
+}
+
+#text-hover-2 {
     display: none;
-    flex-flow: column;
+}
+
+.text-hover-2 {
     position: absolute;
-    top: 80%;
-    z-index: 1000;
-    float: left;
-    min-width: 10rem;
-    margin: 0;
-    font-size: 1rem;
-    color: #212529;
-    text-align: left;
-    list-style: none;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid rgba(0, 0, 0, .15);
-    border-radius: 0.25rem;
-    padding: 0.5rem 0;
+    margin-top: -15px;
+    width: 150px;
+    height: auto;
+    padding: 10px;
+    color: black;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+    font-family: "glory";
+    cursor: pointer;
+}
+
+.text-hover-2 hr {
+    position: relative;
+    right: 15px;
+    width: 150px;
+    margin: 5px;
+}
+
+.text-hover-2 a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.text-hover-2 i {
+    margin-left: 15px;
+    margin-top: 4px;
 }
 
 
@@ -74,7 +101,7 @@ header {
 .button-hidden {
     position: absolute;
     left: 96%;
-    margin-top: -35px;
+    margin-top: -25px;
     width: 20px;
     height: 20px;
 }
@@ -110,8 +137,9 @@ header {
 
 .pembelajaran {
     margin-left: 30px;
-    padding: 10px;
+    padding: 20px;
     width: 300px;
+    height: 60px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     padding-bottom: 40px;
 }
@@ -167,6 +195,21 @@ header {
     font-family: "glory";
     font-weight: 600;
     font-size: 15px;
+}
+
+.pembelajaran-bar {
+    margin-left: 30px;
+    padding: 10px;
+    width: 300px;
+    height: 350px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding-bottom: 40px;
+}
+
+.pembelajaran-bar p {
+    font-family: "glory";
+    font-weight: 600;
+    font-size: 18px;
 }
 
 .next-pembelajaran {

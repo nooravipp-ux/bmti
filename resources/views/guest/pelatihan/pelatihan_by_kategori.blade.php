@@ -133,7 +133,7 @@
                 @foreach($topiks as $tp)
                 <div class="bg-box shadow bg-white rounded mt-1">
                     <input type="checkbox" />
-                    <a href=""><span>{{$tp->judul}}</span></a>
+                    <a href="" style="top:12px; left:15px;"><span>{{$tp->judul}}</span></a>
                 </div>
 
                 <span class="collapse-1">

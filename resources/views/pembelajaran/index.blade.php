@@ -200,7 +200,7 @@
                     </div>
                 </div>
             </div>
-            <div class="pembelajaran text-center bg-white">
+            <div class="pembelajaran-bar text-center bg-white">
                 <p class="mt-4">Proses Pembelajaran</p>
                 <figure class="highcharts-figure">
                     <div id="bar" style="height: 250px; margin:auto;"></div>

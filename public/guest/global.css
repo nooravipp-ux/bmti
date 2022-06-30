@@ -1145,7 +1145,7 @@ input[class="collapse-mandiri-2"] {
 
 .shared {
     margin-top: 10px;
-    margin-left: -30px;
+    margin-left: 240px;
 }
 
 .shared img {
@@ -1421,9 +1421,8 @@ input[class="collapse-mandiri-2"] {
 
 .line-left {
     position: relative;
-    bottom: 40px;
+    bottom: 50px;
     left: 60px;
-    height: 500px;
     border-left: 4px solid white;
 }
 
@@ -1555,8 +1554,8 @@ input[class="check-course"] {
 
 .bg-box a {
     position: relative;
-    top: 13px;
-    left: 20px;
+    top: 8px;
+    left: 5px;
     font-size: 17px;
     font-family: "glory";
     font-weight: 600;
