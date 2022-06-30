@@ -148,7 +148,7 @@
 
 @media only screen and (min-width: 400px) and (max-width: 499px) {
     .login-container {
-        top: 80px;
+        top: 150px;
         left: 20px;
         width: 90%;
         height: 70%;
