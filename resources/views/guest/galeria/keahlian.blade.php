@@ -72,6 +72,8 @@
     </div>
 </div>
 
+
+<!-- Modal -->
 <div id="materi" class="d-none">
     <div class="bg-materi">
         <div class="bg-komptensi-materi">
