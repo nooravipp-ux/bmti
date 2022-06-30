@@ -66,7 +66,7 @@
                 <div class="col-3 col-md-2 col-xl-1 order-2 order-xl-3">
                     <div class="akun-button text-center">
                         @if(auth()->user())
-                        <a class="btn-lg" role="button" aria-pressed="true" onclick="onClickLogin()">Dashboard</a> @else
+                        <a href="{{url('/dashboard')}}" class="btn-lg" role="button" aria-pressed="true">Dashboard</a> @else
                         <a class="btn-lg" role="button" aria-pressed="true" onclick="onClickLogin()">LOGIN</a> @endif
                     </div>
                 </div>
