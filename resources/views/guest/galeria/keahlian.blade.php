@@ -57,16 +57,18 @@
     </div>
 
     <div class="row justify-content-center">
+        @foreach($data as $dt)
         <div class="col-12 col-md-4 col-xl-4">
             <div class="img-teknik-permesinan shadow mt-5">
-                <img src="{{asset('guest/assets/images/kompetensi-1.png')}}" alt="Bricks" width="357px" height="247px" />
+                <img src="{{asset('images/galeria/'.$dt->gambar_banner)}}" alt="Bricks" width="357px" height="247px" />
                 <a onclick="onClickMateri()">
                     <div class="image-text"></div>
                 </a>
-                <p>Tool Offset Pada Mesin Bubut CNC</p>
+                <p>{{$dt->judul}}</p>
                 <h5>Joko Suseno Jul 27, 2021</h5>
             </div>
         </div>
+        @endforeach
     </div>
 </div>
 
@@ -87,7 +89,7 @@
                 <div class="row">
                     <div class="col-12 col-xl-4">
                         <div class="title-by">
-                            <img src="{{asset('guest/assets/images/avatar.png')}}" width="35px" height="35px"/>
+                            <img src="{{asset('guest/assets/images/avatar.png')}}" width="35px" height="35px" />
                             <p>By Joko Suseno</p>
                             <p>Last Update July 27, 2021</p>
                         </div>
@@ -101,37 +103,37 @@
                 <div class="row justify-content-center">
                     <div class="col-3 col-xl-1">
                         <div class="shared">
-                            <a href=""><img src="{{asset('guest/assets/images/share-shared.png')}}" width="70px" height="25px"/></a>
+                            <a href=""><img src="{{asset('guest/assets/images/share-shared.png')}}" width="70px" height="25px" /></a>
                         </div>
                     </div>
                     <div class="col-3 col-xl-1">
                         <div class="shared">
-                            <a href=""><img src="{{asset('guest/assets/images/fb-shared.png')}}" width="70px" height="25px"/></a>
+                            <a href=""><img src="{{asset('guest/assets/images/fb-shared.png')}}" width="70px" height="25px" /></a>
                         </div>
                     </div>
                     <div class="col-3 col-xl-1">
                         <div class="shared">
-                            <a href=""><img src="{{asset('guest/assets/images/twitter-shared.png')}}" width="70px" height="25px"/></a>
+                            <a href=""><img src="{{asset('guest/assets/images/twitter-shared.png')}}" width="70px" height="25px" /></a>
                         </div>
                     </div>
                     <div class="col-3 col-xl-1">
                         <div class="shared">
-                            <a href=""><img src="{{asset('guest/assets/images/google.png')}}" width="70px" height="25px"/></a>
+                            <a href=""><img src="{{asset('guest/assets/images/google.png')}}" width="70px" height="25px" /></a>
                         </div>
                     </div>
                     <div class="col-3 col-xl-1">
                         <div class="shared">
-                            <a href=""><img src="{{asset('guest/assets/images/reddit-shared.png')}}" width="70px" height="25px"/></a>
+                            <a href=""><img src="{{asset('guest/assets/images/reddit-shared.png')}}" width="70px" height="25px" /></a>
                         </div>
                     </div>
                     <div class="col-3 col-xl-1">
                         <div class="shared">
-                            <a href=""><img src="{{asset('guest/assets/images/pinterest-shared.png')}}" width="70px" height="25px"/></a>
+                            <a href=""><img src="{{asset('guest/assets/images/pinterest-shared.png')}}" width="70px" height="25px" /></a>
                         </div>
                     </div>
                     <div class="col-3 col-xl-1">
                         <div class="shared">
-                            <a href=""><img src="{{asset('guest/assets/images/email-shared.png')}}" width="70px" height="25px"/></a>
+                            <a href=""><img src="{{asset('guest/assets/images/email-shared.png')}}" width="70px" height="25px" /></a>
                         </div>
                     </div>
                 </div>
@@ -144,6 +146,7 @@
     function onClickMateri() {
         $('#materi').attr('class', '');
     }
+
     function onClickCloseMateri() {
         $('#materi').addClass('d-none');
     }

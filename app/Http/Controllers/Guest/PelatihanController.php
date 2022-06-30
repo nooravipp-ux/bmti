@@ -57,6 +57,17 @@ class PelatihanController extends Controller
 
     public function getKontenPembelajaran($pelatihanId, $topikId, $kontenId)
     {
+        $topikQuiz = DB::table('t_topik')->select('t_quiz.id as quiz_id', 't_quiz.judul', 't_topik_quiz.topik_id')
+            ->join('t_topik_quiz', 't_topik_quiz.topik_id', '=', 't_topik.id')
+            ->join('t_quiz', 't_quiz.id', '=', 't_topik_quiz.quiz_id')
+            ->where('t_topik.kursus_id', $pelatihanId)
+            ->get();
+        $konten = DB::table('t_topik')
+            ->join('t_topik_konten', 't_topik.id', '=', 't_topik_konten.topik_id')
+            ->join('t_konten', 't_konten.id', '=', 't_topik_konten.konten_id')
+            ->where('kursus_id', $pelatihanId)
+            ->get();
+
         $data = DB::table('t_kursus')
                 ->select('t_konten.*')
                 ->join('t_topik', 't_kursus.id', '=', 't_topik.kursus_id')
@@ -66,11 +77,22 @@ class PelatihanController extends Controller
                 ->where('t_topik_konten.konten_id', $kontenId)
                 ->first();
 
-        return view('pembelajaran.index', compact('data'));
+        return view('pembelajaran.index', compact('data','topikQuiz','konten'));
     }
 
     public function getQuizPembelajaran($pelatihanId, $topikId, $quizId)
     {
+        $topikQuiz = DB::table('t_topik')->select('t_quiz.id as quiz_id', 't_quiz.judul', 't_topik_quiz.topik_id')
+            ->join('t_topik_quiz', 't_topik_quiz.topik_id', '=', 't_topik.id')
+            ->join('t_quiz', 't_quiz.id', '=', 't_topik_quiz.quiz_id')
+            ->where('t_topik.kursus_id', $pelatihanId)
+            ->get();
+        $konten = DB::table('t_topik')
+            ->join('t_topik_konten', 't_topik.id', '=', 't_topik_konten.topik_id')
+            ->join('t_konten', 't_konten.id', '=', 't_topik_konten.konten_id')
+            ->where('kursus_id', $pelatihanId)
+            ->get();
+
         $data = DB::table('t_topik_quiz')
                 ->select('t_topik_quiz.*')
                 ->join('t_topik', 't_topik_quiz.topik_id', '=', 't_topik.id')
@@ -81,6 +103,6 @@ class PelatihanController extends Controller
 
         $quiz = Quiz::find($topikId);
         $pertanyaan = Pertanyaan::where('quiz_id', $quizId)->get();
-        return view('pembelajaran.quiz', compact('data','pertanyaan'));
+        return view('pembelajaran.quiz', compact('data','pertanyaan','topikQuiz','konten'));
     }
 }
