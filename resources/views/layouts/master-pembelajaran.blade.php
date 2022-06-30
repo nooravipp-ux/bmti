@@ -34,8 +34,12 @@
 
                 <div class="col-6"></div>
 
-                <div class="col-2 text-light">
+                <div class="col-2 text-light text-center">
                     <p class="text-header">Ahmad Winarto</p>
+                    <div id="text-hover" class="text-hover">
+                        <p>1</p>
+                        <p>2</p>
+                    </div>
                 </div>
 
                 <div class="col-2 order-3 icon-menu mt-4 d-none">

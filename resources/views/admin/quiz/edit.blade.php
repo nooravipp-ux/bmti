@@ -50,6 +50,10 @@
     .btn-tambah-konten a {
         text-decoration: none;
     }
+    .quiz li {
+        margin-left: 7px;
+        list-style:none;
+    }
 </style>
 @endsection
 @section('content')
@@ -76,11 +80,11 @@
                         </div>
                     </div>
                     <div class="row">
-                        <ul>
-                            <li>{{$pert->pilihan_a}}</li>
-                            <li>{{$pert->pilihan_b}}</li>
-                            <li>{{$pert->pilihan_c}}</li>
-                            <li>{{$pert->pilihan_d}}</li>
+                        <ul class="quiz">
+                            <li>A. &nbsp; {{$pert->pilihan_a}}</li>
+                            <li>B. &nbsp; {{$pert->pilihan_b}}</li>
+                            <li>C. &nbsp; {{$pert->pilihan_c}}</li>
+                            <li>D. &nbsp; {{$pert->pilihan_d}}</li>
                         </ul>
                         <hr>
                         <p><b>Jawaban :</b> {{$pert->jawaban}}</p>
