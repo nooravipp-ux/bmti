@@ -17,18 +17,18 @@
             <div class="col-12 col-md-11 col-xl-5 order-2 image-permesinan">
                 <div class="image-teknik-permesinan d-flex justify-content-end">
                     <div class="p-1">
-                        <image class="rounded" src="{{asset('guest/assets/images/perme.png')}}" width="290px" height="160px" />
+                        <img class="rounded" src="{{asset('guest/assets/images/perme.png')}}" width="290px" height="160px" />
                     </div>
                     <div class="p-1">
-                        <image class="rounded" src="{{asset('guest/assets/images/maklumatplayanan2.png')}}" width="290px" height="160px" />
+                        <img class="rounded" src="{{asset('guest/assets/images/maklumatplayanan2.png')}}" width="290px" height="160px" />
                     </div>
                 </div>
                 <div class="image-teknik-permesinan d-flex justify-content-end">
                     <div class="p-1">
-                        <image class="rounded" src="{{asset('guest/assets/images/maklumatplayanan5.png')}}" width="290px" height="160px" />
+                        <img class="rounded" src="{{asset('guest/assets/images/maklumatplayanan5.png')}}" width="290px" height="160px" />
                     </div>
                     <div class="p-1">
-                        <image class="rounded" src="{{asset('guest/assets/images/maklumatplayanan6.png')}}" width="290px" height="160px" />
+                        <img class="rounded" src="{{asset('guest/assets/images/maklumatplayanan6.png')}}" width="290px" height="160px" />
                     </div>
                 </div>
             </div>
@@ -37,11 +37,11 @@
         <div class="row">
             <div class="col-12 col-xl-6">
                 <div class="col-5 col-xl-6 logo-kemdikbud-kompetensi float-start">
-                    <image src="{{asset('guest/assets/images/logo-kemdikbud.png')}}" width="70px" height="70px" />
+                    <img src="{{asset('guest/assets/images/logo-kemdikbud.png')}}" width="70px" height="70px" />
                     <p class="col-6">Kementrian Pendidikan, Kebudayaan, Riset dan Teknologi</p>
                 </div>
                 <div class="col-5 col-xl-6 logo-bmti-kompetensi float-start">
-                    <image src="{{asset('guest/assets/images/logo-bmti.png')}}" width="70px" height="70px" />
+                    <img src="{{asset('guest/assets/images/logo-bmti.png')}}" width="70px" height="70px" />
                     <p class="col-6">BBPPMPV BMTI <br /> Bidang Mesin dan Teknik Industri</p>
                 </div>
             </div>
@@ -59,7 +59,7 @@
     <div class="row justify-content-center">
         <div class="col-12 col-md-4 col-xl-4">
             <div class="img-teknik-permesinan shadow mt-5">
-                <image src="{{asset('images/galeria/'.kompetensi-1.png')}}" alt="Bricks" width="357px" height="247px" />
+                <img src="{{asset('guest/assets/images/kompetensi-1.png')}}" alt="Bricks" width="357px" height="247px" />
                 <a onclick="onClickMateri()">
                     <div class="image-text"></div>
                 </a>
@@ -71,8 +71,8 @@
 </div>
 
 <div id="materi" class="d-none">
-    <div class="bg-login">
-        <div class="login-container">
+    <div class="bg-materi">
+        <div class="bg-komptensi-materi">
             <div class="materi">
                 <div class="row">
                     <div class="col-11">
@@ -87,7 +87,7 @@
                 <div class="row">
                     <div class="col-12 col-xl-4">
                         <div class="title-by">
-                            <image src="/images/avatar.png" width="35px" height="35px"/>
+                            <img src="{{asset('guest/assets/images/avatar.png')}}" width="35px" height="35px"/>
                             <p>By Joko Suseno</p>
                             <p>Last Update July 27, 2021</p>
                         </div>
@@ -98,40 +98,40 @@
                     </div>
                 </div>
 
-                <div class="row justify-content-end">
-                    <div class="col-1">
+                <div class="row justify-content-center">
+                    <div class="col-3 col-xl-1">
                         <div class="shared">
-                            <a href=""><image src="{{asset('guest/assets/images/share-shared.png')}}" width="70px" height="25px"/></a>
+                            <a href=""><img src="{{asset('guest/assets/images/share-shared.png')}}" width="70px" height="25px"/></a>
                         </div>
                     </div>
-                    <div class="col-1">
+                    <div class="col-3 col-xl-1">
                         <div class="shared">
-                            <a href=""><image src="{{asset('guest/assets/images/fb-shared.png')}}" width="70px" height="25px"/></a>
+                            <a href=""><img src="{{asset('guest/assets/images/fb-shared.png')}}" width="70px" height="25px"/></a>
                         </div>
                     </div>
-                    <div class="col-1">
+                    <div class="col-3 col-xl-1">
                         <div class="shared">
-                            <a href=""><image src="{{asset('guest/assets/images/twitter-shared.png')}}" width="70px" height="25px"/></a>
+                            <a href=""><img src="{{asset('guest/assets/images/twitter-shared.png')}}" width="70px" height="25px"/></a>
                         </div>
                     </div>
-                    <div class="col-1">
+                    <div class="col-3 col-xl-1">
                         <div class="shared">
-                            <a href=""><image src="{{asset('guest/assets/images/google.png')}}" width="70px" height="25px"/></a>
+                            <a href=""><img src="{{asset('guest/assets/images/google.png')}}" width="70px" height="25px"/></a>
                         </div>
                     </div>
-                    <div class="col-1">
+                    <div class="col-3 col-xl-1">
                         <div class="shared">
-                            <a href=""><image src="{{asset('guest/assets/images/reddit-shared.png')}}" width="70px" height="25px"/></a>
+                            <a href=""><img src="{{asset('guest/assets/images/reddit-shared.png')}}" width="70px" height="25px"/></a>
                         </div>
                     </div>
-                    <div class="col-1">
+                    <div class="col-3 col-xl-1">
                         <div class="shared">
-                            <a href=""><image src="{{asset('guest/assets/images/pinterest-shared.png')}}" width="70px" height="25px"/></a>
+                            <a href=""><img src="{{asset('guest/assets/images/pinterest-shared.png')}}" width="70px" height="25px"/></a>
                         </div>
                     </div>
-                    <div class="col-1">
+                    <div class="col-3 col-xl-1">
                         <div class="shared">
-                            <a href=""><image src="{{asset('guest/assets/images/email-shared.png')}}" width="70px" height="25px"/></a>
+                            <a href=""><img src="{{asset('guest/assets/images/email-shared.png')}}" width="70px" height="25px"/></a>
                         </div>
                     </div>
                 </div>

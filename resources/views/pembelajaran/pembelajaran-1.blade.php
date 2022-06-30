@@ -15,7 +15,7 @@
 
         <div class="button-hidden">
             <img src="{{asset('guest/assets/images/collapse-right.png')}}" id="icon-pembelajaran"
-                style="widht=20px; height:20px;" onclick="myFunction()" />
+                style="width=20px; height:20px;" onclick="myFunction()" />
         </div>
 
         <div id="content-pembelajaran" class="col-12 col-xl-2 content-pembelajaran">

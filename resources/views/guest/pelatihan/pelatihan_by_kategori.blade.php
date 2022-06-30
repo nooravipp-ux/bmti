@@ -13,7 +13,7 @@
 
         <div class="d-flex">
             <div class="col-xl-1 img-account">
-                <image src="/images/account.png" width="30px" height="30px" />
+                <img src="/images/account.png" width="30px" height="30px" />
             </div>
             <div class="col-xl-3 account">
                 <span>By {{$pelatihan->author}}
@@ -22,7 +22,7 @@
             </div>
 
             <div class="col-xl-1 img-rating">
-                <image src="{{asset('guest/assets/images/rating.png')}}" width="40px" height="40px" />
+                <img src="{{asset('guest/assets/images/rating.png')}}" width="40px" height="40px" />
             </div>
             <div class="col-xl-3 rating">
                 <span>1.296</span>
@@ -30,13 +30,13 @@
         </div>
 
         <div class="row">
-            <div class="col-sm-12 col-xl-5">
+            <div class="col-12 col-xl-5">
                 <div class="image-tpgm">
-                    <image src="{{asset('/images/pelatihan/'.$pelatihan->gambar)}}" width="500px" height="350px" />
+                    <img src="{{asset('/images/pelatihan/'.$pelatihan->gambar)}}" width="500px" height="350px" />
                 </div>
             </div>
 
-            <div class="col-sm-12 col-xl-6">
+            <div class="col-12 col-xl-6">
                 <div class="line-left">
                     <div class="course">
                         <p>Course & Topics</p>
@@ -63,58 +63,58 @@
 
 <div class="container">
     <div class="row text-center">
-        <div class="col-xl-1">
+        <div class="col-3 col-xl-1">
             <div class="shared-3d">
                 <a href="">
-                    <image src="{{asset('guest/assets/images/share-shared.png')}}" width="70px" height="25px" />
+                    <img src="{{asset('guest/assets/images/share-shared.png')}}" width="70px" height="25px" />
                 </a>
             </div>
         </div>
 
-        <div class="col-xl-1">
+        <div class="col-3 col-xl-1">
             <div class="shared-3d">
                 <a href="">
-                    <image src="{{asset('guest/assets/images/fb-shared.png')}}" width="70px" height="25px" />
+                    <img src="{{asset('guest/assets/images/fb-shared.png')}}" width="70px" height="25px" />
                 </a>
             </div>
         </div>
 
-        <div class="col-xl-1">
+        <div class="col-3 col-xl-1">
             <div class="shared-3d">
                 <a href="">
-                    <image src="{{asset('guest/assets/images/twitter-shared.png')}}" width="70px" height="25px" />
+                    <img src="{{asset('guest/assets/images/twitter-shared.png')}}" width="70px" height="25px" />
                 </a>
             </div>
         </div>
 
-        <div class="col-xl-1">
+        <div class="col-3 col-xl-1">
             <div class="shared-3d">
                 <a href="">
-                    <image src="{{asset('guest/assets/images/google.png')}}" width="70px" height="25px" />
+                    <img src="{{asset('guest/assets/images/google.png')}}" width="70px" height="25px" />
                 </a>
             </div>
         </div>
 
-        <div class="col-xl-1">
+        <div class="col-3 col-xl-1">
             <div class="shared-3d">
                 <a href="">
-                    <image src="{{asset('guest/assets/images/reddit-shared.png')}}" width="70px" height="25px" />
+                    <img src="{{asset('guest/assets/images/reddit-shared.png')}}" width="70px" height="25px" />
                 </a>
             </div>
         </div>
 
-        <div class="col-xl-1">
+        <div class="col-3 col-xl-1">
             <div class="shared-3d">
                 <a href="">
-                    <image src="{{asset('guest/assets/images/pinterest-shared.png')}}" width="70px" height="25px" />
+                    <img src="{{asset('guest/assets/images/pinterest-shared.png')}}" width="70px" height="25px" />
                 </a>
             </div>
         </div>
 
-        <div class="col-xl-1">
+        <div class="col-3 col-xl-1">
             <div class="shared-3d">
                 <a href="">
-                    <image src="{{asset('guest/assets/images/email-shared.png')}}" width="70px" height="25px" />
+                    <img src="{{asset('guest/assets/images/email-shared.png')}}" width="70px" height="25px" />
                 </a>
             </div>
         </div>
@@ -133,7 +133,7 @@
                 @foreach($topiks as $tp)
                 <div class="bg-box shadow bg-white rounded mt-1">
                     <input type="checkbox" />
-                    <span>{{$tp->judul}}</span>
+                    <a href=""><span>{{$tp->judul}}</span></a>
                 </div>
 
                 <span class="collapse-1">
@@ -143,8 +143,8 @@
                     @foreach($konten as $kt)
                     @if($kt->topik_id == $tp->id)
                     <div class="bg-box shadow bg-white rounded mt-1">
-                        <image src="{{asset('guest/assets/images/lesson.png')}}" width="30px" height="30px" />
-                        <p>{{$kt->judul}}</p>
+                        <img src="{{asset('guest/assets/images/lesson.png')}}" width="30px" height="30px" />
+                        <a href="{{route('pembelajaran.konten',['id' => $pelatihan->id, 'topikId' => $tp->id, 'kontenId' => $kt->id])}}"><span>{{$kt->judul}}</span></a>
                     </div>
                     @endif
                     @endforeach
@@ -152,8 +152,8 @@
                     @foreach($topikQuiz as $tq)
                     @if($tq->topik_id == $tp->id)
                     <div class="bg-box shadow bg-white rounded mt-1">
-                        <image src="{{asset('guest/assets/images/tes-awal.png')}}" width="30px" height="30px" />
-                        <p>{{$tq->judul}}</p>
+                        <img src="{{asset('guest/assets/images/tes-awal.png')}}" width="30px" height="30px" />
+                        <a href="{{route('pembelajaran.quiz',['id' => $pelatihan->id, 'topikId' => $tq->topik_id, 'quizId' => $tq->quiz_id])}}"><span>{{$tq->judul}}</span></a>
                     </div>
                     @endif
                     @endforeach
@@ -165,67 +165,67 @@
 </div>
 
 <div class="container">
-    <div class="row mt-4 text-center">
+    <div class="row justify-content-center mt-4 text-center">
         <div class="col-sm-6 col-xl-1 img-rating-2">
-            <image src="{{asset('guest/assets/images/rating.png')}}" width="40px" height="40px" />
+            <img src="{{asset('guest/assets/images/rating.png')}}" width="40px" height="40px" />
         </div>
 
         <div class="col-sm-6 col-xl-4 rating-2 text-dark">
             <span>1.296</span>
         </div>
 
-        <div class="col-xl-1">
+        <div class="col-3 col-xl-1">
             <div class="shared-3d-2">
                 <a href="">
-                    <image src="{{asset('guest/assets/images/share-shared.png')}}" width="70px" height="25px" />
+                    <img src="{{asset('guest/assets/images/share-shared.png')}}" width="70px" height="25px" />
                 </a>
             </div>
         </div>
 
-        <div class="col-xl-1">
+        <div class="col-3 col-xl-1">
             <div class="shared-3d-2">
                 <a href="">
-                    <image src="{{asset('guest/assets/images/fb-shared.png')}}" width="70px" height="25px" />
+                    <img src="{{asset('guest/assets/images/fb-shared.png')}}" width="70px" height="25px" />
                 </a>
             </div>
         </div>
 
-        <div class="col-xl-1">
+        <div class="col-3 col-xl-1">
             <div class="shared-3d-2">
                 <a href="">
-                    <image src="{{asset('guest/assets/images/twitter-shared.png')}}" width="70px" height="25px" />
+                    <img src="{{asset('guest/assets/images/twitter-shared.png')}}" width="70px" height="25px" />
                 </a>
             </div>
         </div>
 
-        <div class="col-xl-1">
+        <div class="col-3 col-xl-1">
             <div class="shared-3d-2">
                 <a href="">
-                    <image src="{{asset('guest/assets/images/google.png')}}" width="70px" height="25px" />
+                    <img src="{{asset('guest/assets/images/google.png')}}" width="70px" height="25px" />
                 </a>
             </div>
         </div>
 
-        <div class="col-xl-1">
+        <div class="col-3 col-xl-1">
             <div class="shared-3d-2">
                 <a href="">
-                    <image src="{{asset('guest/assets/images/reddit-shared.png')}}" width="70px" height="25px" />
+                    <img src="{{asset('guest/assets/images/reddit-shared.png')}}" width="70px" height="25px" />
                 </a>
             </div>
         </div>
 
-        <div class="col-xl-1">
+        <div class="col-3 col-xl-1">
             <div class="shared-3d-2">
                 <a href="">
-                    <image src="{{asset('guest/assets/images/pinterest-shared.png')}}" width="70px" height="25px" />
+                    <img src="{{asset('guest/assets/images/pinterest-shared.png')}}" width="70px" height="25px" />
                 </a>
             </div>
         </div>
 
-        <div class="col-xl-1">
+        <div class="col-3 col-xl-1">
             <div class="shared-3d-2">
                 <a href="">
-                    <image src="{{asset('guest/assets/images/email-shared.png')}}" width="70px" height="25px" />
+                    <img src="{{asset('guest/assets/images/email-shared.png')}}" width="70px" height="25px" />
                 </a>
             </div>
         </div>
