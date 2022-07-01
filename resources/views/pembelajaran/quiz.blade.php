@@ -37,7 +37,7 @@
 
         <div class="button-hidden">
             <img src="{{asset('guest/assets/images/collapse-right.png')}}" id="icon-pembelajaran"
-                style="widht=20px; height:20px;" onclick="myFunction()" />
+                style="width:20px; height:20px;" onclick="myFunction()" />
         </div>
 
         <div id="content-pembelajaran" class="col-12 col-xl-2 content-pembelajaran">
@@ -48,7 +48,7 @@
                 <div class="row justify-content-center">
                     <div class="col-1">
                         <img src="{{asset('guest/assets/images/collapse-down.png')}}" id="icon-pembelajaran-1"
-                            style="margin-left: -10px; margin-top: 13px; widht=20px; height:20px;"
+                            style="margin-left: -10px; margin-top: 13px; width:20px; height:20px;"
                             onclick="myFunction1()" />
                     </div>
                     <div class="col-8">
@@ -76,7 +76,7 @@
                 <div class="row justify-content-center">
                     <div class="col-1">
                         <img id="icon-pembelajaran-2" src="{{asset('guest/assets/images/collapse-down.png')}}"
-                            style="margin-left: -10px; margin-top: 13px; widht=20px; height:20px;"
+                            style="margin-left: -10px; margin-top: 13px; width:20px; height:20px;"
                             onclick="myFunction2()" />
                     </div>
                     <div class="col-8">
@@ -104,7 +104,7 @@
                 <div class="row justify-content-center">
                     <div class="col-1">
                         <img src="{{asset('guest/assets/images/collapse-down.png')}}" id="icon-pembelajaran-3"
-                            style="margin-left: -10px; margin-top: 13px; widht=20px; height:20px;"
+                            style="margin-left: -10px; margin-top: 13px; width:20px; height:20px;"
                             onclick="myFunction3()" />
                     </div>
                     <div class="col-8">
@@ -132,7 +132,7 @@
                 <div class="row justify-content-center">
                     <div class="col-1">
                         <img src="{{asset('guest/assets/images/collapse-down.png')}}" id="icon-pembelajaran-4"
-                            style="margin-left: -10px; margin-top: 13px; widht=20px; height:20px;"
+                            style="margin-left: -10px; margin-top: 13px; width:20px; height:20px;"
                             onclick="myFunction4()" />
                     </div>
                     <div class="col-8">
@@ -160,7 +160,7 @@
                 <div class="row justify-content-center">
                     <div class="col-1">
                         <img src="{{asset('guest/assets/images/collapse-down.png')}}" id="icon-pembelajaran-5"
-                            style="margin-left: -10px; margin-top: 13px; widht=20px; height:20px;"
+                            style="margin-left: -10px; margin-top: 13px; width:20px; height:20px;"
                             onclick="myFunction5()" />
                     </div>
                     <div class="col-8">
@@ -188,7 +188,7 @@
                 <div class="row justify-content-center">
                     <div class="col-1">
                         <img src="{{asset('guest/assets/images/collapse-down.png')}}" id="icon-pembelajaran-6"
-                            style="margin-left: -10px; margin-top: 13px; widht=20px; height:20px;"
+                            style="margin-left: -10px; margin-top: 13px; width:20px; height:20px;"
                             onclick="myFunction6()" />
                     </div>
                     <div class="col-8">
@@ -216,7 +216,7 @@
                 <div class="row justify-content-center">
                     <div class="col-1">
                         <img src="{{asset('guest/assets/images/collapse-down.png')}}" id="icon-pembelajaran-7"
-                            style="margin-left: -10px; margin-top: 13px; widht=20px; height:20px;"
+                            style="margin-left: -10px; margin-top: 13px; width:20px; height:20px;"
                             onclick="myFunction7()" />
                     </div>
                     <div class="col-8">
