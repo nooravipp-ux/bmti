@@ -28,7 +28,7 @@ class KompetensiController extends Controller
         if($file) {
             $fileName = time()."_".$file->getClientOriginalName();
         }
-
+        
         $data = Kompetensi::create([
             'nama_kompetensi' => $request->nama_kompetensi,
             'deskripsi' => $request->deskripsi,

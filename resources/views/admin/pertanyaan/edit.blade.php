@@ -10,7 +10,8 @@
                     <h4 class="card-title">{{ __('Data Pertanyaan') }}</h4>
                     <!-- <p class="card-description">
                     </p> -->
-                    <form action="{{route('pertanyaan.update', ['id'=>$data->id])}}" method="POST" enctype="multipart/form-data">
+                    <form action="{{route('pertanyaan.update', ['id'=>$data->id])}}" method="POST"
+                        enctype="multipart/form-data">
                         @method('put')
                         @csrf
                         <div class="mb-3">
@@ -24,31 +25,39 @@
                             </div>
                             <div class="mb-3">
                                 <label for="inputpertanyaan" class="form-label">Pertanyaan</label>
-                                <textarea type="text" name="pertanyaan" class="form-control">{{$data->pertanyaan}}</textarea>
+                                <textarea type="text" name="pertanyaan" class="form-control"
+                                    required>{{$data->pertanyaan}}</textarea>
                             </div>
                             <div class="mb-3">
                                 <label for="inputgambar" class="form-label">Gambar</label>
-                                <input type="file" name="gambar" class="form-control" id="inputgambar" aria-describedby="emailHelp" value="{{$data->gambar}}">
+                                <input type="file" name="gambar" class="form-control" id="inputgambar"
+                                    aria-describedby="emailHelp" value="{{$data->gambar}}" required
+                                    accept="image/jpg, image/jpeg, image/png">
                             </div>
                             <div class="mb-3">
                                 <label for="inputpilihan_a" class="form-label">Pilihan A</label>
-                                <input type="text" name="pilihan_a" class="form-control" id="inputpilihan_a" aria-describedby="emailHelp" value="{{$data->pilihan_a}}">
+                                <input type="text" name="pilihan_a" class="form-control" id="inputpilihan_a"
+                                    aria-describedby="emailHelp" value="{{$data->pilihan_a}}" required>
                             </div>
                             <div class="mb-3">
                                 <label for="inputpilihan_b" class="form-label">Pilihan B</label>
-                                <input type="text" name="pilihan_b" class="form-control" id="inputpilihan_b" aria-describedby="emailHelp" value="{{$data->pilihan_b}}">
+                                <input type="text" name="pilihan_b" class="form-control" id="inputpilihan_b"
+                                    aria-describedby="emailHelp" value="{{$data->pilihan_b}}" required>
                             </div>
                             <div class="mb-3">
                                 <label for="inputpilihan_c" class="form-label">Pilihan C</label>
-                                <input type="text" name="pilihan_c" class="form-control" id="inputpilihan_c" aria-describedby="emailHelp" value="{{$data->pilihan_c}}">
+                                <input type="text" name="pilihan_c" class="form-control" id="inputpilihan_c"
+                                    aria-describedby="emailHelp" value="{{$data->pilihan_c}}" required>
                             </div>
                             <div class="mb-3">
                                 <label for="inputpilihan_d" class="form-label">Pilihan D</label>
-                                <input type="text" name="pilihan_d" class="form-control" id="inputpilihan_d" aria-describedby="emailHelp" value="{{$data->pilihan_d}}">
+                                <input type="text" name="pilihan_d" class="form-control" id="inputpilihan_d"
+                                    aria-describedby="emailHelp" value="{{$data->pilihan_d}}" required>
                             </div>
                             <div class="mb-3">
                                 <label for="jawaban" class="form-label">Jawaban</label>
-                                <input type="text" name="jawaban" class="form-control" id="jawaban" aria-describedby="emailHelp" value="{{$data->jawaban}}">
+                                <input type="text" name="jawaban" class="form-control" id="jawaban"
+                                    aria-describedby="emailHelp" value="{{$data->jawaban}}" required>
                             </div>
                             <button type="submit" class="btn btn-primary btn-sm btn-rounded">Submit</button>
                     </form>
@@ -58,9 +67,9 @@
     </div>
 </div>
 <script>
-    $(document).ready(function() {
-        $('#dataTable').DataTable();
+$(document).ready(function() {
+    $('#dataTable').DataTable();
 
-    });
+});
 </script>
 @endsection

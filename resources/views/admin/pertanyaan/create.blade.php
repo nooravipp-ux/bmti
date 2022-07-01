@@ -22,37 +22,37 @@
                         </div>
                         <div class="mb-3">
                             <label for="inputpertanyaan" class="form-label">Pertanyaan</label>
-                            <textarea type="text" name="pertanyaan" class="form-control"></textarea>
+                            <textarea type="text" name="pertanyaan" class="form-control" required></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="inputgambar" class="form-label">Gambar</label>
                             <input type="file" name="gambar" class="form-control" id="inputgambar"
-                                aria-describedby="emailHelp">
+                                aria-describedby="emailHelp" required accept="image/jpg, image/jpeg, image/png">
                         </div>
                         <div class="mb-3">
                             <label for="inputpilihan_a" class="form-label">Pilihan A</label>
                             <input type="text" name="pilihan_a" class="form-control" id="inputpilihan_a"
-                                aria-describedby="emailHelp">
+                                aria-describedby="emailHelp" required>
                         </div>
                         <div class="mb-3">
                             <label for="inputpilihan_b" class="form-label">Pilihan B</label>
                             <input type="text" name="pilihan_b" class="form-control" id="inputpilihan_b"
-                                aria-describedby="emailHelp">
+                                aria-describedby="emailHelp" required>
                         </div>
                         <div class="mb-3">
                             <label for="inputpilihan_c" class="form-label">Pilihan C</label>
                             <input type="text" name="pilihan_c" class="form-control" id="inputpilihan_c"
-                                aria-describedby="emailHelp">
+                                aria-describedby="emailHelp" required>
                         </div>
                         <div class="mb-3">
                             <label for="inputpilihan_d" class="form-label">Pilihan D</label>
                             <input type="text" name="pilihan_d" class="form-control" id="inputpilihan_d"
-                                aria-describedby="emailHelp">
+                                aria-describedby="emailHelp" required>
                         </div>
                         <div class="mb-3">
                             <label for="jawaban" class="form-label">Jawaban</label>
                             <input type="text" name="jawaban" class="form-control" id="jawaban"
-                                aria-describedby="emailHelp">
+                                aria-describedby="emailHelp" required>
                         </div>
                         <button type="submit" class="btn btn-primary btn-sm btn-rounded">Submit</button>
                     </form>

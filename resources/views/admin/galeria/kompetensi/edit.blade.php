@@ -32,7 +32,8 @@
                             </div>
                             <input type="hidden" name="gambar_banner_old" class="form-control"
                                 value="{{ $data->gambar_banner }}">
-                            <input type="file" name="gambar_banner_new" class="form-control">
+                            <input type="file" name="gambar_banner_new" class="form-control" required
+                                accept="image/jpg, image/jpeg, image/png">
                         </div>
                         <button type="submit" class="btn btn-primary btn-sm btn-rounded">Submit</button>
                     </form>
