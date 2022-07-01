@@ -12,7 +12,7 @@ class Pertanyaan extends Model
     protected $connection = 'mysql';
     protected $guarded =[];
 
-    protected $fillable = ['kelompok_keahlian_id','pertanyaan','gambar','pilihan_a','pilihan_b','pilihan_c','pilihan_d','jawaban'];
+    protected $fillable = ['quiz_id','pertanyaan','gambar','pilihan_a','pilihan_b','pilihan_c','pilihan_d','jawaban'];
     public function quiz(){
         return $this->belongsTo('App\Models\Quiz');
     }

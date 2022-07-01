@@ -32,12 +32,12 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="galeria-kompetisi text-center">
+        <div class="title-mandiri text-center">
             <h1>Pelatihan Mandiri</h1>
             <p>Pilih kompetensi keahlian, kemudian simak materi pembelajaran yang disampaikan secara singkat.</p>
         </div>
         @foreach($data as $dt)
-        <div class="col-xl-4">
+        <div class="col-12 col-xl-4">
             <div class="card-pel shadow">
                 <p class="title-free">Free</p>
                 <img class="card-img-top" src="{{asset('/images/pelatihan/'.$dt->gambar)}}" alt="Card image cap" width="360px" height="200px" />

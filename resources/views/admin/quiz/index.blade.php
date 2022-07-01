@@ -19,36 +19,28 @@
                         <table id="dataTable" class="table">
                             <thead>
                                 <tr>
-                                    <a href="{{route('quiz.create')}}"
-                                        class="btn btn-primary btn-sm btn-rounded btn-icon-text">
-                                        <i class="ti-upload btn-icon-prepend"></i>
-                                        Create
-                                    </a>
+                                <button type="button" class="btn btn-primary btn-rounded" data-toggle="modal" data-target="#exampleModalCenter">Buat Soal</button>
                                 </tr>
                                 <tr>
                                     <th>No</th>
                                     <th>Judul</th>
+                                    <th>Kategori</th>
                                     <th>Deskripsi</th>
-                                    <th>Durasi</th>
-                                    <th>Created At</th>
-                                    <th>Updated At</th>
-                                    <th>Edit</th>
-                                    <th>Delete</th>
+                                    <th class="text-center">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php $no = 1; ?>
                                 @foreach($data as $row)
                                 <tr>
-                                    <td>{{$row->id}}</td>
+                                    <td><?php echo $no++; ?></td>
                                     <td>{{$row->judul}}</td>
+                                    <td>{{$row->kelompok_keahlian}}</td>
                                     <td>{{$row->deskripsi}}</td>
-                                    <td>{{$row->durasi}} Menit</td>
-                                    <td>{{$row->created_at}}</td>
-                                    <td>{{$row->updated_at}}</td>
-                                    <td><a href="{{ route('quiz.edit', ['id'=>$row->id]) }}"
+                                    <td class="text-center"><a href="{{ route('quiz.edit', ['id'=>$row->id]) }}"
                                             class="btn btn-dark btn-sm btn-rounded btn-icon-prepend">Edit
-                                            <i class="ti-reload btn-icon-append"></i></a></td>
-                                    <td><a href="{{ route('quiz.delete', ['id'=>$row->id]) }}"
+                                            <i class="ti-reload btn-icon-append"></i></a>
+                                    <a href="{{ route('quiz.delete', ['id'=>$row->id]) }}"
                                             onclick="return confirm('Apakah anda yakin ?')"
                                             class="btn btn-danger btn-sm btn-rounded btn-icon-text">Delete
                                             <i class="ti-trash btn-icon-append"></i></a></td>
@@ -62,9 +54,49 @@
         </div>
     </div>
 </div>
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Data Quiz</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="{{route('quiz.store')}}" method="POST">
+                <div class="modal-body">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="judul" class="form-label">Nama Soal</label>
+                        <input type="text" name="judul" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="judul" class="form-label">Kategori Soal</label>
+                        <select type="text" name="kelompok_keahlian_id" class="form-control">
+                            @foreach($kelKeahlian as $kel)
+                            <option value="{{$kel->id}}">{{$kel->nama}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="deskripsi" class="form-label">Deskripsi</label>
+                        <textarea type="text" name="deskripsi" class="ckeditor form-control"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger btn-rounded" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary btn-rounded">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 @endsection
 
 @section('script')
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js">
 
 </script>

@@ -17,8 +17,8 @@ class GaleriaController extends Controller
     public function getAllKeahlianByKategori($kategori_id){
         
         $kompetensi = Kompetensi::where('id', $kategori_id)->first();
-        $data = Keahlian::where('id', $kategori_id)->get();
-        // dd($data);
+        $data = Keahlian::where('id_kompetensi', $kategori_id)->get();
+
         return view('guest.galeria.keahlian', compact('data','kompetensi'));
     }
 }

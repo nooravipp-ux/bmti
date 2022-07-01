@@ -132,7 +132,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <!-- <div class="row">
                     <label for="judul" class="col-sm-2 col-form-label">Nama Kuis</label>
                     <div class="col-sm-10">
                         <input type="text" name="nama_kuis" class="form-control mt-2">
@@ -143,7 +143,7 @@
                     <div class="col-sm-10">
                         <textarea type="text" name="deskripsi" class="ckeditor form-control" height="200"></textarea>
                     </div>
-                </div>
+                </div> -->
                 <div class="row">
                     <label for="judul" class="col-sm-2 col-form-label">Waktu</label>
                     <div class="form-check col-sm-1">
@@ -200,11 +200,11 @@
 
                     </div>
                 </div>
-                @foreach($questions as $q)
+                @foreach($quizes as $q)
                 <div class="row">
                     <label class="form-check-label col-sm-12 d-flex">
                         <input type="checkbox" name="quizOptions[]" value="{{$q->id}}" class="form-check-input" style="margin-right: 10px;">
-                        <p class="">{{$q->pertanyaan}}</p>
+                        <p class="">{{$q->judul}}</p>
                     </label>
                 </div>
                 @endforeach

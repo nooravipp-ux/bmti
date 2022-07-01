@@ -5,11 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\ProgramKeahlian;
 use App\Models\KelompokKeahlian;
+use Illuminate\Support\Facades\DB;
 
 class KelompokKeahlianController extends Controller
 {
     public function index(){
-        $kelompokKeahlian = KelompokKeahlian::all();
+        $kelompokKeahlian = DB::table('m_kelompok_keahlian')->select('m_kelompok_keahlian.*','m_program_keahlian.nama as program_keahlian')
+                            ->join('m_program_keahlian', 'm_program_keahlian.id','=','m_kelompok_keahlian.program_keahlian_id')
+                            ->get();
         return view('admin.KelompokKeahlian.index', compact('kelompokKeahlian'));
     }
     

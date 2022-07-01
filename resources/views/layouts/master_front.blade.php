@@ -24,8 +24,7 @@
                 <div class="col-7 col-md-9 col-xl-2 order-1">
                     <div class="logo-header">
                         <a href="/">
-                            <image src="{{asset('guest/assets/images/logo-header.png')}}" width="150px"
-                                height="100px" />
+                            <img src="{{asset('guest/assets/images/logo-header.png')}}" width="150px" height="100px" />
                         </a>
                     </div>
                 </div>
@@ -67,8 +66,7 @@
                 <div class="col-3 col-md-2 col-xl-1 order-2 order-xl-3">
                     <div class="akun-button text-center">
                         @if(auth()->user())
-                        <a href="{{url('dashboard')}}" class="btn-lg" role="button" aria-pressed="true">Dashboard</a>
-                        @else
+                        <a href="{{url('/dashboard')}}" class="btn-lg" role="button" aria-pressed="true">Dashboard</a> @else
                         <a class="btn-lg" role="button" aria-pressed="true" onclick="onClickLogin()">LOGIN</a> @endif
                     </div>
                 </div>
@@ -79,17 +77,18 @@
             </div>
         </div>
     </header>
+
     <main>
         @yield('content')
     </main>
+
     <footer>
         <div class="container">
             <div class="row">
                 <div class="col-3">
                     <div class="logo-footer">
                         <a href="/">
-                            <image src="{{asset('guest/assets/images/logo-header.png')}}" width="170px"
-                                height="110px" />
+                            <img src="{{asset('guest/assets/images/logo-header.png')}}" width="170px" height="110px" />
                         </a>
                         <h1>Sahabat Cerdas</h1>
                     </div>
@@ -98,22 +97,22 @@
                 <div class="col-1">
                     <div class="share">
                         <a href="#">
-                            <image class="icon-share" src="{{asset('guest/assets/images/fb-1.png')}}" height="30px"
+                            <img class="icon-share" src="{{asset('guest/assets/images/fb-1.png')}}" height="30px"
                                 width="30px" />
                         </a>
                         <br />
                         <a href="#">
-                            <image class="icon-share" src="{{asset('guest/assets/images/twitter-1.png')}}" height="30px"
+                            <img class="icon-share" src="{{asset('guest/assets/images/twitter-1.png')}}" height="30px"
                                 width="30px" />
                         </a>
                         <br />
                         <a href="#">
-                            <image class="icon-share" src="{{asset('guest/assets/images/ig-1.png')}}" height="30px"
+                            <img class="icon-share" src="{{asset('guest/assets/images/ig-1.png')}}" height="30px"
                                 width="30px" />
                         </a>
                         <br />
                         <a href="#">
-                            <image class="icon-share" src="{{asset('guest/assets/images/telegram.png')}}" height="30px"
+                            <img class="icon-share" src="{{asset('guest/assets/images/telegram.png')}}" height="30px"
                                 width="30px" />
                         </a>
                     </div>
@@ -196,7 +195,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 text-center">
+                    <div class="col-12">
                         <ul class="nav">
                             <li>
                                 <a href="{{url('/galeria')}}">Galeria</a>
@@ -205,7 +204,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 text-center">
+                    <div class="col-12">
                         <ul class="nav">
                             <li>
                                 <a href="{{url('/pelatihan-mandiri')}}">Pelatihan Mandiri</a>
@@ -214,7 +213,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 text-center">
+                    <div class="col-12">
                         <ul class="nav">
                             <li>
                                 <input class="collapse-mandiri-2" type="checkbox" id="collapse-mandiri-2" />
@@ -233,12 +232,124 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 text-center">
+                    <div class="col-12">
                         <ul class="nav">
                             <li>
                                 <a href="{{url('/alur-pembelajaran')}}">Alur Pembelajaran</a>
                             </li>
                         </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="login" class="d-none">
+        <div class="bg-login">
+            <!-- Validation Errors -->
+            <div class="d-flex">
+                <x-auth-validation-errors id="error" class="text-popup mb-4 text-center bg-white rounded"
+                    :errors="$errors" />
+            </div>
+
+            <!-- Session Status -->
+            <div class="d-flex">
+                <x-auth-session-status class="text-popup mb-4 text-center bg-white rounded"
+                    :status="session('status')" />
+
+                <div class="login-container">
+                    <div class="d-flex">
+                        <div class="left-box mt-4">
+                            <img class="logo-login" src="{{asset('guest/assets/images/logo-header.png')}}" width="140px"
+                                height="100px" />
+                            <h2 class="login-title">LOGIN</h2>
+
+                            <form class="mt-5" method="POST" action="{{ route('login') }}">
+                                @csrf
+
+                                <!-- Email Address -->
+                                <div class="form-login">
+                                    <x-input class="email" id="email" class="block mt-1 w-full"
+                                        placeholder="Masukan Username / E-mail" type="email" name="email"
+                                        :value="old('email')" required autofocus />
+                                </div>
+                                <div class="icon-user-login">
+                                    <i class="user float-end fa-solid fa-user"></i>
+                                </div>
+
+                                <!-- Password -->
+                                <div class="form-login mt-5">
+                                    <x-input id="password" class="block mt-1 w-full" placeholder="Masukan Password"
+                                        type="password" name="password" required autocomplete="current-password" />
+                                </div>
+                                <div class="icon-password-login">
+                                    <i class="fa-solid fa-lock"></i>
+                                </div>
+
+                                <!-- Remember Me -->
+                                <div class="row justify-content-between mt-3">
+                                    <div class="col-5">
+                                        <label for="remember_me" class="inline-flex items-center">
+                                            <input id="remember_me" type="checkbox"
+                                                class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                                name="remember">
+                                            <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                                        </label>
+                                    </div>
+                                    <div class="col-4 col-xl-3">
+                                        <div class="clik-LupaPassword" onclick="onClickLupaPassword()">Lupa Password ?
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-center mt-5">
+                                    <div class="col-4 col-xl-2">
+                                        <button class="btn-login rounded-pill text-dark font-weight-bold">
+                                            {{ __('Masuk') }}
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="row text-center mt-3">
+                                    <p>Atau</p>
+                                </div>
+                            </form>
+
+                            <div class="row text-center mt-2 clik-register">
+                                <span>Belum Memiliki Akun ?<span>
+                                        <button onclick="onClickRegister()">Daftar</button>
+                            </div>
+                        </div>
+                        <div class="right-box">
+                            <div class="row pt-3">
+                                <div class="col-5 d-flex">
+                                    <div class="row mt-3">
+                                        <div class="col-sm-12 col-xl-5 logo-login-right-1">
+                                            <img src="{{asset('guest/assets/images/logo-kemdikbud.png')}}" width="70px"
+                                                height="70px" />
+                                        </div>
+                                        <div class="col-12 col-xl-7 text-logo-right-1 mt-1">
+                                            <span>Kementrian Pendidikan, Kebudayaan, Riset dan Teknologi</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-5 d-flex">
+                                    <div class="row mt-3">
+                                        <div class="col-12 col-xl-5 logo-login-right-2">
+                                            <img src="{{asset('guest/assets/images/logo-bmti.png')}}" width="70px"
+                                                height="70px" />
+                                        </div>
+                                        <div class="col-12 col-xl-7 text-logo-right-2 mt-1">
+                                            <span>BBPPMPV BMTI <br /> Bidang Mesin dan Teknik Industri</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-2 d-flex">
+                                    <button class="btn-closed btn-danger btn-sm btn-circle"
+                                        onclick="onClickCloseLogin()">X</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -256,7 +367,7 @@
             <div class="register-container">
                 <div class="d-flex">
                     <div class="left-box mt-2">
-                        <image class="logo-login" src="{{asset('guest/assets/images/logo-header.png')}}" width="140px"
+                        <img class="logo-login" src="{{asset('guest/assets/images/logo-header.png')}}" width="140px"
                             height="100px" />
                         <h2 class="login-title">DAFTAR</h2>
 
@@ -324,7 +435,7 @@
                             <div class="col-5 d-flex">
                                 <div class="row mt-3">
                                     <div class="col-sm-12 col-xl-5 logo-login-right-1">
-                                        <image src="{{asset('guest/assets/images/logo-kemdikbud.png')}}" width="70px"
+                                        <img src="{{asset('guest/assets/images/logo-kemdikbud.png')}}" width="70px"
                                             height="70px" />
                                     </div>
                                     <div class="col-12 col-xl-7 text-logo-right-1 mt-1">
@@ -335,7 +446,7 @@
                             <div class="col-5 d-flex">
                                 <div class="row mt-3">
                                     <div class="col-12 col-xl-5 logo-login-right-2">
-                                        <image src="{{asset('guest/assets/images/logo-bmti.png')}}" width="70px"
+                                        <img src="{{asset('guest/assets/images/logo-bmti.png')}}" width="70px"
                                             height="70px" />
                                     </div>
                                     <div class="col-12 col-xl-7 text-logo-right-2 mt-1">
@@ -371,7 +482,7 @@
             <div class="LupaPassword-container">
                 <div class="d-flex">
                     <div class="left-box mt-4">
-                        <image class="logo-login" src="{{asset('guest/assets/images/logo-header.png')}}" width="140px"
+                        <img class="logo-login" src="{{asset('guest/assets/images/logo-header.png')}}" width="140px"
                             height="100px" />
                         <div class="text-forget text-center mb-4 mt-5 text-sm text-gray-600">
                             {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
@@ -384,6 +495,9 @@
                             <div class="form-login mt-5">
                                 <x-input id="email" class="block mt-1 w-full" placeholder="Masukan E-mail" type="email"
                                     name="email" :value="old('email')" required autofocus />
+                            </div>
+                            <div class="icon-user-login">
+                                <i class="user float-end fa-solid fa-user"></i>
                             </div>
 
                             <div class="d-flex justify-content-center clik-forget mt-5">
@@ -398,7 +512,7 @@
                             <div class="col-5 d-flex">
                                 <div class="row mt-3">
                                     <div class="col-sm-12 col-xl-5 logo-login-right-1">
-                                        <image src="{{asset('guest/assets/images/logo-kemdikbud.png')}}" width="70px"
+                                        <img src="{{asset('guest/assets/images/logo-kemdikbud.png')}}" width="70px"
                                             height="70px" />
                                     </div>
                                     <div class="col-12 col-xl-7 text-logo-right-1 mt-1">
@@ -409,7 +523,7 @@
                             <div class="col-5 d-flex">
                                 <div class="row mt-3">
                                     <div class="col-12 col-xl-5 logo-login-right-2">
-                                        <image src="{{asset('guest/assets/images/logo-bmti.png')}}" width="70px"
+                                        <img src="{{asset('guest/assets/images/logo-bmti.png')}}" width="70px"
                                             height="70px" />
                                     </div>
                                     <div class="col-12 col-xl-7 text-logo-right-2 mt-1">
@@ -428,173 +542,65 @@
         </div>
     </div>
 
-    <div id="login" class="d-none">
-        <div class="bg-login">
-            <!-- Validation Errors -->
-            <div class="d-flex">
-                <x-auth-validation-errors id="error" class="text-popup mb-4 text-center bg-white rounded"
-                    :errors="$errors" />
-            </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="{{asset('guest/assets/bootstrap/js/bootstrap.min.js')}}"></script>
+    @yield('script')
 
-            <!-- Session Status -->
-            <div class="d-flex">
-                <x-auth-session-status class="text-popup mb-4 text-center bg-white rounded"
-                    :status="session('status')" />
+    <script>
+    $(function($) {
+        let url = window.location.href;
+        $('.nav li a').each(function() {
+            if (this.href === url) {
+                $(this).closest('a').addClass('active');
+            }
+        });
+    });
 
-                <div class="login-container">
-                    <div class="d-flex">
-                        <div class="left-box mt-4">
-                            <image class="logo-login" src="{{asset('guest/assets/images/logo-header.png')}}"
-                                width="140px" height="100px" />
-                            <h2 class="login-title">LOGIN</h2>
+    function onClickMenu() {
+        $('#menu').attr('class', '');
+    }
 
-                            <form class="mt-5" method="POST" action="{{ route('login') }}">
-                                @csrf
+    function onClickCloseMenu() {
+        $('#menu').attr('class', '');
+        $('#menu').addClass('d-none');
+    }
 
-                                <!-- Email Address -->
-                                <div class="form-login">
-                                    <x-input class="email" id="email" class="block mt-1 w-full"
-                                        placeholder="Masukan Username / E-mail" type="email" name="email"
-                                        :value="old('email')" required autofocus />
-                                </div>
+    function onClickLogin() {
+        $('#login').attr('class', '');
+    }
 
-                                <!-- Password -->
-                                <div class="form-login mt-5">
-                                    <x-input id="password" class="block mt-1 w-full" placeholder="Masukan Password"
-                                        type="password" name="password" required autocomplete="current-password" />
-                                </div>
+    function onClickCloseLogin() {
+        $('#login').addClass('d-none');
+    }
 
-                                <!-- Remember Me -->
-                                <div class="row justify-content-between mt-3">
-                                    <div class="col-5">
-                                        <label for="remember_me" class="inline-flex items-center">
-                                            <input id="remember_me" type="checkbox"
-                                                class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                                name="remember">
-                                            <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                                        </label>
-                                    </div>
-                                    <div class="col-3">
-                                        <div class="clik-LupaPassword" onclick="onClickLupaPassword()">Lupa Password ?
-                                        </div>
-                                    </div>
-                                </div>
+    function onClickRegister() {
+        $('#login').addClass('d-none');
+        $('#register').attr('class', '');
+    }
 
-                                <div class="d-flex justify-content-center mt-5">
-                                    <div class="col-2">
-                                        <button class="btn-login rounded-pill text-dark font-weight-bold">
-                                            {{ __('Masuk') }}
-                                        </button>
-                                    </div>
-                                </div>
+    function onClickCloseRegister() {
+        $('#register').addClass('d-none');
+    }
 
-                                <div class="row text-center mt-3">
-                                    <p>Atau</p>
-                                </div>
-                            </form>
+    function onClickDaftar() {
+        $('#register').addClass('d-none');
+        $('#login').attr('class', '');
+    }
 
-                            <div class="row text-center mt-2 clik-register">
-                                <span>Belum Memiliki Akun ?<span>
-                                        <button onclick="onClickRegister()">Daftar</button>
-                            </div>
-                        </div>
-                        <div class="right-box">
-                            <div class="row pt-3">
-                                <div class="col-5 d-flex">
-                                    <div class="row mt-3">
-                                        <div class="col-sm-12 col-xl-5 logo-login-right-1">
-                                            <image src="{{asset('guest/assets/images/logo-kemdikbud.png')}}"
-                                                width="70px" height="70px" />
-                                        </div>
-                                        <div class="col-12 col-xl-7 text-logo-right-1 mt-1">
-                                            <span>Kementrian Pendidikan, Kebudayaan, Riset dan Teknologi</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-5 d-flex">
-                                    <div class="row mt-3">
-                                        <div class="col-12 col-xl-5 logo-login-right-2">
-                                            <image src="{{asset('guest/assets/images/logo-bmti.png')}}" width="70px"
-                                                height="70px" />
-                                        </div>
-                                        <div class="col-12 col-xl-7 text-logo-right-2 mt-1">
-                                            <span>BBPPMPV BMTI <br /> Bidang Mesin dan Teknik Industri</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-2 d-flex">
-                                    <button class="btn-closed btn-danger btn-sm btn-circle"
-                                        onclick="onClickCloseLogin()">X</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    function onClickLupaPassword() {
+        $('#login').addClass('d-none');
+        $('#LupaPassword').attr('class', '');
+    }
 
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-        </script>
-        <script src="{{asset('guest/assets/bootstrap/js/bootstrap.min.js')}}"></script>
-        @yield('script')
-
-        <script>
-        $(function() {
-            var current = location.pathname;
-            console.log(current)
-            $('.nav li a').each(function() {
-                var $this = $(this);
-                // if the current path is like this link, make it active
-                if ($this.attr('href').indexOf(current) != -1) {
-                    $this.addClass('active');
-                }
-            })
-        })
-
-        function onClickMenu() {
-            $('#menu').attr('class', '');
-        }
-
-        function onClickCloseMenu() {
-            $('#menu').attr('class', '');
-            $('#menu').addClass('d-none');
-        }
-
-        function onClickLogin() {
-            $('#login').attr('class', '');
-        }
-
-        function onClickCloseLogin() {
-            $('#login').addClass('d-none');
-        }
-
-        function onClickRegister() {
-            $('#login').addClass('d-none');
-            $('#register').attr('class', '');
-        }
-
-        function onClickCloseRegister() {
-            $('#register').addClass('d-none');
-        }
-
-        function onClickDaftar() {
-            $('#register').addClass('d-none');
-            $('#login').attr('class', '');
-        }
-
-        function onClickLupaPassword() {
-            $('#login').addClass('d-none');
-            $('#LupaPassword').attr('class', '');
-        }
-
-        function onClickCloseLupaPassword() {
-            $('#LupaPassword').addClass('d-none');
-        }
-        </script>
+    function onClickCloseLupaPassword() {
+        $('#LupaPassword').addClass('d-none');
+    }
+    </script>
 </body>
 
 </html>
