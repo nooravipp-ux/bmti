@@ -13,6 +13,9 @@
             <div class="col-12 col-xl-7 text-kompetensi mt-0 order-3 order-md-2">
                 <p>{{$kompetensi->deskripsi}}</p>
             </div>
+            <!-- <div class="col-12 col-xl-7 text-kompetensi mt-0 order-3 order-md-2">
+                <iframe height="400" width="400" src="{{asset('/files/galeria/Tugas1_MetodologiPenelitian_SofyanIbnuAbdilah_55201119024.pdf')}}"></iframe>
+            </div> -->
 
             <div class="col-12 col-md-11 col-xl-5 order-2 image-permesinan">
                 <div class="image-teknik-permesinan d-flex justify-content-end">

@@ -16,7 +16,7 @@
                         @csrf
                         <div class="mb-3">
                             <label for="inputnama" class="form-label">Nama</label>
-                            <input type="text" name="nama" class="form-control" value="{{ $programKeahlian->nama }}">
+                            <input type="text" name="nama" class="form-control" value="{{ $programKeahlian->nama }}" required>
                         </div>
                         <div class="mb-3">
                             <label for="inputnama" class="form-label">Bidang Keahlian</label>
@@ -29,7 +29,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="inputnama" class="form-label">Deskripsi</label>
-                            <textarea type="text" name="deskripsi" class="form-control">{{ $programKeahlian->deskripsi }}</textarea>
+                            <textarea type="text" name="deskripsi" class="form-control" required>{{ $programKeahlian->deskripsi }}</textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-sm btn-rounded">Submit</button>
                     </form>

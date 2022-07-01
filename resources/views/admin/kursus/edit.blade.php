@@ -10,7 +10,8 @@
                     <h4 class="card-title">{{ __('Data Kursus') }}</h4>
                     <!-- <p class="card-description">
                     </p> -->
-                    <form action="{{route('pelatihan.update', ['id'=>$data->id])}}" method="POST" enctype="multipart/form-data">
+                    <form action="{{route('pelatihan.update', ['id'=>$data->id])}}" method="POST"
+                        enctype="multipart/form-data">
                         @method('put')
                         @csrf
                         <div class="mb-3">
@@ -31,7 +32,8 @@
                         </div>
                         <div class="mb-3">
                             <label for="judul" class="form-label">Judul</label>
-                            <input type="text" name="judul" class="form-control" id="judul" aria-describedby="emailHelp" value="{{$data->judul}}">
+                            <input type="text" name="judul" class="form-control" id="judul" aria-describedby="emailHelp"
+                                value="{{$data->judul}}">
                         </div>
                         <div class="mb-3">
                             <label for="deskripsi" class="form-label">Deskripsi</label>
@@ -42,7 +44,8 @@
                             <div>
                                 <img src="{{asset('images/pelatihan/'.$data->gambar)}}" width="300" height="250" />
                             </div>
-                            <input type="file" name="gambar" class="form-control" id="gambar" aria-describedby="emailHelp">
+                            <input type="file" name="gambar" class="form-control" id="gambar"
+                                aria-describedby="emailHelp" required accept="image/jpg, image/jpeg, image/png">
                         </div>
                         <button type="Perbaharui" class="btn btn-primary btn-sm btn-rounded">Submit</button>
                     </form>
@@ -52,9 +55,9 @@
     </div>
 </div>
 <script>
-    $(document).ready(function() {
-        $('#dataTable').DataTable();
+$(document).ready(function() {
+    $('#dataTable').DataTable();
 
-    });
+});
 </script>
 @endsection

@@ -35,9 +35,10 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php $i=1; ?>
                                 @foreach($data as $row)
                                 <tr>
-                                    <td>{{$row->id}}</td>
+                                    <td><?php echo $i++; ?></td>
                                     <td>{{$row->nama}}</td>
                                     <td>{{$row->created_at}}</td>
                                     <td>{{$row->updated_at}}</td>

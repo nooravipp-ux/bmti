@@ -23,6 +23,7 @@ class RoleController extends Controller
         ]);
 
         return redirect('/admin/roles');
+
     }
     public function edit($id){
         $roles = Role::find($id);

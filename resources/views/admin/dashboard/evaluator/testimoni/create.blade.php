@@ -14,28 +14,28 @@
                         @csrf
                         <div class="mb-3">
                             <label for="nama" class="form-label">Nama</label>
-                            <input type="text" name="nama" class="form-control" id="nama">
+                            <input type="text" name="nama" class="form-control" id="nama" required>
                         </div>
                         <div class="mb-3">
                             <label for="asal_sekolah" class="form-label">Asal Sekolah</label>
-                            <input type="text" name="asal_sekolah" class="form-control" id="asal_sekolah">
+                            <input type="text" name="asal_sekolah" class="form-control" id="asal_sekolah" required>
                         </div>
                         <div class="mb-3">
                             <label for="nama_diklat" class="form-label">Nama Diklat</label>
-                            <input type="text" name="nama_diklat" class="form-control" id="nama_diklat">
+                            <input type="text" name="nama_diklat" class="form-control" id="nama_diklat" required>
                         </div>
                         <div class="mb-3">
                             <label for="testimoni" class="form-label">Testimoni</label>
                             <textarea type="text" name="testimoni" class="ckeditor form-control" height="200"
-                                id="testimoni"></textarea>
+                                id="testimoni" required></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="created_by" class="form-label">Created By</label>
-                            <input type="text" name="created_by" class="form-control" id="created_by">
+                            <input type="text" name="created_by" class="form-control" id="created_by" required>
                         </div>
                         <div class="mb-3">
                             <label for="updated_by" class="form-label">Updated By</label>
-                            <input type="text" name="updated_by" class="form-control" id="updated_by">
+                            <input type="text" name="updated_by" class="form-control" id="updated_by" required>
                         </div>
                         <button type="submit" class="btn btn-primary btn-sm btn-rounded">Submit</button>
                     </form>

@@ -58,6 +58,7 @@
                                             class="btn btn-dark btn-sm btn-rounded btn-icon-prepend">Edit
                                             <i class="ti-reload btn-icon-append"></i></a></td>
                                     <td><a href="{{ route('testimoni.delete', ['id'=>$row->id]) }}"
+                                            onclick="return confirm('Apakah anda yakin ?')"
                                             class="btn btn-danger btn-sm btn-rounded btn-icon-text">Delete
                                             <i class="ti-trash btn-icon-append"></i></a></td>
                                 </tr>
@@ -83,7 +84,8 @@
                     @csrf
                     <div>
                         <label for="gambar" class="form-label">Import</label>
-                        <input type="file" name="file" class="form-control">
+                        <input type="file" name="file" class="form-control" required
+                            accept=".xlsx, .xls">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

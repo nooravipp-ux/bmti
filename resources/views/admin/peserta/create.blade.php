@@ -14,47 +14,48 @@
                         @csrf
                         <div class="mb-3">
                             <label for="nuptk" class="form-label">NUPTK</label>
-                            <input type="text" name="nuptk" class="form-control" id="nuptk"
-                                aria-describedby="emailHelp">
+                            <input type="text" name="nuptk" class="form-control" id="nuptk" aria-describedby="emailHelp"
+                                required>
                         </div>
                         <div class="mb-3">
                             <label for="nik" class="form-label">NIK</label>
-                            <input type="text" name="nik" class="form-control" id="nik" aria-describedby="emailHelp">
+                            <input type="text" name="nik" class="form-control" id="nik" aria-describedby="emailHelp"
+                                required>
                         </div>
                         <div class="mb-3">
                             <label for="nama_depan" class="form-label">Nama Depan</label>
                             <input type="text" name="nama_depan" class="form-control" id="nama_depan"
-                                aria-describedby="emailHelp">
+                                aria-describedby="emailHelp" required>
                         </div>
                         <div class="mb-3">
                             <label for="nama_belakang" class="form-label">Nama Belakang</label>
                             <input type="text" name="nama_belakang" class="form-control" id="nama_belakang"
-                                aria-describedby="emailHelp">
+                                aria-describedby="emailHelp" required>
                         </div>
                         <div class="mb-3">
                             <label for="tempat_lahir" class="form-label">Tempat Lahir</label>
                             <input type="text" name="tempat_lahir" class="form-control" id="tempat_lahir"
-                                aria-describedby="emailHelp">
+                                aria-describedby="emailHelp" required>
                         </div>
                         <div class="mb-3">
                             <label for="tanggal_lahir" class="form-label">Tanggal Lahir</label>
                             <input type="date" name="tanggal_lahir" class="form-control" id="tanggal_lahir"
-                                aria-describedby="emailHelp">
+                                aria-describedby="emailHelp" required>
                         </div>
                         <div class="mb-3">
                             <label for="alamat" class="form-label">Alamat</label>
                             <input type="text" name="alamat" class="form-control" id="alamat"
-                                aria-describedby="emailHelp">
+                                aria-describedby="emailHelp" required>
                         </div>
                         <div class="mb-3">
                             <label for="desa_kelurahan" class="form-label">Desa / Kelurahan</label>
                             <input type="number" name="desa_kelurahan" class="form-control" id="desa_kelurahan"
-                                aria-describedby="emailHelp">
+                                aria-describedby="emailHelp" required>
                         </div>
                         <div class="mb-3">
                             <label for="kecamatan" class="form-label">Kecamatan</label>
                             <input type="number" name="kecamatan" class="form-control" id="kecamatan"
-                                aria-describedby="emailHelp">
+                                aria-describedby="emailHelp" required>
                         </div>
                         <div class="mb-3">
                             <label for="kota_kab" class="form-label">Kota / Kabupaten</label>
@@ -64,17 +65,17 @@
                         <div class="mb-3">
                             <label for="provinsi" class="form-label">Provinsi</label>
                             <input type="number" name="provinsi" class="form-control" id="provinsi"
-                                aria-describedby="emailHelp">
+                                aria-describedby="emailHelp" required>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
                             <input type="email" name="email" class="form-control" id="email"
-                                aria-describedby="emailHelp">
+                                aria-describedby="emailHelp" required>
                         </div>
                         <div class="mb-3">
                             <label for="no_telepon" class="form-label">Nomer Telepon</label>
                             <input type="number" name="no_telepon" class="form-control" id="no_telepon"
-                                aria-describedby="emailHelp">
+                                aria-describedby="emailHelp" required>
                         </div>
                         <button type="submit" class="btn btn-primary btn-sm btn-rounded">Submit</button>
                     </form>

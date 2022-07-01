@@ -15,7 +15,7 @@
                         <div class="mb-3">
                             <label for="inputrole_name" class="form-label">Role Name</label>
                             <input type="text" name="role_name" class="form-control" id="inputrole_name"
-                                aria-describedby="emailHelp">
+                                aria-describedby="emailHelp" required>
                         </div>
                         <button type="submit" class="btn btn-primary btn-sm btn-rounded">Submit</button>
                     </form>

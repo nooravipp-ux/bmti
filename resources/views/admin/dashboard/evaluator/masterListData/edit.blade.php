@@ -41,13 +41,11 @@
                         </div>
                         <div class="mb-3">
                             <label for="pola" class="form-label">Pola</label>
-                            <input type="text" name="pola" class="form-control" id="pola"
-                                value="{{$data->pola}}">
+                            <input type="text" name="pola" class="form-control" id="pola" value="{{$data->pola}}">
                         </div>
                         <div class="mb-3">
                             <label for="moda" class="form-label">Moda</label>
-                            <input type="text" name="moda" class="form-control" id="moda"
-                                value="{{$data->moda}}">
+                            <input type="text" name="moda" class="form-control" id="moda" value="{{$data->moda}}">
                         </div>
                         <div class="mb-3">
                             <label for="pb" class="form-label">Pb</label>
