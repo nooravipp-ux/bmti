@@ -45,7 +45,14 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request->all());
+        $validatedData = $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|string|email|unique:users',
+            'role_id' => 'required',
+            'password' => 'required|string|min:8'
+        ]);
+
+
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -53,7 +60,7 @@ class UserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        return redirect('/admin/users');
+        return redirect('/admin/users')->with('message', 'Data Berhasil Disimpan');
     }
 
     /**
@@ -89,6 +96,12 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validatedData = $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|string|email',
+            'role_id' => 'required'
+        ]);
+
         $user = User::find($id);
         $user->update([
             'name' => $request->name,
@@ -96,7 +109,7 @@ class UserController extends Controller
             'role_id' => $request->role_id
         ]);
 
-        return redirect('/admin/users');
+        return redirect('/admin/users')->with('message', 'Data Berhasil Diubah');
     }
 
     /**
@@ -110,7 +123,7 @@ class UserController extends Controller
         $user = User::find($id);
         $user->delete();
 
-        return redirect('/admin/users');
+        return redirect('/admin/users')->with('message', 'Data Berhasil Dihapus');
     
     }
 }

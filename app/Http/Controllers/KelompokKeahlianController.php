@@ -22,13 +22,18 @@ class KelompokKeahlianController extends Controller
         return view('admin.KelompokKeahlian.create', compact('programKeahlian'));
     }
     public function store(Request $request){
+        $validatedData = $request->validate([
+            'program_keahlian_id' => 'required',
+            'nama' => 'required',
+            'deskripsi' => 'required'
+        ]);
         $kelompokKeahlian = KelompokKeahlian::create([
             'program_keahlian_id' => $request->program_keahlian_id,
             'nama' => $request->nama,
             'deskripsi' => $request->deskripsi
         ]);
 
-        return redirect('/admin/kelompok-keahlian');
+        return redirect('/admin/kelompok-keahlian')->with('message', 'Data Berhasil Disimpan');
     }
     public function edit($id){
         $kelompokKeahlian = KelompokKeahlian::find($id);
@@ -36,6 +41,11 @@ class KelompokKeahlianController extends Controller
         return view('admin.KelompokKeahlian.edit', compact('kelompokKeahlian','programKeahlian'));
     }
     public function update(Request $request, $id){
+        $validatedData = $request->validate([
+            'program_keahlian_id' => 'required',
+            'nama' => 'required',
+            'deskripsi' => 'required'
+        ]);
         $kelompokKeahlian = KelompokKeahlian::find($id);
         $kelompokKeahlian->update([
             'program_keahlian_id' => $request->program_keahlian_id,
@@ -43,12 +53,12 @@ class KelompokKeahlianController extends Controller
             'deskripsi' => $request->deskripsi
         ]);
 
-        return redirect('/admin/kelompok-keahlian');
+        return redirect('/admin/kelompok-keahlian')->with('message', 'Data Berhasil Diubah');
     }
     public function delete($id){
         $kelompokKeahlian = KelompokKeahlian::find($id);
         $kelompokKeahlian->delete();
 
-        return redirect('/admin/kelompok-keahlian');
+        return redirect('/admin/kelompok-keahlian')->with('message', 'Data Berhasil Dihapus');
     }
 }

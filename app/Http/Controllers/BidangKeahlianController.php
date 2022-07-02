@@ -17,30 +17,39 @@ class BidangKeahlianController extends Controller
         return view('admin.BidangKeahlian.create');
     }
     public function store(Request $request){
+        $validatedData = $request->validate([
+            'nama' => 'required|string',
+            'deskripsi' => 'required|string'
+        ]);
+
         $bidangKeahlian = BidangKeahlian::create([
             'nama' => $request->nama,
             'deskripsi' => $request->deskripsi
         ]);
 
-        return redirect('/admin/bidang-keahlian');
+        return redirect('/admin/bidang-keahlian')->with('message', 'Data Berhasil Disimpan');
     }
     public function edit($id){
         $bidangKeahlian = BidangKeahlian::find($id);
         return view('admin.BidangKeahlian.edit', compact(['bidangKeahlian']));
     }
     public function update(Request $request, $id){
+        $validatedData = $request->validate([
+            'nama' => 'required|string',
+            'deskripsi' => 'required|string'
+        ]);
         $bidangKeahlian = BidangKeahlian::find($id);
         $bidangKeahlian->update([
             'nama' => $request->nama,
             'deskripsi' => $request->deskripsi
         ]);
 
-        return redirect('/admin/bidang-keahlian');
+        return redirect('/admin/bidang-keahlian')->with('message', 'Data Berhasil Diubah');
     }
     public function delete($id){
         $bidangKeahlian = BidangKeahlian::find($id);
         $bidangKeahlian->delete();
 
-        return redirect('/admin/bidang-keahlian');
+        return redirect('/admin/bidang-keahlian')->with('message', 'Data Berhasil Dihapus');
     }
 }

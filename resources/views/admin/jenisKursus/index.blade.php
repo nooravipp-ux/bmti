@@ -12,8 +12,11 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">{{ __('Data Jenis Kursus') }}</h4>
-                    <!-- <p class="card-description">
-                    </p> -->
+                    @if(session()->has('message'))
+                    <div class="alert alert-success">
+                        {{ session()->get('message') }}
+                    </div>
+                    @endif
 
                     <div class="table-responsive">
                         <table id="dataTable" class="table">

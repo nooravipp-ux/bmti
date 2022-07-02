@@ -24,10 +24,19 @@ class KeahlianController extends Controller
     }
     public function store(Request $request)
     {
-        // dd($request->all());
         $gambarBanner = "";
         $fileName = "";
         $videoName = "";
+
+        $validatedData = $request->validate([
+            'id_kompetensi' => 'required',
+            'judul' => 'required',
+            'materi' => 'required',
+            'gambar_banner' => 'required|image',
+            'file_content' => 'required|mimes:pdf',
+            'video_content' => 'required|mimetypes:video/avi,video/mpeg,video/quicktime,video/mp4',
+            'author' => 'required',
+        ]);
 
         $gambar = $request->file('gambar_banner');
         if($gambar){
@@ -62,7 +71,7 @@ class KeahlianController extends Controller
             'author' => $request->author,
         ]);
 
-        return redirect('/admin/keahlian');
+        return redirect('/admin/keahlian')->with('message', 'Data Berhasil Disimpan');
     }
 
     public function edit($id)
@@ -73,6 +82,16 @@ class KeahlianController extends Controller
     }
 
     public function update(Request $request, $id){
+
+        $validatedData = $request->validate([
+            'id_kompetensi' => 'required',
+            'judul' => 'required',
+            'materi' => 'required',
+            // 'gambar_banner_new' => 'required|image',
+            // 'file_content_new' => 'required|mimes:pdf',
+            // 'video_content_new' => 'required|mimetypes:video/avi,video/mpeg,video/quicktime,video/mp4',
+            'author' => 'required',
+        ]);
 
         $gambar = $request->file('gambar_banner_new');
         $gambarBanner = $request->gambar_banner_old;
@@ -102,7 +121,6 @@ class KeahlianController extends Controller
         }
 
         $data = Keahlian::find($id);
-
         $data->update([
             'id_kompetensi' => $request->id_kompetensi,
             'judul' => $request->judul,
@@ -113,13 +131,13 @@ class KeahlianController extends Controller
             'author' => $request->author,
         ]);
         
-        return redirect('/admin/keahlian');
+        return redirect('/admin/keahlian')->with('message', 'Data Berhasil Diubah');
     }
 
     public function delete($id){
         $data = Keahlian::find($id);
         $data->delete();
 
-        return redirect('/admin/keahlian');
+        return redirect('/admin/keahlian')->with('message', 'Data Berhasil Dihapus');
     }
 }
