@@ -8,19 +8,28 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">{{ __('Bidang Keahlian') }}</h4>
-                    <!-- <p class="card-description">
-                    </p> -->
+                    @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
                     <form action="{{route('bidangKeahlian.update', ['id'=>$bidangKeahlian->id])}}" method="POST"
                         enctype="multipart/form-data">
                         @method('put')
                         @csrf
                         <div class="mb-3">
                             <label for="inputnama" class="form-label">Nama</label>
-                            <input type="text" name="nama" class="form-control" value="{{ $bidangKeahlian->nama }}">
+                            <input type="text" name="nama" class="form-control" value="{{ $bidangKeahlian->nama }}"
+                                required>
                         </div>
                         <div class="mb-3">
                             <label for="inputnama" class="form-label">Deskripsi</label>
-                            <textarea type="text" name="deskripsi" class="form-control">{{ $bidangKeahlian->deskripsi }}</textarea>
+                            <textarea type="text" name="deskripsi" class="form-control"
+                                required>{{ $bidangKeahlian->deskripsi }}</textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-sm btn-rounded">Submit</button>
                     </form>

@@ -15,13 +15,14 @@
                         <div class="row">
                             <label for="judul" class="col-sm-3 col-form-label">Nama Pelatihan</label>
                             <div class="col-sm-9">
-                                <input type="text" name="judul" class="form-control mt-2">
+                                <input type="text" name="judul" class="form-control mt-2" required>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="deskripsi" class="col-sm-3 col-form-label">Dekripsi Pelatihan</label>
                             <div class="col-sm-9">
-                                <textarea type="text" name="deskripsi" class="ckeditor form-control mt-2" style="height: 100px;"></textarea>
+                                <textarea type="text" name="deskripsi" class="ckeditor form-control mt-2"
+                                    style="height: 100px;" required></textarea>
                             </div>
                         </div>
                         <div class="row">
@@ -37,13 +38,15 @@
                         <div class="row mb-3">
                             <label for="gambar" class="col-sm-3 col-form-label">Upload Gambar</label>
                             <div class="col-sm-9">
-                                <input type="file" name="gambar" class="form-control mt-2">
+                                <input type="file" name="gambar" class="form-control mt-2" required
+                                    accept="image/jpg, image/jpeg, image/png">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-sm-12 text-right">
                                 <button class="btn btn-danger btn-sm btn-rounded float-right ml-2">Batal</button>
-                                <button type="submit" class="btn btn-primary btn-sm btn-rounded float-right">Lanjutkan</button>
+                                <button type="submit"
+                                    class="btn btn-primary btn-sm btn-rounded float-right">Lanjutkan</button>
                             </div>
                         </div>
                     </form>
@@ -58,8 +61,8 @@
 
 <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
 <script type="text/javascript">
-    $(document).ready(function() {
-        $('.ckeditor').ckeditor();
-    });
+$(document).ready(function() {
+    $('.ckeditor').ckeditor();
+});
 </script>
 @endsection

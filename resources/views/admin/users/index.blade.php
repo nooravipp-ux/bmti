@@ -12,8 +12,11 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">{{ __('Data User') }}</h4>
-                    <!-- <p class="card-description">
-                    </p> -->
+                    @if(session()->has('message'))
+                    <div class="alert alert-success">
+                        {{ session()->get('message') }}
+                    </div>
+                    @endif
 
                     <div class="table-responsive">
                         <table id="dataTable" class="table">
@@ -36,9 +39,10 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php $i=1; ?>
                                 @foreach($roles as $data)
                                 <tr>
-                                    <td>{{$data->id}}</td>
+                                    <td><?php echo $i++; ?></td>
                                     <td>{{$data->name}}</td>
                                     <td>{{$data->email}}</td>
                                     <td>{{$data->role_name}}</td>
@@ -47,7 +51,8 @@
                                             class="btn btn-dark btn-sm btn-rounded btn-icon-prepend">Edit
                                             <i class="ti-reload btn-icon-append"></i></a></td>
                                     <!-- <td><a href="{{ route('user.delete', ['id'=>$data->id]) }}"
-                                            class="btn btn-danger btn-rounded btn-icon-text">Delete
+                                            class="btn btn-danger btn-rounded btn-icon-text"
+                                            onclick="return confirm('Apakah anda yakin ?')">Delete
                                             <i class="ti-trash btn-icon-append"></i></a></td> -->
                                 </tr>
                                 @endforeach

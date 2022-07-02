@@ -11,8 +11,11 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">{{ __('Data Role') }}</h4>
-                    <!-- <p class="card-description">
-                    </p> -->
+                    @if(session()->has('message'))
+                    <div class="alert alert-success">
+                        {{ session()->get('message') }}
+                    </div>
+                    @endif
 
                     <div class="table-responsive">
                         <table id="dataTable" class="table">
@@ -29,21 +32,23 @@
                                     <th>Role Name</th>
                                     <th>Created At</th>
                                     <th>Edit</th>
-                                    <!-- <th>Delete</th> -->
+                                    <th>Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php $i = 1; ?>
                                 @foreach($roles as $role)
                                 <tr>
-                                    <td>{{$role->id}}</td>
+                                    <td><?php echo $i++; ?></td>
                                     <td>{{$role->role_name}}</td>
                                     <td>{{$role->created_at}}</td>
                                     <td><a href="{{ route('role.edit', ['id'=>$role->id]) }}"
                                             class="btn btn-dark btn-sm btn-rounded btn-icon-prepend">Edit
                                             <i class="ti-reload btn-icon-append"></i></a></td>
-                                    <!-- <td><a href="{{ route('role.delete', ['id'=>$role->id]) }}"
-                                            class="btn btn-danger btn-sm btn-rounded btn-icon-text">Delete
-                                            <i class="ti-trash btn-icon-append"></i></a></td> -->
+                                    <td><a href="{{ route('role.delete', ['id'=>$role->id]) }}"
+                                            class="btn btn-danger btn-sm btn-rounded btn-icon-text"
+                                            onclick="return confirm('Apakah anda yakin ?')">Delete
+                                            <i class="ti-trash btn-icon-append"></i></a></td>
                                 </tr>
                                 @endforeach
                             </tbody>

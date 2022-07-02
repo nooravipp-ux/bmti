@@ -8,9 +8,17 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">{{ __('Edit Komptensi Keahlian') }}</h4>
-                    <!-- <p class="card-description">
-                    </p> -->
-                    <form action="{{route('keahlian.update', ['id'=>$keahlian->id])}}" method="POST" enctype="multipart/form-data">
+                    @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
+                    <form action="{{route('keahlian.update', ['id'=>$keahlian->id])}}" method="POST"
+                        enctype="multipart/form-data">
                         @method('put')
                         @csrf
                         <div class="mb-3">
@@ -27,28 +35,35 @@
                         </div>
                         <div class="mb-3">
                             <label for="inputfile_content" class="form-label">Materi</label>
-                            <textarea type="text" name="materi" class="ckeditor form-control" height="200">{{$keahlian->materi}}</textarea>
+                            <textarea type="text" name="materi" class="ckeditor form-control"
+                                height="200">{{$keahlian->materi}}</textarea>
                         </div>
                         <div class="mb-3">
                             <label for="inputfile_content" class="form-label">Gambar Banner</label>
                             <div>
-                                <img src="{{asset('images/galeria/'.$keahlian->gambar_banner)}}" width="300" height="250" />
+                                <img src="{{asset('images/galeria/'.$keahlian->gambar_banner)}}" width="300"
+                                    height="250" />
                             </div>
-                            <input type="hidden" name="gambar_banner_old" class="form-control">
-                            <input type="file" name="gambar_banner_new" class="form-control">
+                            <input type="hidden" name="gambar_banner_old" class="form-control"
+                                value="{{$keahlian->gambar_banner}}">
+                            <input type="file" name="gambar_banner_new" class="form-control"
+                                accept="image/jpg, image/jpeg, image/png">
                         </div>
                         <div class="mb-3">
                             <label for="inputfile_content" class="form-label">File Content</label>
                             <div>
                                 <a href="">{{$keahlian->file_content}}</a>
                             </div>
-                            <input type="hidden" name="file_content_old" value="{{$keahlian->file_content}}" class="form-control">
-                            <input type="file" name="file_content_new" class="form-control">
+                            <input type="hidden" name="file_content_old" value="{{$keahlian->file_content}}"
+                                class="form-control">
+                            <input type="file" name="file_content_new" class="form-control" accept=".pdf">
                         </div>
                         <div class="mb-3">
                             <label for="inputvideo_content" class="form-label">Video Content</label>
-                            <input type="hidden" name="video_content_old" value="{{$keahlian->video_content}}" class="form-control">
-                            <input type="file" name="video_content_new" class="form-control">
+                            <input type="hidden" name="video_content_old" value="{{$keahlian->video_content}}"
+                                class="form-control">
+                            <input type="file" name="video_content_new" class="form-control"
+                                accept="video/mp4, video/webm">
                         </div>
                         <div class="mb-3">
                             <label for="inputauthor" class="form-label">Author</label>
@@ -61,10 +76,10 @@
         </div>
     </div>
 </div>
-<script src = "//cdn.ckeditor.com/4.14.1/standard/ckeditor.js" ></script>
+<script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
 <script type="text/javascript">
-    $(document).ready(function() {
-        $('.ckeditor').ckeditor();
-    });
+$(document).ready(function() {
+    $('.ckeditor').ckeditor();
+});
 </script>
 @endsection

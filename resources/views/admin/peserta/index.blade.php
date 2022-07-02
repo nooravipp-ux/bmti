@@ -12,8 +12,11 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">{{ __('Data Peserta') }}</h4>
-                    <!-- <p class="card-description">
-                    </p> -->
+                    @if(session()->has('message'))
+                    <div class="alert alert-success">
+                        {{ session()->get('message') }}
+                    </div>
+                    @endif
 
                     <div class="table-responsive">
                         <table id="dataTable" class="table">
@@ -47,9 +50,10 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php $i = 1; ?>
                                 @foreach($data as $row)
                                 <tr>
-                                    <td>{{$row->id}}</td>
+                                    <td><?php echo $i++; ?></td>
                                     <td>{{$row->nuptk}}</td>
                                     <td>{{$row->NIK}}</td>
                                     <td>{{$row->nama_depan}}</td>

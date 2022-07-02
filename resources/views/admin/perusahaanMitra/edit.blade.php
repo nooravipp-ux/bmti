@@ -8,8 +8,15 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">{{ __('Data Perusahaan Mitra') }}</h4>
-                    <!-- <p class="card-description">
-                    </p> -->
+                    @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
                     <form action="{{route('perusahaanMitra.update', ['id'=>$data->id])}}" method="POST"
                         enctype="multipart/form-data">
                         @method('put')

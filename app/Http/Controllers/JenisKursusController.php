@@ -18,10 +18,14 @@ class JenisKursusController extends Controller
     }
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'nama' => 'required|string',
+        ]);
+
         $data = jenisKursus::create([
             'nama' => $request->nama,
         ]);
-        return redirect('/admin/jenis-kursus');
+        return redirect('/admin/jenis-kursus')->with('message', 'Data Berhasil Disimpan');;
     }
     public function edit($id)
     {
@@ -30,19 +34,23 @@ class JenisKursusController extends Controller
     }
     public function update(Request $request, $id)
     {
+        $validatedData = $request->validate([
+            'nama' => 'required|string',
+        ]);
+
         $data = jenisKursus::find($id);
         $data->update([
             'nama' => $request->nama
         ]);
 
-        return redirect('/admin/jenis-kursus');
+        return redirect('/admin/jenis-kursus')->with('message', 'Data Berhasil Diubah');
     }
     public function delete($id)
     {
         $data = jenisKursus::find($id);
         $data->delete();
 
-        return redirect('/admin/jenis-kursus');
+        return redirect('/admin/jenis-kursus')->with('message', 'Data Berhasil Dihapus');
     
     }
 }

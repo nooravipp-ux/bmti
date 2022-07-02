@@ -8,8 +8,15 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">{{ __('Data Kompetensi') }}</h4>
-                    <!-- <p class="card-description">
-                    </p> -->
+                    @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
                     <form action="{{route('kompetensi.store')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
@@ -26,7 +33,7 @@
                         <div class="mb-3">
                             <label for="inputgambar_banner" class="form-label">Gambar Banner</label>
                             <input type="file" name="gambar_banner" class="form-control" id="inputgambar_banner"
-                                aria-describedby="emailHelp">
+                                aria-describedby="emailHelp" accept="image/jpg, image/jpeg, image/png">
                         </div>
                         <button type="submit" class="btn btn-primary btn-sm btn-rounded">Submit</button>
                     </form>
