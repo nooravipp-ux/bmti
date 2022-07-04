@@ -2,8 +2,11 @@
 
 @media only screen and (min-width: 400px) and (max-width: 499px) {
     .logo-header {
-        width: 150px;
-        height: 80px;
+        margin-top: 5px;
+    }
+    .logo-header img {
+        width: 140px;
+        height: 90px;
     }
     .icon-menu {
         display: block;
@@ -16,29 +19,32 @@
         margin-top: 35px;
     }
     .mandiri-hidden-1 {
-        margin-left: auto;
-        margin-right: auto;
         position: relative;
         margin-top: 10px;
+        text-align: start;
+        margin-left: 5px;
     }
     .mandiri-hidden-2 {
-        margin-left: auto;
-        margin-right: auto;
         position: relative;
         margin-top: 0;
+        text-align: start;
+        margin-left: 5px;
     }
     .mandiri-hidden-3 {
-        margin-left: auto;
-        margin-right: auto;
         position: relative;
         margin-top: 0;
+        text-align: start;
+        margin-left: 5px;
     }
 }
 
 @media only screen and (min-width: 500px) and (max-width: 575px) {
     .logo-header {
-        width: 150px;
-        height: 80px;
+        margin-top: 5px;
+    }
+    .logo-header img {
+        width: 140px;
+        height: 90px;
     }
     .icon-menu {
         display: block;
@@ -47,33 +53,36 @@
         display: none;
     }
     .akun-button {
-        margin-left: -10px;
+        margin-left: 10px;
         margin-top: 35px;
     }
     .mandiri-hidden-1 {
-        margin-left: auto;
-        margin-right: auto;
         position: relative;
         margin-top: 10px;
+        text-align: start;
+        margin-left: 5px;
     }
     .mandiri-hidden-2 {
-        margin-left: auto;
-        margin-right: auto;
         position: relative;
         margin-top: 0;
+        text-align: start;
+        margin-left: 5px;
     }
     .mandiri-hidden-3 {
-        margin-left: auto;
-        margin-right: auto;
         position: relative;
         margin-top: 0;
+        text-align: start;
+        margin-left: 5px;
     }
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
     .logo-header {
-        width: 150px;
-        height: 80px;
+        margin-top: 5px;
+    }
+    .logo-header img {
+        width: 140px;
+        height: 90px;
     }
     .icon-menu {
         display: block;
@@ -82,61 +91,67 @@
         display: none;
     }
     .akun-button {
-        margin-left: 15px;
+        margin-left: 20px;
         margin-top: 35px;
     }
     .mandiri-hidden-1 {
-        margin-left: auto;
-        margin-right: auto;
         position: relative;
         margin-top: 10px;
+        text-align: start;
+        margin-left: 5px;
     }
     .mandiri-hidden-2 {
-        margin-left: auto;
-        margin-right: auto;
         position: relative;
         margin-top: 0;
+        text-align: start;
+        margin-left: 5px;
     }
     .mandiri-hidden-3 {
-        margin-left: auto;
-        margin-right: auto;
         position: relative;
         margin-top: 0;
+        text-align: start;
+        margin-left: 5px;
     }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-    .logo-header {
-        width: 150px;
-        height: 80px;
-    }
     .icon-menu {
-        display: block;
         margin-left: -30px;
+        display: block;
+    }
+    .icon-menu-hover {
+        margin-left: 55px;
     }
     .menu {
         display: none;
     }
     .akun-button {
+        margin-left: -15px;
         margin-top: 35px;
     }
     .mandiri-hidden-1 {
-        margin-left: auto;
-        margin-right: auto;
         position: relative;
         margin-top: 10px;
+        text-align: start;
+        margin-left: 5px;
     }
     .mandiri-hidden-2 {
-        margin-left: auto;
-        margin-right: auto;
         position: relative;
         margin-top: 0;
+        text-align: start;
+        margin-left: 5px;
     }
     .mandiri-hidden-3 {
-        margin-left: auto;
-        margin-right: auto;
         position: relative;
         margin-top: 0;
+        text-align: start;
+        margin-left: 5px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .akun-button {
+        margin-left: -55px;
     }
 }
 
@@ -144,25 +159,28 @@
 /* end header */
 
 
-/* login,register */
+/* login,register, lupa password */
 
 @media only screen and (min-width: 400px) and (max-width: 499px) {
+    /* login */
     .login-container {
-        top: 150px;
-        left: 20px;
+        margin-top: 130px;
         width: 90%;
         height: 70%;
     }
-    .left-box {
+    .logo-login {
+        margin-top: -40px;
+    }
+    .login-container .left-box {
         width: 100%;
     }
     .icon-user-login {
-        left: 84%;
+        left: 81%;
         font-size: 12px;
-        margin-top: -20px;
+        margin-top: -22px;
     }
     .icon-password-login {
-        left: 84%;
+        left: 81%;
         font-size: 12px;
         margin-top: -25px;
     }
@@ -179,18 +197,16 @@
     .clik-LupaPassword {
         font-size: 12px;
     }
-    .btn-login {
-        margin-left: 5px;
-    }
     .clik-register button {
         position: relative;
         top: 2px;
         right: 8px;
     }
+    .button-mini {
+        display: block;
+    }
     .btn-closed {
-        position: absolute;
-        top: 5px;
-        left: 300px;
+        display: none;
     }
     .logo-login-right-1 {
         display: none;
@@ -204,68 +220,72 @@
     .text-logo-right-2 {
         display: none;
     }
-    .right-box {
-        width: 0;
+    .login-container .right-box {
+        display: none;
     }
+    /* end login */
+    /* register */
     .register-container {
-        top: 80px;
-        left: 20px;
+        margin-top: 130px;
         width: 90%;
         height: 70%;
     }
     .register-container .left-box {
         width: 100%;
     }
-    .form-register input {
-        font-size: 14px;
-        width: 100%;
+    .clik-sudah-daftar {
+        font-size: 12px;
+    }
+    .clik-daftar {
+        padding-bottom: 50px;
     }
     .register-container .right-box {
-        width: 0;
+        display: none;
     }
-    .icon-name-register {
-        left: 84%;
-        font-size: 12px;
-        margin-top: -25px;
+    /* end register */
+    /* lupa password */
+    .LupaPassword-container {
+        margin-top: 130px;
+        width: 90%;
+        height: 70%;
     }
-    .icon-mail-register {
-        left: 84%;
-        font-size: 12px;
-        margin-top: -25px;
+    .LupaPassword-container .left-box {
+        width: 100%;
     }
-    .icon-password-register {
-        left: 84%;
-        font-size: 12px;
-        margin-top: -25px;
+    .text-forget {
+        margin-left: auto;
+        margin-right: auto;
+        width: 300px;
     }
+    .clik-forget {
+        padding-bottom: 140px;
+    }
+    .LupaPassword-container .right-box {
+        display: none;
+    }
+    /* end lupa password */
 }
 
 @media only screen and (min-width: 500px) and (max-width: 575px) {
+    /* login */
     .login-container {
-        position: relative;
-        top: 0px;
-        left: 0px;
-        margin: auto;
+        margin-top: 40px;
         width: 90%;
         height: 90%;
+    }
+    .logo-login {
+        margin-top: -40px;
     }
     .login-container .left-box {
         width: 100%;
     }
-    .btn-close {
-        position: absolute;
-        left: 80%;
-        top: 10px;
-        background: none;
-        opacity: 1;
-    }
     .icon-user-login {
-        left: 84%;
+        left: 81%;
         font-size: 12px;
-        margin-top: -25px;
+        margin-top: -20px;
     }
     .icon-password-login {
-        left: 84%;
+        left: 81%;
         font-size: 12px;
         margin-top: -25px;
     }
@@ -273,12 +293,26 @@
         font-size: 14px;
         width: 100%;
     }
-    .lupa-password {
-        margin-left: 20px;
-        font-size: 10px;
+    .login-container span {
+        position: relative;
+        bottom: 3px;
+        left: 3px;
+        font-size: 12px;
     }
-    .text-login {
-        font-size: 10px;
+    .clik-LupaPassword {
+        margin-left: 20px;
+        font-size: 12px;
+    }
+    .clik-register button {
+        position: relative;
+        top: 2px;
+        right: 8px;
+    }
+    .button-mini {
+        display: block;
+    }
+    .btn-closed {
+        display: none;
     }
     .logo-login-right-1 {
         display: none;
@@ -293,69 +327,71 @@
         display: none;
     }
     .login-container .right-box {
-        width: 0;
+        display: none;
     }
+    /* end login */
+    /* register */
     .register-container {
-        position: relative;
-        top: 0px;
-        left: 0px;
-        margin: auto;
+        margin-top: 40px;
         width: 90%;
         height: 90%;
     }
     .register-container .left-box {
         width: 100%;
     }
-    .form-register input {
-        font-size: 14px;
-        width: 100%;
+    .clik-sudah-daftar {
+        font-size: 12px;
+    }
+    .clik-daftar {
+        padding-bottom: 50px;
     }
     .register-container .right-box {
-        width: 0;
+        display: none;
     }
-    .icon-name-register {
-        left: 84%;
-        font-size: 12px;
-        margin-top: -25px;
+    /* end register */
+    /* lupa password */
+    .LupaPassword-container {
+        margin-top: 40px;
+        width: 90%;
+        height: 90%;
     }
-    .icon-mail-register {
-        left: 84%;
-        font-size: 12px;
-        margin-top: -25px;
+    .LupaPassword-container .left-box {
+        width: 100%;
     }
-    .icon-password-register {
-        left: 84%;
-        font-size: 12px;
-        margin-top: -25px;
+    .text-forget {
+        margin-left: auto;
+        margin-right: auto;
+        width: 300px;
     }
+    .clik-forget {
+        padding-bottom: 140px;
+    }
+    .LupaPassword-container .right-box {
+        display: none;
+    }
+    /* end lupa password */
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
+    /* login */
     .login-container {
-        position: relative;
-        top: 0px;
-        left: 0px;
-        margin: auto;
+        margin-top: 40px;
         width: 90%;
         height: 90%;
+    }
+    .logo-login {
+        margin-top: -40px;
     }
     .login-container .left-box {
         width: 100%;
     }
-    .btn-close {
-        position: absolute;
-        left: 84%;
-        top: 10px;
-        background: none;
-        opacity: 1;
-    }
     .icon-user-login {
-        left: 88%;
+        left: 81%;
         font-size: 12px;
-        margin-top: -25px;
+        margin-top: -20px;
     }
     .icon-password-login {
-        left: 88%;
+        left: 81%;
         font-size: 12px;
         margin-top: -25px;
     }
@@ -363,11 +399,25 @@
         font-size: 14px;
         width: 100%;
     }
-    .lupa-password {
-        font-size: 10px;
+    .login-container span {
+        position: relative;
+        bottom: 3px;
+        left: 3px;
+        font-size: 12px;
     }
-    .text-login {
-        font-size: 10px;
+    .clik-LupaPassword {
+        font-size: 12px;
+    }
+    .clik-register button {
+        position: relative;
+        top: 2px;
+        right: 8px;
+    }
+    .button-mini {
+        display: block;
+    }
+    .btn-closed {
+        display: none;
     }
     .logo-login-right-1 {
         display: none;
@@ -382,126 +432,225 @@
         display: none;
     }
     .login-container .right-box {
-        width: 0;
+        display: none;
     }
+    /* end login */
+    /* register */
     .register-container {
-        position: relative;
-        top: 0px;
-        left: 0px;
-        margin: auto;
+        margin-top: 40px;
         width: 90%;
         height: 90%;
     }
     .register-container .left-box {
         width: 100%;
     }
-    .form-register input {
-        font-size: 14px;
-        width: 100%;
+    .clik-sudah-daftar {
+        font-size: 12px;
+    }
+    .clik-daftar {
+        padding-bottom: 50px;
     }
     .register-container .right-box {
-        width: 0;
+        display: none;
     }
-    .icon-name-register {
-        left: 88%;
-        font-size: 12px;
-        margin-top: -25px;
+    /* end register */
+    /* lupa password */
+    .LupaPassword-container {
+        margin-top: 40px;
+        width: 90%;
+        height: 90%;
     }
-    .icon-mail-register {
-        left: 88%;
-        font-size: 12px;
-        margin-top: -25px;
+    .LupaPassword-container .left-box {
+        width: 100%;
     }
-    .icon-password-register {
-        left: 88%;
-        font-size: 12px;
-        margin-top: -25px;
+    .text-forget {
+        margin-left: auto;
+        margin-right: auto;
+        width: 300px;
     }
+    .clik-forget {
+        padding-bottom: 140px;
+    }
+    .LupaPassword-container .right-box {
+        display: none;
+    }
+    /* end lupa password */
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+    /* login */
     .login-container {
+        margin-top: 30px;
+    }
+    .login-container span {
         position: relative;
-        top: 0px;
-        left: 0px;
-        margin: auto;
-        width: 90%;
-        height: 90%;
-    }
-    .login-container .left-box {
-        width: 50%;
-    }
-    .icon-user-login {
-        left: 41%;
-    }
-    .icon-password-login {
-        left: 41%;
-    }
-    .lupa-password {
-        font-size: 12px;
-    }
-    .btn-masuk button {
+        bottom: 2px;
+        left: 3px;
         font-size: 14px;
     }
-    .text-login {
-        font-size: 10px;
+    .form-login input {
+        font-size: 15px;
     }
-    .btn-close {
+    .clik-LupaPassword {
+        margin-left: 10px;
+        font-size: 14px;
+    }
+    .icon-user-login {
+        left: 42%;
+    }
+    .icon-password-login {
+        left: 42%;
+    }
+    .btn-closed {
         margin-left: 0px;
+        margin-top: -5px;
+    }
+    .clik-register button {
+        position: relative;
+        top: 2px;
+        right: 8px;
     }
     .logo-login-right-1 {
         margin-left: auto;
         margin-right: auto;
         text-align: center;
     }
+    .logo-login-right-1 img {
+        width: 60px;
+        height: 60px;
+    }
     .text-logo-right-1 {
         margin-left: 10px;
-        font-size: 14px;
         text-align: center;
+    }
+    .text-logo-right-1 span {
+        font-size: 13px;
     }
     .logo-login-right-2 {
         margin-left: auto;
         margin-right: auto;
         text-align: center;
     }
+    .logo-login-right-2 img {
+        width: 65px;
+        height: 65px;
+    }
     .text-logo-right-2 {
-        margin-bottom: 15px;
         margin-left: 0px;
-        font-size: 14px;
         text-align: center;
     }
+    .text-logo-right-2 span {
+        font-size: 13px;
+    }
     .login-container .right-box {
-        width: 50%;
         background-image: url('assets/images/login-2.png');
     }
+    /* end login */
+    /* register */
     .register-container {
-        position: relative;
-        top: 0px;
-        left: 0px;
-        margin: auto;
-        width: 90%;
-        height: 90%;
+        margin-top: 30px;
     }
-    .register-container .left-box {
-        width: 50%;
+    .clik-sudah-daftar {
+        font-size: 14px;
+    }
+    .clik-daftar {
+        padding-bottom: 43px;
     }
     .register-container .right-box {
-        width: 50%;
         background-image: url('assets/images/login-2.png');
     }
-    .icon-name-register {
-        left: 41%;
+    /* end register */
+    /* lupa password */
+    .LupaPassword-container .right-box {
+        background-image: url('assets/images/login-2.png');
     }
-    .icon-mail-register {
-        left: 41%;
+    .clik-forget {
+        padding-bottom: 146px;
     }
-    .icon-password-register {
-        left: 41%;
+    .text-forget {
+        margin-left: auto;
+        margin-right: auto;
+        width: 300px;
     }
+    /* end lupa password */
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    /* login */
+    .login-container {
+        margin-top: 25px;
+    }
+    .clik-LupaPassword {
+        margin-left: 7px;
+    }
+    .btn-closed {
+        margin-left: 10px;
+        margin-top: -5px;
+    }
+    .logo-login-right-1 {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+    .logo-login-right-1 img {
+        width: 60px;
+        height: 60px;
+    }
+    .text-logo-right-1 {
+        margin-left: 10px;
+        text-align: center;
+    }
+    .text-logo-right-1 span {
+        font-size: 13px;
+    }
+    .logo-login-right-2 {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+    .logo-login-right-2 img {
+        width: 65px;
+        height: 65px;
+    }
+    .text-logo-right-2 {
+        margin-left: 0px;
+        text-align: center;
+    }
+    .text-logo-right-2 span {
+        font-size: 13px;
+    }
+    .login-container .right-box {
+        background-image: url('assets/images/login-3.png');
+    }
+    /* end login */
+    /* register */
+    .register-container {
+        margin-top: 25px;
+    }
+    .register-container .right-box {
+        background-image: url('assets/images/login-3.png');
+    }
+    /* end register */
+    /* lupa password */
+    .LupaPassword-container {
+        margin-top: 25px;
+    }
+    .LupaPassword-container .right-box {
+        background-image: url('assets/images/login-3.png');
+    }
+    .clik-forget {
+        padding-bottom: 177px;
+    }
+    .text-forget {
+        margin-left: auto;
+        margin-right: auto;
+        width: 400px;
+    }
+    /* end lupa password */
 }
 
 
-/* end login,register */
+/* end login,register, lupa password */
 
 
 /* beranda */
@@ -516,7 +665,7 @@
     }
     .img-welcome img {
         width: 300px;
-        height: 300px;
+        height: 340px;
     }
     .text-welcome {
         margin-top: 160px;
@@ -628,7 +777,10 @@
         margin-top: 50px;
     }
     .text-afiliasi hr {
-        left: 28%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 140px;
+        margin-top: -10px;
     }
     /* end afiliasi */
     /* testimonial */
@@ -637,7 +789,7 @@
         margin-top: 50px;
     }
     .testimonial hr {
-        width: 44%;
+        width: 210px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -662,12 +814,14 @@
     }
     .img-welcome {
         margin-top: 20px;
-        width: 300px;
-        height: 300px;
         margin-left: auto;
         margin-right: auto;
         display: block;
-        margin-bottom: 50px;
+        margin-bottom: 20px;
+    }
+    .img-welcome img {
+        width: 300px;
+        height: 300px;
     }
     .text-welcome {
         margin-top: 160px;
@@ -708,7 +862,7 @@
     .pel-terbimbing {
         text-align: center;
     }
-    .img-mandiri {
+    .img-mandiri img {
         width: 200px;
         height: 200px;
     }
@@ -718,10 +872,12 @@
     }
     .img-terbimbing {
         margin-top: 0;
-        width: 250px;
-        height: 250px;
         margin-left: auto;
         margin-right: auto;
+    }
+    .img-terbimbing img {
+        width: 250px;
+        height: 250px;
     }
     /* end pelatihan */
     /* participant */
@@ -739,18 +895,36 @@
         margin-right: auto;
     }
     .mandiri-image {
-        margin-top: 60px;
-        margin-left: 10px;
+        margin-top: 45px;
+        margin-left: 15px;
+    }
+    .mandiri-image img {
+        height: 60px;
+        width: 70px;
     }
     .terbimbing-image {
-        margin-top: 60px;
-        margin-left: 10px;
+        margin-top: 45px;
+        margin-left: 15px;
+    }
+    .terbimbing-image img {
+        height: 60px;
+        width: 70px;
     }
     .sertifikat-image {
-        margin-top: 55px;
+        margin-top: 45px;
+        margin-left: 5px;
+    }
+    .sertifikat-image img {
+        height: 60px;
+        width: 70px;
     }
     .pengunjung-image {
-        margin-top: 55px;
+        margin-top: 45px;
+        margin-left: 5px;
+    }
+    .pengunjung-image img {
+        height: 60px;
+        width: 70px;
     }
     /* end participant */
     /* afiliasi */
@@ -758,7 +932,10 @@
         margin-top: 50px;
     }
     .text-afiliasi hr {
-        left: 28%;
+        width: 150px;
+        margin-top: -10px;
+        margin-left: auto;
+        margin-right: auto;
     }
     /* end afiliasi */
     /* testimonial */
@@ -767,7 +944,7 @@
         margin-top: 50px;
     }
     .testimonial hr {
-        width: 44%;
+        width: 220px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -791,12 +968,14 @@
     }
     .img-welcome {
         margin-top: 20px;
-        width: 300px;
-        height: 300px;
         margin-left: auto;
         margin-right: auto;
         display: block;
-        margin-bottom: 50px;
+        margin-bottom: 20px;
+    }
+    .img-welcome img {
+        width: 320px;
+        height: 320px;
     }
     .text-welcome {
         margin-top: 160px;
@@ -834,7 +1013,7 @@
     .pel-terbimbing {
         text-align: center;
     }
-    .img-mandiri {
+    .img-mandiri img {
         width: 200px;
         height: 200px;
     }
@@ -844,10 +1023,12 @@
     }
     .img-terbimbing {
         margin-top: 0;
-        width: 250px;
-        height: 250px;
         margin-left: auto;
         margin-right: auto;
+    }
+    .img-terbimbing img {
+        width: 250px;
+        height: 250px;
     }
     /* end pelatihan */
     /* participant */
@@ -865,16 +1046,36 @@
         margin-right: auto;
     }
     .mandiri-image {
-        margin-left: 10px;
+        margin-top: 45px;
+        margin-left: 15px;
+    }
+    .mandiri-image img {
+        width: 70px;
+        height: 60px;
     }
     .terbimbing-image {
-        margin-left: 10px;
+        margin-top: 45px;
+        margin-left: 15px;
+    }
+    .terbimbing-image img {
+        width: 70px;
+        height: 60px;
     }
     .sertifikat-image {
-        margin-top: 53px;
+        margin-top: 45px;
+        margin-left: 5px;
+    }
+    .sertifikat-image img {
+        width: 70px;
+        height: 60px;
     }
     .pengunjung-image {
-        margin-top: 53px;
+        margin-top: 45px;
+        margin-left: 5px;
+    }
+    .pengunjung-image img {
+        width: 70px;
+        height: 60px;
     }
     /* end participant */
     /* afiliasi */
@@ -882,7 +1083,10 @@
         margin-top: 50px;
     }
     .text-afiliasi hr {
-        left: 28%;
+        width: 160px;
+        margin-top: -10px;
+        margin-left: auto;
+        margin-right: auto;
     }
     /* end afiliasi */
     /* testimonial */
@@ -891,7 +1095,7 @@
         margin-top: 50px;
     }
     .testimonial hr {
-        width: 40%;
+        width: 230px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -915,12 +1119,14 @@
     }
     .img-welcome {
         margin-top: 20px;
-        width: 300px;
-        height: 300px;
         margin-left: auto;
         margin-right: auto;
         display: block;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
+    }
+    .img-welcome img {
+        width: 350px;
+        height: 350px;
     }
     .text-welcome {
         margin-top: 160px;
@@ -949,9 +1155,9 @@
     .pel-terbimbing {
         text-align: center;
     }
-    .img-mandiri {
-        width: 200px;
-        height: 200px;
+    .img-mandiri img {
+        width: 250px;
+        height: 250px;
     }
     .margin-pel-terbimbing {
         margin-top: -30px;
@@ -959,10 +1165,12 @@
     }
     .img-terbimbing {
         margin-top: 0;
-        width: 250px;
-        height: 250px;
         margin-left: auto;
         margin-right: auto;
+    }
+    .img-terbimbing img {
+        width: 300px;
+        height: 300px;
     }
     /* end pelatihan */
     /* participant */
@@ -982,18 +1190,34 @@
         font-size: 20px;
     }
     .mandiri-image {
-        margin-left: 10px;
+        margin-top: 35px;
+    }
+    .mandiri-image img {
+        width: 70px;
+        height: 60px;
     }
     .terbimbing-image {
-        margin-left: 10px;
+        margin-top: 35px;
+    }
+    .terbimbing-image img {
+        width: 70px;
+        height: 60px;
     }
     .sertifikat-image {
-        margin-top: 45px;
-        margin-right: 10px;
+        margin-top: 35px;
+        margin-left: -15px;
+    }
+    .sertifikat-image img {
+        width: 70px;
+        height: 60px;
     }
     .pengunjung-image {
-        margin-top: 45px;
-        margin-right: 10px;
+        margin-top: 35px;
+        margin-left: -10px;
+    }
+    .pengunjung-image img {
+        width: 70px;
+        height: 60px;
     }
     /* end participant */
     /* afiliasi */
@@ -1028,6 +1252,82 @@
         margin-left: auto;
         margin-right: auto;
     }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .text-welcome {
+        margin-left: 40px;
+    }
+    .img-welcome img {
+        width: 340px;
+        height: 350px;
+    }
+    .logo-kemdikbud-beranda {
+        margin-left: 40px;
+    }
+    /* pelatihan */
+    .pel-mandiri {
+        margin-left: 40px;
+    }
+    .margin-pel-mandiri {
+        margin-top: -200px;
+    }
+    .margin-pel-terbimbing {
+        margin-top: -440px;
+        margin-left: 480px;
+    }
+    .img-mandiri img {
+        width: 300px;
+        height: 300px;
+    }
+    .img-terbimbing img {
+        width: 300px;
+        height: 300px;
+    }
+    /* end pelatihan */
+    /* participant */
+    .peserta {
+        height: 140px;
+        width: 200px;
+    }
+    .peserta p {
+        width: 210px;
+        font-size: 16px;
+    }
+    .peserta h1 {
+        font-size: 24px;
+    }
+    .mandiri-image {
+        margin-top: 35px;
+    }
+    .mandiri-image img {
+        width: 70px;
+        height: 60px;
+    }
+    .terbimbing-image {
+        margin-top: 35px;
+    }
+    .terbimbing-image img {
+        width: 70px;
+        height: 60px;
+    }
+    .sertifikat-image {
+        margin-top: 35px;
+        margin-left: -15px;
+    }
+    .sertifikat-image img {
+        width: 70px;
+        height: 60px;
+    }
+    .pengunjung-image {
+        margin-top: 35px;
+        margin-left: -10px;
+    }
+    .pengunjung-image img {
+        width: 70px;
+        height: 60px;
+    }
+    /* end participant */
 }
 
 
@@ -1125,7 +1425,7 @@
     }
     /* teknik permesinan */
     .text-kompetensi {
-        margin-top: 150px;
+        margin-top: 160px;
     }
     .text-kompetensi h1 {
         text-align: center;
@@ -1137,6 +1437,8 @@
     .image-permesinan {
         margin-top: 15px;
         margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
     }
     .image-teknik-permesinan img {
         width: 185px;
@@ -1185,7 +1487,7 @@
         height: 205px;
     }
     .bg-komptensi-materi {
-        top: 40px;
+        top: 90px;
         left: 20px;
         width: 90%;
         height: 80%;
@@ -1201,7 +1503,9 @@
     }
     .shared {
         margin-top: 20px;
-        margin-left: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
     }
     .shared img {
         width: 60px;
@@ -1219,11 +1523,13 @@
     }
     .img-galeria {
         margin-top: 10px;
-        display: block;
+        margin-bottom: 20px;
         margin-left: auto;
         margin-right: auto;
+    }
+    .img-galeria img {
         width: 300px;
-        margin-bottom: 20px;
+        height: 300px;
     }
     .text-galeria-2 p {
         text-align: center;
@@ -1261,8 +1567,12 @@
         bottom: 70px;
         text-align: center;
     }
+    .galeria-kompetisi {
+        margin-top: -40px;
+        margin-bottom: -30px;
+    }
     .galeria-kompetisi h1 {
-        font-size: 45px;
+        font-size: 35px;
     }
     .galeria-kompetisi p {
         font-size: 13px;
@@ -1278,6 +1588,10 @@
         width: 300px;
         height: 208px;
     }
+    .image img {
+        width: 300px;
+        height: 208px;
+    }
     .image h4 {
         width: 250px;
     }
@@ -1286,7 +1600,7 @@
     }
     /* teknik permesinan */
     .text-kompetensi {
-        margin-top: 150px;
+        margin-top: 160px;
     }
     .text-kompetensi h1 {
         text-align: center;
@@ -1302,6 +1616,12 @@
     .image-permesinan {
         margin-top: 20px;
         margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .image-teknik-permesinan img {
+        width: 200px;
+        height: 130px;
     }
     .logo-kemdikbud-kompetensi {
         margin-top: 50px;
@@ -1347,9 +1667,13 @@
         margin-left: auto;
         margin-right: auto;
     }
+    .img-teknik-permesinan img {
+        width: 300px;
+        height: 205px;
+    }
     .bg-komptensi-materi {
         position: relative;
-        top: 0px;
+        top: 15px;
         left: 0px;
         margin: auto;
         width: 90%;
@@ -1361,15 +1685,17 @@
         margin-right: auto;
     }
     .content-materi iframe {
-        width: 350px;
-        height: 200px;
+        width: 390px;
+        height: 260px;
     }
     .shared {
-        text-align: center;
+        margin-top: 20px;
         margin-left: auto;
         margin-right: auto;
-        height: 15px;
-        width: 50px;
+        text-align: center;
+    }
+    .shared img {
+        width: 60px;
     }
     /* end teknik permesinan */
 }
@@ -1387,8 +1713,11 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
-        width: 300px;
         margin-bottom: 20px;
+    }
+    .img-galeria img {
+        width: 300px;
+        height: 300px;
     }
     .text-galeria-2 p {
         text-align: center;
@@ -1426,20 +1755,24 @@
         bottom: 70px;
         text-align: center;
     }
+    .galeria-kompetisi {
+        margin-top: -40px;
+        margin-bottom: -30px;
+    }
     .galeria-kompetisi h1 {
-        font-size: 45px;
+        font-size: 35px;
     }
     .galeria-kompetisi p {
-        font-size: 15px;
-        width: 475px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
+        font-size: 13px;
     }
     .image {
         display: block;
         margin-left: auto;
         margin-right: auto;
+        width: 360px;
+        height: 250px;
+    }
+    .image img {
         width: 360px;
         height: 250px;
     }
@@ -1451,7 +1784,7 @@
     }
     /* teknik permesinan */
     .text-kompetensi {
-        margin-top: 150px;
+        margin-top: 160px;
     }
     .text-kompetensi h1 {
         text-align: center;
@@ -1485,12 +1818,12 @@
     .image-permesinan {
         margin-top: 20px;
         margin-bottom: 20px;
-    }
-    .image-teknik-permesinan {
-        display: block;
-        width: 470px;
         margin-left: auto;
         margin-right: auto;
+    }
+    .image-teknik-permesinan img {
+        width: 250px;
+        height: 170px;
     }
     .galeria-kompetensi-kategori {
         text-align: center;
@@ -1510,27 +1843,35 @@
         margin-left: auto;
         margin-right: auto;
     }
+    .img-teknik-permesinan img {
+        width: 360px;
+        height: 250px;
+    }
     .bg-komptensi-materi {
         position: relative;
-        top: 0px;
+        top: 15px;
         left: 0px;
         margin: auto;
         width: 90%;
-        height: 90%;
+        height: 95%;
     }
     .content-materi {
         text-align: center;
         margin-left: auto;
         margin-right: auto;
-        margin-top: -30px;
     }
     .content-materi iframe {
         width: 450px;
-        height: 300px;
+        height: 290px;
     }
     .shared {
-        margin-left: -135px;
-        width: 40px;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+    .shared img {
+        width: 60px;
     }
     /* end teknik permesinan */
 }
@@ -1580,17 +1921,21 @@
         left: 80px;
         bottom: 70px;
     }
+    .galeria-kompetisi {
+        margin-top: -40px;
+        margin-bottom: -30px;
+    }
     .galeria-kompetisi h1 {
-        font-size: 45px;
+        font-size: 40px;
     }
     .galeria-kompetisi p {
-        font-size: 15px;
-        width: 475px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
+        font-size: 16px;
     }
     .image {
+        width: 230px;
+        height: 160px;
+    }
+    .image img {
         width: 230px;
         height: 160px;
     }
@@ -1607,16 +1952,20 @@
     }
     /* teknik permesinan */
     .text-kompetensi {
-        margin-top: 150px;
+        margin-top: 160px;
     }
     .text-kompetensi h1 {
+        margin-left: auto;
+        margin-right: auto;
         text-align: center;
+        width: 670px;
     }
     .text-kompetensi p {
         text-align: center;
         display: block;
         margin-left: auto;
         margin-right: auto;
+        width: 670px;
     }
     .logo-kemdikbud-kompetensi {
         margin-top: 50px;
@@ -1635,10 +1984,12 @@
     .image-permesinan {
         margin-top: 20px;
         margin-bottom: 20px;
-    }
-    .image-teknik-permesinan {
         margin-left: auto;
         margin-right: auto;
+    }
+    .image-teknik-permesinan img {
+        width: 310px;
+        height: 180px;
     }
     .galeria-kompetensi-kategori {
         text-align: center;
@@ -1653,10 +2004,12 @@
         margin-top: -20px;
     }
     .img-teknik-permesinan {
-        width: 230px;
-        height: 160px;
         margin-left: auto;
         margin-right: auto;
+    }
+    .img-teknik-permesinan img {
+        width: 230px;
+        height: 160px;
     }
     .img-teknik-permesinan p {
         font-size: 14px;
@@ -1666,9 +2019,10 @@
     }
     .bg-komptensi-materi {
         position: relative;
-        top: 0px;
+        top: 15px;
         left: 0px;
-        margin: auto;
+        margin-left: auto;
+        margin-right: auto;
         width: 95%;
         height: 95%;
     }
@@ -1679,14 +2033,86 @@
         margin-top: -30px;
     }
     .content-materi iframe {
+        width: 540px;
+        height: 340px;
+    }
+    .shared {
+        margin-top: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+    .shared img {
+        width: 60px;
+    }
+    /* end teknik permesinan */
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .text-galeria {
+        margin-left: 40px;
+    }
+    .img-galeria {
+        margin-top: -50px;
+    }
+    .img-galeria img {
+        width: 320px;
+        height: 320px;
+    }
+    .search-box {
+        width: 500px;
+    }
+    .search-input {
+        left: 25px;
+        width: 430px;
+    }
+    .logo-kemdikbud-galeria {
+        margin-left: 40px;
+        margin-top: 50px;
+    }
+    .logo-bmti-galeria {
+        margin-top: 50px;
+    }
+    .image {
+        position: relative;
+        width: 100%;
+        height: 247px;
+    }
+    .image img {
+        width: 296px;
+        height: 247px;
+    }
+    /* teknik permesinan */
+    .text-kompetensi {
+        margin-left: 40px;
+    }
+    .image-permesinan {
+        margin-left: 50px;
+        margin-top: 20px;
+    }
+    .logo-kemdikbud-kompetensi {
+        margin-left: 40px;
+        margin-top: 50px;
+    }
+    .logo-bmti-kompetensi {
+        margin-top: 50px;
+    }
+    .galeria-kompetensi-kategori {
+        font-size: 12px;
+    }
+    /* materi */
+    .bg-komptensi-materi {
+        margin-top: 25px;
+    }
+    .content-materi iframe {
         width: 590px;
         height: 370px;
     }
     .shared {
-        margin-left: -180px;
-        width: 55px;
+        margin-top: 30px;
+        margin-left: 150px;
     }
-    /* end teknik permesinan */
+    /* end materi */
 }
 
 
@@ -1754,16 +2180,12 @@
     .btn-pel {
         width: 250px;
     }
-    .contact {
-        left: 70%;
-        top: 72%;
-    }
     .card-margin {
         margin-bottom: -70px;
     }
     /* model-3d */
     .text-tpgm {
-        margin-top: 150px;
+        margin-top: 160px;
         text-align: center;
         width: 350px;
         margin-left: auto;
@@ -1773,64 +2195,49 @@
         margin-left: 30px;
     }
     .account {
-        right: 0;
-        left: 10px;
+        margin-top: 5px;
+        right: 0px;
+        left: 5px;
     }
     .img-rating {
-        margin-left: 70px;
+        margin-left: 100px;
     }
     .rating {
-        right: 0;
+        right: 0px;
+    }
+    .image-tpgm {
+        text-align: center;
     }
     .image-tpgm img {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
         width: 340px;
         height: 280px;
     }
     .line-left {
         left: 0;
-        margin-top: 70px;
+        margin-top: 90px;
         margin-left: 30px;
     }
     .course {
         left: 15px;
         width: 300px;
     }
-    .course a {
-        left: 220px;
-    }
-    .course label {
-        top: 54px;
-        left: 190px;
-    }
-    .contact-model-3d {
-        left: 70%;
-        top: 75%;
-    }
     .shared-3d {
         display: none;
     }
     .content {
-        margin-top: -30px;
+        margin-top: -60px;
     }
-    .content h2 {
-        margin-bottom: 50px;
-        text-align: center;
-    }
-    .content a {
-        margin-top: 52px;
-        left: calc(80% - 10px);
-    }
-    .content p {
-        width: 320px;
-        font-size: 15px;
+    .icon-mandiri {
+        position: relative;
+        bottom: 70px;
     }
     .bg-box {
         width: 380px;
         margin-left: auto;
         margin-right: auto;
+    }
+    .bg-box a {
+        left: 0;
     }
     .bg-box span {
         font-size: 15px;
@@ -1919,8 +2326,17 @@
         bottom: 70px;
         text-align: center;
     }
+    .title-mandiri {
+        margin-top: -50px;
+        margin-bottom: 10px;
+    }
+    .title-mandiri h1 {
+        font-size: 35px;
+    }
+    .title-mandiri p {
+        font-size: 14px;
+    }
     .card-pel {
-        top: -40px;
         display: block;
         margin-left: auto;
         margin-right: auto;
@@ -1933,37 +2349,36 @@
     .card-margin {
         margin-top: 50px;
     }
-    .contact {
-        left: 75%;
-        top: 78%;
-    }
     /* model-3d */
     .text-tpgm {
-        margin-top: 150px;
+        margin-top: 160px;
         text-align: center;
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: 20px;
     }
     .img-account {
-        margin-left: 30px;
+        margin-left: 35px;
     }
     .account {
-        right: 0;
-        left: 10px;
+        right: 0px;
+        left: 5px;
     }
     .img-rating {
-        margin-left: 70px;
+        margin-left: 120px;
     }
     .rating {
-        right: 0;
+        right: 0px;
     }
     .image-tpgm {
-        width: 340px;
-        height: 300px;
-        margin-left: auto;
-        margin-right: auto;
+        text-align: center;
+    }
+    .image-tpgm img {
+        width: 420px;
+        height: 320px;
     }
     .line-left {
+        margin-top: 90px;
         left: 0;
         margin-left: 35px;
     }
@@ -1971,26 +2386,16 @@
         left: 15px;
         width: 380px;
     }
-    .course a {
-        left: 300px;
-    }
-    .course label {
-        top: 54px;
-        left: 265px;
-    }
-    .contact-model-3d {
-        left: 75%;
-        top: 82%;
+    .icon-mandiri {
+        position: relative;
+        bottom: 60px;
+        margin-left: -7px;
     }
     .shared-3d {
         display: none;
     }
-    .content h2 {
-        text-align: center;
-    }
-    .content a {
-        margin-top: 23px;
-        left: calc(79% - 10px);
+    .content {
+        margin-top: -60px;
     }
     .content p {
         width: 320px;
@@ -2001,42 +2406,11 @@
         margin-left: auto;
         margin-right: auto;
     }
+    .bg-box a {
+        left: 0;
+    }
     .bg-box span {
         font-size: 15px;
-    }
-    .content label {
-        margin-top: 20px;
-        left: calc(72.5% - 10px);
-    }
-    .collapse-1 a {
-        margin-top: -40px;
-    }
-    .collapse-2 a {
-        margin-top: -40px;
-    }
-    .collapse-3 a {
-        margin-top: -40px;
-    }
-    .collapse-4 a {
-        margin-top: -40px;
-    }
-    .collapse-5 a {
-        margin-top: -40px;
-    }
-    .collapse-1 label {
-        margin-top: -42px;
-    }
-    .collapse-2 label {
-        margin-top: -42px;
-    }
-    .collapse-3 label {
-        margin-top: -42px;
-    }
-    .collapse-4 label {
-        margin-top: -42px;
-    }
-    .collapse-5 label {
-        margin-top: -42px;
     }
     .img-rating-2 {
         text-align: center;
@@ -2045,10 +2419,12 @@
     }
     .rating-2 {
         right: 0px;
-        top: -10px;
+        top: -5px;
         text-align: center;
     }
     .shared-3d-2 {
+        margin-top: 10px;
+        margin-bottom: 20px;
         display: block;
         margin-left: auto;
         margin-right: auto;
@@ -2088,8 +2464,17 @@
         bottom: 70px;
         text-align: center;
     }
+    .title-mandiri {
+        margin-top: -50px;
+        margin-bottom: 10px;
+    }
+    .title-mandiri h1 {
+        font-size: 35px;
+    }
+    .title-mandiri p {
+        font-size: 14px;
+    }
     .card-pel {
-        top: -40px;
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 30px;
@@ -2097,38 +2482,39 @@
     .card-margin {
         margin-top: 50px;
     }
-    .contact {
-        left: 80%;
-        top: 80%;
-    }
     /* model-3d */
     .text-tpgm {
-        margin-top: 150px;
+        margin-top: 160px;
         text-align: center;
         margin-left: auto;
         margin-right: auto;
     }
     .img-account {
-        margin-left: 30px;
+        margin-top: 10px;
+        margin-left: 35px;
     }
     .account {
-        right: 0;
-        left: 10px;
+        margin-top: 10px;
+        right: 0px;
+        left: 5px;
     }
     .img-rating {
-        margin-left: 70px;
+        margin-top: 10px;
+        margin-left: 150px;
     }
     .rating {
-        right: 0;
+        margin-top: 10px;
+        right: 0px;
     }
     .image-tpgm {
-        width: 440px;
+        text-align: center;
+    }
+    .image-tpgm img {
+        width: 500px;
         height: 300px;
-        margin-left: auto;
-        margin-right: auto;
     }
     .line-left {
-        margin-top: 100px;
+        margin-top: 90px;
         left: 0;
         margin-left: 35px;
     }
@@ -2136,72 +2522,27 @@
         left: 15px;
         width: 430px;
     }
-    .course a {
-        left: 350px;
-    }
-    .course label {
-        top: 54px;
-        left: 315px;
-    }
-    .contact-model-3d {
-        left: 80%;
-        top: 84%;
+    .icon-mandiri {
+        position: relative;
+        bottom: 60px;
+        margin-left: -3px;
     }
     .shared-3d {
         display: none;
     }
-    .content h2 {
-        text-align: center;
-    }
-    .content a {
-        margin-top: 23px;
-        left: calc(77% - 10px);
-    }
-    .content p {
-        width: 320px;
-        font-size: 15px;
+    .content {
+        margin-top: -50px;
     }
     .bg-box {
         width: 500px;
         margin-left: auto;
         margin-right: auto;
     }
+    .bg-box a {
+        left: 0;
+    }
     .bg-box span {
         font-size: 15px;
-    }
-    .content label {
-        margin-top: 20px;
-        left: calc(71.5% - 10px);
-    }
-    .collapse-1 a {
-        margin-top: -41px;
-    }
-    .collapse-2 a {
-        margin-top: -41px;
-    }
-    .collapse-3 a {
-        margin-top: -41px;
-    }
-    .collapse-4 a {
-        margin-top: -41px;
-    }
-    .collapse-5 a {
-        margin-top: -41px;
-    }
-    .collapse-1 label {
-        margin-top: -44px;
-    }
-    .collapse-2 label {
-        margin-top: -44px;
-    }
-    .collapse-3 label {
-        margin-top: -44px;
-    }
-    .collapse-4 label {
-        margin-top: -44px;
-    }
-    .collapse-5 label {
-        margin-top: -44px;
     }
     .img-rating-2 {
         position: relative;
@@ -2215,11 +2556,208 @@
         right: 15px;
     }
     .shared-3d-2 {
+        margin-top: 20px;
         display: block;
         margin-left: auto;
         margin-right: auto;
     }
     /* end modal-3d */
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .text-mandiri {
+        text-align: center;
+        margin-top: 160px;
+    }
+    .text-mandiri p {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .text-mandiri span {
+        margin-right: 80px;
+    }
+    .text-mandiri h1 {
+        font-size: 45px;
+    }
+    .logo-kemdikbud-mandiri {
+        margin-left: 55px;
+    }
+    .logo-kemdikbud-mandiri p {
+        left: 80px;
+        bottom: 75px;
+        text-align: center;
+    }
+    .logo-bmti-mandiri {
+        margin-left: 60px;
+    }
+    .logo-bmti-mandiri p {
+        left: 80px;
+        bottom: 70px;
+        text-align: center;
+    }
+    .title-mandiri {
+        margin-top: -50px;
+        margin-bottom: 10px;
+    }
+    .title-mandiri h1 {
+        font-size: 40px;
+    }
+    .title-mandiri p {
+        font-size: 16px;
+    }
+    .card-pel {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 30px;
+        width: 220px;
+        height: auto;
+    }
+    .btn-pel {
+        width: 180px;
+    }
+    .card-margin {
+        margin-top: 50px;
+    }
+    /* model-3d */
+    .text-tpgm {
+        margin-top: 160px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .img-account {
+        margin-top: 20px;
+        margin-left: 70px;
+    }
+    .account {
+        margin-top: 20px;
+        right: 10px;
+    }
+    .img-rating {
+        margin-top: 20px;
+        margin-left: 125px;
+    }
+    .rating {
+        margin-top: 20px;
+        right: 15px;
+    }
+    .image-tpgm {
+        text-align: center;
+    }
+    .image-tpgm img {
+        width: 600px;
+        height: 350px;
+    }
+    .line-left {
+        margin-top: 60px;
+        left: 0;
+        margin-left: 55px;
+    }
+    .course {
+        left: 15px;
+        width: 550px;
+    }
+    .icon-mandiri {
+        position: relative;
+        bottom: 50px;
+        margin-left: -16px;
+    }
+    .shared-3d {
+        display: none;
+    }
+    .content {
+        margin-top: -40px;
+    }
+    .content h2 {
+        margin-left: 50px;
+    }
+    .bg-box {
+        width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .bg-box a {
+        left: 0;
+    }
+    .bg-box span {
+        font-size: 15px;
+    }
+    .img-rating-2 {
+        position: relative;
+        left: 10px;
+        text-align: end;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .rating-2 {
+        text-align: start;
+        right: 15px;
+    }
+    .shared-3d-2 {
+        margin-top: 20px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /* end modal-3d */
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .text-mandiri {
+        margin-left: 40px;
+    }
+    .logo-kemdikbud-mandiri {
+        margin-left: 40px;
+    }
+    .card-pel {
+        width: 300px;
+    }
+    .btn-pel {
+        width: 260px;
+    }
+    /* model-3d */
+    .text-tpgm p {
+        margin-left: 40px;
+    }
+    .img-account {
+        margin-left: 40px;
+    }
+    .account {
+        right: 35px;
+    }
+    .img-rating {
+        margin-left: 40px;
+    }
+    .rating {
+        right: 40px;
+    }
+    .image-tpgm {
+        margin-left: 40px;
+    }
+    .image-tpgm img {
+        width: 430px;
+        height: 300px;
+    }
+    .line-left {
+        left: 100px;
+    }
+    .course {
+        width: 360px;
+    }
+    .shared-3d {
+        margin-left: 40px;
+    }
+    .bg-box {
+        width: 95%;
+    }
+    .content {
+        margin-left: 40px;
+    }
+    .img-rating-2 {
+        margin-left: 5px;
+    }
+    /* end model-3d */
 }
 
 
@@ -2249,16 +2787,15 @@
         margin-left: auto;
         margin-right: auto;
     }
-    .alur-pembelajaran-img-popup .close {
-        top: 300px;
-        left: 15px;
-    }
     .img-alur {
         top: 220px;
     }
     .img-alur img {
-        width: 360px;
-        height: 300px;
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 370px;
+        height: 330px;
     }
     .myButton1 {
         margin-left: 0px;
@@ -2280,17 +2817,27 @@
         margin-left: auto;
         margin-right: auto;
     }
-    .alur-pembelajaran-img-popup .close {
-        top: 200px;
-        left: 15px;
+    .alur-img {
+        width: 420px;
+        height: 320px;
     }
-    .image-alur {
-        top: 200px;
+    .sertifikat-img {
+        width: 420px;
+        height: 520px;
     }
-    .myButton {
-        margin-top: 50px;
-        height: 80px;
-        width: 300px;
+    .img-alur {
+        top: 170px;
+    }
+    .img-alur img {
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 440px;
+        height: 330px;
+    }
+    .btn-closeAlur {
+        top: 160px;
+        left: 430px;
     }
 }
 
@@ -2298,12 +2845,87 @@
     .road-map {
         margin-top: 200px;
     }
-    .alur-pembelajaran-img-popup .close {
-        top: 200px;
-        left: 15px;
+    .text1 {
+        font-size: 53px;
+        width: 380px;
+        margin-left: auto;
+        margin-right: auto;
     }
-    .image-alur {
-        top: 200px;
+    .alur-img {
+        width: 470px;
+        height: 320px;
+    }
+    .sertifikat-img {
+        width: 420px;
+        height: 520px;
+    }
+    .img-alur {
+        top: 170px;
+    }
+    .img-alur img {
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 520px;
+        height: 330px;
+    }
+    .btn-closeAlur {
+        top: 160px;
+        left: 510px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .road-map {
+        margin-top: 200px;
+    }
+    .text1 {
+        font-size: 67px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .alur-img {
+        width: 600px;
+        height: 350px;
+    }
+    .sertifikat-img {
+        width: 450px;
+        height: 550px;
+    }
+    .img-alur {
+        top: 80px;
+    }
+    .img-alur img {
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 700px;
+        height: 500px;
+    }
+    .btn-closeAlur {
+        top: 70px;
+        left: 690px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .img-alur {
+        top: 20px;
+    }
+    .alur-img {
+        width: 450px;
+        height: 300px;
+    }
+    .img-alur img {
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 930px;
+        height: 600px;
+    }
+    .btn-closeAlur {
+        top: 10px;
+        left: 920px;
     }
 }
 
@@ -2383,17 +3005,25 @@
     .logo-footer {
         top: 0;
         right: 0;
-        width: 110px;
+        margin-left: 10px;
+    }
+    .logo-footer img {
+        width: 90px;
+        height: 80px;
     }
     .logo-footer h1 {
         position: relative;
+        top: -10px;
         left: 25px;
         font-size: 10px;
     }
     .share {
         margin-top: 8px;
         right: 0;
+    }
+    .share img {
         width: 20px;
+        height: 20px;
     }
     .text-1 span {
         font-size: 10px;
@@ -2402,7 +3032,7 @@
         font-size: 8px;
     }
     .text-2 {
-        margin-left: -5px;
+        margin-left: -15px;
     }
     .text-2 span {
         font-size: 10px;
@@ -2418,14 +3048,14 @@
     .address span {
         font-size: 10px;
     }
-    .copyright {
-        padding-top: 0px;
-    }
     .address p {
         position: relative;
-        width: 170px;
+        width: 140px;
         top: 10px;
         font-size: 8px;
+    }
+    .copyright {
+        padding-top: 0px;
     }
     .copyright span {
         font-size: 8px;
@@ -2439,52 +3069,60 @@
     .logo-footer {
         top: 0;
         right: 0;
-        width: 120px;
+        margin-left: 10px;
+    }
+    .logo-footer img {
+        width: 100px;
+        height: 80px;
     }
     .logo-footer h1 {
         position: relative;
+        top: -10px;
         left: 25px;
         font-size: 10px;
     }
     .share {
-        margin-top: 5px;
+        margin-top: 8px;
         right: 0;
+    }
+    .share img {
         width: 20px;
+        height: 20px;
     }
     .text-1 span {
-        font-size: 12px;
-    }
-    .text-1 p {
         font-size: 10px;
     }
+    .text-1 p {
+        font-size: 8px;
+    }
     .text-2 {
-        margin-left: -5px;
+        margin-left: -10px;
     }
     .text-2 span {
-        font-size: 12px;
+        font-size: 10px;
     }
     .text-2 p {
         position: relative;
         top: 10px;
-        font-size: 10px;
+        font-size: 8px;
     }
     .address {
         margin-left: -10px;
     }
     .address span {
-        font-size: 12px;
+        font-size: 10px;
+    }
+    .address p {
+        position: relative;
+        width: 140px;
+        top: 10px;
+        font-size: 8px;
     }
     .copyright {
         padding-top: 0px;
     }
-    .address p {
-        position: relative;
-        width: 180px;
-        top: 10px;
-        font-size: 10px;
-    }
     .copyright span {
-        font-size: 10px;
+        font-size: 8px;
     }
 }
 
@@ -2495,7 +3133,10 @@
     .logo-footer {
         top: 0;
         right: 0;
+    }
+    .logo-footer img {
         width: 150px;
+        height: 100px;
     }
     .logo-footer h1 {
         position: relative;
@@ -2505,6 +3146,10 @@
     .share {
         margin-top: 5px;
         right: 0;
+    }
+    .share img {
+        width: 30px;
+        height: 30px;
     }
     .text-1 span {
         font-size: 14px;
@@ -2525,6 +3170,69 @@
     }
     .address {
         margin-left: -10px;
+    }
+    .address span {
+        font-size: 14px;
+    }
+    .copyright {
+        padding-top: 0px;
+    }
+    .address p {
+        position: relative;
+        width: 250px;
+        top: 10px;
+        font-size: 12px;
+    }
+    .copyright span {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    footer {
+        padding-top: 20px;
+    }
+    .logo-footer {
+        top: 0;
+        right: 0;
+        left: 35px;
+    }
+    .logo-footer img {
+        width: 150px;
+        height: 100px;
+    }
+    .logo-footer h1 {
+        position: relative;
+        left: 40px;
+        font-size: 12px;
+    }
+    .share {
+        margin-top: 5px;
+        right: 0;
+    }
+    .share img {
+        width: 30px;
+        height: 30px;
+    }
+    .text-1 span {
+        font-size: 14px;
+    }
+    .text-1 p {
+        font-size: 12px;
+    }
+    .text-2 {
+        margin-left: -5px;
+    }
+    .text-2 span {
+        font-size: 14px;
+    }
+    .text-2 p {
+        position: relative;
+        top: 10px;
+        font-size: 12px;
+    }
+    .address {
+        margin-left: -3px;
     }
     .address span {
         font-size: 14px;
@@ -2596,6 +3304,49 @@
     .img-share-4:hover {
         width: 30px;
         height: 30px;
+    }
+}
+
+@media only screen and (min-width: 991px) and (max-width: 1199px) {
+    .float-button-wrapper {
+        width: 45px;
+        height: 170px;
+    }
+    .img-share-1 {
+        width: 30px;
+        height: 30px;
+        margin-left: 5px;
+    }
+    .img-share-1:hover {
+        width: 35px;
+        height: 35px;
+    }
+    .img-share-2 {
+        width: 30px;
+        height: 30px;
+        margin-left: 5px;
+    }
+    .img-share-2:hover {
+        width: 35px;
+        height: 35px;
+    }
+    .img-share-3 {
+        width: 30px;
+        height: 30px;
+        margin-left: 5px;
+    }
+    .img-share-3:hover {
+        width: 35px;
+        height: 35px;
+    }
+    .img-share-4 {
+        width: 30px;
+        height: 30px;
+        margin-left: 5px;
+    }
+    .img-share-4:hover {
+        width: 35px;
+        height: 35px;
     }
 }
 

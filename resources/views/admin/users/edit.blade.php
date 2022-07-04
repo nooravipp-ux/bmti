@@ -8,11 +8,19 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">{{ __('Data User') }}</h4>
-                    <!-- <p class="card-description">
-                    </p> -->
-                    <form action="{{route('user.update', ['id'=>$user->id])}}" method="POST" enctype="multipart/form-data">
-                    @method('put')    
-                    @csrf
+                    @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
+                    <form action="{{route('user.update', ['id'=>$user->id])}}" method="POST"
+                        enctype="multipart/form-data">
+                        @method('put')
+                        @csrf
                         <div class="mb-3">
                             <label for="inputname" class="form-label">Name</label>
                             <input type="text" name="name" class="form-control" id="inputname"

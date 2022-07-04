@@ -55,20 +55,20 @@
 <div class="beranda">
     <div class="container">
         <div class="row justify-content-between">
-            <div class="col-12 text-welcome order-1">
+            <div class="col-12 col-lg-11 col-xl-12 text-welcome order-1">
                 <h6>BBPPMPV BIDANG MESIN DAN TEKNIK INDUSTRI</h6>
                 <h1>Selamat Datang</h1>
                 <h2>Sahabat Cerdas BMTI</h2>
             </div>
         </div>
         <div class="row justify-content-between">
-            <div class="col-12 col-xl-7 text-welcome mt-0 order-3 order-xl-2">
+            <div class="col-12 col-lg-6 col-xl-7 text-welcome mt-0 order-3 order-lg-2 order-xl-2">
                 <p>Pelatihan Mandiri adalah fasilitas bagi guru kejuruan agar dapat mengikuti pelatihan secara mandiri sesuai kompetensinya atau sesuai peminatannya.</p>
                 <p>Galeri Kejuruan adalah “Perwujudan Gagasan lewat Materi Kejuruan”, merupakan pusat atau sumber belajar yang bermuara pada wahana peningkatan kompetensi guru kejuruan di berbagai Kompetensi Keahlian.</p>
                 <p>Galeri Kejuruan diinisiasi oleh BBPPMPV BMTI untuk memerdekakan Guru dan Siswa dalam Pembelajaran berbasis Kompetensi yang dapat diakses secara virtual, kapan dan dimana saja.</p>
             </div>
 
-            <div class="col-12 col-xl-5 order-2">
+            <div class="col-12 col-lg-5 col-xl-5 order-2">
                 <div class="img-welcome text-center">
                     <img src="{{asset('guest/assets/images/salam.png')}}" height="420px" width="380px" />
                 </div>
@@ -77,11 +77,11 @@
 
         <div class="row">
             <div class="col-12">
-                <div class="col-5 col-xl-3 logo-kemdikbud-beranda float-start mt-3">
+                <div class="col-5 col-lg-3 col-xl-3 logo-kemdikbud-beranda float-start mt-3">
                     <img src="{{asset('guest/assets/images/logo-kemdikbud.png')}}" width="70px" height="70px" />
                     <p class="col-6">Kementerian Pendidikan, Kebudayaan, Riset dan Teknologi</p>
                 </div>
-                <div class="col-5 col-xl-9 logo-bmti-beranda float-end mt-3">
+                <div class="col-5 col-lg-8 col-xl-9 logo-bmti-beranda float-end mt-3">
                     <img src="{{asset('guest/assets/images/logo-bmti.png')}}" width="70px" height="70px" />
                     <p class="col-6">BBPPMPV <br /> Bidang Mesin dan Teknik Industri</p>
                 </div>
@@ -92,18 +92,18 @@
 
 <div class="container">
     <div class="row float-end">
-        <div class="col-12 col-xl-6 mt-0 order-1 order-sm-2 mt-5">
+        <div class="col-12 col-lg-6 col-xl-6 mt-0 order-1 order-sm-2 mt-5">
             <div class="pel-mandiri">
                 <h1>Pelatihan Mandiri</h1>
             </div>
         </div>
-        <div class="col-12 col-xl-6 order-3 margin-pel-mandiri">
+        <div class="col-12 col-lg-6 col-xl-6 order-3 margin-pel-mandiri">
             <div class="pel-mandiri">
                 <p>Pada Portal Pelatihan Mandiri – Pelatihan Mandiri adalah fasilitas yang diberikan kepada guru untuk melakukan latihan kompetensi keahlian sesuai pilihannya, yang dilaksanakan secara mandiri. Pelatihan mandiri merupakan bagian dari galeri kejuruan.</p>
                 <p>Galeri Kejuruan adalah perwujudan dari Gagasan Lewat Materi Kejuruan, merupakan pusat atau sumber belajar dan wahana peningkatan kompetensi untuk berbagai Kompetensi Keahlian.</p>
             </div>
         </div>
-        <div class="col-12 col-xl-6 order-2">
+        <div class="col-12 col-lg-6 col-xl-6 order-2">
             <div class="img-mandiri text-center">
                 <img src="{{asset('guest/assets/images/pel-mandiri.png')}}" height="400px" width="400px" />
             </div>
@@ -111,12 +111,12 @@
     </div>
 
     <div class="row">
-        <div class="col-12 col-xl-6 mt-0 order-1 order-md-2 order-xl-2">
+        <div class="col-12 col-lg-6 col-xl-6 mt-0 order-1 order-md-2 order-lg-2 order-xl-2">
             <div class="pel-terbimbing mt-5">
                 <h1>Pelatihan Terbimbing</h1>
             </div>
         </div>
-        <div class="col-12 col-xl-6 order-3 margin-pel-terbimbing">
+        <div class="col-12 col-lg-6 col-xl-6 order-3 margin-pel-terbimbing">
             <div class="pel-terbimbing mt-5">
                 <p>1. Pengembangan Keprofesian Berkelanjutan</p>
                 <p>Pengembangan Keprofesian Berkelanjutan (PKB) merupakan program pemberdayaan komunitas Guru dan Tenaga Kependidikan melalui Ditjen GTK yang dilaksanakan oleh BB/BPPMPV sebagai Unit Pelaksana Teknis (UPT) serta Dinas Pendidikan atau instansi lainnya.</p>
@@ -131,7 +131,7 @@
                 </p>
             </div>
         </div>
-        <div class="col-12 col-xl-6 order-2 order-xl-1">
+        <div class="col-12 col-lg-6 col-xl-6 order-2 order-lg-1 order-xl-1">
             <div class="img-terbimbing text-center">
                 <img src="{{asset('guest/assets/images/pel-terbimbing.png')}}" height="500px" width="500px" />
             </div>

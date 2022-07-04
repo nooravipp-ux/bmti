@@ -134,7 +134,7 @@
 
 .cardAktifitas span {
     font-weight: 600;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .cardAktifitas h5 {
@@ -143,8 +143,19 @@
 }
 
 .cardAktifitas i {
-    color: #8F8F8F;
     padding: 4px;
+}
+
+.cardAktifitas .in {
+    color: #06FF00;
+}
+
+.cardAktifitas i {
+    padding: 4px;
+}
+
+.cardAktifitas .out {
+    color: #FF0000;
 }
 
 .scrollCardAktifitas {
@@ -415,51 +426,51 @@
                         <div class="scrollCardAktifitas">
                             <div class="d-flex flex-column">
                                 <div class="list-content mt-2 bg-white rounded">
-                                    <div class="d-flex justify-content-between p-2">
-                                        <span>Waktu Masuk</span>
-                                        <span><i class="fa-solid fa-clock"></i>&nbsp;</span>
+                                    <div class="d-flex p-2">
+                                        <span class="in"><i class="fa-solid fa-circle-arrow-right"></i>&nbsp;</span>
+                                        <span>Sabtu, 03 Juli 2022</span>
                                     </div>
                                 </div>
                                 <div class="list-content mt-2 bg-white rounded">
-                                    <div class="d-flex justify-content-between p-2">
-                                        <span>Waktu Keluar</span>
-                                        <span><i class="fa-solid fa-clock"></i>&nbsp;</span>
+                                    <div class="d-flex p-2">
+                                        <span class="out"><i class="fa-solid fa-clock"></i>&nbsp;</span>
+                                        <span>Sabtu, 03 Juli 2022</span>
                                     </div>
                                 </div>
                                 <div class="list-content mt-2 bg-white rounded">
-                                    <div class="d-flex justify-content-between p-2">
-                                        <span>Waktu Masuk</span>
-                                        <span><i class="fa-solid fa-clock"></i>&nbsp;</span>
+                                    <div class="d-flex p-2">
+                                        <span class="in"><i class="fa-solid fa-circle-arrow-right"></i>&nbsp;</span>
+                                        <span>Sabtu, 03 Juli 2022</span>
                                     </div>
                                 </div>
                                 <div class="list-content mt-2 bg-white rounded">
-                                    <div class="d-flex justify-content-between p-2">
-                                        <span>Waktu Keluar</span>
-                                        <span><i class="fa-solid fa-clock"></i>&nbsp;</span>
+                                    <div class="d-flex p-2">
+                                        <span class="out"><i class="fa-solid fa-circle-arrow-right"></i>&nbsp;</span>
+                                        <span>Sabtu, 03 Juli 2022</span>
                                     </div>
                                 </div>
                                 <div class="list-content mt-2 bg-white rounded">
-                                    <div class="d-flex justify-content-between p-2">
-                                        <span>Waktu Masuk</span>
-                                        <span><i class="fa-solid fa-clock"></i>&nbsp;</span>
+                                    <div class="d-flex p-2">
+                                        <span class="in"><i class="fa-solid fa-circle-arrow-right"></i>&nbsp;</span>
+                                        <span>Sabtu, 03 Juli 2022</span>
                                     </div>
                                 </div>
                                 <div class="list-content mt-2 bg-white rounded">
-                                    <div class="d-flex justify-content-between p-2">
-                                        <span>Waktu Keluar</span>
-                                        <span><i class="fa-solid fa-clock"></i>&nbsp;</span>
+                                    <div class="d-flex p-2">
+                                        <span class="out"><i class="fa-solid fa-circle-arrow-right"></i>&nbsp;</span>
+                                        <span>Sabtu, 03 Juli 2022</span>
                                     </div>
                                 </div>
                                 <div class="list-content mt-2 bg-white rounded">
-                                    <div class="d-flex justify-content-between p-2">
-                                        <span>Waktu Masuk</span>
-                                        <span><i class="fa-solid fa-clock"></i>&nbsp;</span>
+                                    <div class="d-flex p-2">
+                                        <span class="in"><i class="fa-solid fa-circle-arrow-right"></i>&nbsp;</span>
+                                        <span>Sabtu, 03 Juli 2022</span>
                                     </div>
                                 </div>
                                 <div class="list-content mt-2 bg-white rounded">
-                                    <div class="d-flex justify-content-between p-2">
-                                        <span>Waktu Masuk</span>
-                                        <span><i class="fa-solid fa-clock"></i>&nbsp;</span>
+                                    <div class="d-flex p-2">
+                                        <span class="out"><i class="fa-solid fa-circle-arrow-right"></i>&nbsp;</span>
+                                        <span>Sabtu, 03 Juli 2022</span>
                                     </div>
                                 </div>
                             </div>

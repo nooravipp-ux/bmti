@@ -99,16 +99,17 @@ header {
 /* pembelajaran */
 
 .button-hidden {
-    position: absolute;
-    left: 96%;
-    margin-top: -25px;
+    position: relative;
+    right: 22px;
+    bottom: 25px;
     width: 20px;
     height: 20px;
+    z-index: 99;
 }
 
 .content-pembelajaran {
-    margin-top: -45px;
-    margin-left: 95px;
+    margin-top: -65px;
+    margin-left: 50px;
 }
 
 .text-pembelajaran {
@@ -123,10 +124,14 @@ header {
     font-weight: bold;
 }
 
-.text-pembelajaran h1 button {
+.text-pembelajaran h1 span {
+    position: relative;
+    bottom: 5px;
+    font-size: 16px;
     margin-left: 20px;
     background: #2289FF;
     font-weight: 600;
+    padding: 10px 20px 10px 20px;
     border: none;
 }
 

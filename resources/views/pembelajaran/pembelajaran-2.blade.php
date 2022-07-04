@@ -15,6 +15,7 @@
             </div>
         </div>
 
+<<<<<<< HEAD
         <div class="button-hidden">
             <img src="{{asset('guest/assets/images/collapse-right.png')}}" id="icon-pembelajaran"
                 style="width:20px; height:20px;" onclick="myFunction()" />
@@ -37,21 +38,227 @@
                     </div>
                     <div class="col-2">
                         <input type="checkbox" />
+=======
+        <div class="col-12 col-xl-2">
+            <div class="row justify-content-end">
+                <div class="col-7">
+                    <div class="button-hidden">
+                        <img src="{{asset('guest/assets/images/collapse-right.png')}}" id="icon-pembelajaran"
+                            style="widht=20px; height:20px;" onclick="myFunction()" />
+>>>>>>> 2a4ff4fe73c491da80b3dea62cfc72a732cb5ae6
                     </div>
                 </div>
             </div>
-            <div id="materi-1" class="d-none">
-                <div class="pembelajaran-3 bg-white">
-                    <div class="row justify-content-end">
-                        <div class="col-1">
-                            <input type="checkbox" />
+            <div class="row">
+                <div id="content-pembelajaran" class="col-12 content-pembelajaran">
+                    <div class="pembelajaran text-center bg-white">
+                        <span>Konten Pembelajaran</span>
+                    </div>
+                    <div class="pembelajaran-2 bg-white">
+                        <div class="row justify-content-center">
+                            <div class="col-1">
+                                <img src="{{asset('guest/assets/images/collapse-down.png')}}" id="icon-pembelajaran-1"
+                                    style="margin-left: -10px; margin-top: 13px; widht=20px; height:20px;"
+                                    onclick="myFunction1()" />
+                            </div>
+                            <div class="col-8">
+                                <span>Pengantar</span>
+                                <p>1/1 Topik</p>
+                            </div>
+                            <div class="col-2">
+                                <input type="checkbox" />
+                            </div>
                         </div>
-                        <div class="col-10">
-                            <span> 1. Pengantar</span>
+                    </div>
+                    <div id="materi-1" class="d-none">
+                        <div class="pembelajaran-3 bg-white">
+                            <div class="row justify-content-end">
+                                <div class="col-1">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-10">
+                                    <span> 1. Pengantar</span>
+                                </div>
+                            </div>
                         </div>
+                    </div>
+                    <div class="pembelajaran-2 bg-white">
+                        <div class="row justify-content-center">
+                            <div class="col-1">
+                                <img id="icon-pembelajaran-2" src="{{asset('guest/assets/images/collapse-down.png')}}"
+                                    style="margin-left: -10px; margin-top: 13px; widht=20px; height:20px;"
+                                    onclick="myFunction2()" />
+                            </div>
+                            <div class="col-8">
+                                <span>Tes Awal</span>
+                                <p>1/1 Topik</p>
+                            </div>
+                            <div class="col-2">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="materi-2" class="d-none">
+                        <div class="pembelajaran-3 bg-white">
+                            <div class="row justify-content-end">
+                                <div class="col-1">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-10">
+                                    <span> 1. Tes Awal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pembelajaran-2 bg-white">
+                        <div class="row justify-content-center">
+                            <div class="col-1">
+                                <img src="{{asset('guest/assets/images/collapse-down.png')}}" id="icon-pembelajaran-3"
+                                    style="margin-left: -10px; margin-top: 13px; widht=20px; height:20px;"
+                                    onclick="myFunction3()" />
+                            </div>
+                            <div class="col-8">
+                                <span>Pendahulu</span>
+                                <p>1/1 Topik</p>
+                            </div>
+                            <div class="col-2">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="materi-3" class="d-none">
+                        <div class="pembelajaran-3 bg-white">
+                            <div class="row justify-content-end">
+                                <div class="col-1">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-10">
+                                    <span> 1. Pendahuluan</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pembelajaran-2 bg-white">
+                        <div class="row justify-content-center">
+                            <div class="col-1">
+                                <img src="{{asset('guest/assets/images/collapse-down.png')}}" id="icon-pembelajaran-4"
+                                    style="margin-left: -10px; margin-top: 13px; widht=20px; height:20px;"
+                                    onclick="myFunction4()" />
+                            </div>
+                            <div class="col-8">
+                                <span>Kegiatan Pembelajaran 1</span>
+                                <p>1/1 Topik</p>
+                            </div>
+                            <div class="col-2">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="materi-4" class="d-none">
+                        <div class="pembelajaran-3 bg-white">
+                            <div class="row justify-content-end">
+                                <div class="col-1">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-10">
+                                    <span> 1. Kegiatan Pembelajaran 1</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pembelajaran-2 bg-white">
+                        <div class="row justify-content-center">
+                            <div class="col-1">
+                                <img src="{{asset('guest/assets/images/collapse-down.png')}}" id="icon-pembelajaran-5"
+                                    style="margin-left: -10px; margin-top: 13px; widht=20px; height:20px;"
+                                    onclick="myFunction5()" />
+                            </div>
+                            <div class="col-8">
+                                <span>Kegiatan Pembelajaran 2</span>
+                                <p>1/1 Topik</p>
+                            </div>
+                            <div class="col-2">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="materi-5" class="d-none">
+                        <div class="pembelajaran-3 bg-white">
+                            <div class="row justify-content-end">
+                                <div class="col-1">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-10">
+                                    <span> 1. Kegiatan Pembelajaran 2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pembelajaran-2 bg-white">
+                        <div class="row justify-content-center">
+                            <div class="col-1">
+                                <img src="{{asset('guest/assets/images/collapse-down.png')}}" id="icon-pembelajaran-6"
+                                    style="margin-left: -10px; margin-top: 13px; widht=20px; height:20px;"
+                                    onclick="myFunction6()" />
+                            </div>
+                            <div class="col-8">
+                                <span>Refleksi</span>
+                                <p>1/1 Topik</p>
+                            </div>
+                            <div class="col-2">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="materi-6" class="d-none">
+                        <div class="pembelajaran-3 bg-white">
+                            <div class="row justify-content-end">
+                                <div class="col-1">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-10">
+                                    <span> 1. Refleksi</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pembelajaran-2 bg-white">
+                        <div class="row justify-content-center">
+                            <div class="col-1">
+                                <img src="{{asset('guest/assets/images/collapse-down.png')}}" id="icon-pembelajaran-7"
+                                    style="margin-left: -10px; margin-top: 13px; widht=20px; height:20px;"
+                                    onclick="myFunction7()" />
+                            </div>
+                            <div class="col-8">
+                                <span>Tes Akhir dan Umpan Balik</span>
+                                <p>1/1 Topik</p>
+                            </div>
+                            <div class="col-2">
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="materi-7" class="d-none">
+                        <div class="pembelajaran-3 bg-white">
+                            <div class="row justify-content-end">
+                                <div class="col-1">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="col-10">
+                                    <span> 1. Tes Akhir dan Umpan Balik</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pembelajaran-bar text-center bg-white">
+                        <p class="mt-4">Proses Pembelajaran</p>
+                        <figure class="highcharts-figure">
+                            <div id="bar" style="height: 250px; margin:auto;"></div>
+                        </figure>
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
             <div class="pembelajaran-2 bg-white">
                 <div class="row justify-content-center">
                     <div class="col-1">
@@ -226,6 +433,8 @@
                     <div id="bar" style="height: 250px; margin:auto;"></div>
                 </figure>
             </div>
+=======
+>>>>>>> 2a4ff4fe73c491da80b3dea62cfc72a732cb5ae6
         </div>
     </div>
 

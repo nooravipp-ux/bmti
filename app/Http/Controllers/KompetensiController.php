@@ -21,26 +21,31 @@ class KompetensiController extends Controller
 
     public function store(Request $request)
     {
-        
         $file = $request->file('gambar_banner');
         $fileName = "";
 
-        if($file) {
+        $validatedData = $request->validate([
+            'nama_kompetensi' => 'required',
+            'deskripsi' => 'required',
+            'gambar_banner' => 'required|image'
+        ]);
+
+        if($file){
             $fileName = time()."_".$file->getClientOriginalName();
         }
-        
-        $data = Kompetensi::create([
+
+        Kompetensi::create([
             'nama_kompetensi' => $request->nama_kompetensi,
             'kode' => $request->kode,
             'deskripsi' => $request->deskripsi,
             'gambar_banner' => $fileName,
         ]);
 
-        if($file) {
+        if($file){
             $file->move(public_path('images/galeria/'), $fileName);
         }
-
-        return redirect('/admin/kompetensi');
+        return redirect('/admin/kompetensi')->with('message', 'Data Berhasil Disimpan');
+       
     }
 
     public function edit($id){
@@ -52,6 +57,12 @@ class KompetensiController extends Controller
 
         $file = $request->file('gambar_banner_new');
         $fileName = $request->gambar_banner_old;
+
+        $validatedData = $request->validate([
+            'nama_kompetensi' => 'required',
+            'deskripsi' => 'required',
+            'gambar_banner_new' => 'required|image'
+        ]);
 
         if($file){
             $fileName = time()."_".$file->getClientOriginalName();
@@ -68,7 +79,7 @@ class KompetensiController extends Controller
             'gambar_banner' => $fileName,
         ]);
 
-        return redirect('/admin/kompetensi');
+        return redirect('/admin/kompetensi')->with('message', 'Data Berhasil Diubah');
     }
 
     public function delete($id){
@@ -77,6 +88,6 @@ class KompetensiController extends Controller
 
         File::delete('images/galeria/'.$data->gambar_banner);
 
-        return redirect('/admin/kompetensi');
+        return redirect('/admin/kompetensi')->with('message', 'Data Berhasil Dihapus');
     }
 }

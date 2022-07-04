@@ -21,6 +21,11 @@ class PerusahaanMitraController extends Controller
     }
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'nama_perusahaan' => 'required|string',
+            'gambar_logo' => 'required|image',
+            'urutan' => 'required|numeric'
+        ]);
 
         $image = $request->file('gambar_logo');
         $imageName = "";
@@ -32,13 +37,14 @@ class PerusahaanMitraController extends Controller
             'nama_perusahaan' => $request->nama_perusahaan,
             'gambar_logo' => $imageName,
             'urutan' => $request->urutan,
+            'file_path' => 'images/perusahaan-mitra/'.$imageName
         ]);
 
         if($image) {
             $image->move(public_path('images/perusahaan-mitra'), $imageName);
         }
         // dd($data);
-        return redirect('/admin/perusahaan-mitra');
+        return redirect('/admin/perusahaan-mitra')->with('message', 'Data Berhasil Disimpan');
     }
     public function edit($id)
     {
@@ -47,6 +53,10 @@ class PerusahaanMitraController extends Controller
     }
     public function update(Request $request, $id)
     {
+        $validatedData = $request->validate([
+            'nama_perusahaan' => 'required|string',
+            'urutan' => 'required|numeric'
+        ]);
         $image = $request->file('gambar_logo_new');
         $imageName = $request->gambar_logo_old;
         if($image) {
@@ -61,9 +71,10 @@ class PerusahaanMitraController extends Controller
             'nama_perusahaan' => $request->nama_perusahaan,
             'gambar_logo' => $imageName,
             'urutan' => $request->urutan,
+            'file_path' => 'images/perusahaan-mitra/'.$imageName
         ]);
 
-        return redirect('/admin/perusahaan-mitra');
+        return redirect('/admin/perusahaan-mitra')->with('message', 'Data Berhasil Diubah');
     }
 
     public function delete($id)
@@ -72,6 +83,6 @@ class PerusahaanMitraController extends Controller
         $data->delete();
         File::delete('images/perusahaan-mitra/'.$data->gambar_logo);
 
-        return redirect('/admin/perusahaan-mitra');
+        return redirect('/admin/perusahaan-mitra')->with('message', 'Data Berhasil Dihapus');
     }
 }

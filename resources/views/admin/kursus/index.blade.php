@@ -13,14 +13,18 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">{{ __('Data Pelatihan') }}</h4>
-                    <!-- <p class="card-description">
-                    </p> -->
+                    @if(session()->has('message'))
+                    <div class="alert alert-success">
+                        {{ session()->get('message') }}
+                    </div>
+                    @endif
 
                     <div class="table-responsive">
                         <table id="dataTable" class="table">
                             <thead>
                                 <tr>
-                                    <a href="{{route('pelatihan.create')}}" class="btn btn-primary btn-sm btn-rounded btn-icon-text">
+                                    <a href="{{route('pelatihan.create')}}"
+                                        class="btn btn-primary btn-sm btn-rounded btn-icon-text">
                                         <i class="ti-upload btn-icon-prepend"></i>
                                         Create
                                     </a>
@@ -55,9 +59,12 @@
                                         Unpublish
                                         @endif
                                     </td>
-                                    <td class="text-center"><a href="{{ route('pelatihan.topik', [$row->id]) }}" class="btn btn-dark btn-sm btn-rounded btn-icon-prepend">Atur
+                                    <td class="text-center"><a href="{{ route('pelatihan.topik', [$row->id]) }}"
+                                            class="btn btn-dark btn-sm btn-rounded btn-icon-prepend">Atur
                                             <i class="ti-reload btn-icon-append"></i></a>
-                                        <a href="{{ route('pelatihan.delete', ['id'=>$row->id]) }}" onclick="return confirm('Apakah anda yakin ?')" class="btn btn-danger btn-sm btn-rounded btn-icon-text">Delete
+                                        <a href="{{ route('pelatihan.delete', ['id'=>$row->id]) }}"
+                                            onclick="return confirm('Apakah anda yakin ?')"
+                                            class="btn btn-danger btn-sm btn-rounded btn-icon-text">Delete
                                             <i class="ti-trash btn-icon-append"></i></a>
                                     </td>
                                 </tr>
@@ -77,9 +84,9 @@
 
 </script>
 <script>
-    $(document).ready(function() {
-        $('#dataTable').DataTable();
+$(document).ready(function() {
+    $('#dataTable').DataTable();
 
-    });
+});
 </script>
 @endsection
