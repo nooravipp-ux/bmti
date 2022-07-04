@@ -68,7 +68,7 @@ class KursusController extends Controller
     public function manageTopik($pelatihanId)
     {
         $topiks  = Topik::where('kursus_id', $pelatihanId)->get();
-        $pelatihan = Kursus::find($pelatihanId)->first();
+        $pelatihan = Kursus::where('id',$pelatihanId)->first();
 
         $topikQuiz = DB::table('t_topik')->select('t_quiz.id as quiz_id', 't_quiz.judul', 't_topik_quiz.topik_id')
             ->join('t_topik_quiz', 't_topik_quiz.topik_id', '=', 't_topik.id')
@@ -84,11 +84,10 @@ class KursusController extends Controller
         return view('admin.kursus.manage_topik', compact('topiks', 'pelatihan', 'topikQuiz', 'konten'));
     }
 
-    public function simpanTopik(Request $request)
+    public function simpanTopik($pelatihanId, Request $request)
     {
-
         $data = Topik::create([
-            'kursus_id' => $request->kursus_id,
+            'kursus_id' => $pelatihanId,
             'judul' => $request->judul,
             'materi' => $request->deskripsi
         ]);

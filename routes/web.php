@@ -247,7 +247,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 
         Route::get('/pelatihan/{pelatihanId}/topik', [KursusController::class, 'manageTopik'])->name('pelatihan.topik');
         Route::get('/pelatihan/{pelatihanId}/topik/{topikId}', [KursusController::class, 'buatKonten'])->name('pelatihan.konten');
-        Route::post('/pelatihan/topik/store', [KursusController::class, 'simpanTopik'])->name('pelatihan.topik.simpan');
+        Route::post('/pelatihan/{pelatihanId}/topik/store', [KursusController::class, 'simpanTopik'])->name('pelatihan.topik.simpan');
         Route::post('/pelatihan/topik/konten-pembelajaran/store', [KursusController::class, 'simpanKontenPembelajaran'])->name('pelatihan.topik.kontenPembelajaran.store');
         Route::post('/pelatihan/topik/konten-quiz/store', [KursusController::class, 'simpanKontenQuiz'])->name('pelatihan.topik.kontenQuiz.store');
 

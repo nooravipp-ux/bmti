@@ -369,7 +369,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#galeria" aria-expanded="false" aria-controls="form-elements">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#galeria" aria-expanded="false" aria-controls="galeria">
                             <i class="menu-icon mdi mdi-card-text-outline"></i>
                             <span class="menu-title">Galeria</span>
                             <i class="menu-arrow"></i>
@@ -433,7 +433,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#peserta" aria-expanded="false" aria-controls="icons">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#peserta" aria-expanded="false" aria-controls="peserta">
                             <i class="menu-icon mdi mdi-layers-outline"></i>
                             <span class="menu-title">Peserta</span>
                             <i class="menu-arrow"></i>
@@ -447,7 +447,7 @@
                     </li>
                     <li class="nav-item nav-category">CMS</li>
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#mitra" aria-expanded="false" aria-controls="icons">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#mitra" aria-expanded="false" aria-controls="mitra">
                             <i class="menu-icon mdi mdi-layers-outline"></i>
                             <span class="menu-title">Mitra</span>
                             <i class="menu-arrow"></i>
