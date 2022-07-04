@@ -37,8 +37,8 @@
                                 <img src="{{asset('images/galeria/'.$keahlian->gambar_banner)}}" width="300"
                                     height="250" />
                             </div>
-                            <input type="hidden" name="gambar_banner_old" class="form-control">
-                            <input type="file" name="gambar_banner_new" class="form-control" required
+                            <input type="hidden" name="gambar_banner_old" value="{{$keahlian->gambar_banner}}" class="form-control">
+                            <input type="file" name="gambar_banner_new" class="form-control"
                                 accept="image/jpg, image/jpeg, image/png">
                         </div>
                         <div class="mb-3">
@@ -48,13 +48,13 @@
                             </div>
                             <input type="hidden" name="file_content_old" value="{{$keahlian->file_content}}"
                                 class="form-control">
-                            <input type="file" name="file_content_new" class="form-control" required accept=".pdf">
+                            <input type="file" name="file_content_new" class="form-control" accept=".pdf">
                         </div>
                         <div class="mb-3">
                             <label for="inputvideo_content" class="form-label">Video Content</label>
                             <input type="hidden" name="video_content_old" value="{{$keahlian->video_content}}"
                                 class="form-control">
-                            <input type="file" name="video_content_new" class="form-control" required
+                            <input type="file" name="video_content_new" class="form-control"
                                 accept="video/mp4, video/webm">
                         </div>
                         <div class="mb-3">

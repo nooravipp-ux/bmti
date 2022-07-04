@@ -11,6 +11,7 @@ class Peserta extends Model
     protected $primaryKey = 'id';
     protected $connection = 'mysql';
     protected $guarded =[];
+    
     public function kursusPeserta(){
         return $this->hasMany('App\Models\KursusPeserta');
     }

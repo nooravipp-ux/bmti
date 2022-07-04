@@ -31,6 +31,7 @@ class KompetensiController extends Controller
         
         $data = Kompetensi::create([
             'nama_kompetensi' => $request->nama_kompetensi,
+            'kode' => $request->kode,
             'deskripsi' => $request->deskripsi,
             'gambar_banner' => $fileName,
         ]);
@@ -62,6 +63,7 @@ class KompetensiController extends Controller
         $data = Kompetensi::find($id);
         $data->update([
             'nama_kompetensi' => $request->nama_kompetensi,
+            'kode' => $request->kode,
             'deskripsi' => $request->deskripsi,
             'gambar_banner' => $fileName,
         ]);

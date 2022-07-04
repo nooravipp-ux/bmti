@@ -55,7 +55,9 @@
 <div class="container">
     <div class="row">
         <div class="col-12 d-flex flex-nowrap">
-            <span class="galeria-kompetensi-kategori">Bahasa Inggris</span><span class="galeria-kompetensi-kategori">Bisnis Kontruksi & Property</span><span class="galeria-kompetensi-kategori">Design Pemodelan</span><span class="galeria-kompetensi-kategori">Bahasa Inggris</span><span class="galeria-kompetensi-kategori">Bahasa Inggris</span><span class="galeria-kompetensi-kategori">Bahasa Inggris</span>
+            @foreach($allKategori as $ktg)
+            <a style="text-decoration: none;" href="{{url('/galeria/'.$ktg->id)}}"><span class="galeria-kompetensi-kategori">{{$ktg->nama_kompetensi}}</span><a>
+            @endforeach
         </div>
     </div>
 
@@ -64,7 +66,7 @@
         <div class="col-12 col-md-4 col-xl-4">
             <div class="img-teknik-permesinan shadow mt-5">
                 <img src="{{asset('/images/galeria/'.$dt->gambar_banner)}}" alt="Image" width="357px" height="247px" />
-                <a onclick="onClickMateri()">
+                <a href="{{route('galeria.materi', [$dt->id])}}">
                     <div class="image-text">{{$dt->judul}}</div>
                 </a>
                 <p>{{$dt->judul}}</p>

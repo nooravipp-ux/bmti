@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class KursusPeserta extends Model
 {
+    protected $table = 't_kursus_peserta';
     public function peserta(){
         return $this->belongsTo('App\Models\Peserta');
     }

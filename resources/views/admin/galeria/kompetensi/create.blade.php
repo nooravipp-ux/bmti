@@ -18,6 +18,11 @@
                                 aria-describedby="emailHelp" required>
                         </div>
                         <div class="mb-3">
+                            <label for="inputnama_kompetensi" class="form-label">Kode</label>
+                            <input type="text" name="kode" class="form-control" id="inputnama_kompetensi"
+                                aria-describedby="emailHelp" required>
+                        </div>
+                        <div class="mb-3">
                             <label for="inputdeskripsi" class="form-label">Deskripsi</label>
                             <input type="text" name="deskripsi" class="form-control" id="input_deskripsi"
                                 aria-describedby="emailHelp" required>

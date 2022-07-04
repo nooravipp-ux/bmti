@@ -27,13 +27,11 @@
                         </div>
                         <div class="mb-3">
                             <label for="inputfile_content" class="form-label">Materi</label>
-                            <textarea type="text" name="materi" class="ckeditor form-control" height="200"
-                                required></textarea>
+                            <textarea type="text" name="materi" class="ckeditor form-control" height="200" required></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="inputfile_content" class="form-label">Gambar Banner</label>
-                            <input type="file" name="gambar_banner" class="form-control" required
-                                accept="image/jpg, image/jpeg, image/png">
+                            <input type="file" name="gambar_banner" class="form-control" required accept="image/jpg, image/jpeg, image/png">
                         </div>
                         <div class="mb-3">
                             <label for="inputfile_content" class="form-label">File Content</label>
@@ -41,8 +39,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="inputvideo_content" class="form-label">Video Content</label>
-                            <input type="file" name="video_content" class="form-control" required
-                                accept="video/mp4, video/webm">
+                            <input type="file" name="video_content" class="form-control" accept="video/mp4, video/webm">
                         </div>
                         <div class="mb-3">
                             <label for="inputauthor" class="form-label">Author</label>
@@ -57,8 +54,8 @@
 </div>
 <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
 <script type="text/javascript">
-$(document).ready(function() {
-    $('.ckeditor').ckeditor();
-});
+    $(document).ready(function() {
+        $('.ckeditor').ckeditor();
+    });
 </script>
 @endsection

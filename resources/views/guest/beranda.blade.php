@@ -212,13 +212,24 @@
         </div>
     </div>
 
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="testimonials owl-theme owl-carousel">
         <div class="carousel-inner">
             <div class="row justify-content-center">
-                @foreach($dataMitra as $mitra)
+                @foreach($pageOne as $mitra1)
                 <div class="col-3">
                     <div class="text-center mt-2">
-                        <img src="{{asset('images/perusahaan-mitra/'.$mitra->gambar_logo)}}" width="130px" height="70px" />
+                        <img src="{{asset('images/perusahaan-mitra/'.$mitra1->gambar_logo)}}" width="100px" height="70px" />
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+        <div class="carousel-inner">
+            <div class="row justify-content-center">
+                @foreach($pageTwo as $mitra2)
+                <div class="col-3">
+                    <div class="text-center mt-2">
+                        <img src="{{asset('images/perusahaan-mitra/'.$mitra2->gambar_logo)}}" width="80px" height="70px" />
                     </div>
                 </div>
                 @endforeach

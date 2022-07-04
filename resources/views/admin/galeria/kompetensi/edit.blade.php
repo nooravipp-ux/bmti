@@ -20,6 +20,11 @@
                                 aria-describedby="emailHelp" value="{{ $data->nama_kompetensi }}">
                         </div>
                         <div class="mb-3">
+                            <label for="inputnama_kompetensi" class="form-label">Nama Kompetensi</label>
+                            <input type="text" name="kode" class="form-control" id="inputnama_kompetensi"
+                                aria-describedby="emailHelp" value="{{ $data->kode }}">
+                        </div>
+                        <div class="mb-3">
                             <label for="inputdeskripsi" class="form-label">Deskripsi</label>
                             <input type="text" name="deskripsi" class="form-control" id="input_deskripsi"
                                 aria-describedby="emailHelp" value="{{ $data->deskripsi }}">
@@ -32,7 +37,7 @@
                             </div>
                             <input type="hidden" name="gambar_banner_old" class="form-control"
                                 value="{{ $data->gambar_banner }}">
-                            <input type="file" name="gambar_banner_new" class="form-control" required
+                            <input type="file" name="gambar_banner_new" class="form-control"
                                 accept="image/jpg, image/jpeg, image/png">
                         </div>
                         <button type="submit" class="btn btn-primary btn-sm btn-rounded">Submit</button>

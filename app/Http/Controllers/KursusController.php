@@ -80,7 +80,6 @@ class KursusController extends Controller
     public function simpanTopik(Request $request)
     {
 
-        dd($request->all());
         $data = Topik::create([
             'kursus_id' => $request->kursus_id,
             'judul' => $request->judul,

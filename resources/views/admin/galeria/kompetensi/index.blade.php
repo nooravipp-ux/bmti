@@ -19,8 +19,7 @@
                         <table id="dataTable" class="table">
                             <thead>
                                 <tr>
-                                    <a href="{{route('kompetensi.create')}}"
-                                        class="btn btn-primary btn-sm btn-rounded btn-icon-text">
+                                    <a href="{{route('kompetensi.create')}}" class="btn btn-primary btn-sm btn-rounded btn-icon-text">
                                         <i class="ti-upload btn-icon-prepend"></i>
                                         Create
                                     </a>
@@ -28,10 +27,8 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Nama Kategori</th>
-                                    <th>Deskripsi</th>
-                                    <!-- <th>Gambar Banner</th> -->
-                                    <th>Edit</th>
-                                    <th>Delete</th>
+                                    <th>Kode</th>
+                                    <th class="text-center">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -40,15 +37,12 @@
                                 <tr>
                                     <td><?php echo $i++; ?></td>
                                     <td>{{$row->nama_kompetensi}}</td>
-                                    <td>{{$row->deskripsi}}</td>
-                                    <!-- <td><img src ="{{asset('images/galeria/'.$row->gambar_banner)}}"></td> -->
-                                    <td><a href="{{ route('kompetensi.edit', ['id'=>$row->id]) }}"
-                                            class="btn btn-dark btn-sm btn-rounded btn-icon-prepend">Edit
-                                            <i class="ti-reload btn-icon-append"></i></a></td>
-                                    <td><a href="{{ route('kompetensi.delete', ['id'=>$row->id]) }}"
-                                            onclick="return confirm('Apakah anda yakin ?')"
-                                            class="btn btn-danger btn-sm btn-rounded btn-icon-text">Delete
-                                            <i class="ti-trash btn-icon-append"></i></a></td>
+                                    <td>{{$row->kode}}</td>
+                                    <td class="text-center"><a href="{{ route('kompetensi.edit', ['id'=>$row->id]) }}" class="btn btn-dark btn-sm btn-rounded btn-icon-prepend">Edit
+                                            <i class="ti-reload btn-icon-append"></i></a>
+                                        <a href="{{ route('kompetensi.delete', ['id'=>$row->id]) }}" onclick="return confirm('Apakah anda yakin ?')" class="btn btn-danger btn-sm btn-rounded btn-icon-text">Delete
+                                            <i class="ti-trash btn-icon-append"></i></a>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -66,9 +60,9 @@
 <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js">
 </script>
 <script>
-$(document).ready(function() {
-    $('#dataTable').DataTable();
+    $(document).ready(function() {
+        $('#dataTable').DataTable();
 
-});
+    });
 </script>
 @endsection

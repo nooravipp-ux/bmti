@@ -4,7 +4,10 @@
 <div class="container-fluid">
     <div class="row justify-content-center mt-5 mb-5">
         <div id="pengantar" class="col-12 col-xl-7 text-pembelajaran">
-            <h1>{{$data->judul}}<button class="btn rounded-pill text-light">Selesai</button></h1>
+            <h1>{{$data->judul}}</h1>
+            @if($cekKontenSelesai == false)
+            <a href="{{route('pembelajaran.konten.tandaiSelesai', ['id'=> $pelatihanId, 'topikId' => $data->topik_id, 'kontenId' => $data->id])}}" class="btn rounded-pill btn-primary">Tandai Selesai</a>
+            @endif
             <p class="mt-3">
                 {!!$data->materi!!}
             </p>

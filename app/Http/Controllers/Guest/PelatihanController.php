@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Guest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Kursus;
+use App\Models\KursusPeserta;
 use App\Models\Topik;
 use App\Models\Quiz;
 use App\Models\Pertanyaan;
+use App\Models\LogEnrolledPesertaPelatihan;
 use Illuminate\Support\Facades\DB;
 
 class PelatihanController extends Controller
@@ -62,6 +64,7 @@ class PelatihanController extends Controller
             ->join('t_quiz', 't_quiz.id', '=', 't_topik_quiz.quiz_id')
             ->where('t_topik.kursus_id', $pelatihanId)
             ->get();
+
         $konten = DB::table('t_topik')
             ->join('t_topik_konten', 't_topik.id', '=', 't_topik_konten.topik_id')
             ->join('t_konten', 't_konten.id', '=', 't_topik_konten.konten_id')
@@ -69,7 +72,7 @@ class PelatihanController extends Controller
             ->get();
 
         $data = DB::table('t_kursus')
-                ->select('t_konten.*')
+                ->select('t_konten.*','t_topik.id as topik_id')
                 ->join('t_topik', 't_kursus.id', '=', 't_topik.kursus_id')
                 ->join('t_topik_konten', 't_topik.id', '=', 't_topik_konten.topik_id')
                 ->join('t_konten', 't_konten.id', '=', 't_topik_konten.konten_id')
@@ -77,7 +80,9 @@ class PelatihanController extends Controller
                 ->where('t_topik_konten.konten_id', $kontenId)
                 ->first();
 
-        return view('pembelajaran.index', compact('data','topikQuiz','konten'));
+        $cekKontenSelesai = $this->cekKontenSelesai($pelatihanId, $topikId, $kontenId);
+
+        return view('pembelajaran.index', compact('data','topikQuiz','konten', 'pelatihanId', 'cekKontenSelesai'));
     }
 
     public function getQuizPembelajaran($pelatihanId, $topikId, $quizId)
@@ -87,6 +92,7 @@ class PelatihanController extends Controller
             ->join('t_quiz', 't_quiz.id', '=', 't_topik_quiz.quiz_id')
             ->where('t_topik.kursus_id', $pelatihanId)
             ->get();
+            
         $konten = DB::table('t_topik')
             ->join('t_topik_konten', 't_topik.id', '=', 't_topik_konten.topik_id')
             ->join('t_konten', 't_konten.id', '=', 't_topik_konten.konten_id')
@@ -104,5 +110,50 @@ class PelatihanController extends Controller
         $quiz = Quiz::find($topikId);
         $pertanyaan = Pertanyaan::where('quiz_id', $quizId)->get();
         return view('pembelajaran.quiz', compact('data','pertanyaan','topikQuiz','konten'));
+    }
+
+    public function tandaiKontenSelesai($pelatihanId, $topikId, $kontenId){
+        
+        $userdata = DB::table('users')
+            ->select('m_peserta.id')
+            ->join('m_peserta', 'm_peserta.user_id', '=', 'users.id')
+            ->where('users.id', auth()->user()->id)
+            ->first();
+        
+        $kursusPesertaData = KursusPeserta::where('peserta_id', $userdata->id)->first();
+
+        DB::table('log_enrolled_peserta_pelatihan')->insert([
+            'kursus_peserta_id' => $kursusPesertaData->id,
+            'topik_id' => $topikId,
+            'konten_id' => $kontenId,
+            'status' => 1,
+            'tanggal_mulai' => now(),
+        ]);
+
+        return redirect()->back();
+    }
+
+    public function tandaiQuizSelesai($pelatihanId, $topikId, $kontenId){
+        
+        
+    }
+    
+
+    public function cekKontenSelesai($pelatihanId, $topikId, $kontenId){
+        $userdata = DB::table('users')
+            ->select('m_peserta.id')
+            ->join('m_peserta', 'm_peserta.user_id', '=', 'users.id')
+            ->where('users.id', auth()->user()->id)
+            ->first();
+        
+        $kursusPesertaData = KursusPeserta::where('peserta_id', $userdata->id)->first();
+
+        $data = LogEnrolledPesertaPelatihan::where('kursus_peserta_id', $kursusPesertaData->id)->where('topik_id', $topikId)->where('konten_id', $kontenId)->first();
+
+        if($data){
+            return true;
+        }else{
+            return false;
+        }
     }
 }

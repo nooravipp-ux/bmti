@@ -35,7 +35,7 @@
                 <div class="col-6"></div>
 
                 <div class="col-2 text-light text-center">
-                    <p id="text-hover" class="text-header-2">Ahmad Winarto</p>
+                    <p id="text-hover" class="text-header-2">{{auth()->user()->name}}</p>
                     <div id="text-hover-2" class="text-hover-2">
                         <div class="row">
                             <div class="col-2">

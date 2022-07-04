@@ -333,6 +333,20 @@
                         </a>
                     </li>
                     @endif
+                    @if(auth()->user()->role_id == 5)
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('masterListData')}}">
+                            <i class="menu-icon mdi mdi-file-import"></i>
+                            <span class="menu-title">Pelatihan Saya</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('peserta.pelatihan.katalog')}}">
+                            <i class="menu-icon mdi mdi-file-import"></i>
+                            <span class="menu-title">Katalog </span>
+                        </a>
+                    </li>
+                    @endif
                     @if(auth()->user()->role_id == 1)
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
@@ -355,15 +369,15 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#galeria" aria-expanded="false" aria-controls="form-elements">
                             <i class="menu-icon mdi mdi-card-text-outline"></i>
                             <span class="menu-title">Galeria</span>
                             <i class="menu-arrow"></i>
                         </a>
-                        <div class="collapse" id="form-elements">
+                        <div class="collapse" id="galeria">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> <a class="nav-link" href="{{route('kompetensi')}}">
-                                        Kategori Kompetensi</a>
+                                        Kategori</a>
                                 </li>
                                 <li class="nav-item"> <a class="nav-link" href="{{route('keahlian')}}">
                                         Komptensi Keahlian</a>
@@ -372,12 +386,12 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#pelatihan" aria-expanded="false" aria-controls="tables">
                             <i class="menu-icon mdi mdi-table"></i>
                             <span class="menu-title">Pelatihan</span>
                             <i class="menu-arrow"></i>
                         </a>
-                        <div class="collapse" id="tables">
+                        <div class="collapse" id="pelatihan">
                             <ul class="nav flex-column sub-menu">
                                 <!-- <li class="nav-item"> <a class="nav-link" href="{{route('pelatihanMandiri')}}">Pelatihan
                                         Mandiri</a></li>
@@ -405,6 +419,8 @@
                                 <li class="nav-item"> <a class="nav-link" href="{{route('quiz')}}">Quiz
                                     </a></li> -->
                                 <li class="nav-item"> <a class="nav-link" href="{{route('quiz')}}">Bank Soal
+                                    </a></li>
+                                <li class="nav-item"> <a class="nav-link" href="{{route('sertifikat.index')}}">Sertifikat
                                     </a></li>
                                 <!-- <li class="nav-item"> <a class="nav-link" href="{{route('topikQuiz')}}">Topik Quiz
                                     </a></li> -->
@@ -452,12 +468,12 @@
             </nav>
             <div class="main-panel">
                 @yield('content')
-                <footer class="footer">
+                <!-- <footer class="footer">
                     <div class="d-sm-flex justify-content-center justify-content-sm-between">
                         <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2022. All
                             rights reserved.</span>
                     </div>
-                </footer>
+                </footer> -->
             </div>
             <!-- partial -->
             <!-- main-panel ends -->

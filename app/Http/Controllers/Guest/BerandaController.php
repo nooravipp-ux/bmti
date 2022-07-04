@@ -12,10 +12,12 @@ class BerandaController extends Controller
 {
     public function getData()
     {
-        $dataMitra = PerusahaanMitra::orderBy('urutan', 'DESC')->get();
+        $pageOne = PerusahaanMitra::whereBetween('urutan', [1, 8])->orderBy('urutan', 'ASC')->get();
+        $pageTwo = PerusahaanMitra::whereBetween('urutan', [9, 14])->orderBy('urutan', 'ASC')->get();
+
         $testimoni = Testimoni::all();
         $jumlahVisitor = Visitor::count();
-        return view('guest.beranda', compact('dataMitra','testimoni','jumlahVisitor'));
+        return view('guest.beranda', compact('pageOne','pageTwo','testimoni','jumlahVisitor'));
     }
 
     public function getTestimoni()

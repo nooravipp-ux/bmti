@@ -15,10 +15,15 @@ class GaleriaController extends Controller
     }
 
     public function getAllKeahlianByKategori($kategori_id){
-        
         $kompetensi = Kompetensi::where('id', $kategori_id)->first();
+        $allKategori = Kompetensi::all();
         $data = Keahlian::where('id_kompetensi', $kategori_id)->get();
+        return view('guest.galeria.keahlian', compact('data','kompetensi','allKategori'));
+    }
 
-        return view('guest.galeria.keahlian', compact('data','kompetensi'));
+    public function getDetailMateri($id){
+
+        $data = Keahlian::where('id', $id)->first();
+        return view('guest.galeria.materi', compact('data'));
     }
 }

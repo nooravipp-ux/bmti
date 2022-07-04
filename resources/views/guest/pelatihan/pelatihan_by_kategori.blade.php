@@ -62,66 +62,6 @@
 </div>
 
 <div class="container">
-    <div class="row text-center">
-        <div class="col-3 col-xl-1">
-            <div class="shared-3d">
-                <a href="">
-                    <img src="{{asset('guest/assets/images/share-shared.png')}}" width="70px" height="25px" />
-                </a>
-            </div>
-        </div>
-
-        <div class="col-3 col-xl-1">
-            <div class="shared-3d">
-                <a href="">
-                    <img src="{{asset('guest/assets/images/fb-shared.png')}}" width="70px" height="25px" />
-                </a>
-            </div>
-        </div>
-
-        <div class="col-3 col-xl-1">
-            <div class="shared-3d">
-                <a href="">
-                    <img src="{{asset('guest/assets/images/twitter-shared.png')}}" width="70px" height="25px" />
-                </a>
-            </div>
-        </div>
-
-        <div class="col-3 col-xl-1">
-            <div class="shared-3d">
-                <a href="">
-                    <img src="{{asset('guest/assets/images/google.png')}}" width="70px" height="25px" />
-                </a>
-            </div>
-        </div>
-
-        <div class="col-3 col-xl-1">
-            <div class="shared-3d">
-                <a href="">
-                    <img src="{{asset('guest/assets/images/reddit-shared.png')}}" width="70px" height="25px" />
-                </a>
-            </div>
-        </div>
-
-        <div class="col-3 col-xl-1">
-            <div class="shared-3d">
-                <a href="">
-                    <img src="{{asset('guest/assets/images/pinterest-shared.png')}}" width="70px" height="25px" />
-                </a>
-            </div>
-        </div>
-
-        <div class="col-3 col-xl-1">
-            <div class="shared-3d">
-                <a href="">
-                    <img src="{{asset('guest/assets/images/email-shared.png')}}" width="70px" height="25px" />
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container">
     <div class="row">
         <div class="col-xl-12 col-xl-6">
             <div class="content">

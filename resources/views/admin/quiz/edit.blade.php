@@ -50,9 +50,10 @@
     .btn-tambah-konten a {
         text-decoration: none;
     }
+
     .quiz li {
         margin-left: 7px;
-        list-style:none;
+        list-style: none;
     }
 </style>
 @endsection
@@ -127,23 +128,27 @@
                     </div>
                     <div class="mb-3">
                         <label for="inputpilihan_a" class="form-label">Pilihan A</label>
-                        <input type="text" name="pilihan_a" class="form-control">
+                        <input type="radio" name="pilihan" class="pilihan" value="a">
+                        <input type="text" name="pilihan_a" id="pilihan_a" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="inputpilihan_b" class="form-label">Pilihan B</label>
-                        <input type="text" name="pilihan_b" class="form-control">
+                        <input type="radio" name="pilihan" class="pilihan" value="b">
+                        <input type="text" name="pilihan_b" id="pilihan_b" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="inputpilihan_c" class="form-label">Pilihan C</label>
-                        <input type="text" name="pilihan_c" class="form-control">
+                        <input type="radio" name="pilihan" class="pilihan" value="c">
+                        <input type="text" name="pilihan_c" id="pilihan_c" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="inputpilihan_d" class="form-label">Pilihan D</label>
-                        <input type="text" name="pilihan_d" class="form-control">
+                        <input type="radio" name="pilihan" class="pilihan" value="d">
+                        <input type="text" name="pilihan_d" id="pilihan_d" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="jawaban" class="form-label">Jawaban</label>
-                        <input type="text" name="jawaban" class="form-control">
+                        <input type="text" name="jawaban" id="jawaban" class="form-control">
                     </div>
                     <button type="submit" class="btn btn-primary btn-sm btn-rounded">Submit</button>
                 </form>
@@ -175,6 +180,29 @@
 
     $('#bnt-batal').click(function() {
         $('#modal-topik').addClass('d-none')
+    });
+
+    $('.pilihan').click(function() {
+
+        if ($('input[name="pilihan"]:checked').val() == 'a') {
+            let jawaban = $('#pilihan_a').val()
+            $('#jawaban').val(jawaban)
+        } 
+
+        if ($('input[name="pilihan"]:checked').val() == 'b') {
+            let jawaban = $('#pilihan_b').val()
+            $('#jawaban').val(jawaban)
+        } 
+
+        if ($('input[name="pilihan"]:checked').val() == 'c') {
+            let jawaban = $('#pilihan_c').val()
+            $('#jawaban').val(jawaban)
+        } 
+
+        if ($('input[name="pilihan"]:checked').val() == 'd') {
+            let jawaban = $('#pilihan_d').val()
+            $('#jawaban').val(jawaban)
+        }
     });
 </script>
 @endsection
