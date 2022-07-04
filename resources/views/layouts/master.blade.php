@@ -30,9 +30,9 @@
     <!-- endinject -->
     <link rel="shortcut icon" href="{{asset('admin/images/logo.png')}}" />
     <style>
-    .mdi-file-import {
-        font-size: 20px;
-    }
+        .mdi-file-import {
+            font-size: 20px;
+        }
     </style>
 
     @yield('custom-css')
@@ -46,8 +46,7 @@
         <nav class="navbar default-layout col-lg-12 p-0 fixed-top d-flex align-items-top flex-row">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
                 <div class="me-3">
-                    <button class="navbar-toggler navbar-toggler align-self-center" type="button"
-                        data-bs-toggle="minimize">
+                    <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-bs-toggle="minimize">
                         <span class="icon-menu"></span>
                     </button>
                 </div>
@@ -64,19 +63,16 @@
             <div class="navbar-menu-wrapper d-flex align-items-top">
                 <ul class="navbar-nav">
                     <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-                        <h1 class="welcome-text">Selamat Datang, <span
-                                class="text-black fw-bold">{{auth()->user()->name}}</span></h1>
+                        <h1 class="welcome-text">Selamat Datang, <span class="text-black fw-bold">{{auth()->user()->name}}</span></h1>
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link count-indicator" id="countDropdown" href="#" data-bs-toggle="dropdown"
-                            aria-expanded="false">
+                        <a class="nav-link count-indicator" id="countDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="icon-bell"></i>
                             <span class="count"></span>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0"
-                            aria-labelledby="countDropdown">
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="countDropdown">
                             <a class="dropdown-item py-3">
                                 <p class="mb-0 font-weight-medium float-left">You have 7 unread mails </p>
                                 <span class="badge badge-pill badge-primary float-right">View all</span>
@@ -113,20 +109,16 @@
                     </li>
                     <li class="nav-item dropdown d-none d-lg-block user-dropdown">
                         <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img class="img-xs rounded-circle" src="{{asset('admin/images/faces/face8.jpg')}}"
-                                alt="Profile image"> </a>
+                            <img class="img-xs rounded-circle" src="{{asset('admin/images/faces/face8.jpg')}}" alt="Profile image"> </a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                             <div class="dropdown-header text-center">
-                                <img class="img-md rounded-circle" src="{{asset('admin/images/faces/face8.jpg')}}"
-                                    alt="Profile image">
+                                <img class="img-md rounded-circle" src="{{asset('admin/images/faces/face8.jpg')}}" alt="Profile image">
                                 <p class="mb-1 mt-3 font-weight-semibold">{{auth()->user()->name}}</p>
                                 <p class="fw-light text-muted mb-0">{{auth()->user()->email}}</p>
                             </div>
-                            <a class="dropdown-item"><i
-                                    class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile
+                            <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile
                             </a>
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 <i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign Out
                             </a>
 
@@ -136,8 +128,7 @@
                         </div>
                     </li>
                 </ul>
-                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
-                    data-bs-toggle="offcanvas">
+                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-bs-toggle="offcanvas">
                     <span class="mdi mdi-menu"></span>
                 </button>
             </div>
@@ -171,23 +162,19 @@
                 <i class="settings-close ti-close"></i>
                 <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="todo-tab" data-bs-toggle="tab" href="#todo-section" role="tab"
-                            aria-controls="todo-section" aria-expanded="true">TO DO LIST</a>
+                        <a class="nav-link active" id="todo-tab" data-bs-toggle="tab" href="#todo-section" role="tab" aria-controls="todo-section" aria-expanded="true">TO DO LIST</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="chats-tab" data-bs-toggle="tab" href="#chats-section" role="tab"
-                            aria-controls="chats-section">CHATS</a>
+                        <a class="nav-link" id="chats-tab" data-bs-toggle="tab" href="#chats-section" role="tab" aria-controls="chats-section">CHATS</a>
                     </li>
                 </ul>
                 <div class="tab-content" id="setting-content">
-                    <div class="tab-pane fade show active scroll-wrapper" id="todo-section" role="tabpanel"
-                        aria-labelledby="todo-section">
+                    <div class="tab-pane fade show active scroll-wrapper" id="todo-section" role="tabpanel" aria-labelledby="todo-section">
                         <div class="add-items d-flex px-3 mb-0">
                             <form class="form w-100">
                                 <div class="form-group d-flex">
                                     <input type="text" class="form-control todo-list-input" placeholder="Add To-do">
-                                    <button type="submit" class="add btn btn-primary todo-list-add-btn"
-                                        id="add-task">Add</button>
+                                    <button type="submit" class="add btn btn-primary todo-list-add-btn" id="add-task">Add</button>
                                 </div>
                             </form>
                         </div>
@@ -262,14 +249,12 @@
                     <div class="tab-pane fade" id="chats-section" role="tabpanel" aria-labelledby="chats-section">
                         <div class="d-flex align-items-center justify-content-between border-bottom">
                             <p class="settings-heading border-top-0 mb-3 pl-3 pt-0 border-bottom-0 pb-0">Friends</p>
-                            <small
-                                class="settings-heading border-top-0 mb-3 pt-0 border-bottom-0 pb-0 pr-3 fw-normal">See
+                            <small class="settings-heading border-top-0 mb-3 pt-0 border-bottom-0 pb-0 pr-3 fw-normal">See
                                 All</small>
                         </div>
                         <ul class="chat-list">
                             <li class="list active">
-                                <div class="profile"><img src="images/faces/face1.jpg" alt="image"><span
-                                        class="online"></span></div>
+                                <div class="profile"><img src="images/faces/face1.jpg" alt="image"><span class="online"></span></div>
                                 <div class="info">
                                     <p>Thomas Douglas</p>
                                     <p>Available</p>
@@ -277,8 +262,7 @@
                                 <small class="text-muted my-auto">19 min</small>
                             </li>
                             <li class="list">
-                                <div class="profile"><img src="images/faces/face2.jpg" alt="image"><span
-                                        class="offline"></span></div>
+                                <div class="profile"><img src="images/faces/face2.jpg" alt="image"><span class="offline"></span></div>
                                 <div class="info">
                                     <div class="wrapper d-flex">
                                         <p>Catherine</p>
@@ -289,8 +273,7 @@
                                 <small class="text-muted my-auto">23 min</small>
                             </li>
                             <li class="list">
-                                <div class="profile"><img src="images/faces/face3.jpg" alt="image"><span
-                                        class="online"></span></div>
+                                <div class="profile"><img src="images/faces/face3.jpg" alt="image"><span class="online"></span></div>
                                 <div class="info">
                                     <p>Daniel Russell</p>
                                     <p>Available</p>
@@ -298,8 +281,7 @@
                                 <small class="text-muted my-auto">14 min</small>
                             </li>
                             <li class="list">
-                                <div class="profile"><img src="images/faces/face4.jpg" alt="image"><span
-                                        class="offline"></span></div>
+                                <div class="profile"><img src="images/faces/face4.jpg" alt="image"><span class="offline"></span></div>
                                 <div class="info">
                                     <p>James Richardson</p>
                                     <p>Away</p>
@@ -307,8 +289,7 @@
                                 <small class="text-muted my-auto">2 min</small>
                             </li>
                             <li class="list">
-                                <div class="profile"><img src="images/faces/face5.jpg" alt="image"><span
-                                        class="online"></span></div>
+                                <div class="profile"><img src="images/faces/face5.jpg" alt="image"><span class="online"></span></div>
                                 <div class="info">
                                     <p>Madeline Kennedy</p>
                                     <p>Available</p>
@@ -316,8 +297,7 @@
                                 <small class="text-muted my-auto">5 min</small>
                             </li>
                             <li class="list">
-                                <div class="profile"><img src="images/faces/face6.jpg" alt="image"><span
-                                        class="online"></span></div>
+                                <div class="profile"><img src="images/faces/face6.jpg" alt="image"><span class="online"></span></div>
                                 <div class="info">
                                     <p>Sarah Graves</p>
                                     <p>Available</p>
@@ -369,8 +349,7 @@
                     @endif
                     @if(auth()->user()->role_id == 1)
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false"
-                            aria-controls="ui-basic">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                             <i class="menu-icon mdi mdi-account"></i>
                             <span class="menu-title">Pengguna</span>
                             <i class="menu-arrow"></i>
@@ -407,27 +386,22 @@
                         </div>
                     </li>
                     <li class="nav-item">
-<<<<<<< HEAD
-                        <a class="nav-link" data-bs-toggle="collapse" href="#pelatihan" aria-expanded="false" aria-controls="tables">
-=======
-                        <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false"
-                            aria-controls="tables">
->>>>>>> 2a4ff4fe73c491da80b3dea62cfc72a732cb5ae6
-                            <i class="menu-icon mdi mdi-table"></i>
-                            <span class="menu-title">Pelatihan</span>
+                        <a class="nav-link" data-bs-toggle="collapse" href="#master-data" aria-expanded="false" aria-controls="master-data">
+                            <i class="menu-icon mdi mdi-card-text-outline"></i>
+                            <span class="menu-title">Master Data</span>
                             <i class="menu-arrow"></i>
                         </a>
-                        <div class="collapse" id="pelatihan">
+                        <div class="collapse" id="master-data">
                             <ul class="nav flex-column sub-menu">
-                                <!-- <li class="nav-item"> <a class="nav-link" href="{{route('pelatihanMandiri')}}">Pelatihan
-                                        Mandiri</a></li>
-                                <li class="nav-item"> <a class="nav-link"
-                                        href="{{route('jenisPelatihanMandiri')}}">Jenis
-                                        Pelatihan
-                                        Mandiri</a></li> -->
-                                <li class="nav-item"> <a class="nav-link" href="{{route('jenisKursus')}}">Jenis
-                                        Pelatihan
+                                <li class="nav-item"> <a class="nav-link" href="{{route('jenisKegiatan')}}">
+                                        Jenis Kegiatan
                                     </a></li>
+                                <li class="nav-item"> <a class="nav-link" href="{{route('programKegiatan')}}">
+                                        Program / Kegiatan
+                                    </a></li>
+                                <!-- <li class="nav-item"> <a class="nav-link" href="{{route('jenisKursus')}}">
+                                        Jenis Pelatihan
+                                    </a></li> -->
                                 <li class="nav-item"> <a class="nav-link" href="{{route('bidangKeahlian')}}">
                                         Bidang Keahlian
                                     </a></li>
@@ -437,27 +411,29 @@
                                 <li class="nav-item"> <a class="nav-link" href="{{route('kelompokKeahlian')}}">
                                         Kelompok Keahlian
                                     </a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#pelatihan" aria-expanded="false" aria-controls="pelatihan">
+                            <i class="menu-icon mdi mdi-table"></i>
+                            <span class="menu-title">Pelatihan</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="pelatihan">
+                            <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> <a class="nav-link" href="{{route('pelatihan')}}">Pelatihan
                                     </a></li>
-                                <!-- <li class="nav-item"> <a class="nav-link" href="{{route('topik')}}">Topik
-                                    </a></li>
-                                <li class="nav-item"> <a class="nav-link" href="{{route('content')}}">Konten Pembelajaran
-                                    </a></li>
-                                <li class="nav-item"> <a class="nav-link" href="{{route('quiz')}}">Quiz
-                                    </a></li> -->
                                 <li class="nav-item"> <a class="nav-link" href="{{route('quiz')}}">Bank Soal
                                     </a></li>
                                 <li class="nav-item"> <a class="nav-link" href="{{route('sertifikat.index')}}">Sertifikat
                                     </a></li>
-                                <!-- <li class="nav-item"> <a class="nav-link" href="{{route('topikQuiz')}}">Topik Quiz
-                                    </a></li> -->
                             </ul>
                         </div>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#peserta" aria-expanded="false"
-                            aria-controls="icons">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#peserta" aria-expanded="false" aria-controls="icons">
                             <i class="menu-icon mdi mdi-layers-outline"></i>
                             <span class="menu-title">Peserta</span>
                             <i class="menu-arrow"></i>
@@ -471,8 +447,7 @@
                     </li>
                     <li class="nav-item nav-category">CMS</li>
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#mitra" aria-expanded="false"
-                            aria-controls="icons">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#mitra" aria-expanded="false" aria-controls="icons">
                             <i class="menu-icon mdi mdi-layers-outline"></i>
                             <span class="menu-title">Mitra</span>
                             <i class="menu-arrow"></i>
@@ -488,8 +463,7 @@
                     </li>
                     <li class="nav-item nav-category">help</li>
                     <li class="nav-item">
-                        <a class="nav-link"
-                            href="http://bootstrapdash.com/demo/star-admin2-free/docs/documentation.html">
+                        <a class="nav-link" href="http://bootstrapdash.com/demo/star-admin2-free/docs/documentation.html">
                             <i class="menu-icon mdi mdi-file-document"></i>
                             <span class="menu-title">Documentation</span>
                         </a>

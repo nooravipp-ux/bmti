@@ -51,7 +51,7 @@
                             </div>
                             <div class="col-5 col-xl-4">
                                 <img src="{{asset('guest/assets/images/collapse-up.png')}}" id="icon-pelatihan-1"
-                                    style="widht=20px; height:20px;" onclick="myFunction1()" /> &nbsp;
+                                    style="width:20px; height:20px;" onclick="myFunction1()" /> &nbsp;
                                 <span>Collapse All</span>
                             </div>
                             <hr style="width:96%; margin-left:12px;" />
@@ -141,7 +141,7 @@
         </div>
         <div class="col-4 col-lg-2 col-xl-2 icon-mandiri mt-5">
             <img src="{{asset('guest/assets/images/collapse-up.png')}}" id="icon-pelatihan-2"
-                style="widht=20px; height:20px;" onclick="myFunction2()" /> &nbsp;
+                style="width:20px; height:20px;" onclick="myFunction2()" /> &nbsp;
             <span>Collapse All</span>
         </div>
     </div>
@@ -155,7 +155,7 @@
                 </div>
                 <div class="col-4 col-xl-2 collapse-select">
                     <img src="{{asset('guest/assets/images/collapse-up.png')}}" id="icon-pelatihan-3"
-                        style="widht=20px; height:20px;" onclick="myFunction3()" /> &nbsp;
+                        style="width:20px; height:20px;" onclick="myFunction3()" /> &nbsp;
                     <span>Collapse</span>
                 </div>
             </div>

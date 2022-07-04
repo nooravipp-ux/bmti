@@ -11,24 +11,25 @@
                 </div>
             </div>
             <?php $no = 1; ?>
-            <form id="form-kuis" action="">
+            <form id="form-kuis" action="{{route('pembelajaran.quiz.tandaiSelesai', ['id'=> $pelatihanId, 'topikId' => $data->topik_id, 'quizId' => $data->id])}}" method="POST">
+                @csrf
                 @foreach($pertanyaan as $prt)
                 <div class="quiz mt-4">
                     <p><?php echo $no++; ?>. {{$prt->pertanyaan}}</p>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="{{$prt->id}}" value="{{$prt->pilihan_a}}" id="flexRadioDefault1">
+                        <input class="form-check-input" type="radio" name="jawaban[{{$prt->id}}][benar]" value="{{$prt->pilihan_a}}" class="form-check-input">
                         <label class="form-check-label" for="flexRadioDefault">{{$prt->pilihan_a}}</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="{{$prt->id}}" value="{{$prt->pilihan_b}}" id="flexRadioDefault1">
+                        <input class="form-check-input" type="radio" name="jawaban[{{$prt->id}}][benar]" value="{{$prt->pilihan_b}}" class="form-check-input">
                         <label class="form-check-label" for="flexRadioDefault">{{$prt->pilihan_b}}</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="{{$prt->id}}" value="{{$prt->pilihan_c}}" id="flexRadioDefault1">
+                        <input class="form-check-input" type="radio" name="jawaban[{{$prt->id}}][benar]" value="{{$prt->pilihan_c}}" class="form-check-input">
                         <label class="form-check-label" for="flexRadioDefault">{{$prt->pilihan_c}}</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="{{$prt->id}}" value="{{$prt->pilihan_d}}" id="flexRadioDefault1">
+                        <input class="form-check-input" type="radio" name="jawaban[{{$prt->id}}][benar]" value="{{$prt->pilihan_d}}" class="form-check-input">
                         <label class="form-check-label" for="flexRadioDefault">{{$prt->pilihan_d}}</label>
                     </div>
                 </div>
@@ -44,7 +45,7 @@
             <div class="row justify-content-end">
                 <div class="col-7">
                     <div class="button-hidden">
-                        <img src="{{asset('guest/assets/images/collapse-right.png')}}" id="icon-pembelajaran" style="widht=20px; height:20px;" onclick="myFunction()" />
+                        <img src="{{asset('guest/assets/images/collapse-right.png')}}" id="icon-pembelajaran" style="width:20px; height:20px;" onclick="myFunction()" />
                     </div>
                 </div>
             </div>
@@ -56,7 +57,7 @@
                     <div class="pembelajaran-2 bg-white">
                         <div class="row justify-content-center">
                             <div class="col-1">
-                                <img src="{{asset('guest/assets/images/collapse-down.png')}}" id="icon-pembelajaran-1" style="margin-left: -10px; margin-top: 13px; widht=20px; height:20px;" onclick="myFunction1()" />
+                                <img src="{{asset('guest/assets/images/collapse-down.png')}}" id="icon-pembelajaran-1" style="margin-left: -10px; margin-top: 13px; width:20px; height:20px;" onclick="myFunction1()" />
                             </div>
                             <div class="col-8">
                                 <span>Pengantar</span>
@@ -82,7 +83,7 @@
                     <div class="pembelajaran-2 bg-white">
                         <div class="row justify-content-center">
                             <div class="col-1">
-                                <img id="icon-pembelajaran-2" src="{{asset('guest/assets/images/collapse-down.png')}}" style="margin-left: -10px; margin-top: 13px; widht=20px; height:20px;" onclick="myFunction2()" />
+                                <img id="icon-pembelajaran-2" src="{{asset('guest/assets/images/collapse-down.png')}}" style="margin-left: -10px; margin-top: 13px; width:20px; height:20px;" onclick="myFunction2()" />
                             </div>
                             <div class="col-8">
                                 <span>Tes Awal</span>
@@ -108,7 +109,7 @@
                     <div class="pembelajaran-2 bg-white">
                         <div class="row justify-content-center">
                             <div class="col-1">
-                                <img src="{{asset('guest/assets/images/collapse-down.png')}}" id="icon-pembelajaran-3" style="margin-left: -10px; margin-top: 13px; widht=20px; height:20px;" onclick="myFunction3()" />
+                                <img src="{{asset('guest/assets/images/collapse-down.png')}}" id="icon-pembelajaran-3" style="margin-left: -10px; margin-top: 13px; width:20px; height:20px;" onclick="myFunction3()" />
                             </div>
                             <div class="col-8">
                                 <span>Pendahulu</span>
@@ -134,7 +135,7 @@
                     <div class="pembelajaran-2 bg-white">
                         <div class="row justify-content-center">
                             <div class="col-1">
-                                <img src="{{asset('guest/assets/images/collapse-down.png')}}" id="icon-pembelajaran-4" style="margin-left: -10px; margin-top: 13px; widht=20px; height:20px;" onclick="myFunction4()" />
+                                <img src="{{asset('guest/assets/images/collapse-down.png')}}" id="icon-pembelajaran-4" style="margin-left: -10px; margin-top: 13px; width:20px; height:20px;" onclick="myFunction4()" />
                             </div>
                             <div class="col-8">
                                 <span>Kegiatan Pembelajaran 1</span>
@@ -160,7 +161,7 @@
                     <div class="pembelajaran-2 bg-white">
                         <div class="row justify-content-center">
                             <div class="col-1">
-                                <img src="{{asset('guest/assets/images/collapse-down.png')}}" id="icon-pembelajaran-5" style="margin-left: -10px; margin-top: 13px; widht=20px; height:20px;" onclick="myFunction5()" />
+                                <img src="{{asset('guest/assets/images/collapse-down.png')}}" id="icon-pembelajaran-5" style="margin-left: -10px; margin-top: 13px; width:20px; height:20px;" onclick="myFunction5()" />
                             </div>
                             <div class="col-8">
                                 <span>Kegiatan Pembelajaran 2</span>
@@ -186,7 +187,7 @@
                     <div class="pembelajaran-2 bg-white">
                         <div class="row justify-content-center">
                             <div class="col-1">
-                                <img src="{{asset('guest/assets/images/collapse-down.png')}}" id="icon-pembelajaran-6" style="margin-left: -10px; margin-top: 13px; widht=20px; height:20px;" onclick="myFunction6()" />
+                                <img src="{{asset('guest/assets/images/collapse-down.png')}}" id="icon-pembelajaran-6" style="margin-left: -10px; margin-top: 13px; width:20px; height:20px;" onclick="myFunction6()" />
                             </div>
                             <div class="col-8">
                                 <span>Refleksi</span>
@@ -212,7 +213,7 @@
                     <div class="pembelajaran-2 bg-white">
                         <div class="row justify-content-center">
                             <div class="col-1">
-                                <img src="{{asset('guest/assets/images/collapse-down.png')}}" id="icon-pembelajaran-7" style="margin-left: -10px; margin-top: 13px; widht=20px; height:20px;" onclick="myFunction7()" />
+                                <img src="{{asset('guest/assets/images/collapse-down.png')}}" id="icon-pembelajaran-7" style="margin-left: -10px; margin-top: 13px; width:20px; height:20px;" onclick="myFunction7()" />
                             </div>
                             <div class="col-8">
                                 <span>Tes Akhir dan Umpan Balik</span>
@@ -428,7 +429,7 @@
     }
 </script>
 
-<script>
+<!-- <script>
     var countDownDate = new Date("Jul 4, 2022 17:30:25").getTime();
     var x = setInterval(function() {
 
@@ -455,5 +456,5 @@
             $('#form-kuis').submit();
         }
     }, 1000);
-</script>
+</script> -->
 @endsection

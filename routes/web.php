@@ -31,6 +31,8 @@ use App\Http\Controllers\SertifikatController;
 use App\Http\Controllers\Guest\PelatihanController;
 
 use App\Http\Controllers\KursusPesertaController;
+use App\Http\Controllers\JenisKegiatanController;
+use App\Http\Controllers\ProgramKegiatanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,7 +65,7 @@ Route::get('/pelatihan-mandiri/{id}/topik/{topikId}', [PelatihanController::clas
 Route::get('/pelatihan-mandiri/{id}/topik/{topikId}/konten/{kontenId}', [PelatihanController::class, 'getKontenPembelajaran'])->name('pembelajaran.konten');
 Route::get('/pelatihan-mandiri/{id}/topik/{topikId}/quiz/{quizId}', [PelatihanController::class, 'getQuizPembelajaran'])->name('pembelajaran.quiz');
 Route::get('/pelatihan-mandiri/{id}/topik/{topikId}/konten/{kontenId}/tandai-selesai', [PelatihanController::class, 'tandaiKontenSelesai'])->name('pembelajaran.konten.tandaiSelesai');
-Route::get('/pelatihan-mandiri/{id}/topik/{topikId}/quiz/{quizId}/tandai-selesai', [PelatihanController::class, 'tandaiQuizSelesai'])->name('pembelajaran.quiz.tandaiSelesai');
+Route::post('/pelatihan-mandiri/{id}/topik/{topikId}/quiz/{quizId}/tandai-selesai', [PelatihanController::class, 'tandaiQuizSelesai'])->name('pembelajaran.quiz.tandaiSelesai');
 
 // route untuk pembelajaran
 Route::get('/pembelajaran', function () {
@@ -113,6 +115,22 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
         Route::get('/role/edit/{id}', [RoleController::class, 'edit'])->name('role.edit');
         Route::put('/role/update/{id}', [RoleController::class, 'update'])->name('role.update');
         Route::get('/role/delete/{id}', [RoleController::class, 'delete'])->name('role.delete');
+
+        //Master Data Jenis Kegiatan
+        Route::get('/jenis-kegiatan', [JenisKegiatanController::class, 'index'])->name('jenisKegiatan');
+        Route::get('/jenis-kegiatan/create', [JenisKegiatanController::class, 'create'])->name('jenisKegiatan.create');
+        Route::post('/jenis-kegiatan/store', [JenisKegiatanController::class, 'store'])->name('jenisKegiatan.store');
+        Route::get('/jenis-kegiatan/edit/{id}', [JenisKegiatanController::class, 'edit'])->name('jenisKegiatan.edit');
+        Route::put('/jenis-kegiatan/update/{id}', [JenisKegiatanController::class, 'update'])->name('jenisKegiatan.update');
+        Route::get('/jenis-kegiatan/delete/{id}', [JenisKegiatanController::class, 'delete'])->name('jenisKegiatan.delete');
+
+        //Master Data Program Kegiatan
+        Route::get('/program-kegiatan', [ProgramKegiatanController::class, 'index'])->name('programKegiatan');
+        Route::get('/program-kegiatan/create', [ProgramKegiatanController::class, 'create'])->name('programKegiatan.create');
+        Route::post('/program-kegiatan/store', [ProgramKegiatanController::class, 'store'])->name('programKegiatan.store');
+        Route::get('/program-kegiatan/edit/{id}', [ProgramKegiatanController::class, 'edit'])->name('programKegiatan.edit');
+        Route::put('/program-kegiatan/update/{id}', [ProgramKegiatanController::class, 'update'])->name('programKegiatan.update');
+        Route::get('/program-kegiatan/delete/{id}', [ProgramKegiatanController::class, 'delete'])->name('programKegiatan.delete');
 
         Route::get('/kompetensi', [KompetensiController::class, 'index'])->name('kompetensi');
         Route::get('/kompetensi/create', [KompetensiController::class, 'create'])->name('kompetensi.create');
@@ -234,7 +252,6 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
         Route::post('/pelatihan/topik/konten-quiz/store', [KursusController::class, 'simpanKontenQuiz'])->name('pelatihan.topik.kontenQuiz.store');
 
         //Route Peserta
-
 
         Route::get('/topik', [TopikController::class, 'index'])->name('topik');
         Route::get('/topik/create', [TopikController::class, 'create'])->name('topik.create');
