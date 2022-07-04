@@ -20,9 +20,9 @@
 
                             </div>
                             <div class="ms-auto p-2 bd-highlight">
-                               
+                               @if($checkEnroll == false)
                                 <a class="btn btn-lg btn-primary" href="{{route('peserta.pelatihan.enroll', [$pelatihan->id])}}">Enroll</a>
-                                
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -79,7 +79,7 @@
                                     <li class="list-group-item d-flex justify-content-start" style="padding-left: 30px">
                                         <label class="form-check-label">
                                             <img src="{{asset('guest/assets/images/lesson.png')}}" width="15px" height="15px" />
-                                            <a href="{{route('pembelajaran.konten',['id' => $pelatihan->id, 'topikId' => $tp->id, 'kontenId' => $kt->id])}}"><span>{{$kt->judul}}</span></a>
+                                            <a href="{{route('pembelajaran.konten',['id' => $pelatihan->id, 'topikId' => $tp->id, 'kontenId' => $kt->id])}}" style="text-decoration: none;"><span>{{$kt->judul}}</span></a>
                                         </label>
                                     </li>
                                 </ul>
@@ -93,7 +93,7 @@
                                     <li class="list-group-item d-flex justify-content-start" style="padding-left: 30px">
                                         <label class="form-check-label">
                                             <img src="{{asset('guest/assets/images/tes-awal.png')}}" width="15px" height="15px" />
-                                            <a href="{{route('pembelajaran.quiz',['id' => $pelatihan->id, 'topikId' => $tq->topik_id, 'quizId' => $tq->quiz_id])}}"><span>{{$tq->judul}}</span></a>
+                                            <a href="{{route('pembelajaran.quiz',['id' => $pelatihan->id, 'topikId' => $tq->topik_id, 'quizId' => $tq->quiz_id])}}" style="text-decoration: none;"><span>{{$tq->judul}}</span></a>
                                         </label>
                                     </li>
                                 </ul>

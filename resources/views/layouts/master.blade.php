@@ -335,7 +335,7 @@
                     @endif
                     @if(auth()->user()->role_id == 5)
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('masterListData')}}">
+                        <a class="nav-link" href="{{route('peserta.pelatihan.enrolled')}}">
                             <i class="menu-icon mdi mdi-file-import"></i>
                             <span class="menu-title">Pelatihan Saya</span>
                         </a>

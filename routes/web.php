@@ -296,7 +296,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
         Route::get('/pelatihan', [KursusPesertaController::class, 'katalogPelatihan'])->name('peserta.pelatihan.katalog');
         Route::get('/pelatihan/{idPelatihan}', [KursusPesertaController::class, 'detailPelatihan'])->name('peserta.pelatihan.katalog.detail');
         Route::get('/pelatihan/{idPelatihan}/enroll', [KursusPesertaController::class, 'enrollPelatihan'])->name('peserta.pelatihan.enroll');
-        Route::get('/pelatihan/enrolled', [KursusPesertaController::class, 'enrolledPelatihan'])->name('peserta.pelatihan.enrolled');
+        Route::get('/pelatihan/by/enrolled', [KursusPesertaController::class, 'enrolledPelatihan'])->name('peserta.pelatihan.enrolled');
         
     });
 });

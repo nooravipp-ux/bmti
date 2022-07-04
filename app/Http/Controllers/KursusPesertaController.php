@@ -21,6 +21,7 @@ class KursusPesertaController extends Controller
 
     public function detailPelatihan($id)
     {
+
         $checkEnroll = $this->checkEnroll($this->getIdPeserta(), $id);
 
         $data = DB::table('t_kursus')->select('t_kursus.*', 'm_kelompok_keahlian.nama as kategori_kursus')
@@ -33,7 +34,7 @@ class KursusPesertaController extends Controller
             ->first();
 
         $topiks  = Topik::where('kursus_id', $id)->get();
-        $pelatihan = Kursus::find($id)->first();
+        $pelatihan = Kursus::where('id', $id)->first();
 
         $topikQuiz = DB::table('t_topik')->select('t_quiz.id as quiz_id', 't_quiz.judul', 't_topik_quiz.topik_id')
             ->join('t_topik_quiz', 't_topik_quiz.topik_id', '=', 't_topik.id')
@@ -52,7 +53,6 @@ class KursusPesertaController extends Controller
 
     public function enrollPelatihan($idPelatihan)
     {
-
         $userdata = DB::table('users')
             ->select('m_peserta.id')
             ->join('m_peserta', 'm_peserta.user_id', '=', 'users.id')
@@ -66,15 +66,25 @@ class KursusPesertaController extends Controller
             'created_at' => now(),
             'updated_at' => now(),
         ]);
+
+        return redirect()->back();
     }
 
     public function enrolledPelatihan()
     {
+        
+        $data = DB::table('t_kursus')->select('t_kursus.*', 'm_kelompok_keahlian.nama as kategori_kursus')
+            ->join('m_kelompok_keahlian', 'm_kelompok_keahlian.id', '=', 't_kursus.kelompok_keahlian_id')
+            ->join('t_kursus_peserta', 't_kursus_peserta.kursus_id','=','t_kursus.id')
+            ->where('t_kursus_peserta.peserta_id', $this->getIdPeserta())
+            ->get();
+
+        return view('admin.dashboard.peserta.enrolledPelatihan', compact('data'));
     }
 
     public function checkEnroll($idPeserta, $idPelatihan)
     {
-        $data = DB::table('t_kursus_peserta')->where('peserta_id', $idPeserta)->first();
+        $data = DB::table('t_kursus_peserta')->where('peserta_id', $idPeserta)->where('kursus_id', $idPelatihan)->first();
 
         if ($data) {
             return true;
@@ -90,7 +100,11 @@ class KursusPesertaController extends Controller
             ->join('m_peserta', 'm_peserta.user_id', '=', 'users.id')
             ->where('users.id', auth()->user()->id)
             ->first();
-
-        return $userdata->id;
+        if($userdata){
+            return $userdata->id;
+        }else{
+            return 0;
+        }
+        
     }
 }
