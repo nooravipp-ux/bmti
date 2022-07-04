@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Peserta;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -37,26 +38,30 @@ class RegisteredUserController extends Controller
         $request->validate([
             'firstName' => ['required', 'string', 'max:255'],
             'lastName' => ['required', 'string', 'max:255'],
-            'nik' => ['required', 'numeric', 'digits:16'],
-            'nuptk' => ['required', 'numeric', 'digits:16'],
+            'nik' => ['required', 'numeric', 'digits:16', 'unique:users'],
+            'nuptk' => ['required', 'numeric', 'digits:16', 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
-
-        $peserta = Peserta::create([
-            'nama_depan' => $request->firstName,
-            'nama_belakang' => $request->lastName,
-            'nik' => $request->nik,
-            'nuptk' => $request->nuptk,
-            'email' => $request->email
         ]);
 
         $user = User::create([
             'name' => $request->firstName.' '.$request->lastName,
             'email' => $request->email,
             'role_id' => '5',
-            'password' => Hash::make($request->password),
+            'password' => Hash::make($request->password)
         ]);
+        
+        $data = Peserta::orderBy('id', 'DESC')->first();
+        $peserta = Peserta::create([
+            'nama_depan' => $request->firstName,
+            'nama_belakang' => $request->lastName,
+            'user_id' => $data->id,
+            'nik' => $request->nik,
+            'nuptk' => $request->nuptk,
+            'email' => $request->email
+        ]);
+
+        
 
         event(new Registered($user));
 

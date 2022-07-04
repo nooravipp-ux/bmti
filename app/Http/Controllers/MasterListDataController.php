@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Evaluasi;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MasterListDataController extends Controller
 {
     public function index(){
         $data = Evaluasi::all();
-
-        return view('admin.dashboard.evaluator.masterListData.index', compact('data'));
+        $id_peserta = DB::table('m_peserta')->where('user_id', auth()->user()->id)->first();
+        return view('admin.dashboard.evaluator.masterListData.index', compact('data', 'id_peserta'));
     }
     public function create(){
         return view('admin.dashboard.evaluator.masterListData.create');

@@ -281,6 +281,9 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
         Route::get('/pelatihan/{idPelatihan}/enroll', [KursusPesertaController::class, 'enrollPelatihan'])->name('peserta.pelatihan.enroll');
         Route::get('/pelatihan/enrolled', [KursusPesertaController::class, 'enrolledPelatihan'])->name('peserta.pelatihan.enrolled');
         
+        //edit profil peserta
+        Route::get('/profil/edit/{id}', [PesertaController::class, 'editProfil'])->name('profilPeserta.edit');
+        Route::put('/profil/update/{id}', [PesertaController::class, 'updateProfil'])->name('profilPeserta.update');
     });
 });
 

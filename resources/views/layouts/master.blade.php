@@ -122,9 +122,17 @@
                                 <p class="mb-1 mt-3 font-weight-semibold">{{auth()->user()->name}}</p>
                                 <p class="fw-light text-muted mb-0">{{auth()->user()->email}}</p>
                             </div>
+
+                            @if (auth()->user()->role_id == 5)
+                            <a class="dropdown-item" href="{{route('profilPeserta.edit', ['id'=>$id_peserta->id])}}"><i
+                                    class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile
+                            </a>
+                            @else
                             <a class="dropdown-item"><i
                                     class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile
                             </a>
+
+                            @endif
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 <i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign Out
@@ -390,7 +398,8 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#galeria" aria-expanded="false" aria-controls="form-elements">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#galeria" aria-expanded="false"
+                            aria-controls="form-elements">
                             <i class="menu-icon mdi mdi-card-text-outline"></i>
                             <span class="menu-title">Galeria</span>
                             <i class="menu-arrow"></i>
@@ -407,52 +416,53 @@
                         </div>
                     </li>
                     <li class="nav-item">
-<<<<<<< HEAD
-                        <a class="nav-link" data-bs-toggle="collapse" href="#pelatihan" aria-expanded="false" aria-controls="tables">
-=======
-                        <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false"
-                            aria-controls="tables">
->>>>>>> 2a4ff4fe73c491da80b3dea62cfc72a732cb5ae6
-                            <i class="menu-icon mdi mdi-table"></i>
-                            <span class="menu-title">Pelatihan</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="pelatihan">
-                            <ul class="nav flex-column sub-menu">
-                                <!-- <li class="nav-item"> <a class="nav-link" href="{{route('pelatihanMandiri')}}">Pelatihan
+                        <<<<<<< HEAD <a class="nav-link" data-bs-toggle="collapse" href="#pelatihan"
+                            aria-expanded="false" aria-controls="tables">
+                            =======
+                            <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false"
+                                aria-controls="tables">
+                                >>>>>>> 2a4ff4fe73c491da80b3dea62cfc72a732cb5ae6
+                                <i class="menu-icon mdi mdi-table"></i>
+                                <span class="menu-title">Pelatihan</span>
+                                <i class="menu-arrow"></i>
+                            </a>
+                            <div class="collapse" id="pelatihan">
+                                <ul class="nav flex-column sub-menu">
+                                    <!-- <li class="nav-item"> <a class="nav-link" href="{{route('pelatihanMandiri')}}">Pelatihan
                                         Mandiri</a></li>
                                 <li class="nav-item"> <a class="nav-link"
                                         href="{{route('jenisPelatihanMandiri')}}">Jenis
                                         Pelatihan
                                         Mandiri</a></li> -->
-                                <li class="nav-item"> <a class="nav-link" href="{{route('jenisKursus')}}">Jenis
-                                        Pelatihan
-                                    </a></li>
-                                <li class="nav-item"> <a class="nav-link" href="{{route('bidangKeahlian')}}">
-                                        Bidang Keahlian
-                                    </a></li>
-                                <li class="nav-item"> <a class="nav-link" href="{{route('programKeahlian')}}">
-                                        Program Keahlian
-                                    </a></li>
-                                <li class="nav-item"> <a class="nav-link" href="{{route('kelompokKeahlian')}}">
-                                        Kelompok Keahlian
-                                    </a></li>
-                                <li class="nav-item"> <a class="nav-link" href="{{route('pelatihan')}}">Pelatihan
-                                    </a></li>
-                                <!-- <li class="nav-item"> <a class="nav-link" href="{{route('topik')}}">Topik
+                                    <li class="nav-item"> <a class="nav-link" href="{{route('jenisKursus')}}">Jenis
+                                            Pelatihan
+                                        </a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="{{route('bidangKeahlian')}}">
+                                            Bidang Keahlian
+                                        </a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="{{route('programKeahlian')}}">
+                                            Program Keahlian
+                                        </a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="{{route('kelompokKeahlian')}}">
+                                            Kelompok Keahlian
+                                        </a></li>
+                                    <li class="nav-item"> <a class="nav-link" href="{{route('pelatihan')}}">Pelatihan
+                                        </a></li>
+                                    <!-- <li class="nav-item"> <a class="nav-link" href="{{route('topik')}}">Topik
                                     </a></li>
                                 <li class="nav-item"> <a class="nav-link" href="{{route('content')}}">Konten Pembelajaran
                                     </a></li>
                                 <li class="nav-item"> <a class="nav-link" href="{{route('quiz')}}">Quiz
                                     </a></li> -->
-                                <li class="nav-item"> <a class="nav-link" href="{{route('quiz')}}">Bank Soal
-                                    </a></li>
-                                <li class="nav-item"> <a class="nav-link" href="{{route('sertifikat.index')}}">Sertifikat
-                                    </a></li>
-                                <!-- <li class="nav-item"> <a class="nav-link" href="{{route('topikQuiz')}}">Topik Quiz
+                                    <li class="nav-item"> <a class="nav-link" href="{{route('quiz')}}">Bank Soal
+                                        </a></li>
+                                    <li class="nav-item"> <a class="nav-link"
+                                            href="{{route('sertifikat.index')}}">Sertifikat
+                                        </a></li>
+                                    <!-- <li class="nav-item"> <a class="nav-link" href="{{route('topikQuiz')}}">Topik Quiz
                                     </a></li> -->
-                            </ul>
-                        </div>
+                                </ul>
+                            </div>
                     </li>
 
                     <li class="nav-item">

@@ -22,14 +22,14 @@
                         <div class="row">
                             <label for="judul" class="col-sm-3 col-form-label">Nama Pelatihan</label>
                             <div class="col-sm-9">
-                                <input type="text" name="judul" class="form-control mt-2" required>
+                                <input type="text" name="judul" class="form-control mt-2">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="deskripsi" class="col-sm-3 col-form-label">Dekripsi Pelatihan</label>
                             <div class="col-sm-9">
                                 <textarea type="text" name="deskripsi" class="ckeditor form-control mt-2"
-                                    style="height: 100px;" required></textarea>
+                                    style="height: 100px;"></textarea>
                             </div>
                         </div>
                         <div class="row">
@@ -45,7 +45,7 @@
                         <div class="row mb-3">
                             <label for="gambar" class="col-sm-3 col-form-label">Upload Gambar</label>
                             <div class="col-sm-9">
-                                <input type="file" name="gambar" class="form-control mt-2" required
+                                <input type="file" name="gambar" class="form-control mt-2"
                                     accept="image/jpg, image/jpeg, image/png">
                             </div>
                         </div>
