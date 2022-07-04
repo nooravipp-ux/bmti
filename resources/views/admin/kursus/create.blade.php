@@ -8,8 +8,15 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">{{ __('Buat Pelatihan Mandiri') }}</h4>
-                    <!-- <p class="card-description">
-                    </p> -->
+                    @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
                     <form action="{{route('pelatihan.store')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row">

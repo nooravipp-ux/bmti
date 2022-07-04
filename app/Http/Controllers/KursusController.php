@@ -42,6 +42,13 @@ class KursusController extends Controller
 
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'kelompok_keahlian_id' => 'required',
+            'judul' => 'required',
+            'deskripsi' => 'required',
+            'gambar' => 'required|image'
+        ]);
+
         $image = $request->file('gambar');
         $imageName = $image->getClientOriginalName();
         $data = Kursus::create([
@@ -55,7 +62,7 @@ class KursusController extends Controller
             $image->move(public_path('images/pelatihan/'), $imageName);
         }
 
-        return redirect()->route('pelatihan.topik', [$data->id]);
+        return redirect()->route('pelatihan.topik', [$data->id])->with('message', 'Data Berhasil Disimpan');
     }
 
     public function manageTopik($pelatihanId)
@@ -138,6 +145,13 @@ class KursusController extends Controller
     }
     public function update(Request $request, $id)
     {
+        $validatedData = $request->validate([
+            'kelompok_keahlian_id' => 'required',
+            'judul' => 'required',
+            'deskripsi' => 'required',
+            'gambar' => 'required|image'
+        ]);
+        
         $image = $request->file('gambar');
         $imageName = $image->getClientOriginalName();
         $data = Kursus::find($id);
@@ -160,6 +174,6 @@ class KursusController extends Controller
         $data = Kursus::find($id);
         $data->delete();
 
-        return redirect('/admin/pelatihan');
+        return redirect('/admin/pelatihan')->with('message', 'Data Berhasil Dihapus');
     }
 }

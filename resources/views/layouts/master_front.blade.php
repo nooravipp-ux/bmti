@@ -391,8 +391,8 @@
                                     <h2 class="login-title">DAFTAR</h2>
                                 </div>
                             </div>
-
-                            <form method="POST" action="{{ route('register') }}">
+                            <div id="error"></div>
+                            <form method="POST" action="{{ route('register') }}" onSubmit="validasi()">
                                 @csrf
 
                                 <!-- FirstName -->
@@ -401,7 +401,7 @@
                                         type="text" name="firstName" :value="old('firstName')" required autofocus />
                                 </div>
 
-                                <!-- LasttName -->
+                                <!-- LastName -->
                                 <div class="form-login mt-2">
                                     <x-input id="lastName" class="block mt-1 w-full" placeholder="Masukan Nama Belakang"
                                         type="text" name="lastName" :value="old('lastName')" required autofocus />
@@ -409,14 +409,14 @@
 
                                 <!-- NIK -->
                                 <div class="form-login mt-2">
-                                    <x-input id="nik" class="block mt-1 w-full" placeholder="Masukan NIK" type="text"
+                                    <x-input id="nik" class="block mt-1 w-full" placeholder="Masukan NIK" type="number"
                                         name="nik" :value="old('nik')" required autofocus />
                                 </div>
 
                                 <!-- NUPTK -->
                                 <div class="form-login mt-2">
                                     <x-input id="nuptk" class="block mt-1 w-full" placeholder="Masukan NUPTK"
-                                        type="text" name="nuptk" :value="old('nuptk')" required autofocus />
+                                        type="number" name="nuptk" :value="old('nuptk')" required autofocus />
                                 </div>
 
                                 <!-- Email Address -->
@@ -428,7 +428,7 @@
                                 <!-- Password -->
                                 <div class="form-login mt-2">
                                     <x-input id="password" class="block mt-1 w-full" placeholder="Masukan Password"
-                                        type="password" name="password" required autocomplete="new-password" />
+                                        type="password" name="password" autocomplete="new-password" required />
                                 </div>
 
                                 <!-- Confirm Password -->
@@ -443,7 +443,7 @@
                                 </div>
 
                                 <div class="row text-center mt-2 clik-daftar">
-                                    <button class="btn-login rounded-pill text-dark font-weight-bold">
+                                    <button type="submit" class="btn-login rounded-pill text-dark font-weight-bold">
                                         {{ __('Daftar') }}
                                     </button>
                                 </div>
@@ -627,6 +627,37 @@
 
     function onClickCloseLupaPassword() {
         $('#LupaPassword').addClass('d-none');
+    }
+
+    function validasi() {
+        var firstName = document.getElementById("firstName").value;
+        var lastName = document.getElementById("lastName").value;
+        var nik = document.getElementById("nik").value;
+        var nuptk = document.getElementById("nuptk").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var password_confirmation = document.getElementById("password_confirmation").value;
+
+        if (nik.length != 16) {
+            alert('NIK Tidak Valid');
+        } else {
+            return true;
+        }
+        if (nuptk.length != 16) {
+            alert('NUPTK Tidak Valid')
+        } else {
+            return true;
+        }
+        if (password.length < 8 || password.length > 16) {
+            alert('Password Tidak Boleh Kurang dari 8 dan Tidak Boleh Lebih dari 16')
+        } else {
+            return true;
+        }
+        if (password_confirmation != password) {
+            alert('Konfirmasi Password Salah')
+        } else {
+            return true;
+        }
     }
     </script>
 </body>
