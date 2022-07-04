@@ -29,6 +29,7 @@ class KelompokKeahlianController extends Controller
         ]);
         $kelompokKeahlian = KelompokKeahlian::create([
             'program_keahlian_id' => $request->program_keahlian_id,
+            'kode' => $request->kode,
             'nama' => $request->nama,
             'deskripsi' => $request->deskripsi
         ]);
@@ -50,6 +51,7 @@ class KelompokKeahlianController extends Controller
         $kelompokKeahlian->update([
             'program_keahlian_id' => $request->program_keahlian_id,
             'nama' => $request->nama,
+            'kode' => $request->kode,
             'deskripsi' => $request->deskripsi
         ]);
 

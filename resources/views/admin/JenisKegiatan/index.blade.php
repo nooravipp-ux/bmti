@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'BMTI | DATA JENIS KURSUS')
+@section('title', 'BMTI | Jenis Kegiatan')
 
 @section('custom-css')
 <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" />
@@ -11,17 +11,15 @@
         <div class="col-lg-12 grid-margin">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">{{ __('Data Kelompok Keahlian') }}</h4>
-                    @if(session()->has('message'))
-                    <div class="alert alert-success">
-                        {{ session()->get('message') }}
-                    </div>
-                    @endif
+                    <h4 class="card-title">{{ __('Jenis Kegiatan') }}</h4>
+                    <!-- <p class="card-description">
+                    </p> -->
+
                     <div class="table-responsive">
                         <table id="dataTable" class="table">
                             <thead>
                                 <tr>
-                                    <a href="{{route('kelompokKeahlian.create')}}"
+                                    <a href="{{route('jenisKegiatan.create')}}"
                                         class="btn btn-primary btn-sm btn-rounded btn-icon-text">
                                         <i class="ti-upload btn-icon-prepend"></i>
                                         Create
@@ -29,31 +27,25 @@
                                 </tr>
                                 <tr>
                                     <th>No</th>
-                                    <th>Nama</th>
-                                    <th>Kode (KDKKM)</th>
-                                    <th>Program keahlian</th>
-                                    <th>Deskripsi</th>
+                                    <th>Nama Jenis Kegiatan</th>
+                                    <th>Kode Jenis Kegiatan</th>
                                     <th class="text-center">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php $no = 1; ?>
-                                @foreach($kelompokKeahlian as $row)
+                                @foreach($data as $row)
                                 <tr>
                                     <td><?php echo $no++; ?></td>
-                                    <td>{{$row->nama}}</td>
-                                    <td>{{$row->kode}}</td>
-                                    <td>{{$row->program_keahlian}}</td>
-                                    <td>{{$row->deskripsi}}</td>
-                                    <td class="text-center"><a
-                                            href="{{ route('kelompokKeahlian.edit', ['id'=>$row->id]) }}"
+                                    <td>{{$row->nama_jenis_kegiatan}}</td>
+                                    <td>{{$row->kode_jenis_kegiatan}}</td>
+                                    <td class="text-center"><a href="{{ route('jenisKegiatan.edit', ['id'=>$row->id]) }}"
                                             class="btn btn-dark btn-sm btn-rounded btn-icon-prepend">Edit
                                             <i class="ti-reload btn-icon-append"></i></a>
-                                        <a href="{{ route('kelompokKeahlian.delete', ['id'=>$row->id]) }}"
+                                    <a href="{{ route('jenisKegiatan.delete', ['id'=>$row->id]) }}"
                                             onclick="return confirm('Apakah anda yakin ?')"
                                             class="btn btn-danger btn-sm btn-rounded btn-icon-text">Delete
-                                            <i class="ti-trash btn-icon-append"></i></a>
-                                    </td>
+                                            <i class="ti-trash btn-icon-append"></i></a></td>
                                 </tr>
                                 @endforeach
                             </tbody>

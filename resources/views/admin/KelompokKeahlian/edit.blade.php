@@ -27,6 +27,11 @@
                                 required>
                         </div>
                         <div class="mb-3">
+                            <label for="inputnama" class="form-label">kode (KDKKM)</label>
+                            <input type="text" name="nama" class="form-control" value="{{ $kelompokKeahlian->nama }}"
+                                required>
+                        </div>
+                        <div class="mb-3">
                             <label for="inputnama" class="form-label">Program Keahlian</label>
                             <select type="text" name="program_keahlian_id" class="form-control">
                                 @foreach($programKeahlian as $bk)

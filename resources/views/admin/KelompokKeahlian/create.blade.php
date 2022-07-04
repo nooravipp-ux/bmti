@@ -24,7 +24,11 @@
                             <input type="text" name="nama" class="form-control" required>
                         </div>
                         <div class="mb-3">
-                            <label for="inputnama" class="form-label">Nama</label>
+                            <label for="inputnama" class="form-label">Kode (KDKKM)</label>
+                            <input type="text" name="kode" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputnama" class="form-label">Program Keahlian</label>
                             <select type="text" name="program_keahlian_id" class="form-control">
                                 <option value="">-</option>
                                 @foreach($programKeahlian as $bk)

@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class KelompokKeahlian extends Model
+class JenisKegiatan extends Model
 {
     use HasFactory;
 
-    protected $table = 'm_kelompok_keahlian';
-    protected $fillable = ['nama','kode','program_keahlian_id','deskripsi'];
+    protected $fillable = ['nama_jenis_kegiatan', 'kode_jenis_kegiatan'];
+    protected $table = 'm_jenis_kegiatan';
 
     public $timestamps = false;
 }
