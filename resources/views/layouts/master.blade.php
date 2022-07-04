@@ -116,9 +116,19 @@
                                 <p class="mb-1 mt-3 font-weight-semibold">{{auth()->user()->name}}</p>
                                 <p class="fw-light text-muted mb-0">{{auth()->user()->email}}</p>
                             </div>
-                            <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile
+
+                            @if (auth()->user()->role_id == 5)
+                            <a class="dropdown-item" href="{{route('profilPeserta.edit', ['id'=>$id_peserta->id])}}"><i
+                                    class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile
                             </a>
-                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            @else
+                            <a class="dropdown-item"><i
+                                    class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile
+                            </a>
+
+                            @endif
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 <i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign Out
                             </a>
 

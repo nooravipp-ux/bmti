@@ -15,8 +15,9 @@ class KursusPesertaController extends Controller
         $data = DB::table('t_kursus')->select('t_kursus.*', 'm_kelompok_keahlian.nama as kategori_kursus')
             ->join('m_kelompok_keahlian', 'm_kelompok_keahlian.id', '=', 't_kursus.kelompok_keahlian_id')
             ->get();
+            $id_peserta = DB::table('m_peserta')->where('user_id', auth()->user()->id)->first();
 
-        return view('admin.dashboard.peserta.katalogPelatihan', compact('data'));
+        return view('admin.dashboard.peserta.katalogPelatihan', compact('data', 'id_peserta'));
     }
 
     public function detailPelatihan($id)

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Peserta;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 
 class PesertaController extends Controller
 {
@@ -61,7 +63,7 @@ class PesertaController extends Controller
             'nuptk' => 'required|numeric|digits:16',
             'nik' => 'required|numeric|digits:16',
             'nama_depan' => 'required',
-            'nama_belakang' => 'required|string|min:8',
+            'nama_belakang' => 'required',
             'tempat_lahir' => 'required',
             'tanggal_lahir' => 'required',
             'alamat' => 'required',
@@ -69,7 +71,7 @@ class PesertaController extends Controller
             'kecamatan' => 'required',
             'kota_kab' => 'required',
             'provinsi' => 'required',
-            'email' => 'required|string|email|unique:users',
+            'email' => 'required|string|email',
             'no_telepon' => 'required|numeric'
 
         ]);
@@ -97,5 +99,69 @@ class PesertaController extends Controller
         $data->delete();
 
         return redirect('/admin/peserta')->with('message', 'Data Berhasil Dihapus');
+    }
+    public function editProfil($id){
+        $id_peserta = DB::table('m_peserta')->where('user_id', auth()->user()->id)->first();
+        $data = Peserta::find($id);
+        return view('admin.dashboard.peserta.editProfil', compact(['data', 'id_peserta']));
+    }
+    public function updateProfil(Request $request, $id){
+        $validatedData = $request->validate([
+            // 'foto' => 'required|images',
+            'nuptk' => 'required|numeric|digits:16',
+            'nik' => 'required|numeric|digits:16',
+            'nama_depan' => 'required',
+            'nama_belakang' => 'required',
+            'tempat_lahir' => 'required',
+            'tanggal_lahir' => 'required',
+            'alamat' => 'required',
+            'desa_kelurahan' => 'required',
+            'kecamatan' => 'required',
+            'kota_kab' => 'required',
+            'provinsi' => 'required',
+            'email' => 'required|string|email',
+            'no_telepon' => 'required|numeric'
+
+        ]);
+
+        $foto_new = $request->file('foto_new');
+        $foto_old = $request->foto_old;
+
+        if($foto_old != ""){
+            if($foto_new){
+            $foto_old = time()."_".$foto_new->getClientOriginalName();
+            $foto_new->move(public_path('images/profil/'), $foto_old);
+            File::delete('images/profil/'.$request->foto_old);
+            }
+        } else {
+        if($foto_new){
+            $foto_old = time()."_".$foto_new->getClientOriginalName();
+
+            $foto_new->move(public_path('images/profil/'), $foto_old);
+            }
+        }
+
+
+        
+        $data = Peserta::find($id);
+        $data->update([
+            'foto' => $foto_old,
+            'nuptk' => $request->nuptk,
+            'nik' => $request->nik,
+            'nama_depan' => $request->nama_depan,
+            'nama_belakang' => $request->nama_belakang,
+            'tempat_lahir' => $request->tempat_lahir,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'alamat' => $request->alamat,
+            'desa_kelurahan' => $request->desa_kelurahan,
+            'kecamatan' => $request->kecamatan,
+            'kota_kab' => $request->kota_kab,
+            'provinsi' => $request->provinsi,
+            'email' => $request->email,
+            'no_telepon' => $request->no_telepon
+        ]);
+        // $id_peserta = DB::table('m_peserta')->where('user_id', auth()->user()->id)->first();
+
+        return redirect()->back()->with('message', 'Data Berhasil Diubah');       
     }
 }
