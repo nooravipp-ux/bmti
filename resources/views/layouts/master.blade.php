@@ -118,7 +118,7 @@
                             </div>
 
                             @if (auth()->user()->role_id == 5)
-                            <a class="dropdown-item" href="{{route('profilPeserta.edit', ['id'=>$id_peserta->id])}}"><i
+                            <a class="dropdown-item" href=""><i
                                     class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile
                             </a>
                             @else
