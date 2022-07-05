@@ -11,6 +11,6 @@ class JenisKegiatan extends Model
 
     protected $fillable = ['nama_jenis_kegiatan', 'kode_jenis_kegiatan'];
     protected $table = 'm_jenis_kegiatan';
-
+    protected $primaryKey = 'id';
     public $timestamps = false;
 }

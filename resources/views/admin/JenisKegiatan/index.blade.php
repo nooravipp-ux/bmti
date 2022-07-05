@@ -12,8 +12,11 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">{{ __('Jenis Kegiatan') }}</h4>
-                    <!-- <p class="card-description">
-                    </p> -->
+                    @if(session()->has('message'))
+                    <div class="alert alert-success">
+                        {{ session()->get('message') }}
+                    </div>
+                    @endif
 
                     <div class="table-responsive">
                         <table id="dataTable" class="table">
@@ -39,13 +42,15 @@
                                     <td><?php echo $no++; ?></td>
                                     <td>{{$row->nama_jenis_kegiatan}}</td>
                                     <td>{{$row->kode_jenis_kegiatan}}</td>
-                                    <td class="text-center"><a href="{{ route('jenisKegiatan.edit', ['id'=>$row->id]) }}"
+                                    <td class="text-center"><a
+                                            href="{{ route('jenisKegiatan.edit', ['id'=>$row->id]) }}"
                                             class="btn btn-dark btn-sm btn-rounded btn-icon-prepend">Edit
                                             <i class="ti-reload btn-icon-append"></i></a>
-                                    <a href="{{ route('jenisKegiatan.delete', ['id'=>$row->id]) }}"
+                                        <a href="{{ route('jenisKegiatan.delete', ['id'=>$row->id]) }}"
                                             onclick="return confirm('Apakah anda yakin ?')"
                                             class="btn btn-danger btn-sm btn-rounded btn-icon-text">Delete
-                                            <i class="ti-trash btn-icon-append"></i></a></td>
+                                            <i class="ti-trash btn-icon-append"></i></a>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
