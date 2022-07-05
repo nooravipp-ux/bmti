@@ -33,8 +33,6 @@ class KeahlianController extends Controller
             'judul' => 'required',
             'materi' => 'required',
             'gambar_banner' => 'required|image',
-            'file_content' => 'required|mimes:pdf',
-            'video_content' => 'required|mimetypes:video/avi,video/mpeg,video/quicktime,video/mp4',
             'author' => 'required',
         ]);
 
