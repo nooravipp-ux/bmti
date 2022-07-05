@@ -19,12 +19,16 @@ class JenisKegiatanController extends Controller
     }
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'nama_jenis_kegiatan' => 'required',
+            'kode_jenis_kegiatan' => 'required'
+        ]);
         $data = JenisKegiatan::create([
             'nama_jenis_kegiatan' => $request->nama_jenis_kegiatan,
             'kode_jenis_kegiatan' => $request->kode_jenis_kegiatan,
         ]);
 
-        return redirect('/admin/jenis-kegiatan');
+        return redirect('/admin/jenis-kegiatan')->with('message', 'Data Berhasil Disimpan');
     }
     public function edit($id)
     {
@@ -33,19 +37,23 @@ class JenisKegiatanController extends Controller
     }
     public function update(Request $request, $id)
     {
+        $validatedData = $request->validate([
+            'nama_jenis_kegiatan' => 'required',
+            'kode_jenis_kegiatan' => 'required'
+        ]);
         $data = JenisKegiatan::find($id);
         $data->update([
             'nama_jenis_kegiatan' => $request->nama_jenis_kegiatan,
             'kode_jenis_kegiatan' => $request->kode_jenis_kegiatan,
         ]);
 
-        return redirect('/admin/jenis-kegiatan');
+        return redirect('/admin/jenis-kegiatan')->with('message', 'Data Berhasil Diubah');
     }
     public function delete($id)
     {
         $data = JenisKegiatan::find($id);
         $data->delete();
 
-        return redirect('/admin/jenis-kegiatan');
+        return redirect('/admin/jenis-kegiatan')->with('message', 'Data Berhasil Dihapus');
     }
 }
