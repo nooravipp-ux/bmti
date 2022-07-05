@@ -96,11 +96,106 @@ header {
 /* end header */
 
 
+/* menu */
+
+.menu-pembelajaran {
+    display: none;
+}
+
+.menu-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2000px;
+    background: linear-gradient(to top left, #018ED6, #1C3B78);
+    z-index: 99999;
+    animation-name: menu;
+    animation-duration: 1s;
+}
+
+@keyframes menu {
+    0% {
+        left: -400px;
+        top: 0px;
+    }
+    100% {
+        left: 0px;
+        top: 0px;
+    }
+}
+
+.icon-pembelajaran {
+    background-image: url("../guest/assets/images/icon-menu.png");
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+    margin-top: 39px;
+    margin-left: 5px;
+}
+
+.icon-menu-hover {
+    position: relative;
+    z-index: 99999;
+    margin-left: 25px;
+    margin-top: 40px;
+    background-image: url("../guest/assets/images/icon-close.png");
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+}
+
+.icon-menu-hover:hover {
+    background-image: url("../guest/assets/images/icon-close-hover.png");
+}
+
+.text-header-menu {
+    font-weight: 600;
+    font-family: "glory";
+}
+
+.text-hover-menu {
+    width: 90%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    color: black;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+    font-family: "glory";
+    cursor: pointer;
+}
+
+.text-hover-menu hr {
+    position: relative;
+    right: 15px;
+    width: 150px;
+    margin: 5px;
+}
+
+.text-hover-menu a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.text-hover-menu i {
+    margin-left: 15px;
+    margin-top: 4px;
+}
+
+
+/* end menu */
+
+
 /* pembelajaran */
 
 .button-hidden {
     position: relative;
-    right: 22px;
+    right: 24px;
     bottom: 25px;
     width: 20px;
     height: 20px;
@@ -219,6 +314,10 @@ header {
 
 
 /* quiz */
+
+.quiz {
+    font-family: "glory";
+}
 
 .box-proses {
     background: #DBDFFD;
@@ -341,3 +440,328 @@ footer {
 
 
 /* end footer */
+
+
+/* responsive */
+
+@media only screen and (min-width: 400px) and (max-width: 991px) {
+    .menu-pembelajaran {
+        display: block;
+    }
+    header {
+        height: 100px;
+    }
+    .logo-header img {
+        width: 100px;
+        height: 90px;
+    }
+    .text-header-menu {
+        margin-top: -20px;
+    }
+    .text-header {
+        display: none;
+    }
+    .text-header-2 p {
+        margin-left: 15px;
+        font-size: 15px;
+    }
+    .text-hover-pembelajaran {
+        display: none;
+    }
+    .content-pembelajaran {
+        display: none;
+    }
+    .button-hidden {
+        display: none;
+    }
+    .pembelajaran {
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+    }
+    .pembelajaran-box {
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+    }
+    .pembelajaran-bar {
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+    }
+    .next-pembelajaran p {
+        margin-left: 0;
+    }
+    /* quiz */
+    .box-proses {
+        margin-left: auto;
+        margin-right: auto;
+        width: 390px;
+    }
+    .btn-finish button {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+/* footer */
+
+@media only screen and (min-width: 400px) and (max-width: 575px) {
+    footer {
+        padding-top: 20px;
+    }
+    .logo-footer {
+        top: 0;
+        right: 0;
+    }
+    .logo-footer img {
+        width: 90px;
+        height: 80px;
+    }
+    .logo-footer h1 {
+        position: relative;
+        top: -10px;
+        left: 25px;
+        font-size: 10px;
+    }
+    .share {
+        margin-top: 8px;
+        right: 0;
+    }
+    .share img {
+        width: 20px;
+        height: 20px;
+    }
+    .text-1 span {
+        font-size: 10px;
+    }
+    .text-1 p {
+        font-size: 8px;
+    }
+    .text-2 {
+        margin-left: -20px;
+    }
+    .text-2 span {
+        font-size: 10px;
+    }
+    .text-2 p {
+        position: relative;
+        top: 10px;
+        font-size: 8px;
+    }
+    .address {
+        margin-left: -20px;
+    }
+    .address span {
+        font-size: 10px;
+    }
+    .address p {
+        position: relative;
+        width: 140px;
+        top: 10px;
+        font-size: 8px;
+    }
+    .copyright {
+        padding-top: 0px;
+    }
+    .copyright span {
+        font-size: 8px;
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    footer {
+        padding-top: 20px;
+    }
+    .logo-footer {
+        top: 0;
+        right: 0;
+        margin-left: 10px;
+    }
+    .logo-footer img {
+        width: 100px;
+        height: 80px;
+    }
+    .logo-footer h1 {
+        position: relative;
+        top: -10px;
+        left: 25px;
+        font-size: 10px;
+    }
+    .share {
+        margin-top: 8px;
+        right: 0;
+    }
+    .share img {
+        width: 20px;
+        height: 20px;
+    }
+    .text-1 span {
+        font-size: 10px;
+    }
+    .text-1 p {
+        font-size: 8px;
+    }
+    .text-2 {
+        margin-left: -10px;
+    }
+    .text-2 span {
+        font-size: 10px;
+    }
+    .text-2 p {
+        position: relative;
+        top: 10px;
+        font-size: 8px;
+    }
+    .address {
+        margin-left: -10px;
+    }
+    .address span {
+        font-size: 10px;
+    }
+    .address p {
+        position: relative;
+        width: 140px;
+        top: 10px;
+        font-size: 8px;
+    }
+    .copyright {
+        padding-top: 0px;
+    }
+    .copyright span {
+        font-size: 8px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    footer {
+        padding-top: 20px;
+    }
+    .logo-footer {
+        top: 0;
+        right: 0;
+    }
+    .logo-footer img {
+        width: 150px;
+        height: 100px;
+    }
+    .logo-footer h1 {
+        position: relative;
+        left: 40px;
+        font-size: 12px;
+    }
+    .share {
+        margin-top: 5px;
+        right: 0;
+    }
+    .share img {
+        width: 30px;
+        height: 30px;
+    }
+    .text-1 span {
+        font-size: 14px;
+    }
+    .text-1 p {
+        font-size: 12px;
+    }
+    .text-2 {
+        margin-left: -5px;
+    }
+    .text-2 span {
+        font-size: 14px;
+    }
+    .text-2 p {
+        position: relative;
+        top: 10px;
+        font-size: 12px;
+    }
+    .address {
+        margin-left: -10px;
+    }
+    .address span {
+        font-size: 14px;
+    }
+    .copyright {
+        padding-top: 0px;
+    }
+    .address p {
+        position: relative;
+        width: 250px;
+        top: 10px;
+        font-size: 12px;
+    }
+    .copyright span {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    footer {
+        padding-top: 20px;
+    }
+    .logo-footer {
+        top: 0;
+        right: 0;
+        left: 35px;
+    }
+    .logo-footer img {
+        width: 150px;
+        height: 100px;
+    }
+    .logo-footer h1 {
+        position: relative;
+        left: 40px;
+        font-size: 12px;
+    }
+    .share {
+        margin-top: 5px;
+        right: 0;
+    }
+    .share img {
+        width: 30px;
+        height: 30px;
+    }
+    .text-1 span {
+        font-size: 14px;
+    }
+    .text-1 p {
+        font-size: 12px;
+    }
+    .text-2 {
+        margin-left: -5px;
+    }
+    .text-2 span {
+        font-size: 14px;
+    }
+    .text-2 p {
+        position: relative;
+        top: 10px;
+        font-size: 12px;
+    }
+    .address {
+        margin-left: -3px;
+    }
+    .address span {
+        font-size: 14px;
+    }
+    .copyright {
+        padding-top: 0px;
+    }
+    .address p {
+        position: relative;
+        width: 250px;
+        top: 10px;
+        font-size: 12px;
+    }
+    .copyright span {
+        font-size: 12px;
+    }
+}
+
+
+/* end footer */
+
+
+/* end responsive */

@@ -10,12 +10,13 @@
 @section('content')
 <div class="container-fluid">
     <div class="row justify-content-center mt-5 mb-5">
-        <div class="col-lg-7">
-            <div class="box-proses mt-3 mb-3">
-                <p id="demo" style="font-size: 30px;"></p>
-                <!-- <div class="progress">
-                    <div class="progress-bar w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
-                </div> -->
+        <div class="col-12 col-xl-7">
+            <div class="box-proses mb-3">
+                <p>Batasan Waktu : <span id="demo" style="font-size: 17px;"></span></p>
+                <div class="progress">
+                    <div class="progress-bar w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+                        aria-valuemax="100">75%</div>
+                </div>
             </div>
             <?php $no = 1; ?>
             <form id="form-kuis"
@@ -48,7 +49,7 @@
                 </div>
                 @endforeach
                 <div class="quiz mt-4 mb-4">
-                    <div class="form">
+                    <div class="form btn-finish">
                         <button type="submit" class="btn btn-md btn-primary">Selesai</button>
                     </div>
                 </div>
@@ -76,7 +77,7 @@
                             <div class="col-1">
                                 <input type="checkbox" name="dapatDiUlang" value="1" class="form-check-input">
                             </div>
-                            <div class="col-7">
+                            <div class="col-8">
                                 <span>{{$tp->judul}}</span>
                             </div>
                             <div class="col-3">
@@ -126,7 +127,6 @@
                         </figure>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -230,31 +230,31 @@ function myFunction1() {
 </script>
 
 <!-- <script>
-    var countDownDate = new Date("Jul 5, 2022 04:10:25").getTime();
-    var x = setInterval(function() {
+var countDownDate = new Date("Jul 7, 2022 04:10:25").getTime();
+var x = setInterval(function() {
 
-        // Get today's date and time
-        var now = new Date().getTime();
+    // Get today's date and time
+    var now = new Date().getTime();
 
-        // Find the distance between now and the count down date
-        var distance = countDownDate - now;
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
 
-        // Time calculations for days, hours, minutes and seconds
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    // Time calculations for days, hours, minutes and seconds
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        // Output the result in an element with id="demo"
-        document.getElementById("demo").innerHTML = hours + "h " +
-            minutes + "m " + seconds + "s ";
+    // Output the result in an element with id="demo"
+    document.getElementById("demo").innerHTML = hours + "h " +
+        minutes + "m " + seconds + "s ";
 
-        // If the count down is over, write some text 
-        if (distance < 0) {
-            clearInterval(x);
-            document.getElementById("demo").innerHTML = "EXPIRED";
-            alert('Waktu Habis');
-            $('#form-kuis').submit();
-        }
-    }, 1000);
+    // If the count down is over, write some text 
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+        alert('Waktu Habis');
+        $('#form-kuis').submit();
+    }
+}, 1000);
 </script> -->
 @endsection

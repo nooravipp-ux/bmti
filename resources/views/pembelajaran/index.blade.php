@@ -29,7 +29,7 @@
                             <div class="col-1">
                                 <input type="checkbox" name="dapatDiUlang" value="1" class="form-check-input">
                             </div>
-                            <div class="col-7">
+                            <div class="col-8">
                                 <span>{{$tp->judul}}</span>
                             </div>
                             <div class="col-3">
