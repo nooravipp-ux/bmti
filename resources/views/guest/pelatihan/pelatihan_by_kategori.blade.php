@@ -17,7 +17,7 @@
             </div>
             <div class="col-4 col-md-5 col-lg-3 col-xl-3 account">
                 <span>By {{$pelatihan->author}}
-                    <p>Last Update Sept 15, 2021</p>
+                    <p>Last Update Sept 15, 2022</p>
                 </span>
             </div>
 

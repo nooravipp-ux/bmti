@@ -108,8 +108,8 @@ header {
 }
 
 .content-pembelajaran {
-    margin-top: -65px;
-    margin-left: 50px;
+    margin-top: -63px;
+    margin-left: 49px;
 }
 
 .text-pembelajaran {
@@ -145,7 +145,7 @@ header {
     padding: 20px;
     width: 300px;
     height: 60px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
     padding-bottom: 40px;
 }
 
@@ -161,45 +161,22 @@ header {
     font-size: 18px;
 }
 
-.pembelajaran-2 {
+.pembelajaran-box {
     margin-left: 30px;
     width: 300px;
-    height: 65px;
+    height: auto;
     padding: 10px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 
-.pembelajaran-2 i {
-    margin-top: 15px;
-}
-
-.pembelajaran-2 span {
+.pembelajaran-box span {
     font-family: "glory";
     font-weight: 600;
     font-size: 15px;
 }
 
-.pembelajaran-2 p {
-    font-family: "glory";
-    font-weight: 600;
-    font-size: 15px;
-}
-
-.pembelajaran-2 input {
-    margin-top: 15px;
-}
-
-.pembelajaran-3 {
-    margin-left: 30px;
-    width: 300px;
-    padding: 10px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-.pembelajaran-3 span {
-    font-family: "glory";
-    font-weight: 600;
-    font-size: 15px;
+.pembelajaran-box a {
+    color: black;
 }
 
 .pembelajaran-bar {
@@ -207,7 +184,7 @@ header {
     padding: 10px;
     width: 300px;
     height: 350px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
     padding-bottom: 40px;
 }
 
@@ -222,7 +199,7 @@ header {
     height: 100px;
     margin-top: -48px;
     background: white;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
     padding: 40px;
 }
 
