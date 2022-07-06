@@ -53,8 +53,29 @@ class PelatihanController extends Controller
 
     public function getTopikPembelajaran($pelatihanId, $topikId)
     {
+        $pelatihan = DB::table('t_kursus')
+            ->select('t_kursus.*', 'm_kelompok_keahlian.nama as kategori_kursus')
+            ->join('m_kelompok_keahlian', 'm_kelompok_keahlian.id', '=', 't_kursus.kelompok_keahlian_id')
+            ->first();
 
-        return view('pembelajaran.index');
+        $topiks  = Topik::where('kursus_id', $pelatihanId)->get();
+        $pelatihan = Kursus::where('id', $pelatihanId)->first();
+
+        $singleTopik = Topik::where('id', $topikId)->first();
+
+        $topikQuiz = DB::table('t_topik')->select('t_quiz.id as quiz_id', 't_quiz.judul', 't_topik_quiz.topik_id')
+            ->join('t_topik_quiz', 't_topik_quiz.topik_id', '=', 't_topik.id')
+            ->join('t_quiz', 't_quiz.id', '=', 't_topik_quiz.quiz_id')
+            ->where('t_topik.kursus_id', $pelatihanId)
+            ->get();
+
+        $konten = DB::table('t_topik')
+            ->join('t_topik_konten', 't_topik.id', '=', 't_topik_konten.topik_id')
+            ->join('t_konten', 't_konten.id', '=', 't_topik_konten.konten_id')
+            ->where('kursus_id', $pelatihanId)
+            ->get();
+
+        return view('pembelajaran.index', compact('pelatihan', 'topiks','topikQuiz', 'konten', 'pelatihanId','topikId', 'singleTopik'));
     }
 
     public function getKontenPembelajaran($pelatihanId, $topikId, $kontenId)
@@ -94,7 +115,7 @@ class PelatihanController extends Controller
 
         $cekKontenSelesai = $this->cekKontenSelesai($pelatihanId, $topikId, $kontenId);
 
-        return view('pembelajaran.index', compact('pelatihan', 'topiks','topikQuiz', 'konten', 'data','pelatihanId','topikId', 'cekKontenSelesai'));
+        return view('pembelajaran.konten', compact('pelatihan', 'topiks','topikQuiz', 'konten', 'data','pelatihanId','topikId', 'cekKontenSelesai'));
     }
 
     public function getQuizPembelajaran($pelatihanId, $topikId, $quizId)
@@ -159,11 +180,21 @@ class PelatihanController extends Controller
             ->join('m_peserta', 'm_peserta.user_id', '=', 'users.id')
             ->where('users.id', auth()->user()->id)
             ->first();
+        $pertanyaanJawaban = DB::table('m_pertanyaan')->where('quiz_id', $quizId)->get();
+        $totalSoal = DB::table('m_pertanyaan')->where('quiz_id', $quizId)->count();
 
         $kursusPesertaId = DB::table('t_kursus_peserta')->where('kursus_id', $pelatihanId)->where('peserta_id', $userdata->id)->first();
+        $counterJawabanBenar = 0;
 
         foreach ($jawaban as $key => $value) {
             $jawabanBenar = $value['benar'];
+
+            foreach($pertanyaanJawaban as $pj){
+                if($pj->id == $key && $pj->jawaban == $jawabanBenar){
+                    $counterJawabanBenar++;
+                }
+            }
+
             DB::table('t_peserta_quiz')->insert([
                 'kursus_peserta_id' => $kursusPesertaId->id,
                 'topik_id' => $topikId,
@@ -172,6 +203,11 @@ class PelatihanController extends Controller
                 'jawaban_benar' => $jawabanBenar
             ]);
         }
+
+        $bobotSoal = (100 / (int)$totalSoal);
+        $nilaiAkhir = $bobotSoal * $counterJawabanBenar;
+
+        return $nilaiAkhir;
     }
 
 

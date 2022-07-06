@@ -4,8 +4,9 @@
 <div class="container-fluid">
     <div class="row justify-content-center mt-5 mb-5">
         <div class="col-12 col-lg-7 col-xl-7 materi-pembelajaran">
+            <h2 class="mt-3">{{$singleTopik->judul}}</h2>
             <p class="mt-3">
-                {!!$data->materi!!}
+                {!!$singleTopik->materi!!}
             </p>
         </div>
         <div class="col-12 col-lg-2 col-xl-2">
@@ -30,14 +31,11 @@
                                 <input type="checkbox" name="dapatDiUlang" value="1" class="form-check-input">
                             </div>
                             <div class="col-8">
-                                <span>{{$tp->judul}}</span>
-                            </div>
-                            <div class="col-3">
-                                <span>1/1 Topik</span>
+                                <a href="{{route('pembelajaran.topik',['id' => $pelatihan->id, 'topikId' => $tp->id])}}"
+                                    style="text-decoration: none;"><span>{{$tp->judul}}</span></a>
                             </div>
                         </div>
                     </div>
-
                     @foreach($konten as $kt)
                     @if($kt->topik_id == $tp->id)
                     <div class="pembelajaran-box bg-white">
@@ -155,7 +153,8 @@ Highcharts.chart('bar', {
 function myFunction() {
     if (document.getElementById("icon-pembelajaran").src ==
         "{{asset('guest/assets/images/collapse-right.png')}}") {
-        document.getElementById("icon-pembelajaran").src = "{{asset('guest/assets/images/collapse-left.png')}}";
+        document.getElementById("icon-pembelajaran").src =
+            "{{asset('guest/assets/images/collapse-left.png')}}";
     } else {
         document.getElementById("icon-pembelajaran").src =
             "{{asset('guest/assets/images/collapse-right.png')}}";
@@ -171,7 +170,8 @@ function myFunction() {
 function myFunction1() {
     if (document.getElementById("icon-pembelajaran-1").src ==
         "{{asset('guest/assets/images/collapse-down.png')}}") {
-        document.getElementById("icon-pembelajaran-1").src = "{{asset('guest/assets/images/collapse-up.png')}}";
+        document.getElementById("icon-pembelajaran-1").src =
+            "{{asset('guest/assets/images/collapse-up.png')}}";
     } else {
         document.getElementById("icon-pembelajaran-1").src =
             "{{asset('guest/assets/images/collapse-down.png')}}";
@@ -188,7 +188,8 @@ function myFunction1() {
 function myFunction2() {
     if (document.getElementById("icon-pembelajaran-2").src ==
         "{{asset('guest/assets/images/collapse-down.png')}}") {
-        document.getElementById("icon-pembelajaran-2").src = "{{asset('guest/assets/images/collapse-up.png')}}";
+        document.getElementById("icon-pembelajaran-2").src =
+            "{{asset('guest/assets/images/collapse-up.png')}}";
     } else {
         document.getElementById("icon-pembelajaran-2").src =
             "{{asset('guest/assets/images/collapse-down.png')}}";
@@ -205,7 +206,8 @@ function myFunction2() {
 function myFunction3() {
     if (document.getElementById("icon-pembelajaran-3").src ==
         "{{asset('guest/assets/images/collapse-down.png')}}") {
-        document.getElementById("icon-pembelajaran-3").src = "{{asset('guest/assets/images/collapse-up.png')}}";
+        document.getElementById("icon-pembelajaran-3").src =
+            "{{asset('guest/assets/images/collapse-up.png')}}";
     } else {
         document.getElementById("icon-pembelajaran-3").src =
             "{{asset('guest/assets/images/collapse-down.png')}}";
@@ -222,7 +224,8 @@ function myFunction3() {
 function myFunction4() {
     if (document.getElementById("icon-pembelajaran-4").src ==
         "{{asset('guest/assets/images/collapse-down.png')}}") {
-        document.getElementById("icon-pembelajaran-4").src = "{{asset('guest/assets/images/collapse-up.png')}}";
+        document.getElementById("icon-pembelajaran-4").src =
+            "{{asset('guest/assets/images/collapse-up.png')}}";
     } else {
         document.getElementById("icon-pembelajaran-4").src =
             "{{asset('guest/assets/images/collapse-down.png')}}";
@@ -239,7 +242,8 @@ function myFunction4() {
 function myFunction5() {
     if (document.getElementById("icon-pembelajaran-5").src ==
         "{{asset('guest/assets/images/collapse-down.png')}}") {
-        document.getElementById("icon-pembelajaran-5").src = "{{asset('guest/assets/images/collapse-up.png')}}";
+        document.getElementById("icon-pembelajaran-5").src =
+            "{{asset('guest/assets/images/collapse-up.png')}}";
     } else {
         document.getElementById("icon-pembelajaran-5").src =
             "{{asset('guest/assets/images/collapse-down.png')}}";
@@ -256,7 +260,8 @@ function myFunction5() {
 function myFunction6() {
     if (document.getElementById("icon-pembelajaran-6").src ==
         "{{asset('guest/assets/images/collapse-down.png')}}") {
-        document.getElementById("icon-pembelajaran-6").src = "{{asset('guest/assets/images/collapse-up.png')}}";
+        document.getElementById("icon-pembelajaran-6").src =
+            "{{asset('guest/assets/images/collapse-up.png')}}";
     } else {
         document.getElementById("icon-pembelajaran-6").src =
             "{{asset('guest/assets/images/collapse-down.png')}}";
@@ -273,7 +278,8 @@ function myFunction6() {
 function myFunction7() {
     if (document.getElementById("icon-pembelajaran-7").src ==
         "{{asset('guest/assets/images/collapse-down.png')}}") {
-        document.getElementById("icon-pembelajaran-7").src = "{{asset('guest/assets/images/collapse-up.png')}}";
+        document.getElementById("icon-pembelajaran-7").src =
+            "{{asset('guest/assets/images/collapse-up.png')}}";
     } else {
         document.getElementById("icon-pembelajaran-7").src =
             "{{asset('guest/assets/images/collapse-down.png')}}";

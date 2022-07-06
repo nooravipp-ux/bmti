@@ -78,10 +78,8 @@
                                 <input type="checkbox" name="dapatDiUlang" value="1" class="form-check-input">
                             </div>
                             <div class="col-8">
-                                <span>{{$tp->judul}}</span>
-                            </div>
-                            <div class="col-3">
-                                <span>1/1 Topik</span>
+                                <a href="{{route('pembelajaran.topik',['id' => $pelatihan->id, 'topikId' => $tp->id])}}"
+                                    style="text-decoration: none;"><span>{{$tp->judul}}</span></a>
                             </div>
                         </div>
                     </div>
