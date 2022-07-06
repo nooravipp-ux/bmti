@@ -15,9 +15,9 @@
             </div>
         </div>
 
-        <div class="col-12 col-xl-2">
+        <div class="col-12 col-lg-2 col-xl-2">
             <div class="row justify-content-end">
-                <div class="col-7">
+                <div class="col-lg-12 col-xl-7">
                     <div class="button-hidden">
                         <img src="{{asset('guest/assets/images/collapse-right.png')}}" id="icon-pembelajaran"
                             style="width=20px; height:20px;" onclick="myFunction()" />
@@ -37,14 +37,11 @@
                                 <input type="checkbox" name="dapatDiUlang" value="1" class="form-check-input">
                             </div>
                             <div class="col-8">
-                                <span>{{$tp->judul}}</span>
-                            </div>
-                            <div class="col-3">
-                                <span>1/1 Topik</span>
+                                <a href="{{route('pembelajaran.topik',['id' => $pelatihan->id, 'topikId' => $tp->id])}}"
+                                    style="text-decoration: none;"><span>{{$tp->judul}}</span></a>
                             </div>
                         </div>
                     </div>
-
                     @foreach($konten as $kt)
                     @if($kt->topik_id == $tp->id)
                     <div class="pembelajaran-box bg-white">
@@ -55,6 +52,9 @@
                             <div class="col-9">
                                 <a href="{{route('pembelajaran.konten',['id' => $pelatihan->id, 'topikId' => $tp->id, 'kontenId' => $kt->id])}}"
                                     style="text-decoration: none;"><span>{{$kt->judul}}</span></a>
+                            </div>
+                            <div class="col-1">
+                                <i class="fa-solid fa-circle-check"></i>
                             </div>
                         </div>
                     </div>
@@ -74,6 +74,7 @@
                                     <span>{{$tq->judul}}</span>
                                 </a>
                             </div>
+                            <div class="col-1"></div>
                         </div>
                     </div>
                     @endif
@@ -86,14 +87,13 @@
                         </figure>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
 
     <div class="row">
         <div class="col-12 next-pembelajaran text-center">
-            <p>Topik Selanjutnya : <span>Tes Awal</span></p>
+            <p>Topik Selanjutnya : <a href="" style="text-decoration:none;"><span>Tes Awal</span></a></p>
         </div>
     </div>
 </div>

@@ -116,7 +116,7 @@ header {
 
 @keyframes menu {
     0% {
-        left: -400px;
+        left: 400px;
         top: 0px;
     }
     100% {
@@ -194,6 +194,7 @@ header {
 /* pembelajaran */
 
 .materi-pembelajaran {
+    font-family: "glory";
     margin-bottom: 65px;
 }
 
@@ -237,6 +238,19 @@ header {
 .text-pembelajaran button:hover {
     background: #143152;
     color: white;
+}
+
+.in-proggres {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.in-proggres span {
+    font-family: "glory";
+    font-weight: 600;
+    font-size: 15px;
 }
 
 .pembelajaran {
@@ -311,6 +325,12 @@ header {
 
 .next-pembelajaran p span {
     color: black;
+}
+
+.btn-pembelajaran {
+    width: 150px;
+    font-size: 14px;
+    font-family: "glory";
 }
 
 

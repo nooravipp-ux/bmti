@@ -8,7 +8,61 @@
             <p class="mt-3">
                 {!!$singleTopik->materi!!}
             </p>
+
+            @foreach($topiks as $tp)
+            <div class="in-proggres bg-white">
+                <img src="{{asset('guest/assets/images/tes-awal.png')}}" width="30px" height="30px" />
+                <a href="{{route('pembelajaran.topik',['id' => $pelatihan->id, 'topikId' => $tp->id])}}"
+                    style="text-decoration: none; color:black; margin-left:10px;"><span>{{$tp->judul}}</span></a>
+            </div>
+            @foreach($konten as $kt)
+            @if($kt->topik_id == $tp->id)
+            <div class="in-proggres bg-white">
+                <input type="radio" name="dapatDiUlang" value="1" class="form-check-input" style="margin-left:5px;">
+                <a href="{{route('pembelajaran.konten',['id' => $pelatihan->id, 'topikId' => $tp->id, 'kontenId' => $kt->id])}}"
+                    style="text-decoration: none; color:black; margin-left:10px;"><span>{{$kt->judul}}</span></a>
+            </div>
+            @endif
+            @endforeach
+
+            @foreach($topikQuiz as $tq)
+            @if($tq->topik_id == $tp->id)
+            <div class="in-proggres bg-white">
+                <input type="radio" name="dapatDiUlang" value="1" class="form-check-input" style="margin-left:5px;">
+                <a href="{{route('pembelajaran.quiz',['id' => $pelatihan->id, 'topikId' => $tq->topik_id, 'quizId' => $tq->quiz_id])}}"
+                    style="text-decoration: none; color:black; margin-left:10px;">
+                    <span>{{$tq->judul}}</span>
+                </a>
+            </div>
+            @endif
+            @endforeach
+            @endforeach
+            <hr />
+            <div class="row text-center">
+                <div class="col-4">
+                    <button class="btn-pembelajaran btn btn-primary">
+                        <i class="fa-solid fa-angle-left" style="  margin-left: -10px;"></i>
+                        <span style=" margin-left: 15px;">Previous Lesson</span>
+                    </button>
+                </div>
+                <div class="col-4">
+                    <button class="btn-pembelajaran btn btn-primary">
+                        <span>MARK COMPLETE</span>
+                        <i class="fa-solid fa-check" style="margin-left:5px;"></i>
+                    </button>
+                    <a href="" style="font-size: 14px; font-family:glory; text-decoration: none;">
+                        <p>Back to Course</p>
+                    </a>
+                </div>
+                <div class="col-4">
+                    <button class="btn-pembelajaran btn btn-primary">
+                        <span style="margin-left:20px;">Next Lesson</span>
+                        <i class="fa-solid fa-angle-right" style="margin-left:20px;"></i>
+                    </button>
+                </div>
+            </div>
         </div>
+        
         <div class="col-12 col-lg-2 col-xl-2">
             <div class="row justify-content-end">
                 <div class="col-lg-12 col-xl-7">
@@ -47,6 +101,9 @@
                                 <a href="{{route('pembelajaran.konten',['id' => $pelatihan->id, 'topikId' => $tp->id, 'kontenId' => $kt->id])}}"
                                     style="text-decoration: none;"><span>{{$kt->judul}}</span></a>
                             </div>
+                            <div class="col-1">
+                                <i class="fa-solid fa-circle-check"></i>
+                            </div>
                         </div>
                     </div>
                     @endif
@@ -65,6 +122,7 @@
                                     <span>{{$tq->judul}}</span>
                                 </a>
                             </div>
+                            <div class="col-1"></div>
                         </div>
                     </div>
                     @endif
@@ -83,7 +141,7 @@
 
     <div class="row">
         <div class="col-12 next-pembelajaran text-center">
-            <p>Topik Selanjutnya : <span>Tes Awal</span></p>
+            <p>Topik Selanjutnya : <a href="" style="text-decoration:none;"><span>Tes Awal</span></a></p>
         </div>
     </div>
 </div>
@@ -164,132 +222,6 @@ function myFunction() {
         x.style.display = "block";
     } else {
         x.style.display = "none";
-    }
-}
-
-function myFunction1() {
-    if (document.getElementById("icon-pembelajaran-1").src ==
-        "{{asset('guest/assets/images/collapse-down.png')}}") {
-        document.getElementById("icon-pembelajaran-1").src =
-            "{{asset('guest/assets/images/collapse-up.png')}}";
-    } else {
-        document.getElementById("icon-pembelajaran-1").src =
-            "{{asset('guest/assets/images/collapse-down.png')}}";
-    }
-    $('#materi-1').attr('class', '');
-    var x = document.getElementById("materi-1");
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
-    }
-}
-
-function myFunction2() {
-    if (document.getElementById("icon-pembelajaran-2").src ==
-        "{{asset('guest/assets/images/collapse-down.png')}}") {
-        document.getElementById("icon-pembelajaran-2").src =
-            "{{asset('guest/assets/images/collapse-up.png')}}";
-    } else {
-        document.getElementById("icon-pembelajaran-2").src =
-            "{{asset('guest/assets/images/collapse-down.png')}}";
-    }
-    $('#materi-2').attr('class', '');
-    var x = document.getElementById("materi-2");
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
-    }
-}
-
-function myFunction3() {
-    if (document.getElementById("icon-pembelajaran-3").src ==
-        "{{asset('guest/assets/images/collapse-down.png')}}") {
-        document.getElementById("icon-pembelajaran-3").src =
-            "{{asset('guest/assets/images/collapse-up.png')}}";
-    } else {
-        document.getElementById("icon-pembelajaran-3").src =
-            "{{asset('guest/assets/images/collapse-down.png')}}";
-    }
-    $('#materi-3').attr('class', '');
-    var x = document.getElementById("materi-3");
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
-    }
-}
-
-function myFunction4() {
-    if (document.getElementById("icon-pembelajaran-4").src ==
-        "{{asset('guest/assets/images/collapse-down.png')}}") {
-        document.getElementById("icon-pembelajaran-4").src =
-            "{{asset('guest/assets/images/collapse-up.png')}}";
-    } else {
-        document.getElementById("icon-pembelajaran-4").src =
-            "{{asset('guest/assets/images/collapse-down.png')}}";
-    }
-    $('#materi-4').attr('class', '');
-    var x = document.getElementById("materi-4");
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
-    }
-}
-
-function myFunction5() {
-    if (document.getElementById("icon-pembelajaran-5").src ==
-        "{{asset('guest/assets/images/collapse-down.png')}}") {
-        document.getElementById("icon-pembelajaran-5").src =
-            "{{asset('guest/assets/images/collapse-up.png')}}";
-    } else {
-        document.getElementById("icon-pembelajaran-5").src =
-            "{{asset('guest/assets/images/collapse-down.png')}}";
-    }
-    $('#materi-5').attr('class', '');
-    var x = document.getElementById("materi-5");
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
-    }
-}
-
-function myFunction6() {
-    if (document.getElementById("icon-pembelajaran-6").src ==
-        "{{asset('guest/assets/images/collapse-down.png')}}") {
-        document.getElementById("icon-pembelajaran-6").src =
-            "{{asset('guest/assets/images/collapse-up.png')}}";
-    } else {
-        document.getElementById("icon-pembelajaran-6").src =
-            "{{asset('guest/assets/images/collapse-down.png')}}";
-    }
-    $('#materi-6').attr('class', '');
-    var x = document.getElementById("materi-6");
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
-    }
-}
-
-function myFunction7() {
-    if (document.getElementById("icon-pembelajaran-7").src ==
-        "{{asset('guest/assets/images/collapse-down.png')}}") {
-        document.getElementById("icon-pembelajaran-7").src =
-            "{{asset('guest/assets/images/collapse-up.png')}}";
-    } else {
-        document.getElementById("icon-pembelajaran-7").src =
-            "{{asset('guest/assets/images/collapse-down.png')}}";
-    }
-    $('#materi-7').attr('class', '');
-    var x = document.getElementById("materi-7");
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
     }
 }
 </script>

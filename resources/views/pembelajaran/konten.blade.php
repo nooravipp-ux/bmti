@@ -58,6 +58,9 @@
                                 <a href="{{route('pembelajaran.konten',['id' => $pelatihan->id, 'topikId' => $tp->id, 'kontenId' => $kt->id])}}"
                                     style="text-decoration: none;"><span>{{$kt->judul}}</span></a>
                             </div>
+                            <div class="col-1">
+                                <i class="fa-solid fa-circle-check"></i>
+                            </div>
                         </div>
                     </div>
                     @endif
@@ -76,6 +79,7 @@
                                     <span>{{$tq->judul}}</span>
                                 </a>
                             </div>
+                            <div class="col-1"></div>
                         </div>
                     </div>
                     @endif
@@ -94,7 +98,7 @@
 
     <div class="row">
         <div class="col-12 next-pembelajaran text-center">
-            <p>Topik Selanjutnya : <span>Tes Awal</span></p>
+            <p>Topik Selanjutnya : <a href="" style="text-decoration:none;"><span>Tes Awal</span></a></p>
         </div>
     </div>
 </div>
@@ -173,125 +177,6 @@ function myFunction() {
         x.style.display = "block";
     } else {
         x.style.display = "none";
-    }
-}
-
-function myFunction1() {
-    if (document.getElementById("icon-pembelajaran-1").src ==
-        "{{asset('guest/assets/images/collapse-down.png')}}") {
-        document.getElementById("icon-pembelajaran-1").src = "{{asset('guest/assets/images/collapse-up.png')}}";
-    } else {
-        document.getElementById("icon-pembelajaran-1").src =
-            "{{asset('guest/assets/images/collapse-down.png')}}";
-    }
-    $('#materi-1').attr('class', '');
-    var x = document.getElementById("materi-1");
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
-    }
-}
-
-function myFunction2() {
-    if (document.getElementById("icon-pembelajaran-2").src ==
-        "{{asset('guest/assets/images/collapse-down.png')}}") {
-        document.getElementById("icon-pembelajaran-2").src = "{{asset('guest/assets/images/collapse-up.png')}}";
-    } else {
-        document.getElementById("icon-pembelajaran-2").src =
-            "{{asset('guest/assets/images/collapse-down.png')}}";
-    }
-    $('#materi-2').attr('class', '');
-    var x = document.getElementById("materi-2");
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
-    }
-}
-
-function myFunction3() {
-    if (document.getElementById("icon-pembelajaran-3").src ==
-        "{{asset('guest/assets/images/collapse-down.png')}}") {
-        document.getElementById("icon-pembelajaran-3").src = "{{asset('guest/assets/images/collapse-up.png')}}";
-    } else {
-        document.getElementById("icon-pembelajaran-3").src =
-            "{{asset('guest/assets/images/collapse-down.png')}}";
-    }
-    $('#materi-3').attr('class', '');
-    var x = document.getElementById("materi-3");
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
-    }
-}
-
-function myFunction4() {
-    if (document.getElementById("icon-pembelajaran-4").src ==
-        "{{asset('guest/assets/images/collapse-down.png')}}") {
-        document.getElementById("icon-pembelajaran-4").src = "{{asset('guest/assets/images/collapse-up.png')}}";
-    } else {
-        document.getElementById("icon-pembelajaran-4").src =
-            "{{asset('guest/assets/images/collapse-down.png')}}";
-    }
-    $('#materi-4').attr('class', '');
-    var x = document.getElementById("materi-4");
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
-    }
-}
-
-function myFunction5() {
-    if (document.getElementById("icon-pembelajaran-5").src ==
-        "{{asset('guest/assets/images/collapse-down.png')}}") {
-        document.getElementById("icon-pembelajaran-5").src = "{{asset('guest/assets/images/collapse-up.png')}}";
-    } else {
-        document.getElementById("icon-pembelajaran-5").src =
-            "{{asset('guest/assets/images/collapse-down.png')}}";
-    }
-    $('#materi-5').attr('class', '');
-    var x = document.getElementById("materi-5");
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
-    }
-}
-
-function myFunction6() {
-    if (document.getElementById("icon-pembelajaran-6").src ==
-        "{{asset('guest/assets/images/collapse-down.png')}}") {
-        document.getElementById("icon-pembelajaran-6").src = "{{asset('guest/assets/images/collapse-up.png')}}";
-    } else {
-        document.getElementById("icon-pembelajaran-6").src =
-            "{{asset('guest/assets/images/collapse-down.png')}}";
-    }
-    $('#materi-6').attr('class', '');
-    var x = document.getElementById("materi-6");
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
-    }
-}
-
-function myFunction7() {
-    if (document.getElementById("icon-pembelajaran-7").src ==
-        "{{asset('guest/assets/images/collapse-down.png')}}") {
-        document.getElementById("icon-pembelajaran-7").src = "{{asset('guest/assets/images/collapse-up.png')}}";
-    } else {
-        document.getElementById("icon-pembelajaran-7").src =
-            "{{asset('guest/assets/images/collapse-down.png')}}";
-    }
-    $('#materi-7').attr('class', '');
-    var x = document.getElementById("materi-7");
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
     }
 }
 </script>
