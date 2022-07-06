@@ -38,9 +38,9 @@ class RegisteredUserController extends Controller
         $request->validate([
             'firstName' => ['required', 'string', 'max:255'],
             'lastName' => ['required', 'string', 'max:255'],
-            'nik' => ['required', 'numeric', 'digits:16', 'unique:users'],
-            'nuptk' => ['required', 'numeric', 'digits:16', 'unique:users'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'nik' => ['required', 'numeric', 'digits:16'],
+            'nuptk' => ['required', 'numeric', 'digits:16'],
+            'email' => ['required', 'string', 'email', 'max:255'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
@@ -51,7 +51,7 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password)
         ]);
         
-        $data = Peserta::orderBy('id', 'DESC')->first();
+        $data = User::orderBy('id', 'DESC')->first();
         $peserta = Peserta::create([
             'nama_depan' => $request->firstName,
             'nama_belakang' => $request->lastName,
@@ -67,6 +67,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        return redirect(RouteServiceProvider::HOME)->with('message', 'Selamat anda berhasil mendaftar');
     }
 }

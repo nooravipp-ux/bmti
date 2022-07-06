@@ -272,6 +272,11 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 @endsection @section('content')
+@if(session()->has('message'))
+<div class="alert alert-success">
+    {{ session()->get('message') }}
+</div>
+@endif
 <div class="content-wrapper">
     <div class="row justify-content-center">
         <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
