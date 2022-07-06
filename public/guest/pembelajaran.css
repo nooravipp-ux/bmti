@@ -239,6 +239,19 @@ header {
     color: white;
 }
 
+.in-proggres {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.in-proggres span {
+    font-family: "glory";
+    font-weight: 600;
+    font-size: 15px;
+}
+
 .pembelajaran {
     margin-left: 30px;
     padding: 20px;

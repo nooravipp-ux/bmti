@@ -210,21 +210,6 @@ function myFunction() {
         x.style.display = "none";
     }
 }
-
-function myFunction1() {
-    if (document.getElementById("icon-pembelajaran-1").src == "{{asset('guest/assets/images/collapse-down.png')}}") {
-        document.getElementById("icon-pembelajaran-1").src = "{{asset('guest/assets/images/collapse-up.png')}}";
-    } else {
-        document.getElementById("icon-pembelajaran-1").src = "{{asset('guest/assets/images/collapse-down.png')}}";
-    }
-    // $('#materi-1').attr('class', '');
-    var x = document.getElementById("content");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-}
 </script>
 
 <!-- <script>
