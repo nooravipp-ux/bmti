@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Kompetensi;
 use App\Models\Keahlian;
+use Illuminate\Support\Facades\DB;
 
 class GaleriaController extends Controller
 {

@@ -104,10 +104,17 @@ class KursusController extends Controller
 
     public function simpanKontenPembelajaran(Request $request)
     {
+        $file = $request->file('file');
+        $fileName = "";
+        if($file) {
+            $fileName = time()."_".$file->getClientOriginalName();
+            $file->move(public_path('files/file_konten'), $fileName);
+        }
 
         $konten = Konten::create([
             'judul' => $request->judul,
-            'materi' => $request->materi
+            'materi' => $request->materi,
+            'file' => $fileName 
         ]);
 
         TopikKonten::create([

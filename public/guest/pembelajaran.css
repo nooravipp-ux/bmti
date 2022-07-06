@@ -116,7 +116,7 @@ header {
 
 @keyframes menu {
     0% {
-        left: -400px;
+        left: 400px;
         top: 0px;
     }
     100% {
@@ -193,6 +193,11 @@ header {
 
 /* pembelajaran */
 
+.materi-pembelajaran {
+    font-family: "glory";
+    margin-bottom: 65px;
+}
+
 .button-hidden {
     position: relative;
     right: 24px;
@@ -204,7 +209,7 @@ header {
 
 .content-pembelajaran {
     margin-top: -63px;
-    margin-left: 49px;
+    margin-left: 50px;
 }
 
 .text-pembelajaran {
@@ -233,6 +238,19 @@ header {
 .text-pembelajaran button:hover {
     background: #143152;
     color: white;
+}
+
+.in-proggres {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.in-proggres span {
+    font-family: "glory";
+    font-weight: 600;
+    font-size: 15px;
 }
 
 .pembelajaran {
@@ -307,6 +325,12 @@ header {
 
 .next-pembelajaran p span {
     color: black;
+}
+
+.btn-pembelajaran {
+    width: 150px;
+    font-size: 14px;
+    font-family: "glory";
 }
 
 
@@ -421,7 +445,6 @@ footer {
     top: 15px;
     line-height: 15px;
     font-size: 14px;
-    width: 400px;
     font-family: "glory";
     font-weight: 600;
 }
@@ -444,6 +467,9 @@ footer {
 
 /* responsive */
 
+
+/* pembelajaran */
+
 @media only screen and (min-width: 400px) and (max-width: 991px) {
     .menu-pembelajaran {
         display: block;
@@ -464,6 +490,12 @@ footer {
     .text-header-2 p {
         margin-left: 15px;
         font-size: 15px;
+    }
+    .text-hover-menu hr {
+        position: relative;
+        right: 13px;
+        width: 104%;
+        margin: 5px;
     }
     .text-hover-pembelajaran {
         display: none;
@@ -504,6 +536,48 @@ footer {
         margin-right: auto;
     }
 }
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .content-pembelajaran {
+        margin-left: -59px;
+    }
+    .button-hidden {
+        right: 35px;
+    }
+}
+
+
+/* end-pembelajaran */
+
+
+/* quiz */
+
+@media only screen and (min-width: 400px) and (max-width: 575px) {
+    .box-proses {
+        width: 380px;
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .box-proses {
+        width: 500px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .box-proses {
+        width: 750px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .box-proses {
+        width: 500px;
+    }
+}
+
+
+/* end quiz */
 
 
 /* footer */

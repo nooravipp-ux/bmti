@@ -37,7 +37,6 @@ class PerusahaanMitraController extends Controller
             'nama_perusahaan' => $request->nama_perusahaan,
             'gambar_logo' => $imageName,
             'urutan' => $request->urutan,
-            'file_path' => 'images/perusahaan-mitra/'.$imageName
         ]);
 
         if($image) {
@@ -71,7 +70,6 @@ class PerusahaanMitraController extends Controller
             'nama_perusahaan' => $request->nama_perusahaan,
             'gambar_logo' => $imageName,
             'urutan' => $request->urutan,
-            'file_path' => 'images/perusahaan-mitra/'.$imageName
         ]);
 
         return redirect('/admin/perusahaan-mitra')->with('message', 'Data Berhasil Diubah');

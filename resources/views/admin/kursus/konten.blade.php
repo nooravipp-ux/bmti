@@ -116,6 +116,12 @@
                         <input type="hidden" name="pelatihanId" value="{{$pelatihanId}}">
                     </div>
                 </div>
+                <div class="row">
+                    <label for="judul" class="col-sm-2 col-form-label">Upload File</label>
+                    <div class="col-sm-10">
+                        <input type="file" name="file" class="form-control mt-2">
+                    </div>
+                </div>
             </form>
             <form id="form-kuis" action="{{route('pelatihan.topik.kontenQuiz.store')}}" method="POST" class="d-none" enctype="multipart/form-data">
                 @csrf

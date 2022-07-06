@@ -4,15 +4,9 @@
 <div class="teknik-permesinan">
     <div class="container">
         <div class="row">
-            <div class="col-12 text-kompetensi order-1 text-center">
+            <div class="col-12 text-kompetensi-2 order-1 text-center">
                 <h1>{{$data->judul}}</h1>
                 <img src="{{asset('images/galeria/'.$data->gambar_banner)}}" alt="">
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-12 col-xl-7 text-kompetensi mt-0 order-3 order-md-2">
-                <p></p>
             </div>
         </div>
     </div>
@@ -20,7 +14,9 @@
 
 <div class="container">
     <div class="row">
-        {!!$data->materi!!}
+        <div class="text-kompetensi-2">
+            {!!$data->materi!!}
+        </div>
     </div>
     <div class="row justify-content-center mb-5">
         <iframe src="{{asset('files/galeria/'.$data->file_content)}}" width="100%" height="1000px"></iframe>
