@@ -7,13 +7,16 @@
 
         </div>
         <div class="col-lg-7">
+            @if($data->materi)
             <p class="mt-3">
                 {!!$data->materi!!}
             </p>
-            <?php $file_url = asset('files/file_konten/'.$data->file); 
+            @endif
+            @if($data->file)
+                $file_url = asset('files/file_konten/'.$data->file); 
                 echo $file_url;
-            ?>
-            <iframe src='https://view.officeapps.live.com/op/embed.aspx?src=localhost:8000/files/file_konten/1657017537_Doc Guide (Workflow Setting) .pptx' width='740px' height='623px' frameborder='0'>This is an embedded <a target='_blank' href='http://office.com'>Microsoft Office</a> document, powered by <a target='_blank' href='http://office.com/webapps'>Office Online</a>.</iframe>
+                <iframe src='https://view.officeapps.live.com/op/embed.aspx?src=localhost:8000/files/file_konten/1657017537_Doc Guide (Workflow Setting) .pptx' width='740px' height='623px' frameborder='0'>This is an embedded <a target='_blank' href='http://office.com'>Microsoft Office</a> document, powered by <a target='_blank' href='http://office.com/webapps'>Office Online</a>.</iframe>
+            @endif
         </div>
         <div class="col-lg-3">
             <div class="row mt-3">
