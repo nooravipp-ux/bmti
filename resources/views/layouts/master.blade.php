@@ -111,7 +111,7 @@
                             </a>
                         </div>
                     </li>
-                    <li class="nav-item dropdown d-none d-lg-block user-dropdown">
+                    <li class="nav-item dropdown d-lg-block user-dropdown">
                         <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
                             <img class="img-xs rounded-circle" src="{{asset('admin/images/faces/face8.jpg')}}"
                                 alt="Profile image"> </a>
