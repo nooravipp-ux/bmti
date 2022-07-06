@@ -31219,7 +31219,6 @@ div.tagsinput span.tag a {
 @media (max-width: 991px) {
     .navbar .navbar-menu-wrapper {
         color: #D0C9C0;
-        width: calc(50% - 55px);
         padding-top: 12px;
         padding-left: 15px;
         padding-right: 11px;
@@ -33957,7 +33956,7 @@ div.tagsinput span.tag a {
 /* scroll */
 
 ::-webkit-scrollbar {
-    width: 12px;
+    width: 8px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -33968,7 +33967,6 @@ div.tagsinput span.tag a {
 ::-webkit-scrollbar-thumb {
     background: #8d8d8d;
     border-radius: 10px;
-    border: 2px solid #ffffff;
 }
 
 ::-webkit-scrollbar-track {

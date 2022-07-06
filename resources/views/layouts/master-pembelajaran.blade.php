@@ -20,7 +20,7 @@
     <header>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-2">
+                <div class="col-5 col-xl-2 ">
                     <div class="logo-header">
                         <a href="{{url('/')}}">
                             <img src="{{asset('guest/assets/images/logo-header.png')}}" width="150px" height="100px" />
@@ -28,57 +28,183 @@
                     </div>
                 </div>
 
-                <div class="col-2 text-light">
-                    <p class="text-header">Pelatihan Saya</p>
+                <div class="col col-xl-2 text-light text-header">
+                    <p>Pelatihan Saya</p>
                 </div>
 
-                <div class="col-6"></div>
+                <div class="col col-xl-6"></div>
 
-                <div class="col-2 text-light text-center">
-                    <p id="text-hover" class="text-header-2">{{auth()->user()->name}}</p>
-                    <div id="text-hover-2" class="text-hover-2">
-                        <div class="row">
-                            <div class="col-2">
-                                <a href="{{url('/dashboard')}}">
-                                    <i class="fa-solid fa-house-chimney"></i>
-                                </a>
+                <div class="col-4 col-md-2 col-xl-2 text-light text-center text-header-2">
+                    <p id="text-hover">{{auth()->user()->name}}</p>
+
+                    <div class="text-hover-pembelajaran">
+                        <div id="text-hover-2" class="text-hover-2">
+                            <div class="row">
+                                <div class="col-2">
+                                    <a href="{{url('/dashboard')}}">
+                                        <i class="fa-solid fa-house-chimney"></i>
+                                    </a>
+                                </div>
+                                <div class="col-10 text-start">
+                                    <a href="{{url('/dashboard')}}" class="btn-lg" role="button"
+                                        aria-pressed="true">Dashboard</a>
+                                </div>
                             </div>
-                            <div class="col-10 text-start">
-                                <a href="{{url('/dashboard')}}" class="btn-lg" role="button"
-                                    aria-pressed="true">Dashboard</a>
-                            </div>
-                        </div>
-                        <hr />
-                        <div class="row">
-                            <div class="col-2">
-                                <a href="{{ route('logout') }}"
-                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                    <i class="fa-solid fa-right-from-bracket"></i></a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                    style="display: none;">
-                                    {{ csrf_field() }}
-                                </form>
-                            </div>
-                            <div class="col-10 text-start">
-                                <a href="{{ route('logout') }}"
-                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                                    class="
+                            <hr />
+                            <div class="row">
+                                <div class="col-2">
+                                    <a href="{{ route('logout') }}"
+                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                        <i class="fa-solid fa-right-from-bracket"></i></a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                        style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </div>
+                                <div class="col-10 text-start">
+                                    <a href="{{ route('logout') }}"
+                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                                        class="
                             btn-lg" role="button" aria-pressed="true">Logout</a>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                    style="display: none;">
-                                    {{ csrf_field() }}
-                                </form>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                        style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-2 order-3 icon-menu mt-4 d-none">
-                    <div class="icon-menu-2" onclick="onClickMenu()"></div>
+                <div class="col-2 menu-pembelajaran">
+                    <div class="icon-pembelajaran" onclick="onClickMenu()"></div>
                 </div>
             </div>
         </div>
+
+        <div id="menu" class="d-none">
+            <div class="menu-container">
+                <div class="container">
+                    <div class="d-flex justify-content-end">
+                        <div class="col-2">
+                            <div class="icon-menu-hover" onclick="onClickCloseMenu()"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 text-center text-light text-header-menu">
+                            <p>Pelatihan Saya</p>
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col-12">
+                            <div class="text-hover-pembelajaran-menu">
+                                <div class="text-hover-menu">
+                                    <div class="row justify-content-center">
+                                        <div class="col-1">
+                                            <a href="{{url('/dashboard')}}">
+                                                <i class="fa-solid fa-house-chimney"></i>
+                                            </a>
+                                        </div>
+                                        <div class="col-4 text-start">
+                                            <a href="{{url('/dashboard')}}" class="btn-lg" role="button"
+                                                aria-pressed="true">Dashboard</a>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="row justify-content-center">
+                                        <div class="col-1">
+                                            <a href="{{ route('logout') }}"
+                                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                <i class="fa-solid fa-right-from-bracket"></i></a>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                style="display: none;">
+                                                {{ csrf_field() }}
+                                            </form>
+                                        </div>
+                                        <div class="col-4 text-start">
+                                            <a href="{{ route('logout') }}"
+                                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                                                class="
+                            btn-lg" role="button" aria-pressed="true">Logout</a>
+
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                style="display: none;">
+                                                {{ csrf_field() }}
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-12 content-pembelajaran-menu">
+                            <div class="pembelajaran text-center bg-white">
+                                <span>Konten Pembelajaran</span>
+                            </div>
+
+                            @foreach($topiks as $tp)
+                            <div class="pembelajaran-box bg-white">
+                                <div class="row">
+                                    <div class="col-1">
+                                        <input type="checkbox" name="dapatDiUlang" value="1" class="form-check-input">
+                                    </div>
+                                    <div class="col-8">
+                                        <span>{{$tp->judul}}</span>
+                                    </div>
+                                    <div class="col-3">
+                                        <span>1/1 Topik</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            @foreach($konten as $kt)
+                            @if($kt->topik_id == $tp->id)
+                            <div class="pembelajaran-box bg-white">
+                                <div class="row justify-content-center">
+                                    <div class="col-1">
+                                        <input type="checkbox" name="dapatDiUlang" value="1" class="form-check-input">
+                                    </div>
+                                    <div class="col-9">
+                                        <a href="{{route('pembelajaran.konten',['id' => $pelatihan->id, 'topikId' => $tp->id, 'kontenId' => $kt->id])}}"
+                                            style="text-decoration: none;"><span>{{$kt->judul}}</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            @endif
+                            @endforeach
+
+                            @foreach($topikQuiz as $tq)
+                            @if($tq->topik_id == $tp->id)
+                            <div id="content" class="pembelajaran-box bg-white">
+                                <div class="row justify-content-center">
+                                    <div class="col-1">
+                                        <input type="checkbox" name="dapatDiUlang" value="1" class="form-check-input">
+                                    </div>
+                                    <div class="col-9">
+                                        <a href="{{route('pembelajaran.quiz',['id' => $pelatihan->id, 'topikId' => $tq->topik_id, 'quizId' => $tq->quiz_id])}}"
+                                            style="text-decoration: none;">
+                                            <span>{{$tq->judul}}</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            @endif
+                            @endforeach
+                            @endforeach
+
+                            <div class="pembelajaran-bar text-center bg-white">
+                                <p class="mt-4">Proses Pembelajaran</p>
+                                <figure class="highcharts-figure">
+                                    <div id="bar" style="height: 250px; margin:auto;"></div>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </header>
     <main>
         @yield('content')
@@ -179,421 +305,116 @@
         </div>
     </div>
 
-    <div id="menu" class="d-none">
-        <div class="menu-container">
-            <div class="menu-2">
-                <div class="d-flex justify-content-end">
-                    <div class="col-2">
-                        <div class="icon-menu-hover" onclick="onClickCloseMenu()"></div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <ul class="nav">
-                            <li>
-                                <a href="{{url('/')}}">Beranda</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <ul class="nav">
-                            <li>
-                                <a href="{{url('/galeria')}}">Galeria</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <ul class="nav">
-                            <li>
-                                <a href="{{url('/pelatihan-mandiri')}}">Pelatihan Mandiri</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <ul class="nav">
-                            <li>
-                                <input class="collapse-mandiri-2" type="checkbox" id="collapse-mandiri-2" />
-                                <label for="collapse-mandiri-2">Pelatihan Terbimbing</label>
-                                <div class="mandiri-hidden-1 font-italic">
-                                    <a href="">- Upskilling dan Reskilling</a>
-                                </div>
-                                <div class="mandiri-hidden-2">
-                                    <a href="">- Peningkatan Kompetensi &nbsp;&nbsp;&nbsp;Berkelanjutan</a>
-                                </div>
-                                <div class="mandiri-hidden-3">
-                                    <a href="">- Suplemen Kompetensi &nbsp;&nbsp;&nbsp;Keahlian</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <ul class="nav">
-                            <li>
-                                <a href="{{url('/alur-pembelajaran')}}">Alur Pembelajaran</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="{{asset('guest/assets/bootstrap/js/bootstrap.min.js')}}"></script>
+    @yield('script')
 
-    <div id="login" class="d-none">
-        <div class="bg-login">
-            <!-- Validation Errors -->
-            <div class="d-flex">
-                <x-auth-validation-errors id="error" class="text-popup mb-4 text-center bg-white rounded"
-                    :errors="$errors" />
-            </div>
+    <script>
+    function onClickMenu() {
+        $('#menu').attr('class', '');
+    }
 
-            <!-- Session Status -->
-            <div class="d-flex">
-                <x-auth-session-status class="text-popup mb-4 text-center bg-white rounded"
-                    :status="session('status')" />
+    function onClickCloseMenu() {
+        $('#menu').attr('class', '');
+        $('#menu').addClass('d-none');
+    }
 
-                <div class="login-container">
-                    <div class="d-flex">
-                        <div class="left-box mt-4">
-                            <image class="logo-login" src="{{asset('guest/assets/images/logo-header.png')}}"
-                                width="140px" height="100px" />
-                            <h2 class="login-title">LOGIN</h2>
-
-                            <form class="mt-5" method="POST" action="{{ route('login') }}">
-                                @csrf
-
-                                <!-- Email Address -->
-                                <div class="form-login">
-                                    <x-input class="email" id="email" class="block mt-1 w-full"
-                                        placeholder="Masukan Username / E-mail" type="email" name="email"
-                                        :value="old('email')" required autofocus />
-                                </div>
-
-                                <!-- Password -->
-                                <div class="form-login mt-5">
-                                    <x-input id="password" class="block mt-1 w-full" placeholder="Masukan Password"
-                                        type="password" name="password" required autocomplete="current-password" />
-                                </div>
-
-                                <!-- Remember Me -->
-                                <div class="row justify-content-between mt-3">
-                                    <div class="col-5">
-                                        <label for="remember_me" class="inline-flex items-center">
-                                            <input id="remember_me" type="checkbox"
-                                                class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                                name="remember">
-                                            <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                                        </label>
-                                    </div>
-                                    <div class="col-3">
-                                        <div class="clik-LupaPassword" onclick="onClickLupaPassword()">Lupa Password ?
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="d-flex justify-content-center mt-5">
-                                    <div class="col-2">
-                                        <button class="btn-login rounded-pill text-dark font-weight-bold">
-                                            {{ __('Masuk') }}
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <div class="row text-center mt-3">
-                                    <p>Atau</p>
-                                </div>
-                            </form>
-
-                            <div class="row text-center mt-2 clik-register">
-                                <span>Belum Memiliki Akun ?<span>
-                                        <button onclick="onClickRegister()">Daftar</button>
-                            </div>
-                        </div>
-                        <div class="right-box">
-                            <div class="row pt-3">
-                                <div class="col-5 d-flex">
-                                    <div class="row mt-3">
-                                        <div class="col-sm-12 col-xl-5 logo-login-right-1">
-                                            <image src="{{asset('guest/assets/images/logo-kemdikbud.png')}}"
-                                                width="70px" height="70px" />
-                                        </div>
-                                        <div class="col-12 col-xl-7 text-logo-right-1 mt-1">
-                                            <span>Kementrian Pendidikan, Kebudayaan, Riset dan Teknologi</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-5 d-flex">
-                                    <div class="row mt-3">
-                                        <div class="col-12 col-xl-5 logo-login-right-2">
-                                            <image src="{{asset('guest/assets/images/logo-bmti.png')}}" width="70px"
-                                                height="70px" />
-                                        </div>
-                                        <div class="col-12 col-xl-7 text-logo-right-2 mt-1">
-                                            <span>BBPPMPV BMTI <br /> Bidang Mesin dan Teknik Industri</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-2 d-flex">
-                                    <button class="btn-closed btn-danger btn-sm btn-circle"
-                                        onclick="onClickCloseLogin()">X</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="register" class="d-none">
-            <div class="bg-register">
-                <!-- Validation Errors -->
-                <div class="d-flex">
-                    <x-auth-validation-errors id="error" class="text-popup mb-4 text-center bg-white rounded"
-                        :errors="$errors" />
-                </div>
-
-                <div class="register-container">
-                    <div class="d-flex">
-                        <div class="left-box mt-4">
-                            <image class="logo-login" src="{{asset('guest/assets/images/logo-header.png')}}"
-                                width="140px" height="100px" />
-                            <h2 class="login-title">DAFTAR</h2>
-
-                            <form method="POST" action="{{ route('register') }}">
-                                @csrf
-
-                                <!-- Name -->
-                                <div class="form-login mt-4">
-                                    <x-input id="name" class="block mt-1 w-full" placeholder="Masukan Nama Lengkap"
-                                        type="text" name="name" :value="old('name')" required autofocus />
-                                </div>
-
-                                <!-- Email Address -->
-                                <div class="form-login mt-4">
-                                    <x-input id="email" class="block mt-1 w-full" placeholder="Masukan E-mail"
-                                        type="email" name="email" :value="old('email')" required />
-                                </div>
-
-                                <!-- Password -->
-                                <div class="form-login mt-4">
-                                    <x-input id="password" class="block mt-1 w-full" placeholder="Masukan Password"
-                                        type="password" name="password" required autocomplete="new-password" />
-                                </div>
-
-                                <!-- Confirm Password -->
-                                <div class="form-login mt-4">
-                                    <x-input id="password_confirmation" class="block mt-1 w-full"
-                                        placeholder="Konfirmasi Password" type="password" name="password_confirmation"
-                                        required />
-                                </div>
-
-                                <div class="d-flex justify-content-end mt-3 clik-sudah-daftar">
-                                    <button onclick="onClickDaftar()">Sudah Terdaftar ?</button>
-                                </div>
-
-                                <div class="d-flex justify-content-center mt-4 clik-daftar">
-                                    <div class="col-2">
-                                        <button class="btn-login rounded-pill text-dark font-weight-bold">
-                                            {{ __('Daftar') }}
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="right-box">
-                            <div class="row pt-3">
-                                <div class="col-5 d-flex">
-                                    <div class="row mt-3">
-                                        <div class="col-sm-12 col-xl-5 logo-login-right-1">
-                                            <image src="{{asset('guest/assets/images/logo-kemdikbud.png')}}"
-                                                width="70px" height="70px" />
-                                        </div>
-                                        <div class="col-12 col-xl-7 text-logo-right-1 mt-1">
-                                            <span>Kementrian Pendidikan, Kebudayaan, Riset dan Teknologi</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-5 d-flex">
-                                    <div class="row mt-3">
-                                        <div class="col-12 col-xl-5 logo-login-right-2">
-                                            <image src="{{asset('guest/assets/images/logo-bmti.png')}}" width="70px"
-                                                height="70px" />
-                                        </div>
-                                        <div class="col-12 col-xl-7 text-logo-right-2 mt-1">
-                                            <span>BBPPMPV BMTI <br /> Bidang Mesin dan Teknik Industri</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-2 d-flex">
-                                    <button class="btn-closed btn-danger btn-sm btn-circle"
-                                        onclick="onClickCloseRegister()">X</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="LupaPassword" class="d-none">
-            <div class="bg-LupaPassword">
-                <!-- Validation Errors -->
-                <div class="d-flex">
-                    <x-auth-validation-errors id="error" class="text-popup mb-4 text-center bg-white rounded"
-                        :errors="$errors" />
-                </div>
-
-                <!-- Session Status -->
-                <div class="d-flex">
-                    <x-auth-session-status class="text-popup mb-4 text-center bg-white rounded"
-                        :status="session('status')" />
-                </div>
-
-                <div class="LupaPassword-container">
-                    <div class="d-flex">
-                        <div class="left-box mt-4">
-                            <image class="logo-login" src="{{asset('guest/assets/images/logo-header.png')}}"
-                                width="140px" height="100px" />
-                            <div class="text-forget text-center mb-4 mt-5 text-sm text-gray-600">
-                                {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
-                            </div>
-
-                            <form method="POST" action="{{ route('password.email') }}">
-                                @csrf
-
-                                <!-- Email Address -->
-                                <div class="form-login mt-5">
-                                    <x-input id="email" class="block mt-1 w-full" placeholder="Masukan E-mail"
-                                        type="email" name="email" :value="old('email')" required autofocus />
-                                </div>
-
-                                <div class="d-flex justify-content-center clik-forget mt-5">
-                                    <button class="btn-forget rounded-pill text-dark font-weight-bold">
-                                        {{ __('Email Password Reset Link') }}
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="right-box">
-                            <div class="row pt-3">
-                                <div class="col-5 d-flex">
-                                    <div class="row mt-3">
-                                        <div class="col-sm-12 col-xl-5 logo-login-right-1">
-                                            <image src="{{asset('guest/assets/images/logo-kemdikbud.png')}}"
-                                                width="70px" height="70px" />
-                                        </div>
-                                        <div class="col-12 col-xl-7 text-logo-right-1 mt-1">
-                                            <span>Kementrian Pendidikan, Kebudayaan, Riset dan Teknologi</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-5 d-flex">
-                                    <div class="row mt-3">
-                                        <div class="col-12 col-xl-5 logo-login-right-2">
-                                            <image src="{{asset('guest/assets/images/logo-bmti.png')}}" width="70px"
-                                                height="70px" />
-                                        </div>
-                                        <div class="col-12 col-xl-7 text-logo-right-2 mt-1">
-                                            <span>BBPPMPV BMTI <br /> Bidang Mesin dan Teknik Industri</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-2 d-flex">
-                                    <button class="btn-closed btn-danger btn-sm btn-circle"
-                                        onclick="onClickCloseLupaPassword()">X</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-        </script>
-        <script src="{{asset('guest/assets/bootstrap/js/bootstrap.min.js')}}"></script>
-        @yield('script')
-
-        <script>
-        $(function() {
-            var current = location.pathname;
-            console.log(current)
-            $('.nav li a').each(function() {
-                var $this = $(this);
-                // if the current path is like this link, make it active
-                if ($this.attr('href').indexOf(current) != -1) {
-                    $this.addClass('active');
-                }
-            })
-        })
-
-        function onClickMenu() {
-            $('#menu').attr('class', '');
+    function myFunctionMenu() {
+        if (document.getElementById("icon-menu-1").src ==
+            "{{asset('guest/assets/images/collapse-down.png')}}") {
+            document.getElementById("icon-menu-1").src = "{{asset('guest/assets/images/collapse-up.png')}}";
+        } else {
+            document.getElementById("icon-menu-1").src =
+                "{{asset('guest/assets/images/collapse-down.png')}}";
         }
-
-        function onClickCloseMenu() {
-            $('#menu').attr('class', '');
-            $('#menu').addClass('d-none');
+        $('#materi-menu-1').attr('class', '');
+        var x = document.getElementById("materi-menu-1");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
         }
+    }
 
-        function onClickLogin() {
-            $('#login').attr('class', '');
-        }
+    document.getElementById("text-hover").addEventListener('mouseover', function() {
+        document.getElementById("text-hover-2").style.display = "block";
+    });
 
-        function onClickCloseLogin() {
-            $('#login').addClass('d-none');
-        }
+    document.getElementById("text-hover-2").addEventListener('mouseover', function() {
+        document.getElementById("text-hover-2").style.display = "block";
+    });
 
-        function onClickRegister() {
-            $('#login').addClass('d-none');
-            $('#register').attr('class', '');
-        }
+    document.getElementById("text-hover-2").addEventListener('mouseleave', function() {
+        document.getElementById("text-hover-2").style.display = "none";
+    });
 
-        function onClickCloseRegister() {
-            $('#register').addClass('d-none');
-        }
-
-        function onClickDaftar() {
-            $('#register').addClass('d-none');
-            $('#login').attr('class', '');
-        }
-
-        function onClickLupaPassword() {
-            $('#login').addClass('d-none');
-            $('#LupaPassword').attr('class', '');
-        }
-
-        function onClickCloseLupaPassword() {
-            $('#LupaPassword').addClass('d-none');
-        }
-
-        document.getElementById("text-hover").addEventListener('mouseover', function() {
-            document.getElementById("text-hover-2").style.display = "block";
-        });
-
-        document.getElementById("text-hover-2").addEventListener('mouseover', function() {
-            document.getElementById("text-hover-2").style.display = "block";
-        });
-
-        document.getElementById("text-hover-2").addEventListener('mouseleave', function() {
-            document.getElementById("text-hover-2").style.display = "none";
-        });
-
-        document.getElementById("text-hover").addEventListener('mouseleave', function() {
-            document.getElementById("text-hover-2").style.display = "none";
-        });
-        </script>
+    document.getElementById("text-hover").addEventListener('mouseleave', function() {
+        document.getElementById("text-hover-2").style.display = "none";
+    });
+    </script>
 </body>
 
 </html>
+
+<!-- <div class="container-fluid">
+    <div class="row">
+        <div class="col-2">
+            <div class="logo-header">
+                <a href="{{url('/')}}">
+                    <img src="{{asset('guest/assets/images/logo-header.png')}}" width="150px" height="100px" />
+                </a>
+            </div>
+        </div>
+
+        <div class="col-2 text-light">
+            <p class="text-header">Pelatihan Saya</p>
+        </div>
+
+        <div class="col-6"></div>
+
+        <div class="col-2 text-light text-center">
+            <p id="text-hover" class="text-header-2">{{auth()->user()->name}}</p>
+            <div id="text-hover-2" class="text-hover-2">
+                <div class="row">
+                    <div class="col-2">
+                        <a href="{{url('/dashboard')}}">
+                            <i class="fa-solid fa-house-chimney"></i>
+                        </a>
+                    </div>
+                    <div class="col-10 text-start">
+                        <a href="{{url('/dashboard')}}" class="btn-lg" role="button" aria-pressed="true">Dashboard</a>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-2">
+                        <a href="{{ route('logout') }}"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            <i class="fa-solid fa-right-from-bracket"></i></a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+                    </div>
+                    <div class="col-10 text-start">
+                        <a href="{{ route('logout') }}"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="
+                            btn-lg" role="button" aria-pressed="true">Logout</a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-2 order-3 icon-menu mt-4 d-none">
+            <div class="icon-menu-2" onclick="onClickMenu()"></div>
+        </div>
+    </div>
+</div> -->
