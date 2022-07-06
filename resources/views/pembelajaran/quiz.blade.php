@@ -83,7 +83,6 @@
                             </div>
                         </div>
                     </div>
-
                     @foreach($konten as $kt)
                     @if($kt->topik_id == $tp->id)
                     <div class="pembelajaran-box bg-white">
@@ -94,6 +93,9 @@
                             <div class="col-9">
                                 <a href="{{route('pembelajaran.konten',['id' => $pelatihan->id, 'topikId' => $tp->id, 'kontenId' => $kt->id])}}"
                                     style="text-decoration: none;"><span>{{$kt->judul}}</span></a>
+                            </div>
+                            <div class="col-1">
+                                <i class="fa-solid fa-circle-check"></i>
                             </div>
                         </div>
                     </div>
@@ -113,6 +115,7 @@
                                     <span>{{$tq->judul}}</span>
                                 </a>
                             </div>
+                            <div class="col-1"></div>
                         </div>
                     </div>
                     @endif
@@ -131,7 +134,7 @@
 
     <div class="row">
         <div class="col-12 next-pembelajaran text-center">
-            <p>Topik Selanjutnya : <span>Tes Awal</span></p>
+            <p>Topik Selanjutnya : <a href="" style="text-decoration:none;"><span>Tes Awal</span></a></p>
         </div>
     </div>
 </div>

@@ -116,7 +116,7 @@ header {
 
 @keyframes menu {
     0% {
-        left: -400px;
+        left: 400px;
         top: 0px;
     }
     100% {
@@ -194,6 +194,7 @@ header {
 /* pembelajaran */
 
 .materi-pembelajaran {
+    font-family: "glory";
     margin-bottom: 65px;
 }
 
@@ -324,6 +325,12 @@ header {
 
 .next-pembelajaran p span {
     color: black;
+}
+
+.btn-pembelajaran {
+    width: 150px;
+    font-size: 14px;
+    font-family: "glory";
 }
 
 

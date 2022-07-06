@@ -240,6 +240,19 @@ input[class="collapse-mandiri"] {
     height: 100%;
     background: linear-gradient(to top left, #018ED6, #1C3B78);
     z-index: 99999;
+    animation-name: menu;
+    animation-duration: 1s;
+}
+
+@keyframes menu {
+    0% {
+        left: 400px;
+        top: 0px;
+    }
+    100% {
+        left: 0px;
+        top: 0px;
+    }
 }
 
 .menu-2 ul li {
