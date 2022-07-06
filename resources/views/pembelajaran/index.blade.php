@@ -7,8 +7,9 @@
 
         </div>
         <div class="col-lg-7">
+            <h2 class="mt-3">{{$singleTopik->judul}}</h2>
             <p class="mt-3">
-                {!!$data->materi!!}
+                {!!$singleTopik->materi!!}
             </p>
         </div>
         <div class="col-lg-3">
@@ -26,7 +27,7 @@
                         <li class="list-group-item d-flex justify-content-start">
                             <label class="form-check-label">
                                 <input type="checkbox" name="dapatDiUlang" value="1" class="form-check-input">
-                                {{$tp->judul}}
+                                <a href="{{route('pembelajaran.topik',['id' => $pelatihan->id, 'topikId' => $tp->id])}}" style="text-decoration: none;"><span>{{$tp->judul}}</span></a>
                             </label>
                         </li>
                     </ul>

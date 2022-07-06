@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Konten extends Model
 {
-    protected $fillable = ['judul','materi'];
+    protected $fillable = ['judul','materi','file'];
 
     protected $table = 't_konten';
     public function topik(){
