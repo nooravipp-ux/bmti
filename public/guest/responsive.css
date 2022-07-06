@@ -1510,6 +1510,17 @@
     .shared img {
         width: 60px;
     }
+    /* materi */
+    .text-kompetensi-2 {
+        text-align: center;
+    }
+    .text-kompetensi-2 h1 {
+        font-size: 45px;
+    }
+    .text-kompetensi-2 img {
+        width: 370px;
+    }
+    /* end materi */
     /* end teknik permesinan */
 }
 
@@ -1697,6 +1708,17 @@
     .shared img {
         width: 60px;
     }
+    /* materi */
+    .text-kompetensi-2 {
+        text-align: center;
+    }
+    .text-kompetensi-2 h1 {
+        font-size: 45px;
+    }
+    .text-kompetensi-2 img {
+        width: 400px;
+    }
+    /* end materi */
     /* end teknik permesinan */
 }
 
@@ -1873,6 +1895,14 @@
     .shared img {
         width: 60px;
     }
+    /* materi */
+    .text-kompetensi-2 {
+        text-align: center;
+    }
+    .text-kompetensi-2 img {
+        width: 450px;
+    }
+    /* end materi */
     /* end teknik permesinan */
 }
 
@@ -2045,6 +2075,14 @@
     .shared img {
         width: 60px;
     }
+    /* materi */
+    .text-kompetensi-2 {
+        text-align: center;
+    }
+    .text-kompetensi-2 img {
+        width: 550px;
+    }
+    /* end materi */
     /* end teknik permesinan */
 }
 
@@ -2100,19 +2138,6 @@
     .galeria-kompetensi-kategori {
         font-size: 12px;
     }
-    /* materi */
-    .bg-komptensi-materi {
-        margin-top: 25px;
-    }
-    .content-materi iframe {
-        width: 590px;
-        height: 370px;
-    }
-    .shared {
-        margin-top: 30px;
-        margin-left: 150px;
-    }
-    /* end materi */
 }
 
 

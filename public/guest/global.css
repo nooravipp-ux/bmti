@@ -1219,6 +1219,24 @@ input[class="collapse-mandiri-2"] {
 }
 
 
+/* materi */
+
+.text-kompetensi-2 {
+    font-family: "glory";
+    margin-bottom: 10px;
+}
+
+.text-kompetensi-2 h1 {
+    margin-top: 150px;
+    color: #FFF008;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+
+/* end materi */
+
+
 /* end modal */
 
 .bg-image {

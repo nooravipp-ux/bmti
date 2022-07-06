@@ -20,13 +20,6 @@
                     <p>Last Update Sept 15, 2022</p>
                 </span>
             </div>
-
-            <div class="col-1 img-rating">
-                <img src="{{asset('guest/assets/images/rating.png')}}" width="40px" height="40px" />
-            </div>
-            <div class="col-2 col-lg-3 col-xl-3 rating">
-                <span>1.296</span>
-            </div>
         </div>
 
         <div class="row">
@@ -69,66 +62,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container">
-    <div class="row text-center">
-        <div class="col-3 col-lg-1 col-xl-1">
-            <div class="shared-3d">
-                <a href="">
-                    <img src="{{asset('guest/assets/images/share-shared.png')}}" width="70px" height="25px" />
-                </a>
-            </div>
-        </div>
-
-        <div class="col-3 col-lg-1 col-xl-1">
-            <div class="shared-3d">
-                <a href="">
-                    <img src="{{asset('guest/assets/images/fb-shared.png')}}" width="70px" height="25px" />
-                </a>
-            </div>
-        </div>
-
-        <div class="col-3 col-lg-1 col-xl-1">
-            <div class="shared-3d">
-                <a href="">
-                    <img src="{{asset('guest/assets/images/twitter-shared.png')}}" width="70px" height="25px" />
-                </a>
-            </div>
-        </div>
-
-        <div class="col-3 col-lg-1 col-xl-1">
-            <div class="shared-3d">
-                <a href="">
-                    <img src="{{asset('guest/assets/images/google.png')}}" width="70px" height="25px" />
-                </a>
-            </div>
-        </div>
-
-        <div class="col-3 col-lg-1 col-xl-1">
-            <div class="shared-3d">
-                <a href="">
-                    <img src="{{asset('guest/assets/images/reddit-shared.png')}}" width="70px" height="25px" />
-                </a>
-            </div>
-        </div>
-
-        <div class="col-3 col-lg-1 col-xl-1">
-            <div class="shared-3d">
-                <a href="">
-                    <img src="{{asset('guest/assets/images/pinterest-shared.png')}}" width="70px" height="25px" />
-                </a>
-            </div>
-        </div>
-
-        <div class="col-3 col-lg-1 col-xl-1">
-            <div class="shared-3d">
-                <a href="">
-                    <img src="{{asset('guest/assets/images/email-shared.png')}}" width="70px" height="25px" />
-                </a>
             </div>
         </div>
     </div>
@@ -186,74 +119,6 @@
         </div>
         </span>
         @endforeach
-    </div>
-</div>
-
-<div class="container">
-    <div class="row justify-content-center mt-5 text-center">
-        <div class="col-sm-6 col-lg-1 col-xl-1 img-rating-2">
-            <img src="{{asset('guest/assets/images/rating.png')}}" width="40px" height="40px" />
-        </div>
-
-        <div class="col-sm-6 col-lg-4 col-xl-4 rating-2 text-dark">
-            <span>1.296</span>
-        </div>
-
-        <div class="col-3 col-lg-1 col-xl-1">
-            <div class="shared-3d-2">
-                <a href="">
-                    <img src="{{asset('guest/assets/images/share-shared.png')}}" width="70px" height="25px" />
-                </a>
-            </div>
-        </div>
-
-        <div class="col-3 col-lg-1 col-xl-1">
-            <div class="shared-3d-2">
-                <a href="">
-                    <img src="{{asset('guest/assets/images/fb-shared.png')}}" width="70px" height="25px" />
-                </a>
-            </div>
-        </div>
-
-        <div class="col-3 col-lg-1 col-xl-1">
-            <div class="shared-3d-2">
-                <a href="">
-                    <img src="{{asset('guest/assets/images/twitter-shared.png')}}" width="70px" height="25px" />
-                </a>
-            </div>
-        </div>
-
-        <div class="col-3 col-lg-1 col-xl-1">
-            <div class="shared-3d-2">
-                <a href="">
-                    <img src="{{asset('guest/assets/images/google.png')}}" width="70px" height="25px" />
-                </a>
-            </div>
-        </div>
-
-        <div class="col-3 col-lg-1 col-xl-1">
-            <div class="shared-3d-2">
-                <a href="">
-                    <img src="{{asset('guest/assets/images/reddit-shared.png')}}" width="70px" height="25px" />
-                </a>
-            </div>
-        </div>
-
-        <div class="col-3 col-lg-1 col-xl-1">
-            <div class="shared-3d-2">
-                <a href="">
-                    <img src="{{asset('guest/assets/images/pinterest-shared.png')}}" width="70px" height="25px" />
-                </a>
-            </div>
-        </div>
-
-        <div class="col-3 col-lg-1 col-xl-1">
-            <div class="shared-3d-2">
-                <a href="">
-                    <img src="{{asset('guest/assets/images/email-shared.png')}}" width="70px" height="25px" />
-                </a>
-            </div>
-        </div>
     </div>
 </div>
 

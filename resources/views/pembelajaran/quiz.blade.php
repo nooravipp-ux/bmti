@@ -10,7 +10,7 @@
 @section('content')
 <div class="container-fluid">
     <div class="row justify-content-center mt-5 mb-5">
-        <div class="col-12 col-xl-7">
+        <div class="col-12 col-lg-7 col-xl-7">
             <div class="box-proses mb-3">
                 <p>Batasan Waktu : <span id="demo" style="font-size: 17px;"></span></p>
                 <div class="progress">
@@ -56,9 +56,9 @@
             </form>
         </div>
 
-        <div class="col-12 col-xl-2">
+        <div class="col-12 col-lg-2 col-xl-2">
             <div class="row justify-content-end">
-                <div class="col-7">
+                <div class="col-lg-12 col-xl-7">
                     <div class="button-hidden">
                         <img src="{{asset('guest/assets/images/collapse-right.png')}}" id="icon-pembelajaran"
                             style="width=20px; height:20px;" onclick="myFunction()" />

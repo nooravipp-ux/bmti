@@ -12,7 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Glory&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" />
     <link rel="stylesheet" href="{{asset('guest/assets/bootstrap/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('guest/pembelajaran.css')}}"> @yield('custom-css')
+    <link rel="stylesheet" href="{{asset('guest/pembelajaran.css')}}">
+    @yield('custom-css')
 
 </head>
 
@@ -20,7 +21,7 @@
     <header>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-5 col-xl-2 ">
+                <div class="col-5 col-lg-3 col-xl-2 ">
                     <div class="logo-header">
                         <a href="{{url('/')}}">
                             <img src="{{asset('guest/assets/images/logo-header.png')}}" width="150px" height="100px" />
@@ -28,13 +29,13 @@
                     </div>
                 </div>
 
-                <div class="col col-xl-2 text-light text-header">
+                <div class="col col-lg-2 col-xl-2 text-light text-header">
                     <p>Pelatihan Saya</p>
                 </div>
 
                 <div class="col col-xl-6"></div>
 
-                <div class="col-4 col-md-2 col-xl-2 text-light text-center text-header-2">
+                <div class="col-4 col-md-3 col-lg-3 col-xl-2 text-light text-center text-header-2">
                     <p id="text-hover">{{auth()->user()->name}}</p>
 
                     <div class="text-hover-pembelajaran">
@@ -198,7 +199,7 @@
                             <div class="pembelajaran-bar text-center bg-white">
                                 <p class="mt-4">Proses Pembelajaran</p>
                                 <figure class="highcharts-figure">
-                                    <div id="bar" style="height: 250px; margin:auto;"></div>
+                                    <div id="bar-2" style="height: 250px; margin:auto;"></div>
                                 </figure>
                             </div>
                         </div>
@@ -355,6 +356,62 @@
 
     document.getElementById("text-hover").addEventListener('mouseleave', function() {
         document.getElementById("text-hover-2").style.display = "none";
+    });
+    </script>
+
+    <script type="text/javascript">
+    Highcharts.chart('bar-2', {
+        chart: {
+            type: 'pie'
+        },
+        title: {
+            text: ''
+        },
+        credits: {
+            enabled: false
+        },
+        accessibility: {
+            point: {
+                valueSuffix: '%'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:12px; fontFamily:glory;">{point.key}</span><table>',
+            pointFormat: '<td style="padding:0;"><b>{point.percentage:.1f}%</b></td></tr>',
+            footerFormat: '</table>',
+            useHTML: true
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.percentage:.1f} %'
+                },
+                showInLegend: true,
+
+                depth: 35,
+                dataLabels: {
+                    formatter: function() {
+                        if (this.percentage != 0) return Math.round(this.percentage) + '%';
+                    },
+                    distance: -22,
+                    style: {
+                        color: 'white',
+                        fontSize: '14px'
+                    }
+                }
+            }
+        },
+        series: [{
+            innerSize: '50%',
+            data: [
+                ['Complete', 10],
+                ['Non Complete', 8],
+            ],
+            colors: ['#2289FF', '#E0DECA']
+        }]
     });
     </script>
 </body>
