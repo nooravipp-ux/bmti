@@ -22,6 +22,7 @@ class KursusPesertaController extends Controller
 
     public function detailPelatihan($id)
     {
+        $id_peserta = DB::table('m_peserta')->where('user_id', auth()->user()->id)->first();
 
         $checkEnroll = $this->checkEnroll($this->getIdPeserta(), $id);
 
@@ -49,7 +50,7 @@ class KursusPesertaController extends Controller
             ->where('kursus_id', $id)
             ->get();
 
-        return view('admin.dashboard.peserta.detailPelatihan', compact('pelatihan', 'topiks', 'pelatihan', 'topikQuiz', 'konten', 'data','checkEnroll'));
+        return view('admin.dashboard.peserta.detailPelatihan', compact('pelatihan', 'topiks', 'pelatihan', 'topikQuiz', 'konten', 'data','checkEnroll', 'id_peserta'));
     }
 
     public function enrollPelatihan($idPelatihan)
@@ -73,6 +74,7 @@ class KursusPesertaController extends Controller
 
     public function enrolledPelatihan()
     {
+        $id_peserta = DB::table('m_peserta')->where('user_id', auth()->user()->id)->first();
         
         $data = DB::table('t_kursus')->select('t_kursus.*', 'm_kelompok_keahlian.nama as kategori_kursus')
             ->join('m_kelompok_keahlian', 'm_kelompok_keahlian.id', '=', 't_kursus.kelompok_keahlian_id')
@@ -80,7 +82,7 @@ class KursusPesertaController extends Controller
             ->where('t_kursus_peserta.peserta_id', $this->getIdPeserta())
             ->get();
 
-        return view('admin.dashboard.peserta.enrolledPelatihan', compact('data'));
+        return view('admin.dashboard.peserta.enrolledPelatihan', compact('data', 'id_peserta'));
     }
 
     public function checkEnroll($idPeserta, $idPelatihan)
