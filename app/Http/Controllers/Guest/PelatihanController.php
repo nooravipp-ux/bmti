@@ -207,7 +207,7 @@ class PelatihanController extends Controller
         $bobotSoal = (100 / (int)$totalSoal);
         $nilaiAkhir = $bobotSoal * $counterJawabanBenar;
 
-        return $nilaiAkhir;
+        return redirect()->back()->with('nilai-akhir', $nilaiAkhir);
     }
 
 

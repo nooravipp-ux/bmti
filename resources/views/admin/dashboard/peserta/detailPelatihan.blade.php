@@ -21,7 +21,7 @@
                             </div>
                             <div class="ms-auto p-2 bd-highlight">
                                @if($checkEnroll == false)
-                                <a class="btn btn-lg btn-primary" href="{{route('peserta.pelatihan.enroll', [$pelatihan->id])}}">Enroll</a>
+                                <a class="btn btn-lg btn-primary" href="{{route('peserta.pelatihan.enroll', [$pelatihan->id])}}">Daftar Pelatihan</a>
                                 @endif
                             </div>
                         </div>
