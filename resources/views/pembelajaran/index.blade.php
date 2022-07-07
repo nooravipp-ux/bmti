@@ -105,14 +105,18 @@
                     <div id="content" class="pembelajaran-box bg-white">
                         <div class="row justify-content-center">
                             <div class="col-1">
-                                <input type="checkbox" name="dapatDiUlang" value="1" class="form-check-input">
+                                <input type="checkbox" name="dapatDiUlang" value="1" class="form-check-input" <?php if ($tq->status == 1) echo 'checked'; ?>>
                             </div>
                             <div class="col-9">
                                 <a href="{{route('pembelajaran.quiz',['id' => $pelatihan->id, 'topikId' => $tq->topik_id, 'quizId' => $tq->quiz_id])}}" style="text-decoration: none;">
                                     <span>{{$tq->judul}}</span>
                                 </a>
                             </div>
-                            <div class="col-1"></div>
+                            <div class="col-1">
+                                @if($tq->status == 1)
+                                <i class="fa-solid fa-circle-check"></i>
+                                @endif
+                            </div>
                         </div>
                     </div>
                     @endif
