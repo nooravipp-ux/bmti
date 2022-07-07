@@ -9,30 +9,28 @@
                 {!!$singleTopik->materi!!}
             </p>
 
-            @foreach($topiks as $tp)
             <div class="in-proggres bg-white">
                 <img src="{{asset('guest/assets/images/tes-awal.png')}}" width="30px" height="30px" />
-                <a href="{{route('pembelajaran.topik',['id' => $pelatihan->id, 'topikId' => $tp->id])}}" style="text-decoration: none; color:black; margin-left:10px;"><span>{{$tp->judul}}</span></a>
+                <a href="{{route('pembelajaran.topik',['id' => $pelatihan->id, 'topikId' => $singleTopik->id])}}" style="text-decoration: none; color:black; margin-left:10px;"><span>Konten Pembelajaran</span></a>
             </div>
             @foreach($konten as $kt)
-            @if($kt->topik_id == $tp->id)
-            <div class="in-proggres bg-white">
-                <input type="radio" name="dapatDiUlang" value="1" class="form-check-input" style="margin-left:5px;">
-                <a href="{{route('pembelajaran.konten',['id' => $pelatihan->id, 'topikId' => $tp->id, 'kontenId' => $kt->id])}}" style="text-decoration: none; color:black; margin-left:10px;"><span>{{$kt->judul}}</span></a>
-            </div>
-            @endif
+                @if($kt->topik_id == $singleTopik->id)
+                <div class="in-proggres bg-white">
+                    <input type="checkbox" name="dapatDiUlang" value="1" class="form-check-input" style="margin-left:5px;">
+                    <a href="{{route('pembelajaran.konten',['id' => $pelatihan->id, 'topikId' => $singleTopik->id, 'kontenId' => $kt->id])}}" style="text-decoration: none; color:black; margin-left:10px;"><span>{{$kt->judul}}</span></a>
+                </div>
+                @endif
             @endforeach
 
             @foreach($topikQuiz as $tq)
-            @if($tq->topik_id == $tp->id)
-            <div class="in-proggres bg-white">
-                <input type="radio" name="dapatDiUlang" value="1" class="form-check-input" style="margin-left:5px;">
-                <a href="{{route('pembelajaran.quiz',['id' => $pelatihan->id, 'topikId' => $tq->topik_id, 'quizId' => $tq->quiz_id])}}" style="text-decoration: none; color:black; margin-left:10px;">
-                    <span>{{$tq->judul}}</span>
-                </a>
-            </div>
-            @endif
-            @endforeach
+                @if($tq->topik_id == $singleTopik->id)
+                <div class="in-proggres bg-white">
+                    <input type="radio" name="dapatDiUlang" value="1" class="form-check-input" style="margin-left:5px;">
+                    <a href="{{route('pembelajaran.quiz',['id' => $pelatihan->id, 'topikId' => $singleTopik->id, 'quizId' => $tq->quiz_id])}}" style="text-decoration: none; color:black; margin-left:10px;">
+                        <span>{{$tq->judul}}</span>
+                    </a>
+                </div>
+                @endif
             @endforeach
             <hr />
             <div class="row text-center">
