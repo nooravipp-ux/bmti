@@ -9,34 +9,33 @@
                 {!!$singleTopik->materi!!}
             </p>
 
-            @foreach($topiks as $tp)
             <div class="in-proggres bg-white">
                 <img src="{{asset('guest/assets/images/tes-awal.png')}}" width="30px" height="30px" />
-                <a href="{{route('pembelajaran.topik',['id' => $pelatihan->id, 'topikId' => $tp->id])}}"
-                    style="text-decoration: none; color:black; margin-left:10px;"><span>{{$tp->judul}}</span></a>
+                <a href="{{route('pembelajaran.topik',['id' => $pelatihan->id, 'topikId' => $singleTopik->id])}}"
+                    style="text-decoration: none; color:black; margin-left:10px;"><span>Konten Pembelajaran</span></a>
             </div>
             @foreach($konten as $kt)
-            @if($kt->topik_id == $tp->id)
+            @if($kt->topik_id == $singleTopik->id)
             <div class="in-proggres bg-white">
-                <input type="radio" name="dapatDiUlang" value="1" class="form-check-input" style="margin-left:5px;">
-                <a href="{{route('pembelajaran.konten',['id' => $pelatihan->id, 'topikId' => $tp->id, 'kontenId' => $kt->id])}}"
+                <input type="checkbox" name="dapatDiUlang" value="1" class="form-check-input" style="margin-left:5px;">
+                <a href="{{route('pembelajaran.konten',['id' => $pelatihan->id, 'topikId' => $singleTopik->id, 'kontenId' => $kt->id])}}"
                     style="text-decoration: none; color:black; margin-left:10px;"><span>{{$kt->judul}}</span></a>
             </div>
             @endif
             @endforeach
 
             @foreach($topikQuiz as $tq)
-            @if($tq->topik_id == $tp->id)
+            @if($tq->topik_id == $singleTopik->id)
             <div class="in-proggres bg-white">
                 <input type="radio" name="dapatDiUlang" value="1" class="form-check-input" style="margin-left:5px;">
-                <a href="{{route('pembelajaran.quiz',['id' => $pelatihan->id, 'topikId' => $tq->topik_id, 'quizId' => $tq->quiz_id])}}"
+                <a href="{{route('pembelajaran.quiz',['id' => $pelatihan->id, 'topikId' => $singleTopik->id, 'quizId' => $tq->quiz_id])}}"
                     style="text-decoration: none; color:black; margin-left:10px;">
                     <span>{{$tq->judul}}</span>
                 </a>
             </div>
             @endif
             @endforeach
-            @endforeach
+            <br />
             <hr />
             <div class="row text-center">
                 <div class="col-4">
@@ -46,12 +45,8 @@
                     </button>
                 </div>
                 <div class="col-4">
-                    <button class="btn-pembelajaran btn btn-primary">
-                        <span>MARK COMPLETE</span>
-                        <i class="fa-solid fa-check" style="margin-left:5px;"></i>
-                    </button>
                     <a href="" style="font-size: 14px; font-family:glory; text-decoration: none;">
-                        <p>Back to Course</p>
+                        <p style="margin-top:10px;">Back to Course</p>
                     </a>
                 </div>
                 <div class="col-4">
@@ -62,13 +57,13 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="col-12 col-lg-2 col-xl-2">
             <div class="row justify-content-end">
                 <div class="col-lg-12 col-xl-7">
                     <div class="button-hidden">
                         <img src="{{asset('guest/assets/images/collapse-right.png')}}" id="icon-pembelajaran"
-                            style="width=20px; height:20px;" onclick="myFunction()" />
+                            style="width:20px; height:20px;" onclick="myFunction()" />
                     </div>
                 </div>
             </div>
@@ -136,12 +131,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-12 next-pembelajaran text-center">
-            <p>Topik Selanjutnya : <a href="" style="text-decoration:none;"><span>Tes Awal</span></a></p>
         </div>
     </div>
 </div>

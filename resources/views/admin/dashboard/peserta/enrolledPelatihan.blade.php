@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <div class="row mt-3">
+    <div class="row mt-3" style="font-family:glory;">
         <div class="col-md-4">
             <select name="" class="form-control">
                 <option value="">Kelompok Keahlian</option>
@@ -15,10 +15,10 @@
     <div class="row mt-3">
         @foreach($data as $dt)
         <div class="col-12 col-xl-3">
-            <div class="card" style="height: 15rem;">
+            <div class="card" style="height: 15rem; font-family:glory;">
                 <img class="card-img-top" src="{{asset('/images/pelatihan/'.$dt->gambar)}}" alt="Card image cap">
                 <div class="card-body text-center">
-                    <h5>{{$dt->judul}}</h5>
+                    <h4>{{$dt->judul}}</h4>
                     <a href="{{route('peserta.pelatihan.katalog.detail', ['idPelatihan' => $dt->id])}}" class="btn btn-sm btn-primary text-center">Lihat Selengkapnya...</a>
                 </div>
             </div>

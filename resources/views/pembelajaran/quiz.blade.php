@@ -54,6 +54,31 @@
                     </div>
                 </div>
             </form>
+            <br />
+            <hr />
+            <div class="row text-center">
+                <div class="col-4">
+                    <button class="btn-pembelajaran btn btn-primary">
+                        <i class="fa-solid fa-angle-left" style="  margin-left: -10px;"></i>
+                        <span style=" margin-left: 15px;">Previous Lesson</span>
+                    </button>
+                </div>
+                <div class="col-4">
+                    <button class="btn-pembelajaran btn btn-primary">
+                        <span>MARK COMPLETE</span>
+                        <i class="fa-solid fa-check" style="margin-left:5px;"></i>
+                    </button>
+                    <a href="" style="font-size: 14px; font-family:glory; text-decoration: none;">
+                        <p>Back to Course</p>
+                    </a>
+                </div>
+                <div class="col-4">
+                    <button class="btn-pembelajaran btn btn-primary">
+                        <span style="margin-left:20px;">Next Lesson</span>
+                        <i class="fa-solid fa-angle-right" style="margin-left:20px;"></i>
+                    </button>
+                </div>
+            </div>
         </div>
 
         <div class="col-12 col-lg-2 col-xl-2">
@@ -129,12 +154,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-12 next-pembelajaran text-center">
-            <p>Topik Selanjutnya : <a href="" style="text-decoration:none;"><span>Tes Awal</span></a></p>
         </div>
     </div>
 </div>

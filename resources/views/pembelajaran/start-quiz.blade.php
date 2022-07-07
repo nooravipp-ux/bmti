@@ -90,12 +90,6 @@
             </div>
         </div>
     </div>
-
-    <div class="row">
-        <div class="col-12 next-pembelajaran text-center">
-            <p>Topik Selanjutnya : <span>Tes Awal</span></p>
-        </div>
-    </div>
 </div>
 
 @endsection @section('script')
