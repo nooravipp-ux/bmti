@@ -280,7 +280,7 @@
 
                                 <!-- Email Address -->
                                 <div class="form-login">
-                                    <x-input class="email" id="email" class="block mt-1 w-full"
+                                    <input class="email" id="email_login" class="block mt-1 w-full"
                                         placeholder="Masukan Username / E-mail" type="email" name="email"
                                         :value="old('email')" required autofocus />
                                 </div>
@@ -290,7 +290,7 @@
 
                                 <!-- Password -->
                                 <div class="form-login mt-5">
-                                    <x-input id="password" class="block mt-1 w-full" placeholder="Masukan Password"
+                                    <input id="passwor" class="block mt-1 w-full" placeholder="Masukan Password"
                                         type="password" name="password" required autocomplete="current-password" />
                                 </div>
                                 <div class="icon-password-login">
@@ -397,45 +397,52 @@
 
                                 <!-- FirstName -->
                                 <div class="form-login">
-                                    <x-input id="firstName" class="block mt-1 w-full" placeholder="Masukan Nama Depan"
+                                    <input id="firstName" class="block mt-1 w-full" placeholder="Masukan Nama Depan"
                                         type="text" name="firstName" :value="old('firstName')" required autofocus />
+                                    <span class="d-none firstName-alert text-danger"></span>
                                 </div>
 
                                 <!-- LastName -->
                                 <div class="form-login mt-2">
-                                    <x-input id="lastName" class="block mt-1 w-full" placeholder="Masukan Nama Belakang"
+                                    <input id="lastName" class="block mt-1 w-full" placeholder="Masukan Nama Belakang"
                                         type="text" name="lastName" :value="old('lastName')" required autofocus />
+                                    <span class="d-none lastName-alert text-danger"></span>
                                 </div>
 
                                 <!-- NIK -->
                                 <div class="form-login mt-2">
-                                    <x-input id="nik" class="block mt-1 w-full" placeholder="Masukan NIK" type="number"
+                                    <input id="nik" class="block mt-1 w-full" placeholder="Masukan NIK" type="number"
                                         name="nik" :value="old('nik')" required autofocus />
+                                    <span class="d-none nik-alert text-danger"></span>
                                 </div>
 
                                 <!-- NUPTK -->
                                 <div class="form-login mt-2">
-                                    <x-input id="nuptk" class="block mt-1 w-full" placeholder="Masukan NUPTK"
+                                    <input id="nuptk" class="block mt-1 w-full" placeholder="Masukan NUPTK"
                                         type="number" name="nuptk" :value="old('nuptk')" required autofocus />
+                                    <span class="d-none nuptk-alert text-danger"></span>
                                 </div>
 
                                 <!-- Email Address -->
                                 <div class="form-login mt-2">
-                                    <x-input id="email" class="block mt-1 w-full" placeholder="Masukan E-mail"
+                                    <input id="email" class="block mt-1 w-full" placeholder="Masukan E-mail"
                                         type="email" name="email" :value="old('email')" required />
+                                    <span class="d-none email-alert text-danger"></span>
                                 </div>
 
                                 <!-- Password -->
                                 <div class="form-login mt-2">
-                                    <x-input id="password" class="block mt-1 w-full" placeholder="Masukan Password"
+                                    <input id="password" class="block mt-1 w-full" placeholder="Masukan Password"
                                         type="password" name="password" autocomplete="new-password" required />
+                                    <span class="d-none password-alert text-danger"></span>
                                 </div>
 
                                 <!-- Confirm Password -->
                                 <div class="form-login mt-2">
-                                    <x-input id="password_confirmation" class="block mt-1 w-full"
+                                    <input id="password_confirmation" class="block mt-1 w-full"
                                         placeholder="Konfirmasi Password" type="password" name="password_confirmation"
                                         required />
+                                    <span class="d-none password_confirmation-alert text-danger"></span>
                                 </div>
 
                                 <div class="d-flex justify-content-end mt-2 clik-sudah-daftar">
@@ -520,7 +527,7 @@
 
                                 <!-- Email Address -->
                                 <div class="form-login mt-5">
-                                    <x-input id="email" class="block mt-1 w-full" placeholder="Masukan E-mail"
+                                    <input id="emailll" class="block mt-1 w-full" placeholder="Masukan E-mail"
                                         type="email" name="email" :value="old('email')" required autofocus />
                                 </div>
                                 <div class="icon-user-login">
@@ -578,7 +585,27 @@
     </script>
     <script src="{{asset('guest/assets/bootstrap/js/bootstrap.min.js')}}"></script>
     @yield('script')
+    <!-- <script>
+        $("#password").focusout(function(){ 
+            let password = $('#password').val()
+            if(password.length < 8) {
+                $('.password-alert').removeClass('d-none')
+                $('.password-alert').text('Password kurang dari 8 dan harus mengandung symbol, angka dan sebagainya')
 
+            }else{
+                $('.password-alert').addClass('d-none')
+            }
+        });
+
+        function onClickRegister() {
+        $('#login').addClass('d-none');
+            $('#register').attr('class', '');
+        }
+
+        function onClickLogin() {
+            $('#login').attr('class', '');
+        }
+    </script> -->
     <script>
     $(function($) {
         let url = window.location.href;
@@ -587,6 +614,93 @@
                 $(this).closest('a').addClass('active');
             }
         });
+    });
+    //validasi register
+    $("#firstName").keyup(function() {
+        let firstName = $('#firstName').val()
+        if (firstName == "") {
+            $('.firstName-alert').removeClass('d-none')
+            $('.firstName-alert').text(
+                'Nama Depan Tidak Boleh Kosong')
+
+        } else {
+            $('.firstName-alert').addClass('d-none')
+        }
+    });
+
+    $("#lastName").keyup(function() {
+        let lastName = $('#lastName').val()
+        if (lastName == "") {
+            $('.lastName-alert').removeClass('d-none')
+            $('.lastName-alert').text(
+                'Nama Belakang Tidak Boleh Kosong')
+
+        } else {
+            $('.lastName-alert').addClass('d-none')
+        }
+    });
+
+    $("#nik").keyup(function() {
+        let nik = $('#nik').val()
+        if (nik.length != 16) {
+            $('.nik-alert').removeClass('d-none')
+            $('.nik-alert').text(
+                'NIK Tidak Valid')
+
+        } else {
+            $('.nik-alert').addClass('d-none')
+        }
+    });
+
+    $("#nuptk").keyup(function() {
+        let nuptk = $('#nuptk').val()
+        if (nuptk.length != 16) {
+            $('.nuptk-alert').removeClass('d-none')
+            $('.nuptk-alert').text(
+                'NUPTK Tidak Valid')
+
+        } else {
+            $('.nuptk-alert').addClass('d-none')
+        }
+    });
+
+    $("#email").keyup(function() {
+        let email = $('#email').val()
+        let atps=email.indexOf("@")
+        let dots=email.lastIndexOf(".")
+        if (atps<1 || dots<atps+2 || dots+2>=email.length) {
+            $('.email-alert').removeClass('d-none')
+            $('.email-alert').text(
+                'Email Tidak Valid')
+
+        } else {
+            $('.email-alert').addClass('d-none')
+        }
+    });
+
+    $("#password").keyup(function() {
+        let password = $('#password').val()
+        if (password.length < 8) {
+            $('.password-alert').removeClass('d-none')
+            $('.password-alert').text(
+                'Password kurang dari 8 karakter')
+
+        } else {
+            $('.password-alert').addClass('d-none')
+        }
+    });
+
+    $("#password_confirmation").keyup(function() {
+        let password_confirmation = $('#password_confirmation').val()
+        let password = $('#password').val()
+        if (password_confirmation != password) {
+            $('.password_confirmation-alert').removeClass('d-none')
+            $('.password_confirmation-alert').text(
+                'Konfirmasi password salah')
+
+        } else {
+            $('.password_confirmation-alert').addClass('d-none')
+        }
     });
 
     function onClickMenu() {
