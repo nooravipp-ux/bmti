@@ -74,11 +74,7 @@ class PelatihanController extends Controller
             ->join('t_konten', 't_konten.id', '=', 't_topik_konten.konten_id')
             ->where('kursus_id', $pelatihanId)
             ->get();
-
-        // Navigasi perkategori topik
-
-        
-
+            
         return view('pembelajaran.index', compact('pelatihan', 'topiks','topikQuiz', 'konten', 'pelatihanId','topikId', 'singleTopik'));
     }
 

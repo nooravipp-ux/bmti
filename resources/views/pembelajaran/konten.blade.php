@@ -20,7 +20,7 @@
             <div class="row justify-content-end">
                 <div class="col-lg-12 col-xl-7">
                     <div class="button-hidden">
-                        <img src="{{asset('guest/assets/images/collapse-right.png')}}" id="icon-pembelajaran" style="width=20px; height:20px;" onclick="myFunction()" />
+                        <img src="{{asset('guest/assets/images/collapse-right.png')}}" id="icon-pembelajaran" style="width:20px; height:20px;" onclick="myFunction()" />
                     </div>
                 </div>
             </div>
