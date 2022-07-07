@@ -438,7 +438,7 @@
                                 </div>
                                 <div class="list-content mt-2 bg-white rounded">
                                     <div class="d-flex p-2">
-                                        <span class="out"><i class="fa-solid fa-clock"></i>&nbsp;</span>
+                                        <span class="out"><i class="fa-solid fa-circle-arrow-left"></i>&nbsp;</span>
                                         <span>Sabtu, 03 Juli 2022</span>
                                     </div>
                                 </div>
@@ -450,7 +450,7 @@
                                 </div>
                                 <div class="list-content mt-2 bg-white rounded">
                                     <div class="d-flex p-2">
-                                        <span class="out"><i class="fa-solid fa-circle-arrow-right"></i>&nbsp;</span>
+                                        <span class="out"><i class="fa-solid fa-circle-arrow-left"></i>&nbsp;</span>
                                         <span>Sabtu, 03 Juli 2022</span>
                                     </div>
                                 </div>
@@ -462,7 +462,7 @@
                                 </div>
                                 <div class="list-content mt-2 bg-white rounded">
                                     <div class="d-flex p-2">
-                                        <span class="out"><i class="fa-solid fa-circle-arrow-right"></i>&nbsp;</span>
+                                        <span class="out"><i class="fa-solid fa-circle-arrow-left"></i>&nbsp;</span>
                                         <span>Sabtu, 03 Juli 2022</span>
                                     </div>
                                 </div>
@@ -474,7 +474,7 @@
                                 </div>
                                 <div class="list-content mt-2 bg-white rounded">
                                     <div class="d-flex p-2">
-                                        <span class="out"><i class="fa-solid fa-circle-arrow-right"></i>&nbsp;</span>
+                                        <span class="out"><i class="fa-solid fa-circle-arrow-left"></i>&nbsp;</span>
                                         <span>Sabtu, 03 Juli 2022</span>
                                     </div>
                                 </div>
