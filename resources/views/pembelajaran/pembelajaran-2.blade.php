@@ -90,12 +90,6 @@
             </div>
         </div>
     </div>
-
-    <div class="row">
-        <div class="col-12 next-pembelajaran text-center">
-            <p>Topik Selanjutnya : <a href="" style="text-decoration:none;"><span>Tes Awal</span></a></p>
-        </div>
-    </div>
 </div>
 
 @endsection @section('script')

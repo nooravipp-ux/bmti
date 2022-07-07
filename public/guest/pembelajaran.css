@@ -372,6 +372,7 @@ header {
 /* footer */
 
 footer {
+    margin-top: -45px;
     color: white;
     background: #1C3B78;
     padding-top: 35px;

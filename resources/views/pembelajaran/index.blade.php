@@ -14,24 +14,25 @@
                 <a href="{{route('pembelajaran.topik',['id' => $pelatihan->id, 'topikId' => $singleTopik->id])}}" style="text-decoration: none; color:black; margin-left:10px;"><span>Konten Pembelajaran</span></a>
             </div>
             @foreach($konten as $kt)
-                @if($kt->topik_id == $singleTopik->id)
-                <div class="in-proggres bg-white">
-                    <input type="checkbox" name="dapatDiUlang" value="1" class="form-check-input" style="margin-left:5px;">
-                    <a href="{{route('pembelajaran.konten',['id' => $pelatihan->id, 'topikId' => $singleTopik->id, 'kontenId' => $kt->id])}}" style="text-decoration: none; color:black; margin-left:10px;"><span>{{$kt->judul}}</span></a>
-                </div>
-                @endif
+            @if($kt->topik_id == $singleTopik->id)
+            <div class="in-proggres bg-white">
+                <input type="checkbox" name="dapatDiUlang" value="1" class="form-check-input" style="margin-left:5px;">
+                <a href="{{route('pembelajaran.konten',['id' => $pelatihan->id, 'topikId' => $singleTopik->id, 'kontenId' => $kt->id])}}" style="text-decoration: none; color:black; margin-left:10px;"><span>{{$kt->judul}}</span></a>
+            </div>
+            @endif
             @endforeach
 
             @foreach($topikQuiz as $tq)
-                @if($tq->topik_id == $singleTopik->id)
-                <div class="in-proggres bg-white">
-                    <input type="radio" name="dapatDiUlang" value="1" class="form-check-input" style="margin-left:5px;">
-                    <a href="{{route('pembelajaran.quiz',['id' => $pelatihan->id, 'topikId' => $singleTopik->id, 'quizId' => $tq->quiz_id])}}" style="text-decoration: none; color:black; margin-left:10px;">
-                        <span>{{$tq->judul}}</span>
-                    </a>
-                </div>
-                @endif
+            @if($tq->topik_id == $singleTopik->id)
+            <div class="in-proggres bg-white">
+                <input type="radio" name="dapatDiUlang" value="1" class="form-check-input" style="margin-left:5px;">
+                <a href="{{route('pembelajaran.quiz',['id' => $pelatihan->id, 'topikId' => $singleTopik->id, 'quizId' => $tq->quiz_id])}}" style="text-decoration: none; color:black; margin-left:10px;">
+                    <span>{{$tq->judul}}</span>
+                </a>
+            </div>
+            @endif
             @endforeach
+            <br />
             <hr />
             <div class="row text-center">
                 <div class="col-4">
@@ -41,12 +42,8 @@
                     </button>
                 </div>
                 <div class="col-4">
-                    <button class="btn-pembelajaran btn btn-primary">
-                        <span>MARK COMPLETE</span>
-                        <i class="fa-solid fa-check" style="margin-left:5px;"></i>
-                    </button>
                     <a href="" style="font-size: 14px; font-family:glory; text-decoration: none;">
-                        <p>Back to Course</p>
+                        <p style="margin-top:10px;">Back to Course</p>
                     </a>
                 </div>
                 <div class="col-4">
@@ -88,13 +85,15 @@
                     <div class="pembelajaran-box bg-white">
                         <div class="row justify-content-center">
                             <div class="col-1">
-                                <input type="checkbox" name="dapatDiUlang" value="1" class="form-check-input">
+                                <input type="checkbox" name="dapatDiUlang" value="1" class="form-check-input" <?php if ($kt->status == 1) echo 'checked'; ?>>
                             </div>
                             <div class="col-9">
                                 <a href="{{route('pembelajaran.konten',['id' => $pelatihan->id, 'topikId' => $tp->id, 'kontenId' => $kt->id])}}" style="text-decoration: none;"><span>{{$kt->judul}}</span></a>
                             </div>
                             <div class="col-1">
+                                @if($kt->status == 1)
                                 <i class="fa-solid fa-circle-check"></i>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -127,12 +126,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-12 next-pembelajaran text-center">
-            <p>Topik Selanjutnya : <a href="" style="text-decoration:none;"><span>Tes Awal</span></a></p>
         </div>
     </div>
 </div>
