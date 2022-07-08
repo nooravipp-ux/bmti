@@ -6,6 +6,12 @@
 @endsection
 @section('content')
 
+<style>
+.marginCard {
+    margin-bottom: 10px;
+}
+</style>
+
 <div class="content-wrapper">
     <div class="row">
         <div class="col-lg-12 grid-margin">
@@ -22,7 +28,8 @@
                         <table id="dataTable" class="table">
                             <thead>
                                 <tr>
-                                    <a href="{{route('bidangKeahlian.create')}}" class="btn btn-primary btn-sm btn-rounded btn-icon-text">
+                                    <a href="{{route('bidangKeahlian.create')}}"
+                                        class="btn btn-primary btn-sm btn-rounded btn-icon-text marginCard">
                                         <i class="ti-upload btn-icon-prepend"></i>
                                         Create
                                     </a>
@@ -41,10 +48,15 @@
                                     <td><?php echo $no++; ?></td>
                                     <td>{{$row->nama}}</td>
                                     <td>{{$row->deskripsi}}</td>
-                                    <td class="text-center"><a href="{{ route('bidangKeahlian.edit', ['id'=>$row->id]) }}" class="btn btn-dark btn-sm btn-rounded btn-icon-prepend">Edit
+                                    <td class="text-center"><a
+                                            href="{{ route('bidangKeahlian.edit', ['id'=>$row->id]) }}"
+                                            class="btn btn-dark btn-sm btn-rounded btn-icon-prepend">Edit
                                             <i class="ti-reload btn-icon-append"></i></a>
-                                    <a href="{{ route('bidangKeahlian.delete', ['id'=>$row->id]) }}" onclick="return confirm('Apakah anda yakin ?')" class="btn btn-danger btn-sm btn-rounded btn-icon-text">Delete
-                                            <i class="ti-trash btn-icon-append"></i></a></td>
+                                        <a href="{{ route('bidangKeahlian.delete', ['id'=>$row->id]) }}"
+                                            onclick="return confirm('Apakah anda yakin ?')"
+                                            class="btn btn-danger btn-sm btn-rounded btn-icon-text">Delete
+                                            <i class="ti-trash btn-icon-append"></i></a>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -62,9 +74,9 @@
 
 </script>
 <script>
-    $(document).ready(function() {
-        $('#dataTable').DataTable();
+$(document).ready(function() {
+    $('#dataTable').DataTable();
 
-    });
+});
 </script>
 @endsection

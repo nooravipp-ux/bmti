@@ -6,6 +6,12 @@
 @endsection
 @section('content')
 
+<style>
+.marginCard {
+    margin-bottom: 10px;
+}
+</style>
+
 <div class="content-wrapper">
     <div class="row">
         <div class="col-lg-12 grid-margin">
@@ -23,7 +29,7 @@
                             <thead>
                                 <tr>
                                     <a href="{{route('jenisKegiatan.create')}}"
-                                        class="btn btn-primary btn-sm btn-rounded btn-icon-text">
+                                        class="btn btn-primary btn-sm btn-rounded btn-icon-text marginCard">
                                         <i class="ti-upload btn-icon-prepend"></i>
                                         Create
                                     </a>

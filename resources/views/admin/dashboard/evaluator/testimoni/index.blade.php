@@ -5,6 +5,18 @@
 @endsection
 @section('content')
 
+<style>
+.marginCard {
+    margin-bottom: 10px;
+}
+
+@media only screen and (min-width: 400px) and (max-width: 640px) {
+    .grid-margin {
+        margin-top: 20px;
+    }
+}
+</style>
+
 <div class="content-wrapper">
     <div class="row">
         <div class="col-lg-12 grid-margin">
@@ -15,7 +27,7 @@
                     </p> -->
 
                     <div class="table-responsive">
-                        <div>
+                        <div class="marginCard">
                             <a href="{{route('testimoni.create')}}"
                                 class="btn btn-primary btn-sm btn-rounded btn-icon-text">
                                 Create
@@ -84,8 +96,7 @@
                     @csrf
                     <div>
                         <label for="gambar" class="form-label">Import</label>
-                        <input type="file" name="file" class="form-control" required
-                            accept=".xlsx, .xls">
+                        <input type="file" name="file" class="form-control" required accept=".xlsx, .xls">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

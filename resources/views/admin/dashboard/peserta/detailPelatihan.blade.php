@@ -5,6 +5,17 @@
     border-left: none;
     border-right: none;
 }
+
+@media only screen and (min-width: 400px) and (max-width: 991px) {
+    .img-pelatihan {
+        text-align: center;
+    }
+
+    .img-pelatihan img {
+        width: 400px;
+        height: 300px;
+    }
+}
 </style>
 @endsection
 @section('content')
@@ -22,13 +33,14 @@
                             <div class="ms-auto p-2 bd-highlight">
                                 @if($checkEnroll == false)
                                 <a class="btn btn-lg btn-primary"
-                                    href="{{route('peserta.pelatihan.enroll', [$pelatihan->id])}}">Daftar Pelatihan</a>
+                                    href="{{route('peserta.pelatihan.enroll', [$pelatihan->id])}}"
+                                    style="font-family:glory;">Daftar Pelatihan</a>
                                 @endif
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-xl-8">
+                        <div class="col-xl-8 img-pelatihan">
                             <img class="rounded" src="{{asset('/images/pelatihan/'.$pelatihan->gambar)}}" width="600px"
                                 height="350px" />
                         </div>
