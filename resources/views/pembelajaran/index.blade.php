@@ -9,7 +9,7 @@
                 {!!$singleTopik->materi!!}
             </p>
 
-            <div class="in-proggres bg-white">
+            <div class="in-proggres bg-primary">
                 <img src="{{asset('guest/assets/images/tes-awal.png')}}" width="30px" height="30px" />
                 <a href="{{route('pembelajaran.topik',['id' => $pelatihan->id, 'topikId' => $singleTopik->id])}}" style="text-decoration: none; color:black; margin-left:10px;"><span>Konten Pembelajaran</span></a>
             </div>
