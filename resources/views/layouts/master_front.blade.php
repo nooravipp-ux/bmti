@@ -392,49 +392,67 @@
                                 </div>
                             </div>
                             <div id="error"></div>
-                            <form method="POST" action="{{ route('register') }}" onSubmit="validasi()">
+                            <form method="POST" action="{{ route('register') }}">
                                 @csrf
 
                                 <!-- FirstName -->
                                 <div class="form-login">
                                     <input id="firstName" class="block mt-1 w-full" placeholder="Masukan Nama Depan"
                                         type="text" name="firstName" :value="old('firstName')" required autofocus />
-                                    <span class="d-none firstName-alert text-danger"></span>
+                                    <i class="d-none icon-alert-1 text-danger fa-solid fa-circle-exclamation"
+                                        style="font-size:15px; margin-top:5px;"></i>
+                                    <span class="d-none firstName-alert text-danger"
+                                        style="margin-left:5px; font-family:glory; font-size:15px;"></span>
                                 </div>
 
                                 <!-- LastName -->
                                 <div class="form-login mt-2">
                                     <input id="lastName" class="block mt-1 w-full" placeholder="Masukan Nama Belakang"
                                         type="text" name="lastName" :value="old('lastName')" required autofocus />
-                                    <span class="d-none lastName-alert text-danger"></span>
+                                    <i class="d-none icon-alert-2 text-danger fa-solid fa-circle-exclamation"
+                                        style="font-size:15px; margin-top:5px;"></i>
+                                    <span class="d-none lastName-alert text-danger"
+                                        style="margin-left:5px; font-family:glory; font-size:15px;"></span>
                                 </div>
 
                                 <!-- NIK -->
                                 <div class="form-login mt-2">
                                     <input id="nik" class="block mt-1 w-full" placeholder="Masukan NIK" type="number"
                                         name="nik" :value="old('nik')" required autofocus />
-                                    <span class="d-none nik-alert text-danger"></span>
+                                    <i class="d-none icon-alert-3 text-danger fa-solid fa-circle-exclamation"
+                                        style="font-size:15px; margin-top:5px;"></i>
+                                    <span class="d-none nik-alert text-danger"
+                                        style="margin-left:5px; font-family:glory; font-size:15px;"></span>
                                 </div>
 
                                 <!-- NUPTK -->
                                 <div class="form-login mt-2">
                                     <input id="nuptk" class="block mt-1 w-full" placeholder="Masukan NUPTK"
                                         type="number" name="nuptk" :value="old('nuptk')" required autofocus />
-                                    <span class="d-none nuptk-alert text-danger"></span>
+                                    <i class="d-none icon-alert-4 text-danger fa-solid fa-circle-exclamation"
+                                        style="font-size:15px; margin-top:5px;"></i>
+                                    <span class="d-none nuptk-alert text-danger"
+                                        style="margin-left:5px; font-family:glory; font-size:15px;"></span>
                                 </div>
 
                                 <!-- Email Address -->
                                 <div class="form-login mt-2">
                                     <input id="email" class="block mt-1 w-full" placeholder="Masukan E-mail"
                                         type="email" name="email" :value="old('email')" required />
-                                    <span class="d-none email-alert text-danger"></span>
+                                    <i class="d-none icon-alert-5 text-danger fa-solid fa-circle-exclamation"
+                                        style="font-size:15px; margin-top:5px;"></i>
+                                    <span class="d-none email-alert text-danger"
+                                        style="margin-left:5px; font-family:glory; font-size:15px;"></span>
                                 </div>
 
                                 <!-- Password -->
                                 <div class="form-login mt-2">
                                     <input id="password" class="block mt-1 w-full" placeholder="Masukan Password"
                                         type="password" name="password" autocomplete="new-password" required />
-                                    <span class="d-none password-alert text-danger"></span>
+                                    <i class="d-none icon-alert-6 text-danger fa-solid fa-circle-exclamation"
+                                        style="font-size:15px; margin-top:5px;"></i>
+                                    <span class="d-none password-alert text-danger"
+                                        style="margin-left:5px; font-family:glory; font-size:15px;"></span>
                                 </div>
 
                                 <!-- Confirm Password -->
@@ -442,7 +460,10 @@
                                     <input id="password_confirmation" class="block mt-1 w-full"
                                         placeholder="Konfirmasi Password" type="password" name="password_confirmation"
                                         required />
-                                    <span class="d-none password_confirmation-alert text-danger"></span>
+                                    <i class="d-none icon-alert-7 text-danger fa-solid fa-circle-exclamation"
+                                        style="font-size:15px; margin-top:5px;"></i>
+                                    <span class="d-none password_confirmation-alert text-danger"
+                                        style="margin-left:5px; font-family:glory; font-size:15px;"></span>
                                 </div>
 
                                 <div class="d-flex justify-content-end mt-2 clik-sudah-daftar">
@@ -615,6 +636,7 @@
             }
         });
     });
+
     //validasi register
     $("#firstName").keyup(function() {
         let firstName = $('#firstName').val()
@@ -622,9 +644,11 @@
             $('.firstName-alert').removeClass('d-none')
             $('.firstName-alert').text(
                 'Nama Depan Tidak Boleh Kosong')
+            $('.icon-alert-1').removeClass('d-none')
 
         } else {
             $('.firstName-alert').addClass('d-none')
+            $('.icon-alert-1').addClass('d-none')
         }
     });
 
@@ -634,9 +658,11 @@
             $('.lastName-alert').removeClass('d-none')
             $('.lastName-alert').text(
                 'Nama Belakang Tidak Boleh Kosong')
+            $('.icon-alert-2').removeClass('d-none')
 
         } else {
             $('.lastName-alert').addClass('d-none')
+            $('.icon-alert-2').addClass('d-none')
         }
     });
 
@@ -646,9 +672,11 @@
             $('.nik-alert').removeClass('d-none')
             $('.nik-alert').text(
                 'NIK Tidak Valid')
+            $('.icon-alert-3').removeClass('d-none')
 
         } else {
             $('.nik-alert').addClass('d-none')
+            $('.icon-alert-3').addClass('d-none')
         }
     });
 
@@ -658,23 +686,27 @@
             $('.nuptk-alert').removeClass('d-none')
             $('.nuptk-alert').text(
                 'NUPTK Tidak Valid')
+            $('.icon-alert-4').removeClass('d-none')
 
         } else {
             $('.nuptk-alert').addClass('d-none')
+            $('.icon-alert-4').addClass('d-none')
         }
     });
 
     $("#email").keyup(function() {
         let email = $('#email').val()
-        let atps=email.indexOf("@")
-        let dots=email.lastIndexOf(".")
-        if (atps<1 || dots<atps+2 || dots+2>=email.length) {
+        let atps = email.indexOf("@")
+        let dots = email.lastIndexOf(".")
+        if (atps < 1 || dots < atps + 2 || dots + 2 >= email.length) {
             $('.email-alert').removeClass('d-none')
             $('.email-alert').text(
                 'Email Tidak Valid')
+            $('.icon-alert-5').removeClass('d-none')
 
         } else {
             $('.email-alert').addClass('d-none')
+            $('.icon-alert-5').addClass('d-none')
         }
     });
 
@@ -684,9 +716,11 @@
             $('.password-alert').removeClass('d-none')
             $('.password-alert').text(
                 'Password kurang dari 8 karakter')
+            $('.icon-alert-6').removeClass('d-none')
 
         } else {
             $('.password-alert').addClass('d-none')
+            $('.icon-alert-6').addClass('d-none')
         }
     });
 
@@ -697,12 +731,15 @@
             $('.password_confirmation-alert').removeClass('d-none')
             $('.password_confirmation-alert').text(
                 'Konfirmasi password salah')
+            $('.icon-alert-7').removeClass('d-none')
 
         } else {
             $('.password_confirmation-alert').addClass('d-none')
+            $('.icon-alert-7').addClass('d-none')
         }
     });
 
+    // menu, login, register & lupa password
     function onClickMenu() {
         $('#menu').attr('class', '');
     }
@@ -743,36 +780,36 @@
         $('#LupaPassword').addClass('d-none');
     }
 
-    function validasi() {
-        var firstName = document.getElementById("firstName").value;
-        var lastName = document.getElementById("lastName").value;
-        var nik = document.getElementById("nik").value;
-        var nuptk = document.getElementById("nuptk").value;
-        var email = document.getElementById("email").value;
-        var password = document.getElementById("password").value;
-        var password_confirmation = document.getElementById("password_confirmation").value;
+    // function validasi() {
+    //     var firstName = document.getElementById("firstName").value;
+    //     var lastName = document.getElementById("lastName").value;
+    //     var nik = document.getElementById("nik").value;
+    //     var nuptk = document.getElementById("nuptk").value;
+    //     var email = document.getElementById("email").value;
+    //     var password = document.getElementById("password").value;
+    //     var password_confirmation = document.getElementById("password_confirmation").value;
 
-        if (nik.length != 16) {
-            alert('NIK Tidak Valid');
-        } else {
-            return true;
-        }
-        if (nuptk.length != 16) {
-            alert('NUPTK Tidak Valid')
-        } else {
-            return true;
-        }
-        if (password.length < 8 || password.length > 16) {
-            alert('Password Tidak Boleh Kurang dari 8 dan Tidak Boleh Lebih dari 16')
-        } else {
-            return true;
-        }
-        if (password_confirmation != password) {
-            alert('Konfirmasi Password Salah')
-        } else {
-            return true;
-        }
-    }
+    //     if (nik.length != 16) {
+    //         alert('NIK Tidak Valid');
+    //     } else {
+    //         return true;
+    //     }
+    //     if (nuptk.length != 16) {
+    //         alert('NUPTK Tidak Valid')
+    //     } else {
+    //         return true;
+    //     }
+    //     if (password.length < 8 || password.length > 16) {
+    //         alert('Password Tidak Boleh Kurang dari 8 dan Tidak Boleh Lebih dari 16')
+    //     } else {
+    //         return true;
+    //     }
+    //     if (password_confirmation != password) {
+    //         alert('Konfirmasi Password Salah')
+    //     } else {
+    //         return true;
+    //     }
+    // }
     </script>
 </body>
 
