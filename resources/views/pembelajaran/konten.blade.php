@@ -60,7 +60,7 @@
                     <div class="pembelajaran-box bg-white">
                         <div class="row">
                             <div class="col-1">
-                                <input type="checkbox" name="dapatDiUlang" value="1" class="form-check-input">
+                                <input type="checkbox" name="dapatDiUlang" value="1" class="form-check-input" disabled="disabled">
                             </div>
                             <div class="col-8">
                                 <a href="{{route('pembelajaran.topik',['id' => $pelatihan->id, 'topikId' => $tp->id])}}" style="text-decoration: none;"><span>{{$tp->judul}}</span></a>
@@ -72,7 +72,7 @@
                     <div class="pembelajaran-box bg-white">
                         <div class="row justify-content-center">
                             <div class="col-1">
-                                <input type="checkbox" name="dapatDiUlang" value="1" class="form-check-input" <?php if ($kt->status == 1) echo 'checked'; ?>>
+                                <input type="checkbox" name="dapatDiUlang" value="1" class="form-check-input" <?php if($kontenId == $kt->id) echo "checked"; ?> disabled="disabled">
                             </div>
                             <div class="col-9">
                                 <a href="{{route('pembelajaran.konten',['id' => $pelatihan->id, 'topikId' => $tp->id, 'kontenId' => $kt->id])}}" style="text-decoration: none;"><span>{{$kt->judul}}</span></a>
@@ -92,7 +92,7 @@
                     <div id="content" class="pembelajaran-box bg-white">
                         <div class="row justify-content-center">
                             <div class="col-1">
-                                <input type="checkbox" name="dapatDiUlang" value="1" class="form-check-input" <?php if ($tq->status == 1) echo 'checked'; ?>>
+                                <input type="checkbox" name="dapatDiUlang" value="1" class="form-check-input" disabled="disabled">
                             </div>
                             <div class="col-9">
                                 <a href="{{route('pembelajaran.quiz',['id' => $pelatihan->id, 'topikId' => $tq->topik_id, 'quizId' => $tq->quiz_id])}}" style="text-decoration: none;">
