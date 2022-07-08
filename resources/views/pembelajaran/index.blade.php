@@ -4,12 +4,12 @@
 <div class="container-fluid">
     <div class="row justify-content-center mt-5 mb-5">
         <div class="col-12 col-lg-7 col-xl-7 materi-pembelajaran">
-            <h2 class="mt-3">{{$singleTopik->judul}}</h2>
+            <h1><b>{{$singleTopik->judul}}</b></h1>
             <p class="mt-3">
                 {!!$singleTopik->materi!!}
             </p>
 
-            <div class="in-proggres bg-white">
+            <div class="in-proggres bg-primary">
                 <img src="{{asset('guest/assets/images/tes-awal.png')}}" width="30px" height="30px" />
                 <a href="{{route('pembelajaran.topik',['id' => $pelatihan->id, 'topikId' => $singleTopik->id])}}" style="text-decoration: none; color:black; margin-left:10px;"><span>Konten Pembelajaran</span></a>
             </div>
@@ -73,7 +73,7 @@
                     <div class="pembelajaran-box bg-white">
                         <div class="row">
                             <div class="col-1">
-                                <input type="checkbox" name="dapatDiUlang" value="1" class="form-check-input">
+                                <input type="checkbox" name="dapatDiUlang" value="1" class="form-check-input" <?php if($topikId == $tp->id) echo 'checked';?> disabled="disabled">
                             </div>
                             <div class="col-8">
                                 <a href="{{route('pembelajaran.topik',['id' => $pelatihan->id, 'topikId' => $tp->id])}}" style="text-decoration: none;"><span>{{$tp->judul}}</span></a>
@@ -85,7 +85,7 @@
                     <div class="pembelajaran-box bg-white">
                         <div class="row justify-content-center">
                             <div class="col-1">
-                                <input type="checkbox" name="dapatDiUlang" value="1" class="form-check-input" <?php if ($kt->status == 1) echo 'checked'; ?>>
+                                <input type="checkbox" name="dapatDiUlang" value="1" class="form-check-input" disabled="disabled">
                             </div>
                             <div class="col-9">
                                 <a href="{{route('pembelajaran.konten',['id' => $pelatihan->id, 'topikId' => $tp->id, 'kontenId' => $kt->id])}}" style="text-decoration: none;"><span>{{$kt->judul}}</span></a>
@@ -105,7 +105,7 @@
                     <div id="content" class="pembelajaran-box bg-white">
                         <div class="row justify-content-center">
                             <div class="col-1">
-                                <input type="checkbox" name="dapatDiUlang" value="1" class="form-check-input" <?php if ($tq->status == 1) echo 'checked'; ?>>
+                                <input type="checkbox" name="dapatDiUlang" value="1" class="form-check-input" disabled="disabled">
                             </div>
                             <div class="col-9">
                                 <a href="{{route('pembelajaran.quiz',['id' => $pelatihan->id, 'topikId' => $tq->topik_id, 'quizId' => $tq->quiz_id])}}" style="text-decoration: none;">
