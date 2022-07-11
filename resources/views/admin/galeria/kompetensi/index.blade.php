@@ -6,6 +6,12 @@
 @endsection
 @section('content')
 
+<style>
+.marginCard {
+    margin-bottom: 10px;
+}
+</style>
+
 <div class="content-wrapper">
     <div class="row">
         <div class="col-lg-12 grid-margin">
@@ -22,7 +28,7 @@
                         <table id="dataTable" class="table">
                             <thead>
                                 <tr>
-                                    <a href="{{route('kompetensi.create')}}" class="btn btn-primary btn-sm btn-rounded btn-icon-text">
+                                    <a href="{{route('kompetensi.create')}}" class="btn btn-primary btn-sm btn-rounded btn-icon-text marginCard">
                                         <i class="ti-upload btn-icon-prepend"></i>
                                         Create
                                     </a>

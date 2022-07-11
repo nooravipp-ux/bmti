@@ -6,6 +6,12 @@
 @endsection
 @section('content')
 
+<style>
+.marginCard {
+    margin-bottom: 10px;
+}
+</style>
+
 <div class="content-wrapper">
     <div class="row">
         <div class="col-lg-12 grid-margin">
@@ -19,7 +25,7 @@
                         <table id="dataTable" class="table">
                             <thead>
                                 <tr>
-                                <button type="button" class="btn btn-primary btn-rounded" data-toggle="modal" data-target="#exampleModalCenter">Buat Soal</button>
+                                <button type="button" class="btn btn-primary btn-rounded marginCard" data-toggle="modal" data-target="#exampleModalCenter">Buat Soal</button>
                                 </tr>
                                 <tr>
                                     <th>No</th>
