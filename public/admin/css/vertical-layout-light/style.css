@@ -33956,7 +33956,7 @@ div.tagsinput span.tag a {
 /* scroll */
 
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 12px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -33967,6 +33967,7 @@ div.tagsinput span.tag a {
 ::-webkit-scrollbar-thumb {
     background: #8d8d8d;
     border-radius: 10px;
+    border: 2px solid #ffffff;
 }
 
 ::-webkit-scrollbar-track {
