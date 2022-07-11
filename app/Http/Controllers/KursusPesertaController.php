@@ -12,12 +12,15 @@ class KursusPesertaController extends Controller
 {
     public function katalogPelatihan()
     {
+        $kelompokKeahlian = DB::table('m_kelompok_keahlian')->get();
+
         $data = DB::table('t_kursus')->select('t_kursus.*', 'm_kelompok_keahlian.nama as kategori_kursus')
             ->join('m_kelompok_keahlian', 'm_kelompok_keahlian.id', '=', 't_kursus.kelompok_keahlian_id')
             ->get();
-            $id_peserta = DB::table('m_peserta')->where('user_id', auth()->user()->id)->first();
+            
+        $id_peserta = DB::table('m_peserta')->where('user_id', auth()->user()->id)->first();
 
-        return view('admin.dashboard.peserta.katalogPelatihan', compact('data', 'id_peserta'));
+        return view('admin.dashboard.peserta.katalogPelatihan', compact('data', 'id_peserta', 'kelompokKeahlian'));
     }
 
     public function detailPelatihan($id)
@@ -107,5 +110,19 @@ class KursusPesertaController extends Controller
             return 0;
         }
         
+    }
+
+    //Search 
+
+    public function getDataPelatihan(Request $request){
+
+        $data = DB::table('t_kursus')->select('t_kursus.*', 'm_kelompok_keahlian.nama as kategori_kursus')
+            ->join('m_kelompok_keahlian', 'm_kelompok_keahlian.id', '=', 't_kursus.kelompok_keahlian_id')
+            ->where('t_kursus.judul', 'like', '%'.$request->search.'%')
+            ->get();
+
+        return response()->json([
+            'data' => $data,
+        ]); 
     }
 }

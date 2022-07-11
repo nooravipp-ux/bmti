@@ -88,9 +88,6 @@ class PelatihanController extends Controller
 
     public function getKontenPembelajaran($pelatihanId, $topikId, $kontenId)
     {
-        // $data = DB::table('t_kursus')->select('t_kursus.*', 'm_kelompok_keahlian.nama as kategori_kursus')
-        //     ->join('m_kelompok_keahlian', 'm_kelompok_keahlian.id', '=', 't_kursus.kelompok_keahlian_id')
-        //     ->get();
 
         if(auth()->user() == null){
             return redirect('/login');
@@ -270,4 +267,5 @@ class PelatihanController extends Controller
             return false;
         }
     }
+    
 }
