@@ -201,6 +201,17 @@
                     <p class="font-italic">Kuis dapat dilakukan lebih dari satu kali oleh peserta</p>
                 </div>
                 <div class="row">
+                    <label for="judul" class="col-sm-2 col-form-label">Final Test</label>
+                    <div class="form-check col-sm-9">
+                        <label class="form-check-label">
+                            <input type="checkbox" name="finalTest" value="1" class="form-check-input">
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="font-italic">Kuis dapat dilakukan lebih dari satu kali oleh peserta</p>
+                </div>
+                <div class="row">
                     <label for="judul" class="col-sm-5 col-form-label">Pilih Kuis Yang Akan Digunakan :</label>
                     <div class="col-sm-8">
 

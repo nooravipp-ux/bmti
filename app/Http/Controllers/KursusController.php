@@ -137,6 +137,7 @@ class KursusController extends Controller
                 'nilai_minimal' => $request->nilaiMinimal,
                 'mandatori' => 1,
                 'dapat_diulang' => 1,
+                'final_test' => 1,
             ]);
         }
 
