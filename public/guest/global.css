@@ -66,19 +66,6 @@ header {
     margin-left: 20px;
 }
 
-.menu label {
-    font-size: 17px;
-    font-family: "glory";
-    font-weight: 600;
-    color: white;
-    text-align: center;
-    cursor: pointer;
-}
-
-.menu label:hover {
-    color: #FFF008;
-}
-
 .menu ul {
     float: right;
     margin-right: 50px;
@@ -123,6 +110,19 @@ ul li a:hover {
     background: #C6C62F;
 }
 
+.menu label {
+    font-size: 16px;
+    font-family: "glory";
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+.menu label:hover {
+    color: #FFF008;
+}
+
 input[class="collapse-mandiri"] {
     visibility: hidden;
     position: absolute;
@@ -134,7 +134,7 @@ input[class="collapse-mandiri"] {
 }
 
 #collapse-mandiri:checked+label {
-    width: 137px;
+    width: 129px;
     font-size: 14px;
     transition-duration: 0.5s;
     color: #C6C62F;
