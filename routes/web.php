@@ -304,4 +304,6 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
     });
 });
 
+Route::get('/pelatihan/get-data-pelatihan', [KursusPesertaController::class, 'getDataPelatihan']);
+
 require __DIR__ . '/auth.php';

@@ -35,22 +35,22 @@
             <br />
             <hr />
             <div class="row text-center">
-                <div class="col-4">
-                    <button class="btn-pembelajaran btn btn-primary">
+                <div class="col-4 prev-nav">
+                    <a href="" class="btn-pembelajaran btn btn-primary">
                         <i class="fa-solid fa-angle-left" style="  margin-left: -10px;"></i>
                         <span style=" margin-left: 15px;">Previous Lesson</span>
-                    </button>
+                    </a>
                 </div>
                 <div class="col-4">
                     <a href="" style="font-size: 14px; font-family:glory; text-decoration: none;">
                         <p style="margin-top:10px;">Back to Course</p>
                     </a>
                 </div>
-                <div class="col-4">
-                    <button class="btn-pembelajaran btn btn-primary">
+                <div class="col-4 next-nav">
+                    <a href="" class="btn-pembelajaran btn btn-primary">
                         <span style="margin-left:20px;">Next Lesson</span>
                         <i class="fa-solid fa-angle-right" style="margin-left:20px;"></i>
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -63,7 +63,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row nav-tree">
                 <div id="content-pembelajaran" class="col-12 content-pembelajaran">
                     <div class="pembelajaran text-center bg-white">
                         <span>Konten Pembelajaran</span>
@@ -73,9 +73,9 @@
                     <div class="pembelajaran-box bg-white">
                         <div class="row">
                             <div class="col-1">
-                                <input type="checkbox" name="dapatDiUlang" value="1" class="form-check-input" <?php if($topikId == $tp->id) echo 'checked';?> disabled="disabled">
+                                <input type="checkbox" name="dapatDiUlang" value="1" class="form-check-input" <?php if ($topikId == $tp->id) echo 'checked'; ?> disabled="disabled">
                             </div>
-                            <div class="col-8">
+                            <div class="col-8 link">
                                 <a href="{{route('pembelajaran.topik',['id' => $pelatihan->id, 'topikId' => $tp->id])}}" style="text-decoration: none;"><span>{{$tp->judul}}</span></a>
                             </div>
                         </div>
@@ -87,7 +87,7 @@
                             <div class="col-1">
                                 <input type="checkbox" name="dapatDiUlang" value="1" class="form-check-input" disabled="disabled">
                             </div>
-                            <div class="col-9">
+                            <div class="col-9 link">
                                 <a href="{{route('pembelajaran.konten',['id' => $pelatihan->id, 'topikId' => $tp->id, 'kontenId' => $kt->id])}}" style="text-decoration: none;"><span>{{$kt->judul}}</span></a>
                             </div>
                             <div class="col-1">
@@ -107,7 +107,7 @@
                             <div class="col-1">
                                 <input type="checkbox" name="dapatDiUlang" value="1" class="form-check-input" disabled="disabled">
                             </div>
-                            <div class="col-9">
+                            <div class="col-9 link">
                                 <a href="{{route('pembelajaran.quiz',['id' => $pelatihan->id, 'topikId' => $tq->topik_id, 'quizId' => $tq->quiz_id])}}" style="text-decoration: none;">
                                     <span>{{$tq->judul}}</span>
                                 </a>
@@ -212,5 +212,37 @@
             x.style.display = "none";
         }
     }
+
+    // var link = $('.quiz').closest('a').attr('href');
+    // console.log(link);
+
+    var navLink = [];
+    $(".nav-tree .link").each(function(i) {
+        navLink[i] = $(this).find("a").attr('href');
+        console.log($(this).find("a").attr('href'));
+    });
+
+    console.log(navLink)
+
+    var currentLink = window.location.href;
+    var previousLink = "";
+    var nextLink = "";
+
+    for (var key in navLink) {
+        if (navLink[key] === currentLink) {
+            var currentKey = parseInt(key);
+            break;
+        }
+    }
+
+    console.log('Prev key : ' + (currentKey - 1))
+    console.log('Current key : ' + currentKey)
+    console.log('Next key : ' + (currentKey + 1))
+    console.log('Prev link : ' + navLink[(currentKey - 1)])
+    console.log('Current link : ' + currentLink)
+    console.log('Next link : ' + navLink[(currentKey + 1)])
+
+    $('.prev-nav a').attr('href', navLink[(currentKey - 1)])
+    $('.next-nav a').attr('href', navLink[(currentKey + 1)])
 </script>
 @endsection
