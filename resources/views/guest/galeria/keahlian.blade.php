@@ -55,9 +55,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12 d-flex flex-nowrap">
-            @foreach($allKategori as $ktg)
-            <a style="text-decoration: none;" href="{{url('/galeria/'.$ktg->id)}}"><span class="galeria-kompetensi-kategori">{{$ktg->nama_kompetensi}}</span><a>
-            @endforeach
+            
         </div>
     </div>
 
