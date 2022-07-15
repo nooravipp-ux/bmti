@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="{{asset('guest/assets/bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('guest/pembelajaran.css')}}">
     @yield('custom-css')
+    <!-- endinject -->
+    <link rel="shortcut icon" href="{{asset('admin/images/logo.png')}}" />
 
 </head>
 
@@ -87,7 +89,7 @@
     <main>
         @yield('content')
     </main>
-    
+
     <footer>
         <div class="container">
             <div class="row">

@@ -1,4 +1,5 @@
 @extends('layouts.master_front')
+@section('title', 'BMTI - Galeri Kejuruan')
 @section('custom-css')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" />
@@ -19,18 +20,18 @@
 }
 
 .owl-prev {
-    left: -16px;
+    left: 0px;
 }
 
 .owl-next {
-    right: 20px;
+    right: 18px;
 }
 
 .owl-prev i,
 .owl-next i {
     color: #14395B;
     background-color: #3901f8;
-    padding: 20px;
+    padding: 15px;
 }
 
 button {
@@ -244,7 +245,7 @@ button {
                 @foreach($pageOne as $mitra1)
                 <div class="col-3 mt-4">
                     <div class="row justify-content-center">
-                        <div class="col-6">
+                        <div class="col-10 col-xl-6">
                             <div class="text-center mt-2">
                                 <img src="{{asset('images/perusahaan-mitra/'.$mitra1->gambar_logo)}}" width="100px"
                                     height="80px" />
@@ -260,7 +261,7 @@ button {
                 @foreach($pageTwo as $mitra2)
                 <div class="col-3 mt-4">
                     <div class="row justify-content-center">
-                        <div class="col-6">
+                        <div class="col-8 col-xl-6">
                             <div class="text-center mt-2">
                                 <img src="{{asset('images/perusahaan-mitra/'.$mitra2->gambar_logo)}}" width="100px"
                                     height="80px" />
@@ -289,26 +290,24 @@ button {
             <h1>Testimonial Peserta</h1>
             <hr />
         </div>
+    </div>
 
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-11 mx-auto testimonials owl-theme owl-carousel">
-                    @foreach($testimoni as $ts)
-                    <div class="d-flex align-items-center bg-white shadow-lg">
-                        <div class="author-img"> <img src="" class="img-fluid"> </div>
-                        <div class="author-text p-lg-5">
-                            <div class="px-5">
-                                <p class="lead pb-lg-5" style="color:#14395B;">
-                                    "{{substr($ts->testimoni, 0, 300);}} ...."</p>
-                                <h4 class="font-weight-bold" style="color:#14395B;">{{$ts->nama}}</h4>
-                                <p class="text-muted mb-0">{{$ts->asal_sekolah}}</p>
-                                <p class="text-muted mb-0">{{$ts->nama_diklat}}</p>
-                            </div>
-                        </div>
+    <div class="row justify-content-center">
+        <div class="col-12 mx-auto testimonials owl-theme owl-carousel">
+            @foreach($testimoni as $ts)
+            <div class="d-flex align-items-center bg-white shadow-lg">
+                <div class="author-img"> <img src="" class="img-fluid"> </div>
+                <div class="author-text p-lg-5">
+                    <div class="px-5">
+                        <p class="lead pb-lg-5" style="color:#14395B;">
+                            "{{substr($ts->testimoni, 0, 300);}} ...."</p>
+                        <h4 class="font-weight-bold" style="color:#14395B;">{{$ts->nama}}</h4>
+                        <p class="text-muted mb-0">{{$ts->asal_sekolah}}</p>
+                        <p class="text-muted mb-0">{{$ts->nama_diklat}}</p>
                     </div>
-                    @endforeach
                 </div>
             </div>
+            @endforeach
         </div>
     </div>
 </div>

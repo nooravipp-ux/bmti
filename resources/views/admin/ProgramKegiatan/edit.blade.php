@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'BMTI | PROGRAM KEGIATAN')
+@section('title', 'BMTI - Edit Data Program Kegiatan')
 @section('content')
 
 <div class="content-wrapper">

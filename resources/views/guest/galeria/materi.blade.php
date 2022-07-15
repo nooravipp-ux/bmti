@@ -1,4 +1,5 @@
 @extends('layouts.master_front')
+@section('title', 'Galeria - '.$data->judul)
 
 @section('content')
 <div class="teknik-permesinan">

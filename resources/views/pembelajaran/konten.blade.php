@@ -1,4 +1,5 @@
 @extends('layouts.master-pembelajaran')
+@section('title', 'BMTI - '.$data->judul)
 
 @section('content')
 <div class="container-fluid">
@@ -47,9 +48,9 @@
             </div>
         </div>
 
-        <div class="col-12 col-lg-2 col-xl-2">
+        <div class="col-12 col-lg-3 col-xl-2">
             <div class="row justify-content-end">
-                <div class="col-lg-12 col-xl-7">
+                <div class="col-lg-10 col-xl-7">
                     <div class="button-hidden">
                         <img src="{{asset('guest/assets/images/collapse-right.png')}}" id="icon-pembelajaran"
                             style="width:20px; height:20px;" onclick="myFunction()" />
@@ -191,7 +192,7 @@
                 </div>
             </div>
 
-            <div class="row mt-3">
+            <div class="row nav-tree mt-3">
                 <div class="col-12 content-pembelajaran-menu">
                     <div class="pembelajaran text-center bg-white">
                         <span>Konten Pembelajaran</span>

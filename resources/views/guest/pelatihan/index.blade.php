@@ -1,4 +1,5 @@
 @extends('layouts.master_front')
+@section('title', 'BMTI - Pelatihan Mandiri')
 
 @section('content')
 <div class="pelatihan-mandiri">
