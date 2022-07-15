@@ -11,65 +11,74 @@
 <div class="container-fluid">
     <div class="row justify-content-center mt-5 mb-5">
         <div class="col-12 col-lg-7 col-xl-7">
-            <div class="box-proses mb-3">
-                <p>Batasan Waktu : <span id="demo" style="font-size: 17px;"></span></p>
-                <div class="progress">
-                    <div class="progress-bar w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
-                </div>
+            <div>
+                <h1>{{$dataQuiz->judul}}</h1>
+                <p>{{$dataQuiz->deskripsi}}</p>
+                <p><b>Selamat Mengerjakan </b></p>
+                <button id="mulai-quiz" class="btn btn-sm btn-primary">Mulai Quiz</button>
             </div>
-            <?php $no = 1; ?>
-            <form id="form-kuis" action="{{route('pembelajaran.quiz.tandaiSelesai', ['id' => $pelatihanId, 'topikId' => $topikId, 'quizId' => $quizId])}}" method="POST">
-                @csrf
-                @foreach($pertanyaan as $prt)
-                <div class="quiz mt-4">
-                    <p><?php echo $no++; ?>. {{$prt->pertanyaan}}</p>
-                    <div class="form-check" style="padding-left: 40px;">
-                        <input class="form-check-input" type="radio" name="jawaban[{{$prt->id}}][benar]" value="{{$prt->pilihan_a}}" class="form-check-input">
-                        <label class="form-check-label" for="flexRadioDefault">{{$prt->pilihan_a}}</label>
-                    </div>
-                    <div class="form-check" style="padding-left: 40px;">
-                        <input class="form-check-input" type="radio" name="jawaban[{{$prt->id}}][benar]" value="{{$prt->pilihan_b}}" class="form-check-input">
-                        <label class="form-check-label" for="flexRadioDefault">{{$prt->pilihan_b}}</label>
-                    </div>
-                    <div class="form-check" style="padding-left: 40px;">
-                        <input class="form-check-input" type="radio" name="jawaban[{{$prt->id}}][benar]" value="{{$prt->pilihan_c}}" class="form-check-input">
-                        <label class="form-check-label" for="flexRadioDefault">{{$prt->pilihan_c}}</label>
-                    </div>
-                    <div class="form-check" style="padding-left: 40px;">
-                        <input class="form-check-input" type="radio" name="jawaban[{{$prt->id}}][benar]" value="{{$prt->pilihan_d}}" class="form-check-input">
-                        <label class="form-check-label" for="flexRadioDefault">{{$prt->pilihan_d}}</label>
+            <div id="list-quiz">
+                <div class="box-proses mb-3">
+                    <p>Batas Waktu : <span id="demo" style="font-size: 17px;">{{$configurasiQuiz->durasi}} Menit</span></p>
+                    <input type="hidden" id="durasi" value="{{$configurasiQuiz->durasi}}">
+                    <div class="progress">
+                        <div class="progress-bar w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
                     </div>
                 </div>
-                @endforeach
-                <div class="quiz mt-4 mb-4">
-                    <div class="form btn-finish">
-                        <button type="submit" class="btn btn-md btn-primary">Selesai</button>
+                <?php $no = 1; ?>
+                <form id="form-kuis" action="{{route('pembelajaran.quiz.tandaiSelesai', ['id' => $pelatihanId, 'topikId' => $topikId, 'quizId' => $quizId])}}" method="POST">
+                    @csrf
+                    @foreach($pertanyaan as $prt)
+                    <div class="quiz mt-4">
+                        <p><?php echo $no++; ?>. {{$prt->pertanyaan}}</p>
+                        <div class="form-check" style="padding-left: 40px;">
+                            <input class="form-check-input" type="radio" name="jawaban[{{$prt->id}}][benar]" value="{{$prt->pilihan_a}}" class="form-check-input">
+                            <label class="form-check-label" for="flexRadioDefault">{{$prt->pilihan_a}}</label>
+                        </div>
+                        <div class="form-check" style="padding-left: 40px;">
+                            <input class="form-check-input" type="radio" name="jawaban[{{$prt->id}}][benar]" value="{{$prt->pilihan_b}}" class="form-check-input">
+                            <label class="form-check-label" for="flexRadioDefault">{{$prt->pilihan_b}}</label>
+                        </div>
+                        <div class="form-check" style="padding-left: 40px;">
+                            <input class="form-check-input" type="radio" name="jawaban[{{$prt->id}}][benar]" value="{{$prt->pilihan_c}}" class="form-check-input">
+                            <label class="form-check-label" for="flexRadioDefault">{{$prt->pilihan_c}}</label>
+                        </div>
+                        <div class="form-check" style="padding-left: 40px;">
+                            <input class="form-check-input" type="radio" name="jawaban[{{$prt->id}}][benar]" value="{{$prt->pilihan_d}}" class="form-check-input">
+                            <label class="form-check-label" for="flexRadioDefault">{{$prt->pilihan_d}}</label>
+                        </div>
                     </div>
-                </div>
-            </form>
-            <br />
-            <hr />
-            <div class="row text-center">
-                <div class="col-4 prev-nav">
-                    <a href="" class="btn-pembelajaran btn btn-primary">
-                        <i class="fa-solid fa-angle-left" style="  margin-left: -10px;"></i>
-                        <span style=" margin-left: 15px;">Previous Lesson</span>
-                    </a>
-                </div>
-                <div class="col-4">
-                    <button class="btn-pembelajaran btn btn-primary">
-                        <span>MARK COMPLETE</span>
-                        <i class="fa-solid fa-check" style="margin-left:5px;"></i>
-                    </button>
-                    <a href="" style="font-size: 14px; font-family:glory; text-decoration: none;">
-                        <p>Back to Course</p>
-                    </a>
-                </div>
-                <div class="col-4 next-nav">
-                    <a href="" class="btn-pembelajaran btn btn-primary">
-                        <span style="margin-left:20px;">Next Lesson</span>
-                        <i class="fa-solid fa-angle-right" style="margin-left:20px;"></i>
-                    </a>
+                    @endforeach
+                    <div class="quiz mt-4 mb-4">
+                        <div class="form btn-finish">
+                            <button type="submit" class="btn btn-md btn-primary">Selesai</button>
+                        </div>
+                    </div>
+                </form>
+                <br />
+                <hr />
+                <div id="navigation" class="row text-center">
+                    <div class="col-4 prev-nav">
+                        <a href="" class="btn-pembelajaran btn btn-primary">
+                            <i class="fa-solid fa-angle-left" style="  margin-left: -10px;"></i>
+                            <span style=" margin-left: 15px;">Previous Lesson</span>
+                        </a>
+                    </div>
+                    <div class="col-4">
+                        <button class="btn-pembelajaran btn btn-primary">
+                            <span>MARK COMPLETE</span>
+                            <i class="fa-solid fa-check" style="margin-left:5px;"></i>
+                        </button>
+                        <a href="" style="font-size: 14px; font-family:glory; text-decoration: none;">
+                            <p>Back to Course</p>
+                        </a>
+                    </div>
+                    <div class="col-4 next-nav">
+                        <a href="" class="btn-pembelajaran btn btn-primary">
+                            <span style="margin-left:20px;">Next Lesson</span>
+                            <i class="fa-solid fa-angle-right" style="margin-left:20px;"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -156,6 +165,7 @@
 @endsection @section('script')
 <script src="{{asset('admin/vendors/highchart/code/highcharts.js')}}"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js" type="text/javascript"></script>
 
 <script type="text/javascript">
     Highcharts.chart('bar', {
@@ -214,6 +224,14 @@
 </script>
 
 <script>
+    $('#list-quiz').hide();
+    $('#mulai-quiz').click(function() {
+        $('#mulai-quiz').hide();
+        $('#list-quiz').show();
+        mulaiPenghitungWaktu();
+        $('#navigation').hide();
+    });
+
     function myFunction() {
         if (document.getElementById("icon-pembelajaran").src == "{{asset('guest/assets/images/collapse-right.png')}}") {
             document.getElementById("icon-pembelajaran").src = "{{asset('guest/assets/images/collapse-left.png')}}";
@@ -258,32 +276,37 @@
     $('.next-nav a').attr('href', navLink[(currentKey + 1)])
 </script>
 
-<!-- <script>
-var countDownDate = new Date("Jul 11, 2022 23:10:25").getTime();
-var x = setInterval(function() {
+<script>
+    function mulaiPenghitungWaktu() {
+        var durasi = parseInt($('#durasi').val());
+        var dt = new Date();
+        dt.setMinutes(dt.getMinutes() + durasi);
+        var countDownDate = dt.getTime()
+        var x = setInterval(function() {
 
-    // Get today's date and time
-    var now = new Date().getTime();
+            // Get today's date and time
+            var now = new Date().getTime();
 
-    // Find the distance between now and the count down date
-    var distance = countDownDate - now;
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
 
-    // Time calculations for days, hours, minutes and seconds
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            // Time calculations for days, hours, minutes and seconds
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    // Output the result in an element with id="demo"
-    document.getElementById("demo").innerHTML = hours + "h " +
-        minutes + "m " + seconds + "s ";
+            // Output the result in an element with id="demo"
+            document.getElementById("demo").innerHTML = hours + " : " +
+                minutes + " : " + seconds;
 
-    // If the count down is over, write some text 
-    if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("demo").innerHTML = "EXPIRED";
-        alert('Waktu Habis');
-        $('#form-kuis').submit();
+            // If the count down is over, write some text 
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "EXPIRED";
+                alert('Waktu Habis');
+                $('#form-kuis').submit();
+            }
+        }, 1000);
     }
-}, 1000);
-</script> -->
+</script>
 @endsection

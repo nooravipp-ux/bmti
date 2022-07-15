@@ -64,6 +64,10 @@ Route::get('/pelatihan-mandiri/{id}', [PelatihanController::class, 'getDetailPel
 Route::get('/pelatihan-mandiri/{id}/topik/{topikId}', [PelatihanController::class, 'getTopikPembelajaran'])->name('pembelajaran.topik');
 Route::get('/pelatihan-mandiri/{id}/topik/{topikId}/konten/{kontenId}', [PelatihanController::class, 'getKontenPembelajaran'])->name('pembelajaran.konten');
 Route::get('/pelatihan-mandiri/{id}/topik/{topikId}/quiz/{quizId}', [PelatihanController::class, 'getQuizPembelajaran'])->name('pembelajaran.quiz');
+
+//Route hasi quiz
+Route::get('/pelatihan-mandiri/quiz/hasil-quiz', [PelatihanController::class, 'getHasilQuizPembelajaran'])->name('pembelajaran.quiz.hasil');
+
 Route::get('/pelatihan-mandiri/{id}/topik/{topikId}/konten/{kontenId}/tandai-selesai', [PelatihanController::class, 'tandaiKontenSelesai'])->name('pembelajaran.konten.tandaiSelesai');
 Route::post('/pelatihan-mandiri/{id}/topik/{topikId}/quiz/{quizId}/tandai-selesai', [PelatihanController::class, 'tandaiQuizSelesai'])->name('pembelajaran.quiz.tandaiSelesai');
 
