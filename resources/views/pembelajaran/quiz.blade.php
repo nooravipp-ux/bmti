@@ -162,6 +162,130 @@
     </div>
 </div>
 
+<!-- menu -->
+<div id="menu" class="d-none">
+    <div class="menu-container">
+        <div class="container">
+            <div class="d-flex justify-content-end">
+                <div class="col-2">
+                    <div class="icon-menu-hover" onclick="onClickCloseMenu()"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center text-light text-header-menu">
+                    <p>Pelatihan Saya</p>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-12">
+                    <div class="text-hover-pembelajaran-menu">
+                        <div class="text-hover-menu">
+                            <div class="row justify-content-center">
+                                <div class="col-1">
+                                    <a href="{{url('/dashboard')}}">
+                                        <i class="fa-solid fa-house-chimney"></i>
+                                    </a>
+                                </div>
+                                <div class="col-4 text-start">
+                                    <a href="{{url('/dashboard')}}" class="btn-lg" role="button" aria-pressed="true">Dashboard</a>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="row justify-content-center">
+                                <div class="col-1">
+                                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                        <i class="fa-solid fa-right-from-bracket"></i></a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </div>
+                                <div class="col-4 text-start">
+                                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="
+                            btn-lg" role="button" aria-pressed="true">Logout</a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-12 content-pembelajaran-menu">
+                    <div class="pembelajaran text-center bg-white">
+                        <span>Konten Pembelajaran</span>
+                    </div>
+
+                    @foreach($topiks as $tp)
+                    <div class="pembelajaran-box bg-white">
+                        <div class="row">
+                            <div class="col-1">
+                                <input type="checkbox" name="dapatDiUlang" value="1" class="form-check-input" disabled="disabled">
+                            </div>
+                            <div class="col-8 link">
+                                <a href="{{route('pembelajaran.topik',['id' => $pelatihan->id, 'topikId' => $tp->id])}}" style="text-decoration: none;"><span>{{$tp->judul}}</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    @foreach($konten as $kt)
+                    @if($kt->topik_id == $tp->id)
+                    <div class="pembelajaran-box bg-white">
+                        <div class="row justify-content-center">
+                            <div class="col-1">
+                                <input type="checkbox" name="dapatDiUlang" value="1" class="form-check-input" disabled="disabled">
+                            </div>
+                            <div class="col-9 link">
+                                <a href="{{route('pembelajaran.konten',['id' => $pelatihan->id, 'topikId' => $tp->id, 'kontenId' => $kt->id])}}" style="text-decoration: none;"><span>{{$kt->judul}}</span></a>
+                            </div>
+                            <div class="col-1">
+                                @if($kt->status == 1)
+                                <i class="fa-solid fa-circle-check"></i>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+                    @endforeach
+
+                    @foreach($topikQuiz as $tq)
+                    @if($tq->topik_id == $tp->id)
+                    <div id="content" class="pembelajaran-box bg-white">
+                        <div class="row justify-content-center">
+                            <div class="col-1">
+                                <input type="checkbox" name="dapatDiUlang" value="1" class="form-check-input" <?php if ($quizId == $tq->quiz_id) echo "checked"; ?> disabled="disabled">
+                            </div>
+                            <div class="col-9 link">
+                                <a href="{{route('pembelajaran.quiz',['id' => $pelatihan->id, 'topikId' => $tq->topik_id, 'quizId' => $tq->quiz_id])}}" style="text-decoration: none;">
+                                    <span>{{$tq->judul}}</span>
+                                </a>
+                            </div>
+                            <div class="col-1">
+                                @if($tq->status == 1)
+                                <i class="fa-solid fa-circle-check"></i>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+                    @endforeach
+                    @endforeach
+
+                    <div class="pembelajaran-bar text-center bg-white">
+                        <p class="mt-4">Proses Pembelajaran</p>
+                        <figure class="highcharts-figure">
+                            <div id="bar-2" style="height: 250px; margin:auto;"></div>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end menu -->
 @endsection @section('script')
 <script src="{{asset('admin/vendors/highchart/code/highcharts.js')}}"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>

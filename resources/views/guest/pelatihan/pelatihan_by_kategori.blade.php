@@ -54,7 +54,8 @@
                             <div class="row">
                                 <div class="col-12">
                                     <input class="pengantar" type="checkbox" />
-                                    <span> &nbsp;{{$tp->judul}}</span>
+                                    <a href="{{route('pembelajaran.topik',['id' => $pelatihan->id, 'topikId' => $tp->id])}}"
+                                        style="text-decoration: none;"><span> &nbsp;{{$tp->judul}}</span></a>
                                     <hr />
                                 </div>
                             </div>
@@ -84,7 +85,8 @@
             <div class="row">
                 <div class="col-8 col-xl-10">
                     <input type="checkbox" />
-                    <a href="" style="top:12px; left:15px;"><span>{{$tp->judul}}</span></a>
+                    <a href="{{route('pembelajaran.topik',['id' => $pelatihan->id, 'topikId' => $tp->id])}}"
+                        style="text-decoration: none; top:12px; left:15px;"><span>{{$tp->judul}}</span></a>
                 </div>
                 <div class="col-4 col-xl-2 collapse-select">
                     <img src="{{asset('guest/assets/images/collapse-up.png')}}" id="icon-pelatihan-3"
@@ -140,8 +142,8 @@
         @endforeach
     </div>
 </div>
-
 @endsection
+
 @section('script')
 <script>
 function myFunction1() {
