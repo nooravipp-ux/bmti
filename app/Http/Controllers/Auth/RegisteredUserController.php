@@ -6,10 +6,12 @@ use App\Models\User;
 use App\Models\Peserta;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules;
+use App\Mail\NewUserNotification;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Auth\Events\Registered;
 use App\Providers\RouteServiceProvider;
 
@@ -38,9 +40,9 @@ class RegisteredUserController extends Controller
         $request->validate([
             'firstName' => ['required', 'string', 'max:255'],
             'lastName' => ['required', 'string', 'max:255'],
-            'nik' => ['required', 'numeric', 'digits:16'],
-            'nuptk' => ['required', 'numeric', 'digits:16'],
-            'email' => ['required', 'string', 'email', 'max:255'],
+            'nik' => ['required', 'numeric', 'digits:16', 'unique:m_peserta'],
+            'nuptk' => ['required', 'numeric', 'digits:16', 'unique:m_peserta'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
@@ -66,7 +68,7 @@ class RegisteredUserController extends Controller
         event(new Registered($user));
 
         Auth::login($user);
-
+        Mail::to($request->email)->send(new NewUserNotification($user));
         return redirect(RouteServiceProvider::HOME)->with('message', 'Selamat anda berhasil mendaftar');
     }
 }
