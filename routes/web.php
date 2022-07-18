@@ -34,6 +34,8 @@ use App\Http\Controllers\KursusPesertaController;
 use App\Http\Controllers\JenisKegiatanController;
 use App\Http\Controllers\ProgramKegiatanController;
 
+use App\Http\Controllers\StrukturProgramController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -254,6 +256,9 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
         Route::post('/pelatihan/{pelatihanId}/topik/store', [KursusController::class, 'simpanTopik'])->name('pelatihan.topik.simpan');
         Route::post('/pelatihan/topik/konten-pembelajaran/store', [KursusController::class, 'simpanKontenPembelajaran'])->name('pelatihan.topik.kontenPembelajaran.store');
         Route::post('/pelatihan/topik/konten-quiz/store', [KursusController::class, 'simpanKontenQuiz'])->name('pelatihan.topik.kontenQuiz.store');
+
+        Route::get('/pelatihan/{pelatihanId}/struktur-program', [StrukturProgramController::class, 'index'])->name('pelatihan.strukturProgram');
+        Route::post('/pelatihan/struktur-program/simpan', [StrukturProgramController::class, 'simpan'])->name('pelatihan.strukturProgram.simpan');
 
         //Route Peserta
 

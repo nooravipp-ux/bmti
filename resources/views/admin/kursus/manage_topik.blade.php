@@ -61,8 +61,11 @@
             {{ session()->get('message') }}
         </div>
         @endif
-        <div class="col-lg-10">
+        <div class="col-lg-10 d-flex justify-content-between">
             <h3 class="card-title" style="padding-left: 3px;padding-bottom: 10px;">{{$pelatihan->judul}} {{$pelatihan->id}}</h3>
+            <div>
+                <a href="{{route('pelatihan.strukturProgram', [$pelatihan->id])}}"><i class="menu-icon mdi mdi-hospital pl-4"></i>Struktur Program</a>
+            </div>
         </div>
     </div>
     @foreach($topiks as $tp)
