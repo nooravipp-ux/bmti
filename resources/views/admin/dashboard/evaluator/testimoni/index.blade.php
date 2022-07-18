@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'BMTI | MASTER DATA TESTIMONI')
+@section('title', 'BMTI - Master Data Testimoni')
 @section('custom-css')
 <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" />
 @endsection

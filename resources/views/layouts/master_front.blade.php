@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="{{asset('guest/assets/bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('guest/global.css')}}">
     <link rel="stylesheet" href="{{asset('guest/responsive.css')}}"> @yield('custom-css')
-
+    <!-- endinject -->
+    <link rel="shortcut icon" href="{{asset('admin/images/logo.png')}}" />
 </head>
 
 <body>

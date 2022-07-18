@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'BMTI | Program Kegiatan')
+@section('title', 'BMTI - Data Program Kegiatan')
 
 @section('custom-css')
 <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" />

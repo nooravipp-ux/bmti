@@ -1,4 +1,5 @@
 @extends('layouts.master')
+@section('title', 'Pelatihan - '.$pelatihan->judul)
 @section('custom-css')
 <style>
 .list-group li {

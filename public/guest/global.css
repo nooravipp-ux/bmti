@@ -842,54 +842,6 @@ input[class="collapse-mandiri-2"] {
     color: black;
 }
 
-.slider {
-    margin-bottom: 50px;
-}
-
-.slides {
-    display: flex;
-    overflow: scroll;
-}
-
-.slides::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-}
-
-.slides::-webkit-scrollbar-thumb {
-    border: 1px solid #9c9c9c;
-    background: #c2c2c2;
-    border-radius: 10px;
-}
-
-.slides::-webkit-scrollbar-thumb:hover {
-    background: #9c9c9c;
-}
-
-.slides::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.slides {
-    display: grid;
-    grid-template-columns: repeat(3, 100%);
-}
-
-.slides p {
-    color: #14395B;
-    margin: 0px 20px 0px;
-    font-size: 14px;
-    font-weight: bold;
-    font-family: "glory";
-}
-
-.slides h2 {
-    color: #14395B;
-    margin: 5px 20px 0px;
-    font-weight: bold;
-    font-family: "glory";
-}
-
 
 /* end testimonial */
 

@@ -1,4 +1,6 @@
 @extends('layouts.master_front') @section('content')
+@section('title', 'BMTI - Alur Pembelajaran')
+
 <div class="alur-pembelajaran">
     <div class="container">
         <div class="row">

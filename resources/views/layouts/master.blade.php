@@ -449,7 +449,7 @@
                         <a class="nav-link" data-bs-toggle="collapse" href="#pelatihan" aria-expanded="false"
                             aria-controls="pelatihan">
                             <i class="menu-icon mdi mdi-table"></i>
-                            <span class="menu-title">Pelatihan</span>
+                            <span class="menu-title">Pelatihan Mandiri</span>
                             <i class="menu-arrow"></i>
                         </a>
                         <div class="collapse" id="pelatihan">

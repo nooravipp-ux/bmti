@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'BMTI | Dashboard Evaluator')
+@section('title', 'BMTI - Dashboard Evaluator')
 @section('custom-css')
 
 <head>

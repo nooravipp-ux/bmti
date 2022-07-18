@@ -209,7 +209,7 @@ header {
 
 .content-pembelajaran {
     margin-top: -63px;
-    margin-left: 50px;
+    margin-left: 49px;
 }
 
 .text-pembelajaran {
@@ -540,10 +540,19 @@ footer {
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .content-pembelajaran {
-        margin-left: -59px;
+        margin-left: -20px;
     }
     .button-hidden {
-        right: 35px;
+        right: 40px;
+    }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1357px) {
+    .content-pembelajaran {
+        margin-left: 0px;
+    }
+    .button-hidden {
+        right: 60px;
     }
 }
 
