@@ -1,4 +1,5 @@
 @extends('layouts.master_front')
+@section('title', 'BMTI - Galeria')
 
 @section('content')
 <div class="galeria">

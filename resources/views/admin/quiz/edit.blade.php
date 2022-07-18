@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'BMTI | DATA QUIZ')
+@section('title', 'BMTI - Edit Data Quiz')
 @section('custom-css')
 <style>
     .backdrop-modal {

@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'BMTI | Pelatihan')
+@section('title', 'BMTI - Create Data Pelatihan Mandiri')
 @section('content')
 
 <div class="content-wrapper">
@@ -7,7 +7,7 @@
         <div class="col-lg-8 grid-margin">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">{{ __('Buat Pelatihan Mandiri') }}</h4>
+                    <h4 class="card-title">{{ __('Buat Pelatihan') }}</h4>
                     @if (count($errors) > 0)
                     <div class="alert alert-danger">
                         <ul>
@@ -28,14 +28,15 @@
                         <div class="row mb-3">
                             <label for="deskripsi" class="col-sm-3 col-form-label">Dekripsi Pelatihan</label>
                             <div class="col-sm-9">
-                                <textarea type="text" name="deskripsi" class="ckeditor form-control mt-2"
+                                <textarea type="text" name="deskripsi" class="form-control mt-2"
                                     style="height: 100px;"></textarea>
                             </div>
                         </div>
                         <div class="row">
-                            <label for="kategori_kursus_id" class="col-sm-3 col-form-label">Kategori Kursus</label>
+                            <label for="kategori_kursus_id" class="col-sm-3 col-form-label">Kel. Keahlian</label>
                             <div class="col-sm-9">
                                 <select type="text" name="kelompok_keahlian_id" class="form-control mt-2">
+                                    <option value="">-</option>
                                     @foreach($kategori_kursus as $row)
                                     <option value="{{$row->id}}">{{$row->nama}}</option>
                                     @endforeach

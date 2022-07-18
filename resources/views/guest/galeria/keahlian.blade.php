@@ -1,4 +1,5 @@
 @extends('layouts.master_front')
+@section('title', 'Galeria - '.$kompetensi->nama_kompetensi)
 
 @section('content')
 <div class="teknik-permesinan">
@@ -67,7 +68,7 @@
             <div class="img-teknik-permesinan shadow mt-5">
                 <img src="{{asset('/images/galeria/'.$dt->gambar_banner)}}" alt="Image" width="357px" height="247px" />
                 <a href="{{route('galeria.materi', [$dt->id])}}">
-                    <div class="image-text">{{$dt->judul}}</div>
+                    <div class="image-text"></div>
                 </a>
                 <p>{{$dt->judul}}</p>
                 <h5>Joko Suseno Jul 27, 2021</h5>
@@ -79,7 +80,7 @@
 
 
 <!-- Modal -->
-<div id="materi" class="d-none">
+<!-- <div id="materi" class="d-none">
     <div class="bg-materi">
         <div class="bg-komptensi-materi">
             <div class="materi">
@@ -147,7 +148,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <script>
     function onClickMateri() {

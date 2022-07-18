@@ -1,4 +1,5 @@
 @extends('layouts.master_front')
+@section('title', 'Pelatihan Mandiri - '.$pelatihan->judul)
 
 @section('content')
 <div class="model-3d">
@@ -106,9 +107,7 @@
             </div>
             @endif
             @endforeach
-        </div>
-
-        <div id="content-pelatihan-3">
+            
             @foreach($topikQuiz as $tq)
             @if($tq->topik_id == $tp->id)
             <div class="bg-box shadow bg-white rounded mt-1">

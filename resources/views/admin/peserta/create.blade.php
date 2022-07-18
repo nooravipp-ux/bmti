@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'BMTI | DATA PESERTA')
+@section('title', 'BMTI - Create Data Peserta')
 @section('content')
 
 <div class="content-wrapper">

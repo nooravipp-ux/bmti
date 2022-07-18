@@ -1,10 +1,19 @@
 @extends('layouts.master')
+@section('title', 'BMTI - Pelatihan')
 
 @section('content')
 <style>
 @media only screen and (min-width: 400px) and (max-width: 767px) {
     .marginCard {
         margin-top: 20px;
+    }
+    .card {
+        margin-bottom: 150px;
+    }
+}
+@media only screen and (min-width: 767px){
+    .card {
+        margin-bottom: 30px;
     }
 }
 </style>
@@ -22,7 +31,7 @@
     </div>
     <div class="row mt-3">
         @foreach($data as $dt)
-        <div class="col-12 col-xl-3">
+        <div class="col-12 col-md-4 col-xl-3">
             <div class="card" style="height: 15rem; font-family:glory;">
                 <img class="card-img-top" src="{{asset('/images/pelatihan/'.$dt->gambar)}}" alt="Card image cap">
                 <div class="card-body text-center">

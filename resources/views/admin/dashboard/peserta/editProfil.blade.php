@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'BMTI | EDIT PROFILE')
+@section('title', 'BMTI - Edit Profile')
 @section('content')
 
 <div class="content-wrapper">

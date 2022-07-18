@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'BMTI | DATA QUIZ')
+@section('title', 'BMTI - Create Data Quiz')
 @section('content')
 
 <div class="content-wrapper">
