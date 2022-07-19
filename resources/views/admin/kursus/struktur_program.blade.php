@@ -4,79 +4,86 @@
 
 @section('custom-css')
 <style>
-    .backdrop-modal {
-        padding: 20px;
-        position: absolute;
-        top: 200px;
-        width: 95%;
-        right: 2%;
-        height: auto;
-        background-color: white;
-        border: 1px solid #ddd;
-        box-shadow: 0.2px 0.6px 0.5px 0.5px;
-        z-index: 1;
-    }
+.backdrop-modal {
+    padding: 20px;
+    position: absolute;
+    top: 200px;
+    width: 95%;
+    right: 2%;
+    height: auto;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0.2px 0.6px 0.5px 0.5px;
+    z-index: 1;
+}
 
-    .topik {
-        padding-left: 30px;
-        display: flex;
-        color: #8D8D8D;
-    }
+.topik {
+    padding-left: 30px;
+    display: flex;
+    color: #8D8D8D;
+}
 
-    .pelatihan {
-        display: flex;
-    }
+.pelatihan {
+    display: flex;
+}
 
-    .pelatihan i {
-        float: inline-end;
-    }
+.pelatihan i {
+    float: inline-end;
+}
 
-    .button-container {
-        margin-top: 20px;
-    }
+.button-container {
+    margin-top: 20px;
+}
 
-    #modal-topik {
-        position: fixed;
-        left: 400px;
-        min-width: 1000px;
-    }
+#modal-topik {
+    position: fixed;
+    left: 400px;
+    min-width: 1000px;
+}
 
-    .konten {
-        padding-left: 30px;
-    }
+.konten {
+    padding-left: 30px;
+}
 
-    .kuis {
-        padding-left: 30px;
-    }
+.kuis {
+    padding-left: 30px;
+}
 
-    .btn-tambah-konten a {
-        text-decoration: none;
-    }
+.btn-tambah-konten a {
+    text-decoration: none;
+}
 
-    .header-container {
-        background-color: #ebebeb;
-    }
+.header-container {
+    background-color: #ebebeb;
+}
 
-    .font-italic {
-        font-style: italic;
-    }
+.font-italic {
+    font-style: italic;
+}
 
-    table td {
-        table-layout: fixed;
-    }
+table td {
+    table-layout: fixed;
+}
 </style>
 @endsection
 
 <div class="content-wrapper">
     <div class="row">
         <div class="col-lg-12">
+            @if(session()->has('message'))
+            <div class="alert alert-success">
+                {{ session()->get('message') }}
+            </div>
+            @endif
             <div class="header-container d-flex justify-content-between">
                 <div class="pt-2 pl-2">
                     <h3>Struktur Program</h3>
                     <p>Deskripsi struktur Program Dari Pelatihan</p>
                 </div>
                 <div class="pt-2">
-                    <a class="btn btn-md btn-rounded btn-danger btn-block" href="#" onclick="history.back()">Batal</a><a id="btn-to-konten-lesson" class="btn btn-md btn-rounded btn-primary btn-block" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Tambah</a>
+                    <a class="btn btn-md btn-rounded btn-danger btn-block" href="#" onclick="history.back()">Batal</a><a
+                        id="btn-to-konten-lesson" class="btn btn-md btn-rounded btn-primary btn-block" href="#"
+                        data-bs-toggle="modal" data-bs-target="#exampleModal">Tambah</a>
                 </div>
             </div>
             <div class="row mb-3">
@@ -87,7 +94,8 @@
                                 <th>Kategori</th>
                                 <th>Materi</th>
                                 <th class="text-center">Jam Pelajaran</th>
-                                <th>Aksi</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -96,7 +104,13 @@
                                 <td>{{$dt->kategori}}</td>
                                 <td>{{$dt->materi}}</td>
                                 <td class="text-center">{{$dt->jam_pelajaran}}</td>
-                                <td></td>
+                                <td><a href="{{ route('pelatihan.strukturProgram.edit',['pelatihanId'=>$dt->kursus_id, 'id'=>$dt->id]) }}"
+                                        class="btn btn-dark btn-sm btn-rounded btn-icon-prepend">Edit
+                                        <i class="ti-reload btn-icon-append"></i></a></td>
+                                <td><a href="{{ route('pelatihan.strukturProgram.delete',['pelatihanId'=>$dt->kursus_id, 'id'=>$dt->id]) }}"
+                                        class="btn btn-danger btn-sm btn-rounded btn-icon-text"
+                                        onclick="return confirm('Apakah anda yakin ?')">Delete
+                                        <i class="ti-trash btn-icon-append"></i></a></td>
                             </tr>
                             @endforeach
                         </tbody>
