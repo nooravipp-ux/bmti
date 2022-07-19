@@ -2,9 +2,22 @@
 @section('title', 'BMTI - Edit Data Perusahaan Mitra')
 @section('content')
 
+<style>
+@media only screen and (min-width: 400px) and (max-width: 767px) {
+    .marginResponsive {
+        margin-top: 25px;
+    }
+    .img-perusahaan {
+        display:block;
+        margin-left:auto;
+        margin-right:auto;
+    }
+}
+</style>
+
 <div class="content-wrapper">
     <div class="row">
-        <div class="col-lg-12 grid-margin">
+        <div class="col-lg-12 grid-margin marginResponsive">
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">{{ __('Data Perusahaan Mitra') }}</h4>
@@ -28,8 +41,8 @@
                         </div>
                         <div class="mb-3">
                             <label for="inputgambar_logo" class="form-label">Gambar Logo</label>
-                            <div>
-                                <img src="{{asset('images/perusahaan-mitra/'.$data->gambar_logo)}}" alt="" width="300"
+                            <div class="mb-2">
+                                <img class="img-perusahaan" src="{{asset('images/perusahaan-mitra/'.$data->gambar_logo)}}" alt="" width="300"
                                     height="200">
                             </div>
                             <input type="hidden" name="gambar_logo_old" class="form-control"

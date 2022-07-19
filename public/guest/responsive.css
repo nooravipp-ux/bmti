@@ -202,6 +202,10 @@
         top: 2px;
         right: 8px;
     }
+    .clik-register-2 a {
+        position: relative;
+        top: 3px;
+    }
     .button-mini {
         display: block;
     }
@@ -237,7 +241,7 @@
         font-size: 12px;
     }
     .clik-daftar {
-        padding-bottom: 50px;
+        padding-bottom: 47px;
     }
     .register-container .right-box {
         display: none;
@@ -258,7 +262,7 @@
         width: 300px;
     }
     .clik-forget {
-        padding-bottom: 140px;
+        padding-bottom: 110px;
     }
     .LupaPassword-container .right-box {
         display: none;
@@ -308,6 +312,10 @@
         top: 2px;
         right: 8px;
     }
+    .clik-register-2 a {
+        position: relative;
+        top: 3px;
+    }
     .button-mini {
         display: block;
     }
@@ -343,7 +351,7 @@
         font-size: 12px;
     }
     .clik-daftar {
-        padding-bottom: 50px;
+        padding-bottom: 47px;
     }
     .register-container .right-box {
         display: none;
@@ -361,10 +369,10 @@
     .text-forget {
         margin-left: auto;
         margin-right: auto;
-        width: 300px;
+        width: 400px;
     }
     .clik-forget {
-        padding-bottom: 140px;
+        padding-bottom: 135px;
     }
     .LupaPassword-container .right-box {
         display: none;
@@ -413,6 +421,10 @@
         top: 2px;
         right: 8px;
     }
+    .clik-register-2 a {
+        position: relative;
+        top: 3px;
+    }
     .button-mini {
         display: block;
     }
@@ -448,7 +460,7 @@
         font-size: 12px;
     }
     .clik-daftar {
-        padding-bottom: 50px;
+        padding-bottom: 47px;
     }
     .register-container .right-box {
         display: none;
@@ -466,10 +478,10 @@
     .text-forget {
         margin-left: auto;
         margin-right: auto;
-        width: 300px;
+        width: 450px;
     }
     .clik-forget {
-        padding-bottom: 140px;
+        padding-bottom: 135px;
     }
     .LupaPassword-container .right-box {
         display: none;
@@ -509,6 +521,10 @@
         position: relative;
         top: 2px;
         right: 8px;
+    }
+    .clik-register-2 a {
+        position: relative;
+        top: 2px;
     }
     .logo-login-right-1 {
         margin-left: auto;
@@ -554,7 +570,7 @@
         font-size: 14px;
     }
     .clik-daftar {
-        padding-bottom: 43px;
+        padding-bottom: 39px;
     }
     .register-container .right-box {
         background-image: url('assets/images/login-2.png');
@@ -565,7 +581,7 @@
         background-image: url('assets/images/login-2.png');
     }
     .clik-forget {
-        padding-bottom: 146px;
+        padding-bottom: 118px;
     }
     .text-forget {
         margin-left: auto;
@@ -639,7 +655,7 @@
         background-image: url('assets/images/login-3.png');
     }
     .clik-forget {
-        padding-bottom: 177px;
+        padding-bottom: 148px;
     }
     .text-forget {
         margin-left: auto;

@@ -11,11 +11,17 @@
 .marginCard {
     margin-bottom: 10px;
 }
+
+@media only screen and (min-width: 400px) and (max-width: 767px) {
+    .marginResponsive {
+        margin-top: 25px;
+    }
+}
 </style>
 
 <div class="content-wrapper">
     <div class="row">
-        <div class="col-lg-12 grid-margin">
+        <div class="col-lg-12 grid-margin marginResponsive">
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">{{ __('Template Sertifikat') }}</h4>
@@ -34,10 +40,10 @@
                                 </tr>
                                 <tr>
                                     <th>No</th>
-                                    <th>kode Sertifikat</th>
+                                    <th>Kode Sertifikat</th>
                                     <th>Kategori Pelatihan</th>
                                     <th>Template</th>
-                                    <th>Action</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>

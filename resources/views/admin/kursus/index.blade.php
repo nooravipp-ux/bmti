@@ -4,18 +4,23 @@
 @section('custom-css')
 <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" />
 @endsection
-@section('content')
-@section('content')
 
+@section('content')
 <style>
 .marginCard {
     margin-bottom: 10px;
+}
+
+@media only screen and (min-width: 400px) and (max-width: 767px) {
+    .marginResponsive {
+        margin-top: 25px;
+    }
 }
 </style>
 
 <div class="content-wrapper">
     <div class="row">
-        <div class="col-lg-12 grid-margin">
+        <div class="col-lg-12 grid-margin marginResponsive">
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">{{ __('Data Pelatihan') }}</h4>
@@ -65,12 +70,14 @@
                                         Unpublish
                                         @endif
                                     </td>
-                                    <td class="text-center"><a href="{{ route('pelatihan.topik', [$row->id]) }}"
+                                    <td class="text-center">
+                                        <a href="{{ route('pelatihan.topik', [$row->id]) }}"
                                             class="btn btn-dark btn-sm btn-rounded btn-icon-prepend">Atur
                                             <i class="ti-reload btn-icon-append"></i></a>
                                         <a href="{{ route('pelatihan.delete', ['id'=>$row->id]) }}"
                                             onclick="return confirm('Apakah anda yakin ?')"
-                                            class="btn btn-danger btn-sm btn-rounded btn-icon-text">Delete
+                                            class="btn btn-danger btn-sm btn-rounded btn-icon-text"
+                                            style="margin-left:5px;">Delete
                                             <i class="ti-trash btn-icon-append"></i></a>
                                     </td>
                                 </tr>

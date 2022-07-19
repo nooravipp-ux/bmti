@@ -2,9 +2,22 @@
 @section('title', 'BMTI - Edit Data Kompetensi')
 @section('content')
 
+<style>
+    @media only screen and (min-width: 400px) and (max-width: 767px) {
+    .marginResponsive {
+        margin-top: 25px;
+    }
+    .img-galeria {
+        display:block;
+        margin-left:auto;
+        margin-right:auto;
+    }
+}
+</style>
+
 <div class="content-wrapper">
     <div class="row">
-        <div class="col-lg-12 grid-margin">
+        <div class="col-lg-12 grid-margin marginResponsive">
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">{{ __('Edit Kompetensi') }}</h4>
@@ -39,8 +52,8 @@
                         </div>
                         <div class="mb-3">
                             <label for="inputgambar_banner" class="form-label">Gambar Banner</label>
-                            <div>
-                                <img src="{{asset('images/galeria/'.$data->gambar_banner)}}" width="300" height="250" />
+                            <div class="mb-2">
+                                <img class="img-galeria" src="{{asset('images/galeria/'.$data->gambar_banner)}}" width="300" height="250" />
                             </div>
                             <input type="hidden" name="gambar_banner_old" class="form-control"
                                 value="{{ $data->gambar_banner }}">

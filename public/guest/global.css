@@ -417,6 +417,21 @@ input[class="collapse-mandiri-2"] {
     text-decoration: underline;
 }
 
+.clik-register-2 {
+    padding-bottom: 35px;
+    font-family: "glory";
+    font-weight: 600;
+}
+
+.clik-register-2 a {
+    text-decoration: none;
+}
+
+.clik-register-2 a:hover {
+    color: #024783;
+    text-decoration: underline;
+}
+
 .login-container .right-box {
     background-image: url('../guest/assets/images/login.png');
     background-repeat: no-repeat;
@@ -521,8 +536,17 @@ input[class="collapse-mandiri-2"] {
     text-decoration: underline;
 }
 
+.clik-sudah-daftar a {
+    text-decoration: none;
+}
+
+.clik-sudah-daftar a:hover {
+    color: #024783;
+    text-decoration: underline;
+}
+
 .clik-daftar {
-    padding-bottom: 35px;
+    padding-bottom: 31px;
     font-family: "glory";
     font-weight: 600;
 }
@@ -578,12 +602,15 @@ input[class="collapse-mandiri-2"] {
 }
 
 .text-forget {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
     font-weight: 600;
     font-family: "glory";
 }
 
 .clik-forget {
-    padding-bottom: 203px;
+    padding-bottom: 175px;
 }
 
 .btn-forget {

@@ -48,13 +48,13 @@
                                 <input class="collapse-mandiri" type="checkbox" id="collapse-mandiri" />
                                 <label for="collapse-mandiri">Pelatihan Terbimbing</label>
                                 <div class="mandiri-hidden-1 font-italic">
-                                    <a href="">- Upskilling dan Reskilling</a>
+                                    <a href="{{url('/')}}">- Upskilling dan Reskilling</a>
                                 </div>
                                 <div class="mandiri-hidden-2">
-                                    <a href="">- Peningkatan Kompetensi &nbsp;&nbsp;&nbsp;Berkelanjutan</a>
+                                    <a href="{{url('/')}}">- Peningkatan Kompetensi &nbsp;&nbsp;&nbsp;Berkelanjutan</a>
                                 </div>
                                 <div class="mandiri-hidden-3">
-                                    <a href="">- Suplemen Kompetensi &nbsp;&nbsp;&nbsp;Keahlian</a>
+                                    <a href="{{url('/')}}">- Suplemen Kompetensi &nbsp;&nbsp;&nbsp;Keahlian</a>
                                 </div>
                             </li>
                             <li>
@@ -89,7 +89,7 @@
             <div class="row">
                 <div class="col-3">
                     <div class="logo-footer">
-                        <a href="/">
+                        <a href="#">
                             <img src="{{asset('guest/assets/images/logo-header.png')}}" width="170px" height="110px" />
                         </a>
                         <h1>Sahabat Cerdas</h1>
@@ -98,22 +98,22 @@
 
                 <div class="col-1">
                     <div class="share">
-                        <a href="#">
+                        <a href="{{url('https://www.facebook.com/bmti.kemdikbud/')}}" target="_blank">
                             <img class="icon-share" src="{{asset('guest/assets/images/fb-1.png')}}" height="30px"
                                 width="30px" />
                         </a>
                         <br />
-                        <a href="#">
+                        <a href="{{url('https://twitter.com/bmti_kemdikbud')}}" target="_blank">
                             <img class="icon-share" src="{{asset('guest/assets/images/twitter-1.png')}}" height="30px"
                                 width="30px" />
                         </a>
                         <br />
-                        <a href="#">
+                        <a href="{{url('https://www.instagram.com/bmti.kemdikbud/')}}" target="_blank">
                             <img class="icon-share" src="{{asset('guest/assets/images/ig-1.png')}}" height="30px"
                                 width="30px" />
                         </a>
                         <br />
-                        <a href="#">
+                        <a href="{{url('#')}}" target="_blank">
                             <img class="icon-share" src="{{asset('guest/assets/images/telegram.png')}}" height="30px"
                                 width="30px" />
                         </a>
@@ -164,16 +164,16 @@
 
     <div class="float-button-wrapper">
         <div class="float-button-page">
-            <a href="#">
+            <a href="{{url('https://www.facebook.com/bmti.kemdikbud/')}}" target="_blank">
                 <div class="img-share-1"></div>
             </a>
-            <a href="#">
+            <a href="{{url('https://www.instagram.com/bmti.kemdikbud/')}}" target="_blank">
                 <div class="img-share-2"></div>
             </a>
-            <a href="#">
+            <a href="{{url('https://twitter.com/bmti_kemdikbud')}}" target="_blank">
                 <div class="img-share-3"></div>
             </a>
-            <a href="#">
+            <a href="{{url('https://www.youtube.com/channel/UCKH7TY5zOLIa5uWYpDgZWjQ')}}" target="_blank">
                 <div class="img-share-4"></div>
             </a>
         </div>
@@ -270,8 +270,10 @@
                             </div>
                             <div class="row justify-content-center">
                                 <div class="col-12">
-                                    <img class="logo-login" src="{{asset('guest/assets/images/logo-header.png')}}"
-                                        width="140px" height="100px" />
+                                    <a href="{{url('/')}}">
+                                        <img class="logo-login" src="{{asset('guest/assets/images/logo-header.png')}}"
+                                            width="140px" height="100px" />
+                                    </a>
                                     <h2 class="login-title">LOGIN</h2>
                                 </div>
                             </div>
@@ -387,8 +389,10 @@
                             </div>
                             <div class="row justify-content-center">
                                 <div class="col-12">
-                                    <img class="logo-login" src="{{asset('guest/assets/images/logo-header.png')}}"
-                                        width="140px" height="100px" />
+                                    <a href="{{url('/')}}">
+                                        <img class="logo-login" src="{{asset('guest/assets/images/logo-header.png')}}"
+                                            width="140px" height="100px" />
+                                    </a>
                                     <h2 class="login-title">DAFTAR</h2>
                                 </div>
                             </div>
@@ -538,10 +542,12 @@
                                         onclick="onClickCloseLupaPassword()">X</button>
                                 </div>
                             </div>
-                            <img class="logo-login" src="{{asset('guest/assets/images/logo-header.png')}}" width="140px"
-                                height="100px" />
+                            <a href="{{url('/')}}">
+                                <img class="logo-login" src="{{asset('guest/assets/images/logo-header.png')}}"
+                                    width="140px" height="100px" />
+                            </a>
                             <div class="text-forget text-center mb-4 mt-5 text-sm text-gray-600">
-                                {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+                                {{ __('Lupa kata sandi anda? Tidak masalah. Cukup beri tahu kami alamat email anda dan kami akan mengirim email kepada anda tautan pengaturan ulang kata sandi yang memungkinkan Anda memilih yang baru.') }}
                             </div>
 
                             <form method="POST" action="{{ route('password.email') }}">

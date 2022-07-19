@@ -10,11 +10,17 @@
 .marginCard {
     margin-bottom: 10px;
 }
+
+@media only screen and (min-width: 400px) and (max-width: 767px) {
+    .marginResponsive {
+        margin-top: 25px;
+    }
+}
 </style>
 
 <div class="content-wrapper">
     <div class="row">
-        <div class="col-lg-12 grid-margin">
+        <div class="col-lg-12 grid-margin marginResponsive">
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">{{ __('Kategori Kompetensi') }}</h4>
@@ -28,7 +34,8 @@
                         <table id="dataTable" class="table">
                             <thead>
                                 <tr>
-                                    <a href="{{route('kompetensi.create')}}" class="btn btn-primary btn-sm btn-rounded btn-icon-text marginCard">
+                                    <a href="{{route('kompetensi.create')}}"
+                                        class="btn btn-primary btn-sm btn-rounded btn-icon-text marginCard">
                                         <i class="ti-upload btn-icon-prepend"></i>
                                         Create
                                     </a>
@@ -47,9 +54,13 @@
                                     <td><?php echo $i++; ?></td>
                                     <td>{{$row->nama_kompetensi}}</td>
                                     <td>{{$row->kode}}</td>
-                                    <td class="text-center"><a href="{{ route('kompetensi.edit', ['id'=>$row->id]) }}" class="btn btn-dark btn-sm btn-rounded btn-icon-prepend">Edit
+                                    <td class="text-center">
+                                        <a href="{{ route('kompetensi.edit', ['id'=>$row->id]) }}"
+                                            class="btn btn-dark btn-sm btn-rounded btn-icon-prepend">Edit
                                             <i class="ti-reload btn-icon-append"></i></a>
-                                        <a href="{{ route('kompetensi.delete', ['id'=>$row->id]) }}" onclick="return confirm('Apakah anda yakin ?')" class="btn btn-danger btn-sm btn-rounded btn-icon-text">Delete
+                                        <a href="{{ route('kompetensi.delete', ['id'=>$row->id]) }}"
+                                            onclick="return confirm('Apakah anda yakin ?')"
+                                            class="btn btn-danger btn-sm btn-rounded btn-icon-text" style="margin-left:5px;">Delete
                                             <i class="ti-trash btn-icon-append"></i></a>
                                     </td>
                                 </tr>
@@ -69,9 +80,9 @@
 <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js">
 </script>
 <script>
-    $(document).ready(function() {
-        $('#dataTable').DataTable();
+$(document).ready(function() {
+    $('#dataTable').DataTable();
 
-    });
+});
 </script>
 @endsection

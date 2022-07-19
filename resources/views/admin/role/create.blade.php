@@ -2,9 +2,17 @@
 @section('title', 'BMTI - Create Data Role')
 @section('content')
 
+<style>
+    @media only screen and (min-width: 400px) and (max-width: 767px) {
+    .marginResponsive {
+        margin-top: 25px;
+    }
+}
+</style>
+
 <div class="content-wrapper">
     <div class="row">
-        <div class="col-lg-12 grid-margin">
+        <div class="col-lg-12 grid-margin marginResponsive">
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">{{ __('Data Role') }}</h4>
