@@ -67,6 +67,8 @@ Route::get('/pelatihan-mandiri/{id}/topik/{topikId}', [PelatihanController::clas
 Route::get('/pelatihan-mandiri/{id}/topik/{topikId}/konten/{kontenId}', [PelatihanController::class, 'getKontenPembelajaran'])->name('pembelajaran.konten');
 Route::get('/pelatihan-mandiri/{id}/topik/{topikId}/quiz/{quizId}', [PelatihanController::class, 'getQuizPembelajaran'])->name('pembelajaran.quiz');
 
+Route::get('/generate-sertifikat', [PelatihanController::class, 'generateSertifikat']);
+
 //Route hasi quiz
 Route::get('/pelatihan-mandiri/quiz/hasil-quiz', [PelatihanController::class, 'getHasilQuizPembelajaran'])->name('pembelajaran.quiz.hasil');
 
