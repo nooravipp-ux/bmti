@@ -65,7 +65,7 @@
                 <ul class="navbar-nav">
                     <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
                         <h1 class="welcome-text">Selamat Datang, <span
-                                class="text-black fw-bold">{{auth()->user()->name}}</span></h1>
+                                class="text-black fw-bold" style="text-transform: capitalize;">{{auth()->user()->name}}</span></h1>
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto">
@@ -371,7 +371,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('peserta.pelatihan.katalog')}}">
                             <i class="menu-icon mdi mdi-file-import"></i>
-                            <span class="menu-title">Katalog </span>
+                            <span class="menu-title">Katalog</span>
                         </a>
                     </li>
                     @endif

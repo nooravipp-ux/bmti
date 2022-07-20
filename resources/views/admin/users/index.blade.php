@@ -10,11 +10,17 @@
 .marginCard {
     margin-bottom: 10px;
 }
+
+@media only screen and (min-width: 400px) and (max-width: 767px) {
+    .marginResponsive {
+        margin-top: 25px;
+    }
+}
 </style>
 
 <div class="content-wrapper">
     <div class="row">
-        <div class="col-lg-12 grid-margin">
+        <div class="col-lg-12 grid-margin marginResponsive">
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">{{ __('Data User') }}</h4>
@@ -40,7 +46,7 @@
                                     <th>Email</th>
                                     <th>Role</th>
                                     <th>Created At</th>
-                                    <th>Edit</th>
+                                    <th class="text-center">Aksi</th>
                                     <!-- <th>Delete</th> -->
                                 </tr>
                             </thead>
@@ -53,13 +59,15 @@
                                     <td>{{$data->email}}</td>
                                     <td>{{$data->role_name}}</td>
                                     <td>{{$data->created_at}}</td>
-                                    <td><a href="{{ route('user.edit', ['id'=>$data->id]) }}"
+                                    <td class="text-center">
+                                        <a href="{{ route('user.edit', ['id'=>$data->id]) }}"
                                             class="btn btn-dark btn-sm btn-rounded btn-icon-prepend">Edit
-                                            <i class="ti-reload btn-icon-append"></i></a></td>
-                                    <!-- <td><a href="{{ route('user.delete', ['id'=>$data->id]) }}"
+                                            <i class="ti-reload btn-icon-append"></i></a>
+                                        <!--<a href="{{ route('user.delete', ['id'=>$data->id]) }}"
                                             class="btn btn-danger btn-rounded btn-icon-text"
                                             onclick="return confirm('Apakah anda yakin ?')">Delete
-                                            <i class="ti-trash btn-icon-append"></i></a></td> -->
+                                            <i class="ti-trash btn-icon-append"></i></a>-->
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>

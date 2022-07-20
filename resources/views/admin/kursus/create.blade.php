@@ -2,9 +2,17 @@
 @section('title', 'BMTI - Create Data Pelatihan Mandiri')
 @section('content')
 
+<style>
+    @media only screen and (min-width: 400px) and (max-width: 767px) {
+    .marginResponsive {
+        margin-top: 25px;
+    }
+}
+</style>
+
 <div class="content-wrapper">
     <div class="row justify-content-center">
-        <div class="col-lg-8 grid-margin">
+        <div class="col-lg-8 grid-margin marginResponsive">
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">{{ __('Buat Pelatihan') }}</h4>
@@ -54,7 +62,7 @@
                             <div class="col-sm-12 text-right">
                                 <button class="btn btn-danger btn-sm btn-rounded float-right ml-2">Batal</button>
                                 <button type="submit"
-                                    class="btn btn-primary btn-sm btn-rounded float-right">Lanjutkan</button>
+                                    class="btn btn-primary btn-sm btn-rounded float-right" style="margin-left:5px;">Lanjutkan</button>
                             </div>
                         </div>
                     </form>

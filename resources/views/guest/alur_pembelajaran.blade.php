@@ -9,7 +9,7 @@
                     <div class="text1">Alur Pembelajaran</div>
 
                     <div class="alur-start text-center">
-                        <button type="button" class="tablinks myButton" onclick="step1OnClick()">Mulai</button>
+                        <button type="button" class="tablinks myButton" onclick="step1OnClick()">Galeria</button>
                     </div>
                 </div>
                 <div id="step2" class="d-none">
@@ -20,14 +20,15 @@
                         </div>
 
                         <div class="col-12 col-lg-6 col-xl-6">
-                            <h3 class="text-light"><b>STEP 1 - GALERIA</b></h3>
+                            <h3 class="text-light"><b>GALERIA</b></h3>
                             <h3 class="text-light">Galeria merupakan kumpulan materi kejuruan dalam bentuk tulisan,
                                 video maupun animasi yang memberi informasi singkat tentang konten kejuruan.</h3>
                         </div>
                     </div>
                     <div class="text-center">
-                        <button class="tablinks myButton1 center" onclick="step2OnClick()"><b>Next Step</b> - Kompetensi
-                            Kejuruan</button>
+                        <button class="tablinks myButton1 center" onclick="step2OnClick()"><b>Pelatihan
+                                Mandiri</b></button>
+                        <button class="tablinks myButton1" onclick="onClickKembali1()">Kembali</button>
                     </div>
                 </div>
 
@@ -40,7 +41,7 @@
                         </div>
 
                         <div class="col-12 col-lg-6 col-xl-6">
-                            <h3 class="text-light"><b>STEP 2 - KOMPETENSI KEJURUAN</b></h3>
+                            <h3 class="text-light"><b>PELATIHAN MANDIRI</b></h3>
                             <h3 class="text-light">Menyajikan deskripsi materi pembelajaran dengan: H5P, video shooting
                                 merekam gambar bergerak, animasi seolah bergerak yang disajikan dengan citra/sudut
                                 pandang 2 dimensi maupun 3 dimensi serta dilengkapi materi pendukung berformat
@@ -49,8 +50,9 @@
                         </div>
                     </div>
                     <div class="text-center">
-                        <button class="tablinks myButton1 center" onclick="step3OnClick()"><b>Next Step</b> -
-                            Materi</button>
+                        <button class="tablinks myButton1 center" onclick="step3OnClick()"><b>Pelatihan
+                                Terbimbing</b></button>
+                        <button class="tablinks myButton1" onclick="onClickKembali2()">Kembali</button>
                     </div>
                 </div>
 
@@ -62,83 +64,21 @@
                         </div>
 
                         <div class="col-12 col-lg-6 col-xl-6">
-                            <h3 class="text-light"><b>STEP 3 - MATERI</b></h3>
+                            <h3 class="text-light"><b>PELATIHAN TERBIMBING</b></h3>
                             <h3 class="text-light">Materi kejuruan berisikan materi - materi yang akan digunakan untuk
                                 pembelajaran di galeri kejuruan.</h3>
                         </div>
                     </div>
                     <div class="text-center">
-                        <button class="tablinks myButton1 center" onclick="step4OnClick()"><b>Next Step</b> -
-                            Minat?</button>
+                        <button class="tablinks myButton1 center" onclick="step4OnClick()"><b>Sertifikat</b></button>
+                        <button class="tablinks myButton1" onclick="onClickKembali3()">Kembali</button>
                     </div>
                 </div>
 
                 <div id="step5" class="d-none">
-                    <div class="row">
-                        <div class="col-12 col-lg-6 col-xl-6 mb-3">
-                            <img class="alur-img center rounded" src="{{asset('guest/assets/images/gambar-minat.PNG')}}"
-                                alt="" width="550" height="330" />
-                        </div>
-
-                        <div class="col-12 col-lg-6 col-xl-6">
-                            <h3 class="text-light"><b>STEP 4 - MINAT</b></h3>
-                            <h3 class="text-light">Pilih minat berdasarkan kebutuhan anda.</h3>
-                        </div>
-                    </div>
-                    <div class="text-center">
-                        <button class="tablinks myButton1" onclick="onClickPelatihanMandiri()"><b>Pilih</b> - Pelatihan
-                            Mandiri</button>
-                        <button class="tablinks myButton1" onclick="onClickPelatihanTerbimbing()"><b>Pilih</b> - Diklat
-                            Terbimbing</button>
-                    </div>
-                </div>
-
-                <div id="step6" class="d-none">
-                    <div class="row">
-                        <div class="col-12 col-lg-6 col-xl-6 mb-3">
-                            <img class="alur-img center rounded"
-                                src="{{asset('guest/assets/images/list-pelatihan-mandiri.PNG')}}" alt="" width="550"
-                                height="330" />
-                        </div>
-
-                        <div class="col-12 col-lg-6 col-xl-6">
-                            <h3 class="text-light"><b>STEP 5 - PELATIHAN MANDIRI</b></h3>
-                            <h3 class="text-light">Pelatihan Mandiri adalah fasilitas yang diberikan kepada guru untuk
-                                melakukan latihan kompetensi keahlian sesuai pilihannya, yang dilaksanakan secara
-                                mandiri. Pelatihan mandiri merupakan bagian dari galeri kejuruan.</h3>
-                        </div>
-                    </div>
-                    <div class="text-center">
-                        <button class="tablinks myButton1 center" onclick="onClickSertifikat()"><b>Next Step</b> -
-                            Sertifikat</button>
-                    </div>
-                </div>
-
-                <div id="step7" class="d-none">
-                    <div class="row">
-                        <div class="col-12 col-lg-6 col-xl-6 mb-3">
-                            <img class="alur-img center rounded"
-                                src="{{asset('guest/assets/images/gambar-terbimbing.PNG')}}" alt="" width="550"
-                                height="330" />
-                        </div>
-
-                        <div class="col-12 col-lg-6 col-xl-6">
-                            <h3 class="text-light"><b>STEP 6 - DIKLAT TERBIMBING</b></h3>
-                            <h3 class="text-light">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                PageMaker including versions of Lorem Ipsum.s</h3>
-                        </div>
-                    </div>
-                    <div class="text-center">
-                        <button class="tablinks myButton1 center" onclick="onClickSertifikat()"><b>Next Step</b> -
-                            Sertifikat</button>
-                    </div>
-                </div>
-
-                <div id="step8" class="d-none">
                     <div class="row justify-items-center">
                         <div class="col-12">
-                            <h3 class="text-light"><b>STEP 7 - SERTIFIKAT</b></h3>
+                            <h3 class="text-light"><b>SERTIFIKAT</b></h3>
                             <div class="mb-3">
                                 <img class="sertifikat-img center rounded"
                                     src="{{asset('guest/assets/images/sertifikat2.PNG')}}" alt="" width="500"
@@ -173,7 +113,9 @@
         </div>
     </div>
 </div>
-@endsection @section('script')
+@endsection
+
+@section('script')
 <script>
 function step1OnClick() {
     $('#step1').addClass('d-none');
@@ -195,30 +137,24 @@ function step4OnClick() {
     $('#step5').attr('class', '');
 }
 
-function step5OnClick() {
-    $('#step1').addClass('d-none');
+function onClickKembali1() {
+    $('#step1').attr('class', '');
+    $('#step2').addClass('d-none');
+}
+
+function onClickKembali2() {
     $('#step2').attr('class', '');
+    $('#step3').addClass('d-none');
 }
 
-function onClickPelatihanMandiri() {
-    $('#step5').addClass('d-none');
-    $('#step6').attr('class', '');
-}
-
-function onClickPelatihanTerbimbing() {
-    $('#step5').addClass('d-none');
-    $('#step7').attr('class', '');
-}
-
-function onClickSertifikat() {
-    $('#step6').addClass('d-none');
-    $('#step7').addClass('d-none');
-    $('#step8').attr('class', '');
+function onClickKembali3() {
+    $('#step3').attr('class', '');
+    $('#step4').addClass('d-none');
 }
 
 function onClickKembaliKeawal() {
     $('#step1').attr('class', '');
-    $('#step8').addClass('d-none');
+    $('#step5').addClass('d-none');
 }
 
 function onClickAlur() {

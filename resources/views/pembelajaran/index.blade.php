@@ -41,7 +41,7 @@
             <div class="row text-center">
                 <div class="col-4 prev-nav">
                     <a href="" class="btn-pembelajaran btn btn-primary">
-                        <i class="fa-solid fa-angle-left" style="  margin-left: -10px;"></i>
+                        <i class="fa-solid fa-angle-left" style="margin-left: -10px;"></i>
                         <span style=" margin-left: 15px;">Previous Lesson</span>
                     </a>
                 </div>

@@ -13,13 +13,13 @@
         <div class="col-12 col-lg-7 col-xl-7">
             <div>
                 <h1>{{$dataQuiz->judul}}</h1>
-                <p>{{$dataQuiz->deskripsi}}</p>
+                <p class="mt-4">{{$dataQuiz->deskripsi}}</p>
                 <h4>Hasil Penilaian</h4>
                 <p>{{$counterJawabanBenar}} dari {{$totalSoal}} Pertanyaan terjawab dengan benar</p>
                 <p>Waktu Pengerjaan : 00:10:32</p>
-                <div class="row">
-                    <div class="col-md-12 justify-content-center">
-                        <button id="pratinjau" class="btn btn-sm btn-primary" style="margin-right: 10px;">Pratinjau Pertanyaan</button><button class="btn btn-sm btn-primary">Ulang Quiz</button>
+                <div class="row mt-4 mb-4">
+                    <div class="col-md-12 justify-content-center text-center">
+                        <button id="pratinjau" class="btn btn-sm btn-primary" style="margin-right: 10px; font-family:glory;">Pratinjau Pertanyaan</button><button class="btn btn-sm btn-primary" style="margin-left: 10px; font-family:glory;">Ulang Quiz</button>
                     </div>
                 </div>
             </div>

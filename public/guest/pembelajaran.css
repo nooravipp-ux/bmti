@@ -339,6 +339,13 @@ header {
 
 /* quiz */
 
+.start-quiz button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
 .quiz {
     font-family: "glory";
 }
@@ -526,6 +533,9 @@ footer {
         margin-left: 0;
     }
     /* quiz */
+    .start-quiz button {
+        margin-top: 50px;
+    }
     .box-proses {
         margin-left: auto;
         margin-right: auto;

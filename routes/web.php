@@ -261,7 +261,9 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 
         Route::get('/pelatihan/{pelatihanId}/struktur-program', [StrukturProgramController::class, 'index'])->name('pelatihan.strukturProgram');
         Route::post('/pelatihan/struktur-program/simpan', [StrukturProgramController::class, 'simpan'])->name('pelatihan.strukturProgram.simpan');
-
+        Route::get('/pelatihan/{pelatihanId}/struktur-program/edit/{id}', [StrukturProgramController::class, 'edit'])->name('pelatihan.strukturProgram.edit');
+        Route::put('/pelatihan/{pelatihanId}/struktur-program/update/{id}', [StrukturProgramController::class, 'update'])->name('pelatihan.strukturProgram.update');
+        Route::get('/pelatihan/{pelatihanId}/struktur-program/delete/{id}', [StrukturProgramController::class, 'delete'])->name('pelatihan.strukturProgram.delete');
         //Route Peserta
 
         Route::get('/topik', [TopikController::class, 'index'])->name('topik');
