@@ -36,7 +36,7 @@
         @foreach($data as $dt)
         <div class="col-12 col-md-4 col-xl-3">
             <div class="card" style="height: 15rem; font-family:glory;">
-                <img class="card-img-top" src="{{asset('/images/pelatihan/'.$dt->gambar)}}" alt="Card image cap">
+                <img class="card-img-top rounded" src="{{asset('/images/pelatihan/'.$dt->gambar)}}" alt="Card image cap">
                 <div class="card-body text-center">
                     <h4>{{$dt->judul}}</h4>
                     <a href="{{route('peserta.pelatihan.katalog.detail', ['idPelatihan' => $dt->id])}}" class="btn btn-sm btn-primary text-center">Lihat Selengkapnya...</a>

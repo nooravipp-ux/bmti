@@ -58,8 +58,7 @@
                                     <th>Laporan</th>
                                     <!-- <th>Created At</th>
                                     <th>Updated At</th> -->
-                                    <th>Edit</th>
-                                    <th>Delete</th>
+                                    <th class="text-center">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -85,13 +84,16 @@
                                     <td>{{$row->laporan}}</td>
                                     <!-- <td>{{$row->created_at}}</td>
                                     <td>{{$row->updated_at}}</td> -->
-                                    <td><a href="{{ route('masterListData.edit', ['id'=>$row->id]) }}"
+                                    <td class="text-center">
+                                        <a href="{{ route('masterListData.edit', ['id'=>$row->id]) }}"
                                             class="btn btn-dark btn-sm btn-rounded btn-icon-prepend">Edit
-                                            <i class="ti-reload btn-icon-append"></i></a></td>
-                                    <td><a href="{{ route('masterListData.delete', ['id'=>$row->id]) }}"
+                                            <i class="ti-reload btn-icon-append"></i></a>
+                                        <a href="{{ route('masterListData.delete', ['id'=>$row->id]) }}"
                                             onclick="return confirm('Apakah anda yakin ?')"
-                                            class="btn btn-danger btn-sm btn-rounded btn-icon-text">Delete
-                                            <i class="ti-trash btn-icon-append"></i></a></td>
+                                            class="btn btn-danger btn-sm btn-rounded btn-icon-text"
+                                            style="margin-left:5px;">Delete
+                                            <i class="ti-trash btn-icon-append"></i></a>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
