@@ -2,6 +2,14 @@
 @section('title', 'BMTI - Edit Data Testimoni')
 @section('content')
 
+<style>
+@media only screen and (min-width: 400px) and (max-width: 640px) {
+    .grid-margin {
+        margin-top: 20px;
+    }
+}
+</style>
+
 <div class="content-wrapper">
     <div class="row">
         <div class="col-lg-12 grid-margin">
@@ -43,9 +51,11 @@
                             <input type="text" name="updated_by" class="form-control" id="updated_by"
                                 value="{{$data->updated_by}}">
                         </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-primary btn-sm btn-rounded">Submit</button>
+                        </div>
+                    </form>
                 </div>
-                <button type="submit" class="btn btn-primary btn-sm btn-rounded">Submit</button>
-                </form>
             </div>
         </div>
     </div>

@@ -49,8 +49,7 @@
                                     <th>Updated By</th>
                                     <!-- <th>Created At</th>
                                     <th>Updated At</th> -->
-                                    <th>Edit</th>
-                                    <th>Delete</th>
+                                    <th class="text-center">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -66,13 +65,15 @@
                                     <td>{{$row->updated_by}}</td>
                                     <!-- <td>{{$row->created_at}}</td>
                                     <td>{{$row->updated_at}}</td> -->
-                                    <td><a href="{{ route('testimoni.edit', ['id'=>$row->id]) }}"
+                                    <td class="text-center">
+                                        <a href="{{ route('testimoni.edit', ['id'=>$row->id]) }}"
                                             class="btn btn-dark btn-sm btn-rounded btn-icon-prepend">Edit
-                                            <i class="ti-reload btn-icon-append"></i></a></td>
-                                    <td><a href="{{ route('testimoni.delete', ['id'=>$row->id]) }}"
+                                            <i class="ti-reload btn-icon-append"></i></a>
+                                        <a href="{{ route('testimoni.delete', ['id'=>$row->id]) }}"
                                             onclick="return confirm('Apakah anda yakin ?')"
-                                            class="btn btn-danger btn-sm btn-rounded btn-icon-text">Delete
-                                            <i class="ti-trash btn-icon-append"></i></a></td>
+                                            class="btn btn-danger btn-sm btn-rounded btn-icon-text" style="margin-left:5px;">Delete
+                                            <i class="ti-trash btn-icon-append"></i></a>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -100,7 +101,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Import</button>
+                        <button type="submit" class="btn btn-primary" style="margin-left:10px;">Import</button>
                     </div>
                 </form>
             </div>

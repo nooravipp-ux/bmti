@@ -2,9 +2,17 @@
 @section('title', 'BMTI - Edit Profile')
 @section('content')
 
+<style>
+@media only screen and (min-width: 400px) and (max-width: 767px) {
+    .grid-margin {
+        margin-top: 20px;
+    }
+}
+</style>
+
 <div class="content-wrapper">
     <div class="row">
-        <div class="col-lg-12 grid-margin">
+        <div class="col-12 col-lg-12 grid-margin">
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">{{ __('Edit Profile') }}</h4>
@@ -23,8 +31,7 @@
                         @csrf
                         <div class="mb-3">
                             <label for="foto" class="form-label">Foto</label>
-                            <input type="hidden" name="foto_old" value="{{$data->foto}}"
-                                class="form-control">
+                            <input type="hidden" name="foto_old" value="{{$data->foto}}" class="form-control">
                             <input type="file" name="foto_new" class="form-control"
                                 accept="image/jpg, image/jpeg, image/png">
 

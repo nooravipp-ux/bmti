@@ -134,10 +134,10 @@
                         </div>
                     </div>
                     <div class="btn-tambah-konten d-flex mt-3">
-                        <i class="menu-icon mdi mdi-hospital pl-4"></i>
                         <a class="btn-konten"
                             href="{{route('pelatihan.konten', ['pelatihanId' => $pelatihan->id, 'topikId' => $tp->id])}}"
-                            style="padding-left: 3px;">Tambah konten Pembelajaran</a>
+                            style="padding-left: 3px;"> <i class="menu-icon mdi mdi-hospital pl-4" style="position:relative; top:2px;"></i> &nbsp; Tambah konten
+                            Pembelajaran</a>
                     </div>
                 </div>
             </div>
