@@ -1,65 +1,71 @@
 @extends('layouts.master')
-@section('title', 'BMTI | Pelatihan')
+@section('title', 'BMTI - Konten Pelatihan Mandiri')
 @section('content')
 
 @section('custom-css')
 <style>
-    .backdrop-modal {
-        padding: 20px;
-        position: absolute;
-        top: 200px;
-        width: 95%;
-        right: 2%;
-        height: auto;
-        background-color: white;
-        border: 1px solid #ddd;
-        box-shadow: 0.2px 0.6px 0.5px 0.5px;
-        z-index: 1;
-    }
+.backdrop-modal {
+    padding: 20px;
+    position: absolute;
+    top: 200px;
+    width: 95%;
+    right: 2%;
+    height: auto;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0.2px 0.6px 0.5px 0.5px;
+    z-index: 1;
+}
 
-    .topik {
-        padding-left: 30px;
-        display: flex;
-        color: #8D8D8D;
-    }
+.topik {
+    padding-left: 30px;
+    display: flex;
+    color: #8D8D8D;
+}
 
-    .pelatihan {
-        display: flex;
-    }
+.pelatihan {
+    display: flex;
+}
 
-    .pelatihan i {
-        float: inline-end;
-    }
+.pelatihan i {
+    float: inline-end;
+}
 
-    .button-container {
-        margin-top: 20px;
-    }
+.button-container {
+    margin-top: 20px;
+}
 
-    #modal-topik {
-        position: fixed;
-        left: 400px;
-        min-width: 1000px;
-    }
+#modal-topik {
+    position: fixed;
+    left: 400px;
+    min-width: 1000px;
+}
 
-    .konten {
-        padding-left: 30px;
-    }
+.konten {
+    padding-left: 30px;
+}
 
-    .kuis {
-        padding-left: 30px;
-    }
+.kuis {
+    padding-left: 30px;
+}
 
-    .btn-tambah-konten a {
-        text-decoration: none;
-    }
+.btn-tambah-konten a {
+    text-decoration: none;
+}
 
-    .header-container {
-        background-color: #ebebeb;
-    }
+.header-container {
+    background-color: #ebebeb;
+}
 
-    .font-italic {
-        font-style: italic;
+.font-italic {
+    font-style: italic;
+}
+
+@media only screen and (min-width: 400px) and (max-width: 767px) {
+    .marginResponsive {
+        margin-top: 25px;
     }
+}
 </style>
 @endsection
 
@@ -68,14 +74,17 @@
         <div class="col-lg-8 grid-margin">
             <form id="form-informasi" action="{{route('pelatihan.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
-                <div class="row header-container mb-3 p-2">
+                <div class="row header-container mb-3 p-2 marginResponsive">
                     <div class="col-sm-7">
                         <h3>Konten</h3>
                         <p>Deskripsi Konten dan Tujuan Konten yang Akan Dilakukan</p>
                     </div>
                     <div class="col-sm-5">
                         <div class="pt-2 pl-3">
-                            <a class="btn btn-md btn-rounded btn-danger btn-block" href="#" onclick="history.back()">Batal</a><a id="btn-to-konten-lesson" class="btn btn-md btn-rounded btn-primary btn-block" href="#">Selanjutnya</a>
+                            <a class="btn btn-md btn-rounded btn-danger btn-block" href="#"
+                                onclick="history.back()">Batal</a>
+                            <a id="btn-to-konten-lesson" class="btn btn-md btn-rounded btn-primary btn-block" href="#"
+                                style="margin-left:10px;">Selanjutnya</a>
                         </div>
                     </div>
                 </div>
@@ -83,22 +92,28 @@
                     <label for="deskripsi" class="col-sm-2 col-form-label">Isi konten</label>
                     <div class="col-sm-9">
                         <div class="pt-2">
-                            <input type="radio" class="form-check-input" name="options" value="materi_pembelajaran" checked> Materi Pembelajaran <br>
+                            <input type="radio" class="form-check-input" name="options" value="materi_pembelajaran"
+                                checked> Materi Pembelajaran <br>
                             <input type="radio" class="form-check-input" name="options" value="kuis"> Kuis
                         </div>
                     </div>
                 </div>
             </form>
-            <form id="form-materi-pembelajaran" action="{{route('pelatihan.topik.kontenPembelajaran.store')}}" method="POST" class="d-none" enctype="multipart/form-data">
+            <form id="form-materi-pembelajaran" action="{{route('pelatihan.topik.kontenPembelajaran.store')}}"
+                method="POST" class="d-none" enctype="multipart/form-data">
                 @csrf
-                <div class="row header-container mb-3 p-2">
+                <div class="row header-container mb-3 p-2 marginResponsive">
                     <div class="col-sm-7">
                         <h3>Konten</h3>
                         <p>Deskripsi Konten dan Tujuan Konten yang Akan Dilakukan</p>
                     </div>
                     <div class="col-sm-5">
                         <div class="pt-2 pl-3">
-                            <a id="btn-cancel-from-materi-pembelajaran" class="btn btn-md btn-rounded btn-danger btn-block" href="#">Batal</a><a id="btn-to-konten-lesson" class="btn btn-md btn-rounded btn-primary btn-block" href="#" onclick="document.getElementById('form-materi-pembelajaran').submit();">Simpan Konten</a>
+                            <a id="btn-cancel-from-materi-pembelajaran"
+                                class="btn btn-md btn-rounded btn-danger btn-block" href="#">Batal</a>
+                            <a id="btn-to-konten-lesson" class="btn btn-md btn-rounded btn-primary btn-block" style="margin-left:10px;" href="#"
+                                onclick="document.getElementById('form-materi-pembelajaran').submit();">Simpan
+                                Konten</a>
                         </div>
                     </div>
                 </div>
@@ -123,7 +138,8 @@
                     </div>
                 </div>
             </form>
-            <form id="form-kuis" action="{{route('pelatihan.topik.kontenQuiz.store')}}" method="POST" class="d-none" enctype="multipart/form-data">
+            <form id="form-kuis" action="{{route('pelatihan.topik.kontenQuiz.store')}}" method="POST" class="d-none"
+                enctype="multipart/form-data">
                 @csrf
                 <div class="row header-container mb-3 p-2">
                     <div class="col-sm-7">
@@ -134,7 +150,10 @@
                     </div>
                     <div class="col-sm-5">
                         <div class="pt-2 pl-3">
-                            <a id="btn-cancel-from-konfigurasi-kuis" class="btn btn-md btn-rounded btn-danger btn-block" href="#">Batal</a><a id="btn-to-konten-lesson" class="btn btn-md btn-rounded btn-primary btn-block" href="#" onclick="document.getElementById('form-kuis').submit();">Simpan Kuis</a>
+                            <a id="btn-cancel-from-konfigurasi-kuis" class="btn btn-md btn-rounded btn-danger btn-block"
+                                href="#">Batal</a><a id="btn-to-konten-lesson"
+                                class="btn btn-md btn-rounded btn-primary btn-block" href="#"
+                                onclick="document.getElementById('form-kuis').submit();">Simpan Kuis</a>
                         </div>
                     </div>
                 </div>
@@ -220,7 +239,8 @@
                 @foreach($quizes as $q)
                 <div class="row">
                     <label class="form-check-label col-sm-12 d-flex">
-                        <input type="checkbox" name="quizOptions[]" value="{{$q->id}}" class="form-check-input" style="margin-right: 10px;">
+                        <input type="checkbox" name="quizOptions[]" value="{{$q->id}}" class="form-check-input"
+                            style="margin-right: 10px;">
                         <p class="">{{$q->judul}}</p>
                     </label>
                 </div>
@@ -235,53 +255,53 @@
 
 <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
 <script type="text/javascript">
-    $(document).ready(function() {
-        $('.ckeditor').ckeditor();
-    });
+$(document).ready(function() {
+    $('.ckeditor').ckeditor();
+});
 
-    $('#btn-to-konten-lesson').click(function() {
+$('#btn-to-konten-lesson').click(function() {
 
-        if ($('input[name="options"]:checked').val() == 'kuis') {
-            $('#form-kuis').removeClass('d-none')
-            $('#form-informasi').addClass('d-none')
-        } else {
-            $('#form-materi-pembelajaran').removeClass('d-none')
-            $('#form-informasi').addClass('d-none')
-        }
-    });
-
-    $('#btn').click(function() {
+    if ($('input[name="options"]:checked').val() == 'kuis') {
+        $('#form-kuis').removeClass('d-none')
+        $('#form-informasi').addClass('d-none')
+    } else {
         $('#form-materi-pembelajaran').removeClass('d-none')
         $('#form-informasi').addClass('d-none')
-    });
+    }
+});
 
-    $('#btn-cancel-from-konfigurasi-kuis').click(function() {
-        $('#form-informasi').removeClass('d-none')
-        $('#form-kuis').addClass('d-none')
-    });
+$('#btn').click(function() {
+    $('#form-materi-pembelajaran').removeClass('d-none')
+    $('#form-informasi').addClass('d-none')
+});
 
-    $('#btn-cancel-from-materi-pembelajaran').click(function() {
-        $('#form-informasi').removeClass('d-none')
-        $('#form-materi-pembelajaran').addClass('d-none')
-    });
+$('#btn-cancel-from-konfigurasi-kuis').click(function() {
+    $('#form-informasi').removeClass('d-none')
+    $('#form-kuis').addClass('d-none')
+});
 
-    $('#input-waktu').hide()
-    $('#input-nilai').hide()
+$('#btn-cancel-from-materi-pembelajaran').click(function() {
+    $('#form-informasi').removeClass('d-none')
+    $('#form-materi-pembelajaran').addClass('d-none')
+});
 
-    $('#ckWaktu').change(function() {
-        if ($(this).is(":checked")) {
-            $('#input-waktu').show()
-        } else {
-            $('#input-waktu').hide()
-        }
-    });
+$('#input-waktu').hide()
+$('#input-nilai').hide()
 
-    $('#ckNilai').change(function() {
-        if ($(this).is(":checked")) {
-            $('#input-nilai').show()
-        } else {
-            $('#input-nilai').hide()
-        }
-    });
+$('#ckWaktu').change(function() {
+    if ($(this).is(":checked")) {
+        $('#input-waktu').show()
+    } else {
+        $('#input-waktu').hide()
+    }
+});
+
+$('#ckNilai').change(function() {
+    if ($(this).is(":checked")) {
+        $('#input-nilai').show()
+    } else {
+        $('#input-nilai').hide()
+    }
+});
 </script>
 @endsection
