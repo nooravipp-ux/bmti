@@ -105,7 +105,7 @@ Route::post('/import', [ImportDataEvaluasiController::class, 'importExcel'])->na
 Route::post('/import-testimoni', [ImportDataEvaluasiController::class, 'importExcelTestimoni'])->name('importTestimoni');
 
 Route::group(['middleware' => 'auth'], function () {
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware(['auth', 'verified']);
     
     Route::group(['prefix' => 'admin'], function () {
         Route::get('/users', [UserController::class, 'index'])->name('users');
