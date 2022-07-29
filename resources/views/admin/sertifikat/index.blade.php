@@ -8,15 +8,15 @@
 @section('content')
 
 <style>
-.marginCard {
-    margin-bottom: 10px;
-}
-
-@media only screen and (min-width: 400px) and (max-width: 767px) {
-    .marginResponsive {
-        margin-top: 25px;
+    .marginCard {
+        margin-bottom: 10px;
     }
-}
+
+    @media only screen and (min-width: 400px) and (max-width: 767px) {
+        .marginResponsive {
+            margin-top: 25px;
+        }
+    }
 </style>
 
 <div class="content-wrapper">
@@ -24,33 +24,43 @@
         <div class="col-lg-12 grid-margin marginResponsive">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">{{ __('Template Sertifikat') }}</h4>
+                    <h4 class="card-title">{{ __('Template Sertifikat') }} <?php $fullurl = url('files/templates/sertifikat.pdf'); ?></h4>
                     <!-- <p class="card-description">
                     </p> -->
-
-                    <div class="table-responsive">
-                        <table id="dataTable" class="table">
-                            <thead>
-                                <tr>
-                                    <a href="{{route('sertifikat.create')}}"
-                                        class="btn btn-primary btn-sm btn-rounded btn-icon-text marginCard">
-                                        <i class="ti-upload btn-icon-prepend"></i>
-                                        Create
-                                    </a>
-                                </tr>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Kode Sertifikat</th>
-                                    <th>Kategori Pelatihan</th>
-                                    <th>Template</th>
-                                    <th>Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                
-                            </tbody>
-                        </table>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary btn-sm btn-rounded btn-icon-text marginCard">
+                        <i class="ti-upload btn-icon-prepend"></i>
+                        Upload Template Sertifikat
+                    </a>
+                    <a href="{{route('sertifikat.download')}}" class="btn btn-primary btn-sm btn-rounded btn-icon-text marginCard">
+                        <i class="ti-download btn-icon-prepend"></i>
+                        Download Template Sertifikat
+                    </a>
+                    <div class="row justify-content-center mb-5">
+                        <iframe src="{{asset('files/templates/sertifikat.pdf')}}" width="100%" height="1000px"></iframe>
+                        <!-- <iframe src='https://view.officeapps.live.com/op/embed.aspx?src={{ $fullurl }}' width='1366px' height='623px' frameborder='0'>This is an embedded <a target='_blank' href='http://office.com'>Microsoft Office</a> document, powered by <a target='_blank' href='http://office.com/webapps'>Office Online</a>.</iframe> -->
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Upload Template</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="{{route('sertifikat.upload')}}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="mb-3">
+                            <label for="kode_jenis_kegiatan" class="form-label">Template File</label>
+                            <input type="file" name="file" class="form-control" required>
+                        </div>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Upload</button>
+                    </form>
                 </div>
             </div>
         </div>

@@ -285,6 +285,9 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
         Route::get('/sertifikat/edit', [SertifikatController::class, 'edit'])->name('sertifikat.edit');
         Route::post('/sertifikat/update', [SertifikatController::class, 'update'])->name('sertifikat.update');
         Route::get('/sertifikat/delete', [SertifikatController::class, 'delete'])->name('sertifikat.delete');
+
+        Route::post('/sertifikat/upload', [SertifikatController::class, 'upload'])->name('sertifikat.upload');
+        Route::get('/sertifikat/download', [SertifikatController::class, 'download'])->name('sertifikat.download');
     
     });
 

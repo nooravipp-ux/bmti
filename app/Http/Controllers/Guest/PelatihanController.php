@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use PhpOffice\PhpWord\TemplateProcessor;
 use PhpOffice\PhpWord\PhpWord;
+use PhpOffice\PhpWord\Element\Table;
 use App\Models\Kursus;
 use App\Models\KursusPeserta;
 use App\Models\Topik;
@@ -349,6 +350,7 @@ class PelatihanController extends Controller
 
     public function generateSertifikat()
     {
+        $this->generateNomorSertifikat(30);
 
         $infoPeserta = DB::table('t_kursus_peserta')
             ->join('m_peserta', 't_kursus_peserta.peserta_id', '=', 'm_peserta.id')
@@ -357,19 +359,37 @@ class PelatihanController extends Controller
             ->first();
 
 
-        $strukturProgram = DB::table('t_struktur_program')->where('kursus_id', $infoPeserta->kursus_id)->get();
+        $strukturProgram = DB::table('t_struktur_program')->where('kursus_id', $infoPeserta->kursus_id)->get()->toArray();
 
         $file = public_path('files/templates/sertifikat.docx');
         $tmpFile = public_path('files/sertifikat_peserta/output.docx');
 
         $template = new TemplateProcessor($file);
         $template->setValue('nama', $infoPeserta->nama_depan." ".$infoPeserta->nama_belakang); 
-        $template->setValue('no_sertifikat', "PP/B142014/002/2022");
+        $template->setValue('no_sertifikat', 'PP/B142014/002/2022');
         $template->setValue('nuptk', $infoPeserta->nuptk);
-        $template->setValue('judul', $infoPeserta->judul);  
+        $template->setValue('judul', $infoPeserta->judul);
+        $template->setValue('asal_sekolah', 'SMK 1 Bandung'); 
+        $template->setValue('kab_kota', 'Bandung');
+        $template->setValue('predikat', 'A');  
+
+        $template->cloneRowAndSetValues('id', $strukturProgram);
+
         $template->saveAs($tmpFile);
 
 
         // return response()->download(public_path('files/sertifikat_peserta/output.docx'));
+    }
+    
+    public function generateNomorSertifikat($pelatihanId){
+
+        $kursus = DB::table('t_kursus')
+                ->select('t_kursus.angkatan', 'm_kelompok_keahlian.kode')
+                ->join('m_kelompok_keahlian', 'm_kelompok_keahlian.id','=','t_kursus.kelompok_keahlian_id')
+                ->join('m_program_keahlian', 'm_program_keahlian.id','=','m_kelompok_keahlian.program_keahlian_id')
+                ->where('t_kursus.id', $pelatihanId)
+                ->first();
+
+        dd($kursus);
     }
 }

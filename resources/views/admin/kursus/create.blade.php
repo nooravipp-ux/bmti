@@ -51,6 +51,12 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="row">
+                            <label for="judul" class="col-sm-3 col-form-label">Angkatan / Group</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="angkatan" class="form-control mt-2">
+                            </div>
+                        </div>
                         <div class="row mb-3">
                             <label for="gambar" class="col-sm-3 col-form-label">Upload Gambar</label>
                             <div class="col-sm-9">
