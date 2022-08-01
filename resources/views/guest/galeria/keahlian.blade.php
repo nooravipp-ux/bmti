@@ -66,7 +66,7 @@
         @foreach($data as $dt)
         <div class="col-12 col-md-4 col-xl-4">
             <div class="img-teknik-permesinan shadow mt-5">
-                <img src="{{asset('/images/galeria/'.$dt->gambar_banner)}}" alt="Image" width="357px" height="247px" />
+                <img src="{{asset('/images/galeria/'.$dt->gambar_banner)}}" alt="Image" width="355px" height="245px" />
                 <a href="{{route('galeria.materi', [$dt->id])}}">
                     <div class="image-text"></div>
                 </a>

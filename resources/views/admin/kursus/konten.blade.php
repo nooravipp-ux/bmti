@@ -111,7 +111,8 @@
                         <div class="pt-2 pl-3">
                             <a id="btn-cancel-from-materi-pembelajaran"
                                 class="btn btn-md btn-rounded btn-danger btn-block" href="#">Batal</a>
-                            <a id="btn-to-konten-lesson" class="btn btn-md btn-rounded btn-primary btn-block" style="margin-left:10px;" href="#"
+                            <a id="btn-to-konten-lesson" class="btn btn-md btn-rounded btn-primary btn-block"
+                                style="margin-left:10px;" href="#"
                                 onclick="document.getElementById('form-materi-pembelajaran').submit();">Simpan
                                 Konten</a>
                         </div>
@@ -141,7 +142,7 @@
             <form id="form-kuis" action="{{route('pelatihan.topik.kontenQuiz.store')}}" method="POST" class="d-none"
                 enctype="multipart/form-data">
                 @csrf
-                <div class="row header-container mb-3 p-2">
+                <div class="row header-container mb-3 p-2 marginResponsive">
                     <div class="col-sm-7">
                         <h3>Konfigurasi Kuis</h3>
                         <p>Konfigurasi Kuis Yang akan Dilaksanakan</p>
@@ -151,8 +152,9 @@
                     <div class="col-sm-5">
                         <div class="pt-2 pl-3">
                             <a id="btn-cancel-from-konfigurasi-kuis" class="btn btn-md btn-rounded btn-danger btn-block"
-                                href="#">Batal</a><a id="btn-to-konten-lesson"
-                                class="btn btn-md btn-rounded btn-primary btn-block" href="#"
+                                href="#">Batal</a>
+                            <a id="btn-to-konten-lesson" class="btn btn-md btn-rounded btn-primary btn-block" href="#"
+                                style="margin-left:10px;"
                                 onclick="document.getElementById('form-kuis').submit();">Simpan Kuis</a>
                         </div>
                     </div>
