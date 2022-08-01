@@ -350,7 +350,7 @@ class PelatihanController extends Controller
 
     public function generateSertifikat()
     {
-        $this->generateNomorSertifikat(30);
+        
 
         $infoPeserta = DB::table('t_kursus_peserta')
             ->join('m_peserta', 't_kursus_peserta.peserta_id', '=', 'm_peserta.id')
@@ -358,6 +358,7 @@ class PelatihanController extends Controller
             ->where('t_kursus_peserta.id', 6)
             ->first();
 
+        $noSertifikat = $this->generateNomorSertifikat(6);
 
         $strukturProgram = DB::table('t_struktur_program')->where('kursus_id', $infoPeserta->kursus_id)->get()->toArray();
 
@@ -366,7 +367,7 @@ class PelatihanController extends Controller
 
         $template = new TemplateProcessor($file);
         $template->setValue('nama', $infoPeserta->nama_depan." ".$infoPeserta->nama_belakang); 
-        $template->setValue('no_sertifikat', 'PP/B142014/002/2022');
+        $template->setValue('no_sertifikat', $noSertifikat);
         $template->setValue('nuptk', $infoPeserta->nuptk);
         $template->setValue('judul', $infoPeserta->judul);
         $template->setValue('asal_sekolah', 'SMK 1 Bandung'); 
@@ -389,7 +390,9 @@ class PelatihanController extends Controller
                 ->join('m_program_keahlian', 'm_program_keahlian.id','=','m_kelompok_keahlian.program_keahlian_id')
                 ->where('t_kursus.id', $pelatihanId)
                 ->first();
+        
+        $noSertifikat = "PP/B".$kursus->kode."/".$kursus->angkatan."/".date('Y');
 
-        dd($kursus);
+        return $noSertifikat;
     }
 }
