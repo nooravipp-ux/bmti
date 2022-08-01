@@ -53,6 +53,7 @@ class KursusController extends Controller
         $imageName = $image->getClientOriginalName();
         $data = Kursus::create([
             'kelompok_keahlian_id' => $request->kelompok_keahlian_id,
+            'angkatan' => $request->angkatan,
             'author' => auth()->user()->name,
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,

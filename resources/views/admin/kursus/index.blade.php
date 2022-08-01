@@ -44,6 +44,7 @@
                                     <th>No</th>
                                     <th>Nama Pelatihan</th>
                                     <th>Kelompok Keahlian</th>
+                                    <th class="text-center">Angkatan / Group</th>
                                     <th class="text-center">Status Aktif</th>
                                     <th class="text-center">Status Publish</th>
                                     <th class="text-center">Aksi</th>
@@ -56,6 +57,7 @@
                                     <td><?php echo $no++; ?></td>
                                     <td>{{$row->judul}}</td>
                                     <td>{{$row->kategori_kursus}}</td>
+                                    <td class="text-center">{{$row->angkatan}}</td>
                                     <td class="text-center">
                                         @if($row->status_aktif == 1)
                                         Aktif
