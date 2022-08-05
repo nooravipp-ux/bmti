@@ -19,6 +19,7 @@
                 <button id="mulai-quiz" class="btn btn-sm btn-primary" style="font-family:glory; margin-top:20px;">Mulai Quiz</button>
             </div>
             <div id="list-quiz">
+                @if($configurasiQuiz->durasi > 0)
                 <div class="box-proses mb-3">
                     <p>Batas Waktu : <span id="demo" style="font-size: 17px;">{{$configurasiQuiz->durasi}} Menit</span>
                     </p>
@@ -28,6 +29,7 @@
                             aria-valuemax="100">75%</div>
                     </div>
                 </div>
+                @endif
                 <?php $no = 1; ?>
                 <form id="form-kuis"
                     action="{{route('pembelajaran.quiz.tandaiSelesai', ['id' => $pelatihanId, 'topikId' => $topikId, 'quizId' => $quizId])}}"
@@ -380,7 +382,11 @@ $('#list-quiz').hide();
 $('#mulai-quiz').click(function() {
     $('#mulai-quiz').hide();
     $('#list-quiz').show();
-    mulaiPenghitungWaktu();
+
+    if($('#durasi').val() > 0){
+        mulaiPenghitungWaktu();
+    }
+
     $('#navigation').hide();
 });
 

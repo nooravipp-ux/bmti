@@ -12,13 +12,7 @@
             </p>
             @endif
             @if($data->file)
-            $file_url = asset('files/file_konten/'.$data->file);
-            echo $file_url;
-            <iframe
-                src='https://view.officeapps.live.com/op/embed.aspx?src=localhost:8000/files/file_konten/1657017537_Doc Guide (Workflow Setting) .pptx'
-                width='740px' height='623px' frameborder='0'>This is an embedded <a target='_blank'
-                    href='http://office.com'>Microsoft Office</a> document, powered by <a target='_blank'
-                    href='http://office.com/webapps'>Office Online</a>.</iframe>
+                <iframe src="{{asset('files/file_konten/'.$data->file)}}" width="100%" height="1000px"></iframe>
             @endif
             <br />
             <hr />
@@ -29,7 +23,7 @@
                         <span style=" margin-left: 15px;">Previous Lesson</span>
                     </a>
                 </div>
-                <div class="col-4 prev-nav">
+                <div class="col-4">
                     <button class="btn-pembelajaran btn btn-primary">
                         <span><a href="{{route('pembelajaran.konten.tandaiSelesai', ['id' => $pelatihanId, 'topikId' => $topikId, 'kontenId' => $kontenId])}}"
                                 style="text-decoration:none; color:white;">MARK COMPLETE</a></span>

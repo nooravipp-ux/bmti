@@ -110,7 +110,10 @@ class KeahlianController extends Controller
         }
 
         $video = $request->file('video_content_new');
-        $videoName = $request->video_content_old;
+        if(!$request->video_content_old){
+            $videoName = "";
+        }
+        
 
         if($video){
             $videoName = time()."_".$video->getClientOriginalName();

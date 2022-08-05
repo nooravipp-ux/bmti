@@ -13,6 +13,7 @@ use App\Models\Topik;
 use App\Models\Quiz;
 use App\Models\Pertanyaan;
 use App\Models\LogEnrolledPesertaPelatihan;
+use App\Models\TopikQuiz;
 use Illuminate\Support\Facades\DB;
 
 class PelatihanController extends Controller
@@ -112,6 +113,8 @@ class PelatihanController extends Controller
             ->where('t_topik.kursus_id', $pelatihanId)
             ->get();
 
+            // dd($topikQuiz);
+
         $konten = DB::table('t_topik')
             ->select('t_topik_konten.topik_id', 't_konten.id', 't_konten.judul', 't_peserta_konten.status')
             ->join('t_topik_konten', 't_topik.id', '=', 't_topik_konten.topik_id')
@@ -130,6 +133,8 @@ class PelatihanController extends Controller
             ->first();
 
         $cekKontenSelesai = $this->cekKontenSelesai($pelatihanId, $topikId, $kontenId);
+
+        // dd($konten);
 
         return view('pembelajaran.konten', compact('pelatihan', 'topiks', 'topikQuiz', 'konten', 'data', 'pelatihanId', 'topikId', 'cekKontenSelesai', 'kontenId'));
     }
@@ -162,6 +167,8 @@ class PelatihanController extends Controller
             ->leftJoin('t_peserta_quiz', 't_peserta_quiz.topik_id', '=', 't_topik_quiz.topik_id')
             ->where('t_topik.kursus_id', $pelatihanId)
             ->get();
+
+        // dd($topikQuiz);
 
         $konten = DB::table('t_topik')
             ->select('t_topik_konten.topik_id', 't_konten.id', 't_konten.judul', 't_peserta_konten.status')
@@ -226,6 +233,7 @@ class PelatihanController extends Controller
             ->join('m_peserta', 'm_peserta.user_id', '=', 'users.id')
             ->where('users.id', auth()->user()->id)
             ->first();
+
 
         $kursusPesertaData = KursusPeserta::where('peserta_id', $userdata->id)->first();
 
