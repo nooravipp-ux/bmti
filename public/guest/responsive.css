@@ -1690,7 +1690,7 @@
     .img-teknik-permesinan {
         display: block;
         width: 300px;
-        height: 210px;
+        height: 205px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -2050,6 +2050,8 @@
         margin-top: -20px;
     }
     .img-teknik-permesinan {
+        width: 230px;
+        height: 160px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -2153,6 +2155,16 @@
     }
     .galeria-kompetensi-kategori {
         font-size: 12px;
+    }
+    .img-teknik-permesinan {
+        width: 300px;
+        height: 200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .img-teknik-permesinan img {
+        width: 300px;
+        height: 200px;
     }
 }
 
@@ -2829,14 +2841,11 @@
         margin-right: auto;
     }
     .img-alur {
-        top: 220px;
+        margin-top: 220px;
     }
     .img-alur img {
-        display: inline-block;
-        margin-left: auto;
-        margin-right: auto;
         width: 370px;
-        height: 330px;
+        height: 250px;
     }
     .myButton1 {
         margin-left: 0px;
@@ -2867,12 +2876,9 @@
         height: 520px;
     }
     .img-alur {
-        top: 170px;
+        margin-top: 170px;
     }
     .img-alur img {
-        display: inline-block;
-        margin-left: auto;
-        margin-right: auto;
         width: 440px;
         height: 330px;
     }
@@ -2901,12 +2907,9 @@
         height: 520px;
     }
     .img-alur {
-        top: 170px;
+        margin-top: 170px;
     }
     .img-alur img {
-        display: inline-block;
-        margin-left: auto;
-        margin-right: auto;
         width: 520px;
         height: 330px;
     }
@@ -2934,12 +2937,9 @@
         height: 550px;
     }
     .img-alur {
-        top: 80px;
+        margin-top: 80px;
     }
     .img-alur img {
-        display: inline-block;
-        margin-left: auto;
-        margin-right: auto;
         width: 700px;
         height: 500px;
     }
@@ -2951,22 +2951,29 @@
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .img-alur {
-        top: 20px;
+        margin-top: 20px;
     }
     .alur-img {
         width: 450px;
         height: 300px;
     }
     .img-alur img {
-        display: inline-block;
-        margin-left: auto;
-        margin-right: auto;
         width: 930px;
         height: 600px;
     }
     .btn-closeAlur {
         top: 10px;
         left: 920px;
+    }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1333px) {
+    .img-alur img {
+        width: 1100px;
+        height: 600px;
+    }
+    .btn-closeAlur {
+        left: 1100px;
     }
 }
 
