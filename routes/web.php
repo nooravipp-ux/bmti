@@ -317,6 +317,8 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
         //edit profil peserta
         Route::get('/profil/edit/{id}', [PesertaController::class, 'editProfil'])->name('profilPeserta.edit');
         Route::put('/profil/update/{id}', [PesertaController::class, 'updateProfil'])->name('profilPeserta.update');
+
+        Route::get('/get-data-alamat', [PesertaController::class, 'getDataAlamat']);
     });
 });
 
