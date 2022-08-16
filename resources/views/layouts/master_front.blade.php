@@ -89,7 +89,7 @@
             <div class="row">
                 <div class="col-3">
                     <div class="logo-footer">
-                        <a href="#">
+                        <a href="">
                             <img src="{{asset('guest/assets/images/logo-header.png')}}" width="170px" height="110px" />
                         </a>
                         <h1>Sahabat Cerdas</h1>
@@ -113,7 +113,7 @@
                                 width="30px" />
                         </a>
                         <br />
-                        <a href="{{url('#')}}" target="_blank">
+                        <a href="{{url('')}}" target="_blank">
                             <img class="icon-share" src="{{asset('guest/assets/images/telegram.png')}}" height="30px"
                                 width="30px" />
                         </a>
@@ -123,29 +123,45 @@
                 <div class="col-2">
                     <div class="text-1">
                         <span>Useful links</span>
-                        <p>About</p>
-                        <p>Partners</p>
-                        <p>Contact</p>
+                        <a href="">
+                            <p>About</p>
+                        </a>
+                        <a href="">
+                            <p>Partners</p>
+                        </a>
+                        <a href="">
+                            <p>Contact</p>
+                        </a>
                     </div>
                 </div>
 
                 <div class="col-2">
                     <div class="text-2">
                         <span>Help?</span>
-                        <p>FAQ</p>
-                        <p>Term & Condition</p>
-                        <p>Policy</p>
-                        <p>Privacy</p>
+                        <a href="">
+                            <p>FAQ</p>
+                        </a>
+                        <a href="">
+                            <p>Term & Condition</p>
+                        </a>
+                        <a href="">
+                            <p>Policy</p>
+                        </a>
+                        <a href="">
+                            <p>Privacy</p>
+                        </a>
                     </div>
                 </div>
 
                 <div class="col-4">
                     <div class="address">
                         <span>Alamat</span>
-                        <p>BBPPMPV Bidang Mesin dan Teknik Industri</p>
-                        <p>(BBPPMPV BMTI), Jl. Pesantren KM 2, Cibabat, Cimahi Utara 40513.</p>
-                        <p>Email : bbppmpv.bmti@kemdikbud.go.id</p>
-                        <p>Tel/Wa : (022) 6652326 / 08112242326</p>
+                        <a href="{{url('https://g.page/BBPPMPV-BMTI?share')}}" target="_blank">
+                            <p>BBPPMPV Bidang Mesin dan Teknik Industri</p>
+                            <p>(BBPPMPV BMTI), Jl. Pesantren KM 2, Cibabat, Cimahi Utara 40513.</p>
+                        </a>
+                        <p>Email : <a href="mailto:bbppmpv.bmti@kemdikbud.go.id">bbppmpv.bmti@kemdikbud.go.id</a></p>
+                        <p>Tel/Wa : <a href="tel:(022) 6652326">(022) 6652326</a> / <a href="{{url('https://wa.me/+628112242326')}}" target="_blank">08112242326</a></p>
                     </div>
                 </div>
             </div>

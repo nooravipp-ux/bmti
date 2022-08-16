@@ -28,6 +28,7 @@ class QuizController extends Controller
         $data = Quiz::create([
             'judul' => $request->judul,
             'kelompok_keahlian_id' => $request->kelompok_keahlian_id,
+            'tipe_quiz' => $request->tipe_quiz,
             'deskripsi' => $request->deskripsi
         ]);
 
@@ -45,6 +46,7 @@ class QuizController extends Controller
         $data->update([
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
+            'tipe_quiz' => $request->tipe_quiz,
             'durasi' => $request->durasi,
         ]);
 

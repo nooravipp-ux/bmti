@@ -25,7 +25,7 @@
                                 video maupun animasi yang memberi informasi singkat tentang konten kejuruan.</h3>
                         </div>
                     </div>
-                    <div class="text-center">
+                    <div class="text-center mt-2">
                         <button class="tablinks myButton1 center" onclick="step2OnClick()"><b>Pelatihan
                                 Mandiri</b></button>
                         <button class="tablinks myButton1" onclick="onClickKembali1()">Kembali</button>
@@ -49,7 +49,7 @@
                             </h3>
                         </div>
                     </div>
-                    <div class="text-center">
+                    <div class="text-center mt-2">
                         <button class="tablinks myButton1 center" onclick="step3OnClick()"><b>Pelatihan
                                 Terbimbing</b></button>
                         <button class="tablinks myButton1" onclick="onClickKembali2()">Kembali</button>
@@ -69,7 +69,7 @@
                                 pembelajaran di galeri kejuruan.</h3>
                         </div>
                     </div>
-                    <div class="text-center">
+                    <div class="text-center mt-2">
                         <button class="tablinks myButton1 center" onclick="step4OnClick()"><b>Sertifikat</b></button>
                         <button class="tablinks myButton1" onclick="onClickKembali3()">Kembali</button>
                     </div>
@@ -90,7 +90,7 @@
                             </h3>
                         </div>
                     </div>
-                    <div class="text-center">
+                    <div class="text-center mt-2">
                         <button class="open-button tablinks myButton1" onclick="onClickAlur()">Lihat Alur
                             Pembelajaran</button> &nbsp;&nbsp;&nbsp;
                         <button class="tablinks myButton1" onclick="onClickKembaliKeawal()">Kembali</button>
@@ -102,13 +102,16 @@
 </div>
 
 <div id="alur" class="d-none">
-    <div class="d-flex bg-alur">
-        <div class="col-12">
-            <div class="img-alur">
-                <img class="rounded" src="{{asset('guest/assets/images/alur.png')}}" alt="" width="1300" height="600" />
-            </div>
-            <div class="btn-closeAlur">
-                <button class="btn btn-danger btn-sm btn-circle" onclick="onClickCloseAlur()">X</button>
+    <div class="bg-alur">
+        <div class="d-flex">
+            <div class="col-12 text-center">
+                <div class="img-alur">
+                    <img class="rounded" src="{{asset('guest/assets/images/alur.png')}}" width="1300"
+                        height="600" />
+                </div>
+                <div class="btn-closeAlur">
+                    <button class="btn btn-danger btn-sm btn-circle" onclick="onClickCloseAlur()">X</button>
+                </div>
             </div>
         </div>
     </div>

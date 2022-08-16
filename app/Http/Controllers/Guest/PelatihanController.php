@@ -13,6 +13,7 @@ use App\Models\Topik;
 use App\Models\Quiz;
 use App\Models\Pertanyaan;
 use App\Models\LogEnrolledPesertaPelatihan;
+use App\Models\TopikQuiz;
 use Illuminate\Support\Facades\DB;
 
 class PelatihanController extends Controller
@@ -112,6 +113,8 @@ class PelatihanController extends Controller
             ->where('t_topik.kursus_id', $pelatihanId)
             ->get();
 
+            // dd($topikQuiz);
+
         $konten = DB::table('t_topik')
             ->select('t_topik_konten.topik_id', 't_konten.id', 't_konten.judul', 't_peserta_konten.status')
             ->join('t_topik_konten', 't_topik.id', '=', 't_topik_konten.topik_id')
@@ -130,6 +133,8 @@ class PelatihanController extends Controller
             ->first();
 
         $cekKontenSelesai = $this->cekKontenSelesai($pelatihanId, $topikId, $kontenId);
+
+        // dd($konten);
 
         return view('pembelajaran.konten', compact('pelatihan', 'topiks', 'topikQuiz', 'konten', 'data', 'pelatihanId', 'topikId', 'cekKontenSelesai', 'kontenId'));
     }
@@ -162,6 +167,8 @@ class PelatihanController extends Controller
             ->leftJoin('t_peserta_quiz', 't_peserta_quiz.topik_id', '=', 't_topik_quiz.topik_id')
             ->where('t_topik.kursus_id', $pelatihanId)
             ->get();
+
+        // dd($topikQuiz);
 
         $konten = DB::table('t_topik')
             ->select('t_topik_konten.topik_id', 't_konten.id', 't_konten.judul', 't_peserta_konten.status')
@@ -226,6 +233,7 @@ class PelatihanController extends Controller
             ->join('m_peserta', 'm_peserta.user_id', '=', 'users.id')
             ->where('users.id', auth()->user()->id)
             ->first();
+
 
         $kursusPesertaData = KursusPeserta::where('peserta_id', $userdata->id)->first();
 
@@ -350,7 +358,7 @@ class PelatihanController extends Controller
 
     public function generateSertifikat()
     {
-        $this->generateNomorSertifikat(30);
+        
 
         $infoPeserta = DB::table('t_kursus_peserta')
             ->join('m_peserta', 't_kursus_peserta.peserta_id', '=', 'm_peserta.id')
@@ -358,6 +366,7 @@ class PelatihanController extends Controller
             ->where('t_kursus_peserta.id', 6)
             ->first();
 
+        $noSertifikat = $this->generateNomorSertifikat(6);
 
         $strukturProgram = DB::table('t_struktur_program')->where('kursus_id', $infoPeserta->kursus_id)->get()->toArray();
 
@@ -366,7 +375,7 @@ class PelatihanController extends Controller
 
         $template = new TemplateProcessor($file);
         $template->setValue('nama', $infoPeserta->nama_depan." ".$infoPeserta->nama_belakang); 
-        $template->setValue('no_sertifikat', 'PP/B142014/002/2022');
+        $template->setValue('no_sertifikat', $noSertifikat);
         $template->setValue('nuptk', $infoPeserta->nuptk);
         $template->setValue('judul', $infoPeserta->judul);
         $template->setValue('asal_sekolah', 'SMK 1 Bandung'); 
@@ -389,7 +398,9 @@ class PelatihanController extends Controller
                 ->join('m_program_keahlian', 'm_program_keahlian.id','=','m_kelompok_keahlian.program_keahlian_id')
                 ->where('t_kursus.id', $pelatihanId)
                 ->first();
+        
+        $noSertifikat = "PP/B".$kursus->kode."/".$kursus->angkatan."/".date('Y');
 
-        dd($kursus);
+        return $noSertifikat;
     }
 }
