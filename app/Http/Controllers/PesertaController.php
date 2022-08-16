@@ -105,7 +105,7 @@ class PesertaController extends Controller
         ->join('m_kecamatan', 'm_kecamatan.id', '=', 'm_desa_kelurahan.id_kecamatan')
         ->join('m_kota_kab', 'm_kota_kab.id', '=', 'm_kecamatan.id_kota_kabupaten')
         ->join('m_provinsi', 'm_provinsi.id', '=', 'm_kota_kab.provinsi_id')
-        ->where('m_desa_kelurahan.id', '=', '1')
+        ->where('m_desa_kelurahan.id', '=', $request->search)
         ->get();
         return response()->json([
             'data' => $data,
@@ -114,7 +114,11 @@ class PesertaController extends Controller
     public function editProfil($id){
         $id_peserta = DB::table('m_peserta')->where('user_id', auth()->user()->id)->first();
         $data = Peserta::find($id);
-        return view('admin.dashboard.peserta.editProfil', compact(['data', 'id_peserta']));
+        $desa_kelurahan = DB::table('m_desa_kelurahan')->get();
+        $kecamatan = DB::table('m_kecamatan')->get();
+        $kota_kab = DB::table('m_kota_kab')->get();
+        $provinsi = DB::table('m_provinsi')->get();
+        return view('admin.dashboard.peserta.editProfil', compact(['data', 'id_peserta', 'desa_kelurahan', 'kecamatan', 'kota_kab', 'provinsi']));
     }
     public function updateProfil(Request $request, $id){
         $validatedData = $request->validate([

@@ -93,23 +93,47 @@
                         </div>
                         <div class="mb-3">
                             <label for="desa_kelurahan" class="form-label">Desa / Kelurahan</label>
-                            <input type="number" name="desa_kelurahan" class="form-control" id="desa_kelurahan"
-                                aria-describedby="emailHelp" value="{{$data->desa_kelurahan}}">
+                            <select id="desa_kelurahan" type="text" name="desa_kelurahan" class="form-control">
+                                <option value="{{$data->desa_kelurahan}}">{{$data->desa_kelurahan}}</option>
+                                @foreach($desa_kelurahan as $row)
+                                <option value="{{$row->id}}">{{$row->nama_desa_kelurahan}}</option>
+                                @endforeach
+                            </select>
+                            <!-- <input type="number" name="desa_kelurahan" class="form-control" id="desa_kelurahan"
+                                aria-describedby="emailHelp" value="{{$data->desa_kelurahan}}"> -->
                         </div>
                         <div class="mb-3">
                             <label for="kecamatan" class="form-label">Kecamatan</label>
-                            <input type="number" name="kecamatan" class="form-control" id="kecamatan"
-                                aria-describedby="emailHelp" value="{{$data->kecamatan}}">
+                            <select type="text" id="kecamatan" name="kecamatan" class="form-control">
+                                <option value="">-</option>
+                                @foreach($kecamatan as $row)
+                                <option value="{{$row->id}}">{{$row->nama_kecamatan}}</option>
+                                @endforeach
+                            </select>
+                            <!-- <input type="number" name="kecamatan" class="form-control" id="kecamatan"
+                                aria-describedby="emailHelp" value="{{$data->kecamatan}}"> -->
                         </div>
                         <div class="mb-3">
                             <label for="kota_kab" class="form-label">Kota / Kabupaten</label>
-                            <input type="number" name="kota_kab" class="form-control" id="kota_kab"
-                                aria-describedby="emailHelp" value="{{$data->kota_kab}}">
+                            <select type="text" id="kota_kab" name="kota_kab" class="form-control">
+                                <option value="">-</option>
+                                @foreach($kota_kab as $row)
+                                <option value="{{$row->id}}">{{$row->nama}}</option>
+                                @endforeach
+                            </select>
+                            <!-- <input type="number" name="kota_kab" class="form-control" id="kota_kab"
+                                aria-describedby="emailHelp" value="{{$data->kota_kab}}"> -->
                         </div>
                         <div class="mb-3">
                             <label for="provinsi" class="form-label">Provinsi</label>
-                            <input type="number" name="provinsi" class="form-control" id="provinsi"
-                                aria-describedby="emailHelp" value="{{$data->provinsi}}">
+                            <select type="text" id="provinsi"name="provinsi" class="form-control">
+                                <option value="">-</option>
+                                @foreach($provinsi as $row)
+                                <option value="{{$row->id}}">{{$row->nama}}</option>
+                                @endforeach
+                            </select>
+                            <!-- <input type="number" name="provinsi" class="form-control" id="provinsi"
+                                aria-describedby="emailHelp" value="{{$data->provinsi}}"> -->
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
@@ -130,10 +154,31 @@
         </div>
     </div>
 </div>
+@endsection
+@section('script')
 <script>
 $(document).ready(function() {
-    $('#dataTable').DataTable();
+    $('#desa_kelurahan').change(function() {
+        var id_desa_kelurahan = $('#desa_kelurahan').val();
+        load_data(id_desa_kelurahan)
+    });
 
 });
+
+function load_data(search) {
+    $.ajax({
+        url: "/peserta/get-data-alamat",
+        method: "GET",
+        data: {
+            search: search
+        },
+        success: function(data) {
+            console.log(data.data[0].id_kecamatan)
+            $('#kecamatan').val(data.data[0].id_kecamatan);
+            $('#kota_kab').val(data.data[0].id_kota_kab);
+            $('#provinsi').val(data.data[0].id_provinsi);
+        }
+    });
+}
 </script>
 @endsection
