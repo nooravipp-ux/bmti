@@ -100,6 +100,17 @@ class PesertaController extends Controller
 
         return redirect('/admin/peserta')->with('message', 'Data Berhasil Dihapus');
     }
+    public function getDataAlamat(Request $request){
+        $data = DB::table('m_desa_kelurahan')->select('m_desa_kelurahan.id as id_desa_kelurahan', 'm_desa_kelurahan.nama_desa_kelurahan as nama_desa_kelurahan', 'm_kecamatan.nama_kecamatan as nama_kecamatan', 'm_kota_kab.nama as nama_kota_kab', 'm_provinsi.nama as nama_provinsi')
+        ->join('m_kecamatan', 'm_kecamatan.id', '=', 'm_desa_kelurahan.id_kecamatan')
+        ->join('m_kota_kab', 'm_kota_kab.id', '=', 'm_kecamatan.id_kota_kabupaten')
+        ->join('m_provinsi', 'm_provinsi.id', '=', 'm_kota_kab.provinsi_id')
+        ->where('m_desa_kelurahan.id', '=', '1')
+        ->get();
+        return response()->json([
+            'data' => $data,
+        ]);
+    }
     public function editProfil($id){
         $id_peserta = DB::table('m_peserta')->where('user_id', auth()->user()->id)->first();
         $data = Peserta::find($id);
