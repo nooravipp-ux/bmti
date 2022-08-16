@@ -136,6 +136,10 @@ class KeahlianController extends Controller
         $data = Keahlian::find($id);
         $data->delete();
 
+        File::delete('images/galeria/'.$data->gambar_banner);
+        File::delete('videos/galeria/'.$data->video_content);
+        File::delete('files/galeria/'.$data->file_content);
+
         return redirect('/admin/keahlian')->with('message', 'Data Berhasil Dihapus');
     }
 }
