@@ -11,7 +11,20 @@
 </style>
 
 <div class="content-wrapper">
-    <div class="row">
+    <div class="row justify-content-center">
+        <!-- <div class="col-12 col-lg-6 grid-margin">
+            <div class="card">
+                <div class="card-body">
+                    <div class="mb-3 text-center">
+                        <img class="rounded-circle" src="{{asset('images/profil/'.$data->foto)}}" alt="Profile image"
+                            width="120px" height="120px" type="file" name="foto_new" class="form-control"
+                            accept="image/jpg, image/jpeg, image/png">
+                        <p class="mb-1"><b>{{auth()->user()->name}}</b></p>
+                        <p>{{auth()->user()->email}}</p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
         <div class="col-12 col-lg-12 grid-margin">
             <div class="card">
                 <div class="card-body">
@@ -29,8 +42,15 @@
                         enctype="multipart/form-data">
                         @method('put')
                         @csrf
+                        <div class="mb-3 text-center">
+                            <img class="rounded-circle" src="{{asset('images/profil/'.$data->foto)}}"
+                                alt="Profile image" width="120px" height="120px" type="file" name="foto_new"
+                                class="form-control" accept="image/jpg, image/jpeg, image/png">
+                            <p class="mb-1"><b>{{auth()->user()->name}}</b></p>
+                            <p>{{auth()->user()->email}}</p>
+                        </div>
                         <div class="mb-3">
-                            <label for="foto" class="form-label">Foto</label>
+                            <label for="foto" class="form-label">Pilih Foto</label>
                             <input type="hidden" name="foto_old" value="{{$data->foto}}" class="form-control">
                             <input type="file" name="foto_new" class="form-control"
                                 accept="image/jpg, image/jpeg, image/png">
@@ -101,7 +121,9 @@
                             <input type="number" name="no_telepon" class="form-control" id="no_telepon"
                                 aria-describedby="emailHelp" value="{{$data->no_telepon}}">
                         </div>
-                        <button type="submit" class="btn btn-primary btn-sm btn-rounded">Submit</button>
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn btn-primary btn-sm btn-rounded">Update</button>
+                        </div>
                     </form>
                 </div>
             </div>
