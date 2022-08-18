@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class EvaluasiController extends Controller
 {
@@ -13,7 +14,14 @@ class EvaluasiController extends Controller
      */
     public function index()
     {
-        //
+        $data = DB::table('t_kursus_peserta')
+                ->select('t_kursus_peserta.id', 'm_peserta.nama_depan', 't_kursus.judul','m_kelompok_keahlian.nama', 't_kursus_peserta.status')
+                ->join('m_peserta', 'm_peserta.id', '=', 't_kursus_peserta.peserta_id')
+                ->join('t_kursus', 't_kursus.id', '=', 't_kursus_peserta.kursus_id')
+                ->join('m_kelompok_keahlian', 'm_kelompok_keahlian.id', '=', 't_kursus.kelompok_keahlian_id')
+                ->where('t_kursus_peserta.status', 1)
+                ->get();
+        return view('admin.dashboard.evaluator.evaluasiSertifikat.index', compact('data'));
     }
 
     /**
@@ -45,7 +53,19 @@ class EvaluasiController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = DB::table('t_kursus_peserta')
+                ->select('t_kursus_peserta.id', 'm_peserta.nama_depan', 't_kursus.judul','m_kelompok_keahlian.nama', 't_kursus_peserta.status')
+                ->join('m_peserta', 'm_peserta.id', '=', 't_kursus_peserta.peserta_id')
+                ->join('t_kursus', 't_kursus.id', '=', 't_kursus_peserta.kursus_id')
+                ->join('m_kelompok_keahlian', 'm_kelompok_keahlian.id', '=', 't_kursus.kelompok_keahlian_id')
+                ->where('t_kursus_peserta.id', $id)
+                ->first();   
+
+        $sertifikat = DB::table('t_sertifikat_peserta')->where('kursus_peserta_id', $id)->first();
+
+        dd($data);
+
+        return view('admin.dashboard.evaluator.evaluasiSertifikat.detailSertifikatPeserta', compact('data', 'sertifikat'));
     }
 
     /**

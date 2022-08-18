@@ -36,6 +36,8 @@ use App\Http\Controllers\ProgramKegiatanController;
 
 use App\Http\Controllers\StrukturProgramController;
 
+use App\Http\Controllers\EvaluasiController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -306,6 +308,9 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
         Route::get('/testimoni/edit/{id}', [TestimoniController::class, 'edit'])->name('testimoni.edit');
         Route::put('/testimoni/update/{id}', [TestimoniController::class, 'update'])->name('testimoni.update');
         Route::get('/testimoni/delete/{id}', [TestimoniController::class, 'delete'])->name('testimoni.delete');
+
+        Route::get('/sertifikat-peserta', [EvaluasiController::class, 'index'])->name('evaluasi.index');
+        Route::get('/sertifikat-peserta/detail/{id}', [EvaluasiController::class, 'show'])->name('evaluasi.show');
     });
 
     Route::group(['prefix' => 'peserta'], function () {

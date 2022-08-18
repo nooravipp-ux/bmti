@@ -355,6 +355,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{route('evaluasi.index')}}">
+                            <i class="menu-icon mdi mdi-file-import"></i>
+                            <span class="menu-title">Sertifikat Peserta</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{route('testimoni')}}">
                             <i class="menu-icon mdi mdi-file-import"></i>
                             <span class="menu-title">Data Testimoni</span>

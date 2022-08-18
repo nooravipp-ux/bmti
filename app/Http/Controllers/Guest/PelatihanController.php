@@ -168,7 +168,7 @@ class PelatihanController extends Controller
             ->where('t_topik.kursus_id', $pelatihanId)
             ->get();
 
-        // dd($topikQuiz);
+        //dd($topikQuiz);
 
         $konten = DB::table('t_topik')
             ->select('t_topik_konten.topik_id', 't_konten.id', 't_konten.judul', 't_peserta_konten.status')
@@ -358,8 +358,6 @@ class PelatihanController extends Controller
 
     public function generateSertifikat()
     {
-        
-
         $infoPeserta = DB::table('t_kursus_peserta')
             ->join('m_peserta', 't_kursus_peserta.peserta_id', '=', 'm_peserta.id')
             ->join('t_kursus', 't_kursus.id', '=', 't_kursus_peserta.kursus_id')

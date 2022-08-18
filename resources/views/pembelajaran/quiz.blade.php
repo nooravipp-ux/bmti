@@ -25,8 +25,8 @@
                     </p>
                     <input type="hidden" id="durasi" value="{{$configurasiQuiz->durasi}}">
                     <div class="progress">
-                        <div class="progress-bar w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0"
-                            aria-valuemax="100">75%</div>
+                        <div class="progress-bar w-75 barmeter" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+                            aria-valuemax="100"></div>
                     </div>
                 </div>
                 @endif
@@ -369,8 +369,8 @@ Highcharts.chart('bar', {
     series: [{
         innerSize: '50%',
         data: [
-            ['Complete', 10],
-            ['Non Complete', 8],
+            ['Complete', 80],
+            ['Non Complete', 20],
         ],
         colors: ['#2289FF', '#E0DECA']
     }]
@@ -456,6 +456,8 @@ function mulaiPenghitungWaktu() {
         // Output the result in an element with id="demo"
         document.getElementById("demo").innerHTML = hours + " : " +
             minutes + " : " + seconds;
+
+        $('.barmeter').attr('meterprogress='+mathnum);
 
         // If the count down is over, write some text 
         if (distance < 0) {

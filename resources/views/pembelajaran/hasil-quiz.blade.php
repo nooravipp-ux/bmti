@@ -18,8 +18,13 @@
                 <p>{{$counterJawabanBenar}} dari {{$totalSoal}} Pertanyaan terjawab dengan benar</p>
                 <p>Waktu Pengerjaan : 00:10:32</p>
                 <div class="row mt-4 mb-4">
+                    <div class="col-md-12">
+                        <textarea class="form-control" name="" id="" cols="50" rows="10" placeholder="Mohon diisi testimoni"></textarea>
+                    </div>
+                </div>
+                <div class="row mt-4 mb-4">
                     <div class="col-md-12 justify-content-center text-center">
-                        <button id="pratinjau" class="btn btn-sm btn-primary" style="margin-right: 10px; font-family:glory;">Pratinjau Pertanyaan</button><button class="btn btn-sm btn-primary" style="margin-left: 10px; font-family:glory;">Ulang Quiz</button>
+                        <button id="pratinjau" class="btn btn-sm btn-primary" style="margin-right: 10px; font-family:glory;">Pratinjau Pertanyaan</button><button class="btn btn-sm btn-primary" style="margin-left: 10px; font-family:glory;">Ulang Quiz</button><button class="btn btn-sm btn-primary" style="margin-left: 10px; font-family:glory;">Download Sertifikat</button>
                     </div>
                 </div>
             </div>
@@ -223,6 +228,7 @@
     $('#pratinjau').click(function() {
         $('#list-quiz').show();
         $('#navigation').hide();
+        $('.btn-finish').hide();
     });
 
     function myFunction() {

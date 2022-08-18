@@ -7,263 +7,263 @@
 </head>
 
 <style>
-/* Dashboard User */
-.container,
-.container-fluid,
-.container-lg,
-.container-md,
-.container-sm,
-.container-xl,
-.container-xxl {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.list-content {
-    width: 100%;
-    margin-left: 5px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-.cardPelatihan {
-    width: 100%;
-    height: 100%;
-    font-family: "glory";
-    overflow: hidden;
-}
-
-.cardPelatihan h5 {
-    font-size: 16px;
-    font-weight: 600;
-}
-
-.cardSertifikat {
-    font-family: "glory";
-    height: 340px;
-    width: 100%;
-    overflow: hidden;
-}
-
-.cardSertifikat h5 {
-    font-weight: 600;
-    font-size: 16px;
-}
-
-.textCardSertifikat {
-    font-family: "glory";
-    font-weight: 600;
-    font-size: 12px;
-    height: 280px;
-    overflow: scroll;
-    padding-right: 10px;
-}
-
-.textCardSertifikat::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-}
-
-.textCardSertifikat::-webkit-scrollbar-thumb {
-    border: 1px solid #9c9c9c;
-    background: #c2c2c2;
-    border-radius: 10px;
-}
-
-.textCardSertifikat::-webkit-scrollbar-thumb:hover {
-    background: #9c9c9c;
-}
-
-.textCardSertifikat::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.textCardSertifikat b {
-    cursor: pointer;
-    color: #53C7FF;
-}
-
-.cardKursus {
-    font-family: "glory";
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-}
-
-.cardKursus h5 {
-    font-weight: 600;
-    font-size: 16px;
-}
-
-.textCardKursus {
-    font-weight: 600;
-    font-size: 12px;
-    height: 280px;
-    overflow: scroll;
-    padding-right: 10px;
-}
-
-.textCardKursus::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-}
-
-.textCardKursus::-webkit-scrollbar-thumb {
-    border: 1px solid #9c9c9c;
-    background: #c2c2c2;
-    border-radius: 10px;
-}
-
-.textCardKursus::-webkit-scrollbar-thumb:hover {
-    background: #9c9c9c;
-}
-
-.textCardKursus::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.textCardKursus span {
-    margin-bottom: -10px;
-}
-
-.cardAktifitas {
-    font-family: "glory";
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-}
-
-.cardAktifitas span {
-    font-weight: 600;
-    font-size: 14px;
-}
-
-.cardAktifitas h5 {
-    font-weight: 600;
-    font-size: 16px;
-}
-
-.cardAktifitas i {
-    padding: 4px;
-}
-
-.cardAktifitas .in {
-    color: #06FF00;
-}
-
-.cardAktifitas i {
-    padding: 4px;
-}
-
-.cardAktifitas .out {
-    color: #FF0000;
-}
-
-.scrollCardAktifitas {
-    overflow: scroll;
-    height: 280px;
-    padding-right: 10px;
-}
-
-.scrollCardAktifitas::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-}
-
-.scrollCardAktifitas::-webkit-scrollbar-thumb {
-    border: 1px solid #9c9c9c;
-    background: #c2c2c2;
-    border-radius: 10px;
-}
-
-.scrollCardAktifitas::-webkit-scrollbar-thumb:hover {
-    background: #9c9c9c;
-}
-
-.scrollCardAktifitas::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.cardDiklat {
-    font-family: "glory";
-    font-size: 12px;
-    font-weight: 600;
-    height: 320px;
-    width: 100%;
-    overflow: hidden;
-}
-
-.cardDiklat h5 {
-    font-weight: 600;
-    font-size: 16px;
-}
-
-.cardDiklat i {
-    padding-top: 5px;
-    height: 20px;
-    width: 20px;
-    text-align: center;
-    background-color: #1492E6;
-    font-size: 10px;
-    color: white;
-    cursor: pointer;
-}
-
-.tablePeserta {
-    overflow: scroll;
-    height: 300px;
-    padding-right: 10px;
-}
-
-.tablePeserta::-webkit-scrollbar {
-    margin: 10px;
-    width: 10px;
-    height: 10px;
-}
-
-.tablePeserta::-webkit-scrollbar-thumb {
-    border: 1px solid #9c9c9c;
-    background: #c2c2c2;
-    border-radius: 10px;
-}
-
-.tablePeserta::-webkit-scrollbar-thumb:hover {
-    background: #9c9c9c;
-}
-
-.tablePeserta::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.cardStatistikKehadiran {
-    font-size: 12px;
-    font-weight: 600;
-    font-family: "glory";
-    height: 320px;
-    width: 100%;
-    overflow: hidden;
-}
-
-.cardStatistikKehadiran h5 {
-    font-size: 16px;
-    font-weight: 600;
-}
-
-.cardStatistikKehadiran i {
-    margin-right: 10px;
-}
-
-.filter button {
-    margin-left: 10px;
-}
-
-@media only screen and (min-width: 400px) and (max-width: 991px) {
-
-    .marginCard {
-        margin-top: 20px;
+    /* Dashboard User */
+    .container,
+    .container-fluid,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl {
+        padding-left: 0;
+        padding-right: 0;
     }
-}
 
-/* End Dashboard User */
+    .list-content {
+        width: 100%;
+        margin-left: 5px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .cardPelatihan {
+        width: 100%;
+        height: 100%;
+        font-family: "glory";
+        overflow: hidden;
+    }
+
+    .cardPelatihan h5 {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .cardSertifikat {
+        font-family: "glory";
+        height: 340px;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .cardSertifikat h5 {
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    .textCardSertifikat {
+        font-family: "glory";
+        font-weight: 600;
+        font-size: 12px;
+        height: 280px;
+        overflow: scroll;
+        padding-right: 10px;
+    }
+
+    .textCardSertifikat::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+
+    .textCardSertifikat::-webkit-scrollbar-thumb {
+        border: 1px solid #9c9c9c;
+        background: #c2c2c2;
+        border-radius: 10px;
+    }
+
+    .textCardSertifikat::-webkit-scrollbar-thumb:hover {
+        background: #9c9c9c;
+    }
+
+    .textCardSertifikat::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .textCardSertifikat b {
+        cursor: pointer;
+        color: #53C7FF;
+    }
+
+    .cardKursus {
+        font-family: "glory";
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .cardKursus h5 {
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    .textCardKursus {
+        font-weight: 600;
+        font-size: 12px;
+        height: 280px;
+        overflow: scroll;
+        padding-right: 10px;
+    }
+
+    .textCardKursus::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+
+    .textCardKursus::-webkit-scrollbar-thumb {
+        border: 1px solid #9c9c9c;
+        background: #c2c2c2;
+        border-radius: 10px;
+    }
+
+    .textCardKursus::-webkit-scrollbar-thumb:hover {
+        background: #9c9c9c;
+    }
+
+    .textCardKursus::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .textCardKursus span {
+        margin-bottom: -10px;
+    }
+
+    .cardAktifitas {
+        font-family: "glory";
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .cardAktifitas span {
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    .cardAktifitas h5 {
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    .cardAktifitas i {
+        padding: 4px;
+    }
+
+    .cardAktifitas .in {
+        color: #06FF00;
+    }
+
+    .cardAktifitas i {
+        padding: 4px;
+    }
+
+    .cardAktifitas .out {
+        color: #FF0000;
+    }
+
+    .scrollCardAktifitas {
+        overflow: scroll;
+        height: 280px;
+        padding-right: 10px;
+    }
+
+    .scrollCardAktifitas::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+
+    .scrollCardAktifitas::-webkit-scrollbar-thumb {
+        border: 1px solid #9c9c9c;
+        background: #c2c2c2;
+        border-radius: 10px;
+    }
+
+    .scrollCardAktifitas::-webkit-scrollbar-thumb:hover {
+        background: #9c9c9c;
+    }
+
+    .scrollCardAktifitas::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .cardDiklat {
+        font-family: "glory";
+        font-size: 12px;
+        font-weight: 600;
+        height: 320px;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .cardDiklat h5 {
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    .cardDiklat i {
+        padding-top: 5px;
+        height: 20px;
+        width: 20px;
+        text-align: center;
+        background-color: #1492E6;
+        font-size: 10px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .tablePeserta {
+        overflow: scroll;
+        height: 300px;
+        padding-right: 10px;
+    }
+
+    .tablePeserta::-webkit-scrollbar {
+        margin: 10px;
+        width: 10px;
+        height: 10px;
+    }
+
+    .tablePeserta::-webkit-scrollbar-thumb {
+        border: 1px solid #9c9c9c;
+        background: #c2c2c2;
+        border-radius: 10px;
+    }
+
+    .tablePeserta::-webkit-scrollbar-thumb:hover {
+        background: #9c9c9c;
+    }
+
+    .tablePeserta::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .cardStatistikKehadiran {
+        font-size: 12px;
+        font-weight: 600;
+        font-family: "glory";
+        height: 320px;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .cardStatistikKehadiran h5 {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .cardStatistikKehadiran i {
+        margin-right: 10px;
+    }
+
+    .filter button {
+        margin-left: 10px;
+    }
+
+    @media only screen and (min-width: 400px) and (max-width: 991px) {
+
+        .marginCard {
+            margin-top: 20px;
+        }
+    }
+
+    /* End Dashboard User */
 </style>
 
 <script src="{{asset('admin/vendors/highchart/code/highcharts.js')}}"></script>
@@ -286,10 +286,10 @@
                         <h5 class="text-center">Pelatihan Berjalan</h5>
                         <div class="filter mb-2 font-weight-normal">
                             <select class="form-select" aria-label="Default select example">
-                                <option selected>TKR001 - Pemeliharaan Kelistrikan Motor</option>
-                                <option value="1">TKR001 - Pemeliharaan Kelistrikan Motor</option>
-                                <option value="2">TKR001 - Pemeliharaan Kelistrikan Motor</option>
-                                <option value="3">TKR001 - Pemeliharaan Kelistrikan Motor</option>
+                                <option value="">-- Pilih Pelatihan --</option>
+                                @foreach($data as $dt)
+                                <option value="{{$dt->id}}">{{$dt->kode}} - {{$dt->judul}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <figure class="highcharts-figure">
@@ -307,10 +307,10 @@
                         <h5 class="text-center">Sertifikat Pelatihan</h5>
                         <div class="filter mb-1">
                             <select class="form-select" aria-label="Default select example">
-                                <option selected>DKLT01 - Pemeliharaan Kelistrikan Motor</option>
-                                <option value="1">DKLT02 - Pemeliharaan Kelistrikan Motor</option>
-                                <option value="2">DKLT03 - Pemeliharaan Kelistrikan Motor</option>
-                                <option value="3">DKLT04 - Pemeliharaan Kelistrikan Motor</option>
+                                <option value="">-- Pilih Pelatihan --</option>
+                                @foreach($data as $dt)
+                                <option value="{{$dt->id}}">{{$dt->kode}} - {{$dt->judul}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="textCardSertifikat">
@@ -322,34 +322,7 @@
                                         <Link href="/"><b> &#62;&#62;&#62;</b></Link>
                                     </div>
                                 </div>
-                                <div class="list-content mt-2 bg-white rounded">
-                                    <span class="p-2"></span>
-                                    <div class="d-flex justify-content-between p-2">
-                                        <span></span>
-                                        <Link href="/"><b> &#62;&#62;&#62;</b></Link>
-                                    </div>
-                                </div>
-                                <div class="list-content mt-2 bg-white rounded">
-                                    <span class="p-2"></span>
-                                    <div class="d-flex justify-content-between p-2">
-                                        <span></span>
-                                        <Link href="/"><b> &#62;&#62;&#62;</b></Link>
-                                    </div>
-                                </div>
-                                <div class="list-content mt-2 bg-white rounded">
-                                    <span class="p-2"></span>
-                                    <div class="d-flex justify-content-between p-2">
-                                        <span></span>
-                                        <Link href="/"><b> &#62;&#62;&#62;</b></Link>
-                                    </div>
-                                </div>
-                                <div class="list-content mt-2 bg-white rounded">
-                                    <span class="p-2"></span>
-                                    <div class="d-flex justify-content-between p-2">
-                                        <span></span>
-                                        <Link href="/"><b> &#62;&#62;&#62;</b></Link>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -501,54 +474,15 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php $no = 1; ?>
+                                @foreach($data as $dt)
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td><i class="fa-solid fa-eye"></i></td>
+                                    <th scope="row"><?php echo $no++; ?></th>
+                                    <td>{{$dt->judul}}</td>
+                                    <td>{{$dt->nama}}</td>
+                                    <td><a href="{{route('peserta.pelatihan.katalog.detail', ['idPelatihan' => $dt->id])}}"><i class="fa-solid fa-eye"></i></a></td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td><i class="fa-solid fa-eye"></i></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td><i class="fa-solid fa-eye"></i></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td><i class="fa-solid fa-eye"></i></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">5</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td><i class="fa-solid fa-eye"></i></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">6</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td><i class="fa-solid fa-eye"></i></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">7</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td><i class="fa-solid fa-eye"></i></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">8</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td><i class="fa-solid fa-eye"></i></td>
-                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -579,110 +513,110 @@
 
 @endsection @section('script')
 <script type="text/javascript">
-Highcharts.chart('chart1', {
-    chart: {
-        type: 'pie',
-        options3d: {
-            enabled: true,
-            alpha: 45,
-            beta: 0
-        }
-    },
-    title: {
-        text: ''
-    },
-    credits: {
-        enabled: false
-    },
-    accessibility: {
-        point: {
-            valueSuffix: '%'
-        }
-    },
-    tooltip: {
-        headerFormat: '<span style="font-size:12px; fontFamily:glory;">{point.key}</span><table>',
-        pointFormat: '<tr><td style="fontFamily:glory;">{series.name} : </td>' +
-            '<td style="padding:0"><b>{point.percentage:.1f}%</b></td></tr>',
-        footerFormat: '</table>',
-        useHTML: true
-    },
-    plotOptions: {
-        pie: {
-            allowPointSelect: true,
-            cursor: 'pointer',
-            dataLabels: {
+    Highcharts.chart('chart1', {
+        chart: {
+            type: 'pie',
+            options3d: {
                 enabled: true,
-                format: '{point.percentage:.1f} %'
-            },
-            showInLegend: true,
-
-            depth: 35,
-            dataLabels: {
-                formatter: function() {
-                    if (this.percentage != 0) return Math.round(this.percentage) + '%';
+                alpha: 45,
+                beta: 0
+            }
+        },
+        title: {
+            text: ''
+        },
+        credits: {
+            enabled: false
+        },
+        accessibility: {
+            point: {
+                valueSuffix: '%'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:12px; fontFamily:glory;">{point.key}</span><table>',
+            pointFormat: '<tr><td style="fontFamily:glory;">{series.name} : </td>' +
+                '<td style="padding:0"><b>{point.percentage:.1f}%</b></td></tr>',
+            footerFormat: '</table>',
+            useHTML: true
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.percentage:.1f} %'
                 },
-                distance: -40,
-                style: {
-                    color: 'white',
-                    fontSize: '14px'
+                showInLegend: true,
+
+                depth: 35,
+                dataLabels: {
+                    formatter: function() {
+                        if (this.percentage != 0) return Math.round(this.percentage) + '%';
+                    },
+                    distance: -40,
+                    style: {
+                        color: 'white',
+                        fontSize: '14px'
+                    }
                 }
             }
-        }
-    },
-    series: [{
-        type: 'pie',
-        name: 'Rasio Perbandingan',
-        data: [
-            ['Complete', 150000],
-            ['Non Complete', 63000],
-        ],
-        colors: ['#4B8673', '#354259']
-    }]
-});
+        },
+        series: [{
+            type: 'pie',
+            name: 'Rasio Perbandingan',
+            data: [
+                ['Complete', 150000],
+                ['Non Complete', 63000],
+            ],
+            colors: ['#4B8673', '#354259']
+        }]
+    });
 </script>
 
 <script type="text/javascript">
-Highcharts.chart('chart2', {
-    chart: {
-        type: 'area'
-    },
-    title: {
-        text: ''
-    },
-    xAxis: {
-        categories: ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu']
-    },
-    yAxis: {
-        min: 0,
+    Highcharts.chart('chart2', {
+        chart: {
+            type: 'area'
+        },
         title: {
-            text: 'Waktu Rata - Rata',
-            style: {
-                fontFamily: 'glory',
+            text: ''
+        },
+        xAxis: {
+            categories: ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu']
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Waktu Rata - Rata',
+                style: {
+                    fontFamily: 'glory',
+                }
             }
-        }
-    },
-    plotOptions: {
-        area: {
-            fillOpacity: 0.5
-        }
-    },
-    credits: {
-        enabled: false
-    },
-    tooltip: {
-        headerFormat: '<span style="font-size:12px; fontFamily:glory;">{point.key}</span><table>',
-        pointFormat: '<tr><td style="fontFamily:glory;">{series.name} : </td>' +
-            '<td style="fontFamily:glory;"><b>{point.y:.0f} Hari</b></td></tr>',
-        footerFormat: '</table>',
-        useHTML: true
-    },
-    series: [{
-        name: 'Waktu Rata - Rata',
-        data: [10, 20, 30, 10, 20, 30],
-        color: '#147AD6',
-        fillColor: 'rgba(99, 161, 255, 0.329)',
-        lineColor: '#147AD6'
-    }]
-});
+        },
+        plotOptions: {
+            area: {
+                fillOpacity: 0.5
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:12px; fontFamily:glory;">{point.key}</span><table>',
+            pointFormat: '<tr><td style="fontFamily:glory;">{series.name} : </td>' +
+                '<td style="fontFamily:glory;"><b>{point.y:.0f} Hari</b></td></tr>',
+            footerFormat: '</table>',
+            useHTML: true
+        },
+        series: [{
+            name: 'Waktu Rata - Rata',
+            data: [10, 20, 30, 10, 20, 30],
+            color: '#147AD6',
+            fillColor: 'rgba(99, 161, 255, 0.329)',
+            lineColor: '#147AD6'
+        }]
+    });
 </script>
 @endsection
