@@ -21,8 +21,8 @@
                         </div>
                         <div class="mb-3">
                             <label for="inputnama" class="form-label">Nama</label>
-                            <input type="text" name="nama" class="form-control" id="inputnama
-                                aria-describedby=" emailHelp" value="{{$data->nama}}">
+                            <input type="text" name="nama" class="form-control" id="inputnama"
+                                aria-describedby="emailHelp" value="{{$data->nama}}">
                         </div>
                         <button type="submit" class="btn btn-primary btn-sm btn-rounded">Submit</button>
                     </form>

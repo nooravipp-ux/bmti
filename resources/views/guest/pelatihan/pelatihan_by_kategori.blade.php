@@ -74,11 +74,11 @@
         <div class="col-8 col-lg-9 col-xl-10 content">
             <h2>Course Content</h2>
         </div>
-        <div class="col-4 col-lg-2 col-xl-2 icon-mandiri mt-5">
+        <!-- <div class="col-4 col-lg-2 col-xl-2 icon-mandiri mt-5">
             <img src="{{asset('guest/assets/images/collapse-up.png')}}" id="icon-pelatihan-2"
                 style="width:20px; height:20px;" onclick="myFunction2()" /> &nbsp;
             <span>Collapse All</span>
-        </div>
+        </div> -->
     </div>
     <div id="content-pelatihan-2" class="content">
         @foreach($topiks as $tp)
@@ -89,11 +89,11 @@
                     <a href="{{route('pembelajaran.topik',['id' => $pelatihan->id, 'topikId' => $tp->id])}}"
                         style="text-decoration: none; top:12px; left:15px;"><span>{{$tp->judul}}</span></a>
                 </div>
-                <div class="col-4 col-xl-2 collapse-select">
+                <!-- <div class="col-4 col-xl-2 collapse-select">
                     <img src="{{asset('guest/assets/images/collapse-up.png')}}" id="icon-pelatihan-3"
                         style="width:20px; height:20px;" onclick="myFunction3()" /> &nbsp;
                     <span>Collapse</span>
-                </div>
+                </div> -->
             </div>
         </div>
 

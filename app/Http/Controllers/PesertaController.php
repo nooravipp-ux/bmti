@@ -100,10 +100,25 @@ class PesertaController extends Controller
 
         return redirect('/admin/peserta')->with('message', 'Data Berhasil Dihapus');
     }
+    public function getDataAlamat(Request $request){
+        $data = DB::table('m_desa_kelurahan')->select('m_desa_kelurahan.id as id_desa_kelurahan', 'm_desa_kelurahan.nama_desa_kelurahan as nama_desa_kelurahan', 'm_kecamatan.id as id_kecamatan', 'm_kecamatan.nama_kecamatan as nama_kecamatan', 'm_kota_kab.id as id_kota_kab', 'm_kota_kab.nama as nama_kota_kab', 'm_provinsi.id as id_provinsi', 'm_provinsi.nama as nama_provinsi')
+        ->join('m_kecamatan', 'm_kecamatan.id', '=', 'm_desa_kelurahan.id_kecamatan')
+        ->join('m_kota_kab', 'm_kota_kab.id', '=', 'm_kecamatan.id_kota_kabupaten')
+        ->join('m_provinsi', 'm_provinsi.id', '=', 'm_kota_kab.provinsi_id')
+        ->where('m_desa_kelurahan.id', '=', $request->search)
+        ->get();
+        return response()->json([
+            'data' => $data,
+        ]);
+    }
     public function editProfil($id){
         $id_peserta = DB::table('m_peserta')->where('user_id', auth()->user()->id)->first();
         $data = Peserta::find($id);
-        return view('admin.dashboard.peserta.editProfil', compact(['data', 'id_peserta']));
+        $desa_kelurahan = DB::table('m_desa_kelurahan')->get();
+        $kecamatan = DB::table('m_kecamatan')->get();
+        $kota_kab = DB::table('m_kota_kab')->get();
+        $provinsi = DB::table('m_provinsi')->get();
+        return view('admin.dashboard.peserta.editProfil', compact(['data', 'id_peserta', 'desa_kelurahan', 'kecamatan', 'kota_kab', 'provinsi']));
     }
     public function updateProfil(Request $request, $id){
         $validatedData = $request->validate([
