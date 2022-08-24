@@ -64,8 +64,8 @@
             <div class="navbar-menu-wrapper d-flex align-items-top">
                 <ul class="navbar-nav">
                     <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-                        <h1 class="welcome-text">Selamat Datang, <span
-                                class="text-black fw-bold" style="text-transform: capitalize;">{{auth()->user()->name}}</span></h1>
+                        <h1 class="welcome-text">Selamat Datang, <span class="text-black fw-bold"
+                                style="text-transform: capitalize;">{{auth()->user()->name}}</span></h1>
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto">
@@ -441,6 +441,18 @@
                                     </a></li>
                                 <li class="nav-item"> <a class="nav-link" href="{{route('kelompokKeahlian')}}">
                                         Kelompok Keahlian
+                                    </a></li>
+                                <li class="nav-item"> <a class="nav-link" href="{{route('kelurahan')}}">
+                                        Desa Kelurahan
+                                    </a></li>
+                                <li class="nav-item"> <a class="nav-link" href="{{route('kecamatan')}}">
+                                        Kecamatan
+                                    </a></li>
+                                <li class="nav-item"> <a class="nav-link" href="{{route('kota')}}">
+                                        Kota Kabupaten
+                                    </a></li>
+                                <li class="nav-item"> <a class="nav-link" href="{{route('provinsi')}}">
+                                        Provinsi
                                     </a></li>
                             </ul>
                         </div>

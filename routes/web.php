@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KotaController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
@@ -10,31 +11,34 @@ use App\Http\Controllers\ContentController;
 use App\Http\Controllers\PesertaController;
 use App\Http\Controllers\KeahlianController;
 use App\Http\Controllers\PMandiriController;
+use App\Http\Controllers\ProvinsiController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\KecamatanController;
+use App\Http\Controllers\KelurahanController;
 use App\Http\Controllers\TestimoniController;
 use App\Http\Controllers\TopikQuizController;
 use App\Http\Controllers\KompetensiController;
 use App\Http\Controllers\PertanyaanController;
+use App\Http\Controllers\SertifikatController;
 use App\Http\Controllers\JenisKursusController;
 use App\Http\Controllers\Guest\BerandaController;
 use App\Http\Controllers\Guest\GaleriaController;
-use App\Http\Controllers\JenisPMandiriController;
-use App\Http\Controllers\KategoriKursusController;
-use App\Http\Controllers\MasterListDataController;
-use App\Http\Controllers\PerusahaanMitraController;
-use App\Http\Controllers\ImportDataEvaluasiController;
-use App\Http\Controllers\BidangKeahlianController;
-use App\Http\Controllers\ProgramKeahlianController;
-use App\Http\Controllers\KelompokKeahlianController;
-use App\Http\Controllers\SertifikatController;
-
-use App\Http\Controllers\Guest\PelatihanController;
-
-use App\Http\Controllers\KursusPesertaController;
 use App\Http\Controllers\JenisKegiatanController;
-use App\Http\Controllers\ProgramKegiatanController;
+use App\Http\Controllers\JenisPMandiriController;
+use App\Http\Controllers\KursusPesertaController;
+use App\Http\Controllers\BidangKeahlianController;
 
+use App\Http\Controllers\KategoriKursusController;
+
+use App\Http\Controllers\MasterListDataController;
+use App\Http\Controllers\Guest\PelatihanController;
+use App\Http\Controllers\PerusahaanMitraController;
+
+use App\Http\Controllers\ProgramKeahlianController;
+use App\Http\Controllers\ProgramKegiatanController;
 use App\Http\Controllers\StrukturProgramController;
+use App\Http\Controllers\KelompokKeahlianController;
+use App\Http\Controllers\ImportDataEvaluasiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -243,6 +247,35 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 
         Route::get('/pelatihan', [KursusController::class, 'index'])->name('pelatihan');
 
+        //wilayah
+        Route::get('/kelurahan', [KelurahanController::class, 'index'])->name('kelurahan');
+        Route::get('/kelurahan/create', [KelurahanController::class, 'create'])->name('kelurahan.create');
+        Route::post('/kelurahan/store', [KelurahanController::class, 'store'])->name('kelurahan.store');
+        Route::get('/kelurahan/edit/{id}', [KelurahanController::class, 'edit'])->name('kelurahan.edit');
+        Route::put('/kelurahan/update/{id}', [KelurahanController::class, 'update'])->name('kelurahan.update');
+        Route::get('/kelurahan/delete/{id}', [KelurahanController::class, 'delete'])->name('kelurahan.delete');
+
+        Route::get('/kecamatan', [KecamatanController::class, 'index'])->name('kecamatan');
+        Route::get('/kecamatan/create', [KecamatanController::class, 'create'])->name('kecamatan.create');
+        Route::post('/kecamatan/store', [KecamatanController::class, 'store'])->name('kecamatan.store');
+        Route::get('/kecamatan/edit/{id}', [KecamatanController::class, 'edit'])->name('kecamatan.edit');
+        Route::put('/kecamatan/update/{id}', [KecamatanController::class, 'update'])->name('kecamatan.update');
+        Route::get('/kecamatan/delete/{id}', [KecamatanController::class, 'delete'])->name('kecamatan.delete');
+
+        Route::get('/kota', [KotaController::class, 'index'])->name('kota');
+        Route::get('/kota/create', [KotaController::class, 'create'])->name('kota.create');
+        Route::post('/kota/store', [KotaController::class, 'store'])->name('kota.store');
+        Route::get('/kota/edit/{id}', [KotaController::class, 'edit'])->name('kota.edit');
+        Route::put('/kota/update/{id}', [KotaController::class, 'update'])->name('kota.update');
+        Route::get('/kota/delete/{id}', [KotaController::class, 'delete'])->name('kota.delete');
+        
+        Route::get('/provinsi', [ProvinsiController::class, 'index'])->name('provinsi');
+        Route::get('/provinsi/create', [ProvinsiController::class, 'create'])->name('provinsi.create');
+        Route::post('/provinsi/store', [ProvinsiController::class, 'store'])->name('provinsi.store');
+        Route::get('/provinsi/edit/{id}', [ProvinsiController::class, 'edit'])->name('provinsi.edit');
+        Route::put('/provinsi/update/{id}', [ProvinsiController::class, 'update'])->name('provinsi.update');
+        Route::get('/provinsi/delete/{id}', [ProvinsiController::class, 'delete'])->name('provinsi.delete');
+        
         //Kurus - Topik
         // Route::get('/pelatihan/{kursusId}', [KursusController::class, 'createTopik'])->name('pelatihan.topik');
 
