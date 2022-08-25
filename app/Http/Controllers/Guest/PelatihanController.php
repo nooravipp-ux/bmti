@@ -333,7 +333,14 @@ class PelatihanController extends Controller
         $quiz = Quiz::find($topikId);
         $pertanyaan = Pertanyaan::where('quiz_id', $quizId)->get();
 
-        return view('pembelajaran.hasil-quiz', compact('totalSoal', 'counterJawabanBenar', 'pertanyaan', 'pelatihan', 'topiks', 'topikQuiz', 'konten', 'data', 'pelatihanId', 'topikId', 'quizId', 'dataQuiz', 'configurasiQuiz'));
+        return view('pembelajaran.hasil-quiz', compact('totalSoal', 'counterJawabanBenar', 'pertanyaan', 'pelatihan', 'topiks', 'topikQuiz', 'konten', 'data', 'pelatihanId', 'topikId', 'quizId', 'dataQuiz', 'configurasiQuiz','nilaiAkhir', 'kursusPesertaId'));
+    }
+
+    public function submitTestimoni(Request $request){
+
+        $this->generateSertifikat($request->kursusPesertaId, $request->pelatihanId, $request->testimoni);
+
+        return redirect()->route('pelatihan.detail', ['id' => $request->pelatihanId]);
     }
 
 
@@ -356,20 +363,22 @@ class PelatihanController extends Controller
         }
     }
 
-    public function generateSertifikat()
+    public function generateSertifikat($kursusPesertaId, $pelatihanId, $testimoni)
     {
         $infoPeserta = DB::table('t_kursus_peserta')
             ->join('m_peserta', 't_kursus_peserta.peserta_id', '=', 'm_peserta.id')
             ->join('t_kursus', 't_kursus.id', '=', 't_kursus_peserta.kursus_id')
-            ->where('t_kursus_peserta.id', 6)
+            ->where('t_kursus_peserta.id', $kursusPesertaId)
             ->first();
 
-        $noSertifikat = $this->generateNomorSertifikat(6);
+
+        $noSertifikat = $this->generateNomorSertifikat($pelatihanId);
 
         $strukturProgram = DB::table('t_struktur_program')->where('kursus_id', $infoPeserta->kursus_id)->get()->toArray();
 
         $file = public_path('files/templates/sertifikat.docx');
-        $tmpFile = public_path('files/sertifikat_peserta/output.docx');
+        $fileName = $this->generateFileName($pelatihanId);
+        $tmpFile = public_path('files/sertifikat_peserta/'.$fileName.'.docx');
 
         $template = new TemplateProcessor($file);
         $template->setValue('nama', $infoPeserta->nama_depan." ".$infoPeserta->nama_belakang); 
@@ -384,8 +393,15 @@ class PelatihanController extends Controller
 
         $template->saveAs($tmpFile);
 
+        DB::table('t_kursus_peserta')->where('id', $kursusPesertaId)->update([
+            'status' => 1,
+            'tanggal_selesai' => now(),
+            'no_sertifikat' => $noSertifikat,
+            'sertifikat_file_name' => $fileName,
+            'sertifikat_url_path' => 'files/sertifikat_peserta/',
+            'testimoni' => $testimoni,
+        ]);
 
-        // return response()->download(public_path('files/sertifikat_peserta/output.docx'));
     }
     
     public function generateNomorSertifikat($pelatihanId){
@@ -398,6 +414,20 @@ class PelatihanController extends Controller
                 ->first();
         
         $noSertifikat = "PP/B".$kursus->kode."/".$kursus->angkatan."/".date('Y');
+
+        return $noSertifikat;
+    }
+
+    public function generateFileName($pelatihanId){
+
+        $kursus = DB::table('t_kursus')
+                ->select('t_kursus.angkatan', 'm_kelompok_keahlian.kode')
+                ->join('m_kelompok_keahlian', 'm_kelompok_keahlian.id','=','t_kursus.kelompok_keahlian_id')
+                ->join('m_program_keahlian', 'm_program_keahlian.id','=','m_kelompok_keahlian.program_keahlian_id')
+                ->where('t_kursus.id', $pelatihanId)
+                ->first();
+        
+        $noSertifikat = "PP-B".$kursus->kode."-".$kursus->angkatan."-".date('Y');
 
         return $noSertifikat;
     }

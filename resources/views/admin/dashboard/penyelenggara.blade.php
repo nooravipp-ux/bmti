@@ -452,7 +452,7 @@ Highcharts.chart('chart4', {
         type: 'bar'
     },
     title: {
-        text: 'Perbandingan Peserta Terdaftar/Diundang dan Tuntas/Hadir',
+        text: 'Pelatihan Selesai',
         style: {
             fontFamily: 'glory',
         }
@@ -509,18 +509,10 @@ Highcharts.chart('chart4', {
     credits: {
         enabled: false
     },
-    series: [{
-        name: 'Peserta',
-        data: [100, 100],
-        color: "#293462"
-    }, {
+    series: [ {
         name: 'Selesai',
         data: [80, 90],
         color: "#809A6F"
-    }, {
-        name: 'Belum Selesai',
-        data: [20, 10],
-        color: "#00FFAB"
     }]
 });
 </script>

@@ -15,7 +15,7 @@ class EvaluasiController extends Controller
     public function index()
     {
         $data = DB::table('t_kursus_peserta')
-                ->select('t_kursus_peserta.id', 'm_peserta.nama_depan', 't_kursus.judul','m_kelompok_keahlian.nama', 't_kursus_peserta.status')
+                ->select('t_kursus_peserta.*', 'm_peserta.nama_depan', 't_kursus.judul','m_kelompok_keahlian.nama', 't_kursus_peserta.status')
                 ->join('m_peserta', 'm_peserta.id', '=', 't_kursus_peserta.peserta_id')
                 ->join('t_kursus', 't_kursus.id', '=', 't_kursus_peserta.kursus_id')
                 ->join('m_kelompok_keahlian', 'm_kelompok_keahlian.id', '=', 't_kursus.kelompok_keahlian_id')
@@ -54,18 +54,14 @@ class EvaluasiController extends Controller
     public function show($id)
     {
         $data = DB::table('t_kursus_peserta')
-                ->select('t_kursus_peserta.id', 'm_peserta.nama_depan', 't_kursus.judul','m_kelompok_keahlian.nama', 't_kursus_peserta.status')
+                ->select('t_kursus_peserta.*', 'm_peserta.nama_depan', 't_kursus.judul','t_kursus.gambar','m_kelompok_keahlian.nama')
                 ->join('m_peserta', 'm_peserta.id', '=', 't_kursus_peserta.peserta_id')
                 ->join('t_kursus', 't_kursus.id', '=', 't_kursus_peserta.kursus_id')
                 ->join('m_kelompok_keahlian', 'm_kelompok_keahlian.id', '=', 't_kursus.kelompok_keahlian_id')
                 ->where('t_kursus_peserta.id', $id)
-                ->first();   
+                ->first();  
 
-        $sertifikat = DB::table('t_sertifikat_peserta')->where('kursus_peserta_id', $id)->first();
-
-        dd($data);
-
-        return view('admin.dashboard.evaluator.evaluasiSertifikat.detailSertifikatPeserta', compact('data', 'sertifikat'));
+        return view('admin.dashboard.evaluator.evaluasiSertifikat.detailSertifikatPeserta', compact('data'));
     }
 
     /**

@@ -44,7 +44,8 @@
                                     <th>No</th>
                                     <th>Nama Pelatihan</th>
                                     <th>Kelompok Keahlian</th>
-                                    <th class="text-center">Angkatan / Group</th>
+                                    <th class="text-center">Jumlah konten</th>
+                                    <th>Author</th>
                                     <th class="text-center">Status Aktif</th>
                                     <th class="text-center">Status Publish</th>
                                     <th class="text-center">Aksi</th>
@@ -57,7 +58,8 @@
                                     <td><?php echo $no++; ?></td>
                                     <td>{{$row->judul}}</td>
                                     <td>{{$row->kategori_kursus}}</td>
-                                    <td class="text-center">{{$row->angkatan}}</td>
+                                    <td></td>
+                                    <td>{{$row->author}}</td>
                                     <td class="text-center">
                                         @if($row->status_aktif == 1)
                                         Aktif
@@ -76,11 +78,11 @@
                                         <a href="{{ route('pelatihan.topik', [$row->id]) }}"
                                             class="btn btn-dark btn-sm btn-rounded btn-icon-prepend">Atur
                                             <i class="ti-reload btn-icon-append"></i></a>
-                                        <a href="{{ route('pelatihan.delete', ['id'=>$row->id]) }}"
+                                        <!-- <a href="{{ route('pelatihan.delete', ['id'=>$row->id]) }}"
                                             onclick="return confirm('Apakah anda yakin ?')"
                                             class="btn btn-danger btn-sm btn-rounded btn-icon-text"
                                             style="margin-left:5px;">Delete
-                                            <i class="ti-trash btn-icon-append"></i></a>
+                                            <i class="ti-trash btn-icon-append"></i></a> -->
                                     </td>
                                 </tr>
                                 @endforeach

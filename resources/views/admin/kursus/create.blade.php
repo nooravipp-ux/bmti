@@ -57,6 +57,18 @@
                                 <input type="text" name="angkatan" class="form-control mt-2">
                             </div>
                         </div>
+                        <div class="row">
+                            <label for="judul" class="col-sm-3 col-form-label">Tanggal Mulai</label>
+                            <div class="col-sm-9">
+                                <input type="date" name="start_date" class="form-control mt-2">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label for="judul" class="col-sm-3 col-form-label">Tanggal Berakhir</label>
+                            <div class="col-sm-9">
+                                <input type="date" name="end_date" class="form-control mt-2">
+                            </div>
+                        </div>
                         <div class="row mb-3">
                             <label for="gambar" class="col-sm-3 col-form-label">Upload Gambar</label>
                             <div class="col-sm-9">

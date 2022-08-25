@@ -32,6 +32,7 @@
                             <thead>
                                 <tr>
                                     <button type="button" class="btn btn-primary btn-rounded marginCard" data-toggle="modal" data-target="#exampleModalCenter">Buat Soal</button>
+                                    <button type="button" class="btn btn-primary btn-rounded marginCard pl-3" data-toggle="modal" data-target="#exampleModalCenter">Export Quiz</button>
                                 </tr>
                                 <tr>
                                     <th>No</th>

@@ -145,6 +145,11 @@
                             <input type="number" name="no_telepon" class="form-control" id="no_telepon"
                                 aria-describedby="emailHelp" value="{{$data->no_telepon}}">
                         </div>
+                        <div class="mb-3">
+                            <label for="no_telepon" class="form-label">Asal Sekolah</label>
+                            <input type="text" name="asal_sekolah" class="form-control" id="no_telepon"
+                                aria-describedby="emailHelp" value="{{$data->asal_sekolah}}">
+                        </div>
                         <div class="text-center mt-4">
                             <button type="submit" class="btn btn-primary btn-sm btn-rounded">Update</button>
                         </div>

@@ -234,7 +234,7 @@ button {
 <div class="container">
     <div class="row justify-content-center">
         <div class="text-afiliasi text-center">
-            <h1>Industri BMTI</h1>
+            <h1>Industri Mitra BMTI</h1>
             <hr />
         </div>
     </div>

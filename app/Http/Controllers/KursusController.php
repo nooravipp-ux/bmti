@@ -57,7 +57,9 @@ class KursusController extends Controller
             'author' => auth()->user()->name,
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
-            'gambar' => $imageName
+            'gambar' => $imageName,
+            'start_date' => $request->start_date,
+            'end_date' => $request->end_date
         ]);
         if ($request->file('gambar')) {
             $image->move(public_path('images/pelatihan/'), $imageName);
@@ -95,12 +97,18 @@ class KursusController extends Controller
         return redirect()->back();
     }
 
+    public function editTopik($topikId){
+        dd($topikId);
+    }
+
     public function buatKonten($pelatihanId, $topikId)
     {
         $pelatihan = Kursus::where('id', $pelatihanId)->first();
         $kelId = $pelatihan->kelompok_keahlian_id;
         $quizes = Quiz::where('kelompok_keahlian_id', $kelId)->get();
-        return view('admin.kursus.konten', compact('pelatihanId', 'topikId', 'quizes'));
+
+        $feedback = Quiz::where('kelompok_keahlian_id', $kelId)->where('tipe_quiz', 2)->get();
+        return view('admin.kursus.konten', compact('pelatihanId', 'topikId', 'quizes','feedback'));
     }
 
     public function simpanKontenPembelajaran(Request $request)

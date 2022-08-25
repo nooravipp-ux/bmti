@@ -68,8 +68,7 @@
         </div>
         @endif
         <div class="col-lg-10 d-flex justify-content-between marginResponsive">
-            <h3 class="card-title" style="padding-left: 3px;padding-bottom: 10px;">{{$pelatihan->judul}}
-                {{$pelatihan->id}}</h3>
+            <h3 class="card-title" style="padding-left: 3px;padding-bottom: 10px;">{{$pelatihan->judul}}</h3>
             <div>
                 <a href="{{route('pelatihan.strukturProgram', [$pelatihan->id])}}"
                     class="btn btn-primary btn-sm btn-rounded">Struktur Program</a>
@@ -89,7 +88,7 @@
                             <i class="menu-icon mdi mdi-dots-vertical" id="dropdownMenuButton" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false"></i>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Ubah</a>
+                                <a class="dropdown-item" href="{{route('topik.edit', ['id' => $tp->id])}}">Ubah</a>
                                 <a class="dropdown-item" href="#">Hapus</a>
                             </div>
                         </div>

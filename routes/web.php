@@ -73,6 +73,7 @@ Route::get('/generate-sertifikat', [PelatihanController::class, 'generateSertifi
 
 //Route hasi quiz
 Route::get('/pelatihan-mandiri/quiz/hasil-quiz', [PelatihanController::class, 'getHasilQuizPembelajaran'])->name('pembelajaran.quiz.hasil');
+Route::post('/pelatihan-mandiri/submit-testimoni', [PelatihanController::class, 'submitTestimoni'])->name('pembelajaran.submit.testimoni');
 
 Route::get('/pelatihan-mandiri/{id}/topik/{topikId}/konten/{kontenId}/tandai-selesai', [PelatihanController::class, 'tandaiKontenSelesai'])->name('pembelajaran.konten.tandaiSelesai');
 Route::post('/pelatihan-mandiri/{id}/topik/{topikId}/quiz/{quizId}/tandai-selesai', [PelatihanController::class, 'tandaiQuizSelesai'])->name('pembelajaran.quiz.tandaiSelesai');

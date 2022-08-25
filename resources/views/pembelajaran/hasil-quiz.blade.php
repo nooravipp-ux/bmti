@@ -15,18 +15,29 @@
                 <h1>{{$dataQuiz->judul}}</h1>
                 <p class="mt-4">{{$dataQuiz->deskripsi}}</p>
                 <h4>Hasil Penilaian</h4>
-                <p>{{$counterJawabanBenar}} dari {{$totalSoal}} Pertanyaan terjawab dengan benar</p>
+                <p>{{$counterJawabanBenar}} dari {{$totalSoal}} Pertanyaan terjawab dengan benar . Anda mendapatkan score <b>{{$nilaiAkhir}}</b></p>
                 <p>Waktu Pengerjaan : 00:10:32</p>
-                <div class="row mt-4 mb-4">
-                    <div class="col-md-12">
-                        <textarea class="form-control" name="" id="" cols="50" rows="10" placeholder="Mohon diisi testimoni"></textarea>
-                    </div>
-                </div>
+                <h4>Testimoni</h4>
                 <div class="row mt-4 mb-4">
                     <div class="col-md-12 justify-content-center text-center">
                         <button id="pratinjau" class="btn btn-sm btn-primary" style="margin-right: 10px; font-family:glory;">Pratinjau Pertanyaan</button><button class="btn btn-sm btn-primary" style="margin-left: 10px; font-family:glory;">Ulang Quiz</button><button class="btn btn-sm btn-primary" style="margin-left: 10px; font-family:glory;">Download Sertifikat</button>
                     </div>
                 </div>
+                <form action="{{route('pembelajaran.submit.testimoni')}}" method="post">
+                    @csrf
+                    <div class="row mt-4 mb-4">
+                        <div class="col-md-12">
+                            <input type="hidden" name="kursusPesertaId" value="{{$kursusPesertaId->id}}">
+                            <input type="hidden" name="pelatihanId" value="{{$pelatihan->id}}">
+                            <textarea class="form-control" name="testimoni" id="" cols="50" rows="10"></textarea>
+                        </div>
+                        <div class="row mt-4 mb-4">
+                            <div class="col-md-12">
+                                <button type="submit" id="pratinjau" class="btn btn-sm btn-primary" style="margin-right: 10px; font-family:glory;">Kirim Testimoni</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
             <div id="list-quiz">
                 <?php $no = 1; ?>

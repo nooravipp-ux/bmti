@@ -24,10 +24,10 @@
                     <p>Batas Waktu : <span id="demo" style="font-size: 17px;">{{$configurasiQuiz->durasi}} Menit</span>
                     </p>
                     <input type="hidden" id="durasi" value="{{$configurasiQuiz->durasi}}">
-                    <div class="progress">
+                    <!-- <div class="progress">
                         <div class="progress-bar w-75 barmeter" role="progressbar" aria-valuenow="75" aria-valuemin="0"
                             aria-valuemax="100"></div>
-                    </div>
+                    </div> -->
                 </div>
                 @endif
                 <?php $no = 1; ?>

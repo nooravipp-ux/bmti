@@ -225,12 +225,12 @@
                     <label for="judul" class="col-sm-2 col-form-label">Final Test</label>
                     <div class="form-check col-sm-9">
                         <label class="form-check-label">
-                            <input type="checkbox" name="finalTest" value="1" class="form-check-input">
+                            <input type="checkbox" id="finalTest" name="finalTest" value="1" class="form-check-input">
                         </label>
                     </div>
                 </div>
                 <div class="row">
-                    <p class="font-italic">Kuis dapat dilakukan lebih dari satu kali oleh peserta</p>
+                    <p class="font-italic">Final test atau test akhir adalah soal akhir yang harus dikerjakan oleh peserta setelah melakukan pembelajaran.</p>
                 </div>
                 <div class="row">
                     <label for="judul" class="col-sm-5 col-form-label">Pilih Kuis Yang Akan Digunakan :</label>
@@ -244,6 +244,22 @@
                         <input type="checkbox" name="quizOptions[]" value="{{$q->id}}" class="form-check-input"
                             style="margin-right: 10px;">
                         <p class="">{{$q->judul}}</p>
+                    </label>
+                </div>
+                @endforeach
+
+                <div class="row checkFeedback d-none">
+                    <label for="judul" class="col-sm-12 col-form-label">Pilih pertanyaan feedback Yang akan Digunakan :</label>
+                    <div class="col-sm-8">
+
+                    </div>
+                </div>
+                @foreach($feedback as $f)
+                <div class="row checkFeedback d-none">
+                    <label class="form-check-label col-sm-12 d-flex">
+                        <input type="checkbox" name="quizOptions[]" value="{{$f->id}}" class="form-check-input"
+                            style="margin-right: 10px;">
+                        <p class="">{{$f->judul}}</p>
                     </label>
                 </div>
                 @endforeach
@@ -303,6 +319,14 @@ $('#ckNilai').change(function() {
         $('#input-nilai').show()
     } else {
         $('#input-nilai').hide()
+    }
+});
+
+$('#finalTest').change(function() {
+    if ($(this).is(":checked")) {
+        $('.checkFeedback').removeClass('d-none')
+    } else {
+        $('.checkFeedback').addClass('d-none')
     }
 });
 </script>

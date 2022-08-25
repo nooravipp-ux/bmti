@@ -39,6 +39,9 @@
                                     <th>Nama Peserta</th>
                                     <th>Nama Pelatihan</th>
                                     <th>Kelompok Keahlian</th>
+                                    <th>Nilai akhir</th>
+                                    <th>Predikat</th>
+                                    <th>No. Sertifikat</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -50,6 +53,9 @@
                                         <td>{{$dt->nama_depan}}</td>
                                         <td>{{$dt->judul}}</td>
                                         <td>{{$dt->nama}}</td>
+                                        <td>{{$dt->nilai}}</td>
+                                        <td></td>
+                                        <td>{{$dt->no_sertifikat}}</td>
                                         <td><a href="{{route('evaluasi.show', ['id' => $dt->id])}}"><i class="ti-eye btn-icon-append"></i></a></td>
                                     </tr>
                                     @endforeach
