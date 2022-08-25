@@ -7,7 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Provinsi extends Model
 {
-   public function kotakab(){
+
+    protected $table = "m_provinsi";
+    protected $guarded = [];
+
+    public function kotakab(){
        return $this->hasMany('App\Models\KotaKab');
-   }
+    }
 }

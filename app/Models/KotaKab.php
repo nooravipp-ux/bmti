@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class KotaKab extends Model
 {
+    protected $table = "m_kota_kab";
+    protected $guarded = [];
+
     public function provinsi(){
         return $this->belongsTo('App\Models\Provinsi');
     }
