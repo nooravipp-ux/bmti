@@ -37,10 +37,8 @@ class TopikController extends Controller
     {
         $data = Topik::find($id);
         $data->update([
-            'kursus_id' => $request->kursus_id,
             'judul' => $request->judul,
-            'materi' => $request->materi,
-            'status' => $request->status
+            'materi' => $request->materi
         ]);
        
         return redirect('/admin/topik');
