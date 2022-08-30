@@ -69,7 +69,8 @@
                         @if(auth()->user())
                         <a href="{{url('/dashboard')}}" class="btn-lg" role="button" aria-pressed="true">Dashboard</a>
                         @else
-                        <a class="btn-lg" role="button" aria-pressed="true" onclick="onClickLogin()">LOGIN</a> @endif
+                        <a href="{{url('/login')}}" class="btn-lg">LOGIN</a> 
+                        @endif
                     </div>
                 </div>
 
