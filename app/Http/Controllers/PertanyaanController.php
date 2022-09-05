@@ -9,6 +9,9 @@ use App\Models\Pertanyaan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\PertanyaanQuizImport;
+
 class PertanyaanController extends Controller
 {
     public function index()
@@ -87,5 +90,37 @@ class PertanyaanController extends Controller
 
         return redirect('/admin/pertanyaan');
     
+    }
+
+    public function importPertanyaan(Request $request){
+
+        $this->validate($request, [
+            'file' => 'required|mimes:csv,xls,xlsx'
+        ]);
+
+        $file = $request->file('file');
+
+        $nama_file = rand().$file->getClientOriginalName();
+
+        $file->move('file_import',$nama_file);
+        Excel::import(new PertanyaanQuizImport($request->quizId), public_path('/file_import/'.$nama_file));
+
+        return redirect()->back();
+    }
+
+    public function downloadTemplateSoal()
+    {
+
+        $file = public_path('files/templates/template-import-soal.xlsx');
+
+        return response()->download($file);
+    }
+
+    public function getPertanyaanById(Request $request){
+
+        $id = $request->search;
+        $data = Pertanyaan::find($id);
+
+        return response()->json($data);
     }
 }

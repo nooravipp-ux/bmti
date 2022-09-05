@@ -38,7 +38,8 @@ class QuizController extends Controller
     {
         $data = Quiz::find($id);
         $pertanyaan = Pertanyaan::where('quiz_id', $id)->get();
-        return view('admin.quiz.edit', compact('data','pertanyaan'));
+        $kelKeahlian = KelompokKeahlian::all();
+        return view('admin.quiz.edit', compact('data','pertanyaan','kelKeahlian'));
     }
     public function update(Request $request, $id)
     {
@@ -59,5 +60,13 @@ class QuizController extends Controller
 
         return redirect('/admin/quiz');
     
+    }
+
+    public function getQuizById(Request $request){
+
+        $id = $request->search;
+        $data = Quiz::find($id);
+
+        return response()->json($data);
     }
 }

@@ -44,19 +44,11 @@
                                     <th>No</th>
                                     <th>NUPTK</th>
                                     <th>NIK</th>
-                                    <th>Nama Depan</th>
-                                    <th>Nama Belakang</th>
+                                    <th>Nama</th>
                                     <th>Tempat Lahir</th>
                                     <th>Tanggal Lahir</th>
-                                    <th>Alamat</th>
-                                    <th>Desa Kelurahan</th>
-                                    <th>Kecamatan</th>
-                                    <th>Kota / Kabupaten</th>
-                                    <th>Provinsi</th>
                                     <th>Email</th>
                                     <th>No Telepon</th>
-                                    <th>Created At</th>
-                                    <th>Updated At</th>
                                     <th class="text-center">Aksi</th>
                                 </tr>
                             </thead>
@@ -67,19 +59,11 @@
                                     <td><?php echo $i++; ?></td>
                                     <td>{{$row->nuptk}}</td>
                                     <td>{{$row->NIK}}</td>
-                                    <td>{{$row->nama_depan}}</td>
-                                    <td>{{$row->nama_belakang}}</td>
+                                    <td>{{$row->nama_depan}} {{$row->nama_belakang}}</td>
                                     <td>{{$row->tempat_lahir}}</td>
                                     <td>{{$row->tanggal_lahir}}</td>
-                                    <td>{{$row->alamat}}</td>
-                                    <td>{{$row->desa_kelurahan}}</td>
-                                    <td>{{$row->kecamatan}}</td>
-                                    <td>{{$row->kota_kab}}</td>
-                                    <td>{{$row->provinsi}}</td>
                                     <td>{{$row->email}}</td>
                                     <td>{{$row->no_telepon}}</td>
-                                    <td>{{$row->created_at}}</td>
-                                    <td>{{$row->updated_at}}</td>
                                     <td class="text-center">
                                         <a href="{{ route('peserta.edit', ['id'=>$row->id]) }}"
                                             class="btn btn-dark btn-sm btn-rounded btn-icon-prepend">Edit

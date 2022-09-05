@@ -221,6 +221,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
         Route::get('/kategori-kursus/delete/{id}', [KategoriKursusController::class, 'delete'])->name('kategoriKursus.delete');
 
         Route::get('/quiz', [QuizController::class, 'index'])->name('quiz');
+        Route::get('/quiz/get-quiz', [QuizController::class, 'getQuizById'])->name('quizById');
         Route::get('/quiz/create', [QuizController::class, 'create'])->name('quiz.create');
         Route::post('/quiz/store', [QuizController::class, 'store'])->name('quiz.store');
         Route::get('/quiz/edit/{id}', [QuizController::class, 'edit'])->name('quiz.edit');
@@ -228,11 +229,14 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
         Route::get('/quiz/delete/{id}', [QuizController::class, 'delete'])->name('quiz.delete');
 
         Route::get('/pertanyaan', [PertanyaanController::class, 'index'])->name('pertanyaan');
+        Route::get('/pertanyaan/get-pertanyaan', [PertanyaanController::class, 'getPertanyaanById'])->name('pertanyaanById');
         Route::get('/pertanyaan/create', [PertanyaanController::class, 'create'])->name('pertanyaan.create');
         Route::post('/pertanyaan/store', [PertanyaanController::class, 'store'])->name('pertanyaan.store');
         Route::get('/pertanyaan/edit/{id}', [PertanyaanController::class, 'edit'])->name('pertanyaan.edit');
         Route::put('/pertanyaan/update/{id}', [PertanyaanController::class, 'update'])->name('pertanyaan.update');
         Route::get('/pertanyaan/delete/{id}', [PertanyaanController::class, 'delete'])->name('pertanyaan.delete');
+        Route::post('/pertanyaan/import', [PertanyaanController::class, 'importPertanyaan'])->name('pertanyaan.import');
+        Route::get('/template-soal/download', [PertanyaanController::class, 'downloadTemplateSoal'])->name('template.soal.download');
 
         Route::get('/perusahaan-mitra', [PerusahaanMitraController::class, 'index'])->name('perusahaanMitra');
         Route::get('/perusahaan-mitra/create', [PerusahaanMitraController::class, 'create'])->name('perusahaanMitra.create');

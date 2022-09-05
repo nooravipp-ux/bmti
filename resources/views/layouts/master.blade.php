@@ -514,14 +514,6 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="nav-item nav-category">help</li>
-                    <li class="nav-item">
-                        <a class="nav-link"
-                            href="http://bootstrapdash.com/demo/star-admin2-free/docs/documentation.html">
-                            <i class="menu-icon mdi mdi-file-document"></i>
-                            <span class="menu-title">Documentation</span>
-                        </a>
-                    </li>
                     @endif
                 </ul>
             </nav>

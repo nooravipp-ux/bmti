@@ -9,6 +9,14 @@ use App\Imports\EvaluasiImportTestimoni;
 
 class ImportDataEvaluasiController extends Controller
 {
+
+    private $quizId;
+
+    public function __construct($quizId)
+    {
+        $this->quizId = $quizId;
+    }
+
     public function importExcel(Request $request){
         // dd($request->all());
         $this->validate($request, [
@@ -24,6 +32,7 @@ class ImportDataEvaluasiController extends Controller
 
         return redirect('/evaluator/master-list-data');
     }
+    
     public function importExcelTestimoni(Request $request){
         // dd($request->all());
         $this->validate($request, [

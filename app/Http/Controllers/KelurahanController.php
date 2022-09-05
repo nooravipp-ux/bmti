@@ -13,7 +13,7 @@ class KelurahanController extends Controller
         $data = DB::table('m_desa_kelurahan')
                 ->join('m_kecamatan', 'm_desa_kelurahan.id_kecamatan', '=', 'm_kecamatan.id')
                 ->select('m_desa_kelurahan.id', 'm_kecamatan.nama_kecamatan', 'm_desa_kelurahan.kode', 'm_desa_kelurahan.nama_desa_kelurahan')
-                ->get();
+                ->paginate(200);
         return view('admin.kelurahan.index', compact('data'));
     }
     public function create()

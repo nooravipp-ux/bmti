@@ -30,15 +30,29 @@
                         enctype="multipart/form-data">
                         @method('put')
                         @csrf
+                        <div class="mb-3 text-center">
+                            <img class="rounded-circle" src="{{asset('images/profil/'.$data->foto)}}"
+                                alt="Profile image" width="120px" height="120px" type="file" name="foto_new"
+                                class="form-control" accept="image/jpg, image/jpeg, image/png">
+                            <p class="mb-1"><b>{{auth()->user()->name}}</b></p>
+                            <p>{{auth()->user()->email}}</p>
+                        </div>
+                        <div class="mb-3">
+                            <label for="foto" class="form-label">Pilih Foto</label>
+                            <input type="hidden" name="foto_old" value="{{$data->foto}}" class="form-control">
+                            <input type="file" name="foto_new" class="form-control"
+                                accept="image/jpg, image/jpeg, image/png">
+
+                        </div>
                         <div class="mb-3">
                             <label for="nuptk" class="form-label">NUPTK</label>
-                            <input type="text" name="nuptk" class="form-control" id="nuptk" aria-describedby="emailHelp"
-                                value="{{$data->nuptk}}">
+                            <input type="text" name="nuptk" class="form-control" id="nuptk" value="{{$data->nuptk}}"
+                                readonly="readonly">
                         </div>
                         <div class="mb-3">
                             <label for="nik" class="form-label">NIK</label>
-                            <input type="text" name="nik" class="form-control" id="nik" aria-describedby="emailHelp"
-                                value="{{$data->nik}}">
+                            <input type="text" name="nik" class="form-control" id="nik" value="{{$data->nik}}"
+                                readonly="readonly">
                         </div>
                         <div class="mb-3">
                             <label for="nama_depan" class="form-label">Nama Depan</label>
@@ -62,28 +76,43 @@
                         </div>
                         <div class="mb-3">
                             <label for="alamat" class="form-label">Alamat</label>
-                            <input type="text" name="alamat" class="form-control" id="alamat"
-                                aria-describedby="emailHelp" value="{{$data->alamat}}">
+                            <textarea type="text" name="alamat" class="form-control" id="alamat" >{{$data->alamat}}</textarea>
                         </div>
                         <div class="mb-3">
                             <label for="desa_kelurahan" class="form-label">Desa / Kelurahan</label>
-                            <input type="number" name="desa_kelurahan" class="form-control" id="desa_kelurahan"
-                                aria-describedby="emailHelp" value="{{$data->desa_kelurahan}}">
+                            <select id="desa_kelurahan" type="text" name="desa_kelurahan" class="form-control">
+                                <option value="{{$data->desa_kelurahan}}">{{$data->desa_kelurahan}}</option>
+                                @foreach($desa_kelurahan as $row)
+                                <option value="{{$row->id}}">{{$row->nama_desa_kelurahan}}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="mb-3">
                             <label for="kecamatan" class="form-label">Kecamatan</label>
-                            <input type="number" name="kecamatan" class="form-control" id="kecamatan"
-                                aria-describedby="emailHelp" value="{{$data->kecamatan}}">
+                            <select type="text" id="kecamatan" name="kecamatan" class="form-control">
+                                <option value="">-</option>
+                                @foreach($kecamatan as $row)
+                                <option value="{{$row->id}}">{{$row->nama_kecamatan}}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="mb-3">
                             <label for="kota_kab" class="form-label">Kota / Kabupaten</label>
-                            <input type="number" name="kota_kab" class="form-control" id="kota_kab"
-                                aria-describedby="emailHelp" value="{{$data->kota_kab}}">
+                            <select type="text" id="kota_kab" name="kota_kab" class="form-control">
+                                <option value="">-</option>
+                                @foreach($kota_kab as $row)
+                                <option value="{{$row->id}}">{{$row->nama}}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="mb-3">
                             <label for="provinsi" class="form-label">Provinsi</label>
-                            <input type="number" name="provinsi" class="form-control" id="provinsi"
-                                aria-describedby="emailHelp" value="{{$data->provinsi}}">
+                            <select type="text" id="provinsi"name="provinsi" class="form-control">
+                                <option value="">-</option>
+                                @foreach($provinsi as $row)
+                                <option value="{{$row->id}}">{{$row->nama}}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
@@ -95,7 +124,14 @@
                             <input type="number" name="no_telepon" class="form-control" id="no_telepon"
                                 aria-describedby="emailHelp" value="{{$data->no_telepon}}">
                         </div>
-                        <button type="submit" class="btn btn-primary btn-sm btn-rounded">Submit</button>
+                        <div class="mb-3">
+                            <label for="no_telepon" class="form-label">Asal Sekolah</label>
+                            <input type="text" name="asal_sekolah" class="form-control" id="no_telepon"
+                                aria-describedby="emailHelp" value="{{$data->asal_sekolah}}">
+                        </div>
+                        <div class="mt-4">
+                            <button type="submit" class="btn btn-primary btn-sm btn-rounded">Update</button>
+                        </div>
                     </form>
                 </div>
             </div>

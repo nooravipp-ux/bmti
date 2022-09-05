@@ -11,12 +11,18 @@ class PesertaController extends Controller
 {
     public function index(){
         $data = Peserta::all();
-
+        
         return view('admin.peserta.index', compact('data'));
     }
     // create store edit update delete
     public function create(){
-        return view('admin.peserta.create');
+        
+        $desa_kelurahan = DB::table('m_desa_kelurahan')->get();
+        $kecamatan = DB::table('m_kecamatan')->get();
+        $kota_kab = DB::table('m_kota_kab')->get();
+        $provinsi = DB::table('m_provinsi')->get();
+
+        return view('admin.peserta.create', compact('desa_kelurahan', 'kecamatan', 'kota_kab', 'provinsi'));
     }
     public function store(Request $request){
         $validatedData = $request->validate([
@@ -56,7 +62,12 @@ class PesertaController extends Controller
     }
     public function edit($id){
         $data = Peserta::find($id);
-        return view('admin.peserta.edit', compact(['data']));
+        
+        $desa_kelurahan = DB::table('m_desa_kelurahan')->get();
+        $kecamatan = DB::table('m_kecamatan')->get();
+        $kota_kab = DB::table('m_kota_kab')->get();
+        $provinsi = DB::table('m_provinsi')->get();
+        return view('admin.peserta.edit', compact('data', 'desa_kelurahan', 'kecamatan', 'kota_kab', 'provinsi'));
     }
     public function update(Request $request, $id){
         $validatedData = $request->validate([

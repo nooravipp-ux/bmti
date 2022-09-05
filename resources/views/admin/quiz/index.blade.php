@@ -23,7 +23,7 @@
         <div class="col-lg-12 grid-margin marginResponsive">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">{{ __('Data Quiz') }}</h4>
+                    <h4 class="card-title">{{ __('Bank Soal') }}</h4>
                     <!-- <p class="card-description">
                     </p> -->
 
@@ -31,15 +31,13 @@
                         <table id="dataTable" class="table">
                             <thead>
                                 <tr>
-                                    <button type="button" class="btn btn-primary btn-rounded marginCard" data-toggle="modal" data-target="#exampleModalCenter">Buat Soal</button>
-                                    <button type="button" class="btn btn-primary btn-rounded marginCard pl-3" data-toggle="modal" data-target="#exampleModalCenter">Export Quiz</button>
+                                    <button type="button" class="btn btn-sm btn-primary btn-rounded marginCard" data-toggle="modal" data-target="#exampleModalCenter">Tambah Quiz</button>
                                 </tr>
                                 <tr>
                                     <th>No</th>
                                     <th>Judul</th>
                                     <th>Kategori</th>
                                     <th>Tipe Soal</th>
-                                    <th>Deskripsi</th>
                                     <th class="text-center">Aksi</th>
                                 </tr>
                             </thead>
@@ -59,9 +57,8 @@
                                         Formatif
                                         @endif
                                     </td>
-                                    <td>{{$row->deskripsi}}</td>
                                     <td class="text-center">
-                                        <a href="{{ route('quiz.edit', ['id'=>$row->id]) }}" class="btn btn-dark btn-sm btn-rounded btn-icon-prepend">Edit
+                                        <a href="{{ route('quiz.edit', ['id'=>$row->id]) }}" class="btn btn-dark btn-sm btn-rounded btn-icon-prepend">Pengaturan
                                             <i class="ti-reload btn-icon-append"></i></a>
                                         <a href="{{ route('quiz.delete', ['id'=>$row->id]) }}" onclick="return confirm('Apakah anda yakin ?')" class="btn btn-danger btn-sm btn-rounded btn-icon-text" style="margin-left:5px;">Delete
                                             <i class="ti-trash btn-icon-append"></i></a>
@@ -89,11 +86,11 @@
                 <div class="modal-body">
                     @csrf
                     <div class="mb-3">
-                        <label for="judul" class="form-label">Nama Soal</label>
+                        <label for="judul" class="form-label">Nama</label>
                         <input type="text" name="judul" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label for="judul" class="form-label">Kategori Soal</label>
+                        <label for="judul" class="form-label">Kategori</label>
                         <select type="text" name="kelompok_keahlian_id" class="form-control">
                             @foreach($kelKeahlian as $kel)
                             <option value="{{$kel->id}}">{{$kel->nama}}</option>
@@ -101,7 +98,7 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="judul" class="form-label">Tipe Soal</label>
+                        <label for="judul" class="form-label">Tipe</label>
                         <select type="text" name="tipe_quiz" class="form-control">
                             <option value="1">Test Akhir</option>
                             <option value="2">Timbal Balik</option>
