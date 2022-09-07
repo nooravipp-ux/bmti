@@ -70,7 +70,7 @@
         <div class="col-lg-10 d-flex justify-content-between marginResponsive">
             <h3 class="card-title" style="padding-left: 3px;padding-bottom: 10px;">{{$pelatihan->judul}}</h3>
             <div>
-                <button type="button" class="btn btn-primary btn-sm btn-rounded" data-toggle="modal" data-target="#exampleModalCenter">+ Topik Pembelajaran</button><a href="{{route('pelatihan.strukturProgram', [$pelatihan->id])}}" class="btn btn-primary btn-sm btn-rounded">+ Struktur Program</a>
+                <button type="button" class="btn btn-primary btn-sm btn-rounded" data-toggle="modal" data-target="#exampleModalCenter">+ Topik Pembelajaran</button><a href="{{route('pelatihan.strukturProgram', [$pelatihan->id])}}" class="btn btn-primary btn-sm btn-rounded">+ Struktur Program</a><button type="button" class="btn btn-primary btn-sm btn-rounded" data-toggle="modal" data-target="#exampleModalCenter">+ Edit Pelatihan</button>
             </div>
         </div>
     </div>

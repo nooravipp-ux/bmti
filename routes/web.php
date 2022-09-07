@@ -225,7 +225,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
         Route::get('/quiz/create', [QuizController::class, 'create'])->name('quiz.create');
         Route::post('/quiz/store', [QuizController::class, 'store'])->name('quiz.store');
         Route::get('/quiz/edit/{id}', [QuizController::class, 'edit'])->name('quiz.edit');
-        Route::put('/quiz/update/{id}', [QuizController::class, 'update'])->name('quiz.update');
+        Route::post('/quiz/update', [QuizController::class, 'update'])->name('quiz.update');
         Route::get('/quiz/delete/{id}', [QuizController::class, 'delete'])->name('quiz.delete');
 
         Route::get('/pertanyaan', [PertanyaanController::class, 'index'])->name('pertanyaan');
@@ -233,7 +233,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
         Route::get('/pertanyaan/create', [PertanyaanController::class, 'create'])->name('pertanyaan.create');
         Route::post('/pertanyaan/store', [PertanyaanController::class, 'store'])->name('pertanyaan.store');
         Route::get('/pertanyaan/edit/{id}', [PertanyaanController::class, 'edit'])->name('pertanyaan.edit');
-        Route::put('/pertanyaan/update/{id}', [PertanyaanController::class, 'update'])->name('pertanyaan.update');
+        Route::put('/pertanyaan/update', [PertanyaanController::class, 'update'])->name('pertanyaan.update');
         Route::get('/pertanyaan/delete/{id}', [PertanyaanController::class, 'delete'])->name('pertanyaan.delete');
         Route::post('/pertanyaan/import', [PertanyaanController::class, 'importPertanyaan'])->name('pertanyaan.import');
         Route::get('/template-soal/download', [PertanyaanController::class, 'downloadTemplateSoal'])->name('template.soal.download');

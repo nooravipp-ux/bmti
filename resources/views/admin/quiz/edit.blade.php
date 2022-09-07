@@ -83,13 +83,13 @@
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex">
-                        <h4 class="card-title" style="padding-left: 3px;">{{$pert->pertanyaan}}</h4>
+                        <p style="padding-left: 3px;"><b>{{$pert->pertanyaan}}</b></p>
                         <!-- <a class="ms-auto" href="#" onclick="window.open('http://localhost:8000/admin/pelatihan/22/topik', 'Preview', 'width=1200,height=650');"><i class="menu-icon mdi mdi-dots-vertical"></i></a> -->
                         <div class="dropdown ms-auto">
                             <i class="menu-icon mdi mdi-dots-vertical" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item edit-pertanyaan" href="#" data-toggle="modal" data-id="{{$pert->id}}" data-target="#modalEditPertanyaan">Ubah</a>
-                                <a class="dropdown-item" href="#">Hapus</a>
+                                <a class="dropdown-item" href="{{route('pertanyaan.delete', ['id' => $pert->id])}}" onclick="return confirm('Apakah anda yakin akan menghapus item ini ?')">Hapus</a>
                             </div>
                         </div>
                     </div>
@@ -175,7 +175,7 @@
                 </button>
             </div>
             <div class="modal-body modal-edit-pertanyaan">
-                <form id="form-pertanyaan" action="{{route('pertanyaan.store')}}" method="POST" enctype="multipart/form-data">
+                <form id="form-pertanyaan" action="{{route('pertanyaan.update')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
                         <label for="inputpertanyaan" class="form-label">Pertanyaan</label>
@@ -251,11 +251,12 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="{{route('quiz.store')}}" method="POST">
+            <form action="{{route('quiz.update')}}" method="POST">
                 <div class="modal-body modalEdit">
                     @csrf
                     <div class="mb-3">
                         <label for="judul" class="form-label">Nama Soal</label>
+                        <input type="hidden" name="id" id="id" class="form-control">
                         <input type="text" name="judul" id="judul" class="form-control">
                     </div>
                     <div class="mb-3">
@@ -322,7 +323,8 @@
             },
             success: function(data) {
                 console.log(data.judul)
-
+                
+                $(".modalEdit #id").val(data.id);
                 $(".modalEdit #judul").val(data.judul);
                 $(".modalEdit #kelompok_keahlian").val(data.kelompok_keahlian_id);
                 $(".modalEdit #tipe_soal").val(data.tipe_quiz);

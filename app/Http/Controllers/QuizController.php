@@ -41,17 +41,18 @@ class QuizController extends Controller
         $kelKeahlian = KelompokKeahlian::all();
         return view('admin.quiz.edit', compact('data','pertanyaan','kelKeahlian'));
     }
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        $data = Quiz::find($id);
+
+        $data = Quiz::find($request->id);
         $data->update([
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
+            'kelompok_keahlian_id' => $request->kelompok_keahlian_id,
             'tipe_quiz' => $request->tipe_quiz,
-            'durasi' => $request->durasi,
         ]);
 
-        return redirect('/admin/quiz');
+        return redirect()->back();
     }
     public function delete($id)
     {

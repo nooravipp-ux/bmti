@@ -81,14 +81,15 @@ class PertanyaanController extends Controller
             $image->move(public_path('public/images'), $imageName);
         }
 
-        return redirect('/admin/pertanyaan');
+        return redirect()->back();
     }
     public function delete($id)
     {
+
         $data = Pertanyaan::find($id);
         $data->delete();
 
-        return redirect('/admin/pertanyaan');
+        return redirect()->back();
     
     }
 
