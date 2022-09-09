@@ -70,7 +70,7 @@
         <div class="col-lg-10 d-flex justify-content-between marginResponsive">
             <h3 class="card-title" style="padding-left: 3px;padding-bottom: 10px;">{{$pelatihan->judul}}</h3>
             <div>
-                <button type="button" class="btn btn-primary btn-sm btn-rounded" data-toggle="modal" data-target="#exampleModalCenter">+ Topik Pembelajaran</button><a href="{{route('pelatihan.strukturProgram', [$pelatihan->id])}}" class="btn btn-primary btn-sm btn-rounded">+ Struktur Program</a><button type="button" class="btn btn-primary btn-sm btn-rounded" data-toggle="modal" data-target="#exampleModalCenter">+ Edit Pelatihan</button>
+                <button type="button" class="btn btn-primary btn-sm btn-rounded" data-toggle="modal" data-target="#exampleModalCenter">+ Topik Pembelajaran</button><a href="{{route('pelatihan.strukturProgram', [$pelatihan->id])}}" class="btn btn-primary btn-sm btn-rounded">+ Struktur Program</a><button type="button" class="btn btn-primary btn-sm btn-rounded" data-toggle="modal" data-target="#modalPelatihan">+ Pengaturan Pelatihan</button>
             </div>
         </div>
     </div>
@@ -86,7 +86,7 @@
                         <div class="dropdown ms-auto">
                             <i class="menu-icon mdi mdi-dots-vertical" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="{{route('topik.edit', ['id' => $tp->id])}}">Ubah</a>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalEditTopik">Ubah</a>
                                 <a class="dropdown-item" href="#">Hapus</a>
                             </div>
                         </div>
@@ -138,13 +138,12 @@
     </div>
     @endforeach
 </div>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<!-- Modal Pelatihan-->
+<div class="modal fade" id="modalPelatihan" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Topik Pembelajaran</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Pengaturan Pelatihan</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -153,17 +152,113 @@
                 <div class="modal-body">
                     @csrf
                     <div class="mb-3">
-                        <label for="judul" class="form-label">Judul Topik Pembelajaran</label>
+                        <label for="judul" class="form-label">Judul Pelatihan</label>
+                        <input type="text" name="judul" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="deskripsi" class="form-label">Deskripsi</label>
+                        <textarea type="text" name="deskripsi" class="form-control"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="judul" class="form-label">Gambar Banner</label>
+                        <input type="file" name="judul" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="judul" class="form-label">Tanggal Mulai</label>
+                        <input type="date" name="judul" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="judul" class="form-label">Tanggal Berakhir</label>
+                        <input type="date" name="judul" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="judul" class="form-label">Status Aktif</label>
+                        <select class="form-control" name="" id="">
+                            <option value="0">Tidak</option>
+                            <option value="1">Ya</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="judul" class="form-label">Status Publish</label>
+                        <select class="form-control" name="" id="">
+                            <option value="0">Tidak</option>
+                            <option value="1">Ya</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger btn-rounded" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary btn-rounded" style="margin-left:5px;">Perbaharui</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Topik-->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Tambah Topik</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="{{route('pelatihan.topik.simpan', [$pelatihan->id])}}" method="POST">
+                <div class="modal-body">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="judul" class="form-label">Judul Topik</label>
                         <input type="text" name="judul" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="deskripsi" class="form-label">Deskripsi Topik</label>
                         <textarea type="text" name="deskripsi" class="ckeditor form-control"></textarea>
                     </div>
+                    <div class="mb-3">
+                        <label for="judul" class="form-label">Jumlah Konten</label>
+                        <input type="text" name="judul" class="form-control" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="judul" class="form-label">Jumlah Quiz</label>
+                        <input type="text" name="judul" class="form-control" readonly>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger btn-rounded" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary btn-rounded" style="margin-left:5px;">Simpan</button>
+                    <button type="submit" class="btn btn-primary btn-rounded" style="margin-left:5px;">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Edit Topik-->
+<div class="modal fade" id="modalEditTopik" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Edit Topik</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="{{route('pelatihan.topik.simpan', [$pelatihan->id])}}" method="POST">
+                <div class="modal-body">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="judul" class="form-label">Judul</label>
+                        <input type="text" name="judul" class="form-control" id="judul">
+                    </div>
+                    <div class="mb-3">
+                        <label for="materi" class="form-label">Deskripsi</label>
+                        <textarea type="text" name="materi" class="ckeditor form-control" id="materi"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger btn-rounded" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary btn-rounded" style="margin-left:5px;">Perbaharui</button>
                 </div>
             </form>
         </div>

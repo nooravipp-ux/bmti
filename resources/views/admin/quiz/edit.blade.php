@@ -179,7 +179,7 @@
                     @csrf
                     <div class="mb-3">
                         <label for="inputpertanyaan" class="form-label">Pertanyaan</label>
-                        <textarea type="text" name="pertanyaan" id="pertanyaan" class="form-control"></textarea>
+                        <textarea type="text" name="pertanyaan" id="edit_pertanyaan" class="form-control"></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="inputgambar" class="form-label">Gambar</label>
@@ -188,27 +188,27 @@
                     </div>
                     <div class="mb-3">
                         <label for="inputpilihan_a" class="form-label">Pilihan A</label>
-                        <input type="radio" name="pilihan" class="pilihan" value="a">
-                        <input type="text" name="pilihan_a" id="pilihan_a" class="form-control">
+                        <input type="radio" name="pilihan" class="edit_pilihan" value="a">
+                        <input type="text" name="pilihan_a" id="edit_pilihan_a" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="inputpilihan_b" class="form-label">Pilihan B</label>
-                        <input type="radio" name="pilihan" class="pilihan" value="b">
-                        <input type="text" name="pilihan_b" id="pilihan_b" class="form-control">
+                        <input type="radio" name="pilihan" class="edit_pilihan" value="b">
+                        <input type="text" name="pilihan_b" id="edit_pilihan_b" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="inputpilihan_c" class="form-label">Pilihan C</label>
-                        <input type="radio" name="pilihan" class="pilihan" value="c">
-                        <input type="text" name="pilihan_c" id="pilihan_c" class="form-control">
+                        <input type="radio" name="pilihan" class="edit_pilihan" value="c">
+                        <input type="text" name="pilihan_c" id="edit_pilihan_c" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="inputpilihan_d" class="form-label">Pilihan D</label>
-                        <input type="radio" name="pilihan" class="pilihan" value="d">
-                        <input type="text" name="pilihan_d" id="pilihan_d" class="form-control">
+                        <input type="radio" name="pilihan" class="edit_pilihan" value="d">
+                        <input type="text" name="pilihan_d" id="edit_pilihan_d" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="jawaban" class="form-label">Jawaban</label>
-                        <input type="text" name="jawaban" id="jawaban" class="form-control">
+                        <input type="text" name="jawaban" id="edit_jawaban" class="form-control">
                     </div>
                     <button type="submit" class="btn btn-primary btn-sm btn-rounded">Submit</button>
                 </form>
@@ -262,9 +262,9 @@
                     <div class="mb-3">
                         <label for="judul" class="form-label">Kategori Soal</label>
                         <select type="text" name="kelompok_keahlian_id" id="kelompok_keahlian" class="form-control">
-                        @foreach($kelKeahlian as $kel)
-                        <option value="{{$kel->id}}">{{$kel->nama}}</option>
-                        @endforeach
+                            @foreach($kelKeahlian as $kel)
+                            <option value="{{$kel->id}}">{{$kel->nama}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="mb-3">
@@ -314,7 +314,7 @@
     });
 
     $("#edit-quiz").on("click", function() {
-        var quizId = $(this).data('id'); 
+        var quizId = $(this).data('id');
         $.ajax({
             url: "/admin/quiz/get-quiz",
             method: "GET",
@@ -323,7 +323,7 @@
             },
             success: function(data) {
                 console.log(data.judul)
-                
+
                 $(".modalEdit #id").val(data.id);
                 $(".modalEdit #judul").val(data.judul);
                 $(".modalEdit #kelompok_keahlian").val(data.kelompok_keahlian_id);
@@ -335,7 +335,7 @@
     });
 
     $(".edit-pertanyaan").on("click", function() {
-        var id = $(this).data('id'); 
+        var id = $(this).data('id');
         $.ajax({
             url: "/admin/pertanyaan/get-pertanyaan",
             method: "GET",
@@ -343,12 +343,12 @@
                 search: id
             },
             success: function(data) {
-                $(".modal-edit-pertanyaan #pertanyaan").val(data.pertanyaan);
-                $(".modal-edit-pertanyaan #pilihan_a").val(data.pilihan_a);
-                $(".modal-edit-pertanyaan #pilihan_b").val(data.pilihan_b);
-                $(".modal-edit-pertanyaan #pilihan_c").val(data.pilihan_c);
-                $(".modal-edit-pertanyaan #pilihan_d").val(data.pilihan_d);
-                $(".modal-edit-pertanyaan #jawaban").val(data.jawaban);
+                $(".modal-edit-pertanyaan #edit_pertanyaan").val(data.pertanyaan);
+                $(".modal-edit-pertanyaan #edit_pilihan_a").val(data.pilihan_a);
+                $(".modal-edit-pertanyaan #edit_pilihan_b").val(data.pilihan_b);
+                $(".modal-edit-pertanyaan #edit_pilihan_c").val(data.pilihan_c);
+                $(".modal-edit-pertanyaan #edit_pilihan_d").val(data.pilihan_d);
+                $(".modal-edit-pertanyaan #edit_jawaban").val(data.jawaban);
             }
         });
 
@@ -381,5 +381,27 @@
         }
     });
 
+    $('.modal-edit-pertanyaan .edit_pilihan').click(function() {
+
+        if ($('input[name="edit_pilihan"]:checked').val() == 'a') {
+            let jawaban = $('#edit_pilihan_a').val()
+            $('#edit_jawaban').val(jawaban)
+        }
+
+        if ($('input[name="edit_pilihan"]:checked').val() == 'b') {
+            let jawaban = $('#edit_pilihan_b').val()
+            $('#edit_jawaban').val(jawaban)
+        }
+
+        if ($('input[name="edit_pilihan"]:checked').val() == 'c') {
+            let jawaban = $('#edit_pilihan_c').val()
+            $('#edit_jawaban').val(jawaban)
+        }
+
+        if ($('input[name="edit_pilihan"]:checked').val() == 'd') {
+            let jawaban = $('#edit_pilihan_d').val()
+            $('#edit_jawaban').val(jawaban)
+        }
+    });
 </script>
 @endsection
