@@ -193,4 +193,11 @@ class KursusController extends Controller
 
         return redirect('/admin/pelatihan')->with('message', 'Data Berhasil Dihapus');
     }
+
+    // API service unutk ajax di front end
+
+    public function getDataPelatihanById(Request $request){
+        $data = Kursus::find($request->search);
+        return response()->json($data);
+    }
 }

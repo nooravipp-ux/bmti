@@ -51,4 +51,9 @@ class TopikController extends Controller
         return redirect('/admin/topik');
     
     }
+
+    public function getDataTopikById(Request $request){
+        $data = Topik::find($request->search);
+        return response()->json($data);
+    }
 }

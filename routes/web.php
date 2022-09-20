@@ -293,6 +293,9 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
         Route::put('/pelatihan/update/{id}', [KursusController::class, 'update'])->name('pelatihan.update');
         Route::get('/pelatihan/delete/{id}', [KursusController::class, 'delete'])->name('pelatihan.delete');
 
+        //service get data pelatihan
+        Route::get('/pelatihan/get-data-pelatihan', [KursusController::class, 'getDataPelatihanById'])->name('pelatihan.getDataPelatihan');
+
         Route::get('/pelatihan/{pelatihanId}/topik', [KursusController::class, 'manageTopik'])->name('pelatihan.topik');
         Route::get('/pelatihan/{pelatihanId}/topik/{topikId}', [KursusController::class, 'buatKonten'])->name('pelatihan.konten');
         Route::post('/pelatihan/{pelatihanId}/topik/store', [KursusController::class, 'simpanTopik'])->name('pelatihan.topik.simpan');
@@ -312,6 +315,9 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
         Route::get('/topik/edit/{id}', [TopikController::class, 'edit'])->name('topik.edit');
         Route::put('/topik/update/{id}', [TopikController::class, 'update'])->name('topik.update');
         Route::get('/topik/delete/{id}', [TopikController::class, 'delete'])->name('topik.delete');
+
+        //service get data topik
+        Route::get('/topik/get-data-topik', [TopikController::class, 'getDataTopikById'])->name('pelatihan.getDataTopik');
 
         Route::get('/topik-quiz', [TopikQuizController::class, 'index'])->name('topikQuiz');
         Route::get('/topik-quiz/create', [TopikQuizController::class, 'create'])->name('topikQuiz.create');

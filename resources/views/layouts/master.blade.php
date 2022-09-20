@@ -351,7 +351,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('masterListData')}}">
                             <i class="menu-icon mdi mdi-file-import"></i>
-                            <span class="menu-title">Master List Data</span>
+                            <span class="menu-title">Data Import</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -463,6 +463,8 @@
                             </ul>
                         </div>
                     </li>
+                    @endif  
+                    @if(auth()->user()->role_id == 1 || auth()->user()->role_id == 3)
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="collapse" href="#pelatihan" aria-expanded="false"
                             aria-controls="pelatihan">
@@ -482,7 +484,8 @@
                             </ul>
                         </div>
                     </li>
-
+                    @endif
+                    @if(auth()->user()->role_id == 1)
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="collapse" href="#peserta" aria-expanded="false"
                             aria-controls="peserta">
@@ -497,6 +500,8 @@
                             </ul>
                         </div>
                     </li>
+                    @endif
+                    @if(auth()->user()->role_id == 1)
                     <li class="nav-item nav-category">CMS</li>
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="collapse" href="#mitra" aria-expanded="false"
